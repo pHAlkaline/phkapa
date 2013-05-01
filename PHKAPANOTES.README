@@ -1,0 +1,170 @@
+## Useful Notes 
+
+### Get this docs, it will help you understand PHKAPA
+
+* **Ticket Workflows for PHKAPA Software **: [http://phkapa.phalkaline.eu/phkapaworkflows.zip](http://phkapa.phalkaline.eu/phkapaworkflows.zip)
+* **Simple Requirements for a Simple CAPA Software **: [http://phkapa.phalkaline.eu/CAPADoc.pdf](http://phkapa.phalkaline.eu/CAPADoc.pdf)
+  
+  
+#### Start Session
+
+    * Before you do something you should start your PHKAPA session
+    * PHKAPA -> http://{your-url-for-PHKAPA}
+    * Application Administration -> http://{your-url-for-PHKAPA}/admin
+    * PHKAPA Administration -> http://{your-url-for-PHKAPA}/admin/phkapa
+     
+
+#### Application Administration -> http://{your-url-for-PHKAPA}/admin
+    
+    * Here you can administer users and access management 
+    * Access your app admin panel at http://{your-url-for-PHKAPA}/admin , only "TOP" administrators should have access to this area.
+    
+    * Click "User" for User management.
+    * Click "Access" for Access Manager.
+     
+    * To create a new user ( Click "User" -> Click Menu -> Click new user ).
+    * To add this user to access list in Access menu option ( Click "Access" -> Click Menu -> Click Add Access ).
+    * On the Select Box User you should have Type Group and other available users to select, Type Group is used to create a new group.
+    * On selecting a user , Name will not be available because in this case is just the user name.
+    * Choose parent node User, so that this user will belong to a User group, and this inherits User Group Access configuration.
+    * To change access configurations click edit on user/group row.
+    * And set access options for this with allow / deny.
+     
+
+   
+  * User ( User Management )
+    * New , edit , delete and view app users.
+
+  * Access ( User access management )
+    * New , edit , delete and view access groups.
+    * Add and set user and group access.
+        * Click edit on row and configure user or group access with allow / deny options , default is deny.
+        * Access list.       
+        Total -> Total access ( keep this one only for TOP administrators )
+            PHKAPA -> Access to phkapa application 
+            
+                Administration -> Access PHKAPA administration area ( http://{your-url-for-PHKAPA}/phkapa/admin.
+                ( keep this one only for phkapa administrators )
+
+                Query -> Query Tickets 
+                Register -> Register Tickets 
+                Review -> Review Tickets
+                Plan -> Plan Actions
+                Verify -> Verify and Evaluate Actions
+                  
+    * This application has two default groups ( Administrator and User ) , but you can create more groups like Visitors, Auditors ...
+    * Each user should belong to a group, but this is not a required rule. 
+    ** Assign another user as parent, is not recommended.
+    * Each user will inherit parent access settings but this can be override with specific user rules.
+
+
+#### PHKAPA Administration -> http://{your-url-for-PHKAPA}/admin/phkapa
+
+    * Here you can administer PHKAPA:
+    * Management of list values for Action Types , Activities , Categories , Causes , Origins , Priorities , Processes , Suppliers , Types ( Ticket Types ) , used to categorize PHKAPA tickets.
+        
+
+    * Action Types.
+        * List of action types ( Every action has a action type , like Corrective, Preventive or other )
+        * Categorize PHKAPA actions.
+        * You can have as many Action Types has you want.
+        * When you choose "Verification" option, means that every action with this type must be "Evaluated" with "Action Effectiveness" on "Verify" Workflow.
+
+    * Manage Tickets and Actions , at PHKAPA Administration you have total control over Tickets and Actions, you can change data freely so be careful when changing or creating new .
+        
+
+    * Special Relations:
+        * Users belongs to one or many (Business)Processes.
+        * (Business)Processes has many Activities, Categories.
+        * Categories has many Causes.
+    
+    * Assign one or more business process to a user ( Menu -> USERS -> Edit ).
+        * This feature is very important, when assigning a process to a user, you define what tickets will this user have access to.
+        * A user will only have access to self registered tickets and tickets on processes this user belongs to.
+        * By other words a Ticket is assigned to a business process, if a user belongs to this process he will have access to this Ticket.
+        * Example : you have a user "Administrative and Finance" , you should assign "Administrative Support" process to this user, so that he can have access to tickets on process Administrative Support.
+        
+        * Note: Access to Application Administration, PHKAPA Admin, PHKAPA, menu options like Query , Register, Review are set on Application administration, access to tickets are set here under under PHKAPA Administration -> http://{your-url-for-PHKAPA}/admin/phkapa , assigning business Processes to user.
+        * Note 2: goto App Administration -> http://{your-url-for-PHKAPA}/admin , select Access , every user that does not have Allowed for PHKAPA or some of their children will not be available in Users menu option under PHKAPA Administration -> http://{your-url-for-PHKAPA}/admin/phkapa.
+
+     * Assign one or more Activities to Processes.
+        * Goto ( Menu -> Processes -> Edit ).
+        * Assign Activities to Process.
+        * This feature will filter Activities list on REGISTER.
+        * On REGISTER when you select a Process the Activities list will be updated with process related activities.
+
+     * Assign one or more Categories to Processes .
+        * Goto ( Menu -> Processes -> Edit ).
+        * Assign Categories to Process.
+        * This feature will filter Categories list on REGISTER.
+        * On REGISTER when you select a Process the Categories list will be updated with process related categories.
+
+     * Assign one or more Causes to Categories.
+        * Goto ( Menu -> Categories -> Edit ).
+        * Assign Causes to Category.
+        * This feature will filter Causes list on PLAN.
+        * On REGISTER, when you select a Category this will filter the Cause list on PLAN and will be filled with category related causes.
+
+    
+#### PHKAPA http://{your-url-for-PHKAPA}/phkapa
+
+    * PHKAPA has several workflow states for each ticket ( By order are -> Register, Review, Plan, Verify, Closed )
+    * Register
+        * Origin Date , Type , Origin , Process , Activity , Category and Priority are required.
+        * After register you can View , Delete , Edit or Send Ticket to Review State.
+
+    * Review
+        * Here you should review this ticket and approve selecting edit. ( By default every ticket are not approved )
+        * on Edit you can also change some data like Priority and add some review Notes.
+        * If you don’t approve it ,you should closed it -> selecting close , and ticket will be sent to Close state.
+        * On approved tickets select Send to set Ticket Workflow on Plan state.
+
+    * Plan
+        * Here is the place to create you action plan for tickets.
+        * No actions are required, only selection of cause is required.
+        * Tickets can have as many actions as you want.
+        * On Ticket edit, the list of Causes available are only the ones assigned to the Ticket Category , read PHKAPA Administration for more information.
+        * If Ticket has actions, all actions must be closed to allow this ticket to continue on workflow and Send to Verify Ticket Workflow.
+        * When adding action ( Action Type , Action Description and Action Deadline is required ).
+        * Action Deadline is a number, represents number of days after action created date, this action is required for close within this days, action becomes expired after this deadline.
+        
+
+     * Verify
+        * Here you evaluate action effectiveness , but only for action types with "verification" option selected, read PHKAPA Administration for more information.
+        * You can send tickets back to Plan workflow State with replan option , or create a new ticket related ( reocurrence ) to this one.
+        * to close a Ticket all actions types with "verification" must be evaluated.
+
+
+     * Query
+        * List , View , Export to Excel ( very nice feature , export to excel and create nice reports … ). 
+         
+        
+        
+      
+    
+    
+
+#### Some default app settings
+
+    * edit app/Config/bootstrap_phapp.php file for some settings like language, date format, site maintenance.  
+   
+
+#### Nice features
+
+    * You can have many types of Ticket not only the default Nonconformity type.
+    * You can have many actions for each ticket.
+    * You can have many child Tickets , useful for re-incidences management.
+
+## Links
+
+  * **Official website**: [http://phkapa.phalkaline.eu](http://phkapa.phalkaline.eu)
+  * **PHKAPA SaaS (Software as a Service), Customization, other services -> contact@phalkaline.eu
+  * **Sponsor or Donate and help keep PHKAPA free -> https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=496QJCEKJ344N
+  * **Community Forum and Mailing List at Google Groups -> http://groups.google.com/group/phkapa
+  * **Follow Development, Related tickets, and Bug Reports at -> https://github.com/pHAlkaline/phkapa ,Got issues? Please tell us!
+  * **Support, Questions, Suggestions, New Developments, Help also at contact@phalkaline.eu
+
+  * **Ticket Workflows PHKAPA Software **: [http://phkapa.phalkaline.eu/phkapaworkflows.zip](http://phkapa.phalkaline.eu/phkapaworkflows.zip)
+  * **Simple Requirements for a Simple CAPA Software **: [http://phkapa.phalkaline.eu/CAPADoc.pdf](http://phkapa.phalkaline.eu/CAPADoc.pdf)
+  * **Check our quality consultant Joaquim Dias at pt.linkedin.com/pub/joaquim-dias/31/186/615/ or visit is site at http://mypage-quality.weebly.com/
+  * **What is CAPA ( Corrective Action , Preventive Action ) [http://en.wikipedia.org/wiki/Corrective_and_preventive_action](http://en.wikipedia.org/wiki/Corrective_and_preventive_action)

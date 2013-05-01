@@ -1,0 +1,88 @@
+# PHKAPA
+
+**PHKAPA** is a free, open source, CAPA management system for PHP, released under [MIT License]
+
+It is powered by [CakePHP](http://cakephp.org) MVC framework.
+
+
+## Requirements
+  * Apache 2 with `mod_rewrite` or similar
+  * PHP 5.2 or higher
+  * MySQL 5 or higher
+
+## Installation
+
+#### Web based installer
+  * Upload the content to your server, Extract the archive.
+  * set app/tmp and app/Config directory to writable. 
+  * Create a new MySQL database (`utf8_general_ci` collation)
+  * goto http://{your-url-for-PHKAPA}/install
+  * after sucessfull instalation restore default values ( chmod 755) for app/Config directory ( app/tmp remains writable ) and ( chmod 644 ) for app/Config directory files
+  * `app/Controllers/InstallController.php`, remove this file or change to a safe name.
+
+#### Manual installation
+  * Upload the content to your server, Extract the archive. 
+  * Create a new MySQL database (`utf8_general_ci` collation), and use these two SQL dump files in given order:
+    * `app/Config/Schema/sql/phkapa_structure.sql`
+    * `app/Config/Schema/sql/phkapa_demo_data.sql` this only if you want default data loaded
+        * this file loads some user to database , for all users, the password equals the username.
+  
+  * Edit:
+    * `app/Config/database.php.install`, change the details for your database connection and save as `database.php`
+  
+  * Secure
+    * set app/tmp and app/Config directory to writable.
+    * run http://{your-url-for-PHKAPA}/install/secure ( here is also required the change of user admin password )
+    * restore default values (644) for app/Config directory ( app/tmp remains writable )
+    * `app/Controllers/InstallController.php`, remove this file or change to a safe name.
+    
+  
+  
+  * PHKAPA 
+    * You can access your app at http://{your-url-for-PHKAPA}/ 
+    * You can access your app admin panel at http://{your-url-for-PHKAPA}/admin. 
+      here you can create new users , edit user data , change passwords and define access options. 
+        ( users list ( loaded from default data ) : admin , quality , op , macs , mcb , rec , cd , hr , aaf , phkapa ) 
+        ( default users passwords equals usernames -> username : admin , password : admin )
+    
+ 
+    * You can access your PHKAPA admin panel at http://{your-url-for-PHKAPA}/admin/phkapa. and setup your app 
+    ( ATENTION: Here you have total access to PHKAPA data , be careful!! )
+
+  * Debug
+    * edit `app/Config/core.php` at line - Configure::write('debug', 1)
+    /**
+    * Production Mode:
+    * 	0: No error messages, errors, or warnings shown. Flash messages redirect.
+    *
+    * Development Mode:
+    * 	1: Errors and warnings shown, model caches refreshed, flash messages halted.
+    * 	2: As in 1, but also with full debug messages and SQL output.
+    */
+
+#### Some default app settings
+
+    * edit app/Config/bootstrap_phapp.php file for some settings like language, date format, site maintenance.
+
+
+    you can also check cakephp installation at http://book.cakephp.org/2.0/en/installation.html , it may help you or find a different way to manage your application
+
+## Links
+
+  * **Official website**: [http://phkapa.phalkaline.eu](http://phkapa.phalkaline.eu)
+  * **PHKAPA SaaS (Software as a Service), Customization, other services -> contact@phalkaline.eu
+  * **Sponsor or Donate and help keep PHKAPA free -> https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=496QJCEKJ344N
+  * **Community Forum and Mailing List at Google Groups -> http://groups.google.com/group/phkapa
+  * **Follow Development, Related tickets, and Bug Reports at -> https://github.com/pHAlkaline/phkapa ,Got issues? Please tell us!
+  * **Support, Questions, Suggestions, New Developments, Help also at contact@phalkaline.eu
+
+  * **Ticket Workflows PHKAPA Software **: [http://phkapa.phalkaline.eu/phkapaworkflows.zip](http://phkapa.phalkaline.eu/phkapaworkflows.zip)
+  * **Simple Requirements for a Simple CAPA Software **: [http://phkapa.phalkaline.eu/CAPADoc.pdf](http://phkapa.phalkaline.eu/CAPADoc.pdf)
+  * **Check our quality consultant Joaquim Dias at pt.linkedin.com/pub/joaquim-dias/31/186/615/ or visit is site at http://mypage-quality.weebly.com/
+  * **What is CAPA ( Corrective Action , Preventive Action ) [http://en.wikipedia.org/wiki/Corrective_and_preventive_action](http://en.wikipedia.org/wiki/Corrective_and_preventive_action)
+
+
+  * **CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
+
+CakePHP - the rapid development PHP framework
+http://www.cakephp.org
