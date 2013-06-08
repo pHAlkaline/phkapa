@@ -265,17 +265,18 @@ if ($ticket['Ticket']['cause_id'] == null) {
                                 $expiry = strtotime(date($action['created']) . " +" . $action['deadline'] . $dayDescription);
                                 
                                 $deadlineAgo = '';
-                                if ($action['closed'] == 0 && !$this->Time->wasWithinLast($action['deadline'] . $dayDescription, $action['created'])) {
-                                    $deadlineAgo = ' ( ' . $this->Time->timeAgoInWords($action['created'], $options = array(), $backwards = null) . ' ) ';
-                                    $red="red";
-                                }
-                                
                                 $hasFlag = false;
                                 $flag = "red_flag_action.png";
                                 $flagMessage = __d('phkapa','Action expired!!!');
-                                //$dayDescription= ($action['deadline']==1) ? ' day' : ' days';
-                                if ($action['closed'] == 0 && !$this->Time->wasWithinLast($action['deadline'] . $dayDescription, $action['created']))
+                                
+                                
+                                if ($action['closed'] == 0 && !$this->Time->wasWithinLast($action['deadline'] . $dayDescription, $action['created'])) {
+                                    $deadlineAgo = ' ( ' . $this->Time->timeAgoInWords($expiry, $options = array(), $backwards = null) . ' ) ';
+                                    $red="red";
                                     $hasFlag = true;
+                                }
+                                
+                                
                                 ?>
                                 <tr<?php echo $class; ?>>
                                     <td><?php echo $action['id']; ?></td>
