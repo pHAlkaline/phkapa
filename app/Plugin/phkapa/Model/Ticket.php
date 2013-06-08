@@ -169,7 +169,7 @@ class Ticket extends PhkapaAppModel {
         )
     );
     /**
-     * Validation 2 for workflow only - Register, , Review, Plan, 
+     * Validation 2 for workflow only - Register, Review, Plan, 
      *
      * @var array
      * @access public
