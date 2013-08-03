@@ -82,7 +82,7 @@ class ArosController extends AppController {
                     ));
 
             if ($this->Node->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
@@ -134,7 +134,7 @@ class ArosController extends AppController {
                     ));
 
             if ($this->Node->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
@@ -250,7 +250,7 @@ class ArosController extends AppController {
         }
         $this->Node->id = $id;
         if ($this->Node->delete()) {
-            $this->Session->setFlash(__('Deleted with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__('Deleted with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
         $this->Session->setFlash(__('Could not be deleted.'), 'flash_message_error');
@@ -271,7 +271,7 @@ class ArosController extends AppController {
         }
         $this->Node->id = $id;
         if ($this->Node->moveUp()) {
-            $this->Session->setFlash(__('Saved with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         } else {
             $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
@@ -293,7 +293,7 @@ class ArosController extends AppController {
         }
         $this->Node->id = $id;
         if ($this->Node->moveDown()) {
-            $this->Session->setFlash(__('Saved with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         } else {
             $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');

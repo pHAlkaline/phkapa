@@ -67,7 +67,7 @@
                         if ($action['closed'] == 0 && !$this->Time->wasWithinLast($action['deadline'] . $dayDescription, $action['created'])) {
                             $hasFlag = true;
                             $flag = "red_flag_action.png";
-                            $flagMessage = __d('phkapa', 'Action expired!!!');
+                            $flagMessage = __d('phkapa', 'Action deadline expired!!!');
                         }
 
 

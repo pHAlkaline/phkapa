@@ -277,7 +277,7 @@ class InstallController extends AppController {
             $this->User->read(null, 1);
             $this->User->set($this->request->data);
             if ($this->User->save()) {
-                $this->Session->setFlash(__('Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
                 $token = uniqid();
                 $this->Session->write('Install', array(
                     'token' => $token

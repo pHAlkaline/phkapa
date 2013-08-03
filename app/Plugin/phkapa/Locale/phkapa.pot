@@ -54,7 +54,7 @@ msgstr ""
 #: Controller/TypesController.php:61;83
 #: Controller/UsersController.php:88
 #: Controller/VerifyController.php:131;166;201
-msgid "Saved with sucess."
+msgid "Saved with success."
 msgstr ""
 
 #: Controller/ActionTypesController.php:64;86
@@ -89,7 +89,7 @@ msgstr ""
 #: Controller/SuppliersController.php:107
 #: Controller/TicketsController.php:212
 #: Controller/TypesController.php:107
-msgid "Deleted with sucess."
+msgid "Deleted with success."
 msgstr ""
 
 #: Controller/ActionTypesController.php:110
@@ -117,7 +117,7 @@ msgid "Administration"
 msgstr ""
 
 #: Controller/PlanController.php:271
-msgid "Closed with sucess."
+msgid "Closed with success."
 msgstr ""
 
 #: Controller/PlanController.php:274
@@ -1409,7 +1409,7 @@ msgstr ""
 
 #: View/Plan/edit.ctp:261
 #: View/Plan/index.ctp:48
-msgid "Action expired!!!"
+msgid "Action deadline expired!!!"
 msgstr ""
 
 #: View/Plan/edit.ctp:285

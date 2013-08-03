@@ -1,0 +1,19 @@
+--> From V1.0.1 to V1.0.1
+
+# Updated Files / Directories
+lib/Cake/* ( All Files and Directories )
+
+--> From V1.0.0 to V1.0.1
+
+# Updated Files / Directories
+INSTALATTION.README
+LICENSE.txt
+SUPPORT.README
+app/Plugin/phkapa/View/Plan/edit.ctp
+app/Plugin/phkapa/webroot/js/register_add.js
+lib/Cake/* ( All Files and Directories )
+
+#Added Files
+README.md
+VERSION.txt
+UPDATE.README

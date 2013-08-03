@@ -2,7 +2,11 @@
 
 **PHKAPA** is a free, open source, CAPA management system for PHP, released under [MIT License]
 
+Official website: [http://phkapa.phalkaline.eu](http://phkapa.phalkaline.eu)
+WIKI website: [http://phkapa.phalkaline.eu/wiki](http://phkapa.phalkaline.eu/wiki)
+
 It is powered by [CakePHP](http://cakephp.org) MVC framework.
+
 
 
 ## Requirements
@@ -17,7 +21,7 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
   * set app/tmp and app/Config directory to writable. 
   * Create a new MySQL database (`utf8_general_ci` collation)
   * goto http://{your-url-for-PHKAPA}/install
-  * after sucessfull instalation restore default values ( chmod 755) for app/Config directory ( app/tmp remains writable ) and ( chmod 644 ) for app/Config directory files
+  * after successfull instalation restore default values ( chmod 755) for app/Config directory ( app/tmp remains writable ) and ( chmod 644 ) for app/Config directory files
   * `app/Controllers/InstallController.php`, remove this file or change to a safe name.
 
 #### Manual installation

@@ -85,7 +85,7 @@ class UsersController extends PhkapaAppController {
         }
         if (!empty($this->request->data)) {
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa','Saved with sucess.'),'flash_message_info');
+                $this->Session->setFlash(__d('phkapa','Saved with success.'),'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__d('phkapa','Could not be saved. Please, try again.'),'flash_message_error');
