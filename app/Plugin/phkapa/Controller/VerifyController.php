@@ -130,7 +130,7 @@ class VerifyController extends PhkapaAppController {
         }
 
         if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '5', 'Ticket.close_date' => 'NOW()', 'Ticket.modified' => 'NOW()'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '4'))) {
-            $this->Session->setFlash(__d('phkapa','Saved with sucess.'),'flash_message_info');
+            $this->Session->setFlash(__d('phkapa','Saved with success.'),'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
         $this->Session->setFlash(__d('phkapa','Could not be saved. Please, try again.'),'flash_message_error');
@@ -166,7 +166,7 @@ class VerifyController extends PhkapaAppController {
         }*/
 
         if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '3', 'Ticket.close_date' => 'NOW()', 'Ticket.modified' => 'NOW()'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '4'))) {
-            $this->Session->setFlash(__d('phkapa','Saved with sucess.'),'flash_message_info');
+            $this->Session->setFlash(__d('phkapa','Saved with success.'),'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
         $this->Session->setFlash(__d('phkapa','Could not be saved. Please, try again.'),'flash_message_error');
@@ -201,7 +201,7 @@ class VerifyController extends PhkapaAppController {
         //debug($this->request->data);
         if (!empty($this->request->data)) {
             if ($this->Ticket->Action->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa','Saved with sucess.'),'flash_message_info');
+                $this->Session->setFlash(__d('phkapa','Saved with success.'),'flash_message_info');
                 $this->redirect(array('action' => 'view', $this->request->data['Action']['ticket_id']));
             } else {
                 $this->Session->setFlash(__d('phkapa','Could not be saved. Please, try again.'),'flash_message_error');

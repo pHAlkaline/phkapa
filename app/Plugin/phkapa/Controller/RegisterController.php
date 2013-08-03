@@ -123,7 +123,7 @@ class RegisterController extends PhkapaAppController {
             $this->request->data['Ticket']['registar_id'] = $this->Auth->user('id');
             $this->request->data['Ticket']['workflow_id'] = 1;
             if ($this->Ticket->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa', 'Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
@@ -214,7 +214,7 @@ class RegisterController extends PhkapaAppController {
 
 
             if ($this->Ticket->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa', 'Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
@@ -252,7 +252,7 @@ class RegisterController extends PhkapaAppController {
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Ticket->deleteAll(array('Ticket.id' => $id))) {
-            $this->Session->setFlash(__d('phkapa', 'Deleted with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__d('phkapa', 'Deleted with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
         $this->Session->setFlash(__d('phkapa', 'Could not be deleted.'), 'flash_message_error');
@@ -275,7 +275,7 @@ class RegisterController extends PhkapaAppController {
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '2', 'Ticket.modified' => 'NOW()'), array('Ticket.id' => $id))) {
-            $this->Session->setFlash(__d('phkapa', 'Saved with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
         $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');

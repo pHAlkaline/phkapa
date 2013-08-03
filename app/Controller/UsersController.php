@@ -65,7 +65,7 @@ class UsersController extends AppController {
         if (!empty($this->request->data)) {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
@@ -99,7 +99,7 @@ class UsersController extends AppController {
             // Restrict alias ( Aro alias field must be unique ) 
             
            if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
                 // Update aro/request access alias ('name')
                 // Force login data if user is same
                 if ($this->Auth->user('id') == $id) {
@@ -133,7 +133,7 @@ class UsersController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
         if ($this->User->delete($id)) {
-            $this->Session->setFlash(__('Deleted with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__('Deleted with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
         $this->Session->setFlash(__('Could not be deleted.'), 'flash_message_error');
@@ -194,7 +194,7 @@ class UsersController extends AppController {
             // Restrict alias ( Aro alias field must be unique ) 
             
            if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
                 // Update aro/request access alias ('name')
                 // Force login data if user is same
                 if ($this->Auth->user('id') == $id) {

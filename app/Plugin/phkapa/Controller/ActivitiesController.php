@@ -60,7 +60,7 @@ class ActivitiesController extends PhkapaAppController {
         if (!empty($this->request->data)) {
             $this->Activity->create();
             if ($this->Activity->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa', 'Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
@@ -92,7 +92,7 @@ class ActivitiesController extends PhkapaAppController {
         }
         if (!empty($this->request->data)) {
             if ($this->Activity->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa', 'Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
@@ -118,7 +118,7 @@ class ActivitiesController extends PhkapaAppController {
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Activity->delete($id)) {
-            $this->Session->setFlash(__d('phkapa', 'Deleted with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__d('phkapa', 'Deleted with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
         $this->Session->setFlash(__d('phkapa', 'Could not be deleted.'), 'flash_message_error');

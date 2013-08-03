@@ -119,7 +119,7 @@ class PlanController extends PhkapaAppController {
             $this->request->data['Ticket']['registar_id'] = $this->Auth->user('id');
             $this->request->data['Ticket']['workflow_id'] = 3;
             if ($this->Ticket->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa', 'Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'edit', $id));
             } else {
                 $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
@@ -158,7 +158,7 @@ class PlanController extends PhkapaAppController {
                 $this->request->data['Action']['close_date'] = date('Y-m-d');
             }
             if ($this->Ticket->Action->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa', 'Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id']));
             } else {
                 //debug($this->Ticket->Action->validationErrors);
@@ -210,7 +210,7 @@ class PlanController extends PhkapaAppController {
             //debug($this->request->data);
             $this->Ticket->Action->validator()->remove('close_date');
             if ($this->Ticket->Action->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa', 'Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id']));
             } else {
                 $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
@@ -246,7 +246,7 @@ class PlanController extends PhkapaAppController {
         }
         //$this->loadModel('Phkapa.Action');
         if ($this->Ticket->Action->deleteAll(array('Action.ticket_id' => $ticketId, 'Action.id' => $id))) {
-            $this->Session->setFlash(__d('phkapa', 'Deleted with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__d('phkapa', 'Deleted with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'edit', $ticketId));
         }
         $this->Session->setFlash(__d('phkapa', 'Could not be deleted.'), 'flash_message_error');
@@ -270,7 +270,7 @@ class PlanController extends PhkapaAppController {
         }
         //$this->loadModel('Phkapa.Action');
         if ($this->Ticket->Action->updateAll(array('Action.closed' => '1', 'Action.close_date' => 'NOW()'), array('Action.ticket_id' => $ticketId, 'Action.id' => $id))) {
-            $this->Session->setFlash(__d('phkapa', 'Closed with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__d('phkapa', 'Closed with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'edit', $ticketId));
         }
         $this->Session->setFlash(__d('phkapa', 'Could not be closed.'), 'flash_message_error');
@@ -322,7 +322,7 @@ class PlanController extends PhkapaAppController {
         
 
         if ($this->Ticket->updateAll(array('Ticket.workflow_id' => $workflowId, 'Ticket.modified' => 'NOW()', 'Ticket.close_date' => $close_date), array('Ticket.id' => $id, 'Ticket.workflow_id' => '3'))) {
-            $this->Session->setFlash(__d('phkapa', 'Saved with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
         $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');

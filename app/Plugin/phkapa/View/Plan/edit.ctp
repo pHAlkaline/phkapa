@@ -267,7 +267,7 @@ if ($ticket['Ticket']['cause_id'] == null) {
                                 $deadlineAgo = '';
                                 $hasFlag = false;
                                 $flag = "red_flag_action.png";
-                                $flagMessage = __d('phkapa','Action expired!!!');
+                                $flagMessage = __d('phkapa','Action deadline expired!!!');
                                 
                                 
                                 if ($action['closed'] == 0 && !$this->Time->wasWithinLast($action['deadline'] . $dayDescription, $action['created'])) {

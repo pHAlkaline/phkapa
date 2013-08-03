@@ -104,7 +104,7 @@ class ReviewController extends PhkapaAppController {
                 $this->request->data['Ticket']['approved']=null;
             }
             if ($this->Ticket->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa', 'Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index', $id));
             } else {
                 $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
@@ -135,7 +135,7 @@ class ReviewController extends PhkapaAppController {
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '3', 'Ticket.modified' => 'NOW()'), array('Ticket.workflow_id' => '2','Ticket.approved' => 1,'Ticket.id' => $id))) {
-            $this->Session->setFlash(__d('phkapa', 'Saved with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
         $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
@@ -163,7 +163,7 @@ class ReviewController extends PhkapaAppController {
         $close_date = 'NOW()';
         if (isset($ticket['Ticket']['approved']) && $ticket['Ticket']['approved'] == 0) {
             if ($this->Ticket->updateAll(array('Ticket.workflow_id' => $workflowId, 'Ticket.modified' => 'NOW()', 'Ticket.close_date' => $close_date), array('Ticket.id' => $id, 'Ticket.workflow_id' => '2','Ticket.approved' => 0))) {
-                $this->Session->setFlash(__d('phkapa', 'Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             }
         }

@@ -21,7 +21,7 @@ msgstr ""
 #: Controller/ArosController.php:85;137;274;296
 #: Controller/InstallController.php:284
 #: Controller/UsersController.php:68;98
-msgid "Saved with sucess."
+msgid "Saved with success."
 msgstr "Gravado com sucesso."
 
 #: Controller/AcosController.php:73;105;138;159;180
@@ -51,7 +51,7 @@ msgstr "Raiz"
 
 #: Controller/ArosController.php:253
 #: Controller/UsersController.php:132
-msgid "Deleted with sucess."
+msgid "Deleted with success."
 msgstr "Apagado com sucesso."
 
 #: Controller/ArosController.php:256

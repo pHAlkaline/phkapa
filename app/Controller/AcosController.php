@@ -67,7 +67,7 @@ class AcosController extends AppController {
 
         if (!empty($this->request->data)) {
             if ($this->Node->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with sucess.'), '');
+                $this->Session->setFlash(__('Saved with success.'), '');
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
@@ -99,7 +99,7 @@ class AcosController extends AppController {
 
         if (!empty($this->request->data)) {
             if ($this->Node->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with sucess.'), 'flash_message_info');
+                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
@@ -132,7 +132,7 @@ class AcosController extends AppController {
         }
         $this->Node->id = $id;
         if ($this->Node->delete()) {
-            $this->Session->setFlash(__('Saved with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         } else {
             $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
@@ -153,7 +153,7 @@ class AcosController extends AppController {
         }
         $this->Node->id = $id;
         if ($this->Node->moveUp()) {
-            $this->Session->setFlash(__('Saved with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         } else {
             $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
@@ -174,7 +174,7 @@ class AcosController extends AppController {
         }
         $this->Node->id = $id;
         if ($this->Node->moveDown()) {
-            $this->Session->setFlash(__('Saved with sucess.'), 'flash_message_info');
+            $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         } else {
             $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
