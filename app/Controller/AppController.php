@@ -9,10 +9,10 @@
  *
  * @category Controller
  * @package  PHKAPA
- * @version  RC1
+ * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.phalkaline.eu
+ * @link     http://phkapa.phalkaline.eu
  */
 class AppController extends Controller {
 
@@ -22,7 +22,7 @@ class AppController extends Controller {
      * @var array
      * @access public
      */
-    public $components = array('Session', 'Acl', 'Maintenance',
+    public $components = array('Session', 'Acl', 'Maintenance', 'Notify', 
         'Auth' => array(
             'loginAction' => array('admin' => false, 'plugin' => false, 'controller' => 'users', 'action' => 'login')
             ));
@@ -48,7 +48,7 @@ class AppController extends Controller {
         //$this->Auth->authenticate = array('Simple');
         $this->Auth->logoutRedirect = array('admin' => false, 'plugin' => false, 'controller' => 'pages', 'action' => 'display');
         $this->Auth->loginRedirect = array('admin' => false, 'plugin' => false, 'controller' => 'pages', 'action' => 'display');
-        $this->Auth->allow('display', 'login', 'logout','secure');
+        $this->Auth->allow('display', 'login', 'logout','secure','notifications');
         $this->Auth->authorize = array('Controller');
         $this->Auth->flashElement = 'flash_message_error';
         $this->Auth->authenticate = array(  AuthComponent::ALL => array('userModel' => 'User', 'scope' => array("User.active" => 1)),'Form');
@@ -84,6 +84,9 @@ class AppController extends Controller {
      */
     public function beforeRender() {
         $this->set('title_for_layout', '');
+        
+        $this->set('unread_notifications',$this->Notify->countNotifications(AuthComponent::user('id')));
+        
         if (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {
             $menuItems = array('Users', 'Aros');
             $this->set(compact('menuItems'));

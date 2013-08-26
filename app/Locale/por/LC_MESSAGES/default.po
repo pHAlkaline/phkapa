@@ -416,6 +416,11 @@ msgstr "A instalação não pode continuar, requisitos minimos não foram encont
 msgid "End Session"
 msgstr "Terminar Sessão"
 
+#: View/Layouts/admin.ctp:114
+#: View/Layouts/default.ctp:115
+msgid "Edit Profile"
+msgstr "Editar Perfil"
+
 #: View/Pages/diagnostics.ctp:6
 msgid "Diagnostics"
 msgstr "Diagnosticos"
@@ -543,3 +548,14 @@ msgstr "Palavra Passe não corresponde"
 msgid "Invalid email"
 msgstr "Email inválido"
 
+
+msgid "Notifier"
+msgstr "Notificador"
+
+msgid "Notification"
+msgid_plural "Notifications"
+msgstr[0] "Notificação"
+msgstr[1] "Notificações"
+
+msgid "Read"
+msgstr "Lido"

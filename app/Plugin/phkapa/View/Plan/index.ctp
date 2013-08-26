@@ -30,30 +30,64 @@
                 if ($i++ % 2 == 0) {
                     $class = ' class="altrow"';
                 }
-                $sendOk = false;
+                $hasCause = true;
+                $openActions = FALSE;
+                // action ( send, close ) show/hide
+                $sendOk = true;
+                $closeOk = true;
+                $verificationCount = 0;
                 $hasFlag = false;
                 $showActions = true;
-                $verificationCount = 0;
 
-                if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
-                    $sendOk = true;
+
+                // No cause 
+                if ($ticket['Ticket']['cause_id'] == null) {
+                    $hasCause = false;
+                    $sendOk = false;
+                    $closeOk = false;
+                }
+
+                // Has Cause but no actions
+                if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) == 0) {
+                    $sendOk = false;
+                    $closeOk = true;
+                }
+
+                // Has Cause and actions
+                if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
 
                     foreach ($ticket['Action'] as $action):
 
-                        if ($action['closed'] == 0)
+                        // Has open actions
+                        if ($action['closed'] == 0) {
+
                             $sendOk = false;
+                            $closeOk = false;
+                            $openActions = true;
+                        }
+                        // Has verification type actions
+                        if ($action['ActionType']['verification'] == '1') {
+
+                            $verificationCount++;
+                        }
 
                     endforeach;
+
+                    //Has Cause , no open actions, has actions need verifications
+                    if (!$openActions && $verificationCount > 0) {
+
+                        $sendOk = true;
+                        $closeOk = false;
+                    }
+
+                    //Has Cause , no open actions, no actions need verifications
+                    if (!$openActions && $verificationCount == 0) {
+
+                        $sendOk = false;
+                        $closeOk = true;
+                    }
                 }
 
-                if (isset($ticket['Action']) && count($ticket['Action']) == 0 && $ticket['Ticket']['cause_id']) {
-                    $sendOk = true;
-                }
-
-                if ($ticket['Ticket']['cause_id'] == null) {
-                    $sendOk = false;
-                    //$showActions = false;
-                }
 
 
                 $flag = '';
@@ -103,27 +137,33 @@
                     <td class="nowrap"><?php echo $ticket['Process']['name']; ?></td>
                     <td><?php echo $ticket['Category']['name']; ?></td>
                     <td><?php echo $ticket['Activity']['name']; ?></td>
-                    <td><?php echo $ticket['Ticket']['description'] . '<br/>' . $ticket['Ticket']['review_notes'];
-        ; ?>&nbsp;</td>
+                    <td><?php
+        echo $ticket['Ticket']['description'] . '<br/>' . $ticket['Ticket']['review_notes'];
+        ;
+        ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['created']); ?>&nbsp;</td>
 
 
                     <td class="actions">
-        <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit', $ticket['Ticket']['id'])); ?>
-        <?php
-        if ($sendOk) {
-            echo ' | ' . $this->Html->link(__d('phkapa', 'Send'), array('action' => 'send', $ticket['Ticket']['id']), null, __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id']));
-        }
-        ?>
+                        <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit', $ticket['Ticket']['id'])); ?>
+                        <?php
+                        if ($sendOk) {
+                            echo ' | ' . $this->Html->link(__d('phkapa', 'Send'), array('action' => 'send', $ticket['Ticket']['id']), null, __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id']));
+                        }
+
+                        if ($closeOk) {
+                            echo ' | ' . $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close', $ticket['Ticket']['id']), null, __d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id']));
+                        }
+                        ?>
 
                     </td>
                     <td><?php
-                if ($hasFlag)
-                    echo $this->Html->image($flag, array('alt' => $flagMessage, 'title' => $flagMessage, 'style' => 'vertical-align: middle;cursor:help;'));
-                ?></td>
+                        if ($hasFlag)
+                            echo $this->Html->image($flag, array('alt' => $flagMessage, 'title' => $flagMessage, 'style' => 'vertical-align: middle;cursor:help;'));
+                        ?></td>
                 </tr>
-                    <?php endforeach; ?>
-                    <?php //echo '<tfoot class=\'dark\'>'.$tableHeaders.'</tfoot>';   ?>    </table>
+            <?php endforeach; ?>
+    <?php //echo '<tfoot class=\'dark\'>'.$tableHeaders.'</tfoot>';    ?>    </table>
 
         <p class="paging">
             <?php
@@ -133,15 +173,15 @@
             ?>	</p>
 
         <div class="paging">
-            <?php echo $this->Paginator->prev('<< ' . __d('phkapa', 'Previous'), array(), null, array('class' => 'disabled')); ?>
+    <?php echo $this->Paginator->prev('<< ' . __d('phkapa', 'Previous'), array(), null, array('class' => 'disabled')); ?>
             | <?php echo $this->Paginator->numbers(); ?>
             | <?php echo $this->Paginator->Next(__d('phkapa', 'Next') . ' >>', array(), null, array('class' => 'disabled')); ?>
         </div>
-    <?php
-} else {
-    echo __d('phkapa', 'No records found!!!');
-}
-?>
+        <?php
+    } else {
+        echo __d('phkapa', 'No records found!!!');
+    }
+    ?>
 </div>
 <div class="clear"></div>
 

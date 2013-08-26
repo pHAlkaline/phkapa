@@ -54,8 +54,8 @@ class PagesController extends AppController {
      * @access public
      */
     var $uses = array();
-
-    /**
+    
+     /**
      * Displays a view
      *
      * @param mixed What page to display
@@ -111,6 +111,26 @@ class PagesController extends AppController {
      */
     function login() {
         
+    }
+    
+    /**
+     * Displays notification list
+     *
+     * @param mixed What page to display
+     * @access public
+     */
+    function notifications($option=null,$id=null){
+        if(!AuthComponent::user('id')){
+            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->redirect(array('action' => 'display'));
+        }
+        if ($option!=null && $option=='delete'){
+            $this->Notify->delete($id,AuthComponent::user('id'));
+            $this->redirect(array('action' => 'notifications'));
+        }
+        $notifications=$this->Notify->getNotifications(AuthComponent::user('id'));
+        $this->Notify->setAllNotificationsReadForNotified(AuthComponent::user('id'));
+        $this->set(compact('notifications'));
     }
 
 }

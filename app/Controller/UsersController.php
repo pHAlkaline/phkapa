@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Users controller
  *
@@ -6,10 +7,10 @@
  *
  * @category Controller
  * @package  PHKAPA
- * @version  RC1
+ * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.phalkaline.eu
+ * @link     http://phkapa.phalkaline.eu
  */
 class UsersController extends AppController {
 
@@ -20,7 +21,7 @@ class UsersController extends AppController {
      * @access public
      */
     public $name = 'Users';
-    
+
     /**
      * Components
      *
@@ -97,8 +98,8 @@ class UsersController extends AppController {
 
             // On user edits must also change alias on AROS/ACOS
             // Restrict alias ( Aro alias field must be unique ) 
-            
-           if ($this->User->save($this->request->data)) {
+
+            if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
                 // Update aro/request access alias ('name')
                 // Force login data if user is same
@@ -107,6 +108,54 @@ class UsersController extends AppController {
                 }
 
                 $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+            }
+        }
+        if (empty($this->request->data)) {
+            $this->request->data = $this->User->read(null, $id);
+            unset($this->request->data['User']['password']);
+        }
+        if (!empty($this->Acl->Aro->validationErrors)) {
+            $this->User->validationErrors['name'][] = $this->Acl->Aro->validationErrors['alias'][0];
+        }
+    }
+
+    /**
+     * Admin edit
+     *
+     * @param integer $id
+     * @return void
+     * @access public
+     */
+    public function edit() {
+        $id = AuthComponent::user('id');
+        if ($id == null) {
+            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->redirect(array('action' => 'index'));
+        }
+        if (!$id && empty($this->request->data)) {
+            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->redirect(array('action' => 'index'));
+        }
+
+
+
+
+        if (!empty($this->request->data)) {
+
+            // On user edits must also change alias on AROS/ACOS
+            // Restrict alias ( Aro alias field must be unique ) 
+
+            if ($this->User->save($this->request->data)) {
+                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+                // Update aro/request access alias ('name')
+                // Force login data if user is same
+                if ($this->Auth->user('id') == $id) {
+                    $this->Auth->login($this->request->data['User']);
+                }
+
+                $this->redirect(array('action' => 'edit'));
             } else {
                 $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
             }
@@ -165,10 +214,9 @@ class UsersController extends AppController {
      * @access public
      */
     public function logout() {
-        $this->redirect($this->Auth->logout());
+       $this->redirect($this->Auth->logout());
     }
-    
-    
+
     /**
      * secure_password
      *
@@ -177,8 +225,8 @@ class UsersController extends AppController {
      * @access private
      */
     private function secure_password() {
-        
-        $this->User->read(null,1);
+
+        $this->User->read(null, 1);
         //debug($this->user->created);
         if (empty($this->request->data)) {
             $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
@@ -192,8 +240,8 @@ class UsersController extends AppController {
 
             // On user edits must also change alias on AROS/ACOS
             // Restrict alias ( Aro alias field must be unique ) 
-            
-           if ($this->User->save($this->request->data)) {
+
+            if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
                 // Update aro/request access alias ('name')
                 // Force login data if user is same

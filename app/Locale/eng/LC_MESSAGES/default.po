@@ -416,6 +416,11 @@ msgstr ""
 msgid "End Session"
 msgstr ""
 
+#: View/Layouts/admin.ctp:114
+#: View/Layouts/default.ctp:115
+msgid "Edit Profile"
+msgstr ""
+
 #: View/Pages/diagnostics.ctp:6
 msgid "Diagnostics"
 msgstr ""
@@ -541,5 +546,16 @@ msgstr ""
 
 #: Model/User.php:validation for field email
 msgid "Invalid email"
+msgstr ""
+
+msgid "Notifier"
+msgstr ""
+
+msgid "Notification"
+msgid_plural "Notifications"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Read"
 msgstr ""
 

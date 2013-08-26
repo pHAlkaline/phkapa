@@ -7,10 +7,10 @@
  *
  * @category Controller
  * @package  PHKAPA
- * @version  RC1
+ * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.phalkaline.eu
+ * @link     http://phkapa.phalkaline.eu
  */
 class VerifyController extends PhkapaAppController {
 
@@ -130,6 +130,7 @@ class VerifyController extends PhkapaAppController {
         }
 
         if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '5', 'Ticket.close_date' => 'NOW()', 'Ticket.modified' => 'NOW()'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '4'))) {
+            $this->_addNotification($id,__d('phkapa','Ticket # %s has been closed', $id));
             $this->Session->setFlash(__d('phkapa','Saved with success.'),'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
@@ -166,6 +167,7 @@ class VerifyController extends PhkapaAppController {
         }*/
 
         if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '3', 'Ticket.close_date' => 'NOW()', 'Ticket.modified' => 'NOW()'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '4'))) {
+            $this->_addNotification($id,__d('phkapa','Ticket # %s has new plan', $id));
             $this->Session->setFlash(__d('phkapa','Saved with success.'),'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
@@ -228,7 +230,7 @@ class VerifyController extends PhkapaAppController {
     protected function _setupModel() {
         // belongsTo 'Type','Process','Registar','Activity','Category','Supplier','Origin','Cause','Workflow','Parent'
         $this->Ticket->unbindModel(array(
-            'belongsTo' => array('Registar','Workflow','Parent')
+            'belongsTo' => array('Workflow','Parent')
                 ), false);
        
     

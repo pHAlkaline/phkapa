@@ -24,6 +24,9 @@
                     $.cookie('appMaintenance','foo');
                     $('#maintenanceMessage').fadeOut(2000);
                 })
+                $('.flash-message').click(function(){
+                        $(this).fadeOut(2000);
+                    })
                 $("a").each(function(){
                     var onClickEval=$(this).attr('onclick');
                     if (/confirm/i.test(onClickEval)){
