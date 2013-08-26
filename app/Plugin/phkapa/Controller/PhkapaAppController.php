@@ -7,10 +7,10 @@
  *
  * @category Controller
  * @package  PHKAPA
- * @version  RC1
+ * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.phalkaline.eu
+ * @link     http://phkapa.phalkaline.eu
  */
 class PhkapaAppController extends AppController {
 
@@ -22,6 +22,7 @@ class PhkapaAppController extends AppController {
      * @throws
      */
     public function beforeRender() {
+        parent::beforeRender();
         $this->_setMenu();
 
         if (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {
@@ -65,6 +66,39 @@ class PhkapaAppController extends AppController {
         }
 
         $this->set(compact('menuItems'));
+    }
+
+    /**
+     * Add notification 
+     * 
+     * @param string $ticket_id 
+     * @return void
+     * @access protected
+     */
+    protected function _addNotification($ticket_id = null, $notificationText = null) {
+        $ticket = $this->Ticket->find('first', array('recursive'=>'1','order'=>array('Ticket.id'),'conditions' => array('Ticket.id' => $ticket_id)));
+        $registarId = $ticket['Ticket']['registar_id'];
+        $conditions = array("Process.id" => $ticket['Process']['id']);
+        $this->Ticket->Process->bindModel(
+                array('hasAndBelongsToMany' => array(
+                        'User' => array(
+                            'className' => 'Phkapa.User',
+                            'joinTable' => 'phkapa_processes_users',
+                            'foreignKey' => 'process_id',
+                            'associationForeignKey' => 'user_id',
+                            'unique' => true,
+                            'conditions' => array('User.active' => '1', 'User.id <>' => $registarId),
+                    ))));
+
+        $processUsers = $this->Ticket->Process->find('all', array('conditions' => $conditions));
+        $reference = Router::url(array('controller' => 'query', 'action' => 'view', $ticket_id));
+        foreach ($processUsers[0]['User'] as $User):
+            //debug($User);
+            $notifyData = array('notifier_id' => AuthComponent::user('id'), 'notified_id' => $User['id'], 'reference' => $reference, 'notification' => $notificationText);
+            $this->Notify->addNotification($notifyData);
+        endforeach;
+
+        return;
     }
 
     /**

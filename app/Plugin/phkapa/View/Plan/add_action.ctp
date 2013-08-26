@@ -52,6 +52,17 @@ $class = ' class="altrow"';
                     <dt<?php
                             if ($i % 2 == 0)
                                 echo $class;
+                            ?>><?php echo __d('phkapa', 'Registar'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                            ?>>
+                            <?php echo $ticket['Registar']['name']; ?>
+                        &nbsp;
+                    </dd>
+                        <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
                             ?>><?php echo __d('phkapa','Priority'); ?></dt>
                     <dd<?php
                         if ($i++ % 2 == 0)

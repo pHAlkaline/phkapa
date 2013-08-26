@@ -467,6 +467,11 @@ div#flashMessage,  { /* div#maintenanceMessage */
     margin: 0px 13px 10px 11px;
     font-size: 14px;
 }
+
+.flash-message{
+    cursor: pointer; 
+    
+}
 div.flash-error {
     color: #bf0000;
     background: #ffbfbf !important;

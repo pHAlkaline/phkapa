@@ -9,10 +9,10 @@ App::uses('Component', 'Controller');
  *
  * @category Component
  * @package  PHKAPA
- * @version  RC1
+ * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.phalkaline.eu
+ * @link     http://phkapa.phalkaline.eu
  */
 class MaintenanceComponent extends Component {
 

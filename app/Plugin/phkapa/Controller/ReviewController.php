@@ -7,10 +7,10 @@
  *
  * @category Controller
  * @package  PHKAPA
- * @version  RC1
+ * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.phalkaline.eu
+ * @link     http://phkapa.phalkaline.eu
  */
 class ReviewController extends PhkapaAppController {
 
@@ -163,6 +163,7 @@ class ReviewController extends PhkapaAppController {
         $close_date = 'NOW()';
         if (isset($ticket['Ticket']['approved']) && $ticket['Ticket']['approved'] == 0) {
             if ($this->Ticket->updateAll(array('Ticket.workflow_id' => $workflowId, 'Ticket.modified' => 'NOW()', 'Ticket.close_date' => $close_date), array('Ticket.id' => $id, 'Ticket.workflow_id' => '2','Ticket.approved' => 0))) {
+                $this->_addNotification($id,__d('phkapa','Ticket # %s has been closed', $id));
                 $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             }
@@ -184,7 +185,7 @@ class ReviewController extends PhkapaAppController {
     protected function _setupModel() {
         // belongsTo 'Type','Process','Registar','Activity','Category','Supplier','Origin','Cause','Workflow','Parent'
         $this->Ticket->unbindModel(array(
-            'belongsTo' => array('Registar', 'Workflow', 'Parent')
+            'belongsTo' => array( 'Workflow', 'Parent')
                 ), false);
 
 

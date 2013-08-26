@@ -7,10 +7,10 @@
  *
  * @category Controller
  * @package  PHKAPA
- * @version  RC1
+ * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.phalkaline.eu
+ * @link     http://phkapa.phalkaline.eu
  */
 class RegisterController extends PhkapaAppController {
 
@@ -86,7 +86,7 @@ class RegisterController extends PhkapaAppController {
      */
     public function index() {
         $this->Ticket->recursive = 0;
-        $this->paginate = array('order'=>'Priority.order','conditions' => array('Ticket.workflow_id' => '1', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))));
+        $this->paginate = array('order' => 'Priority.order', 'conditions' => array('Ticket.workflow_id' => '1', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))));
         $this->set('tickets', $this->paginate());
     }
 
@@ -116,13 +116,14 @@ class RegisterController extends PhkapaAppController {
      * @access public
      */
     public function add($ticket_parent = null) {
-        
+
         if (!empty($this->request->data) && $this->request->data['Ticket']['process_change'] == '') {
             $this->Ticket->create();
             //$this->request->data['Ticket']['uuid'] = date('YmdHis');
             $this->request->data['Ticket']['registar_id'] = $this->Auth->user('id');
             $this->request->data['Ticket']['workflow_id'] = 1;
             if ($this->Ticket->save($this->request->data)) {
+                $this->_addNotification($this->Ticket->id,__d('phkapa', 'New ticket registered'));
                 $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
@@ -180,7 +181,7 @@ class RegisterController extends PhkapaAppController {
             $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
             //$origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
             //$this->set(compact('types', 'priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
-            $this->set(compact( 'activities', 'categories'));
+            $this->set(compact('activities', 'categories'));
         }
     }
 
@@ -192,8 +193,8 @@ class RegisterController extends PhkapaAppController {
      * @access public
      */
     public function edit($id = null) {
-         $this->Ticket->recursive = -1;
-        $ticket = $this->Ticket->find('first', array('order'=>'','conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
+        $this->Ticket->recursive = -1;
+        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if ((!$id && empty($this->request->data)) || count($ticket) == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
@@ -233,7 +234,7 @@ class RegisterController extends PhkapaAppController {
         $activities = $this->Ticket->Activity->find('list', $this->activityOptions);
         $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
         $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
-        $this->set(compact('types','priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
+        $this->set(compact('types', 'priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
     }
 
     /**
@@ -245,7 +246,7 @@ class RegisterController extends PhkapaAppController {
      */
     public function delete($id = null) {
         $this->Ticket->recursive = -1;
-        $ticketCount = $this->Ticket->find('count', array('order'=>'','conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
+        $ticketCount = $this->Ticket->find('count', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if (!$id || $ticketCount == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
@@ -268,7 +269,7 @@ class RegisterController extends PhkapaAppController {
      */
     public function send($id = null) {
         $this->Ticket->recursive = -1;
-        $ticketCount = $this->Ticket->find('count', array('order'=>'','conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
+        $ticketCount = $this->Ticket->find('count', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if (!$id || $ticketCount == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
@@ -342,7 +343,7 @@ class RegisterController extends PhkapaAppController {
     }
 
     /**
-     * Set filter from models : Process to apply on Tickets with only user has process relation
+     * Set filter from models : Process to apply on Tickets with only user "has" process relation
      *
      * @return void
      * @access protected
@@ -416,6 +417,8 @@ class RegisterController extends PhkapaAppController {
         $this->Ticket->Category->unbindModel(array(
             'hasAndBelongsToMany' => array('Process', 'Cause')), false);
     }
+
+   
 
     /**
      * beforeFilter callback

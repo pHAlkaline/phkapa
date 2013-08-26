@@ -1688,3 +1688,13 @@ msgid "Option"
 msgid_plural "Options"
 msgstr[0] "Opção"
 msgstr[1] "Opções"
+
+msgid "Ticket # %s has new plan"
+msgstr "Registo # %s tem um novo plano"
+
+msgid "Ticket # %s has been closed"
+msgstr "Registo # %s foi fechado"
+
+
+msgid "New ticket registered"
+msgstr "Há um novo registo"

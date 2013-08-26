@@ -9,10 +9,10 @@ App::uses('File', 'Utility');
  *
  * @category Controller
  * @package  PHKAPA
- * @version  RC1
+ * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.phalkaline.eu
+ * @link     http://phkapa.phalkaline.eu
  */
 class InstallController extends AppController {
 
@@ -31,14 +31,6 @@ class InstallController extends AppController {
      * @access public
      */
     public $uses = array();
-
-    /**
-     * No components required
-     *
-     * @var array
-     * @access public
-     */
-    public $components = array('Session');
 
     /**
      * Helpers
@@ -75,10 +67,22 @@ class InstallController extends AppController {
      * @access public
      */
     public function beforeFilter() {
+        $this->Components->unload('Notify');
         parent::beforeFilter();
         $this->Auth->allow();
+        
         //$this->layout = 'install';
     }
+    
+    /**
+     * beforeRender callback
+     *
+     * @param  
+     * @return 
+     * @access public
+     * @throws 
+     */
+    public function beforeRender() {}
 
     /**
      * If installed.txt exists, app is already installed

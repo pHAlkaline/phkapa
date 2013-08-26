@@ -7,10 +7,10 @@
  *
  * @category Controller
  * @package  PHKAPA
- * @version  RC1
+ * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.phalkaline.eu
+ * @link     http://phkapa.phalkaline.eu
  */
 class PlanController extends PhkapaAppController {
 
@@ -110,7 +110,7 @@ class PlanController extends PhkapaAppController {
     public function edit($id = null) {
         $this->Ticket->recursive = 2;
         $this->_setupModel();
-        $ticket = $this->Ticket->find('first', array('order'=>'','conditions' => array('Ticket.workflow_id' => '3', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
+        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '3', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         if (!$id || count($ticket) == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
@@ -154,7 +154,7 @@ class PlanController extends PhkapaAppController {
         //$this->loadModel('Phkapa.Action');
         if (!empty($this->request->data)) {
             $this->Ticket->Action->create();
-            if ($this->request->data['Action']['closed']==1) {
+            if ($this->request->data['Action']['closed'] == 1) {
                 $this->request->data['Action']['close_date'] = date('Y-m-d');
             }
             if ($this->Ticket->Action->save($this->request->data)) {
@@ -277,6 +277,18 @@ class PlanController extends PhkapaAppController {
         $this->redirect(array('action' => 'edit', $ticketId));
     }
 
+    
+    /**
+     * close
+     *
+     * @param integer $id
+     * @return void
+     * @access public
+     */
+    public function close($id = null) {
+        $this->send($id);
+    }
+    
     /**
      * send
      *
@@ -286,7 +298,7 @@ class PlanController extends PhkapaAppController {
      */
     public function send($id = null) {
         $this->Ticket->recursive = -1;
-        $ticket = $this->Ticket->find('first', array('order'=>'','conditions' => array('Ticket.workflow_id' => '3', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
+        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '3', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         //debug($ticket);
         if (count($ticket) == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
@@ -319,9 +331,13 @@ class PlanController extends PhkapaAppController {
                 $close_date = null;
             }
         }
-        
+
 
         if ($this->Ticket->updateAll(array('Ticket.workflow_id' => $workflowId, 'Ticket.modified' => 'NOW()', 'Ticket.close_date' => $close_date), array('Ticket.id' => $id, 'Ticket.workflow_id' => '3'))) {
+            if ($close_date != null) {
+                
+                $this->_addNotification($id,__d('phkapa','Ticket # %s has been closed', $id));
+            }
             $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
@@ -410,7 +426,7 @@ class PlanController extends PhkapaAppController {
     protected function _setupModel() {
         // belongsTo 'Type','Process','Registar','Activity','Category','Supplier','Origin','Cause','Workflow','Parent'
         $this->Ticket->unbindModel(array(
-            'belongsTo' => array('Registar', 'Workflow', 'Parent')
+            'belongsTo' => array('Workflow', 'Parent')
                 ), false);
         // hasMany 'Action',  'Children'
         $this->Ticket->unbindModel(array(

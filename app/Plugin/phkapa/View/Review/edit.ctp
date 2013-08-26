@@ -84,6 +84,17 @@ if ($ticket['Ticket']['approved'] === null) {
                         </dd>
                     <?php } ?>
                     <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
+                            ?>><?php echo __d('phkapa', 'Registar'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                            ?>>
+                            <?php echo $ticket['Registar']['name']; ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
                     if ($i % 2 == 0)
                         echo $class;
                     ?>><?php echo __d('phkapa', 'Origin Date'); ?></dt>

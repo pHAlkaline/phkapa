@@ -25,6 +25,10 @@
                     $.cookie('appMaintenance','foo');
                     $('#maintenanceMessage').fadeOut(2000);
                 })
+                $('.flash_message').click(function(){
+                    alert("hello");
+                    $(this).fadeOut(500);
+                })
                 $("a").each(function(){
                     var onClickEval=$(this).attr('onclick');
                     if (/confirm/i.test(onClickEval)){
@@ -95,24 +99,79 @@
                     active: 0
                         
                 });
+               
+                
+                
+				
             });
+            
         </script>
+        <script>
+                $(document).ready(function () {
+                <?php
+                if (isset($unread_notifications) && $unread_notifications) { ?>
+                    blinkNotification();
+                <?php } ?>
+                });
+                    
+                function blinkNotification(){
+                    $('.notification').delay(200).fadeTo(200,0.5).delay(100).fadeTo(100,1, blinkNotification);
+                }    
+
+            </script>
     </head>
     <body>
         <div id="phkapa" ><!--img src="/img/PHKAPA_small.png" alt="PHKAPA"  /--></div>
         <div id="header">
+
             <h1>
-                <?php echo $this->Html->link($this->Html->image('PHKAPAlogo2.png', array('alt' => 'PHKAPA')), '/admin/'.$admin_root, array('class' => 'zoom', 'target' => '_self','escape' => false)); ?>
-                
+                <?php echo $this->Html->link($this->Html->image('PHKAPAlogo2.png', array('alt' => 'PHKAPA')), '/admin/' . $admin_root, array('class' => 'zoom', 'target' => '_self', 'escape' => false)); ?>
+
             </h1>
+
         </div>
         <div id="header_separator">
-
+            <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __('Help'); ?>">
+                <a href="http://phkapa.phalkaline.eu/wiki" target="_blank">
+                    <span class="ui-icon ui-icon-help"></span>
+                </a>
+            </div>
             <?php
             if ($this->Session->read('Auth.User.name')) {
                 ?>
-                <div style="width:99%; text-align: right;color: #FFFFFF; padding-top: 5px;"><?php echo __('User').': '; ?><?php echo $this->Session->read('Auth.User.name') ?> ...<?php echo $this->Html->link( __('End Session'), '/users/logout', array('style'=>'color:#fff;','class' => 'menuitem', 'target' => '_self')); ?>
+                <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __('End Session'); ?>">
+                    <a href="/users/logout" target="_self">
+                        <span class="ui-icon ui-icon-power"></span>
+                    </a>
+                </div>
+            <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all notification" title="<?php echo __d('phkapa', 'Notifications'); ?>">
+                    <a href="/pages/notifications" target="_self"><span class="ui-icon ui-icon-flag"></span></a>
+                </div>
+
+                <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __('Edit Profile'); ?>">
+                    <a href="/users/edit" target="_self">
+                        <span class="ui-icon ui-icon-person"></span>
+                    </a>
+                </div>
+                <?php if ($admin_root == "phkapa") { ?>
+                    <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __n('Aro', 'Aros', 2) ?>">
+                        <a href="/admin" target="_self"><span class="ui-icon ui-icon-key"></span></a>
                     </div>
+
+                    <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __d('phkapa', 'PHKAPA'); ?>">
+                        <a href="/" target="_self"><span class="ui-icon ui-icon-calculator"></span></a></div>
+                    <div style="margin: 5px; float:right; color: #ffffff;"><?php echo __('User') . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __d('phkapa', 'PHKAPA') . ' ' . __d('phkapa', 'Administration'); ?> </div>
+                <?php } else { ?>
+                    <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __d('phkapa', 'PHKAPA') . ' ' . __d('phkapa', 'Administration'); ?>">
+                        <a href="/admin/phkapa" target="_self"><span class="ui-icon ui-icon-wrench"></span></a>
+                    </div>
+
+                    <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __d('phkapa', 'PHKAPA'); ?>">
+                        <a href="/" target="_self"><span class="ui-icon ui-icon-calculator"></span></a></div>
+                    <div style="margin: 5px; float:right; color: #ffffff;"><?php echo __('User') . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __n('Aro', 'Aros', 2) . ' ' . __d('phkapa', 'Administration') ?> </div>
+                <?php } ?>
+                
+
                 <?php
             }
             ?>
@@ -121,10 +180,11 @@
         <div class="container_16" id="mainContainer">
             <div class="clear"></div>
             <div class="grid_16">
+
                 <?php // Possible menu here  ?>
                 <?php
                 if (isset($pluginImage)) {
-                    echo '<div style="float: right; padding-right: 7px">' .  $this->Html->image($pluginImage) . '</div>';
+                    echo '<div style="float: right; padding-right: 7px">' . $this->Html->image($pluginImage) . '</div>';
                 }
                 if (isset($menuItems)) {
                     echo $this->element('menu');
@@ -138,11 +198,13 @@
             <?php echo $this->Session->flash(); ?>
             <?php echo $this->Session->flash('auth'); ?>
             <?php echo $this->Session->flash('maintenance'); ?>
-            <?php echo $this->fetch('content');
-            ; ?>
+            <?php
+            echo $this->fetch('content');
+            ;
+            ?>
 
             <div class="clear"></div>
         </div>
-<?php echo $this->element('sql_dump'); ?>
+        <?php echo $this->element('sql_dump'); ?>
     </body>
 </html>
