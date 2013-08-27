@@ -125,7 +125,7 @@
     <body>
         <div id="phkapa" ><!--img src="/img/PHKAPA_small.png" alt="PHKAPA"  --></div>
         <div id="header">
-            <h1><?php echo $this->Html->link($this->Html->image('PHKAPAlogo2.png', array('alt' => 'PHKAPA')), '/', array('class' => 'zoom', 'target' => '_self', 'escape' => false)); ?></h1>
+            <h1><?php echo $this->Html->link($this->Html->image('PHKAPAlogo2.png', array('alt' => 'PHKAPA')), Router::url('/', $full = true), array('class' => 'zoom', 'target' => '_self', 'escape' => false)); ?></h1>
         </div>
 
         <div id="header_separator" >
@@ -138,27 +138,27 @@
             if (AuthComponent::user('id')) {
                 ?>
                 <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __('End Session'); ?>">
-                    <a href="/users/logout" target="_self">
+                    <a href="<?php echo Router::url('/users/logout', $full = true); ?>" target="_self">
                         <span class="ui-icon ui-icon-power"></span>
                     </a>
                 </div>
                 
                 <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all notification" title="<?php echo __n('Notification', 'Notifications', 2) ?>">
-                    <a href="/pages/notifications" target="_self"><span class="ui-icon ui-icon-flag"></span></a>
+                    <a href="<?php echo Router::url('/pages/notifications', $full = true); ?>" target="_self"><span class="ui-icon ui-icon-flag"></span></a>
                 </div>
 
                 <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __('Edit Profile'); ?>">
-                    <a href="/users/edit" target="_self">
+                    <a href="<?php echo Router::url('/users/edit', $full = true); ?>" target="_self">
                         <span class="ui-icon ui-icon-person"></span>
                     </a>
                 </div>
                 <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __n('Aro', 'Aros', 2) ?>">
-                    <a href="/admin" target="_self"><span class="ui-icon ui-icon-key"></span></a>
+                    <a href="<?php echo Router::url('/admin', $full = true); ?>" target="_self"><span class="ui-icon ui-icon-key"></span></a>
                 </div>
                 <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __d('phkapa', 'PHKAPA') . ' ' . __d('phkapa', 'Administration'); ?>">
-                    <a href="/admin/phkapa" target="_self"><span class="ui-icon ui-icon-wrench"></span></a></div>
+                    <a href="<?php echo Router::url('/admin/phkapa', $full = true); ?>" target="_self"><span class="ui-icon ui-icon-wrench"></span></a></div>
                 <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __d('phkapa', 'PHKAPA'); ?>">
-                    <a href="/phkapa" target="_self"><span class="ui-icon ui-icon-calculator"></span></a></div>    
+                    <a href="<?php echo Router::url('/phkapa', $full = true); ?>" target="_self"><span class="ui-icon ui-icon-calculator"></span></a></div>    
                 
                 <div style="margin: 5px; float:right; color: #ffffff;"><?php echo __('User') . ' '; ?><?php echo $this->Session->read('Auth.User.name') . ' @ ' . __d('phkapa', 'PHKAPA') ?></div>
 
