@@ -1,7 +1,7 @@
 [![PHKAPA](http://phkapa.phalkaline.eu/images/phkapa_logo.png)](http://phkapa.phalkaline.eu)
 
 
-**PHKAPA** Nonconformity management , this software allows you to generate a action (CAPA) request that routes through register, review, plan ( root cause , action plan) , and verification stages. This tracking software provides an effective mechanism for determinate the source and costs of problems. for PHP, released under [MIT License]
+**PHKAPA** for Nonconformity management , this software allows you to generate a action (CAPA) request that routes through register, review, plan ( root cause , action plan) , and verification stages. This tracking software provides an effective mechanism for determinate the source and costs of problems. for PHP, released under [MIT License]
 
 Official website**: [http://phkapa.phalkaline.eu](http://phkapa.phalkaline.eu)
 
