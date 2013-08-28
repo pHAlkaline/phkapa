@@ -16,14 +16,21 @@
     </div>
     <?php } else { ?>
     <div class="grid_16">
-        <h2 id="page-heading">Iniciar Sessão</h2>
-        <div class="form ui-widget">
-            <form action="<?php echo Router::url(array('controller' => 'users', 'action' => 'login'), $full = true); ?>" id="UserLoginForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"></div>        <fieldset class="ui-corner-all ui-widget-content">
-                    <div class="input text required"><label for="UserUsername">Nome de Utilizador</label><input name="data[User][username]" maxlength="8" type="text" id="UserUsername" required="required"></div><div class="input password required"><label for="UserPassword">Palavra Passe</label><input name="data[User][password]" maxlength="8" type="password" id="UserPassword" required="required"></div>
-                </fieldset>
-                <div class="submit"><input type="submit" value="Iniciar Sessão" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false"></div></form>    </div>
+    <h2 id="page-heading"><?php echo __('Start Session'); ?></h2>
+    <div class="form ui-widget">
+        <?php echo $this->Form->create('User',array('url' => '/users/login')); ?>
+        <fieldset class="ui-corner-all ui-widget-content" >
+            <?php
+            echo $this->Form->input('username',array('maxlength'=>'8','label' => __('Username')));
+            echo $this->Form->input('password',array('maxlength'=>'8','label' => __('Password')));
+            ?>
 
+        </fieldset>
+        <?php echo $this->Form->end(__('Start Session')); ?>
     </div>
+
+</div>
+<div class="clear"></div>
     <?php } ?>
     <div class="clear"></div>
 
