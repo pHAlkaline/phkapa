@@ -122,26 +122,19 @@ class UsersController extends AppController {
     }
 
     /**
-     * Admin edit
+     * Edit User Profile
      *
-     * @param integer $id
      * @return void
      * @access public
      */
-    public function edit() {
-        $id = AuthComponent::user('id');
-        if ($id == null) {
+    public function edit_profile() {
+        if (!$this->Auth->loggedIn() || Configure::read('Application.mode')=='demo'){
             $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
-            $this->redirect(array('action' => 'index'));
+            $this->redirect(Router::url('/', true));
         }
-        if (!$id && empty($this->request->data)) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
-            $this->redirect(array('action' => 'index'));
-        }
-
-
-
-
+        
+        $id = $this->Auth->user('id');
+        
         if (!empty($this->request->data)) {
 
             // On user edits must also change alias on AROS/ACOS
@@ -155,7 +148,7 @@ class UsersController extends AppController {
                     $this->Auth->login($this->request->data['User']);
                 }
 
-                $this->redirect(array('action' => 'edit'));
+                $this->redirect(array('action' => 'edit_profile'));
             } else {
                 $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
             }

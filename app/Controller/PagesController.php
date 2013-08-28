@@ -120,16 +120,16 @@ class PagesController extends AppController {
      * @access public
      */
     function notifications($option=null,$id=null){
-        if(!AuthComponent::user('id')){
+        if (!$this->Auth->loggedIn()) {
             $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
-            $this->redirect(array('action' => 'display'));
+            $this->redirect(Router::url('/', true));
         }
         if ($option!=null && $option=='delete'){
-            $this->Notify->delete($id,AuthComponent::user('id'));
+            $this->Notify->delete($id,$this->Auth->user('id'));
             $this->redirect(array('action' => 'notifications'));
         }
-        $notifications=$this->Notify->getNotifications(AuthComponent::user('id'));
-        $this->Notify->setAllNotificationsReadForNotified(AuthComponent::user('id'));
+        $notifications=$this->Notify->getNotifications($this->Auth->user('id'));
+        $this->Notify->setAllNotificationsReadForNotified($this->Auth->user('id'));
         $this->set(compact('notifications'));
     }
 

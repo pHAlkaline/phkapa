@@ -37,7 +37,7 @@
 
                         <?php
                         if ($notification['Notification']['reference']) {
-                            echo $this->Html->link(__d('phkapa', 'View'), array('plugin' => 'phkapa', 'controller' => 'query', 'action' => 'view', $notification['Notification']['id']));
+                            echo $this->Html->link(__d('phkapa', 'View'), Router::url($notification['Notification']['reference'],true));
                            echo ' | '; 
                         }
                         echo $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'notifications', 'delete', $notification['Notification']['id']), null, __d('phkapa', 'Are you sure you want to delete # %s?', $notification['Notification']['id']));

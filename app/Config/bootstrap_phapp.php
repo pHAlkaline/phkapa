@@ -11,16 +11,16 @@ Configure::write('dateFormatSimple', 'd-m-Y');
 /**
  * The settings for maintenance component 
  */
-Configure::write('maintenance.start', '10-04-2013 19:20'); 
-Configure::write('maintenance.duration', '2'); // Duration in hours
-Configure::write('maintenance.site_offline_url', '/pages/offline');
+Configure::write('Maintenance.start', '10-04-2013 19:20'); 
+Configure::write('Maintenance.duration', '2'); // Duration in hours
+Configure::write('Maintenance.site_offline_url', '/pages/offline');
 
 /**
  * The settings below can be used to open access to all users or one specified user.
  * - 'All' -> after login , all users have TOTAL access
  * - '{User NAME field}' -> after login this user has total control 
  */
-Configure::write('access.open', ''); // Keep this clean , use only on emergency.
+Configure::write('Access.open', ''); // Keep this clean , use only on emergency.
 
-
+Configure::write('Application.mode', 'demo'); // phkapa , demo , use demo for demo mode;
 

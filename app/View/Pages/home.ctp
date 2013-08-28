@@ -5,7 +5,7 @@
     <div class="grid_16" style="text-align:center" id="PHKAPAHome">
 
         <div>
-            <?php echo $this->Html->link($this->Html->image('PHKAPA_big.png', array('alt' => 'PHKAPA')), Router::url('/phkapa', $full = true), array('class' => 'zoom', 'target' => '_self', 'escape' => false)); ?>
+            <?php echo $this->Html->link($this->Html->image('PHKAPA_big.png', array('alt' => 'PHKAPA')), Router::url('/phkapa', true), array('class' => 'zoom', 'target' => '_self', 'escape' => false)); ?>
         </div>
         <!--div id="zoomContainer">
             

@@ -57,13 +57,13 @@ class MaintenanceComponent extends Component {
      * @access public
      */
     public function startup(Controller $controller) {
-        if ($this->isOn() && $controller->here != Configure::read('maintenance.site_offline_url')) {
-            $controller->redirect(Configure::read('maintenance.site_offline_url'));
+        if ($this->isOn() && $controller->here != Configure::read('Maintenance.site_offline_url')) {
+            $controller->redirect(Configure::read('Maintenance.site_offline_url'));
             return;
         }
 
         if ($this->hasSchedule()) {
-            $this->Session->setFlash(__('This application will be on maintenance mode at  %s ', Configure::read('maintenance.start')), $this->flashElement, array(), 'maintenance');
+            $this->Session->setFlash(__('This application will be on maintenance mode at  %s ', Configure::read('Maintenance.start')), $this->flashElement, array(), 'maintenance');
         }
     }
 
@@ -76,12 +76,12 @@ class MaintenanceComponent extends Component {
      * 
      */
     public function isOn() {
-        if ((Configure::read('maintenance.start') != '') && (Configure::read('maintenance.duration') != '')) {
+        if ((Configure::read('Maintenance.start') != '') && (Configure::read('Maintenance.duration') != '')) {
 
             $date1 = time();
-            $date2 = strtotime(Configure::read('maintenance.start'));
+            $date2 = strtotime(Configure::read('Maintenance.start'));
             $interval = ($date1 - $date2) / (60 * 60);
-            if ($interval > 0 && $interval < Configure::read('maintenance.duration'))
+            if ($interval > 0 && $interval < Configure::read('Maintenance.duration'))
                 return true;
         }
         return false;
@@ -95,9 +95,9 @@ class MaintenanceComponent extends Component {
      * @access public
      */
     public function hasSchedule() {
-        if ((Configure::read('maintenance.start') != '') && (Configure::read('maintenance.duration') != '')) {
+        if ((Configure::read('Maintenance.start') != '') && (Configure::read('Maintenance.duration') != '')) {
             $date1 = time();
-            $date2 = strtotime(Configure::read('maintenance.start'));
+            $date2 = strtotime(Configure::read('Maintenance.start'));
             $interval = ($date1 - $date2) / (60 * 60);
             if ($interval < 0)
                 return true;
@@ -113,7 +113,7 @@ class MaintenanceComponent extends Component {
      * @return string
      */
     public function start() {
-        return Configure::read('maintenance.start');
+        return Configure::read('Maintenance.start');
     }
 
     /**
@@ -124,7 +124,7 @@ class MaintenanceComponent extends Component {
      * @access public
      */
     public function end() {
-        return Configure::read('maintenance.duration');
+        return Configure::read('Maintenance.duration');
     }
 
 }
