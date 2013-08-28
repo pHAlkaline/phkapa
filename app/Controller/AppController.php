@@ -48,7 +48,7 @@ class AppController extends Controller {
         //$this->Auth->authenticate = array('Simple');
         $this->Auth->logoutRedirect = array('admin' => false, 'plugin' => false, 'controller' => 'pages', 'action' => 'display');
         $this->Auth->loginRedirect = array('admin' => false, 'plugin' => false, 'controller' => 'pages', 'action' => 'display');
-        $this->Auth->allow('display', 'login', 'logout','secure','notifications');
+        $this->Auth->allow('display', 'login', 'logout','edit_profile','secure','notifications');
         $this->Auth->authorize = array('Controller');
         $this->Auth->flashElement = 'flash_message_error';
         $this->Auth->authenticate = array(  AuthComponent::ALL => array('userModel' => 'User', 'scope' => array("User.active" => 1)),'Form');
@@ -68,7 +68,7 @@ class AppController extends Controller {
      * @throws 
      */
     public function isAuthorized($user = null) {
-        if (Configure::read('access.open') == 'All' || Configure::read('access.open') == $user['name']) {
+        if (Configure::read('Access.open') == 'All' || Configure::read('Access.open') == $user['name']) {
             return true;
         }
         return $this->Acl->check($user['name'], 'Total');

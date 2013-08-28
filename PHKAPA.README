@@ -66,7 +66,7 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
 
 #### Some default app settings
 
-    * edit app/Config/bootstrap_phapp.php file for some settings like language, date format, site maintenance.
+    * edit app/Config/bootstrap_phapp.php file for some settings like language, date format, site Maintenance.
 
 
     you can also check cakephp installation at http://book.cakephp.org/2.0/en/installation.html , it may help you or find a different way to manage your application
