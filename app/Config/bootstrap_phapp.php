@@ -22,5 +22,5 @@ Configure::write('Maintenance.site_offline_url', '/pages/offline');
  */
 Configure::write('Access.open', ''); // Keep this clean , use only on emergency.
 
-Configure::write('Application.mode', 'demo'); // phkapa , demo , use demo for demo mode;
+Configure::write('Application.mode', 'phkapa'); // phkapa , demo , use demo for demo mode;
 
