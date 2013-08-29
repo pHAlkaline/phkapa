@@ -252,7 +252,7 @@
                             echo $class;
                             ?>>
                             <?php if ($ticket['Ticket']['close_date']) : ?>
-                                <?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['close_date']); ?>
+                                <?php echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['close_date']); ?>
                             <?php endif; ?>
                         &nbsp;
 

@@ -155,7 +155,7 @@ class PlanController extends PhkapaAppController {
         if (!empty($this->request->data)) {
             $this->Ticket->Action->create();
             if ($this->request->data['Action']['closed'] == 1) {
-                $this->request->data['Action']['close_date'] = date('Y-m-d');
+                $this->request->data['Action']['close_date'] = $this->Ticket->Action->timeFormatedField('close_date',time());
             }
             if ($this->Ticket->Action->save($this->request->data)) {
                 $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
@@ -204,7 +204,7 @@ class PlanController extends PhkapaAppController {
                 $this->request->data['Action']['close_date'] = null;
             }
             if ($this->request->data['Action']['was_closed'] == '' && $this->request->data['Action']['closed'] == '1') {
-                $this->request->data['Action']['close_date'] = date('Y-m-d H:i:s');
+                $this->request->data['Action']['close_date'] = $this->Ticket->Action->timeFormatedField('close_date',time());
             }
 
             //debug($this->request->data);
@@ -269,7 +269,9 @@ class PlanController extends PhkapaAppController {
             $this->redirect(array('action' => 'edit', $ticketId));
         }
         //$this->loadModel('Phkapa.Action');
-        if ($this->Ticket->Action->updateAll(array('Action.closed' => '1', 'Action.close_date' => 'NOW()'), array('Action.ticket_id' => $ticketId, 'Action.id' => $id))) {
+        $nowClose=$this->Ticket->Action->timeFormatedField('close_date',time());
+        $now=$this->Ticket->Action->timeFormatedField('modified',time());
+        if ($this->Ticket->Action->updateAll(array('Action.closed' => '1', 'Action.close_date' => '"'.$nowClose.'"', 'Action.modified' => '"'.$now.'"'), array('Action.ticket_id' => $ticketId, 'Action.id' => $id))) {
             $this->Session->setFlash(__d('phkapa', 'Closed with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'edit', $ticketId));
         }
@@ -319,7 +321,8 @@ class PlanController extends PhkapaAppController {
           } */
 
         $workflowId = 5;
-        $close_date = 'NOW()';
+        $now=$this->Ticket->timeFormatedField('modified',time());
+        $nowClose=$this->Ticket->timeFormatedField('close_date',time());
         foreach ($actions as $action) {
 
             if ($action['Action']['closed'] == 0) {
@@ -328,13 +331,13 @@ class PlanController extends PhkapaAppController {
             }
             if ($action['ActionType']['verification'] != 0) {
                 $workflowId = 4;
-                $close_date = null;
+                $nowClose = null;
             }
         }
 
-
-        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => $workflowId, 'Ticket.modified' => 'NOW()', 'Ticket.close_date' => $close_date), array('Ticket.id' => $id, 'Ticket.workflow_id' => '3'))) {
-            if ($close_date != null) {
+        
+        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => $workflowId, 'Ticket.modified' => '"'.$now.'"', 'Ticket.close_date' => '"'.$nowClose.'"'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '3'))) {
+            if ($nowClose != null) {
                 
                 $this->_addNotification($id,__d('phkapa','Ticket # %s has been closed', $id));
             }

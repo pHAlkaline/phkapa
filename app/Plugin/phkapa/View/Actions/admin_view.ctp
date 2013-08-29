@@ -75,7 +75,7 @@ $class = ' class="altrow"'; ?>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
                             <?php if ($action['Action']['close_date'] != '')
-                                echo $this->Time->format(Configure::read('dateFormat'), $action['Action']['close_date']); ?>
+                                echo $this->Time->format(Configure::read('dateFormatSimple'), $action['Action']['close_date']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)

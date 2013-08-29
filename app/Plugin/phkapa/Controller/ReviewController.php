@@ -134,7 +134,8 @@ class ReviewController extends PhkapaAppController {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '3', 'Ticket.modified' => 'NOW()'), array('Ticket.workflow_id' => '2','Ticket.approved' => 1,'Ticket.id' => $id))) {
+        $now=$this->Ticket->timeFormatedField('modified',time());
+        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '3', 'Ticket.modified' => '"'.$now.'"'), array('Ticket.workflow_id' => '2','Ticket.approved' => 1,'Ticket.id' => $id))) {
             $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
@@ -160,9 +161,10 @@ class ReviewController extends PhkapaAppController {
         }
 
         $workflowId = 5;
-        $close_date = 'NOW()';
+        $now=$this->Ticket->timeFormatedField('modified',time());
+        $nowClose=$this->Ticket->timeFormatedField('close_date',time());
         if (isset($ticket['Ticket']['approved']) && $ticket['Ticket']['approved'] == 0) {
-            if ($this->Ticket->updateAll(array('Ticket.workflow_id' => $workflowId, 'Ticket.modified' => 'NOW()', 'Ticket.close_date' => $close_date), array('Ticket.id' => $id, 'Ticket.workflow_id' => '2','Ticket.approved' => 0))) {
+            if ($this->Ticket->updateAll(array('Ticket.workflow_id' => $workflowId, 'Ticket.modified' => '"'.$now.'"', 'Ticket.close_date' => '"'.$nowClose.'"'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '2','Ticket.approved' => 0))) {
                 $this->_addNotification($id,__d('phkapa','Ticket # %s has been closed', $id));
                 $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));

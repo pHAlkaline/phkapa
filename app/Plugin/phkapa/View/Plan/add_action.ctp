@@ -173,7 +173,7 @@ if ($ticket['Ticket']['origin_date']) {
                     <dd<?php if ($i++ % 2 == 0)
                 echo $class;
         ?>>
-        <?php echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['modified']); ?>
+        <?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['modified']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)
@@ -182,7 +182,7 @@ if ($ticket['Ticket']['origin_date']) {
                     <dd<?php if ($i++ % 2 == 0)
             echo $class;
         ?>>
-<?php echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['created']); ?>
+<?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['created']); ?>
                         &nbsp;
                     </dd>
                 </dl>
