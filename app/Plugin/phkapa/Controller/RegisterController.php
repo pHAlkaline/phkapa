@@ -123,7 +123,7 @@ class RegisterController extends PhkapaAppController {
             $this->request->data['Ticket']['registar_id'] = $this->Auth->user('id');
             $this->request->data['Ticket']['workflow_id'] = 1;
             if ($this->Ticket->save($this->request->data)) {
-                $this->_addNotification($this->Ticket->id,__d('phkapa', 'New ticket registered'));
+                $this->_addNotification($this->Ticket->id, __d('phkapa', 'New ticket registered'));
                 $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
@@ -275,7 +275,10 @@ class RegisterController extends PhkapaAppController {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '2', 'Ticket.modified' => 'NOW()'), array('Ticket.id' => $id))) {
+       
+        $now=$this->Ticket->timeFormatedField('modified',time());
+        
+        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '2', 'Ticket.modified' => '"'.$now.'"'), array('Ticket.id' => $id))) {
             $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
@@ -417,8 +420,6 @@ class RegisterController extends PhkapaAppController {
         $this->Ticket->Category->unbindModel(array(
             'hasAndBelongsToMany' => array('Process', 'Cause')), false);
     }
-
-   
 
     /**
      * beforeFilter callback

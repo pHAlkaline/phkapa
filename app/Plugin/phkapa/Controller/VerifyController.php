@@ -128,8 +128,9 @@ class VerifyController extends PhkapaAppController {
                 }
             endforeach;
         }
-
-        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '5', 'Ticket.close_date' => 'NOW()', 'Ticket.modified' => 'NOW()'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '4'))) {
+        $now=$this->Ticket->timeFormatedField('modified',time());
+        $nowClose=$this->Ticket->timeFormatedField('close_date',time());
+        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '5', 'Ticket.close_date' => '"'.$nowClose.'"', 'Ticket.modified' => '"'.$now.'"'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '4'))) {
             $this->_addNotification($id,__d('phkapa','Ticket # %s has been closed', $id));
             $this->Session->setFlash(__d('phkapa','Saved with success.'),'flash_message_info');
             $this->redirect(array('action' => 'index'));
@@ -153,7 +154,11 @@ class VerifyController extends PhkapaAppController {
             $this->Session->setFlash(__d('phkapa','Invalid request.'),'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-
+        
+        // clear all evaluated ActionsAuthorize::
+        //$now=$this->Ticket->Action->timeFormatedField('modified',time());
+        //$this->Ticket->Action->updateAll(array('Action.action_effectiveness_id' => null, 'Action.effectiveness_notes' => null, 'Action.modified' => '"'.$now.'"'), array('Action.ticket_id' => $id));
+        
         // replan should only be available when ticket has a action type that requires verification and this verification is not efective
         // but we just let it be possible to plan when ever the user wants 
         /*if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
@@ -165,8 +170,11 @@ class VerifyController extends PhkapaAppController {
                 }
             endforeach;
         }*/
+        $now=$this->Ticket->timeFormatedField('modified',time());
+        $nowClose=$this->Ticket->timeFormatedField('close_date',time());
+        
 
-        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '3', 'Ticket.close_date' => 'NOW()', 'Ticket.modified' => 'NOW()'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '4'))) {
+        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '3', 'Ticket.close_date' => '"'.$nowClose.'"', 'Ticket.modified' => '"'.$now.'"'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '4'))) {
             $this->_addNotification($id,__d('phkapa','Ticket # %s has new plan', $id));
             $this->Session->setFlash(__d('phkapa','Saved with success.'),'flash_message_info');
             $this->redirect(array('action' => 'index'));
@@ -198,9 +206,6 @@ class VerifyController extends PhkapaAppController {
             $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id']));
         }
         
-        //$this->loadModel('Phkapa.Action');
-        $action = $this->Ticket->Action->read(null, $id);
-        //debug($this->request->data);
         if (!empty($this->request->data)) {
             if ($this->Ticket->Action->save($this->request->data)) {
                 $this->Session->setFlash(__d('phkapa','Saved with success.'),'flash_message_info');
@@ -210,6 +215,8 @@ class VerifyController extends PhkapaAppController {
             }
         }
         
+        //$this->loadModel('Phkapa.Action');
+        $action = $this->Ticket->Action->read(null, $id);
         
         if (empty($this->request->data)) {
             $this->request->data = $action;

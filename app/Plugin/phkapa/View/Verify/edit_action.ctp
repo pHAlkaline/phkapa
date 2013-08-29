@@ -293,7 +293,7 @@ $class = ' class="altrow"';
                     if ($i++ % 2 == 0)
                         echo $class;
                         ?>>
-                        <?php echo $this->Time->format(Configure::read('dateFormat'), $action['Action']['close_date']); ?>
+                        <?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['Action']['close_date']); ?>
                     &nbsp;
                 </dd>
 

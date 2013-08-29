@@ -255,7 +255,7 @@ if ($ticket['Workflow']['id'] < 4) {
                             ?>>
                             <?php
                             if ($ticket['Ticket']['close_date']) {
-                                echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['close_date']);
+                                echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['close_date']);
                             }
                             ?>
                         &nbsp;
