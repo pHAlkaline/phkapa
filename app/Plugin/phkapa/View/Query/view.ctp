@@ -3,7 +3,7 @@
 $editable = false;
 $controller = null;
 $action = null;
-if ($ticket['Workflow']['id'] < 4) {
+if ($ticket['Workflow']['id'] < 5) {
     $editable = true;
     switch ($ticket['Workflow']['id']) {
         case 1:
