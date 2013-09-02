@@ -57,6 +57,12 @@ class AppController extends Controller {
         if (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {
             $this->layout = 'admin';
         }
+        
+        if ($this->Session->read('User.language')){
+        
+            Configure::write('Config.language', $this->Session->read('User.language'));
+        }
+            
     }
 
     /**

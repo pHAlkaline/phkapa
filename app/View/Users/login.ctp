@@ -6,6 +6,7 @@
             <?php
             echo $this->Form->input('username',array('maxlength'=>'8','label' => __('Username')));
             echo $this->Form->input('password',array('maxlength'=>'8','label' => __('Password')));
+            echo $this->Form->input('language', array('options' => Configure::read('Language.list'),'empty' => '(choose one)'));
             ?>
 
         </fieldset>

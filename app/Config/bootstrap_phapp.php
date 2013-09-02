@@ -4,9 +4,11 @@
  * Default app settings
  */
 Configure::write('Config.language', 'eng'); // por - Portuguese , eng - english
+Configure::write('Language.list',array('eng'=>'English','por'=>'Portugues')); // 
 Configure::write('Config.timezone', 'Europe/Lisbon'); // Europe/Lisbon
-Configure::write('dateFormat', 'd-m-Y H:i:s');
-Configure::write('dateFormatSimple', 'd-m-Y');
+Configure::write('dateFormat', 'd-m-Y H:i:s'); //
+Configure::write('dateFormatSimple', 'd-m-Y'); //
+Configure::write('Application.mode', 'phkapa'); // phkapa , demo , use demo for demo mode;
 
 /**
  * The settings for maintenance component 
@@ -22,5 +24,6 @@ Configure::write('Maintenance.site_offline_url', '/pages/offline');
  */
 Configure::write('Access.open', ''); // Keep this clean , use only on emergency.
 
-Configure::write('Application.mode', 'phkapa'); // phkapa , demo , use demo for demo mode;
+
+
 
