@@ -192,6 +192,9 @@ class UsersController extends AppController {
     public function login() {
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
+                if ($this->data['User']['language']!='') {
+                    $this->Session->write('User.language', $this->data['User']['language']);
+                }
                 return $this->redirect($this->Auth->redirect());
             } else {
                 $this->Session->setFlash(__('Login failed. Invalid username or password.'), 'flash_message_error', array(), 'auth');
@@ -207,6 +210,7 @@ class UsersController extends AppController {
      * @access public
      */
     public function logout() {
+        $this->Session->delete('User.language');
        $this->redirect($this->Auth->logout());
     }
 

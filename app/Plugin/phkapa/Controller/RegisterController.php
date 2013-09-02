@@ -123,7 +123,7 @@ class RegisterController extends PhkapaAppController {
             $this->request->data['Ticket']['registar_id'] = $this->Auth->user('id');
             $this->request->data['Ticket']['workflow_id'] = 1;
             if ($this->Ticket->save($this->request->data)) {
-                $this->_addNotification($this->Ticket->id, __d('phkapa', 'New ticket registered'));
+                $this->_addNotification($this->Ticket->id, __d('phkapa', 'New ticket registered').' #'.$this->Ticket->id);
                 $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
