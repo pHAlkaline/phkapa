@@ -1,3 +1,12 @@
+--> From V1.0.4 to V1.0.5
+
+# Update all Files / Directories
+# including lib/Cake/* ( All Files and Directories )
+- Framework update
+- Small bugs fixed
+- Some UI bugs cleared
+- Allows selection of language at login
+
 --> From V1.0.3 to V1.0.4
 
 # Create notifications Table --
