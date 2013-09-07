@@ -25,9 +25,9 @@
                     $('#maintenanceMessage').fadeOut(2000);
                 })
                 $('.flash-message').click(function(){
-                        $(this).fadeOut(2000);
-                    })
-                $("a").each(function(){
+                    $(this).fadeOut(2000);
+                })
+                $('a').each(function(){
                     var onClickEval=$(this).attr('onclick');
                     if (/confirm/i.test(onClickEval)){
                         //console.log(onClickEval);
@@ -35,7 +35,11 @@
                         $(this).removeAttr('onclick');
                         $(this).bind('click', function (e) {
                             var evalString=$(this).attr('onClickEval');
-                            evalString=evalString.match(/'.*'/);
+                            //console.log(evalString);
+                            evalString=evalString.match(/".*"/);
+                            if (evalString==null) evalString=evalString.match(/'.*'/);
+                            if (evalString==null) evalString='Please Confirm Action!!';
+                            //console.log(evalString);
                             result = confirm (evalString);
                             //console.log(e.result);
                             return result;
@@ -105,33 +109,31 @@
         </script>
     </head>
     <body>
-         <div id="phkapa" ><!--img src="/img/PHKAPA_small.png" alt="PHKAPA"  --></div>
+        <div id="phkapa" ><!--img src="/img/PHKAPA_small.png" alt="PHKAPA"  --></div>
         <div id="header">
             <h1><?php echo $this->Html->image('PHKAPAlogo.png', array('alt' => 'PHKAPA')); ?></h1>
         </div>
 
         <div id="header_separator">
             <?php
-            
             ?>
         </div>
         <div class="clear" style="height: 35px;"></div>
         <div class="container_16" id="mainContainer">
             <div class="clear"></div>
             <div class="grid_16">
-                <?php // Possible menu here  ?>
+                <?php // Possible menu here   ?>
                 <?php
-                
                 ?>
             </div>
             <div id="loading-indicator"></div>
             <div class="clear" style="height: 10px; width: 100%;"></div>
-            <?php echo $this->Session->flash(); ?>
+<?php echo $this->Session->flash(); ?>
             <?php echo $this->Session->flash('auth', array('element' => 'flash_message_error')); ?>
             <?php echo $this->Session->flash('maintenance'); ?>
             <?php echo $this->fetch('content'); ?>
             <div class="clear"></div>
         </div>
 
-        </body>
+    </body>
 </html>

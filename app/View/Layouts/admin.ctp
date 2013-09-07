@@ -29,7 +29,7 @@
                     alert("hello");
                     $(this).fadeOut(500);
                 })
-                $("a").each(function(){
+                $('a').each(function(){
                     var onClickEval=$(this).attr('onclick');
                     if (/confirm/i.test(onClickEval)){
                         //console.log(onClickEval);
@@ -37,7 +37,11 @@
                         $(this).removeAttr('onclick');
                         $(this).bind('click', function (e) {
                             var evalString=$(this).attr('onClickEval');
-                            evalString=evalString.match(/'.*'/);
+                            //console.log(evalString);
+                            evalString=evalString.match(/".*"/);
+                            if (evalString==null) evalString=evalString.match(/'.*'/);
+                            if (evalString==null) evalString='Please Confirm Action!!';
+                            //console.log(evalString);
                             result = confirm (evalString);
                             //console.log(e.result);
                             return result;
@@ -107,18 +111,17 @@
             
         </script>
         <script>
-                $(document).ready(function () {
-                <?php
-                if (isset($unread_notifications) && $unread_notifications) { ?>
-                    blinkNotification();
-                <?php } ?>
-                });
+            $(document).ready(function () {
+<?php if (isset($unread_notifications) && $unread_notifications) { ?>
+                            blinkNotification();
+<?php } ?>
+                    });
                     
-                function blinkNotification(){
-                    $('.notification').delay(200).fadeTo(200,0.5).delay(100).fadeTo(100,1, blinkNotification);
-                }    
+                    function blinkNotification(){
+                        $('.notification').delay(200).fadeTo(200,0.5).delay(100).fadeTo(100,1, blinkNotification);
+                    }    
 
-            </script>
+        </script>
     </head>
     <body>
         <div id="phkapa" ><!--img src="/img/PHKAPA_small.png" alt="PHKAPA"  /--></div>
@@ -144,7 +147,7 @@
                         <span class="ui-icon ui-icon-power"></span>
                     </a>
                 </div>
-            <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all notification" title="<?php echo __d('phkapa', 'Notifications'); ?>">
+                <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all notification" title="<?php echo __d('phkapa', 'Notifications'); ?>">
                     <a href="<?php echo Router::url('/pages/notifications', true); ?>" target="_self"><span class="ui-icon ui-icon-flag"></span></a>
                 </div>
 
@@ -170,7 +173,7 @@
                         <a href="<?php echo Router::url('/phkapa', true); ?>" target="_self"><span class="ui-icon ui-icon-calculator"></span></a></div>
                     <div style="margin: 5px; float:right; color: #ffffff;"><?php echo __('User') . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __n('Aro', 'Aros', 2) . ' ' . __d('phkapa', 'Administration') ?> </div>
                 <?php } ?>
-                
+
 
                 <?php
             }
@@ -181,7 +184,7 @@
             <div class="clear"></div>
             <div class="grid_16">
 
-                <?php // Possible menu here  ?>
+                <?php // Possible menu here   ?>
                 <?php
                 if (isset($pluginImage)) {
                     echo '<div style="float: right; padding-right: 7px">' . $this->Html->image($pluginImage) . '</div>';
@@ -191,7 +194,7 @@
                 }
                 ?>
             </div>
-            <?php //echo $this->Html->image('load.gif', array('id' => 'loading-indicator')); ?>
+            <?php //echo $this->Html->image('load.gif', array('id' => 'loading-indicator'));  ?>
             <div id="loading-indicator"></div>
             <div class="clear" style="height: 10px; width: 100%;"></div>
 
