@@ -31,7 +31,7 @@
                     $('.flash-message').click(function(){
                         $(this).fadeOut(500);
                     })
-                    $("a").each(function(){
+                    $('a').each(function(){
                         var onClickEval=$(this).attr('onclick');
                         if (/confirm/i.test(onClickEval)){
                             //console.log(onClickEval);
@@ -39,7 +39,11 @@
                             $(this).removeAttr('onclick');
                             $(this).bind('click', function (e) {
                                 var evalString=$(this).attr('onClickEval');
-                                evalString=evalString.match(/'.*'/);
+                                //console.log(evalString);
+                                evalString=evalString.match(/".*"/);
+                                if (evalString==null) evalString=evalString.match(/'.*'/);
+                                if (evalString==null) evalString='Please Confirm Action!!';
+                                //console.log(evalString);
                                 result = confirm (evalString);
                                 //console.log(e.result);
                                 return result;
