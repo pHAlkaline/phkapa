@@ -18,538 +18,65 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 
 
-#: Controller/ActionTypesController.php:45;78;103
-#: Controller/ActionsController.php:72;112;141
-#: Controller/ActivitiesController.php:45;90;117
-#: Controller/CategoriesController.php:45;89;117
-#: Controller/CausesController.php:45;88;115
-#: Controller/OriginsController.php:44;77;102
-#: Controller/PlanController.php:114;150;170;195;224;242;266;290;295;312
-#: Controller/PrioritiesController.php:45;78;103
-#: Controller/ProcessesController.php:45;91;121
-#: Controller/QueryController.php:106
-#: Controller/RegisterController.php:105;136;196;207;246;268
-#: Controller/ReviewController.php:98;132;156
-#: Controller/SuppliersController.php:45;78;103
-#: Controller/TicketsController.php:107;139;173;208
-#: Controller/TypesController.php:45;78;103
-#: Controller/UsersController.php:47;51;64;79;83;97
-#: Controller/VerifyController.php:97;116;124;151;159;192
 msgid "Invalid request."
 msgstr ""
 
-#: Controller/ActionTypesController.php:61;83
-#: Controller/ActionsController.php:89;117
-#: Controller/ActivitiesController.php:63;95
-#: Controller/CategoriesController.php:63;94
-#: Controller/CausesController.php:63;93
-#: Controller/OriginsController.php:60;82
-#: Controller/PlanController.php:121;160;211;322
-#: Controller/ProcessesController.php:64;96
-#: Controller/PrioritiesController.php:45;78;103
-#: Controller/RegisterController.php:125;214;272
-#: Controller/ReviewController.php:106;136;164
-#: Controller/SuppliersController.php:61;83
-#: Controller/TicketsController.php:128;178
-#: Controller/TypesController.php:61;83
-#: Controller/UsersController.php:88
-#: Controller/VerifyController.php:131;166;201
 msgid "Saved with success."
 msgstr ""
 
-#: Controller/ActionTypesController.php:64;86
-#: Controller/ActionsController.php:92;120
-#: Controller/ActivitiesController.php:66;98
-#: Controller/CategoriesController.php:66;97
-#: Controller/CausesController.php:66;96
-#: Controller/OriginsController.php:63;85
-#: Controller/PlanController.php:124;163;214;325
-#: Controller/ProcessesController.php:67;99
-#: Controller/PrioritiesController.php:45;78;103
-#: Controller/RegisterController.php:128;217;275
-#: Controller/ReviewController.php:109;139;171
-#: Controller/SuppliersController.php:64;86
-#: Controller/TicketsController.php:131;181
-#: Controller/TypesController.php:64;86
-#: Controller/UsersController.php:91
-#: Controller/VerifyController.php:134;169;204
 msgid "Could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ActionTypesController.php:107
-#: Controller/ActionsController.php:145
-#: Controller/ActivitiesController.php:121
-#: Controller/CategoriesController.php:121
-#: Controller/CausesController.php:119
-#: Controller/OriginsController.php:106
-#: Controller/PlanController.php:247
-#: Controller/PrioritiesController.php:45;78;103
-#: Controller/ProcessesController.php:125
-#: Controller/RegisterController.php:250
-#: Controller/SuppliersController.php:107
-#: Controller/TicketsController.php:212
-#: Controller/TypesController.php:107
 msgid "Deleted with success."
 msgstr ""
 
-#: Controller/ActionTypesController.php:110
-#: Controller/ActionsController.php:148
-#: Controller/ActivitiesController.php:124
-#: Controller/CategoriesController.php:124
-#: Controller/CausesController.php:122
-#: Controller/OriginsController.php:109
-#: Controller/PlanController.php:250
-#: Controller/PrioritiesController.php:45;78;103
-#: Controller/ProcessesController.php:128
-#: Controller/RegisterController.php:253
-#: Controller/SuppliersController.php:110
-#: Controller/TicketsController.php:215
-#: Controller/TypesController.php:110
 msgid "Could not be deleted."
 msgstr ""
 
-#: Controller/PhkapaAppController.php:28;31
 msgid "PHKAPA"
 msgstr ""
 
-#: Controller/PhkapaAppController.php:28
 msgid "Administration"
 msgstr ""
 
-#: Controller/PlanController.php:271
 msgid "Closed with success."
 msgstr ""
 
-#: Controller/PlanController.php:274
 msgid "Could not be closed."
 msgstr ""
 
-#: View/ActionTypes/admin_add.ctp:1;17
-#: View/ActionTypes/admin_edit.ctp:18
-#: View/ActionTypes/admin_index.ctp:11;17
-#: View/ActionTypes/admin_view.ctp:14;20
-#: View/Actions/admin_add.ctp:1;17
-#: View/Actions/admin_edit.ctp:18
-#: View/Actions/admin_index.ctp:11;17
-#: View/Actions/admin_view.ctp:14;20
-#: View/Activities/admin_add.ctp:1;17;23
-#: View/Activities/admin_edit.ctp:18;24
-#: View/Activities/admin_index.ctp:11;17;23
-#: View/Activities/admin_view.ctp:14;20;26;142
-#: View/Categories/admin_add.ctp:1;17;23;29
-#: View/Categories/admin_edit.ctp:18;24;30
-#: View/Categories/admin_index.ctp:11;17;23
-#: View/Categories/admin_view.ctp:14;20;26;142;185
-#: View/Causes/admin_add.ctp:1;17;23
-#: View/Causes/admin_edit.ctp:18;24
-#: View/Causes/admin_index.ctp:11;17;23
-#: View/Causes/admin_view.ctp:14;20;26;142
-#: View/Origins/admin_add.ctp:1;17
-#: View/Origins/admin_edit.ctp:18
-#: View/Origins/admin_index.ctp:11;17
-#: View/Origins/admin_view.ctp:14;20
-#: View/Plan/add_action.ctp:1
-#: View/Plan/edit.ctp:304
-#: View/Priorities/admin_add.ctp:1;17
-#: View/Priorities/admin_edit.ctp:18
-#: View/Priorities/admin_index.ctp:11;17
-#: View/Priorities/admin_view.ctp:14;20
-#: View/Processes/admin_add.ctp:1;17;23;29
-#: View/Processes/admin_edit.ctp:18;24;30
-#: View/Processes/admin_index.ctp:11;17;23;29
-#: View/Processes/admin_view.ctp:14;20;26;32;152;195
-#: View/Register/add.ctp:2
-#: View/Register/index.ctp:11
-#: View/Register/view.ctp:14
-#: View/Suppliers/admin_add.ctp:1;17
-#: View/Suppliers/admin_edit.ctp:18
-#: View/Suppliers/admin_index.ctp:11;17
-#: View/Suppliers/admin_view.ctp:14;20
-#: View/Tickets/admin_add.ctp:2;18;24;35;41;47;55
-#: View/Tickets/admin_edit.ctp:18;24;35;41;47;55
-#: View/Tickets/admin_index.ctp:12;20;26;37;43;49;57
-#: View/Tickets/admin_view.ctp:15;29;35;46;52;58;66;362
-#: View/Types/admin_add.ctp:1;17
-#: View/Types/admin_edit.ctp:18
-#: View/Types/admin_index.ctp:11;17
-#: View/Types/admin_view.ctp:14;20
-#: View/Users/admin_add.ctp:1;19
-#: View/Users/admin_edit.ctp:19
-#: View/Users/admin_index.ctp:12
-#: View/Users/admin_view.ctp:18
 msgid "Add %s"
 msgstr ""
 
-#: View/ActionTypes/admin_add.ctp:1;30;11
-#: View/ActionTypes/admin_edit.ctp:1;31;9;12
-#: View/ActionTypes/admin_index.ctp:11;1;9
-#: View/ActionTypes/admin_view.ctp:11;12;14;9;13
-#: View/ActionTypes/admin_view.ctp:1
-#: View/Actions/admin_add.ctp:30
-#: View/Actions/admin_edit.ctp:32
-#: View/Actions/admin_index.ctp:28
-#: View/Actions/admin_view.ctp:46
-#: View/Plan/add_action.ctp:179
-#: View/Plan/edit.ctp:231
-#: View/Plan/edit_action.ctp:174
-#: View/Query/view.ctp:262
-#: View/Query/xls_data.ctp:37;46;55
-#: View/Tickets/admin_view.ctp:312
-#: View/Tickets/xls_data.ctp:37;46;55
-#: View/Verify/edit_action.ctp:209
-#: View/Verify/view.ctp:240
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/ActionTypes/admin_add.ctp:6
-#: View/ActionTypes/admin_edit.ctp:6
-#: View/ActionTypes/admin_index.ctp:6
-#: View/ActionTypes/admin_view.ctp:6
-#: View/Actions/admin_add.ctp:6
-#: View/Actions/admin_edit.ctp:6
-#: View/Actions/admin_index.ctp:6
-#: View/Actions/admin_view.ctp:6
-#: View/Activities/admin_add.ctp:6
-#: View/Activities/admin_edit.ctp:6
-#: View/Activities/admin_index.ctp:6
-#: View/Activities/admin_view.ctp:6
-#: View/Categories/admin_add.ctp:6
-#: View/Categories/admin_edit.ctp:6
-#: View/Categories/admin_index.ctp:6
-#: View/Categories/admin_view.ctp:6
-#: View/Causes/admin_add.ctp:6
-#: View/Causes/admin_edit.ctp:6
-#: View/Causes/admin_index.ctp:6
-#: View/Causes/admin_view.ctp:6
-#: View/Origins/admin_add.ctp:6
-#: View/Origins/admin_edit.ctp:6
-#: View/Origins/admin_index.ctp:6
-#: View/Origins/admin_view.ctp:6
-#: View/Plan/add_action.ctp:5
-#: View/Plan/edit.ctp:33
-#: View/Plan/edit_action.ctp:5
-#: View/Priorities/admin_add.ctp:6
-#: View/Priorities/admin_edit.ctp:6
-#: View/Priorities/admin_index.ctp:6
-#: View/Priorities/admin_view.ctp:6
-#: View/Processes/admin_add.ctp:6
-#: View/Processes/admin_edit.ctp:6
-#: View/Processes/admin_index.ctp:6
-#: View/Processes/admin_view.ctp:6
-#: View/Query/export.ctp:5
-#: View/Query/index.ctp:5
-#: View/Query/view.ctp:5
-#: View/Register/add.ctp:8
-#: View/Register/edit.ctp:6
-#: View/Register/index.ctp:6
-#: View/Register/view.ctp:5
-#: View/Review/edit.ctp:24
-#: View/Suppliers/admin_add.ctp:6
-#: View/Suppliers/admin_edit.ctp:6
-#: View/Suppliers/admin_index.ctp:6
-#: View/Suppliers/admin_view.ctp:6
-#: View/Tickets/admin_add.ctp:7
-#: View/Tickets/admin_edit.ctp:7
-#: View/Tickets/admin_export.ctp:6
-#: View/Tickets/admin_index.ctp:6
-#: View/Tickets/admin_view.ctp:6
-#: View/Types/admin_add.ctp:6
-#: View/Types/admin_edit.ctp:6
-#: View/Types/admin_index.ctp:6
-#: View/Types/admin_view.ctp:6
-#: View/Users/admin_add.ctp:6
-#: View/Users/admin_edit.ctp:6
-#: View/Users/admin_index.ctp:6
-#: View/Users/admin_view.ctp:6
-#: View/Verify/edit_action.ctp:5
-#: View/Verify/view.ctp:23
 msgid "Menu"
 msgstr ""
 
-#: View/ActionTypes/admin_add.ctp:11;16
-#: View/ActionTypes/admin_edit.ctp:12;17
-#: View/ActionTypes/admin_index.ctp:16
-#: View/ActionTypes/admin_view.ctp:13;19
-#: View/Actions/admin_add.ctp:11;16
-#: View/Actions/admin_edit.ctp:12;17
-#: View/Actions/admin_index.ctp:16
-#: View/Actions/admin_view.ctp:13;19
-#: View/Activities/admin_add.ctp:11;16;22
-#: View/Activities/admin_edit.ctp:12;17;23
-#: View/Activities/admin_index.ctp:16;22
-#: View/Activities/admin_view.ctp:13;19;25
-#: View/Categories/admin_add.ctp:11;16;22;28
-#: View/Categories/admin_edit.ctp:12;17;23;29
-#: View/Categories/admin_index.ctp:16;22
-#: View/Categories/admin_view.ctp:13;19;25
-#: View/Causes/admin_add.ctp:11;16;22
-#: View/Causes/admin_edit.ctp:12;17;23
-#: View/Causes/admin_index.ctp:16;22
-#: View/Causes/admin_view.ctp:13;19;25
-#: View/Origins/admin_add.ctp:11;16
-#: View/Origins/admin_edit.ctp:12;17
-#: View/Origins/admin_index.ctp:16
-#: View/Origins/admin_view.ctp:13;19
-#: View/Plan/add_action.ctp:15
-#: View/Plan/edit.ctp:45;221
-#: View/Plan/edit_action.ctp:11
-#: View/Plan/index.ctp:1
-#: View/Priorities/admin_add.ctp:11;16
-#: View/Priorities/admin_edit.ctp:12;17
-#: View/Priorities/admin_index.ctp:16
-#: View/Priorities/admin_view.ctp:13;19
-#: View/Processes/admin_add.ctp:11;16;22;28;33
-#: View/Processes/admin_edit.ctp:12;17;23;29;34
-#: View/Processes/admin_index.ctp:16;22;28;33
-#: View/Processes/admin_view.ctp:13;19;25;31;36
-#: View/Query/export.ctp:10
-#: View/Query/view.ctp:10
-#: View/Register/add.ctp:13
-#: View/Register/edit.ctp:11
-#: View/Register/index.ctp:1
-#: View/Register/view.ctp:13
-#: View/Review/edit.ctp:45
-#: View/Review/index.ctp:1
-#: View/Suppliers/admin_add.ctp:11;16
-#: View/Suppliers/admin_edit.ctp:12;17
-#: View/Suppliers/admin_index.ctp:16
-#: View/Suppliers/admin_view.ctp:13;19
-#: View/Tickets/admin_add.ctp:12;17;23;29;34;40;46;54
-#: View/Tickets/admin_edit.ctp:12;17;23;29;34;40;46;54
-#: View/Tickets/admin_export.ctp:11
-#: View/Tickets/admin_index.ctp:19;25;31;36;42;48;56
-#: View/Tickets/admin_view.ctp:14;28;34;40;45;51;57;65
-#: View/Types/admin_add.ctp:11;16
-#: View/Types/admin_edit.ctp:12;17
-#: View/Types/admin_index.ctp:16
-#: View/Types/admin_view.ctp:13;19
-#: View/Users/admin_add.ctp:11;18
-#: View/Users/admin_edit.ctp:11;18
-#: View/Users/admin_index.ctp:11
-#: View/Users/admin_view.ctp:12;17
-#: View/Verify/edit_action.ctp:10;15
-#: View/Verify/index.ctp:1
-#: View/Verify/view.ctp:41
 msgid "List %s"
 msgstr ""
 
-#: View/ActionTypes/admin_add.ctp:17;14;16
-#: View/ActionTypes/admin_edit.ctp:18;15;17
-#: View/ActionTypes/admin_index.ctp:17;14;16;36
-#: View/ActionTypes/admin_view.ctp:20;17;19
-#: View/Actions/admin_add.ctp:1;27;9;11
-#: View/Actions/admin_edit.ctp:1;28;9;12
-#: View/Actions/admin_index.ctp:11;1;9;37
-#: View/Actions/admin_view.ctp:1;11;12;14;9;13
-#: View/Activities/admin_index.ctp:36
-#: View/Activities/admin_view.ctp:114
-#: View/Categories/admin_index.ctp:36
-#: View/Categories/admin_view.ctp:114;157
-#: View/Causes/admin_index.ctp:36
-#: View/Causes/admin_view.ctp:114
-#: View/Origins/admin_index.ctp:30
-#: View/Plan/add_action.ctp:1;176;8
-#: View/Plan/edit.ctp:304;221;238
-#: View/Plan/edit_action.ctp:1;169
-#: View/Plan/index.ctp:20
-#: View/Processes/admin_index.ctp:46
-#: View/Processes/admin_view.ctp:124;167;210
-#: View/Priorities/admin_index.ctp:35
-#: View/Query/index.ctp:32
-#: View/Query/view.ctp:250;255;328
-#: View/Register/index.ctp:33
-#: View/Review/index.ctp:20
-#: View/Suppliers/admin_index.ctp:32
-#: View/Tickets/admin_add.ctp:55;52;54
-#: View/Tickets/admin_edit.ctp:55;52;54
-#: View/Tickets/admin_index.ctp:57;54;56;80
-#: View/Tickets/admin_view.ctp:66;362;63;65;301;305;320;382
-#: View/Types/admin_index.ctp:35
-#: View/Users/admin_index.ctp:29
-#: View/Users/admin_view.ctp:105
-#: View/Verify/edit_action.ctp:187;295;8;10
-#: View/Verify/index.ctp:18
-#: View/Verify/view.ctp:230;247
 msgid "Action"
 msgid_plural "Actions"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/ActionTypes/admin_add.ctp:30
-#: View/ActionTypes/admin_edit.ctp:31
-#: View/Actions/admin_add.ctp:27
-#: View/Actions/admin_edit.ctp:28
-#: View/Activities/admin_add.ctp:31
-#: View/Activities/admin_edit.ctp:32
-#: View/Categories/admin_add.ctp:37
-#: View/Categories/admin_edit.ctp:38
-#: View/Causes/admin_add.ctp:31
-#: View/Causes/admin_edit.ctp:32
-#: View/Origins/admin_add.ctp:25
-#: View/Origins/admin_edit.ctp:26
-#: View/Plan/add_action.ctp:176
-#: View/Plan/edit_action.ctp:169
-#: View/Processes/admin_add.ctp:41
-#: View/Processes/admin_edit.ctp:42
-#: View/Priorities/admin_add.ctp:30
-#: View/Priorities/admin_edit.ctp:31
-#: View/Register/add.ctp:24
-#: View/Register/edit.ctp:21
-#: View/Suppliers/admin_add.ctp:30
-#: View/Suppliers/admin_edit.ctp:31
-#: View/Tickets/admin_add.ctp:66
-#: View/Tickets/admin_edit.ctp:66
-#: View/Types/admin_add.ctp:30
-#: View/Types/admin_edit.ctp:31
-#: View/Users/admin_add.ctp:27
-#: View/Users/admin_edit.ctp:78
-#: View/Verify/edit_action.ctp:295
 msgid "Record"
 msgstr ""
 
-#: View/ActionTypes/admin_add.ctp:32
-#: View/ActionTypes/admin_edit.ctp:34
-#: View/ActionTypes/admin_index.ctp:31
-#: View/ActionTypes/admin_view.ctp:48
-#: View/Activities/admin_add.ctp:33
-#: View/Activities/admin_edit.ctp:35
-#: View/Activities/admin_index.ctp:32
-#: View/Activities/admin_view.ctp:53;110
-#: View/Categories/admin_add.ctp:39
-#: View/Categories/admin_edit.ctp:41
-#: View/Categories/admin_index.ctp:32
-#: View/Categories/admin_view.ctp:53;110;153
-#: View/Causes/admin_add.ctp:33
-#: View/Causes/admin_edit.ctp:35
-#: View/Causes/admin_index.ctp:32
-#: View/Causes/admin_view.ctp:53;110
-#: View/Origins/admin_add.ctp:27
-#: View/Origins/admin_edit.ctp:29
-#: View/Origins/admin_index.ctp:26
-#: View/Origins/admin_view.ctp:43
-#: View/Processes/admin_add.ctp:43
-#: View/Processes/admin_edit.ctp:45
-#: View/Processes/admin_index.ctp:42
-#: View/Processes/admin_view.ctp:63;120;163;206
-#: View/Suppliers/admin_add.ctp:32
-#: View/Suppliers/admin_edit.ctp:34
-#: View/Suppliers/admin_index.ctp:28
-#: View/Suppliers/admin_view.ctp:48
-#: View/Types/admin_add.ctp:32
-#: View/Types/admin_edit.ctp:34
-#: View/Types/admin_index.ctp:31
-#: View/Types/admin_view.ctp:48
-#: View/Users/admin_add.ctp:29
-#: View/Users/admin_edit.ctp:44
-#: View/Users/admin_index.ctp:25
-#: View/Users/admin_view.ctp:51;101
 msgid "Name"
 msgstr ""
 
-#: View/ActionTypes/admin_add.ctp:33
-#: View/ActionTypes/admin_edit.ctp:35
-#: View/ActionTypes/admin_index.ctp:32
-#: View/ActionTypes/admin_view.ctp:57
 msgid "Verification"
 msgstr ""
 
-#: View/ActionTypes/admin_add.ctp:34
-#: View/ActionTypes/admin_edit.ctp:36
-#: View/ActionTypes/admin_index.ctp:33
-#: View/ActionTypes/admin_view.ctp:66
-#: View/Activities/admin_add.ctp:34
-#: View/Activities/admin_edit.ctp:36
-#: View/Activities/admin_index.ctp:33
-#: View/Activities/admin_view.ctp:64;111
-#: View/Categories/admin_add.ctp:40
-#: View/Categories/admin_edit.ctp:42
-#: View/Categories/admin_index.ctp:33
-#: View/Categories/admin_view.ctp:64;111;154
-#: View/Causes/admin_add.ctp:34
-#: View/Causes/admin_edit.ctp:36
-#: View/Causes/admin_index.ctp:33
-#: View/Causes/admin_view.ctp:64;111
-#: View/Origins/admin_add.ctp:28
-#: View/Origins/admin_edit.ctp:30
-#: View/Origins/admin_index.ctp:27
-#: View/Origins/admin_view.ctp:52
-#: View/Processes/admin_add.ctp:44
-#: View/Processes/admin_edit.ctp:46
-#: View/Processes/admin_index.ctp:43
-#: View/Processes/admin_view.ctp:74;121;164;207
-#: View/Suppliers/admin_add.ctp:33
-#: View/Suppliers/admin_edit.ctp:35
-#: View/Suppliers/admin_index.ctp:29
-#: View/Suppliers/admin_view.ctp:57
-#: View/Types/admin_add.ctp:33
-#: View/Types/admin_edit.ctp:35
-#: View/Types/admin_index.ctp:32
-#: View/Types/admin_view.ctp:57
-#: View/Users/admin_add.ctp:32
-#: View/Users/admin_edit.ctp:63
-#: View/Users/admin_index.ctp:28
-#: View/Users/admin_view.ctp:75;102
 msgid "Active"
 msgstr ""
 
-#: View/ActionTypes/admin_add.ctp:38
-#: View/ActionTypes/admin_edit.ctp:39
-#: View/Actions/admin_add.ctp:41
-#: View/Actions/admin_edit.ctp:43
-#: View/Activities/admin_add.ctp:38
-#: View/Activities/admin_edit.ctp:40
-#: View/Categories/admin_add.ctp:45
-#: View/Categories/admin_edit.ctp:47
-#: View/Causes/admin_add.ctp:38
-#: View/Causes/admin_edit.ctp:40
-#: View/Origins/admin_add.ctp:31
-#: View/Origins/admin_edit.ctp:33
-#: View/Plan/add_action.ctp:185
-#: View/Plan/edit.ctp:213
-#: View/Plan/edit_action.ctp:180
-#: View/Processes/admin_add.ctp:50
-#: View/Processes/admin_edit.ctp:52
-#: View/Register/add.ctp:57
-#: View/Register/edit.ctp:52
-#: View/Review/edit.ctp:215
-#: View/Suppliers/admin_add.ctp:36
-#: View/Suppliers/admin_edit.ctp:38
-#: View/Tickets/admin_add.ctp:91
-#: View/Tickets/admin_edit.ctp:92
-#: View/Types/admin_add.ctp:36
-#: View/Types/admin_edit.ctp:38
-#: View/Users/admin_add.ctp:37
-#: View/Users/admin_edit.ctp:84
-#: View/Verify/edit_action.ctp:303
 msgid "Submit"
 msgstr ""
 
-#: View/ActionTypes/admin_add.ctp:9
-#: View/Plan/add_action.ctp:67
-#: View/Plan/edit.ctp:104
-#: View/Plan/edit_action.ctp:62
-#: View/Plan/index.ctp:12
-#: View/Query/index.ctp:23
-#: View/Query/view.ctp:96;321
-#: View/Query/xls_data.ctp:22
-#: View/Register/add.ctp:31
-#: View/Register/edit.ctp:27
-#: View/Register/index.ctp:25
-#: View/Register/view.ctp:83
-#: View/Review/edit.ctp:104
-#: View/Review/index.ctp:11
-#: View/Tickets/admin_add.ctp:18;72;15;17
-#: View/Tickets/admin_edit.ctp:18;73;15;17
-#: View/Tickets/admin_index.ctp:20;71;17;19
-#: View/Tickets/admin_view.ctp:29;148;375;26;28
-#: View/Tickets/xls_data.ctp:21
-#: View/Types/admin_add.ctp:1;30;9;11
-#: View/Types/admin_edit.ctp:1;31;9;12
-#: View/Types/admin_index.ctp:11;1;9
-#: View/Types/admin_view.ctp:1;11;12;14;9;13
-#: View/Verify/edit_action.ctp:62
-#: View/Verify/index.ctp:10
-#: View/Verify/view.ctp:102
 msgid "Type"
 msgid_plural "Types"
 msgstr[0] ""
@@ -560,1150 +87,299 @@ msgid_plural "Priorities"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/ActionTypes/admin_edit.ctp:1
-#: View/ActionTypes/admin_view.ctp:11
-#: View/Actions/admin_edit.ctp:1
-#: View/Actions/admin_view.ctp:11
-#: View/Activities/admin_edit.ctp:1
-#: View/Activities/admin_view.ctp:11
-#: View/Categories/admin_edit.ctp:1
-#: View/Categories/admin_view.ctp:11
-#: View/Causes/admin_edit.ctp:1
-#: View/Causes/admin_view.ctp:11
-#: View/Origins/admin_edit.ctp:1
-#: View/Origins/admin_view.ctp:11
-#: View/Plan/edit_action.ctp:1;10
-#: View/Processes/admin_edit.ctp:1
-#: View/Processes/admin_view.ctp:11
-#: View/Register/edit.ctp:2
-#: View/Register/view.ctp:11
-#: View/Suppliers/admin_edit.ctp:1
-#: View/Suppliers/admin_view.ctp:11
-#: View/Tickets/admin_edit.ctp:2
-#: View/Tickets/admin_view.ctp:12
-#: View/Types/admin_edit.ctp:1
-#: View/Types/admin_view.ctp:11
-#: View/Users/admin_edit.ctp:1
-#: View/Users/admin_view.ctp:11
 msgid "Edit %s"
 msgstr ""
 
-#: View/ActionTypes/admin_edit.ctp:11
-#: View/ActionTypes/admin_index.ctp:59
-#: View/Actions/admin_edit.ctp:11
-#: View/Actions/admin_index.ctp:71
-#: View/Activities/admin_edit.ctp:11
-#: View/Activities/admin_index.ctp:58
-#: View/Categories/admin_edit.ctp:11
-#: View/Categories/admin_index.ctp:58
-#: View/Causes/admin_edit.ctp:11
-#: View/Causes/admin_index.ctp:58
-#: View/Origins/admin_edit.ctp:11
-#: View/Origins/admin_index.ctp:52
-#: View/Plan/edit.ctp:282
-#: View/Processes/admin_edit.ctp:11
-#: View/Processes/admin_index.ctp:68
-#: View/Register/index.ctp:61
-#: View/Suppliers/admin_edit.ctp:11
-#: View/Suppliers/admin_index.ctp:54
-#: View/Tickets/admin_index.ctp:109
-#: View/Types/admin_edit.ctp:11
-#: View/Types/admin_index.ctp:57
 msgid "Delete"
 msgstr ""
 
-#: View/ActionTypes/admin_edit.ctp:11
-#: View/ActionTypes/admin_index.ctp:59
-#: View/ActionTypes/admin_view.ctp:12
-#: View/Actions/admin_edit.ctp:11
-#: View/Actions/admin_index.ctp:71
-#: View/Actions/admin_view.ctp:12
-#: View/Activities/admin_edit.ctp:11
-#: View/Activities/admin_index.ctp:58
-#: View/Activities/admin_view.ctp:12
-#: View/Categories/admin_edit.ctp:11
-#: View/Categories/admin_index.ctp:58
-#: View/Categories/admin_view.ctp:12
-#: View/Causes/admin_edit.ctp:11
-#: View/Causes/admin_index.ctp:58
-#: View/Causes/admin_view.ctp:12
-#: View/Origins/admin_edit.ctp:11
-#: View/Origins/admin_index.ctp:52
-#: View/Origins/admin_view.ctp:12
-#: View/Plan/edit.ctp:282
-#: View/Processes/admin_edit.ctp:11
-#: View/Processes/admin_index.ctp:68
-#: View/Processes/admin_view.ctp:12
-#: View/Register/index.ctp:61
-#: View/Register/view.ctp:12
-#: View/Suppliers/admin_edit.ctp:11
-#: View/Suppliers/admin_index.ctp:54
-#: View/Suppliers/admin_view.ctp:12
-#: View/Tickets/admin_index.ctp:109
-#: View/Tickets/admin_view.ctp:13
-#: View/Types/admin_edit.ctp:11
-#: View/Types/admin_index.ctp:57
-#: View/Types/admin_view.ctp:12
 msgid "Are you sure you want to delete # %s?"
 msgstr ""
 
-#: View/ActionTypes/admin_index.ctp:30
-#: View/ActionTypes/admin_view.ctp:39
-#: View/Actions/admin_index.ctp:26
-#: View/Actions/admin_view.ctp:32
-#: View/Activities/admin_index.ctp:31
-#: View/Activities/admin_view.ctp:42;109
-#: View/Categories/admin_index.ctp:31
-#: View/Categories/admin_view.ctp:42;109;152
-#: View/Causes/admin_index.ctp:31
-#: View/Causes/admin_view.ctp:42;109
-#: View/Origins/admin_index.ctp:25
-#: View/Origins/admin_view.ctp:34
-#: View/Plan/add_action.ctp:32
-#: View/Plan/edit.ctp:63;230
-#: View/Plan/edit_action.ctp:27
-#: View/Plan/index.ctp:10
-#: View/Processes/admin_index.ctp:41
-#: View/Processes/admin_view.ctp:52;119;162;205
-#: View/Query/index.ctp:21
-#: View/Query/view.ctp:33;260;318
-#: View/Query/xls_data.ctp:18
-#: View/Register/index.ctp:23
-#: View/Register/view.ctp:31
-#: View/Review/edit.ctp:63
-#: View/Review/index.ctp:9
-#: View/Suppliers/admin_index.ctp:27
-#: View/Suppliers/admin_view.ctp:39
-#: View/Tickets/admin_index.ctp:69
-#: View/Tickets/admin_view.ctp:84;310;372
-#: View/Tickets/xls_data.ctp:18
-#: View/Types/admin_index.ctp:30
-#: View/Types/admin_view.ctp:39
-#: View/Users/admin_edit.ctp:35
-#: View/Users/admin_index.ctp:24
-#: View/Users/admin_view.ctp:40;100
-#: View/Verify/edit_action.ctp:36;197
-#: View/Verify/index.ctp:8
-#: View/Verify/view.ctp:61;239
 msgid "Id"
 msgstr ""
 
-#: View/ActionTypes/admin_index.ctp:34
-#: View/ActionTypes/admin_view.ctp:75
-#: View/Actions/admin_add.ctp:38
-#: View/Actions/admin_edit.ctp:40
-#: View/Actions/admin_index.ctp:36
-#: View/Actions/admin_view.ctp:103
-#: View/Activities/admin_index.ctp:34
-#: View/Activities/admin_view.ctp:75;112
-#: View/Categories/admin_index.ctp:34
-#: View/Categories/admin_view.ctp:75;112;155
-#: View/Causes/admin_index.ctp:34
-#: View/Causes/admin_view.ctp:75;112
-#: View/Origins/admin_index.ctp:28
-#: View/Origins/admin_view.ctp:61
-#: View/Plan/add_action.ctp:159
-#: View/Plan/edit.ctp:193;233
-#: View/Plan/edit_action.ctp:153
-#: View/Plan/index.ctp:18
-#: View/Processes/admin_index.ctp:44
-#: View/Processes/admin_view.ctp:85;122;165;209
-#: View/Query/index.ctp:29
-#: View/Query/view.ctp:235;270;326
-#: View/Query/xls_data.ctp:35
-#: View/Register/index.ctp:31
-#: View/Register/view.ctp:174
-#: View/Review/edit.ctp:193
-#: View/Review/index.ctp:18
-#: View/Suppliers/admin_index.ctp:30
-#: View/Suppliers/admin_view.ctp:66
-#: View/Tickets/admin_add.ctp:88
-#: View/Tickets/admin_edit.ctp:89
-#: View/Tickets/admin_index.ctp:77
-#: View/Tickets/admin_view.ctp:286;319;380
-#: View/Tickets/xls_data.ctp:35
-#: View/Types/admin_index.ctp:33
-#: View/Types/admin_view.ctp:66
-#: View/Users/admin_view.ctp:103
-#: View/Verify/edit_action.ctp:173;276
-#: View/Verify/index.ctp:16
-#: View/Verify/view.ctp:215;244
 msgid "Created"
 msgstr ""
 
-#: View/ActionTypes/admin_index.ctp:35
-#: View/ActionTypes/admin_view.ctp:84
-#: View/Actions/admin_add.ctp:37
-#: View/Actions/admin_edit.ctp:39
-#: View/Actions/admin_index.ctp:35
-#: View/Actions/admin_view.ctp:96
-#: View/Activities/admin_index.ctp:35
-#: View/Activities/admin_view.ctp:86;113
-#: View/Categories/admin_index.ctp:35
-#: View/Categories/admin_view.ctp:86;113;156
-#: View/Causes/admin_index.ctp:35
-#: View/Causes/admin_view.ctp:86;113
-#: View/Origins/admin_index.ctp:29
-#: View/Origins/admin_view.ctp:70
-#: View/Plan/add_action.ctp:150
-#: View/Plan/edit.ctp:182
-#: View/Plan/edit_action.ctp:144
-#: View/Processes/admin_index.ctp:45
-#: View/Processes/admin_view.ctp:96;123;166;208
-#: View/Query/view.ctp:224;269
-#: View/Query/xls_data.ctp:34
-#: View/Register/view.ctp:163
-#: View/Review/edit.ctp:182
-#: View/Suppliers/admin_index.ctp:31
-#: View/Suppliers/admin_view.ctp:75
-#: View/Tickets/admin_add.ctp:87
-#: View/Tickets/admin_edit.ctp:88
-#: View/Tickets/admin_view.ctp:275
-#: View/Tickets/xls_data.ctp:34
-#: View/Types/admin_index.ctp:34
-#: View/Types/admin_view.ctp:75
-#: View/Users/admin_view.ctp:104
-#: View/Verify/edit_action.ctp:162;265
-#: View/Verify/view.ctp:204
 msgid "Modified"
 msgstr ""
 
-#: View/ActionTypes/admin_index.ctp:57
-#: View/Actions/admin_index.ctp:69
-#: View/Activities/admin_index.ctp:56
-#: View/Activities/admin_view.ctp:132
-#: View/Categories/admin_index.ctp:56
-#: View/Categories/admin_view.ctp:132;175
-#: View/Causes/admin_index.ctp:56
-#: View/Causes/admin_view.ctp:132
-#: View/Origins/admin_index.ctp:50
-#: View/Processes/admin_index.ctp:66
-#: View/Processes/admin_view.ctp:142;185;228
-#: View/Query/index.ctp:84
-#: View/Query/view.ctp:352
-#: View/Register/index.ctp:59
-#: View/Suppliers/admin_index.ctp:52
-#: View/Tickets/admin_index.ctp:107
-#: View/Tickets/admin_view.ctp:352;409
-#: View/Types/admin_index.ctp:55
-#: View/Users/admin_index.ctp:51
-#: View/Users/admin_view.ctp:123
-#: View/Verify/index.ctp:58
 msgid "View"
 msgstr ""
 
-#: View/ActionTypes/admin_index.ctp:58
-#: View/Actions/admin_index.ctp:70
-#: View/Activities/admin_index.ctp:57
-#: View/Activities/admin_view.ctp:133
-#: View/Categories/admin_index.ctp:57
-#: View/Categories/admin_view.ctp:133;176
-#: View/Causes/admin_index.ctp:57
-#: View/Causes/admin_view.ctp:133
-#: View/Origins/admin_index.ctp:51
-#: View/Plan/edit.ctp:281
-#: View/Plan/index.ctp:89
-#: View/Processes/admin_index.ctp:67
-#: View/Processes/admin_view.ctp:143;186;229
-#: View/Query/index.ctp:86
-#: View/Register/index.ctp:60
-#: View/Review/index.ctp:58
-#: View/Suppliers/admin_index.ctp:53
-#: View/Tickets/admin_index.ctp:108
-#: View/Tickets/admin_view.ctp:353
-#: View/Types/admin_index.ctp:56
-#: View/Users/admin_index.ctp:52
-#: View/Users/admin_view.ctp:124
-#: View/Verify/view.ctp:284
 msgid "Edit"
 msgstr ""
 
-#: View/ActionTypes/admin_index.ctp:69
-#: View/Actions/admin_index.ctp:81
-#: View/Activities/admin_index.ctp:68
-#: View/Categories/admin_index.ctp:68
-#: View/Causes/admin_index.ctp:68
-#: View/Origins/admin_index.ctp:62
-#: View/Plan/index.ctp:108
-#: View/Processes/admin_index.ctp:78
-#: View/Query/index.ctp:98
-#: View/Register/index.ctp:71
-#: View/Review/index.ctp:82
-#: View/Suppliers/admin_index.ctp:64
-#: View/Tickets/admin_index.ctp:120
-#: View/Types/admin_index.ctp:67
-#: View/Users/admin_index.ctp:62
-#: View/Verify/index.ctp:75
 msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
 msgstr ""
 
-#: View/ActionTypes/admin_index.ctp:74
-#: View/Actions/admin_index.ctp:86
-#: View/Activities/admin_index.ctp:73
-#: View/Categories/admin_index.ctp:73
-#: View/Causes/admin_index.ctp:73
-#: View/Origins/admin_index.ctp:67
-#: View/Plan/index.ctp:113
-#: View/Processes/admin_index.ctp:83
-#: View/Query/index.ctp:103
-#: View/Register/index.ctp:76
-#: View/Review/index.ctp:87
-#: View/Suppliers/admin_index.ctp:69
-#: View/Tickets/admin_index.ctp:125
-#: View/Types/admin_index.ctp:72
-#: View/Users/admin_index.ctp:67
-#: View/Verify/index.ctp:80
 msgid "Previous"
 msgstr ""
 
-#: View/ActionTypes/admin_index.ctp:77
-#: View/Actions/admin_index.ctp:89
-#: View/Activities/admin_index.ctp:76
-#: View/Categories/admin_index.ctp:76
-#: View/Causes/admin_index.ctp:76
-#: View/Origins/admin_index.ctp:70
-#: View/Plan/index.ctp:115
-#: View/Processes/admin_index.ctp:86
-#: View/Query/index.ctp:106
-#: View/Register/index.ctp:79
-#: View/Review/index.ctp:90
-#: View/Suppliers/admin_index.ctp:72
-#: View/Tickets/admin_index.ctp:126
-#: View/Types/admin_index.ctp:75
-#: View/Users/admin_index.ctp:70
-#: View/Verify/index.ctp:83
 msgid "Next"
 msgstr ""
 
-#: View/ActionTypes/admin_view.ctp:1
-#: View/Actions/admin_view.ctp:1
-#: View/Activities/admin_view.ctp:1
-#: View/Categories/admin_view.ctp:1
-#: View/Causes/admin_view.ctp:1
-#: View/Origins/admin_view.ctp:1
-#: View/Plan/add_action.ctp:10
-#: View/Processes/admin_view.ctp:1
-#: View/Query/view.ctp:1
-#: View/Register/view.ctp:1
-#: View/Suppliers/admin_view.ctp:1
-#: View/Tickets/admin_view.ctp:1
-#: View/Types/admin_view.ctp:1
-#: View/Users/admin_view.ctp:1
-#: View/Verify/view.ctp:19
 msgid "View %s"
 msgstr ""
 
-#: View/ActionTypes/admin_view.ctp:12
-#: View/Actions/admin_view.ctp:12
-#: View/Activities/admin_view.ctp:12
-#: View/Categories/admin_view.ctp:12
-#: View/Causes/admin_view.ctp:12
-#: View/Origins/admin_view.ctp:12
-#: View/Processes/admin_view.ctp:12
-#: View/Register/view.ctp:12
-#: View/Suppliers/admin_view.ctp:12
-#: View/Tickets/admin_view.ctp:13
-#: View/Types/admin_view.ctp:12
 msgid "Delete %s"
 msgstr ""
 
-#: View/Actions/admin_add.ctp:17;29;14;16
-#: View/Actions/admin_edit.ctp:18;31;15;17
-#: View/Actions/admin_index.ctp:17;27;14;16
-#: View/Actions/admin_view.ctp:20;39;17;19
-#: View/Activities/admin_add.ctp:17;14;16
-#: View/Activities/admin_edit.ctp:18;15;17
-#: View/Activities/admin_index.ctp:17;14;16
-#: View/Activities/admin_view.ctp:20;17;19
-#: View/Categories/admin_add.ctp:17;14;16
-#: View/Categories/admin_edit.ctp:18;15;17
-#: View/Categories/admin_index.ctp:17;14;16
-#: View/Categories/admin_view.ctp:20;17;19
-#: View/Causes/admin_add.ctp:17;14;16
-#: View/Causes/admin_edit.ctp:18;15;17
-#: View/Causes/admin_index.ctp:17;14;16
-#: View/Causes/admin_view.ctp:20;17;19
-#: View/Origins/admin_add.ctp:17;14;16
-#: View/Origins/admin_edit.ctp:18;15;17
-#: View/Origins/admin_index.ctp:17;14;16
-#: View/Origins/admin_view.ctp:20;17;19
-#: View/Plan/add_action.ctp:10;178;13;15
-#: View/Plan/edit.ctp:29;41;36;45
-#: View/Plan/edit_action.ctp:10;8;11
-#: View/Plan/index.ctp:1
-#: View/Processes/admin_add.ctp:17;14;16
-#: View/Processes/admin_edit.ctp:18;15;17
-#: View/Processes/admin_index.ctp:17;14;16
-#: View/Processes/admin_view.ctp:20;17;19
-#: View/Query/export.ctp:1;8;10
-#: View/Query/index.ctp:1;8
-#: View/Query/view.ctp:1;8;10;250
-#: View/Register/add.ctp:2;24;11;13
-#: View/Register/edit.ctp:2;21;9;11
-#: View/Register/index.ctp:11;1;9
-#: View/Register/view.ctp:1;10;11;12;14;8;13
-#: View/Review/edit.ctp:20;33;41;27;45
-#: View/Review/index.ctp:1
-#: View/Suppliers/admin_add.ctp:17;14;16
-#: View/Suppliers/admin_edit.ctp:18;15;17
-#: View/Suppliers/admin_index.ctp:17;14;16
-#: View/Suppliers/admin_view.ctp:20;17;19
-#: View/Tickets/admin_add.ctp:2;66;10;12
-#: View/Tickets/admin_edit.ctp:2;66;10;12
-#: View/Tickets/admin_export.ctp:1;9;11
-#: View/Tickets/admin_index.ctp:12;1;9
-#: View/Tickets/admin_view.ctp:1;12;13;15;9;14;301
-#: View/Types/admin_add.ctp:17;14;16
-#: View/Types/admin_edit.ctp:18;15;17
-#: View/Types/admin_index.ctp:17;14;16
-#: View/Types/admin_view.ctp:20;17;19
-#: View/Verify/edit_action.ctp:24;13;15
-#: View/Verify/index.ctp:1
-#: View/Verify/view.ctp:19;26;41
 msgid "Ticket"
 msgid_plural "Tickets"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Actions/admin_add.ctp:30;34;35;37;38
-#: View/Actions/admin_edit.ctp:36;37;39;40
-#: View/Plan/add_action.ctp:179
-#: View/Plan/edit.ctp:211
-#: View/Plan/edit_action.ctp:174
-#: View/Register/add.ctp:27;31;32;33;40;41;45
-#: View/Register/edit.ctp:26;27;28;29;36;37;41
-#: View/Register/update_by_process.ctp:3;4
-#: View/Review/edit.ctp:211
-#: View/Tickets/admin_add.ctp:69;70;71;72;73;74;75;76;77;81;86;87;88
-#: View/Tickets/admin_edit.ctp:70;71;72;73;74;75;76;77;78;82;87;88;89
-#: View/Verify/edit_action.ctp:299
 msgid "(choose one)"
 msgstr ""
 
-#: View/Actions/admin_add.ctp:31
-#: View/Actions/admin_edit.ctp:33
-#: View/Actions/admin_index.ctp:29
-#: View/Actions/admin_view.ctp:53
-#: View/Plan/add_action.ctp:122;180
-#: View/Plan/edit.ctp:171;232
-#: View/Plan/edit_action.ctp:116;175
-#: View/Plan/index.ctp:17
-#: View/Query/index.ctp:28
-#: View/Query/view.ctp:176;263;325
-#: View/Query/xls_data.ctp:30;38;47;56
-#: View/Register/add.ctp:46
-#: View/Register/edit.ctp:42
-#: View/Register/index.ctp:30
-#: View/Register/view.ctp:151
-#: View/Review/edit.ctp:171
-#: View/Review/index.ctp:16
-#: View/Tickets/admin_add.ctp:80
-#: View/Tickets/admin_edit.ctp:81
-#: View/Tickets/admin_index.ctp:76
-#: View/Tickets/admin_view.ctp:228;313;379
-#: View/Tickets/xls_data.ctp:30;38;47;56
-#: View/Verify/edit_action.ctp:129;220
-#: View/Verify/index.ctp:15
-#: View/Verify/view.ctp:171;241
 msgid "Description"
 msgstr ""
 
-#: View/Actions/admin_add.ctp:32
-#: View/Actions/admin_edit.ctp:34
-#: View/Actions/admin_index.ctp:30
-#: View/Actions/admin_view.ctp:60
-#: View/Plan/add_action.ctp:181
-#: View/Plan/edit.ctp:234
-#: View/Plan/edit_action.ctp:176
-#: View/Query/view.ctp:264
-#: View/Query/xls_data.ctp:39;48;57
-#: View/Tickets/admin_view.ctp:314
-#: View/Tickets/xls_data.ctp:39;48;57
-#: View/Verify/edit_action.ctp:231
 msgid "Deadline"
 msgstr ""
 
-#: View/Actions/admin_add.ctp:32
-#: View/Actions/admin_edit.ctp:34
-#: View/Actions/admin_view.ctp:63
-#: View/Plan/add_action.ctp:181
-#: View/Plan/edit.ctp:271
-#: View/Plan/edit_action.ctp:176
-#: View/Query/view.ctp:288
-#: View/Tickets/admin_view.ctp:337
-#: View/Verify/edit_action.ctp:236
 msgid "Days"
 msgstr ""
 
-#: View/Actions/admin_add.ctp:33
-#: View/Actions/admin_edit.ctp:35
-#: View/Actions/admin_index.ctp:31
-#: View/Actions/admin_view.ctp:67
-#: View/Plan/add_action.ctp:182
-#: View/Plan/edit.ctp:237
-#: View/Plan/edit_action.ctp:177
-#: View/Query/view.ctp:265
-#: View/Query/xls_data.ctp:41;50;59
-#: View/Tickets/admin_view.ctp:315
-#: View/Tickets/xls_data.ctp:41;50;59
-#: View/Verify/edit_action.ctp:242
 msgid "Closed"
 msgstr ""
 
-#: View/Actions/admin_add.ctp:34
-#: View/Actions/admin_edit.ctp:36
-#: View/Actions/admin_index.ctp:32
-#: View/Actions/admin_view.ctp:74
-#: View/Plan/edit.ctp:236
-#: View/Query/view.ctp:209;266
-#: View/Query/xls_data.ctp:33;42;51;60
-#: View/Tickets/admin_add.ctp:86
-#: View/Tickets/admin_edit.ctp:87
-#: View/Tickets/admin_view.ctp:261;316
-#: View/Tickets/xls_data.ctp:33;42;51;60
-#: View/Verify/edit_action.ctp:253
-#: View/Verify/view.ctp:245
 msgid "Close Date"
 msgstr ""
 
-#: View/Actions/admin_add.ctp:35
-#: View/Actions/admin_edit.ctp:37
-#: View/Verify/edit_action.ctp:299
 msgid "Action Effectiveness"
 msgstr ""
 
-#: View/Actions/admin_add.ctp:36
-#: View/Actions/admin_edit.ctp:38
-#: View/Actions/admin_index.ctp:34
-#: View/Actions/admin_view.ctp:89
-#: View/Query/view.ctp:268
-#: View/Query/xls_data.ctp:44;53;62
-#: View/Tickets/admin_view.ctp:318
-#: View/Tickets/xls_data.ctp:44;53;62
-#: View/Verify/edit_action.ctp:300
-#: View/Verify/view.ctp:243
 msgid "Effectiveness Notes"
 msgstr ""
 
-#: View/Actions/admin_index.ctp:33
-#: View/Actions/admin_view.ctp:82
-#: View/Query/view.ctp:267
-#: View/Query/xls_data.ctp:43;52;61
-#: View/Tickets/admin_view.ctp:317
-#: View/Tickets/xls_data.ctp:43;52;61
-#: View/Verify/view.ctp:242
 msgid "Effectiveness"
 msgstr ""
 
-#: View/Activities/admin_add.ctp:1;31;9;11
-#: View/Activities/admin_edit.ctp:1;32;9;12
-#: View/Activities/admin_index.ctp:11;1;9
-#: View/Activities/admin_view.ctp:1;11;12;14;9;13
-#: View/Plan/add_action.ctp:95
-#: View/Plan/edit.ctp:138
-#: View/Plan/edit_action.ctp:89
-#: View/Plan/index.ctp:16
-#: View/Processes/admin_add.ctp:23;45;20;22
-#: View/Processes/admin_edit.ctp:24;47;21;23
-#: View/Processes/admin_index.ctp:23;20;22
-#: View/Processes/admin_view.ctp:26;152;23;25;110;114
-#: View/Query/index.ctp:27
-#: View/Query/view.ctp:130
-#: View/Query/xls_data.ctp:25
-#: View/Register/add.ctp:40
-#: View/Register/edit.ctp:36
-#: View/Register/index.ctp:29
-#: View/Register/update_by_process.ctp:3
-#: View/Register/view.ctp:117
-#: View/Review/edit.ctp:138
-#: View/Review/index.ctp:15
-#: View/Tickets/admin_add.ctp:35;75;32;34
-#: View/Tickets/admin_edit.ctp:35;76;32;34
-#: View/Tickets/admin_index.ctp:37;75;34;36
-#: View/Tickets/admin_view.ctp:46;182;43;45
-#: View/Tickets/xls_data.ctp:25
-#: View/Verify/edit_action.ctp:96
-#: View/Verify/index.ctp:14
-#: View/Verify/view.ctp:137
 msgid "Activity"
 msgid_plural "Activities"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Activities/admin_add.ctp:23;35;20;22
-#: View/Activities/admin_edit.ctp:24;37;21;23
-#: View/Activities/admin_index.ctp:23;20;22
-#: View/Activities/admin_view.ctp:26;142;23;25;100;104
-#: View/Categories/admin_add.ctp:23;41;20;22
-#: View/Categories/admin_edit.ctp:24;43;21;23
-#: View/Categories/admin_index.ctp:23;20;22
-#: View/Categories/admin_view.ctp:26;142;23;25;100;104
-#: View/Plan/add_action.ctp:85
-#: View/Plan/edit.ctp:126
-#: View/Plan/edit_action.ctp:80
-#: View/Plan/index.ctp:14
-#: View/Processes/admin_add.ctp:1;41;9;11
-#: View/Processes/admin_edit.ctp:1;42;9;12
-#: View/Processes/admin_index.ctp:11;1;9
-#: View/Processes/admin_view.ctp:1;11;12;14;9;13
-#: View/Query/index.ctp:25
-#: View/Query/view.ctp:118;323
-#: View/Query/xls_data.ctp:24
-#: View/Register/add.ctp:33
-#: View/Register/edit.ctp:29
-#: View/Register/index.ctp:27
-#: View/Register/view.ctp:105
-#: View/Review/edit.ctp:126
-#: View/Review/index.ctp:13
-#: View/Tickets/admin_add.ctp:24;74;21;23
-#: View/Tickets/admin_edit.ctp:24;75;21;23
-#: View/Tickets/admin_index.ctp:26;73;23;25
-#: View/Tickets/admin_view.ctp:35;170;377;32;34
-#: View/Tickets/xls_data.ctp:24
-#: View/Users/admin_add.ctp:19;34;16;18
-#: View/Users/admin_edit.ctp:19;78;81;16;18
-#: View/Users/admin_index.ctp:12;9;11
-#: View/Users/admin_view.ctp:18;15;17;91;95
-#: View/Verify/edit_action.ctp:84
-#: View/Verify/index.ctp:12
-#: View/Verify/view.ctp:125
 msgid "Process"
 msgid_plural "Processes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Activities/admin_view.ctp:100
-#: View/Categories/admin_view.ctp:100
-#: View/Causes/admin_view.ctp:100
-#: View/Processes/admin_view.ctp:110
-#: View/Query/view.ctp:250
-#: View/Tickets/admin_view.ctp:301
-#: View/Users/admin_view.ctp:91
 msgid "Related"
 msgstr ""
 
-#: View/Categories/admin_add.ctp:1;37;9;11
-#: View/Categories/admin_edit.ctp:1;38;9;12
-#: View/Categories/admin_index.ctp:11;1;9
-#: View/Categories/admin_view.ctp:1;11;12;14;9;13
-#: View/Causes/admin_add.ctp:23;35;20;22
-#: View/Causes/admin_edit.ctp:24;37;21;23
-#: View/Causes/admin_index.ctp:23;20;22
-#: View/Causes/admin_view.ctp:142;23;25;26;100;104
-#: View/Plan/add_action.ctp:104
-#: View/Plan/edit.ctp:149
-#: View/Plan/edit_action.ctp:98
-#: View/Plan/index.ctp:15
-#: View/Processes/admin_add.ctp:29;46;26;28
-#: View/Processes/admin_edit.ctp:30;48;27;29
-#: View/Processes/admin_index.ctp:29;26;28
-#: View/Processes/admin_view.ctp:32;195;29;31;110;157
-#: View/Query/index.ctp:26
-#: View/Query/view.ctp:143;324
-#: View/Query/xls_data.ctp:26
-#: View/Register/add.ctp:41
-#: View/Register/edit.ctp:37
-#: View/Register/index.ctp:28
-#: View/Register/update_by_process.ctp:4
-#: View/Register/view.ctp:129
-#: View/Review/edit.ctp:149
-#: View/Review/index.ctp:14
-#: View/Tickets/admin_add.ctp:41;76;38;40
-#: View/Tickets/admin_edit.ctp:41;77;38;40
-#: View/Tickets/admin_index.ctp:43;74;40;42
-#: View/Tickets/admin_view.ctp:52;195;378;49;51
-#: View/Tickets/xls_data.ctp:26
-#: View/Verify/edit_action.ctp:107
-#: View/Verify/index.ctp:13
-#: View/Verify/view.ctp:148
 msgid "Category"
 msgid_plural "Categories"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Categories/admin_add.ctp:29;42;26;28
-#: View/Categories/admin_edit.ctp:30;44;27;29
-#: View/Categories/admin_view.ctp:185;100;147
-#: View/Causes/admin_add.ctp:1;31;9;11
-#: View/Causes/admin_edit.ctp:1;32;9;12
-#: View/Causes/admin_index.ctp:11;1;9
-#: View/Causes/admin_view.ctp:1;11;12;14;9;13
-#: View/Plan/add_action.ctp:131
-#: View/Plan/edit.ctp:208;211
-#: View/Plan/edit_action.ctp:125
-#: View/Query/view.ctp:187
-#: View/Query/xls_data.ctp:31
-#: View/Tickets/admin_add.ctp:81
-#: View/Tickets/admin_edit.ctp:82
-#: View/Tickets/admin_view.ctp:239
-#: View/Tickets/xls_data.ctp:31
-#: View/Verify/edit_action.ctp:140
-#: View/Verify/view.ctp:182
 msgid "Cause"
 msgid_plural "Causes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Origins/admin_add.ctp:1;25;9;11
-#: View/Origins/admin_edit.ctp:1;26;9;12
-#: View/Origins/admin_index.ctp:11;1;9
-#: View/Origins/admin_view.ctp:1;11;12;14;9;13
-#: View/Plan/add_action.ctp:76
-#: View/Plan/edit.ctp:115
-#: View/Plan/edit_action.ctp:71
-#: View/Plan/index.ctp:13
-#: View/Query/index.ctp:24
-#: View/Query/view.ctp:107;322
-#: View/Query/xls_data.ctp:23
-#: View/Register/add.ctp:32
-#: View/Register/edit.ctp:28
-#: View/Register/index.ctp:26
-#: View/Register/view.ctp:94
-#: View/Review/edit.ctp:115
-#: View/Review/index.ctp:12
-#: View/Tickets/admin_add.ctp:47;73;44;46
-#: View/Tickets/admin_edit.ctp:47;74;44;46
-#: View/Tickets/admin_index.ctp:49;72;46;48
-#: View/Tickets/admin_view.ctp:58;159;376;55;57
-#: View/Tickets/xls_data.ctp:22
-#: View/Verify/edit_action.ctp:73
-#: View/Verify/index.ctp:11
-#: View/Verify/view.ctp:113
 msgid "Origin"
 msgid_plural "Origins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Phkapa/offline.ctp:5
-#: View/Phkapa/offline_ajax.ctp:1
 msgid "Application Offline"
 msgstr ""
 
-#: View/Phkapa/offline.ctp:8
-#: View/Phkapa/offline_ajax.ctp:4
 msgid "This application is now on maintenance mode, back soon as possible!"
 msgstr ""
 
-#: View/Plan/add_action.ctp:1
-#: View/Plan/edit.ctp:29;221
-#: View/Plan/edit_action.ctp:1
-#: View/Plan/index.ctp:1
 msgid "Plan"
 msgstr ""
 
-#: View/Plan/add_action.ctp:42
-#: View/Plan/edit.ctp:75
-#: View/Plan/edit_action.ctp:37
-#: View/Query/view.ctp:45
-#: View/Query/xls_data.ctp:19
-#: View/Register/add.ctp:49
-#: View/Register/edit.ctp:45
-#: View/Register/view.ctp:43
-#: View/Review/edit.ctp:75
-#: View/Tickets/admin_add.ctp:84
-#: View/Tickets/admin_edit.ctp:85
-#: View/Tickets/admin_view.ctp:96
-#: View/Tickets/xls_data.ctp:19
-#: View/Verify/view.ctp:73
 msgid "Ticket Parent"
 msgstr ""
 
-#: View/Plan/add_action.ctp:47
-#: View/Plan/edit.ctp:81
-#: View/Plan/edit_action.ctp:42
-#: View/Query/view.ctp:51
-#: View/Register/view.ctp:49
-#: View/Review/edit.ctp:81
-#: View/Tickets/admin_view.ctp:102
-#: View/Verify/view.ctp:79
 msgid "See ticket parent data"
 msgstr ""
 
-#: View/Plan/add_action.ctp:54
-#: View/Plan/edit.ctp:89
-#: View/Plan/edit_action.ctp:49
-#: View/Plan/index.ctp:11
-#: View/Query/index.ctp:22
-#: View/Query/view.ctp:81
-#: View/Query/xls_data.ctp:21
-#: View/Register/add.ctp:27
-#: View/Register/edit.ctp:26
-#: View/Register/index.ctp:24
-#: View/Register/view.ctp:68
-#: View/Review/edit.ctp:89
-#: View/Review/index.ctp:10
-#: View/Tickets/admin_add.ctp:71
-#: View/Tickets/admin_edit.ctp:72
-#: View/Tickets/admin_index.ctp:70
-#: View/Tickets/admin_view.ctp:133
-#: View/Tickets/xls_data.ctp:23
-#: View/Verify/edit_action.ctp:47
-#: View/Verify/index.ctp:9
-#: View/Verify/view.ctp:87
 msgid "Origin Date"
 msgstr ""
 
-#: View/Plan/add_action.ctp:113
-#: View/Plan/edit.ctp:160
-#: View/Plan/edit_action.ctp:107
-#: View/Query/view.ctp:154
-#: View/Query/xls_data.ctp:27
-#: View/Register/add.ctp:45
-#: View/Register/edit.ctp:41
-#: View/Register/view.ctp:140
-#: View/Review/edit.ctp:160
-#: View/Suppliers/admin_add.ctp:1;30;9;11
-#: View/Suppliers/admin_edit.ctp:1;31;9;12
-#: View/Suppliers/admin_index.ctp:11;1;9
-#: View/Suppliers/admin_view.ctp:1;11;12;14;9;13
-#: View/Tickets/admin_add.ctp:77
-#: View/Tickets/admin_edit.ctp:78
-#: View/Tickets/admin_view.ctp:206
-#: View/Tickets/xls_data.ctp:27
-#: View/Verify/edit_action.ctp:118
-#: View/Verify/view.ctp:160
 msgid "Supplier"
 msgid_plural "Suppliers"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Plan/add_action.ctp:140
-#: View/Plan/edit.ctp:212
-#: View/Plan/edit_action.ctp:134
-#: View/Query/view.ctp:198
-#: View/Query/xls_data.ctp:32
-#: View/Tickets/admin_add.ctp:82
-#: View/Tickets/admin_edit.ctp:83
-#: View/Tickets/admin_view.ctp:250
-#: View/Tickets/xls_data.ctp:32
-#: View/Verify/edit_action.ctp:151
-#: View/Verify/view.ctp:193
 msgid "Cause Notes"
 msgstr ""
 
-#: View/Plan/edit.ctp:41
-#: View/Register/view.ctp:10
-#: View/Review/edit.ctp:33
 msgid "Send %s"
 msgstr ""
 
-#: View/Plan/edit.ctp:41
-#: View/Plan/index.ctp:92
-#: View/Register/index.ctp:58
-#: View/Register/view.ctp:10
-#: View/Review/edit.ctp:33
-#: View/Review/index.ctp:62;68
 msgid "Are you sure you want to send # %s?"
 msgstr ""
 
-#: View/Plan/edit.ctp:208
-#: View/Review/edit.ctp:208
 msgid "Record %s"
 msgstr ""
 
-#: View/Plan/edit.ctp:235
-#: View/Query/xls_data.ctp:40;49;58
-#: View/Tickets/xls_data.ctp:40;49;58
 msgid "Expiry"
 msgstr ""
 
-#: View/Plan/edit.ctp:261
-#: View/Plan/index.ctp:48
 msgid "Action deadline expired!!!"
 msgstr ""
 
-#: View/Plan/edit.ctp:285
-#: View/Review/index.ctp:68
-#: View/Verify/index.ctp:61
-#: View/Verify/view.ctp:30
 msgid "Close"
 msgstr ""
 
-#: View/Plan/edit.ctp:285
-#: View/Review/edit.ctp:41
-#: View/Verify/index.ctp:61
-#: View/Verify/view.ctp:30
 msgid "Are you sure you want to close # %s?"
 msgstr ""
 
-#: View/Plan/index.ctp:62
 msgid "No cause!!!"
 msgstr ""
 
-#: View/Plan/index.ctp:65
 msgid "No plan!!!"
 msgstr ""
 
-#: View/Plan/index.ctp:92
-#: View/Register/index.ctp:58
-#: View/Review/index.ctp:62
 msgid "Send"
 msgstr ""
 
-#: View/Plan/index.ctp:119
-#: View/Query/index.ctp:110
-#: View/Register/index.ctp:84
-#: View/Review/index.ctp:95
-#: View/Verify/index.ctp:87
 msgid "No records found!!!"
 msgstr ""
 
-#: View/Processes/admin_add.ctp:31;33
-#: View/Processes/admin_edit.ctp:32;34
-#: View/Processes/admin_index.ctp:31;33
-#: View/Processes/admin_view.ctp:34;36;110
-#: View/Tickets/admin_add.ctp:27;29
-#: View/Tickets/admin_edit.ctp:27;29
-#: View/Tickets/admin_index.ctp:29;31
-#: View/Tickets/admin_view.ctp:38;40
-#: View/Users/admin_add.ctp:11
 msgid "Users"
 msgstr ""
 
-#: View/Processes/admin_add.ctp:47
-#: View/Processes/admin_edit.ctp:49
-#: View/Processes/admin_view.ctp:200
-#: View/Users/admin_add.ctp:1;27;9
-#: View/Users/admin_edit.ctp:1;9;11
-#: View/Users/admin_index.ctp:1
-#: View/Users/admin_view.ctp:1;9;11;12
 msgid "User"
 msgid_plural "Users"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Query/export.ctp:21
-#: View/Query/index.ctp:10
-#: View/Tickets/admin_export.ctp:20
-#: View/Tickets/admin_index.ctp:13
 msgid "Export to Excel"
 msgstr ""
 
-#: View/Query/export.ctp:38
-#: View/Tickets/admin_export.ctp:37
 msgid "Start Date"
 msgstr ""
 
-#: View/Query/export.ctp:39
-#: View/Tickets/admin_export.ctp:38
 msgid "End Date"
 msgstr ""
 
-#: View/Query/export.ctp:42
-#: View/Tickets/admin_export.ctp:41
 msgid "Download File"
 msgstr ""
 
-#: View/Query/index.ctp:30
-#: View/Query/view.ctp:59;327
-#: View/Query/xls_data.ctp:20
-#: View/Tickets/admin_add.ctp:69
-#: View/Tickets/admin_edit.ctp:70
-#: View/Tickets/admin_index.ctp:78
-#: View/Tickets/admin_view.ctp:110;381
-#: View/Tickets/xls_data.ctp:20
 msgid "Workflow"
 msgstr ""
 
-#: View/Query/view.ctp:15
-#: View/Tickets/admin_view.ctp:20;423
-#: View/Verify/view.ctp:42
 msgid "Open new related ticket"
 msgstr ""
 
-#: View/Query/view.ctp:70
-#: View/Register/view.ctp:57
-#: View/Tickets/admin_add.ctp:70
-#: View/Tickets/admin_edit.ctp:71
-#: View/Tickets/admin_view.ctp:122
 msgid "Registar"
 msgstr ""
 
-#: View/Query/view.ctp:165
-#: View/Query/xls_data.ctp:28
-#: View/Review/edit.ctp:212
-#: View/Review/index.ctp:17
-#: View/Tickets/admin_add.ctp:78
-#: View/Tickets/admin_edit.ctp:79
-#: View/Tickets/admin_view.ctp:217
-#: View/Tickets/xls_data.ctp:28
 msgid "Approved"
 msgstr ""
 
-#: View/Query/view.ctp:313
-#: View/Tickets/admin_view.ctp:367
 msgid "Related Tickets"
 msgstr ""
 
-#: View/Query/view.ctp:320
-#: View/Tickets/admin_view.ctp:374
 msgid "Orgigin Date"
 msgstr ""
 
-#: View/Query/xls_data.ctp:29
-#: View/Tickets/admin_add.ctp:79
-#: View/Tickets/admin_edit.ctp:80
-#: View/Tickets/xls_data.ctp:29
 msgid "Review Notes"
 msgstr ""
 
-#: View/Register/add.ctp:2
-#: View/Register/edit.ctp:2
-#: View/Register/index.ctp:1
-#: View/Register/view.ctp:1
 msgid "Register"
 msgstr ""
 
-#: View/Register/add.ctp:27
 msgid "set todays date"
 msgstr ""
 
-#: View/Register/add.ctp:34
-#: View/Register/edit.ctp:30
 msgid "Loading process data"
 msgstr ""
 
-#: View/Register/add.ctp:63
-#: View/Register/edit.ctp:57
 msgid "Select Supplier"
 msgstr ""
 
-#: View/Review/edit.ctp:20;208
-#: View/Review/index.ctp:1
 msgid "Review"
 msgstr ""
 
-#: View/Review/edit.ctp:41
 msgid "Close %s"
 msgstr ""
 
-#: View/Review/edit.ctp:211
 msgid "No"
 msgstr ""
 
-#: View/Review/edit.ctp:211
 msgid "Yes"
 msgstr ""
 
-#: View/Review/edit.ctp:214
 msgid "Notes"
 msgstr ""
 
-#: View/Tickets/admin_index.ctp:109
 msgid "Related Child Tickets and actions will also be deleted!!"
 msgstr ""
 
-#: View/Users/admin_add.ctp:30
-#: View/Users/admin_edit.ctp:53
-#: View/Users/admin_index.ctp:26
-#: View/Users/admin_view.ctp:62
 msgid "Username"
 msgstr ""
 
-#: View/Users/admin_add.ctp:31
 msgid "Password"
 msgstr ""
 
-#: View/Users/admin_add.ctp:33
 msgid "Role"
 msgstr ""
 
-#: View/Verify/edit_action.ctp:1
-#: View/Verify/index.ctp:1
-#: View/Verify/view.ctp:19
 msgid "Verify"
 msgstr ""
 
-#: View/Verify/edit_action.ctp:1
 msgid "Efficiency"
 msgstr ""
 
-#: View/Verify/index.ctp:40
-#: View/Verify/view.ctp:14
 msgid "This ticket has actions that were not effective, please choose cancel if you want replan or create a new related ticket before closing."
 msgstr ""
 
-#: View/Verify/view.ctp:36
 msgid "Replan"
 msgstr ""
 
-#: View/Verify/view.ctp:36
 msgid "Are you sure you want to replan # %s?"
 msgstr ""
 
-#: View/Verify/view.ctp:246
 msgid "After Deadline"
 msgstr ""
 
-#: Model/Action.php:validation for field ticket_id;validation for field deadline
-#: Model/Ticket.php:validation for field ticket_parent
 msgid "Numeric"
 msgstr ""
 
-#: Model/Action.php:validation for field action_type_id;validation for field action_effectiveness_id
-#: Model/Ticket.php:validation for field type_id;validation for field process_id;validation for field registar_id;validation for field activity_id;validation for field category_id;validation for field origin_id;validation for field workflow_id
 msgid "Choose one option"
 msgstr ""
 
-#: Model/Action.php:validation for field action_effectiveness_id
 msgid "Action type requires verification on close"
 msgstr ""
 
-#: Model/Action.php:validation for field description
-#: Model/ActionType.php:validation for field name
-#: Model/Activity.php:validation for field name
-#: Model/Category.php:validation for field name
-#: Model/Cause.php:validation for field name
-#: Model/Origin.php:validation for field name
-#: Model/Process.php:validation for field name
-#: Model/Supplier.php:validation for field name
-#: Model/Type.php:validation for field name
 msgid "Empty"
 msgstr ""
 
-#: Model/Action.php:validation for field closed
-#: Model/ActionType.php:validation for field verification;validation for field active
-#: Model/Activity.php:validation for field active
-#: Model/Category.php:validation for field active
-#: Model/Cause.php:validation for field active
-#: Model/Origin.php:validation for field active
-#: Model/Process.php:validation for field active
-#: Model/Supplier.php:validation for field active
-#: Model/Type.php:validation for field active
 msgid "Boolean"
 msgstr ""
 
-#: Model/Action.php:validation for field close_date
 msgid "Action is closed, must have closed date"
 msgstr ""
 
-#: Model/Action.php:validation for field close_date
 msgid "Must be between ticket origin date and ticket close date"
 msgstr ""
 
-#: Model/Action.php:validation for field close_date
-#: Model/Ticket.php:validation for field origin_date;validation for field close_date
 msgid "Invalid date"
 msgstr ""
 
-#: Model/Ticket.php:validation for field cause_id
 msgid "This workflow requires cause"
 msgstr ""
 
-#: Model/Ticket.php:validation for field ticket_parent
 msgid "Invalid parent"
 msgstr ""
 
-#: Model/Ticket.php:validation for field close_date
 msgid "This workflow requires close date"
 msgstr ""
 
-#: Model/Ticket.php:validation for field close_date
 msgid "Close date must be between origin date and today"
 msgstr ""
 
 
-#: Other
 msgid "Query"
 msgstr ""
 
@@ -1721,4 +397,7 @@ msgstr ""
 
 
 msgid "New ticket registered"
+msgstr ""
+
+msgid "Filter Origin Date"
 msgstr ""

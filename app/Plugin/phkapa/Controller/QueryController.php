@@ -129,9 +129,8 @@ class QueryController extends PhkapaAppController {
 //debug($this->request->data);
             $range['start'] = $this->request->data['Ticket']['startdate'];
             $range['end'] = $this->request->data['Ticket']['enddate'];
-
-            $data = $this->Ticket->find('all', array('order'=>'Ticket.created','conditions' => array('Ticket.origin_date BETWEEN ? AND ?' =>
-                    array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'] . ' ' . $range['start']['hour'] . ':' . $range['start']['min'], $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day'] . ' ' . $range['end']['hour'] . ':' . $range['end']['min']), "AND" => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
+// . ' ' . $range['start']['hour'] . ':' . $range['start']['min']  -- . ' ' . $range['end']['hour'] . ':' . $range['end']['min']
+            $data = $this->Ticket->find('all', array('order'=>'Ticket.created','conditions' => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'] , $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day'] ), "AND" => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
             $this->set('tickets', $data);
 //debug($data);
             $this->render('xls_data', 'export');
