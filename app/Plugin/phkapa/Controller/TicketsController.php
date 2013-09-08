@@ -242,7 +242,7 @@ class TicketsController extends PhkapaAppController {
             $range['start'] = $this->request->data['Ticket']['startdate'];
             $range['end'] = $this->request->data['Ticket']['enddate'];
 
-            $data = $this->Ticket->find('all', array('conditions' => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'] . ' ' . $range['start']['hour'] . ':' . $range['start']['min'], 'Ticket.origin_date <=' => $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day'] . ' ' . $range['end']['hour'] . ':' . $range['end']['min']))));
+            $data = $this->Ticket->find('all', array('conditions' => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'], 'Ticket.origin_date <=' => $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day']))));
             $this->set('tickets', $data);
             //debug($data);
             $this->render('xls_data', 'export');
