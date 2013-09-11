@@ -57,7 +57,7 @@ class ActionTypesController extends PhkapaAppController {
     public function admin_add() {
         if (!empty($this->request->data)) {
             $this->ActionType->create();
-            if ($this->ACtionType->save($this->request->data)) {
+            if ($this->ActionType->save($this->request->data)) {
                 $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
