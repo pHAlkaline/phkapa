@@ -1,3 +1,25 @@
+--> From V1.0.5 to V1.0.6
+# Create notifications Table --
+-- Table structure for table `notifications` changed
+--
+DROP TABLE IF EXISTS `notifications`;
+CREATE TABLE IF NOT EXISTS `notifications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `notifier_id` int(11) NOT NULL,
+  `notified_id` int(11) NOT NULL,
+  `reference` varchar(500) NOT NULL,
+  `notification` text NOT NULL, 
+  `read` tinyint(1) NOT NULL DEFAULT '0', -> Changed
+  `modified` datetime DEFAULT NULL, ->Changed
+  `created` datetime DEFAULT NULL, -> Changed
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+# Update all Files / Directories
+# including lib/Cake/* ( All Files and Directories )
+- Minor big fixes
+- Framework Update
+
 --> From V1.0.4 to V1.0.5
 
 # Update all Files / Directories
