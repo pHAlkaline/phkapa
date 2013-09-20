@@ -80,7 +80,7 @@ class Notification extends AppModel {
         'notification' => array(
             'notempty' => array(
                 'rule' => array('notempty'),
-                'message' => 'Choose one option',
+                'message' => 'Empty',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
