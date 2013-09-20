@@ -80,16 +80,17 @@ CREATE TABLE IF NOT EXISTS `aros_acos` (
 -- Table structure for table `notifications`
 --
 DROP TABLE IF EXISTS `notifications`;
-CREATE TABLE `notifications` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
-	`notifier_id` int(11) NOT NULL,
-	`notified_id` int(11) NOT NULL,
-	`reference` varchar(500) NOT NULL,
-	`notification` text NOT NULL,
-	`read` tinyint(1) NOT NULL,
-	`modified` datetime NOT NULL,
-	`created` datetime NOT NULL,
-	PRIMARY KEY (`id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `notifications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `notifier_id` int(11) NOT NULL,
+  `notified_id` int(11) NOT NULL,
+  `reference` varchar(500) NOT NULL,
+  `notification` text NOT NULL,
+  `read` tinyint(1) NOT NULL DEFAULT '0',
+  `modified` datetime DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 
 -- --------------------------------------------------------
