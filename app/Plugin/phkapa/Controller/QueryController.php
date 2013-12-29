@@ -13,6 +13,14 @@
  * @link     http://phkapa.phalkaline.eu
  */
 class QueryController extends PhkapaAppController {
+    
+    /**
+     * Components
+     *
+     * @var array
+     */
+    public $components = array('RequestHandler');
+
 
     /**
      * Controller name
@@ -112,6 +120,28 @@ class QueryController extends PhkapaAppController {
         
         $this->set('ticket', $ticket);
     }
+    
+    /**
+     * pdf method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    /*public function pdf($id) {
+        // increase memory limit in PHP 
+        ini_set('memory_limit', '256M');
+        $this->Ticket->recursive = 2;
+        $this->_setupModel();
+        $ticket = $this->Ticket->find('first', array('order'=>'', 'conditions' => array('AND' => array('Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
+        if (!$id || count($ticket) == 0) {
+            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            //$this->redirect(array('action' => 'index'));
+        }
+        
+        
+        $this->set('ticket', $ticket);
+    }*/
 
     /**
      * Export

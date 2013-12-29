@@ -6,4 +6,5 @@
     //echo "install";
     Router::connect('/:controler/:action', array('controller' => 'install'));
 }*/
+Router::parseExtensions('pdf');
  

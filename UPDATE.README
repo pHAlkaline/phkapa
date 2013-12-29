@@ -1,3 +1,35 @@
+--> From V1.0.7 to V1.0.8
+# Updated Files / Directories
+LICENSE.txt
+PHKAPA.README
+README.md
+VERSION.txt
+app/Plugin/phkapa/Controller/PhkapaAppController.php
+app/Plugin/phkapa/Controller/QueryController.php
+app/Plugin/phkapa/Controller/TicketsController.php
+app/Plugin/phkapa/webroot/js/register_add.js
+app/Plugin/phkapa/webroot/js/ticket_add.js
+app/Plugin/phkapa/Locale/* ( All Files and Directories )
+app/Locale/pt_BR/* ( All Files and Directories )
+app/webroot/js/aro_add_edit.js
+app/Config/bootstrap_phapp.php
+app/Config/routes.php
+app/Config/routes_phapp.php
+lib/Cake/* ( All Files and Directories )
+- Framework update
+- Small bugs fixed ( on Register forms add/edit ajax )
+- Portuguese ( Brasil ) translation added
+
+--> From V1.0.6 to V1.0.7
+
+# Updated Files / Directories
+LICENSE.txt
+PHKAPA.README
+app/Plugin/phkapa/Controller/PhkapaAppController.php
+lib/Cake/* ( All Files and Directories )
+- Framework update
+- Small bug fixed
+
 --> From V1.0.5 to V1.0.6
 # Create notifications Table --
 -- Table structure for table `notifications` changed

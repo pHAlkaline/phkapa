@@ -90,7 +90,7 @@ class NotifyComponent extends Component {
         if ($notified_id == null) {
             return;
         }
-        return $this->_model->find('count', array('conditions' => array('notified_id' => $notified_id,'read'=>'0')));
+        return $this->_model->find('count', array('conditions' => array('notified_id' => $notified_id, 'read' => '0')));
     }
 
     /**

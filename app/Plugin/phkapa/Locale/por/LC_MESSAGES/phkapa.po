@@ -397,3 +397,6 @@ msgstr "Há um novo registo"
 
 msgid "Filter Origin Date"
 msgstr "Filtro aplicado na Data de Origem"
+
+msgid "Open Report"
+msgstr "Abrir Relatório"

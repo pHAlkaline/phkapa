@@ -1,7 +1,7 @@
 
 $(function(){
     
-   $("#TicketRegistarId,#TicketProcessId,#TicketCategoryId").live("change", function (event) {
+   $("#TicketRegistarId,#TicketProcessId,#TicketCategoryId").on("change", function (event) {
         $("#TicketFilterChange").val('1');
         $(this).closest("form").submit();
         return false;

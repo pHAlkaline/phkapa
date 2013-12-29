@@ -5,7 +5,7 @@
 
 
 $(function(){
-    $("#AroForeignKey").live("change", function (event) {
+    $("#AroForeignKey").on("change", function (event) {
         setAroAlias()  
     });
     setAroAlias();

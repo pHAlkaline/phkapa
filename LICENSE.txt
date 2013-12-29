@@ -1,7 +1,7 @@
 The MIT License
 
-PHKAPA(tm) : Free Corrective Action Preventive Action Software (http://phkapa.phalkaline.eu)
-Copyright (c) 2013, pHAlkaline
+PHKAPA(tm) : (http://phkapa.phalkaline.eu)
+Copyright (c) , pHAlkaline
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the "Software"),
