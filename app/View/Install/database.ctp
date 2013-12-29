@@ -25,7 +25,7 @@
 		echo $this->Form->input('password', array('label' => 'Password'));
 		echo $this->Form->input('database', array('label' => 'Name', 'default' => 'phkapa'));
                 echo $this->Form->input('encoding', array('label' => 'Encoding', 'default' => 'utf8'));
-		echo $this->Form->input('prefix', array('label' => 'Prefix'));
+		//echo $this->Form->input('prefix', array('label' => 'Prefix'));
 		echo $this->Form->input('port', array('label' => 'Port (leave blank if unknown)'));
 		
             

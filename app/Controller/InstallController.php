@@ -169,11 +169,7 @@ class InstallController extends AppController {
             return;
         }
         return $this->redirect(array('action' => 'data'));
-        /* if (copy(APP . 'Config' . DS . 'phkapa.php.install', APP . 'Config' . DS . 'core.php')) {
-          return $this->redirect(array('action' => 'data'));
-          } else {
-          $this->Session->setFlash(__('Could not write croogo.php file.'), 'flash_message_error');
-          } */
+        
     }
 
     /**
