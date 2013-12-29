@@ -15,6 +15,13 @@
 class TicketsController extends PhkapaAppController {
 
     /**
+     * Components
+     *
+     * @var array
+     */
+    public $components = array('RequestHandler');
+    
+    /**
      * Controller name
      *
      * @var string
@@ -117,6 +124,27 @@ class TicketsController extends PhkapaAppController {
 
         $this->set('ticket', $this->Ticket->read(null, $id));
     }
+    
+    /**
+     * admin_pdf method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    /*public function admin_pdf($id) {
+        // increase memory limit in PHP 
+        ini_set('memory_limit', '256M');
+        if (!$id) {
+            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->Ticket->recursive = 2;
+        $this->_setupModel();
+
+
+        $this->set('ticket', $this->Ticket->read(null, $id));
+    }*/
 
     /**
      * Admin add

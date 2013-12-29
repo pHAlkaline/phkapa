@@ -1,0 +1,352 @@
+
+# LANGUAGE translation of PHKAPA Application
+# Copyright pHAlkaline <contact@phalkaline.eu>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: phkapa.phalkaline.eu\n"
+"POT-Creation-Date: 2013-11-16 21:57+0000\n"
+"PO-Revision-Date: 2013-11-16 21:57-0000\n"
+"Last-Translator: Ivan Lancini <ivanlancini@fates.com.br>\n"
+"Language-Team: pHAlkaline <contact@phalkaline.eu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: pt\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Saved with success."
+msgstr "Gravado com sucesso."
+
+msgid "Could not be saved. Please, try again."
+msgstr "Não foi possível gravar. Por favor tente outra vez."
+
+msgid "Invalid request."
+msgstr "Pedido inválido"
+
+msgid "Administration"
+msgstr "Administração"
+
+msgid "Group / User name must be unique!!"
+msgstr "Grupo / Nome do usuário tem de ser único"
+
+msgid "Root"
+msgstr "Raiz"
+
+msgid "Deleted with success."
+msgstr "Apagado com sucesso."
+
+msgid "Could not be deleted."
+msgstr "Não foi possível apagar."
+
+msgid "Already Installed"
+msgstr "Aplicação instalada"
+
+msgid "Installation: Welcome"
+msgstr "Instalação: Bem Vindo"
+
+msgid "Step 1 : Database connection"
+msgstr "Passo 1 : Configuração de acesso à base de dados"
+
+msgid "Database connection file already exists"
+msgstr "Pasta de configuração de acesso à base de dados já existe"
+
+msgid "Could not connect to database: %s"
+msgstr "Não foi possível a ligação à base de dados: %s"
+
+msgid "Could not connect to database."
+msgstr "Não foi possível a ligação à base de dados."
+
+msgid "Could not write database.php file."
+msgstr "Não foi possivél gravar a pasta database.php"
+
+msgid "Step 2 : Build database , load table values"
+msgstr "Passo 2 : Construir base de dados e carregar valores nas tabelas"
+
+msgid "Could not load database: %s"
+msgstr "Não foi possível carregar a base de dados: %s"
+
+msgid "Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions."
+msgstr "Não foi possivel tornar a aplicação mais segura, a sua pasta Config %s core.php não permite escrita. Verifique as permisões."
+
+msgid "Step 3 : Secure app and set new administrator password"
+msgstr "Passo 3 : Tornar a aplicação mais segura e defenir nova senha de administrador"
+
+msgid "Installation completed successfully"
+msgstr "A Instalação terminou com sucesso"
+
+msgid "Installation not completed successfully"
+msgstr "Não foi possível terminar a instalação com sucesso"
+
+msgid "Unable to generate users password."
+msgstr "Não foi possível gerar senha para os usuários"
+
+msgid "Login failed. Invalid username or password."
+msgstr "Iniciar sessão falhou. Nome do usuário ou senha inválida"
+
+msgid "This application will be on maintenance mode at  %s "
+msgstr "Esta aplicação vai entrar em modo de manutenção as %s "
+
+msgid "This name is restricted by system."
+msgstr "Este nome é restrito pelo sistema"
+
+msgid "Search..."
+msgstr "Pesquisa..."
+
+msgid "Add %s"
+msgstr "Adicionar %s"
+
+msgid "Aco"
+msgid_plural "Acos"
+msgstr[0] "Controle de Acesso"
+msgstr[1] "Controle de Acessos"
+
+msgid "Menu"
+msgstr ""
+
+msgid "List %s"
+msgstr "Listar %s"
+
+msgid "Record"
+msgstr "Registro"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Parent node"
+msgstr "Nó Pai"
+
+msgid "Submit"
+msgstr "Submeter"
+
+msgid "Edit %s"
+msgstr "Editar %s"
+
+msgid "Delete"
+msgstr "Apagar"
+
+msgid "Are you sure you want to delete # %s?"
+msgstr "Tem a certeza que quer apagar # %s?"
+
+msgid "This will also delete childs!!"
+msgstr "Ira ser apagado todos os registros dependentes!!"
+
+msgid "Actions"
+msgstr "Ações"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Up"
+msgstr "Cima"
+
+msgid "Down"
+msgstr "Baixo"
+
+msgid "Aro"
+msgid_plural "Aros"
+msgstr[0] "Gestão de Acesso"
+msgstr[1] "Gestão de Acessos"
+
+msgid "User"
+msgid_plural "Users"
+msgstr[0] "Usuário"
+msgstr[1] "Usuários"
+
+msgid "Type Group"
+msgstr "Tipo de Grupo"
+
+msgid "Group / User"
+msgstr "Grupo / Usuário"
+
+msgid "Allow"
+msgstr "Permite"
+
+msgid "Deny"
+msgstr "Nega"
+
+msgid "Allowed"
+msgstr "Permitido"
+
+msgid "Denyed"
+msgstr "Negado"
+
+msgid "No"
+msgstr "Não"
+
+msgid "Yes"
+msgstr "Sim"
+
+msgid "Admin user password"
+msgstr "Senha do usuário administrador"
+
+msgid "New Password"
+msgstr "Nova Senha"
+
+msgid "Verify Password"
+msgstr "Verificar Senha"
+
+msgid "Database and data"
+msgstr "Base de Dados e respectivos dados"
+
+msgid "Load data"
+msgstr "Carregar dados"
+
+msgid "Check load data option to insert dafault values to action types, activities, categories, causes, origins, processes, suppliers and finaly some example users and their access configuration."
+msgstr "Clique em carregar dados para adicionar valores na base de dados. Carrega dados para tipos de ação, seção, categorias, causas, origens, departamentos, fornecedores e no fim alguns usuários e a sua configuração para acessos."
+
+msgid "Setup database connection"
+msgstr "Defenir ligação á base de dados"
+
+msgid "Dont forget to restore default access values to Config and tmp directory."
+msgstr "Não se esqueça de restaurar os valores de defeito para os diretorios de Config e tmp"
+
+msgid "Passwords secured and updated for all users"
+msgstr "Senha assegurada e atualizada para todos os usuários"
+
+msgid "PHKAPA: %s"
+msgstr "PHKAPA: %s"
+
+msgid "Admin panel: %s"
+msgstr "Painel de Administração: %s"
+
+msgid "PHKAPA Admin panel: %s"
+msgstr "PHKAPA Painel de Administração"
+
+msgid "Resources"
+msgstr "Recursos"
+
+msgid "Your tmp directory is writable."
+msgstr "O diretorio tmp tem permisão de escrita"
+
+msgid "Your tmp directory is NOT writable."
+msgstr "O diretorio tmp não permite escrita."
+
+msgid "Your Config directory is writable."
+msgstr "O diretorio Config tem permisão de escrita"
+
+msgid "Your Config directory is NOT writable."
+msgstr "O diretorio Config não tem permisão de escrita."
+
+msgid "PHP version %s > 5.2"
+msgstr ""
+
+msgid "PHP version %s < 5.2"
+msgstr ""
+
+msgid "CakePhp version %s >= %s"
+msgstr ""
+
+msgid "CakePHP version %s < %s"
+msgstr ""
+
+msgid "Installation cannot continue as minimum requirements are not found."
+msgstr "A instalação não pode continuar, requisitos minimos não foram encontrados."
+
+msgid "End Session"
+msgstr "Terminar Sessão"
+
+msgid "Edit Profile"
+msgstr "Editar Perfil"
+
+msgid "Diagnostics"
+msgstr "Diagnosticos"
+
+msgid "The %s is being used for caching. To change the config edit APP/config/core.php "
+msgstr ""
+
+msgid "Your cache is NOT working. Please check the settings in APP/config/core.php"
+msgstr ""
+
+msgid "Your database configuration file is present."
+msgstr ""
+
+msgid "Your database configuration file is NOT present."
+msgstr ""
+
+msgid "Rename config/database.php.default to config/database.php"
+msgstr ""
+
+msgid "Cake is able to connect to the database."
+msgstr ""
+
+msgid "Cake is NOT able to connect to the database."
+msgstr ""
+
+msgid "Start Session"
+msgstr "Iniciar Sessão"
+
+msgid "Application Offline"
+msgstr "Applicação em Manutenção"
+
+msgid "This application is now on maintenance mode, back soon as possible!"
+msgstr "A Aplicação encontra-se em modo de manutenção, regressa em breve!"
+
+msgid "Username"
+msgstr "Nome do Usuário"
+
+msgid "Password"
+msgstr "Senha"
+
+msgid "Active"
+msgstr "Ativo"
+
+msgid "Enable change password"
+msgstr "Permitir alteração de senha"
+
+msgid "Modified"
+msgstr "Modificado"
+
+msgid "Created"
+msgstr "Criado"
+
+msgid "View"
+msgstr "Ver"
+
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr ""
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Next"
+msgstr "Próximo"
+
+msgid "No records found!!!"
+msgstr "Não foram encontrados registros!!"
+
+msgid "View %s"
+msgstr "Ver %s"
+
+msgid "Delete %s"
+msgstr "Apagar %s"
+
+msgid "Id"
+msgstr ""
+
+msgid "Empty"
+msgstr "Este campo não pode ser vazio"
+
+msgid "Must be unique"
+msgstr "Deve ser unico"
+
+msgid "Passwords dont match"
+msgstr "Senha não corresponde"
+
+msgid "Invalid email"
+msgstr "Email inválido"
+
+
+msgid "Notifier"
+msgstr "Notificador"
+
+msgid "Notification"
+msgid_plural "Notifications"
+msgstr[0] "Notificação"
+msgstr[1] "Notificações"
+
+msgid "Read"
+msgstr "Lido"

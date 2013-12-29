@@ -401,3 +401,7 @@ msgstr ""
 
 msgid "Filter Origin Date"
 msgstr ""
+
+
+msgid "Open Report"
+msgstr ""

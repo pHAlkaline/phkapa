@@ -1,6 +1,6 @@
 $(function(){
     
-    $("#TicketProcessId").live("change", function (event) {
+    $("#TicketProcessId").on("change", function (event) {
         //$("#TicketProcessChange").val('1');
         $("#LoadProcessData").css('display', 'inline');
         $('#TicketActivityId').children().filter(function() {
@@ -12,10 +12,12 @@ $(function(){
         //$('#TicketActivityId').attr("disabled", "disabled");
         //$('#TicketCategoryId').attr("disabled", "disabled");
         var href = $(location).attr('href');
-		var PHKAPAurl = href.replace("phkapa/register/add", "");
+	    var PHKAPAurl = href.slice(0, href.lastIndexOf("register"));
+        //alert(document.baseURI);
+        //alert(PHKAPAurl+"/phkapa/register/update_by_process");
         //console.log(x);
                 
-		$.ajax({
+        $.ajax({
             data:$("#TicketProcessId").closest("form").serialize(),
             dataType:"html",
             success:function (data, textStatus) {
@@ -30,7 +32,7 @@ $(function(){
                 $("#LoadProcessData").css('display', 'none');
             },
             type:"post",
-            url:PHKAPAurl+"phkapa/register/update_by_process"
+            url:PHKAPAurl+"register/update_by_process"
         });
         return false;
     });
