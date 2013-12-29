@@ -191,10 +191,11 @@ class User extends AppModel {
      * updates Aro->alias with user name
      *
      * @param boolean $created
+     * @param array $options
      * @access public
      * @return boolean
      */
-    public function afterSave($created) {
+    public function afterSave($created, $options=array()) {
         App::uses('Aro', 'Model');
         $this->Aro = new Aro();
         $aro = $this->Aro->findByForeignKey($this->id);
