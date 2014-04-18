@@ -77,7 +77,7 @@ class QueryController extends PhkapaAppController {
         }
 
         if (isset($keyword)) {
-            $this->paginate = array('conditions' => array
+            $this->paginate = array('limit'=>'2','conditions' => array
                     ("OR" => array(
                         "Ticket.id LIKE" => "%" . $keyword . "%",
                         "Priority.name LIKE" => "%" . $keyword . "%",
