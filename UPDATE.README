@@ -1,3 +1,15 @@
+--> From V1.0.8 to V1.0.9
+# Updated Files / Directories
+UPDATE.README
+VERSION.txt
+app/View/Elements/searchBox.ctp
+app/Plugin/phkapa/View/Elements/searchBox.ctp
+lib/Cake/* ( All Files and Directories )
+- Framework update
+- Small bugs fixed ( searchForm )
+
+
+--> From V1.0.7 to V1.0.8
 # Updated Files / Directories
 LICENSE.txt
 PHKAPA.README
@@ -14,9 +26,6 @@ app/webroot/js/aro_add_edit.js
 app/Config/bootstrap_phapp.php
 app/Config/routes.php
 app/Config/routes_phapp.php
-app/Controller/InstallController.php
-app/View/Install/database.ctp
-
 lib/Cake/* ( All Files and Directories )
 - Framework update
 - Small bugs fixed ( on Register forms add/edit ajax )
