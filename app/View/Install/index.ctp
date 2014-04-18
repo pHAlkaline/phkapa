@@ -36,7 +36,7 @@
         }
 
         // php version
-        $minCakeVersion = '2.2.7';
+        $minCakeVersion = '2.4.7';
         $cakeVersion = Configure::version();
         if (version_compare($cakeVersion, $minCakeVersion, '>=')) {
             $message = __('CakePhp version %s >= %s', $cakeVersion, $minCakeVersion);
