@@ -9,7 +9,7 @@
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://phkapa.phalkaline.eu
+ * @link     http://phkapa.net
  */
 class ActionEffectiveness extends PhkapaAppModel {
 

@@ -12,7 +12,7 @@ App::uses('File', 'Utility');
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://phkapa.phalkaline.eu
+ * @link     http://phkapa.net
  */
 class InstallController extends AppController {
 
@@ -59,6 +59,18 @@ class InstallController extends AppController {
         'encoding' => 'UTF8',
         'port' => null,
     );
+    
+    /*
+     * Default email configuration
+     * 
+     * @var array
+     * @access public
+     */
+    public $defaultEmail = array(
+        'email' => 'noreply@yourdomain.com',
+        'name' => 'reply to',
+        'subject' => 'PHKAPA Notification'
+        );
 
     /**
      * beforeFilter
@@ -137,7 +149,7 @@ class InstallController extends AppController {
         App::uses('ConnectionManager', 'Model');
         $config = $this->defaultConfig;
         foreach ($this->request->data as $key => $value) {
-            if (isset($this->request->data[$key])) {
+            if (isset($config[$key])) {
                 $config[$key] = $value;
             }
         }
@@ -216,7 +228,7 @@ class InstallController extends AppController {
         }
 
 
-        $this->redirect(array('action' => 'adminuser'));
+        $this->redirect(array('action' => 'email'));
     }
 
     function __executeSQLScript($db, $fileName) {
@@ -251,14 +263,57 @@ class InstallController extends AppController {
         }
         return true;
     }
+    
+    /**
+     * Step : email
+     *
+     * Create the email file and insert the submitted details
+     *
+     * @return void
+     * @access public
+     */
+    public function email() {
+        $this->_check();
+        $this->set('title_for_layout', __('Step 3 : Email notification'));
+        $this->set('title_for_step', __('Step 3 : Email notification'));
+
+        if (file_exists(APP . 'Config' . DS . 'email.php')) {
+            $this->Session->setFlash(__('Email settings file already exists'), 'flash_message_info');
+            $this->redirect(array('action' => 'adminuser'));
+        }
+
+        if (empty($this->request->data)) {
+            return;
+        }
+        $config = $this->defaultEmail;
+        foreach ($this->request->data as $key => $value) {
+            if (isset($config[$key])) {
+                $config[$key] = $value;
+            }
+        }
+        copy(APP . 'Config' . DS . 'email.php.install', APP . 'Config' . DS . 'email.php');
+        $file = new File(APP . 'Config' . DS . 'email.php', true);
+        $content = $file->read();
+
+        foreach ($config as $configKey => $configValue) {
+            $content = str_replace('{default_' . $configKey . '}', $configValue, $content);
+        }
+
+        if (!$file->write($content)) {
+            $this->Session->setFlash(__('Could not write email.php file.'), 'flash_message_error');
+            return;
+        }
+        return $this->redirect(array('action' => 'adminuser'));
+        
+    }
 
     /**
      * Step : secure app and set new password for administrative user
      */
     public function adminuser() {
         $this->_check();
-        $this->set('title_for_layout', __('Step 3 : Secure app and set new administrator password'));
-        $this->set('title_for_step', __('Step 3 : Secure app and set new administrator password'));
+        $this->set('title_for_layout', __('Step 4 : Secure app and set new administrator password'));
+        $this->set('title_for_step', __('Step 4 : Secure app and set new administrator password'));
         if (empty($this->request->data)) {
             return;
         }
@@ -285,7 +340,7 @@ class InstallController extends AppController {
                 $this->redirect(array('action' => 'finish', $token));
             } else {
                 $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
-                $this->log('Unable to create administrative user. Validation errors:');
+                $this->log(__('Unable to create administrative user.'));
                 $this->log($this->User->validationErrors);
             }
         }
@@ -310,13 +365,13 @@ class InstallController extends AppController {
             // Create a new file with 0644 permissions
             $file = new File(TMP . 'installed.txt', true, 0644);
             if ($file) {
-                $file->append('Installation completed successfully');
+                $file->append(__('Installation completed successfully'));
                 $file->close();
                 $this->Session->setFlash(__('Installation completed successfully'), 'flash_message_info');
             } else {
                 $this->set('title_for_layout', __('Installation not completed successfully'));
                 $this->set('title_for_step', __('Installation not completed successfully'));
-                $this->Session->setFlash('Something went wrong during installation. Please check your server logs.', 'flash_message_error');
+                $this->Session->setFlash(__('Something went wrong during installation. Please check your server logs.'), 'flash_message_error');
                 //$this->redirect(array('action' => 'adminuser'));
             }
             $this->Session->delete('Install');
@@ -372,7 +427,7 @@ class InstallController extends AppController {
         if (!$this->User->saveAll($users)) {
 
             $this->Session->setFlash(__('Unable to generate users password.'), 'flash_message_error');
-            $this->log('Unable to generate users password. Validation errors:');
+            $this->log(__('Unable to generate users password.'));
             $this->log($User->validationErrors);
             return false;
         }

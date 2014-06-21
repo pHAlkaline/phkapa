@@ -38,8 +38,8 @@
 
                 <h3><?php echo __('Resources'); ?></h3>
                 <ul >
-                    <li><?php echo $this->Html->link('Official', 'http://phkapa.phalkaline.eu',array( 'target' => '_blank')); ?></li>
-                    <li><?php echo $this->Html->link('Wiki', 'http://phkapa.phalkaline.eu/wiki',array('target' => '_blank')); ?></li>
+                    <li><?php echo $this->Html->link('Official', 'http://phkapa.net',array( 'target' => '_blank')); ?></li>
+                    <li><?php echo $this->Html->link('Wiki', 'http://wiki.phkapa.net',array('target' => '_blank')); ?></li>
                     <li><?php echo $this->Html->link('PHKAPA Google Group', 'http://groups.google.com/group/phkapa',array('target' => '_blank')); ?></li>
                     <li><?php echo $this->Html->link('Code repository', 'http://github.com/phalkaline/phkapa',array('target' => '_blank')); ?></li>
                     

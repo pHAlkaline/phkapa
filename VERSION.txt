@@ -4,16 +4,16 @@
 //
 // Holds a static string representing the current version of PHKAPA
 //
-// PHKAPA(tm) : Free Corrective Action Preventive Action Software (http://phkapa.phalkaline.eu)
+// PHKAPA(tm) : Free Corrective Action Preventive Action Software (http://phkapa.net)
 // Copyright (c) pHAlkaline (http://phalkaline.eu)
 //
 // Licensed under The MIT License
 // Redistributions of files must retain the above copyright notice.
 //
 // @copyright     Copyright (c)  pHAlkaline (http://phalkaline.eu)
-// @link          http://phkapa.phalkaline.eu
+// @link          http://phkapa.net
 // @since         PHKAPA v 0.0.1
 // @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
 // +--------------------------------------------------------------------------------------------+ //
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-1.0.9
+1.1.0

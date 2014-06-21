@@ -106,7 +106,9 @@
                         active: 0
                         
                     });
-
+                    
+                    
+                    
                 
 				
                 });
@@ -114,19 +116,26 @@
             </script>
             <script>
                 $(document).ready(function () {
-                <?php
-                if (isset($unread_notifications) && $unread_notifications) { ?>
-                    blinkNotification();
-                <?php } ?>
+                    <?php if (isset($unread_notifications) && $unread_notifications) { ?>
+                            blinkNotification();
+                    <?php } ?>
                 });
                     
                 function blinkNotification(){
                     $('.notification').delay(200).fadeTo(200,0.5).delay(100).fadeTo(100,1, blinkNotification);
-                }    
+                } 
+                
+                /*function blinkLogo1(){
+                    $('.logo1').delay(5000).fadeToggle('slow');
+                    $('.logo2').delay(5000).fadeToggle('slow',blinkLogo1);
+                
+                } */
+                
 
             </script>
     </head>
     <body>
+        
         <div id="phkapa" ><!--img src="/img/PHKAPA_small.png" alt="PHKAPA"  --></div>
         <div id="header">
             <h1><?php echo $this->Html->link($this->Html->image('PHKAPAlogo2.png', array('alt' => 'PHKAPA')), Router::url('/', true), array('class' => 'zoom', 'target' => '_self', 'escape' => false)); ?></h1>
@@ -134,7 +143,7 @@
 
         <div id="header_separator" >
             <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __('Help'); ?>">
-                <a href="http://phkapa.phalkaline.eu/wiki" target="_blank">
+                <a href="http://phkapa.net/wiki" target="_blank">
                     <span class="ui-icon ui-icon-help"></span>
                 </a>
             </div>
@@ -146,7 +155,7 @@
                         <span class="ui-icon ui-icon-power"></span>
                     </a>
                 </div>
-                
+
                 <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all notification" title="<?php echo __n('Notification', 'Notifications', 2) ?>">
                     <a href="<?php echo Router::url('/pages/notifications', true); ?>" target="_self"><span class="ui-icon ui-icon-flag"></span></a>
                 </div>
@@ -163,7 +172,7 @@
                     <a href="<?php echo Router::url('/admin/phkapa', true); ?>" target="_self"><span class="ui-icon ui-icon-wrench"></span></a></div>
                 <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __d('phkapa', 'PHKAPA'); ?>">
                     <a href="<?php echo Router::url('/phkapa', true); ?>" target="_self"><span class="ui-icon ui-icon-calculator"></span></a></div>    
-                
+
                 <div style="margin: 5px; float:right; color: #ffffff;"><?php echo __('User') . ' '; ?><?php echo $this->Session->read('Auth.User.name') . ' @ ' . __d('phkapa', 'PHKAPA') ?></div>
 
 
@@ -181,7 +190,7 @@
             </div-->
             <div class="clear"></div>
             <div class="grid_16">
-                <?php // Possible menu here  ?>
+                <?php // Possible menu here   ?>
                 <?php
                 if (isset($pluginImage)) {
                     echo '<div style="float: right; padding-right: 7px">' . $this->Html->image($pluginImage) . '</div>';
@@ -196,7 +205,7 @@
                 }
                 ?>
             </div>
-            <?php //echo $this->Html->image('load.gif', array('id' => 'loading-indicator'));    ?>
+            <?php //echo $this->Html->image('load.gif', array('id' => 'loading-indicator'));     ?>
             <div id="loading-indicator"></div>
             <div class="clear" style="height: 10px; width: 100%;"></div>
             <?php echo $this->Session->flash(); ?>

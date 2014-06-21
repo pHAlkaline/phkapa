@@ -59,6 +59,7 @@ Thumbs.db
 /phkapa_dev-access_log
 
 /app/Config/database.php
+/app/Config/email.php
 
 /lib/Cake/*
 #!/lib/Cake/
@@ -69,10 +70,4 @@ Thumbs.db
 /app/Locale/cake_dev.pot
 /TODO
 /TODO.php
-/app/Vendor/dompdf/
-/app/View/Layouts/pdf/
-/app/Plugin/phkapa/webroot/img/logoma.jpg
-/app/webroot/img/logoma.jpg
-/reports_masu.zip
-/app/Plugin/phkapa/View/Query/pdf/pdf.ctp
-/app/Plugin/phkapa/View/Tickets/pdf/admin_pdf.ctp
+/app/Locale/cake.pot

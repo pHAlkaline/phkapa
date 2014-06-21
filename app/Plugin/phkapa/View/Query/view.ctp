@@ -45,7 +45,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     <li> <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('controller' => $controller, 'action' => $action, $ticket['Ticket']['id'])); ?></li>
 
                 <?php endif ?>
-                    <!--li class="list-group-item"><?php //echo $this->Html->link(__d('phkapa', 'Open Report'), array('action' => 'pdf', $ticket['Ticket']['id'],'ext'=>'pdf'), array('target'=>'_blank','class' => '')); ?> </li-->
+                    <li class="list-group-item"><?php echo $this->Html->link(__d('phkapa', 'Open Report'), array('action' => 'pdf', $ticket['Ticket']['id'],'ext'=>'pdf'), array('target'=>'_blank','class' => '')); ?> </li>
             </ul>
 
         </div>
@@ -419,7 +419,7 @@ if ($ticket['Workflow']['id'] < 5) {
                                 <td class="actions">
                                     <?php echo $this->Html->link(__d('phkapa', 'View'), array('action' => 'view', $children['id'])); ?>
                                     <?php if ($editable): ?>
-                                        <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Edit'), array('controller' => $controller, 'action' => $action, $ticket['Ticket']['id'])); ?>
+                                        <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Edit'), array('controller' => $controller, 'action' => $action, $children['id'])); ?>
 
                                     <?php endif ?>
                                 </td>

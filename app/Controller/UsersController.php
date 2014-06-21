@@ -10,7 +10,7 @@
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://phkapa.phalkaline.eu
+ * @link     http://phkapa.net
  */
 class UsersController extends AppController {
 
@@ -82,7 +82,7 @@ class UsersController extends AppController {
      * @access public
      */
     public function admin_edit($id = null) {
-        if ($id == null || $id == 1) {
+        if ($id == null ) {
             $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
@@ -90,9 +90,6 @@ class UsersController extends AppController {
             $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-
-
-
 
         if (!empty($this->request->data)) {
 
@@ -128,13 +125,13 @@ class UsersController extends AppController {
      * @access public
      */
     public function edit_profile() {
-        if (!$this->Auth->loggedIn() || Configure::read('Application.mode')=='demo'){
+        if (!$this->Auth->loggedIn() || Configure::read('Application.mode') == 'demo') {
             $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
             $this->redirect(Router::url('/', true));
         }
-        
+
         $id = $this->Auth->user('id');
-        
+
         if (!empty($this->request->data)) {
 
             // On user edits must also change alias on AROS/ACOS
@@ -192,7 +189,7 @@ class UsersController extends AppController {
     public function login() {
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
-                if ($this->data['User']['language']!='') {
+                if ($this->data['User']['language'] != '') {
                     $this->Session->write('User.language', $this->data['User']['language']);
                 }
                 return $this->redirect($this->Auth->redirect());
@@ -211,7 +208,7 @@ class UsersController extends AppController {
      */
     public function logout() {
         $this->Session->delete('User.language');
-       $this->redirect($this->Auth->logout());
+        $this->redirect($this->Auth->logout());
     }
 
     /**

@@ -36,7 +36,7 @@
         }
 
         // php version
-        $minCakeVersion = '2.4.7';
+        $minCakeVersion = '2.5.2';
         $cakeVersion = Configure::version();
         if (version_compare($cakeVersion, $minCakeVersion, '>=')) {
             $message = __('CakePhp version %s >= %s', $cakeVersion, $minCakeVersion);
@@ -48,7 +48,7 @@
         }
 
         if ($check) {
-            $message = $this->Html->link('Click here to begin installation', array('action' => 'database'));
+            $message = $this->Html->link(__('Click here to begin installation'), array('action' => 'database'));
             echoBeginMessage($message);
         } else {
             $message = __('Installation cannot continue as minimum requirements are not found.');
