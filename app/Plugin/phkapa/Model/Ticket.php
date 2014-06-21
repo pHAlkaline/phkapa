@@ -9,7 +9,7 @@
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://phkapa.phalkaline.eu
+ * @link     http://phkapa.net
  */
 class Ticket extends PhkapaAppModel {
     /**
@@ -137,6 +137,8 @@ class Ticket extends PhkapaAppModel {
             'checkWorkflow' => array(
                 'rule' => array('checkTicketWorkflow'),
                 'message' => 'Invalid parent',
+                'allowEmpty' => true,
+                'required' => false,
                 'last' => false
             ),
             'notempty' => array(

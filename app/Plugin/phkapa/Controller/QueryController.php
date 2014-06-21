@@ -10,7 +10,7 @@
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://phkapa.phalkaline.eu
+ * @link     http://phkapa.net
  */
 class QueryController extends PhkapaAppController {
     
@@ -128,7 +128,7 @@ class QueryController extends PhkapaAppController {
      * @param string $id
      * @return void
      */
-    /*public function pdf($id) {
+    public function pdf($id) {
         // increase memory limit in PHP 
         ini_set('memory_limit', '256M');
         $this->Ticket->recursive = 2;
@@ -141,7 +141,7 @@ class QueryController extends PhkapaAppController {
         
         
         $this->set('ticket', $ticket);
-    }*/
+    }
 
     /**
      * Export

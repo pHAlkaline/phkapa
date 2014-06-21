@@ -10,7 +10,7 @@
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://phkapa.phalkaline.eu
+ * @link     http://phkapa.net
  */
 class PhkapaAppController extends AppController {
 
@@ -95,9 +95,8 @@ class PhkapaAppController extends AppController {
         foreach ($processUsers[0]['User'] as $User):
             //debug($User);
             $notifyData = array('notifier_id' => AuthComponent::user('id'), 'notified_id' => $User['id'], 'reference' => $reference, 'notification' => $notificationText,'read'=>0);
-            $this->Notify->addNotification($notifyData);
+            $this->Notify->addNotification($notifyData,$User['email']);
         endforeach;
-
         return;
     }
 

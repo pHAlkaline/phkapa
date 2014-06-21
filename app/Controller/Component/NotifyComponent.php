@@ -14,7 +14,7 @@ App::uses('Notification', 'Model');
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://phkapa.phalkaline.eu
+ * @link     http://phkapa.net
  */
 class NotifyComponent extends Component {
 
@@ -101,11 +101,14 @@ class NotifyComponent extends Component {
      * @return boolean
      * 
      */
-    public function addNotification($notification) {
-
+    public function addNotification($notification, $email = null) {
+        
         if (!empty($notification)) {
             $this->_model->create();
             if ($this->_model->save($notification)) {
+                if (!empty($email)) {
+                    $this->_emailNotify($this->_model->read(), $email);
+                }
                 return true;
             } else {
                 return false;
@@ -161,7 +164,18 @@ class NotifyComponent extends Component {
      * @return void
      * @access protected
      */
-    protected function _emailNotify() {
+    protected function _emailNotify($notification, $email) {
+        App::uses('CakeEmail', 'Network/Email');
+        $Email = new CakeEmail('default');
+        $Email->template('notification','phkapa')->emailFormat('html');
+        $Email->viewVars(array('notification' => $notification,'email'=>$email));
+        // uncoment these lines to get more control over sender from and subject!!
+        //$Email->sender('noreply-contacta@phkapa.net', 'CONTACTA - PHKAPA');
+        //$Email->from(array('noreply-contacta@phkapa.net' => 'CONTACTA - PHKAPA'));
+        //$Email->subject(__('PHKAPA').' '.__n('Notification', 'Notifications', 1));
+        
+        $Email->to($email);
+        $Email->send();
         
     }
 

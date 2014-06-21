@@ -23,7 +23,3 @@ Configure::write('Maintenance.site_offline_url', '/pages/offline');
  * - '{User NAME field}' -> after login this user has total control 
  */
 Configure::write('Access.open', ''); // Keep this clean , use only on emergency.
-
-
-
-

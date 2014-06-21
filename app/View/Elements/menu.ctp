@@ -1,3 +1,4 @@
+<?php echo $this->Html->image('yourlogo.png', array('style'=>'float: right; height: 35px;','alt' => 'YourLogoHere')); ?>
 <div class="block" id="admin-left-menu">
     <ul class="section menu">
         <?php

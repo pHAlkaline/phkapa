@@ -196,7 +196,7 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Ticket']['description']; ?>
+                            <?php echo $ticket['Ticket']['description'].'<br/>'.$ticket['Ticket']['review_notes']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php

@@ -4,173 +4,81 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: phkapa.phalkaline.eu\n"
+"Project-Id-Version: phkapa.net\n"
 "POT-Creation-Date: 2013-02-12 21:57+0000\n"
-"PO-Revision-Date: 2013-02-12 21:57-0000\n"
-"Last-Translator: Paulo <phomem@phalkaline.eu>\n"
+"PO-Revision-Date: 2014-06-20 00:00-0000\n"
+"Last-Translator: Paulo <contact@phalkaline.eu>\n"
 "Language-Team: pHAlkaline <contact@phalkaline.eu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
-"Language: pt\n"
+"Language: por\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-msgid "Invalid request."
-msgstr "Pedido inválido."
-
-msgid "Saved with success."
-msgstr "Gravado com sucesso."
-
-msgid "Could not be saved. Please, try again."
-msgstr "Não foi possível gravar.Por favor tente de novo."
-
-msgid "Deleted with success."
-msgstr "Apagado com sucesso."
-
-msgid "Could not be deleted."
-msgstr "Não foi possível apagar."
-
-msgid "PHKAPA"
-msgstr ""
-
-msgid "Administration"
-msgstr "Administração"
-
-msgid "Closed with success."
-msgstr "Fechado com sucesso."
-
-msgid "Could not be closed."
-msgstr "Não foi possível fechar."
-
-msgid "Add %s"
-msgstr "Adicionar %s"
-
-msgid "Action Type"
-msgid_plural "Action Types"
-msgstr[0] "Tipo de Acção"
-msgstr[1] "Tipos de Acção"
-
-msgid "Menu"
-msgstr ""
-
-msgid "List %s"
-msgstr "Listar %s"
+msgid "(choose one)"
+msgstr "(escolha opção)"
 
 msgid "Action"
 msgid_plural "Actions"
 msgstr[0] "Acção"
 msgstr[1] "Acções"
 
-msgid "Record"
-msgstr "Registo"
-
-msgid "Name"
-msgstr "Nome"
-
-msgid "Verification"
-msgstr "Verificação"
-
-msgid "Active"
-msgstr "Activo"
-
-msgid "Submit"
-msgstr "Submeter"
-
-msgid "Type"
-msgid_plural "Types"
-msgstr[0] "Tipo"
-msgstr[1] "Tipos"
-
-msgid "Priority"
-msgid_plural "Priorities"
-msgstr[0] "Prioridade"
-msgstr[1] "Prioridades"
-
-msgid "Edit %s"
-msgstr "Editar %s"
-
-msgid "Delete"
-msgstr "Apagar"
-
-msgid "Are you sure you want to delete # %s?"
-msgstr "Tem a certeza que quer apagar # %s?"
-
-msgid "Id"
-msgstr ""
-
-msgid "Created"
-msgstr "Criado"
-
-msgid "Modified"
-msgstr "Modificado"
-
-msgid "View"
-msgstr "Ver"
-
-msgid "Edit"
-msgstr "Editar"
-
-msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
-msgstr "Página %page% de %pages%, listado %current% de %count% no total, inicio no %start%, fim no %end%"
-
-msgid "Previous"
-msgstr "Anterior"
-
-msgid "Next"
-msgstr "Próximo"
-
-msgid "View %s"
-msgstr "Ver %s"
-
-msgid "Delete %s"
-msgstr "Apagar %s"
-
-msgid "Ticket"
-msgid_plural "Tickets"
-msgstr[0] "Incidência"
-msgstr[1] "Incidências"
-
-msgid "(choose one)"
-msgstr "(escolha opção)"
-
-msgid "Description"
-msgstr "Descrição"
-
-msgid "Deadline"
-msgstr "Prazo"
-
-msgid "Days"
-msgstr "Dias"
-
-msgid "Closed"
-msgstr "Fechado"
-
-msgid "Close Date"
-msgstr "Data de Fecho"
-
 msgid "Action Effectiveness"
 msgstr "Eficácia da acção"
 
-msgid "Effectiveness Notes"
-msgstr "Observações de Eficácia"
+msgid "Action Type"
+msgid_plural "Action Types"
+msgstr[0] "Tipo de Acção"
+msgstr[1] "Tipos de Acção"
 
-msgid "Effectiveness"
-msgstr "Eficácia"
+msgid "Action deadline expired!!!"
+msgstr "Acções expiradas!!!"
+
+msgid "Action is closed, must have closed date"
+msgstr "A Acção está fechada, deve ter uma data de fecho"
+
+msgid "Action type requires verification on close"
+msgstr "Tipo de acção requer verificação no fecho"
+
+msgid "Active"
+msgstr "Activo"
 
 msgid "Activity"
 msgid_plural "Activities"
 msgstr[0] "Actividade"
 msgstr[1] "Actividades"
 
-msgid "Process"
-msgid_plural "Processes"
-msgstr[0] "Processo"
-msgstr[1] "Processos"
+msgid "Add %s"
+msgstr "Adicionar %s"
 
-msgid "Related"
-msgstr "Relacionados"
+msgid "Administration"
+msgstr "Administração"
+
+msgid "After Deadline"
+msgstr "Dias após prazo"
+
+msgid "Application Offline"
+msgstr "Aplicação Indisponível"
+
+msgid "Approved"
+msgstr "Aprovado"
+
+msgid "Are you sure you want to close # %s?"
+msgstr "Tem a certeza que quer fechar # %s?"
+
+msgid "Are you sure you want to delete # %s?"
+msgstr "Tem a certeza que quer apagar # %s?"
+
+msgid "Are you sure you want to replan # %s?"
+msgstr "Tem a certeza que quer efectuar um novo plano # %s?"
+
+msgid "Are you sure you want to send # %s?"
+msgstr "Tem a certeza que quer enviar # %s?"
+
+msgid "Boolean"
+msgstr "Boleano"
 
 msgid "Category"
 msgid_plural "Categories"
@@ -182,57 +90,134 @@ msgid_plural "Causes"
 msgstr[0] "Causa"
 msgstr[1] "Causas"
 
-msgid "Origin"
-msgid_plural "Origins"
-msgstr[0] "Origem"
-msgstr[1] "Origens"
-
-msgid "Application Offline"
-msgstr "Aplicação Indisponível"
-
-msgid "This application is now on maintenance mode, back soon as possible!"
-msgstr "Esta aplicação está agora em modo de manutenção, voltamos em breve!"
-
-msgid "Plan"
-msgstr "Planificação"
-
-msgid "Ticket Parent"
-msgstr "Reincidência de (ID)"
-
-msgid "See ticket parent data"
-msgstr "Ver incidência"
-
-msgid "Origin Date"
-msgstr "Data de origem"
-
-msgid "Supplier"
-msgid_plural "Suppliers"
-msgstr[0] "Fornecedor"
-msgstr[1] "Fornecedores"
-
 msgid "Cause Notes"
 msgstr "Descrição da Causa"
 
-msgid "Send %s"
-msgstr "Enviar %s"
-
-msgid "Are you sure you want to send # %s?"
-msgstr "Tem a certeza que quer enviar # %s?"
-
-msgid "Record %s"
-msgstr "Registo %s"
-
-msgid "Expiry"
-msgstr "Expira"
-
-msgid "Action deadline expired!!!"
-msgstr "Acções expiradas!!!"
+msgid "Choose one option"
+msgstr "Seleccione um opção"
 
 msgid "Close"
 msgstr "Fechar"
 
-msgid "Are you sure you want to close # %s?"
-msgstr "Tem a certeza que quer fechar # %s?"
+msgid "Close %s"
+msgstr "Fechar %s"
+
+msgid "Close Date"
+msgstr "Data de Fecho"
+
+msgid "Close date must be between origin date and today"
+msgstr "Data de fecho deve ser entre data de origem e data de hoje"
+
+msgid "Closed"
+msgstr "Fechado"
+
+msgid "Closed with success."
+msgstr "Fechado com sucesso."
+
+msgid "Continue"
+msgstr "Continua"
+
+msgid "Could not be closed."
+msgstr "Não foi possível fechar."
+
+msgid "Could not be deleted."
+msgstr "Não foi possível apagar."
+
+msgid "Could not be saved. Please, try again."
+msgstr "Não foi possível gravar.Por favor tente de novo."
+
+msgid "Created"
+msgstr "Criado"
+
+msgid "Days"
+msgstr "Dias"
+
+msgid "Deadline"
+msgstr "Prazo"
+
+msgid "Delete"
+msgstr "Apagar"
+
+msgid "Delete %s"
+msgstr "Apagar %s"
+
+msgid "Deleted with success."
+msgstr "Apagado com sucesso."
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "Download File"
+msgstr "Descarregar Ficheiro"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Edit %s"
+msgstr "Editar %s"
+
+msgid "Effectiveness"
+msgstr "Eficácia"
+
+msgid "Effectiveness Notes"
+msgstr "Observações de Eficácia"
+
+msgid "Efficiency"
+msgstr "Eficácia"
+
+msgid "Empty"
+msgstr "Não pode ser vazio"
+
+msgid "End Date"
+msgstr "Data de Finalização"
+
+msgid "Expiry"
+msgstr "Expira"
+
+msgid "Export to Excel"
+msgstr "Exportar para Excel"
+
+msgid "Filter Origin Date"
+msgstr "Filtro aplicado na Data de Origem"
+
+msgid "Id"
+msgstr ""
+
+msgid "Invalid date"
+msgstr "Data inválida"
+
+msgid "Invalid parent"
+msgstr "Reincidência inválida"
+
+msgid "Invalid request."
+msgstr "Pedido inválido."
+
+msgid "List %s"
+msgstr "Listar %s"
+
+msgid "Loading process data"
+msgstr "A carregar dados!"
+
+msgid "Menu"
+msgstr ""
+
+msgid "Modified"
+msgstr "Modificado"
+
+msgid "Must be between ticket origin date and ticket close date"
+msgstr "Deve estar entre da data de origem e data de fecho da incidência"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "New ticket registered"
+msgstr "Há um novo registo"
+
+msgid "Next"
+msgstr "Próximo"
+
+msgid "No"
+msgstr "Não"
 
 msgid "No cause!!!"
 msgstr "Sem causa!!!"
@@ -240,163 +225,186 @@ msgstr "Sem causa!!!"
 msgid "No plan!!!"
 msgstr "Sem planificação!!!"
 
-msgid "Send"
-msgstr "Enviar"
-
 msgid "No records found!!!"
 msgstr "Sem registos a apresentar!!!"
-
-msgid "Users"
-msgstr "Utilizadores"
-
-msgid "User"
-msgid_plural "Users"
-msgstr[0] "Utilizador"
-msgstr[1] "Utilizadores"
-
-msgid "Export to Excel"
-msgstr "Exportar para Excel"
-
-msgid "Start Date"
-msgstr "Data de Início"
-
-msgid "End Date"
-msgstr "Data de Finalização"
-
-msgid "Download File"
-msgstr "Descarregar Ficheiro"
-
-msgid "Workflow"
-msgstr "Fluxo"
-
-msgid "Open new related ticket"
-msgstr "Abrir reincidênica"
-
-msgid "Registar"
-msgstr "Registado"
-
-msgid "Approved"
-msgstr "Aprovado"
-
-msgid "Related Tickets"
-msgstr "Incidências relacionadas"
-
-msgid "Review Notes"
-msgstr "Descrição da Análise"
-
-msgid "Register"
-msgstr "Registo"
-
-msgid "set todays date"
-msgstr "Inserir data de hoje"
-
-msgid "Loading process data"
-msgstr "A carregar dados!"
-
-msgid "Select Supplier"
-msgstr "Seleccione Fornecedor"
-
-msgid "Review"
-msgstr "Análise"
-
-msgid "Close %s"
-msgstr "Fechar %s"
-
-msgid "No"
-msgstr "Não"
-
-msgid "Yes"
-msgstr "Sim"
 
 msgid "Notes"
 msgstr "Notas"
 
-msgid "Related Child Tickets and actions will also be deleted!!"
-msgstr "Reincidências e as acções relacionadas também seram apagadas!!"
-
-msgid "Username"
-msgstr "Nome de utilizador"
-
-msgid "Password"
-msgstr "Palavra passe"
-
-msgid "Role"
-msgstr ""
-
-msgid "Verify"
-msgstr "Avaliação"
-
-msgid "Efficiency"
-msgstr "Eficácia"
-
-msgid "This ticket has actions that were not effective, please choose cancel if you want replan or create a new related ticket before closing."
-msgstr "Este registo tem acções que não foram consideradas eficaz, cancele para criar um novo plano ou registar um novo registo dependente."
-
-msgid "Replan"
-msgstr "Novo plano"
-
-msgid "Are you sure you want to replan # %s?"
-msgstr "Tem a certeza que quer efectuar um novo plano # %s?"
-
-msgid "After Deadline"
-msgstr "Dias após prazo"
-
 msgid "Numeric"
 msgstr "Deve ter um valor númerico"
 
-msgid "Choose one option"
-msgstr "Seleccione um opção"
+msgid "Open Report"
+msgstr "Abrir Relatório"
 
-msgid "Action type requires verification on close"
-msgstr "Tipo de acção requer verificação no fecho"
-
-msgid "Empty"
-msgstr "Não pode ser vazio"
-
-msgid "Boolean"
-msgstr "Boleano"
-
-msgid "Action is closed, must have closed date"
-msgstr "A Acção está fechada, deve ter uma data de fecho"
-
-msgid "Must be between ticket origin date and ticket close date"
-msgstr "Deve estar entre da data de origem e data de fecho da incidência"
-
-msgid "Invalid date"
-msgstr "Data inválida"
-
-msgid "This workflow requires cause"
-msgstr "Este fluxo requer causa"
-
-msgid "Invalid parent"
-msgstr "Reincidência inválida"
-
-msgid "This workflow requires close date"
-msgstr "Este fluxo requer data de fecho"
-
-msgid "Close date must be between origin date and today"
-msgstr "Data de fecho deve ser entre data de origem e data de hoje"
-
-msgid "Query"
-msgstr "Pesquisa"
+msgid "Open new related ticket"
+msgstr "Abrir reincidênica"
 
 msgid "Option"
 msgid_plural "Options"
 msgstr[0] "Opção"
 msgstr[1] "Opções"
 
-msgid "Ticket # %s has new plan"
-msgstr "Registo # %s tem um novo plano"
+msgid "Origin"
+msgid_plural "Origins"
+msgstr[0] "Origem"
+msgstr[1] "Origens"
+
+msgid "Origin Date"
+msgstr "Data de origem"
+
+msgid "PHKAPA"
+msgstr ""
+
+msgid "Page"
+msgstr "Página"
+
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr "Página %page% de %pages%, listado %current% de %count% no total, inicio no %start%, fim no %end%"
+
+msgid "Password"
+msgstr "Palavra passe"
+
+msgid "Plan"
+msgstr "Planificação"
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Priority"
+msgid_plural "Priorities"
+msgstr[0] "Prioridade"
+msgstr[1] "Prioridades"
+
+msgid "Process"
+msgid_plural "Processes"
+msgstr[0] "Processo"
+msgstr[1] "Processos"
+
+msgid "Query"
+msgstr "Pesquisa"
+
+msgid "Record"
+msgstr "Registo"
+
+msgid "Record %s"
+msgstr "Registo %s"
+
+msgid "Registar"
+msgstr "Registado"
+
+msgid "Register"
+msgstr "Registo"
+
+msgid "Related"
+msgstr "Relacionados"
+
+msgid "Related Child Tickets and actions will also be deleted!!"
+msgstr "Reincidências e as acções relacionadas também seram apagadas!!"
+
+msgid "Related Tickets"
+msgstr "Incidências relacionadas"
+
+msgid "Replan"
+msgstr "Novo plano"
+
+msgid "Review"
+msgstr "Análise"
+
+msgid "Review Notes"
+msgstr "Descrição da Análise"
+
+msgid "Role"
+msgstr ""
+
+msgid "Saved with success."
+msgstr "Gravado com sucesso."
+
+msgid "See ticket parent data"
+msgstr "Ver incidência"
+
+msgid "Select Supplier"
+msgstr "Seleccione Fornecedor"
+
+msgid "Send"
+msgstr "Enviar"
+
+msgid "Send %s"
+msgstr "Enviar %s"
+
+msgid "Start Date"
+msgstr "Data de Início"
+
+msgid "Submit"
+msgstr "Submeter"
+
+msgid "Supplier"
+msgid_plural "Suppliers"
+msgstr[0] "Fornecedor"
+msgstr[1] "Fornecedores"
+
+msgid "This application is now on maintenance mode, back soon as possible!"
+msgstr "Esta aplicação está agora em modo de manutenção, voltamos em breve!"
+
+msgid "This ticket has actions that were not effective, please choose cancel if you want replan or create a new related ticket before closing."
+msgstr "Registo sem eficacia, pode canceler e criar um novo plano ou registar um novo registo dependente."
+
+msgid "This workflow requires cause"
+msgstr "Este fluxo requer causa"
+
+msgid "This workflow requires close date"
+msgstr "Este fluxo requer data de fecho"
+
+msgid "Ticket"
+msgid_plural "Tickets"
+msgstr[0] "Incidência"
+msgstr[1] "Incidências"
 
 msgid "Ticket # %s has been closed"
 msgstr "Registo # %s foi fechado"
 
+msgid "Ticket # %s has new plan"
+msgstr "Registo # %s tem um novo plano"
 
-msgid "New ticket registered"
-msgstr "Há um novo registo"
+msgid "Ticket Parent"
+msgstr "Reincidência de (ID)"
 
-msgid "Filter Origin Date"
-msgstr "Filtro aplicado na Data de Origem"
+msgid "Ticket Report"
+msgstr "Relatório"
 
-msgid "Open Report"
-msgstr "Abrir Relatório"
+msgid "Type"
+msgid_plural "Types"
+msgstr[0] "Tipo"
+msgstr[1] "Tipos"
+
+msgid "User"
+msgid_plural "Users"
+msgstr[0] "Utilizador"
+msgstr[1] "Utilizadores"
+
+msgid "Username"
+msgstr "Nome de utilizador"
+
+msgid "Users"
+msgstr "Utilizadores"
+
+msgid "Verification"
+msgstr "Verificação"
+
+msgid "Verify"
+msgstr "Avaliação"
+
+msgid "View"
+msgstr "Ver"
+
+msgid "View %s"
+msgstr "Ver %s"
+
+msgid "Workflow"
+msgstr "Fluxo"
+
+msgid "Yes"
+msgstr "Sim"
+
+msgid "set todays date"
+msgstr "Inserir data de hoje"

@@ -1,0 +1,23 @@
+<?php
+
+/*
+ * More details on config at email.php.default file
+ */
+
+/**
+ * Description of email
+ *
+ * @author paulo
+ */
+class EmailConfig {
+    public $default = array(
+        //'sender' => array('{default_sender_email}' => '{default_sender_name}'),
+        'from' => array('{default_email}' => '{default_name}'),
+        'subject' => '{default_subject}',
+        //'charset' => 'utf-8',
+	//'headerCharset' => 'utf-8',
+        );
+    
+}
+
+?>

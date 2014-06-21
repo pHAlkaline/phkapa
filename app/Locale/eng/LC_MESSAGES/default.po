@@ -4,7 +4,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: phkapa.phalkaline.eu\n"
+"Project-Id-Version: phkapa.net\n"
 "POT-Creation-Date: 2013-02-12 21:57+0000\n"
 "PO-Revision-Date: 2013-02-12 21:57-0000\n"
 "Last-Translator: Paulo <phomem@phalkaline.eu>\n"
@@ -17,61 +17,158 @@ msgstr ""
 "Language: pt\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-msgid "Saved with success."
+msgid "Aco"
+msgid_plural "Acos"
+msgstr[0] "Access Control"
+msgstr[1] "Access Control"
+
+msgid "Actions"
 msgstr ""
 
-msgid "Could not be saved. Please, try again."
+msgid "Active"
 msgstr ""
 
-msgid "Invalid request."
+msgid "Add %s"
+msgstr ""
+
+msgid "Admin panel: %s"
+msgstr ""
+
+msgid "Admin user password"
 msgstr ""
 
 msgid "Administration"
 msgstr ""
 
-msgid "Group / User name must be unique!!"
+msgid "Allow"
 msgstr ""
 
-msgid "Root"
-msgstr ""
-
-msgid "Deleted with success."
-msgstr ""
-
-msgid "Could not be deleted."
+msgid "Allowed"
 msgstr ""
 
 msgid "Already Installed"
 msgstr ""
 
-msgid "Installation: Welcome"
+msgid "Application Offline"
 msgstr ""
 
-msgid "Step 1 : Database connection"
+msgid "Are you sure you want to delete # %s?"
 msgstr ""
 
-msgid "Database connection file already exists"
+msgid "Aro"
+msgid_plural "Aros"
+msgstr[0] "Access"
+msgstr[1] "Access"
+
+msgid "Cake is NOT able to connect to the database."
 msgstr ""
 
-msgid "Could not connect to database: %s"
+msgid "Cake is able to connect to the database."
+msgstr ""
+
+msgid "CakePHP version %s < %s"
+msgstr ""
+
+msgid "CakePhp version %s >= %s"
+msgstr ""
+
+msgid "Check load data option to insert dafault values to action types, activities, categories, causes, origins, processes, suppliers and finaly some example users and their access configuration."
+msgstr ""
+
+msgid "Click here to begin installation"
+msgstr ""
+
+msgid "Could not be deleted."
+msgstr ""
+
+msgid "Could not be saved. Please, try again."
 msgstr ""
 
 msgid "Could not connect to database."
 msgstr ""
 
-msgid "Could not write database.php file."
-msgstr ""
-
-msgid "Step 2 : Build database , load table values"
+msgid "Could not connect to database: %s"
 msgstr ""
 
 msgid "Could not load database: %s"
 msgstr ""
 
-msgid "Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions."
+msgid "Could not write database.php file."
 msgstr ""
 
-msgid "Step 3 : Secure app and set new administrator password"
+msgid "Could not write email.php file."
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Database and data"
+msgstr ""
+
+msgid "Database connection file already exists"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete %s"
+msgstr ""
+
+msgid "Deleted with success."
+msgstr ""
+
+msgid "Deny"
+msgstr ""
+
+msgid "Denyed"
+msgstr ""
+
+msgid "Diagnostics"
+msgstr ""
+
+msgid "Dont forget to restore default access values to Config and tmp directory."
+msgstr ""
+
+msgid "Down"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit %s"
+msgstr ""
+
+msgid "Edit Profile"
+msgstr ""
+
+msgid "Email settings file already exists"
+msgstr "
+
+msgid "Empty"
+msgstr ""
+
+msgid "Enable change password"
+msgstr ""
+
+msgid "End Session"
+msgstr ""
+
+msgid "From Email"
+msgstr "Email de envio"
+
+msgid "From Name"
+msgstr "Nome de envio"
+
+msgid "Group / User"
+msgstr ""
+
+msgid "Group / User name must be unique!!"
+msgstr ""
+
+msgid "Id"
+msgstr ""
+
+msgid "Installation cannot continue as minimum requirements are not found."
 msgstr ""
 
 msgid "Installation completed successfully"
@@ -80,10 +177,138 @@ msgstr ""
 msgid "Installation not completed successfully"
 msgstr ""
 
-msgid "Unable to generate users password."
+msgid "Installation: Welcome"
+msgstr ""
+
+msgid "Invalid email"
+msgstr ""
+
+msgid "Invalid request."
+msgstr ""
+
+msgid "List %s"
+msgstr ""
+
+msgid "Load data"
 msgstr ""
 
 msgid "Login failed. Invalid username or password."
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Modified"
+msgstr ""
+
+msgid "Must be unique"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "New Password"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "No records found!!!"
+msgstr ""
+
+msgid "Notification"
+msgid_plural "Notifications"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Notifier"
+msgstr ""
+
+msgid "PHKAPA Admin panel: %s"
+msgstr ""
+
+msgid "PHKAPA: %s"
+msgstr ""
+
+msgid "PHP version %s < 5.2"
+msgstr ""
+
+msgid "PHP version %s > 5.2"
+msgstr ""
+
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr ""
+
+msgid "Parent node"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Passwords dont match"
+msgstr ""
+
+msgid "Passwords secured and updated for all users"
+msgstr ""
+
+msgid "Previous"
+msgstr ""
+
+msgid "Read"
+msgstr ""
+
+msgid "Record"
+msgstr ""
+
+msgid "Rename config/database.php.default to config/database.php"
+msgstr ""
+
+msgid "Resources"
+msgstr ""
+
+msgid "Root"
+msgstr ""
+
+msgid "Saved with success."
+msgstr ""
+
+msgid "Search..."
+msgstr ""
+
+msgid "Setup database connection"
+msgstr ""
+
+msgid "Something went wrong during installation. Please check your server logs."
+msgstr ""
+
+msgid "Start Session"
+msgstr ""
+
+msgid "Setup notification email"
+msgstr "Configuração notificações por email"
+
+msgid "Step 1 : Database connection"
+msgstr ""
+
+msgid "Step 2 : Build database , load table values"
+msgstr ""
+
+msgid "Step 3 : Email notification"
+msgstr ""
+
+msgid "Step 4 : Secure app and set new administrator password"
+msgstr ""
+
+msgid "Submit"
+msgstr ""
+
+msgid "The %s is being used for caching. To change the config edit APP/config/core.php "
+msgstr ""
+
+msgid "This application is now on maintenance mode, back soon as possible!"
 msgstr ""
 
 msgid "This application will be on maintenance mode at  %s "
@@ -92,260 +317,61 @@ msgstr ""
 msgid "This name is restricted by system."
 msgstr ""
 
-msgid "Search..."
-msgstr ""
-
-msgid "Add %s"
-msgstr ""
-
-msgid "Aco"
-msgid_plural "Acos"
-msgstr[0] "Access Control"
-msgstr[1] "Access Control"
-
-msgid "Menu"
-msgstr ""
-
-msgid "List %s"
-msgstr ""
-
-msgid "Record"
-msgstr ""
-
-msgid "Name"
-msgstr ""
-
-msgid "Parent node"
-msgstr ""
-
-msgid "Submit"
-msgstr ""
-
-msgid "Edit %s"
-msgstr ""
-
-msgid "Delete"
-msgstr ""
-
-msgid "Are you sure you want to delete # %s?"
-msgstr ""
-
 msgid "This will also delete childs!!"
 msgstr ""
 
-msgid "Actions"
+msgid "Type Group"
 msgstr ""
 
-msgid "Edit"
+msgid "Unable to create administrative user."
+msgstr ""
+
+msgid "Unable to generate users password."
+msgstr ""
+
+msgid "Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions."
 msgstr ""
 
 msgid "Up"
 msgstr ""
-
-msgid "Down"
-msgstr ""
-
-msgid "Aro"
-msgid_plural "Aros"
-msgstr[0] "Access"
-msgstr[1] "Access"
 
 msgid "User"
 msgid_plural "Users"
 msgstr[0] ""
 msgstr[1] ""
 
-msgid "Type Group"
-msgstr ""
-
-msgid "Group / User"
-msgstr ""
-
-msgid "Allow"
-msgstr ""
-
-msgid "Deny"
-msgstr ""
-
-msgid "Allowed"
-msgstr ""
-
-msgid "Denyed"
-msgstr ""
-
-msgid "No"
-msgstr ""
-
-msgid "Yes"
-msgstr ""
-
-msgid "Admin user password"
-msgstr ""
-
-msgid "New Password"
+msgid "Username"
 msgstr ""
 
 msgid "Verify Password"
 msgstr ""
 
-msgid "Database and data"
-msgstr ""
-
-msgid "Load data"
-msgstr ""
-
-msgid "Check load data option to insert dafault values to action types, activities, categories, causes, origins, processes, suppliers and finaly some example users and their access configuration."
-msgstr ""
-
-msgid "Setup database connection"
-msgstr ""
-
-msgid "Dont forget to restore default access values to Config and tmp directory."
-msgstr ""
-
-msgid "Passwords secured and updated for all users"
-msgstr ""
-
-msgid "PHKAPA: %s"
-msgstr ""
-
-msgid "Admin panel: %s"
-msgstr ""
-
-msgid "PHKAPA Admin panel: %s"
-msgstr ""
-
-msgid "Resources"
-msgstr ""
-
-msgid "Your tmp directory is writable."
-msgstr ""
-
-msgid "Your tmp directory is NOT writable."
-msgstr ""
-
-msgid "Your Config directory is writable."
-msgstr ""
-
-msgid "Your Config directory is NOT writable."
-msgstr ""
-
-msgid "PHP version %s > 5.2"
-msgstr ""
-
-msgid "PHP version %s < 5.2"
-msgstr ""
-
-msgid "CakePhp version %s >= %s"
-msgstr ""
-
-msgid "CakePHP version %s < %s"
-msgstr ""
-
-msgid "Installation cannot continue as minimum requirements are not found."
-msgstr ""
-
-msgid "End Session"
-msgstr ""
-
-msgid "Edit Profile"
-msgstr ""
-
-msgid "Diagnostics"
-msgstr ""
-
-msgid "The %s is being used for caching. To change the config edit APP/config/core.php "
-msgstr ""
-
-msgid "Your cache is NOT working. Please check the settings in APP/config/core.php"
-msgstr ""
-
-msgid "Your database configuration file is present."
-msgstr ""
-
-msgid "Your database configuration file is NOT present."
-msgstr ""
-
-msgid "Rename config/database.php.default to config/database.php"
-msgstr ""
-
-msgid "Cake is able to connect to the database."
-msgstr ""
-
-msgid "Cake is NOT able to connect to the database."
-msgstr ""
-
-msgid "Start Session"
-msgstr ""
-
-msgid "Application Offline"
-msgstr ""
-
-msgid "This application is now on maintenance mode, back soon as possible!"
-msgstr ""
-
-msgid "Username"
-msgstr ""
-
-msgid "Password"
-msgstr ""
-
-msgid "Active"
-msgstr ""
-
-msgid "Enable change password"
-msgstr ""
-
-msgid "Modified"
-msgstr ""
-
-msgid "Created"
-msgstr ""
-
 msgid "View"
-msgstr ""
-
-msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
-msgstr ""
-
-msgid "Previous"
-msgstr ""
-
-msgid "Next"
-msgstr ""
-
-msgid "No records found!!!"
 msgstr ""
 
 msgid "View %s"
 msgstr ""
 
-msgid "Delete %s"
+msgid "Yes"
 msgstr ""
 
-msgid "Id"
+msgid "Your Config directory is NOT writable."
 msgstr ""
 
-msgid "Empty"
+msgid "Your Config directory is writable."
 msgstr ""
 
-msgid "Must be unique"
+msgid "Your cache is NOT working. Please check the settings in APP/config/core.php"
 msgstr ""
 
-msgid "Passwords dont match"
+msgid "Your database configuration file is NOT present."
 msgstr ""
 
-msgid "Invalid email"
+msgid "Your database configuration file is present."
 msgstr ""
 
-msgid "Notifier"
+msgid "Your tmp directory is NOT writable."
 msgstr ""
 
-msgid "Notification"
-msgid_plural "Notifications"
-msgstr[0] ""
-msgstr[1] ""
-
-msgid "Read"
+msgid "Your tmp directory is writable."
 msgstr ""
-

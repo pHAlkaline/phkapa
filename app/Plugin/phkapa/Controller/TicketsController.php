@@ -10,7 +10,7 @@
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://phkapa.phalkaline.eu
+ * @link     http://phkapa.net
  */
 class TicketsController extends PhkapaAppController {
 
@@ -132,7 +132,7 @@ class TicketsController extends PhkapaAppController {
      * @param string $id
      * @return void
      */
-    /*public function admin_pdf($id) {
+    public function admin_pdf($id) {
         // increase memory limit in PHP 
         ini_set('memory_limit', '256M');
         if (!$id) {
@@ -144,7 +144,7 @@ class TicketsController extends PhkapaAppController {
 
 
         $this->set('ticket', $this->Ticket->read(null, $id));
-    }*/
+    }
 
     /**
      * Admin add
@@ -217,7 +217,7 @@ class TicketsController extends PhkapaAppController {
         }
         if (empty($this->request->data)) {
             
-            $this->request->data = $this->Ticket->find('first', array('order'=>''));
+            $this->request->data = $this->Ticket->find('first', array('conditions'=>array('id'=>$id),'order'=>''));
         
         }
         $types = $this->Ticket->Type->find('list', array('conditions' => array('Type.active' => '1')));

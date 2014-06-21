@@ -37,7 +37,7 @@
 
 
     <div class="tickets form">
-        <?php echo $this->Form->create('Ticket'); ?>
+        <?php echo $this->Form->create('Ticket',array('novalidate' => true)); ?>
         <fieldset class="ui-corner-all ui-widget-content" >
             <legend><?php echo __d('phkapa', 'Record') . ' ' . __d('phkapa', 'Ticket'); ?></legend>
             <?php
