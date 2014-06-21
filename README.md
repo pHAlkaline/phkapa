@@ -15,3 +15,24 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
   * Apache 2 with `mod_rewrite` or similar
   * PHP 5.2 or higher
   * MySQL 5 or higher
+
+## Git submodules install ( cakephp and dompdf )
+
+
+cd /var/www/yourapp/
+
+git submodule add https://github.com/cakephp/cakephp.git lib/cakephp
+
+git add .gitmodules
+
+
+git submodule add https://github.com/dompdf/dompdf.git vendors/dompdf
+
+git add .gitmodules
+
+
+cd vendors/dompdf
+
+git submodule init
+
+git submodule update
