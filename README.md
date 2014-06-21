@@ -18,7 +18,7 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
 
 ## Git install ( phkapa and submodules cakephp and dompdf )
 
-https://github.com/pHAlkaline/phkapa.git
+git clone https://github.com/pHAlkaline/phkapa.git
 
 git submodule init
 
