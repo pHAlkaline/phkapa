@@ -16,7 +16,12 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
   * PHP 5.2 or higher
   * MySQL 5 or higher
 
-## Git install ( phkapa and submodules cakephp and dompdf )
+## Git install 
+( phkapa and submodules cakephp and dompdf )
+
+git clone --recursive https://github.com/pHAlkaline/phkapa.git
+
+or
 
 git clone https://github.com/pHAlkaline/phkapa.git
 
@@ -29,3 +34,5 @@ cd vendors/dompdf
 git submodule init
 
 git submodule update
+
+
