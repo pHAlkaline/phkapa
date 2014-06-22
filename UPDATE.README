@@ -1,3 +1,13 @@
+--> From V1.0.9 to V1.1
+This is a major release with no database schema changes.
+It has bug fixes and many file changes, please use your best Diff/Merge Tool
+Notification system now also sends notification email.
+Added PDF ticket report on Query -> Ticket -> view
+Framework now is on lib/cakephp 
+New vendor class added on vendors/dompdf
+
+
+
 --> From V1.0.8 to V1.0.9
 # Updated Files / Directories
 UPDATE.README

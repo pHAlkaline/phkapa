@@ -1,6 +1,6 @@
 # PHKAPA
 
-**PHKAPA** is a free, open source, nonconformity management system for PHP, released under [MIT License]
+**PHKAPA** , Nonconformity management software for quality assurance. Allows to generate action (CAPA) requests that routes through register, review, plan ( root cause , action plan) , and verification stages. It provides effective mechanisms to determinate the source and cost of problems, released under [MIT License]
 
 Official website: [http://phkapa.net](http://phkapa.net)
 WIKI website: [http://wiki.phkapa.net](http://wiki.phkapa.net)
