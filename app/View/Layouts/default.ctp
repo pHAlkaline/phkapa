@@ -143,7 +143,7 @@
 
         <div id="header_separator" >
             <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __('Help'); ?>">
-                <a href="http://phkapa.net/wiki" target="_blank">
+                <a href="http://wiki.phkapa.net" target="_blank">
                     <span class="ui-icon ui-icon-help"></span>
                 </a>
             </div>
