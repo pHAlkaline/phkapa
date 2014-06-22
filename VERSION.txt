@@ -4,7 +4,9 @@
 //
 // Holds a static string representing the current version of PHKAPA
 //
-// PHKAPA(tm) : Free Corrective Action Preventive Action Software (http://phkapa.net)
+// PHKAPA(tm) : Nonconformity management software for quality assurance. 
+// Allows to generate action (CAPA) requests that routes through register, review, plan ( root cause , action plan) , and verification stages. 
+// It provides effective mechanisms to determinate the source and cost of problems.
 // Copyright (c) pHAlkaline (http://phalkaline.eu)
 //
 // Licensed under The MIT License

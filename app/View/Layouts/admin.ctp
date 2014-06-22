@@ -208,6 +208,7 @@
 
             <div class="clear"></div>
         </div>
+        <div style="text-align: center;">Keep PHKAPA FREE -> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=496QJCEKJ344N" target="_blank"> Donate or Sponsor HERE </a><br/>Copyright (c) pHAlkaline (<a href="http://phalkaline.eu" target="_blank">http://phalkaline.eu</a>)<div/>
         <?php echo $this->element('sql_dump'); ?>
     </body>
 </html>
