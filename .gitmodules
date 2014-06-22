@@ -1,0 +1,6 @@
+[submodule "lib/cakephp"]
+	path = lib/cakephp
+	url = https://github.com/cakephp/cakephp.git
+[submodule "vendors/dompdf"]
+	path = vendors/dompdf
+	url = https://github.com/dompdf/dompdf.git
