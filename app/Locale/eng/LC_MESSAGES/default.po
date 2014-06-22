@@ -154,10 +154,10 @@ msgid "End Session"
 msgstr ""
 
 msgid "From Email"
-msgstr "Email de envio"
+msgstr ""
 
 msgid "From Name"
-msgstr "Nome de envio"
+msgstr ""
 
 msgid "Group / User"
 msgstr ""
@@ -288,7 +288,7 @@ msgid "Start Session"
 msgstr ""
 
 msgid "Setup notification email"
-msgstr "Configuração notificações por email"
+msgstr ""
 
 msgid "Step 1 : Database connection"
 msgstr ""
@@ -306,6 +306,9 @@ msgid "Submit"
 msgstr ""
 
 msgid "The %s is being used for caching. To change the config edit APP/config/core.php "
+msgstr ""
+
+msgid "Subject"
 msgstr ""
 
 msgid "This application is now on maintenance mode, back soon as possible!"
