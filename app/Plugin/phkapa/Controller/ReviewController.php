@@ -13,7 +13,14 @@
  * @link     http://phkapa.net
  */
 class ReviewController extends PhkapaAppController {
-
+    /**
+     * List of Components for this Controller
+     *
+     * @var array
+     * @access public
+     */
+    public $components = array('RequestHandler');
+    
     /**
      * Controller name
      *
@@ -30,6 +37,29 @@ class ReviewController extends PhkapaAppController {
      */
     public $uses = array('Phkapa.Ticket');
 
+    /**
+     * Filter from Category model
+     *
+     * @var array
+     * @access public
+     */
+    public $categoryOptions = array();
+
+    /**
+     * Filter from Activity model
+     *
+     * @var array
+     * @access public
+     */
+    public $activityOptions = array();
+
+    /**
+     * Filter from Process model
+     *
+     * @var array
+     * @access public
+     */
+    public $processOptions = array();
     /**
      * Filter from Process model
      *
@@ -114,8 +144,18 @@ class ReviewController extends PhkapaAppController {
             $this->request->data = $ticket;
         }
         $priorities = $this->Ticket->Priority->find('list', array('conditions' => array('Priority.active' => '1')));
+        $this->_setOptions();
+        $this->request->data['Ticket']['process_change'] = '';
+        $types = $this->Ticket->Type->find('list', array('conditions' => array('Type.active' => '1')));
+        $priorities = $this->Ticket->Priority->find('list', array('conditions' => array('Priority.active' => '1')));
+        $suppliers = $this->Ticket->Supplier->find('list', array('conditions' => array('Supplier.active' => '1')));
+        $processes = $this->Ticket->Process->find('list', array('conditions' => array('Process.active' => '1')));
+        $activities = $this->Ticket->Activity->find('list', $this->activityOptions);
+        $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
+        $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
+        $this->set(compact('ticket', 'types', 'priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
+    
         
-        $this->set(compact('ticket','priorities'));
     }
 
     /**
@@ -135,7 +175,7 @@ class ReviewController extends PhkapaAppController {
             $this->redirect(array('action' => 'index'));
         }
         $now=$this->Ticket->timeFormatedField('modified',time());
-        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '3', 'Ticket.modified' => '"'.$now.'"'), array('Ticket.workflow_id' => '2','Ticket.approved' => 1,'Ticket.id' => $id))) {
+        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '3','Ticket.modified_user_id' => $this->Auth->user('id'), 'Ticket.modified' => '"'.$now.'"'), array('Ticket.workflow_id' => '2','Ticket.approved' => 1,'Ticket.id' => $id))) {
             $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
@@ -164,7 +204,7 @@ class ReviewController extends PhkapaAppController {
         $now=$this->Ticket->timeFormatedField('modified',time());
         $nowClose=$this->Ticket->timeFormatedField('close_date',time());
         if (isset($ticket['Ticket']['approved']) && $ticket['Ticket']['approved'] == 0) {
-            if ($this->Ticket->updateAll(array('Ticket.workflow_id' => $workflowId, 'Ticket.modified' => '"'.$now.'"', 'Ticket.close_date' => '"'.$nowClose.'"'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '2','Ticket.approved' => 0))) {
+            if ($this->Ticket->updateAll(array('Ticket.workflow_id' => $workflowId, 'Ticket.modified_user_id' => $this->Auth->user('id'), 'Ticket.modified' => '"'.$now.'"', 'Ticket.close_user_id' =>$this->Auth->user('id'), 'Ticket.close_date' => '"'.$nowClose.'"'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '2','Ticket.approved' => 0))) {
                 $this->_addNotification($id,__d('phkapa','Ticket # %s has been closed', $id));
                 $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
@@ -210,6 +250,65 @@ class ReviewController extends PhkapaAppController {
 
         $this->Ticket->Category->unbindModel(array(
             'hasAndBelongsToMany' => array('Process', 'Cause')), false);
+    }
+    
+    /**
+     * Set filter from models : Process , Activity , Category
+     *
+     * @return void
+     * @access protected
+     */
+    protected function _setOptions() {
+
+        
+        $process_id = -1;
+        if (isset($this->request->data['Ticket']['process_id']) && $this->request->data['Ticket']['process_id'] != '') {
+            $process_id = $this->request->data['Ticket']['process_id'];
+        }
+
+        $this->activityOptions['joins'] = array(
+            array('table' => 'phkapa_activities_processes',
+                'alias' => 'ActivitiesProcess',
+                'type' => 'inner',
+                'conditions' => array(
+                    'Activity.id = ActivitiesProcess.activity_id'
+                )
+            ),
+            array('table' => 'phkapa_processes',
+                'alias' => 'Process',
+                'type' => 'inner',
+                'conditions' => array(
+                    'ActivitiesProcess.Process_id = ' . $process_id,
+                )
+            )
+        );
+
+        $this->activityOptions['conditions'] = array(
+            'Activity.active' => '1',
+            'Process.active' => '1'
+        );
+
+        $this->categoryOptions['joins'] = array(
+            array('table' => 'phkapa_categories_processes',
+                'alias' => 'CategoriesProcess',
+                'type' => 'inner',
+                'conditions' => array(
+                    'Category.id = CategoriesProcess.category_id'
+                )
+            ),
+            array('table' => 'phkapa_processes',
+                'alias' => 'Process',
+                'type' => 'inner',
+                'conditions' => array(
+                    'CategoriesProcess.Process_id = ' . $process_id,
+                )
+            )
+        );
+
+        $this->categoryOptions['conditions'] = array(
+            'Category.active' => '1',
+            'Process.active' => '1'
+        );
     }
 
     /**

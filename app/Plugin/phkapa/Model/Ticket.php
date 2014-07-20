@@ -168,7 +168,16 @@ class Ticket extends PhkapaAppModel {
                 'allowEmpty' => true,
                 'required' => false
             ),
-        )
+        ),
+        'close_user_id' => array(
+            'checkWorkflow' => array(
+                'rule' => array('checkCloseByIdWorkflow'),
+                'message' => 'This workflow requires close by',
+                
+            ),
+            
+        ),
+        
     );
     /**
      * Validation 2 for workflow only - Register, Review, Plan, 
@@ -358,7 +367,21 @@ class Ticket extends PhkapaAppModel {
             'conditions' => '',
             'fields' => array('id'),
             'order' => ''
-        )
+        ),
+        'CloseUser' => array(
+            'className' => 'Phkapa.User',
+            'foreignKey' => 'close_user_id',
+            'conditions' => '',
+            'fields' => array('id', 'name'),
+            'order' => ''
+        ),
+        'ModifiedUser' => array(
+            'className' => 'Phkapa.User',
+            'foreignKey' => 'modified_user_id',
+            'conditions' => '',
+            'fields' => array('id', 'name'),
+            'order' => ''
+        ),
     );
     
     /**
@@ -454,6 +477,19 @@ class Ticket extends PhkapaAppModel {
     public function checkCloseDateWorkflow($check) {
         return ($this->data['Ticket']['workflow_id'] == 5 && $check['close_date'] == null) ? false : true;
     }
+    
+    /**
+     * Custom validation rule
+     * Check if close_user_id is required
+     * If ticket is closed is required
+     *
+     * @param array $check field 
+     * @access public
+     * @return boolean
+     */
+    public function checkCloseByIdWorkflow($check) {
+        return ($this->data['Ticket']['workflow_id'] == 5 && $check['close_user_id'] == null) ? false : true;
+    }
 
     /**
      * Custom validation rule
@@ -479,9 +515,13 @@ class Ticket extends PhkapaAppModel {
     public function beforeSave($options = array()) {
         if (isset($this->data['Ticket']['workflow_id']) && $this->data['Ticket']['workflow_id'] != 5) {
             $this->data['Ticket']['close_date'] = null;
+            $this->data['Ticket']['close_user_id'] = null;
         }
+        $this->data['Ticket']['modified_user_id']=AuthComponent::user('id');
         return true;
     }
+    
+    
 
 }
 

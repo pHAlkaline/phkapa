@@ -278,7 +278,7 @@ class RegisterController extends PhkapaAppController {
        
         $now=$this->Ticket->timeFormatedField('modified',time());
         
-        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '2', 'Ticket.modified' => '"'.$now.'"'), array('Ticket.id' => $id))) {
+        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '2','Ticket.modified_user_id' => $this->Auth->user('id'), 'Ticket.modified' => '"'.$now.'"'), array('Ticket.id' => $id))) {
             $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }

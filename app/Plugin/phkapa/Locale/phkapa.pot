@@ -1,4 +1,4 @@
-# LANGUAGE translation of Phkapa Application
+# LANGUAGE translation of PHKAPA Application
 # Copyright pHAlkaline <contact@phalkaline.eu>
 #
 #, fuzzy
@@ -409,4 +409,10 @@ msgid "Yes"
 msgstr ""
 
 msgid "set todays date"
+msgstr ""
+
+msgid "Last Modification By"
+msgstr ""
+
+msgid "Closed By"
 msgstr ""

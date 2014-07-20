@@ -34,6 +34,8 @@
                 iconv("UTF-8", "ISO-8859-1//TRANSLIT", __d('phkapa', 'Cause')),
                 iconv("UTF-8", "ISO-8859-1//TRANSLIT", __d('phkapa', 'Cause Notes')),
                 iconv("UTF-8", "ISO-8859-1//TRANSLIT", __d('phkapa', 'Close Date')),
+                iconv("UTF-8", "ISO-8859-1//TRANSLIT", __d('phkapa', 'Closed By')),
+                iconv("UTF-8", "ISO-8859-1//TRANSLIT", __d('phkapa', 'Last Modification By')),
                 iconv("UTF-8", "ISO-8859-1//TRANSLIT", __d('phkapa', 'Modified')),
                 iconv("UTF-8", "ISO-8859-1//TRANSLIT", __d('phkapa', 'Created')),
             ));
@@ -91,6 +93,12 @@
             <td><?php echo iconv("UTF-8", "ISO-8859-1//TRANSLIT", $ticket['Ticket']['cause_notes']); ?>&nbsp;</td>
             <td>
                 <?php if (isset($ticket['Ticket']['close_date'])) echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['close_date']); ?>&nbsp;
+            </td>
+            <td>
+                <?php echo iconv("UTF-8", "ISO-8859-1//TRANSLIT", $ticket['CloseUser']['name']); ?>
+            </td>
+            <td>
+                <?php echo iconv("UTF-8", "ISO-8859-1//TRANSLIT", $ticket['ModifiedUser']['name']); ?>
             </td>
             <td><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['modified']); ?>&nbsp;</td>
             <td><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['created']); ?>&nbsp;</td>

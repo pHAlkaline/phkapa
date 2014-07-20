@@ -61,6 +61,7 @@
             echo $this->Form->input('ticket_parent', array('min' => '0', 'label' => __d('phkapa', 'Ticket Parent')));
             echo "<hr/>";
             echo $this->Form->input('close_date', array('label' => __d('phkapa', 'Close Date'), 'empty' => __d('phkapa', '(choose one)'), 'dateFormat' => 'DMY', 'minYear' => date('Y') - 1, 'maxYear' => date('Y'), 'after' => $this->Html->link(__d('phkapa', 'set todays date'), '#', array('style' => 'padding-left:10px;', 'id' => 'setTodayCloseDate'))));
+            echo $this->Form->input('close_user_id', array('label' => __d('phkapa', 'Closed By'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('modified', array('label' => __d('phkapa', 'Modified'), 'empty' => __d('phkapa', '(choose one)'), 'dateFormat' => 'DMY', 'minYear' => date('Y') - 1, 'maxYear' => date('Y')));
             echo $this->Form->input('created', array('label' => __d('phkapa', 'Created'), 'empty' => __d('phkapa', '(choose one)'), 'dateFormat' => 'DMY', 'minYear' => date('Y') - 1, 'maxYear' => date('Y')));
             ?>

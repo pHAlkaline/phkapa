@@ -47,7 +47,7 @@ class AppController extends Controller {
         //parent::beforeFilter();
         //$this->Auth->authenticate = array('Simple');
         $this->Auth->logoutRedirect = array('admin' => false, 'plugin' => false, 'controller' => 'pages', 'action' => 'display');
-        $this->Auth->loginRedirect = array('admin' => false, 'plugin' => false, 'controller' => 'pages', 'action' => 'display');
+        $this->Auth->loginRedirect = array('admin' => false, 'plugin' => 'phkapa', 'controller' => 'query', 'action' => 'index');
         $this->Auth->allow('display', 'login', 'logout','edit_profile','secure','notifications');
         $this->Auth->authorize = array('Controller');
         $this->Auth->flashElement = 'flash_message_error';

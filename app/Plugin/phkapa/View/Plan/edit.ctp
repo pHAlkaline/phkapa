@@ -235,6 +235,17 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         &nbsp;
                     </dd>
                     <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
+                            ?>><?php echo __d('phkapa', 'Last Modification By'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                            ?>>
+                            <?php echo $ticket['ModifiedUser']['name']; ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
                         if ($i % 2 == 0)
                             echo $class;
                         ?>><?php echo __d('phkapa', 'Modified'); ?></dt>

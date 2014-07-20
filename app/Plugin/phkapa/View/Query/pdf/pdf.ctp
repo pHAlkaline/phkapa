@@ -174,6 +174,36 @@
                 </tr>
                 <tr valign="TOP">
                     <td >
+                        <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Close Date'); ?>:
+                            </font></font>
+                        </h2>
+                    </td>
+                    <td >
+                        <p style="margin-top: 0.07cm">
+                            <font face="Trebuchet MS, sans-serif">
+                            <?php 
+                            if ($ticket['Ticket']['close_date']) {
+                                echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['close_date']);
+                            } 
+                            ?>
+                            </font>
+                        </p>
+                    </td>
+                    <td >
+                        <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Closed By'); ?>:
+                            </font></font>
+                        </h2>
+                    </td>
+                    <td >
+                        <p style="margin-top: 0.07cm">
+                            <font face="Trebuchet MS, sans-serif">
+                            <?php echo $ticket['CloseUser']['name']; ?>
+                            </font>
+                        </p>
+                    </td>
+                </tr>
+                <tr valign="TOP">
+                    <td >
                         <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Description'); ?>:
                             </font></font>
                         </h2>
