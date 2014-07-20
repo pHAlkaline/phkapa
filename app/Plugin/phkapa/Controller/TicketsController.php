@@ -191,7 +191,9 @@ class TicketsController extends PhkapaAppController {
         $suppliers = $this->Ticket->Supplier->find('list', array('conditions' => array('Supplier.active' => '1')));
         $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
         $workflows = $this->Ticket->Workflow->find('list', array('conditions' => array('Workflow.active' => '1'),'order'=>'Workflow.order'));
-        $this->set(compact('types','priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'causes', 'suppliers'));
+        $closeUsers = $this->Ticket->CloseUser->find('list', array('conditions' => array('CloseUser.active' => '1')));
+        
+        $this->set(compact('types','priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'causes', 'suppliers','closeUsers'));
     }
 
     /**
@@ -230,7 +232,9 @@ class TicketsController extends PhkapaAppController {
         $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
         $causes = $this->Ticket->Cause->find('list', array('conditions' => array('Cause.active' => '1')));
         $workflows = $this->Ticket->Workflow->find('list', array('conditions' => array('Workflow.active' => '1'), 'order' => 'Workflow.order'));
-        $this->set(compact('types', 'priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'causes', 'workflows', 'suppliers'));
+        $closeUsers = $this->Ticket->CloseUser->find('list', array('conditions' => array('CloseUser.active' => '1')));
+       
+        $this->set(compact('types', 'priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'causes', 'workflows', 'suppliers', 'closeUsers'));
     }
 
     /**

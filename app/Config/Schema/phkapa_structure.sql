@@ -337,6 +337,8 @@ CREATE TABLE IF NOT EXISTS `phkapa_tickets` (
   `cause_notes` text,
   `description` text,
   `close_date` date DEFAULT NULL,
+  `close_user_id` int(11) DEFAULT NULL,
+  `modified_user_id` int(11) DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -349,7 +351,9 @@ CREATE TABLE IF NOT EXISTS `phkapa_tickets` (
   KEY `CategoryIdKey` (`category_id`),
   KEY `CauseIdKey` (`cause_id`),
   KEY `TicketParentIdKey` (`ticket_parent`),
-  KEY `priority_id` (`priority_id`)
+  KEY `PriorityIdKey` (`priority_id`),
+  KEY `ClosedUserIdKey` (`close_user_id`),
+  KEY `ModifiedUserIdKey` (`modified_user_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -466,16 +470,18 @@ ALTER TABLE `phkapa_processes_users`
 -- Constraints for table `phkapa_tickets`
 --
 ALTER TABLE `phkapa_tickets`
-  ADD CONSTRAINT `phkapa_tickets_ibfk_11` FOREIGN KEY (`cause_id`) REFERENCES `phkapa_causes` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `phkapa_tickets_ibfk_12` FOREIGN KEY (`ticket_parent`) REFERENCES `phkapa_tickets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `phkapa_tickets_ibfk_13` FOREIGN KEY (`priority_id`) REFERENCES `phkapa_priorities` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_tickets_ibfk_2` FOREIGN KEY (`type_id`) REFERENCES `phkapa_types` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_tickets_ibfk_3` FOREIGN KEY (`process_id`) REFERENCES `phkapa_processes` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_tickets_ibfk_4` FOREIGN KEY (`registar_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_tickets_ibfk_5` FOREIGN KEY (`activity_id`) REFERENCES `phkapa_activities` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_tickets_ibfk_6` FOREIGN KEY (`category_id`) REFERENCES `phkapa_categories` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_tickets_ibfk_7` FOREIGN KEY (`origin_id`) REFERENCES `phkapa_origins` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `phkapa_tickets_ibfk_8` FOREIGN KEY (`workflow_id`) REFERENCES `phkapa_workflows` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `phkapa_tickets_ibfk_8` FOREIGN KEY (`workflow_id`) REFERENCES `phkapa_workflows` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_ibfk_11` FOREIGN KEY (`cause_id`) REFERENCES `phkapa_causes` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_ibfk_12` FOREIGN KEY (`ticket_parent`) REFERENCES `phkapa_tickets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_ibfk_13` FOREIGN KEY (`priority_id`) REFERENCES `phkapa_priorities` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_ibfk_14` FOREIGN KEY (`close_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_ibfk_15` FOREIGN KEY (`modified_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 SET FOREIGN_KEY_CHECKS=1;
 
 

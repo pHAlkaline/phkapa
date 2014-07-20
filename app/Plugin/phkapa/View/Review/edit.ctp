@@ -1,3 +1,4 @@
+<?php $this->html->script('/phkapa/js/register_add', false); ?>
 <?php
 $sendOk = false;
 $closeOk = false;
@@ -94,97 +95,16 @@ if ($ticket['Ticket']['approved'] === null) {
                             <?php echo $ticket['Registar']['name']; ?>
                         &nbsp;
                     </dd>
-                    <dt<?php
-                    if ($i % 2 == 0)
-                        echo $class;
-                    ?>><?php echo __d('phkapa', 'Origin Date'); ?></dt>
-                    <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                    ?>>
-                            <?php
-                            if ($ticket['Ticket']['origin_date']) {
-                                echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['origin_date']);
-                            }
-                            ?>
-                        &nbsp;
-                    </dd>
+                    
                     <dt<?php
                             if ($i % 2 == 0)
                                 echo $class;
-                            ?>><?php echo __d('phkapa', 'Type'); ?></dt>
+                            ?>><?php echo __d('phkapa', 'Last Modification By'); ?></dt>
                     <dd<?php
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Type']['name']; ?>
-                        &nbsp;
-                    </dd>
-                    <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Origin'); ?></dt>
-                    <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
-                            <?php echo $ticket['Origin']['name']; ?>
-                        &nbsp;
-                    </dd>
-                    <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Process'); ?></dt>
-                    <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
-                            <?php echo $ticket['Process']['name']; ?>
-                        &nbsp;
-                    </dd>
-
-                    <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Activity'); ?></dt>
-                    <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
-                            <?php echo $ticket['Activity']['name']; ?>
-                        &nbsp;
-                    </dd>
-                    <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Category'); ?></dt>
-                    <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
-                            <?php echo $ticket['Category']['name']; ?>
-                        &nbsp;
-                    </dd>
-                    <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Supplier'); ?></dt>
-                    <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
-                            <?php echo $ticket['Supplier']['name']; ?>
-                        &nbsp;
-                    </dd>
-                    <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Description'); ?></dt>
-                    <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
-                            <?php echo $ticket['Ticket']['description']; ?>
+                            <?php echo $ticket['ModifiedUser']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -219,7 +139,35 @@ if ($ticket['Ticket']['approved'] === null) {
             <legend><?php echo __d('phkapa', 'Record %s', __d('phkapa', 'Review')); ?></legend>
             <?php
             echo $this->Form->input('id');
+            echo $this->Form->hidden('process_change');
+
+            echo $this->Form->input('origin_date', array('label' => __d('phkapa','Origin Date'),'empty' => __d('phkapa','(choose one)'), 'dateFormat' => 'DMY', 'maxYear' => date('Y'), 'minYear' => date('Y') - 3, 'maxYear' => date('Y')));
+            echo $this->Form->input('type_id', array('label' => __d('phkapa','Type'),'empty' => __d('phkapa','(choose one)')));
+            echo $this->Form->input('origin_id', array('label' => __d('phkapa','Origin'),'empty' => __d('phkapa','(choose one)')));
+            echo $this->Form->input('process_id', array('label' => __d('phkapa','Process'),'empty' => __d('phkapa','(choose one)'), 'after' =>
+                $this->html->image("loading.gif", array("id" => "LoadProcessData", "alt" => __d('phkapa',"Loading process data"), "style" => "padding-left:10px;display:none;")), "#",
+                array('escape' => false)
+            ));
+            ?>
+            <div id='ProcessData'>
+                <?php
+                echo $this->Form->input('activity_id', array('label' => __d('phkapa','Activity'),'empty' => __d('phkapa','(choose one)')));
+                echo $this->Form->input('category_id', array('label' => __d('phkapa','Category'),'empty' => __d('phkapa','(choose one)')));
+                ?>
+            </div>
+            <?php
+            echo $this->Form->input('supplier_id', array('label' => __d('phkapa','Supplier'),'empty' => __d('phkapa','(choose one)')));
+            echo $this->Form->input('description',array('label' => __d('phkapa','Description')));
+             echo "<br/>";
             echo $this->Form->input('priority_id', array('label' => __d('phkapa','Priority'),'empty' => __d('phkapa','(choose one)')));
+            if (isset($this->request->data['Ticket']['ticket_parent'])) :
+                echo "<hr/>";
+                echo $this->Form->input('ticket_parent',array('min'=>'0','label' => __d('phkapa','Ticket Parent')));
+
+            endif;
+            ?>
+            <hr/>
+                <?
             
             $results = array('' => __d('phkapa','(choose one)'), '0' => __d('phkapa','No'), '1' => __d('phkapa','Yes'));
             echo $this->Form->input('approved', array('label'=> __d('phkapa', 'Approved')));

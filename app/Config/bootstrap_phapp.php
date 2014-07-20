@@ -4,7 +4,12 @@
  * Default app settings
  */
 Configure::write('Config.language', 'eng'); // por - Portuguese , eng - english
-Configure::write('Language.list',array('eng'=>'English','por'=>'Portugues','pt_BR'=>'Portugues ( Brasil)')); // 
+Configure::write('Language.list',array(
+    'eng'=>'English',
+    'deu'=>'German',
+    'por'=>'Portugues',
+    'pt_BR'=>'Portugues ( Brasil)',
+    )); // 
 Configure::write('Config.timezone', 'Europe/Lisbon'); // Europe/Lisbon
 Configure::write('dateFormat', 'd-m-Y H:i:s'); //
 Configure::write('dateFormatSimple', 'd-m-Y'); //

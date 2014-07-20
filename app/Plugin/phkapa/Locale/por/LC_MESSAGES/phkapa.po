@@ -1,4 +1,4 @@
-# LANGUAGE translation of Phkapa Application
+# LANGUAGE translation of PHKAPA Application
 # Copyright pHAlkaline <contact@phalkaline.eu>
 #
 #, fuzzy
@@ -408,3 +408,9 @@ msgstr "Sim"
 
 msgid "set todays date"
 msgstr "Inserir data de hoje"
+
+msgid "Last Modification By"
+msgstr "Última Modificação por"
+
+msgid "Closed By"
+msgstr "Fechado por"

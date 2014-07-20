@@ -1,3 +1,53 @@
+--> From V1.1 to V1.1.1
+# Updated Files / Directories
+Length     Date   Time    Name
+ --------    ----   ----    ----
+     1084  07-18-14 14:28   Config/bootstrap_phapp.php
+    20013  07-20-14 13:42   Config/Schema/phkapa_structure.sql
+     3529  07-20-14 14:13   Controller/AppController.php
+        0  07-18-14 14:24   Locale/
+        0  07-18-14 14:24   Locale/deu/
+        0  07-18-14 14:47   Locale/deu/LC_MESSAGES/
+     1690  07-18-14 14:47   Locale/deu/LC_MESSAGES/cake.po
+     7028  07-18-14 14:40   Locale/deu/LC_MESSAGES/default.po
+     6039  07-18-14 14:45   Locale/eng/LC_MESSAGES/default.po
+     9881  07-18-14 14:44   Locale/por/LC_MESSAGES/default.po
+        0  07-18-14 14:46   Locale/pt_BR/LC_MESSAGES/
+     1728  07-18-14 14:46   Locale/pt_BR/LC_MESSAGES/cake.po
+    10119  07-18-14 14:45   Locale/pt_BR/LC_MESSAGES/default.po
+        0  07-18-14 18:14   Plugin/phkapa/
+    18848  07-20-14 14:32   Plugin/phkapa/Controller/PlanController.php
+    17052  07-20-14 14:32   Plugin/phkapa/Controller/RegisterController.php
+    13063  07-20-14 14:33   Plugin/phkapa/Controller/ReviewController.php
+    17191  07-18-14 18:48   Plugin/phkapa/Controller/TicketsController.php
+    11744  07-20-14 14:34   Plugin/phkapa/Controller/VerifyController.php
+        0  07-18-14 14:25   Plugin/phkapa/Locale/
+        0  07-18-14 14:24   Plugin/phkapa/Locale/deu/
+        0  07-18-14 14:24   Plugin/phkapa/Locale/deu/LC_MESSAGES/
+     8152  07-18-14 19:44   Plugin/phkapa/Locale/deu/LC_MESSAGES/phkapa.po
+     5497  07-18-14 19:45   Plugin/phkapa/Locale/eng/LC_MESSAGES/phkapa.po
+     7821  07-18-14 19:45   Plugin/phkapa/Locale/por/LC_MESSAGES/phkapa.po
+     7884  07-18-14 19:46   Plugin/phkapa/Locale/pt_BR/LC_MESSAGES/phkapa.po
+    17850  07-20-14 14:30   Plugin/phkapa/Model/Ticket.php
+    17547  07-18-14 19:01   Plugin/phkapa/View/Plan/edit.ctp
+    18965  07-18-14 19:57   Plugin/phkapa/View/Query/pdf/pdf.ctp
+    22147  07-18-14 18:57   Plugin/phkapa/View/Query/view.ctp
+     9241  07-18-14 20:00   Plugin/phkapa/View/Query/xls_data.ctp
+     9734  07-18-14 19:00   Plugin/phkapa/View/Register/view.ctp
+     8697  07-18-14 19:39   Plugin/phkapa/View/Review/edit.ctp
+     5934  07-18-14 18:46   Plugin/phkapa/View/Tickets/admin_add.ctp
+     5848  07-18-14 18:46   Plugin/phkapa/View/Tickets/admin_edit.ctp
+    24088  07-18-14 18:53   Plugin/phkapa/View/Tickets/admin_view.ctp
+     9008  07-18-14 18:45   Plugin/phkapa/View/Tickets/xls_data.ctp
+    15759  07-18-14 19:03   Plugin/phkapa/View/Verify/view.ctp
+     2384  07-18-14 19:32   Plugin/phkapa/webroot/js/register_add.js
+UPDATE.README
+VERSION.txt
+- On Review Stage you can now "Review" all "Register" data
+- New fields on Ticket Records , Last Modification User and Close Ticket User 
+- German translation added
+
+
 --> From V1.0.9 to V1.1
 This is a major release with no database schema changes.
 It has bug fixes and many file changes, please use your best Diff/Merge Tool

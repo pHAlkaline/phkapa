@@ -264,6 +264,28 @@ if ($ticket['Workflow']['id'] < 5) {
                     <dt<?php
                             if ($i % 2 == 0)
                                 echo $class;
+                            ?>><?php echo __d('phkapa', 'Closed By'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                            ?>>
+                            <?php echo $ticket['CloseUser']['name']; ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
+                            ?>><?php echo __d('phkapa', 'Last Modification By'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                            ?>>
+                            <?php echo $ticket['ModifiedUser']['name']; ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
                             ?>><?php echo __d('phkapa', 'Modified'); ?></dt>
                     <dd<?php
                         if ($i++ % 2 == 0)

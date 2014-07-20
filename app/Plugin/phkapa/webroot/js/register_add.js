@@ -12,7 +12,14 @@ $(function(){
         //$('#TicketActivityId').attr("disabled", "disabled");
         //$('#TicketCategoryId').attr("disabled", "disabled");
         var href = $(location).attr('href');
-	    var PHKAPAurl = href.slice(0, href.lastIndexOf("register"));
+        var PHKAPAurl='';
+	if (href.lastIndexOf("register")!=-1){
+            PHKAPAurl = href.slice(0, href.lastIndexOf("register"));
+        }
+        if (href.lastIndexOf("review")!=-1){
+            PHKAPAurl = href.slice(0, href.lastIndexOf("review"));
+        }
+        
         //alert(document.baseURI);
         //alert(PHKAPAurl+"/phkapa/register/update_by_process");
         //console.log(x);

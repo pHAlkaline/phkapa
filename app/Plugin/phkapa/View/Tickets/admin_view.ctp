@@ -261,6 +261,28 @@
                     <dt<?php
                             if ($i % 2 == 0)
                                 echo $class;
+                            ?>><?php echo __d('phkapa', 'Closed By'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                            ?>>
+                            <?php echo $this->Html->link($ticket['CloseUser']['name'], array('controller' => 'users', 'action' => 'view', $ticket['CloseUser']['id'])); ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
+                            ?>><?php echo __d('phkapa', 'Last Modification By'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                            ?>>
+                            <?php echo $this->Html->link($ticket['ModifiedUser']['name'], array('controller' => 'users', 'action' => 'view', $ticket['ModifiedUser']['id'])); ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
                             ?>><?php echo __d('phkapa', 'Modified'); ?></dt>
                     <dd<?php
                         if ($i++ % 2 == 0)
