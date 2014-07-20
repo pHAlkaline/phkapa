@@ -19,7 +19,8 @@
             <?php $tableHeaders = $this->html->tableHeaders( array(
                 $this->Paginator->sort('id'),
                 $this->Paginator->sort('name',__('Name')), 
-                $this->Paginator->sort('username',__('Username')), 
+                $this->Paginator->sort('username',__('Username')),
+                $this->Paginator->sort('email',__('Email')),
                 $this->Paginator->sort('active',__('Active')), 
                 $this->Paginator->sort('modified',__('Modified')), 
                 $this->Paginator->sort('created',__('Created')),
@@ -39,6 +40,7 @@
                     <td><?php echo $user['User']['id']; ?>&nbsp;</td>
                     <td><?php echo $user['User']['name']; ?>&nbsp;</td>
                     <td><?php echo $user['User']['username']; ?>&nbsp;</td>
+                    <td><?php echo $user['User']['email']; ?>&nbsp;</td>
                     <td><?php echo $this->Utils->yesOrNo($user['User']['active']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $user['User']['modified']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $user['User']['created']); ?>&nbsp;</td>
