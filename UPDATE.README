@@ -44,7 +44,6 @@ Length     Date   Time    Name
 UPDATE.README
 VERSION.txt
 # Update Tickets Table --
--- Table structure for table `notifications` changed
 --
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
