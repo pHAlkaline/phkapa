@@ -106,6 +106,9 @@ msgstr ""
 msgid "Closed"
 msgstr ""
 
+msgid "Closed By"
+msgstr ""
+
 msgid "Closed with success."
 msgstr ""
 
@@ -160,6 +163,9 @@ msgstr ""
 msgid "Efficiency"
 msgstr ""
 
+msgid "Email"
+msgstr ""
+
 msgid "Empty"
 msgstr ""
 
@@ -185,6 +191,9 @@ msgid "Invalid parent"
 msgstr ""
 
 msgid "Invalid request."
+msgstr ""
+
+msgid "Last Modification By"
 msgstr ""
 
 msgid "List %s"
@@ -257,9 +266,7 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-msgid ""
-"Page %page% of %pages%, showing %current% records out of %count% total, "
-"starting on record %start%, ending on %end%"
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
 msgstr ""
 
 msgid "Password"
@@ -346,9 +353,7 @@ msgstr[1] ""
 msgid "This application is now on maintenance mode, back soon as possible!"
 msgstr ""
 
-msgid ""
-"This ticket has actions that were not effective, please choose cancel if you "
-"want replan or create a new related ticket before closing."
+msgid "This ticket has actions that were not effective, please choose cancel if you want replan or create a new related ticket before closing."
 msgstr ""
 
 msgid "This workflow requires cause"
@@ -409,10 +414,4 @@ msgid "Yes"
 msgstr ""
 
 msgid "set todays date"
-msgstr ""
-
-msgid "Last Modification By"
-msgstr ""
-
-msgid "Closed By"
 msgstr ""

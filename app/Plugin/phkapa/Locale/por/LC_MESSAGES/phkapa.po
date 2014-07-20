@@ -111,6 +111,9 @@ msgstr "Data de fecho deve ser entre data de origem e data de hoje"
 msgid "Closed"
 msgstr "Fechado"
 
+msgid "Closed By"
+msgstr "Fechado por"
+
 msgid "Closed with success."
 msgstr "Fechado com sucesso."
 
@@ -165,6 +168,9 @@ msgstr "Observações de Eficácia"
 msgid "Efficiency"
 msgstr "Eficácia"
 
+msgid "Email"
+msgstr ""
+
 msgid "Empty"
 msgstr "Não pode ser vazio"
 
@@ -191,6 +197,9 @@ msgstr "Reincidência inválida"
 
 msgid "Invalid request."
 msgstr "Pedido inválido."
+
+msgid "Last Modification By"
+msgstr "Última Modificação por"
 
 msgid "List %s"
 msgstr "Listar %s"
@@ -408,9 +417,3 @@ msgstr "Sim"
 
 msgid "set todays date"
 msgstr "Inserir data de hoje"
-
-msgid "Last Modification By"
-msgstr "Última Modificação por"
-
-msgid "Closed By"
-msgstr "Fechado por"

@@ -60,9 +60,6 @@ msgid_plural "Aros"
 msgstr[0] "Gestão de Acesso"
 msgstr[1] "Gestão de Acessos"
 
-msgid "PHKAPA is NOT able to connect to the database."
-msgstr "PHKAPA não consegue ligação à base de dados"
-
 msgid "Cake is able to connect to the database."
 msgstr "PHKAPA está ligado à base de dados"
 
@@ -140,6 +137,9 @@ msgstr "Editar %s"
 
 msgid "Edit Profile"
 msgstr "Editar Perfil"
+
+msgid "Email"
+msgstr ""
 
 msgid "Email settings file already exists"
 msgstr "Ficheiro de configuração email.php já existe"
@@ -230,6 +230,9 @@ msgstr "Notificador"
 msgid "PHKAPA Admin panel: %s"
 msgstr "PHKAPA Painel de Administração: %s"
 
+msgid "PHKAPA is NOT able to connect to the database."
+msgstr "PHKAPA não consegue ligação à base de dados"
+
 msgid "PHKAPA: %s"
 msgstr "PHKAPA: %s"
 
@@ -281,14 +284,14 @@ msgstr "Pesquisa..."
 msgid "Setup database connection"
 msgstr "Defenir ligação á base de dados"
 
+msgid "Setup notification email"
+msgstr "Configuração notificações por email"
+
 msgid "Something went wrong during installation. Please check your server logs."
 msgstr "Algo correu mal durante a instalação. Verifique os logs do servidor."
 
 msgid "Start Session"
 msgstr "Iniciar Sessão"
-
-msgid "Setup notification email"
-msgstr "Configuração notificações por email"
 
 msgid "Step 1 : Database connection"
 msgstr "Passo 1 : Configuração de acesso à base de dados"
@@ -302,14 +305,14 @@ msgstr "Passo 3 : Configuração de notificações por email"
 msgid "Step 4 : Secure app and set new administrator password"
 msgstr "Passo 4 : Tornar a aplicação mais segura e defenir nova senha de administrador"
 
+msgid "Subject"
+msgstr "Assunto"
+
 msgid "Submit"
 msgstr "Submeter"
 
 msgid "The %s is being used for caching. To change the config edit APP/config/core.php "
 msgstr "%s está a ser usado para caching. Para alterar a configuração editar APP/config/core.php "
-
-msgid "Subject"
-msgstr "Assunto"
 
 msgid "This application is now on maintenance mode, back soon as possible!"
 msgstr "A Aplicação encontra-se em modo de manutenção, regressa em breve!"
