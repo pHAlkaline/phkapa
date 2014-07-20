@@ -16,66 +16,6 @@ msgstr ""
 "Language: deu\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-msgid "January"
-msgstr "Januar"
-
-msgid "February"
-msgstr "Februar"
-
-msgid "March"
-msgstr "März"
-
-msgid "April"
-msgstr "April"
-
-msgid "May"
-msgstr "Mai"
-
-msgid "June"
-msgstr "Juni"
-
-msgid "July"
-msgstr "Juli"
-
-msgid "August"
-msgstr "August"
-
-msgid "September"
-msgstr "Setember"
-
-msgid "October"
-msgstr "Oktober"
-
-msgid "November"
-msgstr "November"
-
-msgid "December"
-msgstr "Dezember"
-
-msgid "You are not authorized to access that location."
-msgstr "Zugriff verweigert."
-
-msgid "on %s"
-msgstr "am %s"
-
-msgid "%s ago"
-msgstr "vor %s"
-
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] "%d Jahr"
-msgstr[1] "%d Jahren"
-
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] "%d Monat"
-msgstr[1] "%d Monaten"
-
-msgid "%d week"
-msgid_plural "%d weeks"
-msgstr[0] "%d Woche"
-msgstr[1] "%d Wochen"
-
 msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] "%d Tag"
@@ -91,7 +31,67 @@ msgid_plural "%d minutes"
 msgstr[0] "%d Minute"
 msgstr[1] "%d Minuten"
 
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d Monat"
+msgstr[1] "%d Monaten"
+
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] "%d Sekunde"
 msgstr[1] "%d Sekunde"
+
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] "%d Woche"
+msgstr[1] "%d Wochen"
+
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d Jahr"
+msgstr[1] "%d Jahren"
+
+msgid "%s ago"
+msgstr "vor %s"
+
+msgid "April"
+msgstr "April"
+
+msgid "August"
+msgstr "August"
+
+msgid "December"
+msgstr "Dezember"
+
+msgid "February"
+msgstr "Februar"
+
+msgid "January"
+msgstr "Januar"
+
+msgid "July"
+msgstr "Juli"
+
+msgid "June"
+msgstr "Juni"
+
+msgid "March"
+msgstr "März"
+
+msgid "May"
+msgstr "Mai"
+
+msgid "November"
+msgstr "November"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "September"
+msgstr "Setember"
+
+msgid "You are not authorized to access that location."
+msgstr "Zugriff verweigert."
+
+msgid "on %s"
+msgstr "am %s"

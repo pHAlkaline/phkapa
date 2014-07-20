@@ -16,64 +16,162 @@ msgstr ""
 "Language: deu\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-msgid "Saved with success."
-msgstr "Gespeichert."
+msgid "Aco"
+msgid_plural "Acos"
+msgstr[0] "Zugriffssteuerung"
+msgstr[1] "Zugriffssteuerung"
 
-msgid "Could not be saved. Please, try again."
-msgstr "Speichern fehlgeschlagen. Bitte erneut versuchen."
+msgid "Actions"
+msgstr "Aktionen"
 
-msgid "Invalid request."
-msgstr "Ungültige Abfrage."
+msgid "Active"
+msgstr "Aktiv"
+
+msgid "Add %s"
+msgstr "%s hinzufügen"
+
+msgid "Admin panel: %s"
+msgstr "Vorgänge verwalten"
+
+msgid "Admin user password"
+msgstr "Admin-Passwort"
 
 msgid "Administration"
 msgstr "Administration"
 
-msgid "Group / User name must be unique!!"
-msgstr "Bezeichnung muss eindeutig sein!!"
+msgid "Allow"
+msgstr "Erlauben"
 
-msgid "Root"
-msgstr "Root"
-
-msgid "Deleted with success."
-msgstr "Gelöscht."
-
-msgid "Could not be deleted."
-msgstr "Löschen fehlgeschlagen."
+msgid "Allowed"
+msgstr "Erlaubt"
 
 msgid "Already Installed"
 msgstr "Bereits installiert."
 
-msgid "Installation: Welcome"
-msgstr "Installation: Willkommen"
+msgid "Application Offline"
+msgstr "Selbstzerstörungsmodus aktiviert. Deckung!"
 
-msgid "Step 1 : Database connection"
+msgid "Are you sure you want to delete # %s?"
+msgstr "Soll # %s wirklich gelöscht werden?"
+
+msgid "Aro"
+msgid_plural "Aros"
+msgstr[0] "Benutzergruppe"
+msgstr[1] "Benutzergruppen"
+
+msgid "Cake is NOT able to connect to the database."
 msgstr ""
 
-msgid "Database connection file already exists"
+msgid "Cake is able to connect to the database."
+msgstr ""
+
+msgid "CakePHP version %s < %s"
+msgstr ""
+
+msgid "CakePhp version %s >= %s"
+msgstr ""
+
+msgid "Check load data option to insert dafault values to action types, activities, categories, causes, origins, processes, suppliers and finaly some example users and their access configuration."
+msgstr ""
+
+msgid "Click here to begin installation" 	 	
+msgstr ""
+
+msgid "Could not be deleted."
+msgstr "Löschen fehlgeschlagen."
+
+msgid "Could not be saved. Please, try again."
+msgstr "Speichern fehlgeschlagen. Bitte erneut versuchen."
+
+msgid "Could not connect to database."
 msgstr ""
 
 msgid "Could not connect to database: %s"
 msgstr ""
 
-msgid "Could not connect to database."
+msgid "Could not load database: %s"
 msgstr ""
 
 msgid "Could not write database.php file."
 msgstr ""
 
-msgid "Step 2 : Build database , load table values"
+msgid "Could not write email.php file." 	 	
 msgstr ""
 
-msgid "Could not load database: %s"
+msgid "Created"
+msgstr "Erstellt"
+
+msgid "Database and data"
 msgstr ""
 
-msgid ""
-"Unable to secure your application, your Config %s core.php file is not "
-"writable. Please check the permissions."
+msgid "Database connection file already exists"
 msgstr ""
 
-msgid "Step 3 : Secure app and set new administrator password"
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Delete %s"
+msgstr "%s löschen"
+
+msgid "Deleted with success."
+msgstr "Gelöscht."
+
+msgid "Deny"
+msgstr "Verweigern"
+
+msgid "Denyed"
+msgstr "Verweigert"
+
+msgid "Diagnostics"
+msgstr "Diagnose"
+
+msgid "Dont forget to restore default access values to Config and tmp directory."
 msgstr ""
+
+msgid "Down"
+msgstr "Runter"
+
+msgid "Edit"
+msgstr "Bearbeiten"
+
+msgid "Edit %s"
+msgstr "%s bearbeiten"
+
+msgid "Edit Profile"
+msgstr "Profil bearbeiten"
+
+msgid "Email" 	 	
+msgstr ""
+
+msgid "Email settings file already exists" 	 	
+msgstr ""
+
+msgid "Empty"
+msgstr "Leer"
+
+msgid "Enable change password"
+msgstr "Passwort ändern"
+
+msgid "End Session"
+msgstr "Abmelden"
+
+msgid "From Email" 	 	
+msgstr ""
+
+msgid "From Name" 	 	
+msgstr ""
+
+msgid "Group / User"
+msgstr "Gruppe / Benutzer"
+
+msgid "Group / User name must be unique!!"
+msgstr "Bezeichnung muss eindeutig sein!!"
+
+msgid "Id"
+msgstr "ID"
+
+msgid "Installation cannot continue as minimum requirements are not found."
+msgstr "Mindestanforderungen nicht erfüllt. Installation wird angehalten."
 
 msgid "Installation completed successfully"
 msgstr ""
@@ -81,11 +179,142 @@ msgstr ""
 msgid "Installation not completed successfully"
 msgstr ""
 
-msgid "Unable to generate users password."
+msgid "Installation: Welcome"
+msgstr "Installation: Willkommen"
+
+msgid "Invalid email"
+msgstr "Ungültige Email"
+
+msgid "Invalid request."
+msgstr "Ungültige Abfrage."
+
+msgid "List %s"
+msgstr "%s auflisten"
+
+msgid "Load data"
 msgstr ""
 
 msgid "Login failed. Invalid username or password."
 msgstr "Anmeldung fehlgeschlagen. Benutzername oder Passwort ungültig."
+
+msgid "Menu"
+msgstr "Auswahl"
+
+msgid "Modified"
+msgstr "Geändert"
+
+msgid "Must be unique"
+msgstr "Muss eindeutig sein"
+
+msgid "Name"
+msgstr "Bezeichnung"
+
+msgid "New Password"
+msgstr "Neues Passwort"
+
+msgid "Next"
+msgstr "Nächster"
+
+msgid "No"
+msgstr "Nein"
+
+msgid "No records found!!!"
+msgstr "Keine Vorgänge gefunden!!"
+
+msgid "Notification"
+msgid_plural "Notifications"
+msgstr[0] "Benachrichtigung"
+msgstr[1] "Benachrichtigungen"
+
+msgid "Notifier"
+msgstr "Benachrichtiger"
+
+msgid "PHKAPA Admin panel: %s"
+msgstr "PHKAPA verwalten"
+
+msgid "PHKAPA: %s"
+msgstr "PHKAPA: %s"
+
+msgid "PHP version %s < 5.2"
+msgstr ""
+
+msgid "PHP version %s > 5.2"
+msgstr ""
+
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr ""
+
+msgid "Parent node"
+msgstr "Zuordnung"
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Passwords dont match"
+msgstr "Passworte stimmen nicht überein"
+
+msgid "Passwords secured and updated for all users"
+msgstr "Passworte für alle Benutzer gesichert und aktualisiert"
+
+msgid "Previous"
+msgstr "Vorheriger"
+
+msgid "Read"
+msgstr "Lesen"
+
+msgid "Record"
+msgstr "Vorgang"
+
+msgid "Rename config/database.php.default to config/database.php"
+msgstr ""
+
+msgid "Resources"
+msgstr "Ressourcen"
+
+msgid "Root"
+msgstr "Root"
+
+msgid "Saved with success."
+msgstr "Gespeichert."
+
+msgid "Search..."
+msgstr "Suche..."
+
+msgid "Setup database connection"
+msgstr ""
+
+msgid "Setup notification email" 	 	
+msgstr ""
+
+msgid "Something went wrong during installation. Please check your server logs." 	 	
+msgstr ""
+
+msgid "Start Session"
+msgstr "Anmelden"
+
+msgid "Step 1 : Database connection"
+msgstr ""
+
+msgid "Step 2 : Build database , load table values"
+msgstr ""
+
+msgid "Step 3 : Email notification"
+msgstr ""
+
+msgid "Step 4 : Secure app and set new administrator password" 	 	
+msgstr ""
+
+msgid "Subject"
+msgstr ""
+
+msgid "Submit"
+msgstr "Eintragen"
+
+msgid "The %s is being used for caching. To change the config edit APP/config/core.php "
+msgstr ""
+
+msgid "This application is now on maintenance mode, back soon as possible!"
+msgstr "PHKAPA ist im Wartungsmodus. Wir sind bald wieder da!"
 
 msgid "This application will be on maintenance mode at  %s "
 msgstr "Anwendung wird um %s zur Wartung abgeschaltet."
@@ -93,268 +322,61 @@ msgstr "Anwendung wird um %s zur Wartung abgeschaltet."
 msgid "This name is restricted by system."
 msgstr "Bezeichnung ist systemseitig reserviert oder geblockt."
 
-msgid "Search..."
-msgstr "Suche..."
-
-msgid "Add %s"
-msgstr "%s hinzufügen"
-
-msgid "Aco"
-msgid_plural "Acos"
-msgstr[0] "Zugriffssteuerung"
-msgstr[1] "Zugriffssteuerung"
-
-msgid "Menu"
-msgstr "Auswahl"
-
-msgid "List %s"
-msgstr "%s auflisten"
-
-msgid "Record"
-msgstr "Vorgang"
-
-msgid "Name"
-msgstr "Bezeichnung"
-
-msgid "Parent node"
-msgstr "Zuordnung"
-
-msgid "Submit"
-msgstr "Eintragen"
-
-msgid "Edit %s"
-msgstr "%s bearbeiten"
-
-msgid "Delete"
-msgstr "Löschen"
-
-msgid "Are you sure you want to delete # %s?"
-msgstr "Soll # %s wirklich gelöscht werden?"
-
 msgid "This will also delete childs!!"
 msgstr "Abgeleitete Vorgänge werden ebenfalls gelöscht!!"
 
-msgid "Actions"
-msgstr "Aktionen"
+msgid "Type Group"
+msgstr "Auswählen"
 
-msgid "Edit"
-msgstr "Bearbeiten"
+msgid "Unable to create administrative user." 	 	
+msgstr "" 
+
+msgid "Unable to generate users password."
+msgstr ""
+
+msgid "Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions."
+msgstr ""
 
 msgid "Up"
 msgstr "Hoch"
-
-msgid "Down"
-msgstr "Runter"
-
-msgid "Aro"
-msgid_plural "Aros"
-msgstr[0] "Benutzergruppe"
-msgstr[1] "Benutzergruppen"
 
 msgid "User"
 msgid_plural "Users"
 msgstr[0] "Benutzer"
 msgstr[1] "Benutzer"
 
-msgid "Type Group"
-msgstr "Auswählen"
-
-msgid "Group / User"
-msgstr "Gruppe / Benutzer"
-
-msgid "Allow"
-msgstr "Erlauben"
-
-msgid "Deny"
-msgstr "Verweigern"
-
-msgid "Allowed"
-msgstr "Erlaubt"
-
-msgid "Denyed"
-msgstr "Verweigert"
-
-msgid "No"
-msgstr "Nein"
-
-msgid "Yes"
-msgstr "Ja"
-
-msgid "Admin user password"
-msgstr "Admin-Passwort"
-
-msgid "New Password"
-msgstr "Neues Passwort"
+msgid "Username"
+msgstr "Benutzername"
 
 msgid "Verify Password"
 msgstr "Passwort bestätigen"
 
-msgid "Database and data"
-msgstr ""
+msgid "View"
+msgstr "Ansicht"
 
-msgid "Load data"
-msgstr ""
+msgid "View %s"
+msgstr "%s anzeigen"
 
-msgid ""
-"Check load data option to insert dafault values to action types, activities, "
-"categories, causes, origins, processes, suppliers and finaly some example "
-"users and their access configuration."
-msgstr ""
-
-msgid "Setup database connection"
-msgstr ""
-
-msgid ""
-"Dont forget to restore default access values to Config and tmp directory."
-msgstr ""
-
-msgid "Passwords secured and updated for all users"
-msgstr "Passworte für alle Benutzer gesichert und aktualisiert"
-
-msgid "PHKAPA: %s"
-msgstr "PHKAPA: %s"
-
-msgid "Admin panel: %s"
-msgstr "Vorgänge verwalten"
-
-msgid "PHKAPA Admin panel: %s"
-msgstr "PHKAPA verwalten"
-
-msgid "Resources"
-msgstr "Ressourcen"
-
-msgid "Your tmp directory is writable."
-msgstr "TMP-Verzeichnis ist beschreibbar."
-
-msgid "Your tmp directory is NOT writable."
-msgstr "TMP-Verzeichnis ist NICHT beschreibbar."
-
-msgid "Your Config directory is writable."
-msgstr "CONFIG-Verzeichnis ist beschreibbar."
+msgid "Yes"
+msgstr "Ja"
 
 msgid "Your Config directory is NOT writable."
 msgstr "CONFIG-Verzeichnis ist NICHT beschreibbar."
 
-msgid "PHP version %s > 5.2"
-msgstr ""
+msgid "Your Config directory is writable."
+msgstr "CONFIG-Verzeichnis ist beschreibbar."
 
-msgid "PHP version %s < 5.2"
-msgstr ""
-
-msgid "CakePhp version %s >= %s"
-msgstr ""
-
-msgid "CakePHP version %s < %s"
-msgstr ""
-
-msgid "Installation cannot continue as minimum requirements are not found."
-msgstr "Mindestanforderungen nicht erfüllt. Installation wird angehalten."
-
-msgid "End Session"
-msgstr "Abmelden"
-
-msgid "Edit Profile"
-msgstr "Profil bearbeiten"
-
-msgid "Diagnostics"
-msgstr "Diagnose"
-
-msgid ""
-"The %s is being used for caching. To change the config edit APP/config/core."
-"php "
-msgstr ""
-
-msgid ""
-"Your cache is NOT working. Please check the settings in APP/config/core.php"
-msgstr ""
-
-msgid "Your database configuration file is present."
+msgid "Your cache is NOT working. Please check the settings in APP/config/core.php"
 msgstr ""
 
 msgid "Your database configuration file is NOT present."
 msgstr ""
 
-msgid "Rename config/database.php.default to config/database.php"
+msgid "Your database configuration file is present."
 msgstr ""
 
-msgid "Cake is able to connect to the database."
-msgstr ""
+msgid "Your tmp directory is NOT writable."
+msgstr "TMP-Verzeichnis ist NICHT beschreibbar."
 
-msgid "Cake is NOT able to connect to the database."
-msgstr ""
-
-msgid "Start Session"
-msgstr "Anmelden"
-
-msgid "Application Offline"
-msgstr "Selbstzerstörungsmodus aktiviert. Deckung!"
-
-msgid "This application is now on maintenance mode, back soon as possible!"
-msgstr "PHKAPA ist im Wartungsmodus. Wir sind bald wieder da!"
-
-msgid "Username"
-msgstr "Benutzername"
-
-msgid "Password"
-msgstr "Passwort"
-
-msgid "Active"
-msgstr "Aktiv"
-
-msgid "Enable change password"
-msgstr "Passwort ändern"
-
-msgid "Modified"
-msgstr "Geändert"
-
-msgid "Created"
-msgstr "Erstellt"
-
-msgid "View"
-msgstr "Ansicht"
-
-msgid ""
-"Page %page% of %pages%, showing %current% records out of %count% total, "
-"starting on record %start%, ending on %end%"
-msgstr ""
-
-msgid "Previous"
-msgstr "Vorheriger"
-
-msgid "Next"
-msgstr "Nächster"
-
-msgid "No records found!!!"
-msgstr "Keine Vorgänge gefunden!!"
-
-msgid "View %s"
-msgstr "%s anzeigen"
-
-msgid "Delete %s"
-msgstr "%s löschen"
-
-msgid "Id"
-msgstr "ID"
-
-msgid "Empty"
-msgstr "Leer"
-
-msgid "Must be unique"
-msgstr "Muss eindeutig sein"
-
-msgid "Passwords dont match"
-msgstr "Passworte stimmen nicht überein"
-
-msgid "Invalid email"
-msgstr "Ungültige Email"
-
-msgid "Notifier"
-msgstr "Benachrichtiger"
-
-msgid "Notification"
-msgid_plural "Notifications"
-msgstr[0] "Benachrichtigung"
-msgstr[1] "Benachrichtigungen"
-
-msgid "Read"
-msgstr "Lesen"
+msgid "Your tmp directory is writable."
+msgstr "TMP-Verzeichnis ist beschreibbar."

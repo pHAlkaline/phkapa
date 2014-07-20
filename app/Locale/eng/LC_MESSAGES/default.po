@@ -141,8 +141,11 @@ msgstr ""
 msgid "Edit Profile"
 msgstr ""
 
+msgid "Email"
+msgstr ""
+
 msgid "Email settings file already exists"
-msgstr "
+msgstr ""
 
 msgid "Empty"
 msgstr ""
@@ -281,13 +284,13 @@ msgstr ""
 msgid "Setup database connection"
 msgstr ""
 
+msgid "Setup notification email"
+msgstr ""
+
 msgid "Something went wrong during installation. Please check your server logs."
 msgstr ""
 
 msgid "Start Session"
-msgstr ""
-
-msgid "Setup notification email"
 msgstr ""
 
 msgid "Step 1 : Database connection"
@@ -302,13 +305,13 @@ msgstr ""
 msgid "Step 4 : Secure app and set new administrator password"
 msgstr ""
 
+msgid "Subject"
+msgstr ""
+
 msgid "Submit"
 msgstr ""
 
 msgid "The %s is being used for caching. To change the config edit APP/config/core.php "
-msgstr ""
-
-msgid "Subject"
 msgstr ""
 
 msgid "This application is now on maintenance mode, back soon as possible!"

@@ -24,7 +24,7 @@
                 $this->Paginator->sort('id',__d('phkapa','Id')), 
                 $this->Paginator->sort('name',__d('phkapa','Name')), 
                 $this->Paginator->sort('username',__d('phkapa','Username')), 
-                // __d('phkapa','Access'), 
+                $this->Paginator->sort('email',__('phkapa','Email')), 
                 $this->Paginator->sort('active',__d('phkapa','Active')), 
                 __dn('phkapa','Action','Actions',2)
                 ));
@@ -45,7 +45,7 @@
                     <td><?php echo $user['User']['id']; ?>&nbsp;</td>
                     <td><?php echo $user['User']['name']; ?>&nbsp;</td>
                     <td><?php echo $user['User']['username']; ?>&nbsp;</td>
-                    
+                    <td><?php echo $user['User']['email']; ?>&nbsp;</td>
                     <td><?php echo $this->Utils->yesOrNo($user['User']['active']); ?>&nbsp;</td>
                     <td class="actions">
                         <?php echo $this->Html->link(__d('phkapa','View'), array('action' => 'view', $user['User']['id'])); ?>

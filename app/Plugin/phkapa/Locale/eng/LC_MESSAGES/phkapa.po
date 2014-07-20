@@ -28,16 +28,16 @@ msgstr[1] ""
 msgid "Action Effectiveness"
 msgstr ""
 
-msgid "Action type"
-msgid_plural "Action types"
-msgstr[0] ""
-msgstr[1] ""
-
 msgid "Action deadline expired!!!"
 msgstr ""
 
 msgid "Action is closed, must have closed date"
 msgstr ""
+
+msgid "Action type"
+msgid_plural "Action types"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Action type requires verification on close"
 msgstr ""
@@ -111,6 +111,9 @@ msgstr ""
 msgid "Closed"
 msgstr ""
 
+msgid "Closed By"
+msgstr ""
+
 msgid "Closed with success."
 msgstr ""
 
@@ -165,6 +168,9 @@ msgstr ""
 msgid "Efficiency"
 msgstr ""
 
+msgid "Email"
+msgstr ""
+
 msgid "Empty"
 msgstr ""
 
@@ -190,6 +196,9 @@ msgid "Invalid parent"
 msgstr ""
 
 msgid "Invalid request."
+msgstr ""
+
+msgid "Last Modification By"
 msgstr ""
 
 msgid "List %s"
@@ -407,10 +416,4 @@ msgid "Yes"
 msgstr ""
 
 msgid "set todays date"
-msgstr ""
-
-msgid "Last Modification By"
-msgstr ""
-
-msgid "Closed By"
 msgstr ""
