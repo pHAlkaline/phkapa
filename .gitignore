@@ -71,4 +71,4 @@ Thumbs.db
 /TODO
 /TODO.php
 /app/Locale/cake.pot
-/app/Plugin/phkapa/Locale/phkapa.pot
+*.pot
