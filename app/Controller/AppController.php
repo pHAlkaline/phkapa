@@ -22,10 +22,15 @@ class AppController extends Controller {
      * @var array
      * @access public
      */
-    public $components = array('Session', 'Acl', 'Maintenance', 'Notify', 
+    public $components = array(
+        'Session', 
+        'Acl', 
+        'Maintenance', 
+        'Notify', 
         'Auth' => array(
             'loginAction' => array('admin' => false, 'plugin' => false, 'controller' => 'users', 'action' => 'login')
-            ));
+            )
+        );
     
 
     /**
