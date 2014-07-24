@@ -10,10 +10,12 @@ Configure::write('Language.list',array(
     'por'=>'Portugues',
     'pt_BR'=>'Portugues ( Brasil)',
     )); // 
-Configure::write('Config.timezone', 'Europe/Lisbon'); // Europe/Lisbon
+
+Configure::write('Config.timezone', 'Europe/London'); // Europe/Lisbon
+
 Configure::write('dateFormat', 'd-m-Y H:i:s'); //
 Configure::write('dateFormatSimple', 'd-m-Y'); //
-Configure::write('Application.mode', 'phkapa'); // phkapa , demo , use demo for demo mode;
+Configure::write('Application.mode', 'demo'); // phkapa , demo , use demo for demo mode;
 
 /**
  * The settings for maintenance component 
