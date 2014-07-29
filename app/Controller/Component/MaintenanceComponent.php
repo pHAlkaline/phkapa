@@ -57,7 +57,7 @@ class MaintenanceComponent extends Component {
      * @access public
      */
     public function startup(Controller $controller) {
-        if ($this->isOn() && strpos($controller->here,Configure::read('Maintenance.site_offline_url'))===false) {
+        if ($this->isOn() && strpos($controller->here, Configure::read('Maintenance.site_offline_url')) === false) {
             $controller->redirect(Router::url(Configure::read('Maintenance.site_offline_url')));
             return;
         }
@@ -78,7 +78,10 @@ class MaintenanceComponent extends Component {
     public function isOn() {
         if ((Configure::read('Maintenance.start') != '') && (Configure::read('Maintenance.duration') != '')) {
 
-            $date1 = time();
+            $tzNow = new DateTime();
+            $tzNow->setTimezone(new DateTimeZone(Configure::read('Config.timezone')));
+            $date1 = $tzNow->format('d-m-Y H:i:s');
+            $date1 = strtotime($date1);
             $date2 = strtotime(Configure::read('Maintenance.start'));
             $interval = ($date1 - $date2) / (60 * 60);
             if ($interval > 0 && $interval < Configure::read('Maintenance.duration'))
