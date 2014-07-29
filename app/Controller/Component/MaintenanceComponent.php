@@ -57,8 +57,8 @@ class MaintenanceComponent extends Component {
      * @access public
      */
     public function startup(Controller $controller) {
-        if ($this->isOn() && $controller->here != Configure::read('Maintenance.site_offline_url')) {
-            $controller->redirect(Configure::read('Maintenance.site_offline_url'));
+        if ($this->isOn() && strpos($controller->here,Configure::read('Maintenance.site_offline_url'))===false) {
+            $controller->redirect(Router::url(Configure::read('Maintenance.site_offline_url')));
             return;
         }
 
