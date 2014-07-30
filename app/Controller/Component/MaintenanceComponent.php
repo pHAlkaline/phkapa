@@ -57,11 +57,32 @@ class MaintenanceComponent extends Component {
      * @access public
      */
     public function startup(Controller $controller) {
-        if ($this->isOn() && strpos($controller->here, Configure::read('Maintenance.site_offline_url')) === false) {
-            $controller->redirect(Router::url(Configure::read('Maintenance.site_offline_url')));
+        
+        // Maintenance mode OFF but on offline page -> redirect to root url    
+        if (!$this->isOn() && strpos($controller->here, Configure::read('Maintenance.site_offline_url'))!==false) {
+            $controller->redirect(Router::url('/'));
+            return;
+        }
+        
+        // Maintenance mode ON user logoout allowed
+        if ($this->isOn() && strpos($controller->here, 'users/logout') !== false) {
             return;
         }
 
+        // Maintenance mode ON but not in offline page requested - > redirect to offline page
+        if ($this->isOn() && strpos($controller->here, Configure::read('Maintenance.site_offline_url')) === false) {
+            
+            // All users auto logged off if setting is true
+            if(Configure::read('Maintenance.offline_destroy_session')){
+                $this->Session->destroy();
+            }
+            
+            $controller->redirect(Router::url(Configure::read('Maintenance.site_offline_url')));
+            return;
+        }
+        
+        
+        // Maintenance mode scheduled show message!!    
         if ($this->hasSchedule()) {
             $this->Session->setFlash(__('This application will be on maintenance mode at  %s ', Configure::read('Maintenance.start')), $this->flashElement, array(), 'maintenance');
         }
@@ -80,12 +101,13 @@ class MaintenanceComponent extends Component {
 
             $tzNow = new DateTime();
             $tzNow->setTimezone(new DateTimeZone(Configure::read('Config.timezone')));
-            $date1 = $tzNow->format('d-m-Y H:i:s');
-            $date1 = strtotime($date1);
+            $date = $tzNow->format('d-m-Y H:i:s');
+            $date1 = strtotime($date);
             $date2 = strtotime(Configure::read('Maintenance.start'));
             $interval = ($date1 - $date2) / (60 * 60);
-            if ($interval > 0 && $interval < Configure::read('Maintenance.duration'))
+            if ($interval > 0 && $interval < Configure::read('Maintenance.duration')){
                 return true;
+            }
         }
         return false;
     }
