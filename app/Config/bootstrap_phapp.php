@@ -20,9 +20,10 @@ Configure::write('Application.mode', 'phkapa'); // phkapa , demo , use demo for 
 /**
  * The settings for maintenance component 
  */
-Configure::write('Maintenance.start', '10-04-2013 19:20'); 
+Configure::write('Maintenance.start', '30-07-2014 14:10'); 
 Configure::write('Maintenance.duration', '2'); // Duration in hours
 Configure::write('Maintenance.site_offline_url', '/pages/offline');
+Configure::write('Maintenance.offline_destroy_session', false); // true or false , with true - Offline will destroy user sessions
 
 /**
  * The settings below can be used to open access to all users or one specified user.
