@@ -9,7 +9,7 @@ App::uses('Component', 'Controller');
  *
  * @category Component
  * @package  PHKAPA
- * @version  V1
+ * @version  V1.1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://phkapa.net
@@ -60,7 +60,7 @@ class MaintenanceComponent extends Component {
         
         // Maintenance mode OFF but on offline page -> redirect to root url    
         if (!$this->isOn() && strpos($controller->here, Configure::read('Maintenance.site_offline_url'))!==false) {
-            $controller->redirect(Router::url('/'));
+            $controller->redirect(Router::url('/',true));
             return;
         }
         
@@ -77,7 +77,7 @@ class MaintenanceComponent extends Component {
                 $this->Session->destroy();
             }
             
-            $controller->redirect(Router::url(Configure::read('Maintenance.site_offline_url')));
+            $controller->redirect(Router::url(Configure::read('Maintenance.site_offline_url'),true));
             return;
         }
         
