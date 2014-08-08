@@ -494,14 +494,14 @@ class Ticket extends PhkapaAppModel {
     /**
      * Custom validation rule
      * Check if cause is required
-     * If ticket is on workflow validation ou closed cause is required
+     * If ticket is on workflow validation then closed cause is required
      *
      * @param array $check field 
      * @access public
      * @return boolean
      */
     public function checkCause($check) {
-        return ($this->data['Ticket']['workflow_id'] > 3 && $check['cause_id'] == null) ? false : true;
+        return ($this->data['Ticket']['workflow_id'] == 4 && $check['cause_id'] == null) ? false : true;
     }
 
     /**
