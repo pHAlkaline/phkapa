@@ -15,6 +15,7 @@
             <ul class="menu">
 
                 <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Priority')), array('controller' => 'priorities', 'action' => 'add')); ?> </li>
+                <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Safety')), array('controller' => 'safeties', 'action' => 'add')); ?> </li>
 
                 <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Type')), array('controller' => 'types', 'action' => 'add')); ?> </li>
                 <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Origin')), array('controller' => 'origins', 'action' => 'add')); ?> </li>
@@ -45,6 +46,7 @@
             echo $this->Form->input('workflow_id', array('label' => __d('phkapa', 'Workflow'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('registar_id', array('label' => __d('phkapa', 'Registar'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('priority_id', array('label' => __d('phkapa', 'Priority'), 'empty' => __d('phkapa', '(choose one)')));
+            echo $this->Form->input('safety_id', array('label' => __d('phkapa', 'Safety'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('origin_date', array('label' => __d('phkapa', 'Origin Date'), 'empty' => __d('phkapa', '(choose one)'), 'dateFormat' => 'DMY', 'minYear' => date('Y') - 1, 'maxYear' => date('Y'), 'after' => $this->Html->link(__d('phkapa', 'set todays date'), '#', array('style' => 'padding-left:10px;', 'id' => 'setTodayOriginDate'))));
             echo $this->Form->input('type_id', array('label' => __d('phkapa', 'Type'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('origin_id', array('label' => __d('phkapa', 'Origin'), 'empty' => __d('phkapa', '(choose one)')));

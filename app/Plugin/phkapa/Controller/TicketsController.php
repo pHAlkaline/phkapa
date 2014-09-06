@@ -90,6 +90,7 @@ class TicketsController extends PhkapaAppController {
                     ("OR" => array(
                         "Ticket.id LIKE" => "%" . $keyword . "%",
                         "Priority.name LIKE" => "%" . $keyword . "%",
+                        "Safety.name LIKE" => "%" . $keyword . "%",
                         "Type.name LIKE" => "%" . $keyword . "%",
                         "Process.name LIKE" => "%" . $keyword . "%",
                         "Origin.name LIKE" => "%" . $keyword . "%",
@@ -123,6 +124,30 @@ class TicketsController extends PhkapaAppController {
 
 
         $this->set('ticket', $this->Ticket->read(null, $id));
+        if (in_array($this->Ticket->name,Configure::read('Revision.tables'))){
+           $this->set('ticket_revisions', $this->Ticket->revisions()); 
+        }
+        
+    }
+    
+    /**
+     * Admin view revision
+     *
+     * @param integer $id
+     * @return void
+     * @access public
+     */
+    public function admin_view_revision($id = null, $ticketId =null) {
+        if (!$id || !$ticketId || !in_array($this->Ticket->name,Configure::read('Revision.tables'))) {
+            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->redirect(array('action' => 'view',$ticketId));
+        }
+        
+        $this->Ticket->id=$ticketId;
+        $revision=$this->Ticket->revisions(array('conditions'=>array('version_id'=>$id)));
+        $this->set('ticket',$revision[0] );
+        
+        
     }
     
     /**
@@ -183,6 +208,7 @@ class TicketsController extends PhkapaAppController {
         $this->request->data['Ticket']['filter_change'] = '';
         $types = $this->Ticket->Type->find('list', array('conditions' => array('Type.active' => '1')));
         $priorities = $this->Ticket->Priority->find('list', array('conditions' => array('Priority.active' => '1')));
+        $safeties = $this->Ticket->Safety->find('list', array('conditions' => array('Safety.active' => '1')));
         $registars = $this->Ticket->Registar->find('list', array('conditions' => array('Registar.active' => '1')));
         $processes = $this->Ticket->Process->find('list', $this->processOptions);
         $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
@@ -193,7 +219,7 @@ class TicketsController extends PhkapaAppController {
         $workflows = $this->Ticket->Workflow->find('list', array('conditions' => array('Workflow.active' => '1'),'order'=>'Workflow.order'));
         $closeUsers = $this->Ticket->CloseUser->find('list', array('conditions' => array('CloseUser.active' => '1')));
         
-        $this->set(compact('types','priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'causes', 'suppliers','closeUsers'));
+        $this->set(compact('types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'causes', 'suppliers','closeUsers'));
     }
 
     /**
@@ -224,6 +250,7 @@ class TicketsController extends PhkapaAppController {
         }
         $types = $this->Ticket->Type->find('list', array('conditions' => array('Type.active' => '1')));
         $priorities = $this->Ticket->Priority->find('list', array('conditions' => array('Priority.active' => '1')));
+        $safeties = $this->Ticket->Safety->find('list', array('conditions' => array('Safety.active' => '1')));
         $processes = $this->Ticket->Process->find('list', array('conditions' => array('Process.active' => '1')));
         $registars = $this->Ticket->Registar->find('list', array('conditions' => array('Registar.active' => '1')));
         $activities = $this->Ticket->Activity->find('list', array('conditions' => array('Activity.active' => '1')));
@@ -234,7 +261,7 @@ class TicketsController extends PhkapaAppController {
         $workflows = $this->Ticket->Workflow->find('list', array('conditions' => array('Workflow.active' => '1'), 'order' => 'Workflow.order'));
         $closeUsers = $this->Ticket->CloseUser->find('list', array('conditions' => array('CloseUser.active' => '1')));
        
-        $this->set(compact('types', 'priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'causes', 'workflows', 'suppliers', 'closeUsers'));
+        $this->set(compact('types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'causes', 'workflows', 'suppliers', 'closeUsers'));
     }
 
     /**
@@ -296,6 +323,9 @@ class TicketsController extends PhkapaAppController {
             'hasMany' => array('Ticket')
                 ), false);
         $this->Ticket->Priority->unbindModel(array(
+            'hasMany' => array('Ticket')
+                ), false);
+        $this->Ticket->Safety->unbindModel(array(
             'hasMany' => array('Ticket')
                 ), false);
         $this->Ticket->Process->unbindModel(array(

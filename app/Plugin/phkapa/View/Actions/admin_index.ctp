@@ -30,13 +30,13 @@
             $this->Paginator->sort('id',__d('phkapa','Id')), 
             $this->Paginator->sort('ticket_id',__d('phkapa','Ticket')), 
             $this->Paginator->sort('action_type_id',__d('phkapa','Action Type')), 
-            __d('phkapa','Description'), 
-            $this->Paginator->sort('deadline',__d('phkapa','Deadline')), 
             $this->Paginator->sort('closed',__d('phkapa','Closed')), 
-            $this->Paginator->sort('close_date',__d('phkapa','Close Date')), 
-            __d('phkapa','Effectiveness'), 
-            $this->Paginator->sort('effectiveness_notes',__d('phkapa','Effectiveness Notes')), 
-            $this->Paginator->sort('modified',__d('phkapa','Modified')), 
+            $this->Paginator->sort('CloseUser.name',__d('phkapa','Closed By')),
+            $this->Paginator->sort('close_date',__d('phkapa','Close Date')),
+            $this->Paginator->sort('ActionEffectiveness.name',__d('phkapa','Effectiveness')),
+            $this->Paginator->sort('VerifyUser.name',__d('phkapa','Verified By')),
+            $this->Paginator->sort('ModifyUser.name',__d('phkapa','Last Modification By')),
+            $this->Paginator->sort('modified',__d('phkapa','Modified')),
             $this->Paginator->sort('created',__d('phkapa','Created')), 
             __dn('phkapa','Action','Actions',2),));
         echo '<thead class="ui-state-default"' . $tableHeaders . '</thead>';
@@ -56,17 +56,19 @@
                     <?php echo $this->Html->link($action['Ticket']['id'], array('controller' => 'tickets', 'action' => 'view', $action['Ticket']['id'])); ?>
                 </td>
                 <td>
-                    <?php echo $action['ActionType']['name']; ?>&nbsp;
+                    <?php echo $this->Html->link($action['ActionType']['name'], array('controller' => 'action_types', 'action' => 'view', $action['ActionType']['id'])); ?>&nbsp;
                 </td>
-                <td><?php echo $action['Action']['description']; ?>&nbsp;</td>
-                <td><?php echo $action['Action']['deadline']; ?>&nbsp;</td>
                 <td><?php echo $this->Utils->yesOrNo($action['Action']['closed']); ?>&nbsp;</td>
+                <td><?php echo $this->Html->link($action['CloseUser']['name'], array('controller' => 'users', 'action' => 'view', $action['CloseUser']['id'])); ?>&nbsp;</td>
+                
                 <td class="nowrap"><?php
                 if ($action['Action']['close_date'] != '')
                     echo $this->Time->format(Configure::read('dateFormatSimple'), $action['Action']['close_date']);
                     ?>&nbsp;</td>
                 <td><?php echo $action['ActionEffectiveness']['name']; ?>&nbsp;</td>
-                <td><?php echo $action['Action']['effectiveness_notes']; ?>&nbsp;</td>
+                <td><?php echo $this->Html->link($action['VerifyUser']['name'], array('controller' => 'users', 'action' => 'view', $action['VerifyUser']['id'])); ?>&nbsp;</td>
+                
+                <td><?php echo $this->Html->link($action['ModifiedUser']['name'], array('controller' => 'users', 'action' => 'view', $action['ModifiedUser']['id'])); ?>&nbsp;</td>
                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['Action']['modified']); ?>&nbsp;</td>
                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['Action']['created']); ?>&nbsp;</td>
                 <td class="actions">

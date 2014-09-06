@@ -66,6 +66,7 @@ class VerifyController extends PhkapaAppController {
                     ("OR" => array(
                         "Ticket.id LIKE" => "%" . $keyword . "%",
                         "Priority.name LIKE" => "%" . $keyword . "%",
+                        "Safety.name LIKE" => "%" . $keyword . "%",
                         "Type.name LIKE" => "%" . $keyword . "%",
                         "Process.name LIKE" => "%" . $keyword . "%",
                         "Origin.name LIKE" => "%" . $keyword . "%",
@@ -130,7 +131,15 @@ class VerifyController extends PhkapaAppController {
         }
         $now=$this->Ticket->timeFormatedField('modified',time());
         $nowClose=$this->Ticket->timeFormatedField('close_date',time());
-        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '5',  'Ticket.close_date' => '"'.$nowClose.'"','Ticket.close_user_id' => $this->Auth->user('id'), 'Ticket.modified_user_id' => $this->Auth->user('id'), 'Ticket.modified' => '"'.$now.'"'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '4'))) {
+        $this->Ticket->read(null, $id);
+        $this->Ticket->set(array(
+            'workflow_id' => 5,
+            'close_date' => $nowClose,
+            'close_user_id' => $this->Auth->user('id'),
+            'modified_user_id' => $this->Auth->user('id')
+        ));
+        if ($this->Ticket->save()) {
+        
             $this->_addNotification($id,__d('phkapa','Ticket # %s has been closed', $id));
             $this->Session->setFlash(__d('phkapa','Saved with success.'),'flash_message_info');
             $this->redirect(array('action' => 'index'));
@@ -157,9 +166,16 @@ class VerifyController extends PhkapaAppController {
         
         $now=$this->Ticket->timeFormatedField('modified',time());
         $nowClose=$this->Ticket->timeFormatedField('close_date',time());
-        
+        $this->Ticket->read(null, $id);
+        $this->Ticket->set(array(
+            'workflow_id' => 3,
+            'close_date' => $nowClose,
+            'close_user_id' => $this->Auth->user('id'),
+            'modified_user_id' => $this->Auth->user('id')
+        ));
+        if ($this->Ticket->save()) {
 
-        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '3', 'Ticket.close_date' => '"'.$nowClose.'"','Ticket.close_user_id' => $this->Auth->user('id'), 'Ticket.modified_user_id' => $this->Auth->user('id'), 'Ticket.modified' => '"'.$now.'"'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '4'))) {
+        
             $this->_addNotification($id,__d('phkapa','Ticket # %s has new plan', $id));
             $this->Session->setFlash(__d('phkapa','Saved with success.'),'flash_message_info');
             $this->redirect(array('action' => 'index'));
@@ -192,6 +208,7 @@ class VerifyController extends PhkapaAppController {
         }
         
         if (!empty($this->request->data)) {
+            $this->request->data['Action']['verify_user_id']=$this->Auth->user('id');
             if ($this->Ticket->Action->save($this->request->data)) {
                 $this->Ticket->id = $ticketId;
                 $this->Ticket->saveField('modified_user_id', $this->Auth->user('id'));

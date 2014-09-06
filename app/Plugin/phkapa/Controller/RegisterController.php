@@ -123,7 +123,7 @@ class RegisterController extends PhkapaAppController {
             $this->request->data['Ticket']['registar_id'] = $this->Auth->user('id');
             $this->request->data['Ticket']['workflow_id'] = 1;
             if ($this->Ticket->save($this->request->data)) {
-                $this->_addNotification($this->Ticket->id, __d('phkapa', 'New ticket registered').' #'.$this->Ticket->id);
+                $this->_addNotification($this->Ticket->id, __d('phkapa', 'New ticket registered') . ' #' . $this->Ticket->id);
                 $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'index'));
             } else {
@@ -151,6 +151,7 @@ class RegisterController extends PhkapaAppController {
         $this->request->data['Ticket']['process_change'] = '';
         $types = $this->Ticket->Type->find('list', array('conditions' => array('Type.active' => '1')));
         $priorities = $this->Ticket->Priority->find('list', array('conditions' => array('Priority.active' => '1')));
+        $safeties = $this->Ticket->Safety->find('list', array('conditions' => array('Safety.active' => '1')));
         $suppliers = $this->Ticket->Supplier->find('list', array('conditions' => array('Supplier.active' => '1')));
         $processes = $this->Ticket->Process->find('list', array('conditions' => array('Process.active' => '1')));
         $activities = $this->Ticket->Activity->find('list', $this->activityOptions);
@@ -158,7 +159,7 @@ class RegisterController extends PhkapaAppController {
 
         $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
         $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
-        $this->set(compact('types', 'priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
+        $this->set(compact('types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
     }
 
     /**
@@ -173,14 +174,8 @@ class RegisterController extends PhkapaAppController {
             $this->_setOptions();
             $this->request->data['Ticket']['process_change'] = '';
             $this->request->data['Ticket']['activity_id'] = 3;
-            //$types = $this->Ticket->Type->find('list', array('conditions' => array('Type.active' => '1')));
-            //$priorities = $this->Ticket->Priority->find('list', array('conditions' => array('Priority.active' => '1')));
-            //$suppliers = $this->Ticket->Supplier->find('list', array('conditions' => array('Supplier.active' => '1')));
-            //$processes = $this->Ticket->Process->find('list', array('conditions' => array('Process.active' => '1')));
             $activities = $this->Ticket->Activity->find('list', $this->activityOptions);
             $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
-            //$origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
-            //$this->set(compact('types', 'priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
             $this->set(compact('activities', 'categories'));
         }
     }
@@ -194,6 +189,7 @@ class RegisterController extends PhkapaAppController {
      */
     public function edit($id = null) {
         $this->Ticket->recursive = -1;
+        $this->Ticket->order = null;
         $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if ((!$id && empty($this->request->data)) || count($ticket) == 0) {
@@ -229,12 +225,13 @@ class RegisterController extends PhkapaAppController {
         $this->request->data['Ticket']['process_change'] = '';
         $types = $this->Ticket->Type->find('list', array('conditions' => array('Type.active' => '1')));
         $priorities = $this->Ticket->Priority->find('list', array('conditions' => array('Priority.active' => '1')));
+        $safeties = $this->Ticket->Safety->find('list', array('conditions' => array('Safety.active' => '1')));
         $suppliers = $this->Ticket->Supplier->find('list', array('conditions' => array('Supplier.active' => '1')));
         $processes = $this->Ticket->Process->find('list', array('conditions' => array('Process.active' => '1')));
         $activities = $this->Ticket->Activity->find('list', $this->activityOptions);
         $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
         $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
-        $this->set(compact('types', 'priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
+        $this->set(compact('types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
     }
 
     /**
@@ -246,6 +243,7 @@ class RegisterController extends PhkapaAppController {
      */
     public function delete($id = null) {
         $this->Ticket->recursive = -1;
+        $this->Ticket->order = null;
         $ticketCount = $this->Ticket->find('count', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if (!$id || $ticketCount == 0) {
@@ -269,16 +267,21 @@ class RegisterController extends PhkapaAppController {
      */
     public function send($id = null) {
         $this->Ticket->recursive = -1;
+        $this->Ticket->order = null;
         $ticketCount = $this->Ticket->find('count', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if (!$id || $ticketCount == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-       
-        $now=$this->Ticket->timeFormatedField('modified',time());
-        
-        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '2','Ticket.modified_user_id' => $this->Auth->user('id'), 'Ticket.modified' => '"'.$now.'"'), array('Ticket.id' => $id))) {
+
+        //$now = $this->Ticket->timeFormatedField('modified', time());
+        $this->Ticket->read(null, $id);
+        $this->Ticket->set(array(
+            'workflow_id' => 2,
+            'modified_user_id' => $this->Auth->user('id')
+        ));
+        if ($this->Ticket->save()) {
             $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }

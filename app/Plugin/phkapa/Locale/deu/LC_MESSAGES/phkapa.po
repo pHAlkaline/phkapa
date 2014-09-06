@@ -38,8 +38,14 @@ msgstr "Frist abgelaufen!!!"
 msgid "Action is closed, must have closed date"
 msgstr "Aktion ist geschlossen, muss ein Abschlussdatum haben"
 
+msgid "Action requires closed by"
+msgstr "Aktion erfordert von geschlossen"
+
 msgid "Action type requires verification on close"
 msgstr "Aktionstyp erfordert Verifizierung beim Schließen"
+
+msgid "Action type requires verified by"
+msgstr "Aktionstyp erfordert verifiziert durch"
 
 msgid "Active"
 msgstr "Aktiv"
@@ -316,6 +322,14 @@ msgstr "Abgeleiteter Vorgang"
 msgid "Replan"
 msgstr "Plan überarbeiten"
 
+msgid "Request"
+msgstr ""
+
+msgid "Revision"
+msgid_plural "Revisions"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "Review"
 msgstr "Bewerten"
 
@@ -324,6 +338,11 @@ msgstr "Hinweise zur Bewertung"
 
 msgid "Role"
 msgstr "Rolle"
+
+msgid "Safety"
+msgid_plural "Safeties"
+msgstr[0] "Sicherheitsrisiko"
+msgstr[1] "Sicherheitsrisiko"
 
 msgid "Saved with success."
 msgstr "Gespeichert."
@@ -363,6 +382,9 @@ msgstr "Der Workflow erfordert eine Ursache."
 msgid "This workflow requires close date"
 msgstr "Der Vorgang erfordert ein Abschlussdatum"
 
+msgid "This workflow requires close by"
+msgstr ""
+
 msgid "Ticket"
 msgid_plural "Tickets"
 msgstr[0] "Vorgang"
@@ -399,8 +421,17 @@ msgstr "Benutzer"
 msgid "Verification"
 msgstr "Verifizierung"
 
+msgid "Verified By"
+msgstr "Verifizieren Von"
+
 msgid "Verify"
 msgstr "Verifizieren"
+
+msgid "Version"
+msgstr "Umarbeitung"
+
+msgid "Version Created"
+msgstr "Umarbeitung Erstellt"
 
 msgid "View"
 msgstr "Ansicht"

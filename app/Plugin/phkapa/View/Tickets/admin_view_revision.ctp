@@ -1,51 +1,21 @@
-<?php
-$closeOk = false;
-$closeMessage = '';
-
-if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
-    $closeOk = true;
-    foreach ($ticket['Action'] as $action):
-
-        if ($action['ActionType']['verification'] != 0 && ($action['action_effectiveness_id'] == '1' || $action['action_effectiveness_id'] == null)) {
-            $closeOk = false;
-        }
-        if ($action['ActionType']['verification'] != 0 && $action['action_effectiveness_id'] != '2') {
-
-            $closeMessage = __d('phkapa', 'This ticket has actions that were not effective, please choose cancel if you want replan or create a new related ticket before closing.');
-        }
-    endforeach;
-}
-?>
-<h2 id="page-heading"><?php echo __d('phkapa', 'Verify') . ':' . __d('phkapa', 'View %s', __d('phkapa', 'Ticket')); ?></h2>
+<?php $ticket['Ticket']=$ticket['Revision_Ticket']; ?>
+<h2 id="page-heading"><?php echo __d('phkapa', 'View %s', __d('phkapa', 'Ticket')).' '.__dn('phkapa', 'Revision','Revisions',1); ?></h2>
 <div class="grid_16 actionsContainer">
-    <div class="grid_4" id="actions">	
+    <div class="grid_4" id="actions">
+
         <h2>
             <a href="#" id="toggle-admin-actions"><?php echo __d('phkapa', 'Menu'); ?></a>
         </h2>
         <div class="block" id="admin-actions">
             <h5><?php echo __dn('phkapa', 'Ticket', 'Tickets', 2); ?></h5>
             <ul class="menu">
-                <?php if ($closeOk) : ?>
-                    <li>
-                        <?php echo $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close', $ticket['Ticket']['id']), null, __d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id']) . ' ' . $closeMessage);
-                        ?>
-                    </li>
-                <?php endif; ?>
-                <?php //if ($closeMessage!='') : ?>
-                <li>
-                    <?php echo $this->Html->link(__d('phkapa', 'Replan'), array('action' => 'replan', $ticket['Ticket']['id']), null, __d('phkapa', 'Are you sure you want to replan # %s?', $ticket['Ticket']['id']));
-                    ?>
-                </li>
-                <?php //endif; ?>
 
-                
-                <li><?php echo $this->Html->link(__d('phkapa', 'Open new related ticket'), array('controller' => 'register', 'action' => 'add', $ticket['Ticket']['id'])); ?></li>
+                <li><?php echo $this->Html->link(__d('phkapa', 'View %s', __d('phkapa', 'Ticket')), array('action' => 'view', $ticket['Ticket']['id'])); ?> </li>
                 <li><?php echo $this->Html->link(__d('phkapa', 'List %s', __dn('phkapa', 'Ticket', 'Tickets', 2)), array('action' => 'index')); ?> </li>
-           
-
             </ul>
-
+            
         </div>
+
 
     </div>
     <div class="box ui-corner-all ui-widget-content" >
@@ -56,7 +26,43 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                 $i = 0;
                 $class = ' class="altrow"';
                 ?>
+<dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
+                ?>><?php echo __d('phkapa', 'Version Id'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                ?>>
+                            <?php echo $ticket['Ticket']['version_id']; ?>
+                        &nbsp;
+                    </dd>  
                     <dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
+                ?>><?php echo __d('phkapa', 'Request'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                ?>>
+                            <?php echo $ticket['Ticket']['version_request']; ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
+                ?>><?php echo __d('phkapa', 'Version Created'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                ?>>
+                            <?php if ($ticket['Ticket']['version_created']) : ?>
+                                <?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['version_created']); ?>
+                            <?php endif; ?>
+                        &nbsp;
+                    </dd>
+                    <hr/>
+<dt<?php
                     if ($i % 2 == 0)
                         echo $class;
                 ?>><?php echo __d('phkapa', 'Id'); ?></dt>
@@ -64,7 +70,7 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                 ?>>
-                            <?php echo $ticket['Ticket']['id']; ?>
+                            <?php echo $this->Html->link($ticket['Ticket']['id'], array('controller' => 'tickets', 'action' => 'view', $ticket['Ticket']['id'])); ?>
                         &nbsp;
                     </dd>
                     <?php if ($ticket['Ticket']['ticket_parent'] != '') { ?>
@@ -77,11 +83,24 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                             echo $class;
                         ?>>
                                 <?php
-                                echo $this->Html->link($ticket['Ticket']['ticket_parent'] . ' ' . $this->Html->image("accept.png", array("alt" => __d('phkapa', "See ticket parent data"), "style" => "padding-left:100px;")) . ' ' . __d('phkapa', "See ticket parent data"), array('controller' => 'query', 'action' => 'view', $ticket['Ticket']['ticket_parent']), array('escape' => false));
+                                echo $this->Html->link($ticket['Ticket']['ticket_parent'] . ' ' . $this->Html->image("accept.png", array("alt" => __d('phkapa', "See ticket parent data"), "style" => "padding-left:100px;")) . ' ' . __d('phkapa', "See ticket parent data"), array('action' => 'view', $ticket['Ticket']['ticket_parent']), array('escape' => false));
                                 ?>
                             &nbsp;
                         </dd>
                     <?php } ?>
+                    <dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Workflow'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                    ?>>
+                            
+                        <?php echo $ticket['Workflow']['name']; ?>
+                        &nbsp;
+                    </dd>
+
                     <dt<?php
                             if ($i % 2 == 0)
                                 echo $class;
@@ -90,29 +109,29 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Registar']['name']; ?>
+                            <?php echo $this->Html->link($ticket['Registar']['name'], array('controller' => 'users', 'action' => 'view', $ticket['Registar']['id'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                    if ($i % 2 == 0)
-                        echo $class;
-                    ?>><?php echo __d('phkapa', 'Priority'); ?></dt>
+                            if ($i % 2 == 0)
+                                echo $class;
+                            ?>><?php echo __d('phkapa', 'Priority'); ?></dt>
                     <dd<?php
                         if ($i++ % 2 == 0)
                             echo $class;
-                    ?>>
-                            <?php echo $ticket['Priority']['name']; ?>
+                            ?>>
+                            <?php echo $this->Html->link($ticket['Priority']['name'], array('controller' => 'priorities', 'action' => 'view', $ticket['Priority']['id'])); ?>
                         &nbsp;
                     </dd>
-                    <dt<?php
-                    if ($i % 2 == 0)
-                        echo $class;
-                    ?>><?php echo __d('phkapa', 'Safety'); ?></dt>
+                     <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
+                            ?>><?php echo __d('phkapa', 'Safety'); ?></dt>
                     <dd<?php
                         if ($i++ % 2 == 0)
                             echo $class;
-                    ?>>
-                            <?php echo $ticket['Safety']['name']; ?>
+                            ?>>
+                            <?php echo $this->Html->link($ticket['Safety']['name'], array('controller' => 'safeties', 'action' => 'view', $ticket['Safety']['id'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -138,7 +157,7 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Type']['name']; ?>
+                            <?php echo $this->Html->link($ticket['Type']['name'], array('controller' => 'types', 'action' => 'view', $ticket['Type']['id'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -149,10 +168,9 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Origin']['name']; ?>
+                            <?php echo $this->Html->link($ticket['Origin']['name'], array('controller' => 'origins', 'action' => 'view', $ticket['Origin']['id'])); ?>
                         &nbsp;
                     </dd>
-
                     <dt<?php
                             if ($i % 2 == 0)
                                 echo $class;
@@ -161,7 +179,7 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Process']['name']; ?>
+                            <?php echo $this->Html->link($ticket['Process']['name'], array('controller' => 'processes', 'action' => 'view', $ticket['Process']['id'])); ?>
                         &nbsp;
                     </dd>
 
@@ -173,9 +191,11 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Activity']['name']; ?>
+                            <?php echo $this->Html->link($ticket['Activity']['name'], array('controller' => 'activities', 'action' => 'view', $ticket['Activity']['id'])); ?>
                         &nbsp;
                     </dd>
+
+
                     <dt<?php
                             if ($i % 2 == 0)
                                 echo $class;
@@ -184,10 +204,9 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Category']['name']; ?>
+                            <?php echo $this->Html->link($ticket['Category']['name'], array('controller' => 'categories', 'action' => 'view', $ticket['Category']['id'])); ?>
                         &nbsp;
                     </dd>
-
                     <dt<?php
                             if ($i % 2 == 0)
                                 echo $class;
@@ -196,7 +215,18 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Supplier']['name']; ?>
+                            <?php echo $this->Html->link($ticket['Supplier']['name'], array('controller' => 'suppliers', 'action' => 'view', $ticket['Supplier']['id'])); ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
+                            ?>><?php echo __d('phkapa', 'Approved'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                            ?>>
+                            <?php echo $this->Utils->yesOrNo($ticket['Ticket']['approved']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -207,7 +237,7 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Ticket']['description'].'<br/>'.$ticket['Ticket']['review_notes']; ?>
+                            <?php echo $ticket['Ticket']['description'] . '<br/>' . $ticket['Ticket']['review_notes']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -218,7 +248,7 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Cause']['name']; ?>
+                            <?php echo $this->Html->link($ticket['Cause']['name'], array('controller' => 'causes', 'action' => 'view', $ticket['Cause']['id'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -235,12 +265,37 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                     <dt<?php
                             if ($i % 2 == 0)
                                 echo $class;
+                            ?>><?php echo __d('phkapa', 'Close Date'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                            ?>>
+                            <?php if ($ticket['Ticket']['close_date']) : ?>
+                                <?php echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['close_date']); ?>
+                            <?php endif; ?>
+                        &nbsp;
+
+                    </dd>
+                    <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
+                            ?>><?php echo __d('phkapa', 'Closed By'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                            ?>>
+                            <?php echo $this->Html->link($ticket['CloseUser']['name'], array('controller' => 'users', 'action' => 'view', $ticket['CloseUser']['id'])); ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
                             ?>><?php echo __d('phkapa', 'Last Modification By'); ?></dt>
                     <dd<?php
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['ModifiedUser']['name']; ?>
+                            <?php echo $this->Html->link($ticket['ModifiedUser']['name'], array('controller' => 'users', 'action' => 'view', $ticket['ModifiedUser']['id'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -270,79 +325,7 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
         </div>
     </div>
 
-    <div class="ui-corner-all ui-widget" id="related">
-        <h2>
-            <a href="#" id="toggle-related-records"><?php echo (__dn('phkapa', 'Action', 'Actions', 2)); ?></a>
-        </h2>
-        <div class="block ui-widget-content" id="related-records">
-            <div class="related">
-
-                <?php if (!empty($ticket['Action'])): ?>
-                    <table cellpadding = "0" cellspacing = "0">
-                        <thead class="ui-state-default"
-                               <tr>
-                                <th><?php echo __d('phkapa', 'Id'); ?></th>
-                                <th><?php echo __d('phkapa', 'Action Type'); ?></th>
-                                <th><?php echo __d('phkapa', 'Description'); ?></th>
-                                <th><?php echo __d('phkapa', 'Effectiveness'); ?></th>
-                                <th><?php echo __d('phkapa', 'Verified By'); ?></th>
-                                <th><?php echo __d('phkapa', 'Created'); ?></th>
-                                <th><?php echo __d('phkapa', 'Close Date'); ?></th>
-                                <th><?php echo __d('phkapa', 'After Deadline'); ?></th>
-                                <th class="actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></th>
-                            </tr>
-                        </thead>
-                        <?php
-                        $i = 0;
-                        foreach ($ticket['Action'] as $action):
-                            $dayDescription = ($action['deadline'] == 1) ? 'day' : 'days';
-                            $expiry = strtotime(date($action['created']) . " +" . $action['deadline'] . $dayDescription);
-                            $closeDate = strtotime($action['close_date']);
-                            $afterexpiry = $closeDate - $expiry;
-                            $afterexpiry = floor($afterexpiry / (24 * 60 * 60));
-                            if ($afterexpiry > 0) {
-                                //$afterexpiry = $afterexpiry;
-                            } else {
-                                $afterexpiry = 0;
-                            }
-
-                            $class = null;
-                            if ($i++ % 2 == 0) {
-                                $class = ' class="altrow"';
-                            }
-                            ?>
-                            <tr<?php echo $class; ?>>
-                                <td><?php echo $action['id']; ?></td>
-                                <td><?php echo $action['ActionType']['name']; ?></td>
-                                <td><?php echo $action['description']; ?></td>
-                                <td><?php
-                    if (isset($action['ActionEffectiveness']['name']))
-                        echo $action['ActionEffectiveness']['name'];
-                            ?></td>
-                                <td><?php
-                    if (isset($action['VerifyUser']['name']))
-                        echo $action['VerifyUser']['name'];
-                            ?></td>
-                                <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
-                                <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']); ?></td>
-                                <td class="nowrap"><?php echo $afterexpiry; ?></td>
-                                <td class="actions">
-                                    <?php
-                                    if ($action['ActionType']['verification'] != 0) {
-                                        echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit_action', $action['id'], $ticket['Ticket']['id']));
-                                    }
-                                    ?>
-
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </table>
-                <?php endif; ?>
-
-
-            </div>
-        </div>
-    </div>
-
+   
+    
 </div>
 <div class="clear"></div>

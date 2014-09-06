@@ -109,14 +109,57 @@ CREATE TABLE IF NOT EXISTS `phkapa_actions` (
   `closed` tinyint(1) NOT NULL DEFAULT '0',
   `action_effectiveness_id` int(11) DEFAULT NULL,
   `effectiveness_notes` text,
+  `verify_user_id` int(11) DEFAULT NULL,
   `close_date` date DEFAULT NULL,
+  `close_user_id` int(11) DEFAULT NULL,
+  `modified_user_id` int(11) DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `ActionTypeId` (`action_type_id`),
   KEY `TicketId` (`ticket_id`),
-  KEY `ActionEffectivenessId` (`action_effectiveness_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  KEY `ActionEffectivenessId` (`action_effectiveness_id`),
+  KEY `VerifyUserID` (`verify_user_id`),
+  KEY `CloseUserID` (`close_user_id`),
+  KEY `ModifiedUserID` (`modified_user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `phkapa_actions_revision`
+--
+
+DROP TABLE IF EXISTS `phkapa_actions_revision`;
+CREATE TABLE IF NOT EXISTS `phkapa_actions_revision` (
+  `version_id` int(11) NOT NULL AUTO_INCREMENT,
+  `version_description` varchar(250) NOT NULL,
+  `id` int(11) NOT NULL,
+  `ticket_id` int(11) NOT NULL DEFAULT '0',
+  `action_type_id` int(11) NOT NULL DEFAULT '0',
+  `description` text NOT NULL,
+  `deadline` int(11) NOT NULL DEFAULT '0',
+  `closed` tinyint(1) NOT NULL DEFAULT '0',
+  `action_effectiveness_id` int(11) DEFAULT NULL,
+  `effectiveness_notes` text,
+  `verify_user_id` int(11) DEFAULT NULL,
+  `close_date` date DEFAULT NULL,
+  `close_user_id` int(11) DEFAULT NULL,
+  `modified_user_id` int(11) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `version_created` datetime NOT NULL,
+  `version_request` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`version_id`),
+  KEY `ActionTypeId` (`action_type_id`),
+  KEY `TicketId` (`ticket_id`),
+  KEY `ActionEffectivenessId` (`action_effectiveness_id`),
+  KEY `ActionId` (`id`),
+  KEY `VerifyUserID` (`verify_user_id`),
+  KEY `CloseUserID` (`close_user_id`),
+  KEY `ModifiedUserID` (`modified_user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
 
 -- --------------------------------------------------------
 
@@ -311,12 +354,6 @@ CREATE TABLE IF NOT EXISTS `phkapa_suppliers` (
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `phkapa_tickets`
---
--- Creation: Feb 20, 2013 at 09:53 PM
---
-
 DROP TABLE IF EXISTS `phkapa_tickets`;
 CREATE TABLE IF NOT EXISTS `phkapa_tickets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -324,6 +361,7 @@ CREATE TABLE IF NOT EXISTS `phkapa_tickets` (
   `type_id` int(11) NOT NULL DEFAULT '0',
   `process_id` int(11) NOT NULL DEFAULT '0',
   `priority_id` int(11) NOT NULL DEFAULT '0',
+  `safety_id` int(11) NOT NULL DEFAULT '0',
   `registar_id` int(11) NOT NULL DEFAULT '0',
   `activity_id` int(11) NOT NULL DEFAULT '0',
   `category_id` int(11) NOT NULL DEFAULT '0',
@@ -353,9 +391,61 @@ CREATE TABLE IF NOT EXISTS `phkapa_tickets` (
   KEY `TicketParentIdKey` (`ticket_parent`),
   KEY `PriorityIdKey` (`priority_id`),
   KEY `ClosedUserIdKey` (`close_user_id`),
-  KEY `ModifiedUserIdKey` (`modified_user_id`)
+  KEY `ModifiedUserIdKey` (`modified_user_id`),
+  KEY `SupplierIdKey` (`supplier_id`),
+  KEY `SafetyIdKey` (`safety_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `phkapa_tickets_revision`
+--
+
+DROP TABLE IF EXISTS `phkapa_tickets_revision`;
+CREATE TABLE IF NOT EXISTS `phkapa_tickets_revision` (
+  `version_id` int(11) NOT NULL AUTO_INCREMENT,
+  `version_description` varchar(250) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `ticket_parent` int(11) DEFAULT NULL,
+  `type_id` int(11) NOT NULL DEFAULT '0',
+  `process_id` int(11) NOT NULL DEFAULT '0',
+  `priority_id` int(11) NOT NULL DEFAULT '0',
+  `safety_id` int(11) NOT NULL DEFAULT '0',
+  `registar_id` int(11) NOT NULL DEFAULT '0',
+  `activity_id` int(11) NOT NULL DEFAULT '0',
+  `category_id` int(11) NOT NULL DEFAULT '0',
+  `origin_id` int(11) NOT NULL DEFAULT '0',
+  `origin_date` date DEFAULT NULL,
+  `supplier_id` int(11) DEFAULT NULL,
+  `approved` tinyint(1) DEFAULT NULL,
+  `review_notes` text,
+  `workflow_id` int(11) NOT NULL DEFAULT '0',
+  `cause_id` int(11) DEFAULT NULL,
+  `cause_notes` text,
+  `description` text,
+  `close_date` date DEFAULT NULL,
+  `close_user_id` int(11) DEFAULT NULL,
+  `modified_user_id` int(11) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `version_created` datetime NOT NULL,
+  `version_request` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`version_id`),
+  KEY `TypeIdKey` (`type_id`),
+  KEY `ProcessIdKey` (`process_id`),
+  KEY `RegistarIdKey` (`registar_id`),
+  KEY `ActivityIdKey` (`activity_id`),
+  KEY `OriginIdKey` (`origin_id`),
+  KEY `WorkflowIdKey` (`workflow_id`),
+  KEY `CategoryIdKey` (`category_id`),
+  KEY `CauseIdKey` (`cause_id`),
+  KEY `TicketParentIdKey` (`ticket_parent`),
+  KEY `PriorityIdKey` (`priority_id`),
+  KEY `ClosedUserIdKey` (`close_user_id`),
+  KEY `ModifiedUserIdKey` (`modified_user_id`),
+  KEY `TicketId` (`id`),
+  KEY `SupplierIdKey` (`supplier_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 -- --------------------------------------------------------
 
 --
@@ -411,8 +501,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 -- Table structure for table `phkapa_priorities`
 --
--- Creation: Feb 20, 2013 at 10:30 PM
---
 
 DROP TABLE IF EXISTS `phkapa_priorities`;
 CREATE TABLE IF NOT EXISTS `phkapa_priorities` (
@@ -427,6 +515,22 @@ CREATE TABLE IF NOT EXISTS `phkapa_priorities` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 --
+-- Table structure for table  `phkapa_safeties`
+--
+
+DROP TABLE IF EXISTS `phkapa_safeties`;
+CREATE TABLE IF NOT EXISTS `phkapa_safeties` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL DEFAULT '',
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `order` int(11) NOT NULL DEFAULT '0',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `OrderUnique` (`order`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -434,9 +538,24 @@ CREATE TABLE IF NOT EXISTS `phkapa_priorities` (
 -- Constraints for table `phkapa_actions`
 --
 ALTER TABLE `phkapa_actions`
+  ADD CONSTRAINT `phkapa_actions_ibfk_7` FOREIGN KEY (`modified_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `ActionTypeId` FOREIGN KEY (`action_type_id`) REFERENCES `phkapa_action_types` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_actions_ibfk_3` FOREIGN KEY (`ticket_id`) REFERENCES `phkapa_tickets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `phkapa_actions_ibfk_4` FOREIGN KEY (`action_effectiveness_id`) REFERENCES `phkapa_action_effectivenesses` (`id`);
+  ADD CONSTRAINT `phkapa_actions_ibfk_4` FOREIGN KEY (`action_effectiveness_id`) REFERENCES `phkapa_action_effectivenesses` (`id`),
+  ADD CONSTRAINT `phkapa_actions_ibfk_5` FOREIGN KEY (`verify_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_actions_ibfk_6` FOREIGN KEY (`close_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `phkapa_actions_revision`
+--
+ALTER TABLE `phkapa_actions_revision`
+  ADD CONSTRAINT `phkapa_actions_revision_ibfk_1` FOREIGN KEY (`id`) REFERENCES `phkapa_actions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_actions_revision_ibfk_2` FOREIGN KEY (`ticket_id`) REFERENCES `phkapa_tickets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_actions_revision_ibfk_3` FOREIGN KEY (`action_type_id`) REFERENCES `phkapa_action_types` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_actions_revision_ibfk_4` FOREIGN KEY (`action_effectiveness_id`) REFERENCES `phkapa_action_effectivenesses` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_actions_revision_ibfk_5` FOREIGN KEY (`verify_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_actions_revision_ibfk_6` FOREIGN KEY (`close_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_actions_revision_ibfk_7` FOREIGN KEY (`modified_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `phkapa_activities_processes`
@@ -470,18 +589,41 @@ ALTER TABLE `phkapa_processes_users`
 -- Constraints for table `phkapa_tickets`
 --
 ALTER TABLE `phkapa_tickets`
+  ADD CONSTRAINT `phkapa_tickets_ibfk_11` FOREIGN KEY (`cause_id`) REFERENCES `phkapa_causes` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_ibfk_12` FOREIGN KEY (`ticket_parent`) REFERENCES `phkapa_tickets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_ibfk_13` FOREIGN KEY (`priority_id`) REFERENCES `phkapa_priorities` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_ibfk_14` FOREIGN KEY (`close_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_ibfk_15` FOREIGN KEY (`modified_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_ibfk_16` FOREIGN KEY (`supplier_id`) REFERENCES `phkapa_suppliers` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_ibfk_17` FOREIGN KEY (`safety_id`) REFERENCES `phkapa_safeties` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_tickets_ibfk_2` FOREIGN KEY (`type_id`) REFERENCES `phkapa_types` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_tickets_ibfk_3` FOREIGN KEY (`process_id`) REFERENCES `phkapa_processes` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_tickets_ibfk_4` FOREIGN KEY (`registar_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_tickets_ibfk_5` FOREIGN KEY (`activity_id`) REFERENCES `phkapa_activities` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_tickets_ibfk_6` FOREIGN KEY (`category_id`) REFERENCES `phkapa_categories` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_tickets_ibfk_7` FOREIGN KEY (`origin_id`) REFERENCES `phkapa_origins` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `phkapa_tickets_ibfk_8` FOREIGN KEY (`workflow_id`) REFERENCES `phkapa_workflows` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `phkapa_tickets_ibfk_11` FOREIGN KEY (`cause_id`) REFERENCES `phkapa_causes` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `phkapa_tickets_ibfk_12` FOREIGN KEY (`ticket_parent`) REFERENCES `phkapa_tickets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `phkapa_tickets_ibfk_13` FOREIGN KEY (`priority_id`) REFERENCES `phkapa_priorities` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `phkapa_tickets_ibfk_14` FOREIGN KEY (`close_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `phkapa_tickets_ibfk_15` FOREIGN KEY (`modified_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `phkapa_tickets_ibfk_8` FOREIGN KEY (`workflow_id`) REFERENCES `phkapa_workflows` (`id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `phkapa_tickets_revision`
+--
+ALTER TABLE `phkapa_tickets_revision`
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_1` FOREIGN KEY (`id`) REFERENCES `phkapa_tickets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_10` FOREIGN KEY (`workflow_id`) REFERENCES `phkapa_workflows` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_11` FOREIGN KEY (`cause_id`) REFERENCES `phkapa_causes` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_12` FOREIGN KEY (`close_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_13` FOREIGN KEY (`modified_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_14` FOREIGN KEY (`type_id`) REFERENCES `phkapa_types` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_15` FOREIGN KEY (`supplier_id`) REFERENCES `phkapa_suppliers` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_2` FOREIGN KEY (`ticket_parent`) REFERENCES `phkapa_tickets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_4` FOREIGN KEY (`process_id`) REFERENCES `phkapa_processes` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_5` FOREIGN KEY (`priority_id`) REFERENCES `phkapa_priorities` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_6` FOREIGN KEY (`registar_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_7` FOREIGN KEY (`activity_id`) REFERENCES `phkapa_activities` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_8` FOREIGN KEY (`category_id`) REFERENCES `phkapa_categories` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `phkapa_tickets_revision_ibfk_9` FOREIGN KEY (`origin_id`) REFERENCES `phkapa_origins` (`id`) ON UPDATE CASCADE;
+
+
 SET FOREIGN_KEY_CHECKS=1;
 
 
@@ -562,6 +704,16 @@ SET FOREIGN_KEY_CHECKS=1;
 --
 
 INSERT INTO `phkapa_priorities` (`id`, `name`, `active`, `order`, `created`, `modified`) VALUES
+(1, 'High', 1, 1, '2013-02-20 20:59:27', '2013-02-20 23:40:24'),
+(2, 'Medium', 1, 2, '2013-02-20 21:00:13', '2013-02-22 23:22:59'),
+(3, 'Low', 1, 3, '2013-02-20 21:00:36', '2013-02-22 23:22:32');
+
+
+--
+-- Dumping data for table `phkapa_safeties`
+--
+
+INSERT INTO `phkapa_safeties` (`id`, `name`, `active`, `order`, `created`, `modified`) VALUES
 (1, 'High', 1, 1, '2013-02-20 20:59:27', '2013-02-20 23:40:24'),
 (2, 'Medium', 1, 2, '2013-02-20 21:00:13', '2013-02-22 23:22:59'),
 (3, 'Low', 1, 3, '2013-02-20 21:00:36', '2013-02-22 23:22:32');

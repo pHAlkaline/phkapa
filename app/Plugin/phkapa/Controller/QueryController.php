@@ -81,6 +81,7 @@ class QueryController extends PhkapaAppController {
                     ("OR" => array(
                         "Ticket.id LIKE" => "%" . $keyword . "%",
                         "Priority.name LIKE" => "%" . $keyword . "%",
+                        "Safety.name LIKE" => "%" . $keyword . "%",
                         "Type.name LIKE" => "%" . $keyword . "%",
                         "Process.name LIKE" => "%" . $keyword . "%",
                         "Origin.name LIKE" => "%" . $keyword . "%",
@@ -119,6 +120,22 @@ class QueryController extends PhkapaAppController {
         
         
         $this->set('ticket', $ticket);
+    }
+    
+    /**
+     * view_action
+     *
+     * @param integer $id
+     * @return void
+     * @access public
+     */ 
+    public function view_action($id = null) {
+        if (!$id) {
+            $this->Session->setFlash(__d('phkapa','Invalid request.'), 'flash_message_error');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->set('action', $this->Ticket->Action->read(null, $id));
+        
     }
     
     /**

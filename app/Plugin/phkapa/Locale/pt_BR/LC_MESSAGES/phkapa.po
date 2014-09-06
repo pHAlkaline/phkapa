@@ -39,8 +39,15 @@ msgstr "Ações expiradas!!!"
 msgid "Action is closed, must have closed date"
 msgstr "A Ação está fechada, deve ter uma data de fechamento"
 
+msgid "Action requires closed by"
+msgstr "A Ação está fechada, deve ter um usuário de fechamento"
+
+
 msgid "Action type requires verification on close"
 msgstr "Tipo de ação requer verificação no fechamento"
+
+msgid "Action type requires verified by"
+msgstr "Tipo de acção requer verificado por"
 
 msgid "Active"
 msgstr "Ativo"
@@ -317,6 +324,14 @@ msgstr "Incidências relacionadas"
 msgid "Replan"
 msgstr "Novo plano"
 
+msgid "Request"
+msgstr "Ação"
+
+msgid "Revision"
+msgid_plural "Revisions"
+msgstr[0] "Revisão"
+msgstr[1] "Revisões"
+
 msgid "Review"
 msgstr "Análise"
 
@@ -325,6 +340,11 @@ msgstr "Descrição da Análise"
 
 msgid "Role"
 msgstr ""
+
+msgid "Safety"
+msgid_plural "Safeties"
+msgstr[0] "Segurança/Risco"
+msgstr[1] "Segurança/Risco"
 
 msgid "Saved with success."
 msgstr "Gravado com sucesso."
@@ -364,6 +384,9 @@ msgstr "Este fluxo requer causa"
 msgid "This workflow requires close date"
 msgstr "Este fluxo requer data de fechamento"
 
+msgid "This workflow requires close by"
+msgstr "Este fluxo requer usuário de fechamento"
+
 msgid "Ticket"
 msgid_plural "Tickets"
 msgstr[0] "Incidência"
@@ -400,8 +423,17 @@ msgstr "Usuários"
 msgid "Verification"
 msgstr "Verificação"
 
+msgid "Verified By"
+msgstr "Avaliado Por"
+
 msgid "Verify"
 msgstr "Avaliação"
+
+msgid "Version"
+msgstr "Revisão"
+
+msgid "Version Created"
+msgstr "Revisão Criada"
 
 msgid "View"
 msgstr "Ver"

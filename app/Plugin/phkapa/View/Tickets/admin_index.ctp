@@ -27,14 +27,15 @@
             $tableHeaders = $this->html->tableHeaders(array(
                 $this->Paginator->sort('id', __d('phkapa', 'Id')),
                 $this->Paginator->sort('Priority.order', __d('phkapa', 'Priority')),
+                $this->Paginator->sort('Safety.order', __d('phkapa', 'Safety')),
                 $this->Paginator->sort('origin_date', __d('phkapa', 'Origin Date')),
                 $this->Paginator->sort('Type.name', __d('phkapa', 'Type')),
                 $this->Paginator->sort('Origin.name', __d('phkapa', 'Origin')),
                 $this->Paginator->sort('Process.name', __d('phkapa', 'Process')),
-                $this->Paginator->sort('Category.name', __d('phkapa', 'Category')),
+                //$this->Paginator->sort('Category.name', __d('phkapa', 'Category')),
                 $this->Paginator->sort('Activity.name', __d('phkapa', 'Activity')),
                 __d('phkapa', 'Description'),
-                $this->Paginator->sort('created', __d('phkapa', 'Created')),
+                //$this->Paginator->sort('created', __d('phkapa', 'Created')),
                 $this->Paginator->sort('Workflow.name', __d('phkapa', 'Workflow')),
                 //$this->Paginator->sort('created'),
                 __dn('phkapa', 'Action', 'Actions', 2)));
@@ -52,15 +53,16 @@
                 <tr<?php echo $class; ?>>
                     <td><?php echo $ticket['Ticket']['id']; ?>&nbsp;</td>
                     <td><?php echo $this->Html->link($ticket['Priority']['name'], array('controller' => 'priorities', 'action' => 'view', $ticket['Priority']['id'])); ?></td>
+                    <td><?php echo $this->Html->link($ticket['Safety']['name'], array('controller' => 'safeties', 'action' => 'view', $ticket['Safety']['id'])); ?></td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['origin_date']); ?>&nbsp;</td>
                     <td><?php echo $this->Html->link($ticket['Type']['name'], array('controller' => 'types', 'action' => 'view', $ticket['Type']['id'])); ?></td>
                     <td><?php echo $this->Html->link($ticket['Origin']['name'], array('controller' => 'origins', 'action' => 'view', $ticket['Origin']['id'])); ?></td>
                     <td><?php echo $this->Html->link($ticket['Process']['name'], array('controller' => 'processes', 'action' => 'view', $ticket['Process']['id'])); ?></td>
-                    <td><?php echo $this->Html->link($ticket['Category']['name'], array('controller' => 'categories', 'action' => 'view', $ticket['Category']['id'])); ?></td>
+                    <!--td><?php //echo $this->Html->link($ticket['Category']['name'], array('controller' => 'categories', 'action' => 'view', $ticket['Category']['id'])); ?></td-->
                     <td><?php echo $this->Html->link($ticket['Activity']['name'], array('controller' => 'activities', 'action' => 'view', $ticket['Activity']['id'])); ?></td>
 
                     <td><?php echo $ticket['Ticket']['description'] . '<br/>' . $ticket['Ticket']['review_notes']; ?>&nbsp;</td>
-                    <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['created']); ?>&nbsp;</td>
+                    <!--td class="nowrap"><?php //echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['created']); ?>&nbsp;</td-->
                     <td>
                         <?php echo $ticket['Workflow']['name']; ?>
                     </td>

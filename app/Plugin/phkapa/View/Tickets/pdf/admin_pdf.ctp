@@ -21,12 +21,12 @@
             -->
         </style>
     </head>
-    <body  text="#000000" dir="LTR">
+      <body  text="#000000" dir="LTR">
         <h1 class="western" style="background: transparent; text-align: right;">
             <img src="<?php echo $_SERVER['DOCUMENT_ROOT']; ?>/app/webroot/img/PHKAPAlogo.png" name="PHKAPA logo" border="0">
         </h1>
         <h1 class="western" style="background: transparent; text-align: right;">
-            Ticket Report
+            <?php echo __d('phkapa','Ticket Report'); ?>
         </h1>
         <table width="100%" border="0" cellpadding="0" cellspacing="0">
 
@@ -90,13 +90,18 @@
                             </font></p>
                     </td>
                     <td >
-                        <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Type'); ?>:
+                        <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Safety'); ?>:
                             </font></font>
                         </h2>
                     </td>
                     <td >
-                        <p style="margin-top: 0.07cm"><font face="Trebuchet MS, sans-serif"><?php echo $ticket['Type']['name']; ?></font></p>
+                        <p style="margin-top: 0.07cm">
+                            <font face="Trebuchet MS, sans-serif">
+                            <?php echo $ticket['Safety']['name']; ?>
+                            </font>
+                        </p>
                     </td>
+                    
                 </tr>
                 <tr valign="TOP">
                     <td >
@@ -108,17 +113,14 @@
                         <p style="margin-top: 0.07cm"><font face="Trebuchet MS, sans-serif"><?php echo $ticket['Origin']['name']; ?></font></p>
                     </td>
                     <td >
-                        <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Process'); ?>:
+                        <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Type'); ?>:
                             </font></font>
                         </h2>
                     </td>
                     <td >
-                        <p style="margin-top: 0.07cm">
-                            <font face="Trebuchet MS, sans-serif">
-                            <?php echo $ticket['Process']['name']; ?>
-                            </font>
-                        </p>
+                        <p style="margin-top: 0.07cm"><font face="Trebuchet MS, sans-serif"><?php echo $ticket['Type']['name']; ?></font></p>
                     </td>
+                   
                 </tr>
                 <tr valign="TOP">
                     <td >
@@ -133,18 +135,19 @@
                             </font>
                         </p>
                     </td>
-                    <td >
-                        <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Category'); ?>:
+                     <td >
+                        <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Process'); ?>:
                             </font></font>
                         </h2>
                     </td>
                     <td >
                         <p style="margin-top: 0.07cm">
                             <font face="Trebuchet MS, sans-serif">
-                            <?php echo $ticket['Category']['name']; ?>
+                            <?php echo $ticket['Process']['name']; ?>
                             </font>
                         </p>
                     </td>
+                    
                 </tr>
                 <tr valign="TOP">
                     <td >
@@ -160,6 +163,37 @@
                         </p>
                     </td>
                     <td >
+                        <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Category'); ?>:
+                            </font></font>
+                        </h2>
+                    </td>
+                    <td >
+                        <p style="margin-top: 0.07cm">
+                            <font face="Trebuchet MS, sans-serif">
+                            <?php echo $ticket['Category']['name']; ?>
+                            </font>
+                        </p>
+                    </td>
+                    
+                </tr>
+                <tr valign="TOP">
+                    <td >
+                        <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Close Date'); ?>:
+                            </font></font>
+                        </h2>
+                    </td>
+                    <td >
+                        <p style="margin-top: 0.07cm">
+                            <font face="Trebuchet MS, sans-serif">
+                            <?php 
+                            if ($ticket['Ticket']['close_date']) {
+                                echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['close_date']);
+                            } 
+                            ?>
+                            </font>
+                        </p>
+                    </td>
+                    <td >
                         <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Approved'); ?>:
                             </font></font>
                         </h2>
@@ -171,8 +205,21 @@
                             </font>
                         </p>
                     </td>
+                    
                 </tr>
                 <tr valign="TOP">
+                    <td >
+                        <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Closed By'); ?>:
+                            </font></font>
+                        </h2>
+                    </td>
+                    <td >
+                        <p style="margin-top: 0.07cm">
+                            <font face="Trebuchet MS, sans-serif">
+                            <?php echo $ticket['CloseUser']['name']; ?>
+                            </font>
+                        </p>
+                    </td>
                     <td >
                         <h2 class="western" align="RIGHT"><font color="#00aeff"><font face="Trebuchet MS, sans-serif"><?php echo __d('phkapa','Description'); ?>:
                             </font></font>
@@ -224,7 +271,7 @@
             </tbody>
         </table>
         <p style="margin-top: 0.07cm; margin-bottom: 0.07cm"><br><br></p>
-        <p>Actions</p>
+        <p><?php echo __('Actions'); ?></p>
         <?php $count=0; $page=1?>
             <?php if (!empty($ticket['Action'])){ ?>
         
@@ -266,7 +313,7 @@
                         </h2>
                     </td>
                     <td colspan="3" >
-                        <p style="margin-top: 0.07cm"><font face="Trebuchet MS, sans-serif"><?php echo $action['ActionEffectiveness']['name']; ?></font></p>
+                        <p style="margin-top: 0.07cm"><font face="Trebuchet MS, sans-serif"><?php if (isset($action['ActionEffectiveness']['name'])) echo $action['ActionEffectiveness']['name']; ?></font></p>
                     </td>
                 </tr>
                 <tr valign="TOP">
