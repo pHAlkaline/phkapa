@@ -13,7 +13,7 @@
  * @link     http://phkapa.net
  */
 class Action extends PhkapaAppModel {
-
+    public $actsAs = array('Revision');
     /**
      * Model name
      *
@@ -46,9 +46,9 @@ class Action extends PhkapaAppModel {
      */
     public $validate = array(
         'ticket_id' => array(
-            'numeric' => array(
-                'rule' => array('naturalNumber', true),
-                'message' => 'Numeric',
+            'notempty' => array(
+                'rule' => array('notempty'),
+                'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -79,6 +79,14 @@ class Action extends PhkapaAppModel {
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
+        ),
+        'verify_user_id' => array(
+            'checkWorkflow' => array(
+                'rule' => array('checkVerifyUserByEffectivenessStatus'),
+                'message' => 'Action type requires verified by',
+                
+            ),
+            
         ),
         'description' => array(
             'notempty' => array(
@@ -124,9 +132,18 @@ class Action extends PhkapaAppModel {
             'date' => array(
                 'rule' => array('date'),
                 'message' => 'Invalid date',
+                'allowEmpty' => true,
                 'required' => false
             ),
-        )
+        ),
+        'close_user_id' => array(
+            'checkWorkflow' => array(
+                'rule' => array('checkCloseUserByCloseStatus'),
+                'message' => 'Action requires closed by',
+                
+            ),
+            
+        ),
     );
 
     /**
@@ -156,7 +173,29 @@ class Action extends PhkapaAppModel {
             'conditions' => '',
             'fields' => '',
             'order' => ''
-        )
+        ),
+        'VerifyUser' => array(
+            'className' => 'Phkapa.User',
+            'foreignKey' => 'verify_user_id',
+            'conditions' => '',
+            'fields' => array('id', 'name'),
+            'order' => ''
+        ),
+        'CloseUser' => array(
+            'className' => 'Phkapa.User',
+            'foreignKey' => 'close_user_id',
+            'conditions' => '',
+            'fields' => array('id', 'name'),
+            'order' => ''
+        ),
+        
+        'ModifiedUser' => array(
+            'className' => 'Phkapa.User',
+            'foreignKey' => 'modified_user_id',
+            'conditions' => '',
+            'fields' => array('id', 'name'),
+            'order' => ''
+        ),
     );
 
     /**
@@ -208,10 +247,10 @@ class Action extends PhkapaAppModel {
      * @return boolean
      */
     public function checkValidCloseDate($check) {
-
-        if ($check['close_date'] == null)
+        //debug($check);
+        if ($check['close_date'] == null){
             return true;
-
+        }
         $this->Ticket->recursive = 0;
         $ticket = $this->Ticket->find('first', array('fields' => array('Ticket.close_date', 'Ticket.origin_date'), 'conditions' => array('Ticket.id' => $this->data['Action']['ticket_id'])));
 
@@ -248,6 +287,32 @@ class Action extends PhkapaAppModel {
 
         return true;
     }
+    
+    /**
+     * Custom validation rule
+     * Check if close_user_id is required
+     * If action is closed is required
+     *
+     * @param array $check field 
+     * @access public
+     * @return boolean
+     */
+    public function checkCloseUserByCloseStatus($check) {
+        return ($this->data['Action']['closed'] == true && $check['close_user_id'] == null) ? false : true;
+    }
+    
+    /**
+     * Custom validation rule
+     * Check if verify_user_id is required
+     * If action is verified is required
+     *
+     * @param array $check field 
+     * @access public
+     * @return boolean
+     */
+    public function checkVerifyUserByEffectivenessStatus($check) {
+        return ($this->data['Action']['action_effectiveness_id'] != null && $check['verify_user_id'] == null) ? false : true;
+    }
 
     /**
      * beforeSave callback
@@ -260,9 +325,13 @@ class Action extends PhkapaAppModel {
     public function beforeSave($options = array()) {
         if (isset($this->data['Action']['closed']) && $this->data['Action']['closed'] != true) {
             $this->data['Action']['close_date'] = null;
+            $this->data['Action']['close_user_id'] = null;
         }
+        $this->data['Action']['modified_user_id']=AuthComponent::user('id');
         return true;
     }
+    
+    
 
 }
 

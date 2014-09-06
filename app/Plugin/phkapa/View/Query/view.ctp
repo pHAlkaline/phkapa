@@ -121,6 +121,17 @@ if ($ticket['Workflow']['id'] < 5) {
                     <dt<?php
                             if ($i % 2 == 0)
                                 echo $class;
+                            ?>><?php echo __d('phkapa', 'Safety'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                            ?>>
+                            <?php echo $ticket['Safety']['name']; ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
                             ?>><?php echo __d('phkapa', 'Origin Date'); ?></dt>
                     <dd<?php
                         if ($i++ % 2 == 0)
@@ -323,17 +334,16 @@ if ($ticket['Workflow']['id'] < 5) {
                         <thead  class="ui-state-default">
                             <tr>
                                 <th><?php echo __d('phkapa', 'Id'); ?></th>
-
                                 <th><?php echo __d('phkapa', 'Action Type'); ?></th>
-                                <th><?php echo __d('phkapa', 'Description'); ?></th>
-                                <th><?php echo __d('phkapa', 'Deadline'); ?></th>
                                 <th><?php echo __d('phkapa', 'Closed'); ?></th>
+                                <th><?php echo __d('phkapa', 'Closed By'); ?></th>
                                 <th><?php echo __d('phkapa', 'Close Date'); ?></th>
                                 <th><?php echo __d('phkapa', 'Effectiveness'); ?></th>
-                                <th><?php echo __d('phkapa', 'Effectiveness Notes'); ?></th>
+                                <th><?php echo __d('phkapa', 'Verified By'); ?></th>
+                                <th><?php echo __d('phkapa', 'Last Modification By'); ?></th>
                                 <th><?php echo __d('phkapa', 'Modified'); ?></th>
                                 <th><?php echo __d('phkapa', 'Created'); ?></th>
-
+                                <th class="actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></th>
                             </tr>
                         </thead>
                         <?php
@@ -345,25 +355,27 @@ if ($ticket['Workflow']['id'] < 5) {
                             }
                             //debug($action);
                             ?>
-                            <tr<?php echo $class; ?>>
+                             <tr<?php echo $class; ?>>
                                 <td><?php echo $action['id']; ?></td>
-
                                 <td><?php echo $action['ActionType']['name']; ?></td>
-                                <td><?php echo $action['description']; ?></td>
-                                <td><?php echo $action['deadline'] . ' ' . __d('phkapa', 'Days'); ?></td>
                                 <td><?php echo $this->Utils->yesOrNo($action['closed']); ?></td>
-                                <td class="nowrap"><?php
-                    if ($action['close_date'] != '')
-                        echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']);
-                            ?></td>
-                                <td><?php
-                            if (isset($action['ActionEffectiveness']['name']))
-                                echo $action['ActionEffectiveness']['name'];
-                            ?></td>
-                                <td><?php echo $action['effectiveness_notes']; ?></td>
+                                <td><?php if (isset($action['CloseUser']['name'])) echo $action['CloseUser']['name']; ?></td>
+                                <td class="nowrap">
+                                    <?php
+                                    if ($action['close_date'] != '')
+                                        echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']);
+                                    ?>
+                                </td>
+                                
+                                <td><?php if (isset($action['ActionEffectiveness']['name'])) echo $action['ActionEffectiveness']['name'];?></td>
+                                <td><?php if (isset($action['VerifyUser']['name'])) echo $action['VerifyUser']['name']; ?></td>
+                                <td><?php if (isset($action['ModifiedUser']['name'])) echo $action['ModifiedUser']['name']; ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['modified']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
-
+                                <td class="actions">
+                                    <?php echo $this->Html->link(__d('phkapa', 'View'), array('controller' => 'query', 'action' => 'view_action', $action['id'])); ?>
+                                   
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </table>
@@ -382,6 +394,7 @@ if ($ticket['Workflow']['id'] < 5) {
                             <tr>
                                 <th><?php echo __d('phkapa', 'Id'); ?></th>
                                 <th><?php echo __d('phkapa', 'Priority'); ?></th>
+                                <th><?php echo __d('phkapa', 'Safety'); ?></th>
                                 <th><?php echo __d('phkapa', 'Origin Date'); ?></th>
                                 <th><?php echo __d('phkapa', 'Type'); ?></th>
                                 <th><?php echo __d('phkapa', 'Origin'); ?></th>
@@ -430,6 +443,7 @@ if ($ticket['Workflow']['id'] < 5) {
                             <tr<?php echo $class; ?>>
                                 <td><?php echo $children['id']; ?>&nbsp;</td>
                                 <td><?php echo $children['Priority']['name']; ?></td>
+                                <td><?php echo $children['Safety']['name']; ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $children['origin_date']); ?>&nbsp;</td>
                                 <td class="nowrap"><?php echo $children['Type']['name']; ?></td>
                                 <td><?php echo $children['Origin']['name']; ?></td>

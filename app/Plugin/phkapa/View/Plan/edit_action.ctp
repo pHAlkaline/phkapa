@@ -74,6 +74,17 @@ $class = ' class="altrow"';
                     <dt<?php
                     if ($i % 2 == 0)
                         echo $class;
+                    ?>><?php echo __d('phkapa', 'Safety'); ?></dt>
+                    <dd<?php
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                    <?php echo $ticket['Safety']['name']; ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
                     ?>><?php echo __d('phkapa', 'Origin Date'); ?></dt>
                     <dd<?php
                             if ($i++ % 2 == 0)

@@ -1,3 +1,253 @@
+--> From V1.1.1 to V1.1.2
+- Bugfixes
+- Ticket has now a Safety property ( Thank you to Kieser Michael at dqs-med )
+- History / Revision feature added for Tickets and Actions , more details on wiki.phkapa.net 
+- PHKAPA now registers on Ticket and Actions , last modification user, close user and for action the efectiveness verification user
+- Framework Update All /lib/cakephp directory!!! 
+# Update Files / Directories at at phkapa.net/updateV112.zip file , use your Diff/Merge tool to update or copy to app directory and unzip it!!
+# Dont forget to delete files in tmp/cache models, persistent and view direcories
+
+UPDATE.README
+VERSION.txt
+# Update Database Script--
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+
+ALTER TABLE `phkapa_actions` 
+ADD COLUMN `verify_user_id` INT(11) NULL DEFAULT NULL AFTER `effectiveness_notes`,
+ADD COLUMN `close_user_id` INT(11) NULL DEFAULT NULL AFTER `close_date`,
+ADD COLUMN `modified_user_id` INT(11) NULL DEFAULT NULL AFTER `close_user_id`,
+ADD INDEX `VerifyUserID` (`verify_user_id` ASC),
+ADD INDEX `CloseUserID` (`close_user_id` ASC),
+ADD INDEX `ModifiedUserID` (`modified_user_id` ASC);
+
+CREATE TABLE IF NOT EXISTS  `phkapa_actions_revision` (
+  `version_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `version_description` VARCHAR(250) NOT NULL,
+  `id` INT(11) NOT NULL,
+  `ticket_id` INT(11) NOT NULL DEFAULT '0',
+  `action_type_id` INT(11) NOT NULL DEFAULT '0',
+  `description` TEXT NOT NULL,
+  `deadline` INT(11) NOT NULL DEFAULT '0',
+  `closed` TINYINT(1) NOT NULL DEFAULT '0',
+  `action_effectiveness_id` INT(11) NULL DEFAULT NULL,
+  `effectiveness_notes` TEXT NULL DEFAULT NULL,
+  `verify_user_id` INT(11) NULL DEFAULT NULL,
+  `close_date` DATE NULL DEFAULT NULL,
+  `close_user_id` INT(11) NULL DEFAULT NULL,
+  `modified_user_id` INT(11) NULL DEFAULT NULL,
+  `modified` DATETIME NULL DEFAULT NULL,
+  `created` DATETIME NULL DEFAULT NULL,
+  `version_created` DATETIME NOT NULL,
+  `version_request` VARCHAR(250) NULL DEFAULT NULL,
+  PRIMARY KEY (`version_id`),
+  INDEX `ActionTypeId` (`action_type_id` ASC),
+  INDEX `TicketId` (`ticket_id` ASC),
+  INDEX `ActionEffectivenessId` (`action_effectiveness_id` ASC),
+  INDEX `ActionId` (`id` ASC),
+  INDEX `VerifyUserID` (`verify_user_id` ASC),
+  INDEX `CloseUserID` (`close_user_id` ASC),
+  INDEX `ModifiedUserID` (`modified_user_id` ASC),
+  CONSTRAINT `phkapa_actions_revision_ibfk_1`
+    FOREIGN KEY (`id`)
+    REFERENCES  `phkapa_actions` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_actions_revision_ibfk_2`
+    FOREIGN KEY (`ticket_id`)
+    REFERENCES  `phkapa_tickets` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_actions_revision_ibfk_3`
+    FOREIGN KEY (`action_type_id`)
+    REFERENCES  `phkapa_action_types` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_actions_revision_ibfk_4`
+    FOREIGN KEY (`action_effectiveness_id`)
+    REFERENCES  `phkapa_action_effectivenesses` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_actions_revision_ibfk_5`
+    FOREIGN KEY (`verify_user_id`)
+    REFERENCES  `users` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_actions_revision_ibfk_6`
+    FOREIGN KEY (`close_user_id`)
+    REFERENCES  `users` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_actions_revision_ibfk_7`
+    FOREIGN KEY (`modified_user_id`)
+    REFERENCES  `users` (`id`)
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS  `phkapa_safeties` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL DEFAULT '',
+  `active` TINYINT(1) NOT NULL DEFAULT '1',
+  `order` INT(11) NOT NULL DEFAULT '0',
+  `created` DATETIME NULL DEFAULT NULL,
+  `modified` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `OrderUnique` (`order` ASC))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+--
+-- Dumping data for table `phkapa_safeties`
+--
+
+INSERT INTO `phkapa_safeties` (`id`, `name`, `active`, `order`, `created`, `modified`) VALUES
+(1, 'High', 1, 1, '2013-02-20 20:59:27', '2013-02-20 23:40:24'),
+(2, 'Medium', 1, 2, '2013-02-20 21:00:13', '2013-02-22 23:22:59'),
+(3, 'Low', 1, 3, '2013-02-20 21:00:36', '2013-02-22 23:22:32');
+
+
+ALTER TABLE  `phkapa_tickets` 
+ADD COLUMN `safety_id` INT(11) NOT NULL DEFAULT '0' AFTER `priority_id`,
+ADD INDEX `SupplierIdKey` (`supplier_id` ASC),
+ADD INDEX `SafetyIdKey` (`safety_id` ASC);
+
+CREATE TABLE IF NOT EXISTS  `phkapa_tickets_revision` (
+  `version_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `version_description` VARCHAR(250) NULL DEFAULT NULL,
+  `id` INT(11) NOT NULL,
+  `ticket_parent` INT(11) NULL DEFAULT NULL,
+  `type_id` INT(11) NOT NULL DEFAULT '0',
+  `process_id` INT(11) NOT NULL DEFAULT '0',
+  `priority_id` INT(11) NOT NULL DEFAULT '0',
+  `safety_id` INT(11) NOT NULL DEFAULT '0',
+  `registar_id` INT(11) NOT NULL DEFAULT '0',
+  `activity_id` INT(11) NOT NULL DEFAULT '0',
+  `category_id` INT(11) NOT NULL DEFAULT '0',
+  `origin_id` INT(11) NOT NULL DEFAULT '0',
+  `origin_date` DATE NULL DEFAULT NULL,
+  `supplier_id` INT(11) NULL DEFAULT NULL,
+  `approved` TINYINT(1) NULL DEFAULT NULL,
+  `review_notes` TEXT NULL DEFAULT NULL,
+  `workflow_id` INT(11) NOT NULL DEFAULT '0',
+  `cause_id` INT(11) NULL DEFAULT NULL,
+  `cause_notes` TEXT NULL DEFAULT NULL,
+  `description` TEXT NULL DEFAULT NULL,
+  `close_date` DATE NULL DEFAULT NULL,
+  `close_user_id` INT(11) NULL DEFAULT NULL,
+  `modified_user_id` INT(11) NULL DEFAULT NULL,
+  `modified` DATETIME NULL DEFAULT NULL,
+  `created` DATETIME NULL DEFAULT NULL,
+  `version_created` DATETIME NOT NULL,
+  `version_request` VARCHAR(250) NULL DEFAULT NULL,
+  PRIMARY KEY (`version_id`),
+  INDEX `TypeIdKey` (`type_id` ASC),
+  INDEX `ProcessIdKey` (`process_id` ASC),
+  INDEX `RegistarIdKey` (`registar_id` ASC),
+  INDEX `ActivityIdKey` (`activity_id` ASC),
+  INDEX `OriginIdKey` (`origin_id` ASC),
+  INDEX `WorkflowIdKey` (`workflow_id` ASC),
+  INDEX `CategoryIdKey` (`category_id` ASC),
+  INDEX `CauseIdKey` (`cause_id` ASC),
+  INDEX `TicketParentIdKey` (`ticket_parent` ASC),
+  INDEX `PriorityIdKey` (`priority_id` ASC),
+  INDEX `ClosedUserIdKey` (`close_user_id` ASC),
+  INDEX `ModifiedUserIdKey` (`modified_user_id` ASC),
+  INDEX `TicketId` (`id` ASC),
+  INDEX `SupplierIdKey` (`supplier_id` ASC),
+  CONSTRAINT `phkapa_tickets_revision_ibfk_1`
+    FOREIGN KEY (`id`)
+    REFERENCES  `phkapa_tickets` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_tickets_revision_ibfk_10`
+    FOREIGN KEY (`workflow_id`)
+    REFERENCES  `phkapa_workflows` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_tickets_revision_ibfk_11`
+    FOREIGN KEY (`cause_id`)
+    REFERENCES  `phkapa_causes` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_tickets_revision_ibfk_12`
+    FOREIGN KEY (`close_user_id`)
+    REFERENCES  `users` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_tickets_revision_ibfk_13`
+    FOREIGN KEY (`modified_user_id`)
+    REFERENCES  `users` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_tickets_revision_ibfk_14`
+    FOREIGN KEY (`type_id`)
+    REFERENCES  `phkapa_types` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_tickets_revision_ibfk_15`
+    FOREIGN KEY (`supplier_id`)
+    REFERENCES  `phkapa_suppliers` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_tickets_revision_ibfk_2`
+    FOREIGN KEY (`ticket_parent`)
+    REFERENCES  `phkapa_tickets` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_tickets_revision_ibfk_4`
+    FOREIGN KEY (`process_id`)
+    REFERENCES  `phkapa_processes` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_tickets_revision_ibfk_5`
+    FOREIGN KEY (`priority_id`)
+    REFERENCES  `phkapa_priorities` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_tickets_revision_ibfk_6`
+    FOREIGN KEY (`registar_id`)
+    REFERENCES  `users` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_tickets_revision_ibfk_7`
+    FOREIGN KEY (`activity_id`)
+    REFERENCES  `phkapa_activities` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_tickets_revision_ibfk_8`
+    FOREIGN KEY (`category_id`)
+    REFERENCES  `phkapa_categories` (`id`)
+    ON UPDATE CASCADE,
+  CONSTRAINT `phkapa_tickets_revision_ibfk_9`
+    FOREIGN KEY (`origin_id`)
+    REFERENCES  `phkapa_origins` (`id`)
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+ALTER TABLE  `phkapa_actions` 
+ADD CONSTRAINT `phkapa_actions_ibfk_5`
+  FOREIGN KEY (`verify_user_id`)
+  REFERENCES  `users` (`id`)
+  ON UPDATE CASCADE,
+ADD CONSTRAINT `phkapa_actions_ibfk_6`
+  FOREIGN KEY (`close_user_id`)
+  REFERENCES  `users` (`id`)
+  ON UPDATE CASCADE;
+
+ALTER TABLE  `phkapa_tickets` 
+ADD CONSTRAINT `phkapa_tickets_ibfk_16`
+  FOREIGN KEY (`supplier_id`)
+  REFERENCES  `phkapa_suppliers` (`id`)
+  ON UPDATE CASCADE,
+ADD CONSTRAINT `phkapa_tickets_ibfk_17`
+  FOREIGN KEY (`safety_id`)
+  REFERENCES  `phkapa_safeties` (`id`)
+  ON UPDATE CASCADE;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+--------------------------------------------------------------
+
+
+
 --> From V1.1 to V1.1.1
 # Updated Files / Directories
 Length     Date   Time    Name
@@ -84,133 +334,3 @@ Notification system now also sends notification email.
 Added PDF ticket report on Query -> Ticket -> view
 Framework now is on lib/cakephp 
 New vendor class added on vendors/dompdf
-
-
-
---> From V1.0.8 to V1.0.9
-# Updated Files / Directories
-UPDATE.README
-VERSION.txt
-app/View/Elements/searchBox.ctp
-app/Plugin/phkapa/View/Elements/searchBox.ctp
-lib/Cake/* ( All Files and Directories )
-- Framework update
-- Small bugs fixed ( searchForm )
-
-
---> From V1.0.7 to V1.0.8
-# Updated Files / Directories
-LICENSE.txt
-PHKAPA.README
-README.md
-VERSION.txt
-app/Plugin/phkapa/Controller/PhkapaAppController.php
-app/Plugin/phkapa/Controller/QueryController.php
-app/Plugin/phkapa/Controller/TicketsController.php
-app/Plugin/phkapa/webroot/js/register_add.js
-app/Plugin/phkapa/webroot/js/ticket_add.js
-app/Plugin/phkapa/Locale/* ( All Files and Directories )
-app/Locale/pt_BR/* ( All Files and Directories )
-app/webroot/js/aro_add_edit.js
-app/Config/bootstrap_phapp.php
-app/Config/routes.php
-app/Config/routes_phapp.php
-lib/Cake/* ( All Files and Directories )
-- Framework update
-- Small bugs fixed ( on Register forms add/edit ajax )
-- Portuguese ( Brasil ) translation added
-
---> From V1.0.6 to V1.0.7
-
-# Updated Files / Directories
-LICENSE.txt
-PHKAPA.README
-app/Plugin/phkapa/Controller/PhkapaAppController.php
-lib/Cake/* ( All Files and Directories )
-- Framework update
-- Small bug fixed
-
---> From V1.0.5 to V1.0.6
-# Create notifications Table --
--- Table structure for table `notifications` changed
---
-DROP TABLE IF EXISTS `notifications`;
-CREATE TABLE IF NOT EXISTS `notifications` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `notifier_id` int(11) NOT NULL,
-  `notified_id` int(11) NOT NULL,
-  `reference` varchar(500) NOT NULL,
-  `notification` text NOT NULL, 
-  `read` tinyint(1) NOT NULL DEFAULT '0', -> Changed
-  `modified` datetime DEFAULT NULL, ->Changed
-  `created` datetime DEFAULT NULL, -> Changed
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-
-# Update all Files / Directories
-# including lib/Cake/* ( All Files and Directories )
-- Minor big fixes
-- Framework Update
-
---> From V1.0.4 to V1.0.5
-
-# Update all Files / Directories
-# including lib/Cake/* ( All Files and Directories )
-- Framework update
-- Small bugs fixed
-- Some UI bugs cleared
-- Allows selection of language at login
-
---> From V1.0.3 to V1.0.4
-
-# Create notifications Table --
--- Table structure for table `notifications`
---
-DROP TABLE IF EXISTS `notifications`;
-CREATE TABLE `notifications` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
-	`notifier_id` int(11) NOT NULL,
-	`notified_id` int(11) NOT NULL,
-	`reference` varchar(500) NOT NULL,
-	`notification` text NOT NULL,
-	`read` tinyint(1) NOT NULL,
-	`modified` datetime NOT NULL,
-	`created` datetime NOT NULL,
-	PRIMARY KEY (`id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
-# Update all Files / Directories
-# including lib/Cake/* ( All Files and Directories )
-
-- Some UI bugs cleared
-- New UI features 
-- Registar now apears on all views
-- User can change profile
-- Added icons with navigation links at top bar
-- Framework update
-- Notification System
-- Small bugs fixed
-
---> From V1.0.2 to V1.0.3
-
-# Update all Files / Directories
-except lib/Cake/* ( All Files and Directories )
-
---> From V1.0.1 to V1.0.2
-
-# Updated Files / Directories
-lib/Cake/* ( All Files and Directories )
-
---> From V1.0.0 to V1.0.1
-
-# Updated Files / Directories
-INSTALATTION.README
-LICENSE.txt
-SUPPORT.README
-app/Plugin/phkapa/View/Plan/edit.ctp
-app/Plugin/phkapa/webroot/js/register_add.js
-lib/Cake/* ( All Files and Directories )
-
-#Added Files
-README.md
-VERSION.txt
-UPDATE.README

@@ -12,6 +12,7 @@
  * @link     http://phkapa.net
  */
 class Ticket extends PhkapaAppModel {
+    public $actsAs = array('Revision');
     /**
      * Model name
      *
@@ -32,7 +33,7 @@ class Ticket extends PhkapaAppModel {
      * @var mixed  string or array
      * @access public
      */
-    public $order = array("Priority.order" => "DESC", "Ticket.created" => "DESC");
+    //public $order = array('Ticket.id'=>'desc'); //"Priority.order" => "DESC", 
     /**
      * Validation
      *
@@ -68,6 +69,16 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'priority_id' => array(
+            'notempty' => array(
+                'rule' => array('notempty'),
+                'message' => 'Choose one option',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'safety_id' => array(
             'notempty' => array(
                 'rule' => array('notempty'),
                 'message' => 'Choose one option',
@@ -171,7 +182,7 @@ class Ticket extends PhkapaAppModel {
         ),
         'close_user_id' => array(
             'checkWorkflow' => array(
-                'rule' => array('checkCloseByIdWorkflow'),
+                'rule' => array('checkCloseUserByWorkflow'),
                 'message' => 'This workflow requires close by',
                 
             ),
@@ -214,6 +225,16 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'priority_id' => array(
+            'notempty' => array(
+                'rule' => array('notempty'),
+                'message' => 'Choose one option',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'safety_id' => array(
             'notempty' => array(
                 'rule' => array('notempty'),
                 'message' => 'Choose one option',
@@ -308,6 +329,13 @@ class Ticket extends PhkapaAppModel {
         'Priority' => array(
             'className' => 'Phkapa.Priority',
             'foreignKey' => 'priority_id',
+            'conditions' => '',
+            'fields' => array('id', 'name'),
+            'order' => ''
+        ),
+        'Safety' => array(
+            'className' => 'Phkapa.Safety',
+            'foreignKey' => 'safety_id',
             'conditions' => '',
             'fields' => array('id', 'name'),
             'order' => ''
@@ -408,7 +436,7 @@ class Ticket extends PhkapaAppModel {
             'className' => 'Phkapa.Ticket',
             'foreignKey' => 'ticket_parent',
             'conditions' => '',
-            //'fields' => array('id'),
+            'fields' => '',
             'order' => '',
             'limit' => '',
             'offset' => '',
@@ -418,6 +446,13 @@ class Ticket extends PhkapaAppModel {
             'dependent' => true
         ),
     );
+    
+    
+    public function beforeDelete($cascade = true) {
+        debug($this->order);
+        $this->order=array();
+        parent::beforeDelete($cascade);
+    }
 
     /**
      * Custom validation rule
@@ -449,7 +484,6 @@ class Ticket extends PhkapaAppModel {
         
         
         if ($check['close_date']==null) return true;
-        
         $close_date = strtotime($check['close_date']);
         $origin_date=strtotime($this->data['Ticket']['origin_date']);
         $today = strtotime(Date('Y-m-d H:i:s'));
@@ -487,7 +521,7 @@ class Ticket extends PhkapaAppModel {
      * @access public
      * @return boolean
      */
-    public function checkCloseByIdWorkflow($check) {
+    public function checkCloseUserByWorkflow($check) {
         return ($this->data['Ticket']['workflow_id'] == 5 && $check['close_user_id'] == null) ? false : true;
     }
 

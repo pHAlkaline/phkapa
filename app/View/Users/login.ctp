@@ -4,10 +4,14 @@
         <?php echo $this->Form->create('User'); ?>
         <fieldset class="ui-corner-all ui-widget-content" >
             <?php
-            echo $this->Form->input('username',array('maxlength'=>'8','label' => __('Username')));
-            echo $this->Form->input('password',array('maxlength'=>'8','label' => __('Password')));
-            echo $this->Form->input('language', array('options' => Configure::read('Language.list'),'empty' => '(choose one)'));
+            echo $this->Form->input('username', array('maxlength' => '8', 'label' => __('Username')));
+            echo $this->Form->input('password', array('maxlength' => '8', 'label' => __('Password')));
+            echo $this->Form->input('language', array('options' => Configure::read('Language.list'), 'empty' => '(choose one)'));
             ?>
+            <div class="input">
+                <label></label>
+                <div><?php echo __('Time Zone'); ?>&nbsp;<?php echo Configure::read('Config.timezone'); ?></div>
+            </div>
 
         </fieldset>
         <?php echo $this->Form->end(__('Start Session')); ?>

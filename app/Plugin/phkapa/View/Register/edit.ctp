@@ -42,6 +42,8 @@
             echo $this->Form->input('description',array('label' => __d('phkapa','Description')));
              echo "<br/>";
             echo $this->Form->input('priority_id', array('label' => __d('phkapa','Priority'),'empty' => __d('phkapa','(choose one)')));
+            echo $this->Form->input('safety_id', array('label' => __d('phkapa','Safety'),'empty' => __d('phkapa','(choose one)')));            
+            
             if (isset($this->request->data['Ticket']['ticket_parent'])) :
                 echo "<hr/>";
                 echo $this->Form->input('ticket_parent',array('min'=>'0','label' => __d('phkapa','Ticket Parent')));

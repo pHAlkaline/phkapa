@@ -29,6 +29,7 @@
             <ul class="menu">
 
                 <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Priority')), array('controller' => 'priorities', 'action' => 'add')); ?> </li>
+                <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Safety')), array('controller' => 'safeties', 'action' => 'add')); ?> </li>
 
                 <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Type')), array('controller' => 'types', 'action' => 'add')); ?> </li>
                 <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Origin')), array('controller' => 'origins', 'action' => 'add')); ?> </li>
@@ -114,6 +115,17 @@
                             echo $class;
                             ?>>
                             <?php echo $this->Html->link($ticket['Priority']['name'], array('controller' => 'priorities', 'action' => 'view', $ticket['Priority']['id'])); ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
+                            ?>><?php echo __d('phkapa', 'Safety'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                            ?>>
+                            <?php echo $this->Html->link($ticket['Safety']['name'], array('controller' => 'safeties', 'action' => 'view', $ticket['Safety']['id'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -319,14 +331,14 @@
                         <thead class="ui-state-default"
                                <tr>
                                 <th><?php echo __d('phkapa', 'Id'); ?></th>
-
                                 <th><?php echo __d('phkapa', 'Action Type'); ?></th>
-                                <th><?php echo __d('phkapa', 'Description'); ?></th>
-                                <th><?php echo __d('phkapa', 'Deadline'); ?></th>
                                 <th><?php echo __d('phkapa', 'Closed'); ?></th>
+                                <th><?php echo __d('phkapa', 'Closed By'); ?></th>
                                 <th><?php echo __d('phkapa', 'Close Date'); ?></th>
                                 <th><?php echo __d('phkapa', 'Effectiveness'); ?></th>
-                                <th><?php echo __d('phkapa', 'Effectiveness Notes'); ?></th>
+                                <th><?php echo __d('phkapa', 'Verified By'); ?></th>
+                                <th><?php echo __d('phkapa', 'Last Modification By'); ?></th>
+                                <th><?php echo __d('phkapa', 'Modified'); ?></th>
                                 <th><?php echo __d('phkapa', 'Created'); ?></th>
                                 <th class="actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></th>
                             </tr>
@@ -342,22 +354,23 @@
                             ?>
                             <tr<?php echo $class; ?>>
                                 <td><?php echo $action['id']; ?></td>
-
                                 <td><?php echo $action['ActionType']['name']; ?></td>
-                                <td><?php echo $action['description']; ?></td>
-                                <td><?php echo $action['deadline'] . ' ' . __d('phkapa', 'Days'); ?></td>
                                 <td><?php echo $this->Utils->yesOrNo($action['closed']); ?></td>
+                                <td><?php if (isset($action['CloseUser']['name'])) echo $action['CloseUser']['name']; ?></td>
                                 <td class="nowrap">
                                     <?php
                                     if ($action['close_date'] != '')
                                         echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']);
                                     ?>
                                 </td>
+                                
                                 <td><?php
                             if (isset($action['ActionEffectiveness']['name']))
                                 echo $action['ActionEffectiveness']['name'];
                                     ?></td>
-                                <td><?php echo $action['effectiveness_notes']; ?></td>
+                                <td><?php if (isset($action['VerifyUser']['name'])) echo $action['VerifyUser']['name']; ?></td>
+                                <td><?php echo $action['ModifiedUser']['name']; ?></td>
+                                <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['modified']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
                                 <td class="actions">
                                     <?php echo $this->Html->link(__d('phkapa', 'View'), array('controller' => 'actions', 'action' => 'view', $action['id'])); ?>
@@ -436,8 +449,54 @@
                     </div>
                 <?php endif; ?>
             </div>
+            <div class="related">
+                <h3><?php echo __dn('phkapa', 'Revision','Revisions',2); ?></h3>
+                <?php if (!empty($ticket_revisions)): ?>
+                    <table cellpadding = "0" cellspacing = "0">
+                        <thead class="ui-state-default"
+                               <tr>
+                                <th><?php echo __d('phkapa', 'Id'); ?></th>
+                                <th><?php echo __d('phkapa', 'Request'); ?></th>
+                                <th><?php echo __d('phkapa', 'Workflow'); ?></th>
+                                <th><?php echo __d('phkapa', 'Modified'); ?></th>
+                                <th><?php echo __d('phkapa', 'Last Modification By'); ?></th>
+                                <th><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></th>
+
+                            </tr>
+                        </thead>
+                        <?php
+                        $i = 0;
+                        foreach ($ticket_revisions as $revision):
+                            $revision['Ticket']=$revision['Revision_Ticket'];
+                            
+                            $class = null;
+                            if ($i++ % 2 == 0) {
+                                $class = ' class="altrow"';
+                            }
+                            ?>
+                            <tr<?php echo $class; ?>>
+                                <td><?php echo $revision['Ticket']['version_id']; ?>&nbsp;</td>
+                                <td><?php echo $revision['Ticket']['version_request']; ?>&nbsp;</td>
+                                
+                                <td>
+                                    <?php echo $revision['Workflow']['name']; ?>
+                                </td>
+                                <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormat'), $revision['Ticket']['modified']); ?>&nbsp;</td>
+                                <td>
+                                    <?php echo $revision['ModifiedUser']['name']; ?>
+                                </td>
+                                <td class="actions">
+                                    <?php echo $this->Html->link(__d('phkapa', 'View'), array('action' => 'view_revision', $revision['Ticket']['version_id'], $revision['Ticket']['id'])); ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        <?php //echo '<tfoot class=\'dark\'>'.$tableHeaders.'</tfoot>';    ?>    </table>
+                <?php endif; ?>
+
+                
+            </div>
         </div>
     </div>
-
+    
 </div>
 <div class="clear"></div>

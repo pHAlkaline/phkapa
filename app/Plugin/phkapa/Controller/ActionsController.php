@@ -73,6 +73,31 @@ class ActionsController extends PhkapaAppController {
             $this->redirect(array('action' => 'index'));
         }
         $this->set('action', $this->Action->read(null, $id));
+        
+        if (in_array($this->Action->name,Configure::read('Revision.tables'))){
+           $this->set('action_revisions', $this->Action->revisions()); 
+        }
+    }
+    
+    
+    /**
+     * Admin view revision
+     *
+     * @param integer $id
+     * @return void
+     * @access public
+     */
+    public function admin_view_revision($id = null, $actionId =null) {
+        if (!$id || !$actionId || !in_array($this->Action->name,Configure::read('Revision.tables'))) {
+            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->redirect(array('action' => 'view',$actionId));
+        }
+        
+        $this->Action->id=$actionId;
+        $revision=$this->Action->revisions(array('conditions'=>array('version_id'=>$id)));
+        $this->set('action',$revision[0] );
+        
+        
     }
 
      /**
@@ -128,8 +153,10 @@ class ActionsController extends PhkapaAppController {
         }
         $tickets = $this->Action->Ticket->find('list',array('order'=>array('Ticket.id'),'recursive'=>0));
         $actionTypes = $this->Action->ActionType->find('list');
+        $verifyUsers = $this->Action->VerifyUser->find('list');
+        $closeUsers = $this->Action->CloseUser->find('list');
         $actionEffectivenesses = $this->Action->ActionEffectiveness->find('list');
-        $this->set(compact('tickets', 'actionTypes', 'actionEffectivenesses'));
+        $this->set(compact('tickets', 'actionTypes', 'actionEffectivenesses', 'verifyUsers', 'closeUsers'));
     }
 
     /**

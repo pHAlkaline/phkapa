@@ -13,6 +13,7 @@
  * @link     http://phkapa.net
  */
 class ReviewController extends PhkapaAppController {
+
     /**
      * List of Components for this Controller
      *
@@ -20,7 +21,7 @@ class ReviewController extends PhkapaAppController {
      * @access public
      */
     public $components = array('RequestHandler');
-    
+
     /**
      * Controller name
      *
@@ -60,6 +61,7 @@ class ReviewController extends PhkapaAppController {
      * @access public
      */
     public $processOptions = array();
+
     /**
      * Filter from Process model
      *
@@ -124,14 +126,14 @@ class ReviewController extends PhkapaAppController {
     public function edit($id = null) {
         $this->Ticket->recursive = 0;
         $this->_setupModel();
-        $ticket = $this->Ticket->find('first', array('order'=>'','conditions' => array('Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
+        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         if (!$id || count($ticket) == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->request->data)) {
-            if ($this->request->data['Ticket']['approved']==''){
-                $this->request->data['Ticket']['approved']=null;
+            if ($this->request->data['Ticket']['approved'] == '') {
+                $this->request->data['Ticket']['approved'] = null;
             }
             if ($this->Ticket->save($this->request->data)) {
                 $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
@@ -144,18 +146,16 @@ class ReviewController extends PhkapaAppController {
             $this->request->data = $ticket;
         }
         $priorities = $this->Ticket->Priority->find('list', array('conditions' => array('Priority.active' => '1')));
+        $safeties = $this->Ticket->Safety->find('list', array('conditions' => array('Safety.active' => '1')));
         $this->_setOptions();
         $this->request->data['Ticket']['process_change'] = '';
         $types = $this->Ticket->Type->find('list', array('conditions' => array('Type.active' => '1')));
-        $priorities = $this->Ticket->Priority->find('list', array('conditions' => array('Priority.active' => '1')));
         $suppliers = $this->Ticket->Supplier->find('list', array('conditions' => array('Supplier.active' => '1')));
         $processes = $this->Ticket->Process->find('list', array('conditions' => array('Process.active' => '1')));
         $activities = $this->Ticket->Activity->find('list', $this->activityOptions);
         $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
         $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
-        $this->set(compact('ticket', 'types', 'priorities', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
-    
-        
+        $this->set(compact('ticket', 'types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
     }
 
     /**
@@ -167,15 +167,21 @@ class ReviewController extends PhkapaAppController {
      */
     public function send($id = null) {
         $this->Ticket->recursive = -1;
+        $this->Ticket->order = null;
         $this->_setupModel();
-        $ticketCount = $this->Ticket->find('count', array('order'=>'','conditions' => array('Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
+        $ticketCount = $this->Ticket->find('count', array('order' => '', 'conditions' => array('Ticket.approved' => 1, 'Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if (!$id || $ticketCount == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-        $now=$this->Ticket->timeFormatedField('modified',time());
-        if ($this->Ticket->updateAll(array('Ticket.workflow_id' => '3','Ticket.modified_user_id' => $this->Auth->user('id'), 'Ticket.modified' => '"'.$now.'"'), array('Ticket.workflow_id' => '2','Ticket.approved' => 1,'Ticket.id' => $id))) {
+        //$now = $this->Ticket->timeFormatedField('modified', time());
+        $this->Ticket->read(null, $id);
+        $this->Ticket->set(array(
+            'workflow_id' => 3,
+            'modified_user_id' => $this->Auth->user('id')
+        ));
+        if ($this->Ticket->save()) {
             $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
             $this->redirect(array('action' => 'index'));
         }
@@ -192,8 +198,9 @@ class ReviewController extends PhkapaAppController {
      */
     public function close($id = null) {
         $this->Ticket->recursive = -1;
+        $this->Ticket->order = null;
         $this->_setupModel();
-        $ticket = $this->Ticket->find('first', array('order'=>'','conditions' => array('Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
+        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.approved' => '0', 'Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if (!$id || count($ticket) == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
@@ -201,18 +208,20 @@ class ReviewController extends PhkapaAppController {
         }
 
         $workflowId = 5;
-        $now=$this->Ticket->timeFormatedField('modified',time());
-        $nowClose=$this->Ticket->timeFormatedField('close_date',time());
-        if (isset($ticket['Ticket']['approved']) && $ticket['Ticket']['approved'] == 0) {
-            if ($this->Ticket->updateAll(array('Ticket.workflow_id' => $workflowId, 'Ticket.modified_user_id' => $this->Auth->user('id'), 'Ticket.modified' => '"'.$now.'"', 'Ticket.close_user_id' =>$this->Auth->user('id'), 'Ticket.close_date' => '"'.$nowClose.'"'), array('Ticket.id' => $id, 'Ticket.workflow_id' => '2','Ticket.approved' => 0))) {
-                $this->_addNotification($id,__d('phkapa','Ticket # %s has been closed', $id));
-                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
-                $this->redirect(array('action' => 'index'));
-            }
+        $now = $this->Ticket->timeFormatedField('modified', time());
+        $nowClose = $this->Ticket->timeFormatedField('close_date', time());
+        $this->Ticket->read(null, $id);
+        $this->Ticket->set(array(
+            'workflow_id' => $workflowId,
+            'close_date' => $nowClose,
+            'close_user_id' => $this->Auth->user('id'),
+            'modified_user_id' => $this->Auth->user('id')
+        ));
+        if ($this->Ticket->save()) {
+            $this->_addNotification($id, __d('phkapa', 'Ticket # %s has been closed', $id));
+            $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
+            $this->redirect(array('action' => 'index'));
         }
-
-
-
         $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
         $this->redirect(array('action' => 'index'));
     }
@@ -227,7 +236,7 @@ class ReviewController extends PhkapaAppController {
     protected function _setupModel() {
         // belongsTo 'Type','Process','Registar','Activity','Category','Supplier','Origin','Cause','Workflow','Parent'
         $this->Ticket->unbindModel(array(
-            'belongsTo' => array( 'Workflow', 'Parent')
+            'belongsTo' => array('Workflow', 'Parent')
                 ), false);
 
 
@@ -251,7 +260,7 @@ class ReviewController extends PhkapaAppController {
         $this->Ticket->Category->unbindModel(array(
             'hasAndBelongsToMany' => array('Process', 'Cause')), false);
     }
-    
+
     /**
      * Set filter from models : Process , Activity , Category
      *
@@ -260,7 +269,7 @@ class ReviewController extends PhkapaAppController {
      */
     protected function _setOptions() {
 
-        
+
         $process_id = -1;
         if (isset($this->request->data['Ticket']['process_id']) && $this->request->data['Ticket']['process_id'] != '') {
             $process_id = $this->request->data['Ticket']['process_id'];

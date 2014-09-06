@@ -34,12 +34,21 @@ msgstr ""
 msgid "Action is closed, must have closed date"
 msgstr ""
 
+msgid "Action requires closed by"
+msgstr ""
+
 msgid "Action type"
 msgid_plural "Action types"
 msgstr[0] ""
 msgstr[1] ""
 
 msgid "Action type requires verification on close"
+msgstr ""
+
+msgid "Action type requires verified by"
+msgstr ""
+
+msgid "Action type requires closed by"
 msgstr ""
 
 msgid "Active"
@@ -317,6 +326,14 @@ msgstr ""
 msgid "Replan"
 msgstr ""
 
+msgid "Request"
+msgstr ""
+
+msgid "Revision"
+msgid_plural "Revisions"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "Review"
 msgstr ""
 
@@ -325,6 +342,11 @@ msgstr ""
 
 msgid "Role"
 msgstr ""
+
+msgid "Safety"
+msgid_plural "Safeties"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Saved with success."
 msgstr ""
@@ -364,6 +386,9 @@ msgstr ""
 msgid "This workflow requires close date"
 msgstr ""
 
+msgid "This workflow requires close by"
+msgstr ""
+
 msgid "Ticket"
 msgid_plural "Tickets"
 msgstr[0] ""
@@ -400,7 +425,16 @@ msgstr ""
 msgid "Verification"
 msgstr ""
 
+msgid "Verified By"
+msgstr ""
+
 msgid "Verify"
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid "Version Created"
 msgstr ""
 
 msgid "View"

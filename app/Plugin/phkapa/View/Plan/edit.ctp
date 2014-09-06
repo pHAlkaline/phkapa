@@ -144,6 +144,28 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                     <dt<?php
                         if ($i % 2 == 0)
                             echo $class;
+                        ?>><?php echo __d('phkapa', 'Safety'); ?></dt>
+                    <dd<?php
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                        ?>>
+                        <?php echo $ticket['Safety']['name']; ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                        if ($i % 2 == 0)
+                            echo $class;
+                        ?>><?php echo __d('phkapa', 'Safety'); ?></dt>
+                    <dd<?php
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                        ?>>
+                        <?php echo $ticket['Safety']['name']; ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                        if ($i % 2 == 0)
+                            echo $class;
                         ?>><?php echo __d('phkapa', 'Origin Date'); ?></dt>
                     <dd<?php
                     if ($i++ % 2 == 0)
@@ -302,8 +324,9 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                                     <th><?php echo __d('phkapa', 'Created'); ?></th>
                                     <th><?php echo __d('phkapa', 'Deadline'); ?></th>
                                     <th><?php echo __d('phkapa', 'Expiry'); ?></th>
-                                    <th><?php echo __d('phkapa', 'Close Date'); ?></th>
                                     <th><?php echo __d('phkapa', 'Closed'); ?></th>
+                                    <th><?php echo __d('phkapa', 'Closed By'); ?></th>
+                                    <th><?php echo __d('phkapa', 'Close Date'); ?></th>
                                     <th class="actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></th>
                                     <th></th>
                                 </tr>
@@ -342,12 +365,13 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
                                     <td class="nowrap"><?php echo $action['deadline'] . ' ' . __d('phkapa', 'Days'); ?></td>
                                     <td class="nowrap <?php echo $red ?>"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $expiry) . ' ' . $deadlineAgo; ?></td>
+                                    <td class="nowrap"><?php echo $this->Utils->yesOrNo($action['closed']); ?></td>
+                                    <td><?php if (isset($action['CloseUser']['name'])) echo $action['CloseUser']['name']; ?>&nbsp;</td>
                                     <td class="nowrap"><?php
                     if ($action['close_date'])
                         echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']);
                                 ?></td>
-                                    <td class="nowrap"><?php echo $this->Utils->yesOrNo($action['closed']); ?></td>
-
+                                    
 
                                     <td class="nowrap actions">
                                         <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit_action', $action['id'], $ticket['Ticket']['id'])); ?>

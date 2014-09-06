@@ -15,4 +15,19 @@
  */
 App::uses('Model', 'Model');
 class AppModel extends Model {
+    
+    /**
+     * Model revision version_description
+     *
+     * @var string
+     * @access public
+     */
+    public $version_description = null;
+    /**
+     * Model revision version_request
+     *
+     * @var string
+     * @access public
+     */
+     public $version_request = null;
 }
