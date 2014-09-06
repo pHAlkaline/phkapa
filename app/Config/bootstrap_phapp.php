@@ -30,7 +30,7 @@ Configure::write('Maintenance.offline_destroy_session', false); // true or false
  * By defaut available for Ticket and Action tables
  * 
  */
-Configure::write('Revision.tables', array('Ticket','Action')); // Use Ticket , Action or Both 
+Configure::write('Revision.tables', array()); // Use Ticket , Action or Both => array('Ticket','Action')
 
 
 /**
