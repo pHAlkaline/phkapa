@@ -3,16 +3,22 @@
 /**
  * Default app settings
  */
-Configure::write('Config.language', 'eng'); // por - Portuguese , eng - english
+
+/**
+ * Languages available
+ */
+Configure::write('Config.language', 'eng'); 
 Configure::write('Language.list',array(
     'eng'=>'English',
     'deu'=>'Deutsch',
     'por'=>'Português',
     'pt_BR'=>'Portugues ( Brasil )',
-    )); // Languages Available
+    )); 
 
+/**
+ * Datetime Settings
+ */
 Configure::write('Config.timezone', 'Europe/London'); // Europe/Lisbon
-
 Configure::write('dateFormat', 'd-m-Y H:i:s'); // Date Format with time
 Configure::write('dateFormatSimple', 'd-m-Y'); // Date Format without time
 Configure::write('Application.mode', 'phkapa'); // phkapa , demo , use demo for demo mode;
@@ -26,12 +32,10 @@ Configure::write('Maintenance.site_offline_url', '/pages/offline');
 Configure::write('Maintenance.offline_destroy_session', false); // true or false , with true - Offline will destroy user sessions
 
 /**
- * Settings for revision / history behaviour
- * By defaut available for Ticket and Action tables
- * 
- */
+* Settings for revision / history behavior
+* By default available for Ticket and Action tables
+*/
 Configure::write('Revision.tables', array()); // Use Ticket , Action or Both => array('Ticket','Action')
-
 
 /**
  * The settings below can be used to open access to all users or one specified user.

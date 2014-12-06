@@ -3,11 +3,9 @@
 **PHKAPA** , Nonconformity management software for quality assurance. Allows to generate action (CAPA) requests that routes through register, review, plan ( root cause , action plan) , and verification stages. It provides effective mechanisms to determinate the source and cost of problems, released under [MIT License]
 
 Features:
-Actions, Action Effectiveness, Action Types, Activities, Processes, Categories, Causes, Origins, Priorities, Safeties, Suppliers, Ticket Types.
-Simple Workflow
-Advanced Access/Restrict to Ticket Stages.
-Makes History/Revision for Ticket and Action records. 
-Internal Notification system including email Notification.
+Actions, Action Effectiveness, Action Type, Activity, Process, Category, Cause, Origin, Priority, Safety, Supplier, Ticket Type, Related Ticket, Simple Workflow, Advanced Access/Restrict to Ticket Stages, History/Revision for Ticket and Action records,  Internal Notification system including Email Notification.
+Tracks:
+Verify Ticket/Action User, Modify Ticket/Action User, Close Ticket/Action User, Last Modification User, Last Modification Date, Registar User and many more
 
 Official website: [http://phkapa.net](http://phkapa.net)
 WIKI website: [http://wiki.phkapa.net](http://wiki.phkapa.net)

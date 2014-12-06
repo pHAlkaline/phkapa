@@ -2,7 +2,7 @@
 - Bugfixes
 - Ticket has now a Safety property ( Thank you to Kieser Michael at dqs-med )
 - History / Revision feature added for Tickets and Actions , more details on wiki.phkapa.net 
-- PHKAPA now registers on Ticket and Actions , last modification user, close user and for action the efectiveness verification user
+- PHKAPA now registers on Ticket and Actions , last modification user, close user and for action the effectiveness verification user
 - Framework Update All /lib/cakephp directory!!! 
 # Update Files / Directories at at phkapa.net/updateV112.zip file , use your Diff/Merge tool to update or copy to app directory and unzip it!!
 # Dont forget to delete files in tmp/cache models, persistent and view direcories
