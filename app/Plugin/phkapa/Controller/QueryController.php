@@ -13,14 +13,13 @@
  * @link     http://phkapa.net
  */
 class QueryController extends PhkapaAppController {
-    
+
     /**
      * Components
      *
      * @var array
      */
     public $components = array('RequestHandler');
-
 
     /**
      * Controller name
@@ -112,32 +111,31 @@ class QueryController extends PhkapaAppController {
     public function view($id = null) {
         $this->Ticket->recursive = 2;
         $this->_setupModel();
-        $ticket = $this->Ticket->find('first', array('order'=>'', 'conditions' => array('AND' => array('Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
+        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('AND' => array('Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
         if (!$id || count($ticket) == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             //$this->redirect(array('action' => 'index'));
         }
-        
-        
+
+
         $this->set('ticket', $ticket);
     }
-    
+
     /**
      * view_action
      *
      * @param integer $id
      * @return void
      * @access public
-     */ 
+     */
     public function view_action($id = null) {
         if (!$id) {
-            $this->Session->setFlash(__d('phkapa','Invalid request.'), 'flash_message_error');
+            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
         $this->set('action', $this->Ticket->Action->read(null, $id));
-        
     }
-    
+
     /**
      * pdf method
      *
@@ -150,13 +148,13 @@ class QueryController extends PhkapaAppController {
         ini_set('memory_limit', '256M');
         $this->Ticket->recursive = 2;
         $this->_setupModel();
-        $ticket = $this->Ticket->find('first', array('order'=>'', 'conditions' => array('AND' => array('Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
+        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('AND' => array('Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
         if (!$id || count($ticket) == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             //$this->redirect(array('action' => 'index'));
         }
-        
-        
+
+
         $this->set('ticket', $ticket);
     }
 
@@ -177,7 +175,7 @@ class QueryController extends PhkapaAppController {
             $range['start'] = $this->request->data['Ticket']['startdate'];
             $range['end'] = $this->request->data['Ticket']['enddate'];
 // . ' ' . $range['start']['hour'] . ':' . $range['start']['min']  -- . ' ' . $range['end']['hour'] . ':' . $range['end']['min']
-            $data = $this->Ticket->find('all', array('order'=>'Ticket.created','conditions' => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'] , $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day'] ), "AND" => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
+            $data = $this->Ticket->find('all', array('order' => 'Ticket.created', 'conditions' => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'], $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day']), "AND" => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
             $this->set('tickets', $data);
 //debug($data);
             $this->render('xls_data', 'export');

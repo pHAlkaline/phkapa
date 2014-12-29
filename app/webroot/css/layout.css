@@ -462,7 +462,7 @@ div#maintenanceMessage{
     cursor:pointer;
 }
 
-div#flashMessage,  { /* div#maintenanceMessage */
+div#flashMessage  { /* div#maintenanceMessage */
     padding: 10px;
     margin: 0px 13px 10px 11px;
     font-size: 14px;
@@ -533,6 +533,7 @@ div.error-message {
 
 .submit {
     padding-left: 196px;
+    padding-bottom: 10px;
 }
 
 
