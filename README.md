@@ -11,8 +11,8 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
 
 
 ## Requirements
-  * Apache 2 with `mod_rewrite` or similar
-  * PHP 5.2 or higher
+  * HTTP Server. For example: Apache. mod_rewrite is preferred, but by no means required
+  * PHP 5.2.8 or greater.
   * MySQL 5 or higher
 
 ## Git install 
