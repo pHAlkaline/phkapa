@@ -11,7 +11,7 @@
                     <?php if ($user['User']['id']!=1) : ?>
                     <li><?php echo $this->Html->link(__('Edit %s', __('User')), array('action' => 'edit', $user['User']['id'])); ?> </li>
                     <li>
-                        <?php echo $this->Html->link(__('Delete %s', __('User')), array('action' => 'delete', $user['User']['id']), null, __('Are you sure you want to delete # %s?', $user['User']['name'])); ?>
+                        <?php echo $this->Html->link(__('Delete %s', __('User')), array('action' => 'delete', $user['User']['id']),array('confirm'=>__('Are you sure you want to delete # %s?', $user['User']['name']))); ?>
                         
                     </li>
                     <?php endif; ?>

@@ -8,7 +8,7 @@
         <div class="block" id="admin-actions">			
             <h5><?php echo __dn('phkapa','Supplier','Suppliers',2); ?></h5>
             <ul class="menu">
-                <li><?php echo $this->Html->link(__d('phkapa','Delete'), array('action' => 'delete', $this->Form->value('Supplier.id')), null, __d('phkapa','Are you sure you want to delete # %s?', $this->Form->value('Supplier.id'))); ?></li>
+                <li><?php echo $this->Html->link(__d('phkapa','Delete'), array('action' => 'delete', $this->Form->value('Supplier.id')), array('confirm'=> __d('phkapa','Are you sure you want to delete # %s?', $this->Form->value('Supplier.id')))); ?></li>
                 <li><?php echo $this->Html->link(__d('phkapa','List %s', __dn('phkapa','Supplier','Suppliers',2)), array('action' => 'index')); ?></li>
             </ul>
 

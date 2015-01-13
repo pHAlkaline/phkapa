@@ -69,7 +69,7 @@
                     <td class="actions">
                         <?php echo $this->Html->link(__d('phkapa', 'View'), array('action' => 'view', $ticket['Ticket']['id'])); ?>
                         <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit', $ticket['Ticket']['id'])); ?>
-                        <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'delete', $ticket['Ticket']['id']), array('escape' => false), __d('phkapa', 'Are you sure you want to delete # %s?', $ticket['Ticket']['id']) . ' ' . __d('phkapa', 'Related Child Tickets and actions will also be deleted!!')); ?>
+                        <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'delete', $ticket['Ticket']['id']), array('escape' => false, 'confirm'=>__d('phkapa', 'Are you sure you want to delete # %s?', $ticket['Ticket']['id']) . ' ' . __d('phkapa', 'Related Child Tickets and actions will also be deleted!!'))); ?>
                     </td>
 
                 </tr>

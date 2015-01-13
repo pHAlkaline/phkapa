@@ -41,7 +41,7 @@
             $editurl = $this->Html->link(__('Edit'), array('action' => 'edit', $key));
             $upurl = $this->Html->link(__('Up'), array('action' => 'moveup', $key));
             $downurl = $this->Html->link(__('Down'), array('action' => 'movedown', $key));
-            $deleteurl = $this->Html->link(__('Delete'), array('action' => 'delete', $key), null, __('Are you sure you want to delete # %s?', $value) .'. '.__('This will also delete childs!!'))
+            $deleteurl = $this->Html->link(__('Delete'), array('action' => 'delete', $key), array('confirm'=>__('Are you sure you want to delete # %s?', $value) .'. '.__('This will also delete childs!!')));
             ?>
             <tr <?php echo $class; ?> >
                 <td><?php echo $value; ?>&nbsp;</td>

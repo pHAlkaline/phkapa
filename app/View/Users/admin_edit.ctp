@@ -12,7 +12,7 @@ $this->html->script('user_edit', false);
                 <h5><?php echo __n('User','Users',2); ?></h5>
                 <ul class="menu">
                     <li><?php if ($this->Form->value('User.id')!=1) : ?>
-                        <?php echo $this->Html->link(__('Delete'), array('action' => 'delete', $this->Form->value('User.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('User.id'))); ?>
+                        <?php echo $this->Html->link(__('Delete'), array('action' => 'delete', $this->Form->value('User.id')), array('confirm'=>__('Are you sure you want to delete # %s?', $this->Form->value('User.name')))); ?> 
                         <?php endif; ?>
                     </li>
                     <li><?php echo $this->Html->link(__('List %s', __n('User','Users',2)), array('action' => 'index')); ?></li>

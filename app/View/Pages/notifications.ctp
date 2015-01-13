@@ -40,7 +40,7 @@
                             echo $this->Html->link(__d('phkapa', 'View'), Router::url($notification['Notification']['reference'],true));
                            echo ' | '; 
                         }
-                        echo $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'notifications', 'delete', $notification['Notification']['id']), null, __d('phkapa', 'Are you sure you want to delete # %s?', $notification['Notification']['id']));
+                        echo $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'notifications', 'delete', $notification['Notification']['id']), array('confirm', __d('phkapa', 'Are you sure you want to delete # %s?', $notification['Notification']['id'])));
                         ?>
 
                     </td>
