@@ -93,7 +93,6 @@ class PhkapaAppController extends AppController {
         $processUsers = $this->Ticket->Process->find('all', array('conditions' => $conditions));
         $reference = Router::url(array('controller' => 'query', 'action' => 'view', $ticket_id,'base'=>false));
         foreach ($processUsers[0]['User'] as $User):
-            //debug($User);
             $notifyData = array('notifier_id' => AuthComponent::user('id'), 'notified_id' => $User['id'], 'reference' => $reference, 'notification' => $notificationText,'read'=>0);
             $this->Notify->addNotification($notifyData,$User['email']);
         endforeach;

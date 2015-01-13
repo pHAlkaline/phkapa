@@ -5,7 +5,7 @@ if (isset($keyword)) {
     $keyword = __('Search...');
 }
 $request=preg_replace('#(/page:)(\d+)#', '', $this->request->here);
-debug($request);
+
 ?>
 <div class="searchBox">
     <div class="search">

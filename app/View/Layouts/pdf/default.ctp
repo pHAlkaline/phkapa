@@ -7,8 +7,7 @@ $pdf = new DOMPDF();
 $pdf->set_paper = 'A4';
 $content=iconv(mb_detect_encoding($content_for_layout, mb_detect_order(), true), "UTF-8", $content_for_layout);
 $pdf->load_html($content, Configure::read('App.encoding'));
-//utf8_decode($content_for_layout)
-//debug($content_for_layout);
+
 $pdf->render();
 //$pdf->stream(__('Ticket').$ticket['Ticket']['id'] . ".pdf", array("Attachment" => false));
 echo $pdf->output();

@@ -449,7 +449,6 @@ class Ticket extends PhkapaAppModel {
     
     
     public function beforeDelete($cascade = true) {
-        debug($this->order);
         $this->order=array();
         parent::beforeDelete($cascade);
     }

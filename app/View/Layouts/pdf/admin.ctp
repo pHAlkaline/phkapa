@@ -7,8 +7,7 @@ $pdf = new DOMPDF();
 $pdf->set_paper = 'A4';
 
 $pdf->load_html($content_for_layout, Configure::read('App.encoding'));
-//utf8_decode($content_for_layout)
-//debug($content_for_layout);
+
 $pdf->render();
 
 $pdf->stream(__('Ticket').$ticket['Ticket']['id'] . ".pdf", array("Attachment" => 0));

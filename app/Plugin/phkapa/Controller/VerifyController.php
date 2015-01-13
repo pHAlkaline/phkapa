@@ -197,10 +197,8 @@ class VerifyController extends PhkapaAppController {
         if (isset($this->request->data['Action']['ticket_id'])) {
             $ticketId = $this->request->data['Action']['ticket_id'];
         }
-        //debug($this->request->data);
+        
         $ticket = $this->Ticket->find('first', array('conditions' => array('Ticket.workflow_id' => '4', 'Ticket.id' => $ticketId, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
-        
-        
         
         if (count($ticket) == 0) {
             $this->Session->setFlash(__d('phkapa','Invalid request.'),'flash_message_error');
@@ -219,13 +217,12 @@ class VerifyController extends PhkapaAppController {
             }
         }
         
-        //$this->loadModel('Phkapa.Action');
         $action = $this->Ticket->Action->read(null, $id);
         
         if (empty($this->request->data)) {
             $this->request->data = $action;
         }
-        //$this->loadModel('Phkapa.ActionEffectiveness');
+        
         $this->Ticket->Action->ActionEffectiveness->recursive = 0;
         $actionEffectivenesses = $this->Ticket->Action->ActionEffectiveness->find('list', array('conditions' => array('ActionEffectiveness.active' => '1')));
         $this->set(compact('actionEffectivenesses', 'action', 'ticket'));

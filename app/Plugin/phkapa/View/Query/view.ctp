@@ -353,7 +353,7 @@ if ($ticket['Workflow']['id'] < 5) {
                             if ($i++ % 2 == 0) {
                                 $class = ' class="altrow"';
                             }
-                            //debug($action);
+                            
                             ?>
                              <tr<?php echo $class; ?>>
                                 <td><?php echo $action['id']; ?></td>
@@ -410,7 +410,7 @@ if ($ticket['Workflow']['id'] < 5) {
                         <?php
                         $i = 0;
                         foreach ($ticket['Children'] as $children):
-                            //debug($children);
+                            
                             $class = null;
                             if ($i++ % 2 == 0) {
                                 $class = ' class="altrow"';

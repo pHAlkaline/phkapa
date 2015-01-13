@@ -3,15 +3,10 @@
 class UtilsHelper extends AppHelper {
 
     function yesOrNo($string) {
-        //debug($string);
         if ($string==='0'||$string===0||$string===false ) return __("No");
         if ($string==='1'||$string===1||$string===true ) return __("Yes");
         if ($string===''||empty($string)) return '';
         return '';
-        
-        
-        
-               
             
     }
 

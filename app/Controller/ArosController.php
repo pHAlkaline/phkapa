@@ -162,7 +162,6 @@ class ArosController extends AppController {
             $acoAccessList[$key] = $this->Acl->check($this->request->data['Aro']['alias'], $alias); #value
         endforeach;
 
-        //debug($allAcos = $this->Node->find('threaded'));
         if ($nodelist) {
             foreach ($nodelist as $key => $value):
                 $parents[$key] = $value;

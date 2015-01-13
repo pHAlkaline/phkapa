@@ -112,8 +112,7 @@
     <?php
     $i = 0;
     foreach ($tickets as $ticket):
-        //debug($ticket);
-        ?>
+         ?>
         <?php
         if (count($ticket['Action']) > 0) {
             $result = Set::sort($ticket['Action'], '{n}.action_type_id', 'asc');
