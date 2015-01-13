@@ -9,7 +9,7 @@
             <h5><?php echo __dn('phkapa','Origin','Origins',2); ?></h5>
             <ul class="menu">				
                 <li><?php echo $this->Html->link(__d('phkapa','Edit %s', __d('phkapa','Origin')), array('action' => 'edit', $origin['Origin']['id'])); ?> </li>
-                <li><?php echo $this->Html->link(__d('phkapa','Delete %s', __d('phkapa','Origin')), array('action' => 'delete', $origin['Origin']['id']), array('confirm'=> __d('phkapa','Are you sure you want to delete # %s?', $origin['Origin']['id']))); ?> </li>
+                <li><?php echo $this->Html->link(__d('phkapa','Delete %s', __d('phkapa','Origin')), array('action' => 'delete', $origin['Origin']['id']), array('confirm'=> __d('phkapa','Are you sure you want to delete # %s?', $origin['Origin']['name']))); ?> </li>
                 <li><?php echo $this->Html->link(__d('phkapa','List %s', __dn('phkapa','Origin','Origins',2)), array('action' => 'index')); ?> </li>
                 <li><?php echo $this->Html->link(__d('phkapa','Add %s', __d('phkapa','Origin')), array('action' => 'add')); ?> </li>
             </ul>			
