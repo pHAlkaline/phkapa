@@ -16,7 +16,7 @@ if ($this->Form->value('Aro.foreign_key')){
         <div class="block" id="admin-actions">			
             <h5><?php echo __('Aro'); ?></h5>
             <ul class="menu">
-                <li><?php echo $this->Html->link(__('Delete'), array('action' => 'delete', $this->Form->value('Aro.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Aro.alias')) .'. '.__('This will also delete childs!!')); ?></li>
+                <li><?php echo $this->Html->link(__('Delete'), array('action' => 'delete', $this->Form->value('Aro.id')), array('confirm'=>__('Are you sure you want to delete # %s?', $this->Form->value('Aro.alias')) .'. '.__('This will also delete childs!!'))); ?></li>
                 <li><?php echo $this->Html->link(__('List %s', __n('Aro','Aros',2)), array('action' => 'index')); ?></li>
             </ul>
 

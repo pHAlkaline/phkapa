@@ -11,7 +11,7 @@
 
                 <li><?php echo $this->Html->link(__d('phkapa', 'Edit %s', __d('phkapa', 'Ticket')), array('action' => 'edit', $ticket['Ticket']['id'])); ?> </li>
                 
-                <li><?php echo $this->Html->link(__d('phkapa', 'Delete %s', __d('phkapa', 'Ticket')), array('action' => 'delete', $ticket['Ticket']['id']), array('escape' => false), __d('phkapa', 'Are you sure you want to delete # %s?', $ticket['Ticket']['id']) . ' ' . __d('phkapa', 'Related Child Tickets and actions will also be deleted!!')); ?></li>
+                <li><?php echo $this->Html->link(__d('phkapa', 'Delete %s', __d('phkapa', 'Ticket')), array('action' => 'delete', $ticket['Ticket']['id']), array('escape' => false,'confirm'=>__d('phkapa', 'Are you sure you want to delete # %s?', $ticket['Ticket']['id']) . ' ' . __d('phkapa', 'Related Child Tickets and actions will also be deleted!!'))); ?></li>
                 <li><?php echo $this->Html->link(__d('phkapa', 'List %s', __dn('phkapa', 'Ticket', 'Tickets', 2)), array('action' => 'index')); ?> </li>
                 <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Ticket')), array('action' => 'add')); ?> </li>
                 <?php
