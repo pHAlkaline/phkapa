@@ -152,7 +152,7 @@ class User extends AppModel {
             $aro = $aro['Aro'];
             $this->Aro->set($aro);
         }
-        //debug($aro);
+        
         if ($aro && !$this->Aro->validates($aro)) {
             $errors = $this->Aro->validationErrors;
             $this->data = null;

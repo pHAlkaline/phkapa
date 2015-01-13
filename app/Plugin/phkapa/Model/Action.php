@@ -219,7 +219,6 @@ class Action extends PhkapaAppModel {
             $this->ActionType->recursive = 0;
             $actionType = $this->ActionType->findById($this->data['Action']['action_type_id']);
 
-            //debug($actionType);
             if ($actionType['ActionType']['verification'] && $this->data['Action']['action_effectiveness_id'] == null)
                 return false;
         }
@@ -247,7 +246,7 @@ class Action extends PhkapaAppModel {
      * @return boolean
      */
     public function checkValidCloseDate($check) {
-        //debug($check);
+        
         if ($check['close_date'] == null){
             return true;
         }
@@ -260,28 +259,19 @@ class Action extends PhkapaAppModel {
         $ticket_close_date = strtotime($ticket['Ticket']['close_date']);
         $today = strtotime(Date('Y-m-d H:i:s'));
 
-        //debug('close_date: ' . $close_date .' '.$check['close_date']);
-        //debug('origin_date' . $origin_date .' '.$ticket['Ticket']['origin_date']);
-        //debug('ticket close' . $ticket_close_date .' '.$ticket['Ticket']['close_date']);
-        //debug('today'. $today .' '.Date('Y-m-d'));
-
         if ($close_date > $today) {
-            //debug('rule1');
             return false;
         }
 
         if ($close_date < $origin_date) {
-            //debug('rule2');
             return false;
         }
 
         if ($ticket_close_date == '') {
-            //debug('rule3');
             return true;
         }
 
         if ($close_date > $ticket_close_date) {
-            //debug('rule4');
             return false;
         }
 

@@ -221,7 +221,7 @@ class UsersController extends AppController {
     private function secure_password() {
 
         $this->User->read(null, 1);
-        //debug($this->user->created);
+       
         if (empty($this->request->data)) {
             $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));

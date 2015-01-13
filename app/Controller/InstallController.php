@@ -153,8 +153,7 @@ class InstallController extends AppController {
                 $config[$key] = $value;
             }
         }
-        //print_r($config);
-        //debug($this->request->data);
+        
         try {
             ConnectionManager::create('default', $config);
             $db = ConnectionManager::getDataSource('default');

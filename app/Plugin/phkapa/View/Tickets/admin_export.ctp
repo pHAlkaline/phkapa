@@ -36,8 +36,6 @@
         $end['month'] = $endDate[1];
         $end['day'] = $endDate[0];
         
-        //debug($begin = date('d-m-Y', strtotime('-1 month')).' 00:00');
-        //debug($end = date('d-m-Y').' 23:59');
         echo $this->html->div('input', $this->Form->label(__d('phkapa','Start Date')) . $this->Form->dateTime('startdate', $dateFormat = 'DMY', null, $attributes = array('value'=>$begin, 'label' => __d('phkapa','Start Date'), 'empty' => false, 'minYear' => '2009', 'maxYear' => date('Y') + 1)));
         echo $this->html->div('input', $this->Form->label(__d('phkapa','End Date')) . $this->Form->dateTime('enddate', $dateFormat = 'DMY', null, $attributes = array('value'=>$end, 'label' => __d('phkapa','End Date'), 'empty' => false, 'minYear' => '2009', 'maxYear' => date('Y') + 1)));
         ?>

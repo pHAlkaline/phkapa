@@ -15,7 +15,7 @@ if ($ticket['Ticket']['approved'] === null) {
     $sendOk = false;
     $closeOk = false;
 }
-//debug($ticket['Ticket']['approved']);
+
 ?>
 <h2 id="page-heading"><?php echo __d('phkapa', 'Review'); ?> : <?php echo __d('phkapa', 'Ticket'); ?></h2>
 <div class="grid_16 actionsContainer">

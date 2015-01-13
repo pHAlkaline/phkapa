@@ -152,7 +152,6 @@ class PlanController extends PhkapaAppController {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-        //$this->loadModel('Phkapa.Action');
         if (!empty($this->request->data)) {
             $this->Ticket->Action->create();
             if ($this->request->data['Action']['closed'] == 1) {
@@ -165,12 +164,9 @@ class PlanController extends PhkapaAppController {
                 $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
                 $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id']));
             } else {
-                //debug($this->Ticket->Action->validationErrors);
                 $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
             }
         }
-        //$this->loadModel('Phkapa.ActionType');
-        //$this->Ticket->Action->ActionType->recursive = -1;
         $actionTypes = $this->Ticket->Action->ActionType->find('list', array('conditions' => array('ActionType.active' => '1')));
         if (count($actionTypes) == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
@@ -212,7 +208,6 @@ class PlanController extends PhkapaAppController {
                 $this->request->data['Action']['close_user_id'] = AuthComponent::user('id');
             }
 
-            //debug($this->request->data);
             $this->Ticket->Action->validator()->remove('close_date');
             if ($this->Ticket->Action->save($this->request->data)) {
                 $this->Ticket->id = $ticketId;
@@ -225,9 +220,6 @@ class PlanController extends PhkapaAppController {
         } else {
             $this->request->data = $this->Ticket->Action->read(null, $id);
         }
-        //debug($this->Action);
-        //$this->loadModel('Phkapa.ActionType');
-        //$this->Ticket->Action->ActionType->recursive = 2;
         $actionTypes = $this->Ticket->Action->ActionType->find('list', array('conditions' => array('ActionType.active' => '1')));
         if (count($actionTypes) == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
@@ -319,7 +311,7 @@ class PlanController extends PhkapaAppController {
         $this->Ticket->recursive = -1;
         $this->Ticket->order = null;
         $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '3', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
-        //debug($ticket);
+        
         if (count($ticket) == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));

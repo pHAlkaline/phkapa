@@ -112,7 +112,6 @@
     <?php
     $i = 0;
     foreach ($tickets as $ticket):
-        //debug($ticket);
         ?>
         <?php
         if (count($ticket['Action']) > 0) {

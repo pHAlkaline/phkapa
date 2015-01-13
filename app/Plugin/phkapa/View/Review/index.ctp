@@ -42,7 +42,7 @@
                     $sendOk = false;
                     $closeOk = false;
                 }
-                //debug($ticket['Ticket']['approved']);
+                
                 ?>
                 <tr<?php echo $class; ?>>
                     <td><?php echo $ticket['Ticket']['id']; ?>&nbsp;</td>

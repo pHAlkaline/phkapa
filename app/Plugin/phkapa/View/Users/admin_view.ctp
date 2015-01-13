@@ -28,11 +28,7 @@
                 <dl><?php
 $i = 0;
 $class = ' class="altrow"';
-/*$allowed = '';
-//debug($allowedUsers);
-if (in_array($user['User']['id'], $allowedUsers)) {
-    $allowed = 'O.K.';
-}*/
+
 ?>
                     <dt<?php
                     if ($i % 2 == 0)
