@@ -14,6 +14,7 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
   * HTTP Server. For example: Apache. mod_rewrite is preferred, but by no means required
   * PHP 5.2.8 or greater.
   * MySQL 5 or higher
+  * All built-in drivers require PDO. You should make sure you have the correct PDO extensions installed.
 
 ## Git install 
 ( phkapa and submodules cakephp and dompdf )
