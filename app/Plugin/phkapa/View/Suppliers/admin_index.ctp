@@ -54,7 +54,7 @@
                 <td class="actions">
                     <?php echo $this->Html->link(__d('phkapa','View'), array('action' => 'view', $supplier['Supplier']['id'])); ?>
                     <?php echo ' | ' . $this->Html->link(__d('phkapa','Edit'), array('action' => 'edit', $supplier['Supplier']['id'])); ?>
-                    <?php echo ' | ' . $this->Html->link(__d('phkapa','Delete'), array('action' => 'delete', $supplier['Supplier']['id']), array('confirm'=> __d('phkapa','Are you sure you want to delete # %s?', $supplier['Supplier']['id']))); ?>
+                    <?php echo ' | ' . $this->Html->link(__d('phkapa','Delete'), array('action' => 'delete', $supplier['Supplier']['id']), array('confirm'=> __d('phkapa','Are you sure you want to delete # %s?', $supplier['Supplier']['name']))); ?>
                 </td>
             </tr>
         <?php endforeach; ?>
