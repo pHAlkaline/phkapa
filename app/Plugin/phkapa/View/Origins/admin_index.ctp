@@ -52,7 +52,7 @@
                     <td class="actions">
                         <?php echo $this->Html->link(__d('phkapa', 'View'), array('action' => 'view', $origin['Origin']['id'])); ?>
                         <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit', $origin['Origin']['id'])); ?>
-                        <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'delete', $origin['Origin']['id']), null, __d('phkapa', 'Are you sure you want to delete # %s?', $origin['Origin']['name'])); ?>
+                        <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'delete', $origin['Origin']['id']), array('confirm'=> __d('phkapa','Are you sure you want to delete # %s?', $origin['Origin']['name']))); ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
