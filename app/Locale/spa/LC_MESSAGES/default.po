@@ -1,0 +1,396 @@
+# LANGUAGE translation of PHKAPA Application
+# Copyright pHAlkaline <contact@phalkaline.eu>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phkapa.net\n"
+"POT-Creation-Date: 2013-02-12 21:57+0000\n"
+"PO-Revision-Date: 2015-01-22 11:52+0100\n"
+"Last-Translator: DATAGUNE CONSULTING S.L. <datagune@datagune-consulting.com>\n"
+"Language-Team: DATAGUNE CONSULTING S.L. <datagune@datagune-consulting.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: spa\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "(choose one)"
+msgstr "(seleccione uno)"
+
+msgid "Aco"
+msgid_plural "Acos"
+msgstr[0] "Control de Acceso"
+msgstr[1] "Controles de Acceso"
+
+msgid "Action Type"
+msgid_plural "Action Types"
+msgstr[0] "Tipo de Acción"
+msgstr[1] "Tipos de Acción"
+
+msgid "Actions"
+msgstr "Acciones"
+
+msgid "Active"
+msgstr "Activo"
+
+msgid "Add %s"
+msgstr "Añadir %s"
+
+msgid "Admin panel: %s"
+msgstr "Panel de admin: %s"
+
+msgid "Admin user password"
+msgstr "Password de usuario admin"
+
+msgid "Administration"
+msgstr "Administración"
+
+msgid "Allow"
+msgstr "Habilitar"
+
+msgid "Allowed"
+msgstr "Habilitado"
+
+msgid "Already Installed"
+msgstr "Ya Instalado"
+
+msgid "Application Offline"
+msgstr "Aplicación fuera de linea"
+
+msgid "Are you sure you want to delete # %s?"
+msgstr "¿Está seguro de que quiere borrar el nº %s?"
+
+msgid "Aro"
+msgid_plural "Aros"
+msgstr[0] "Acceso"
+msgstr[1] "Accesos"
+
+msgid "Cake is NOT able to connect to the database."
+msgstr "Cake NO puede conectarse a la base de datos."
+
+msgid "Cake is able to connect to the database."
+msgstr "Cake puede conectarse a la base de datos."
+
+msgid "CakePHP version %s < %s"
+msgstr "Versión de CakePHP %s < %s"
+
+msgid "CakePhp version %s >= %s"
+msgstr "Versión de CakePHP %s >= %s"
+
+msgid "Check load data option to insert dafault values to action types, activities, categories, causes, origins, processes, suppliers and finaly some example users and their access configuration."
+msgstr "Elegir la opción de carga de datos para insertar valores por defecto para tipos de acción, actividades, categorías, causas, orígenes, procesos, proveedores y por último algunos usuarios de ejemplo con sus configuraciones de acceso."
+
+msgid "Click here to begin installation"
+msgstr "Haga click aquí para comenzar la instalación"
+
+msgid "Could not be deleted."
+msgstr "No se puede borrar."
+
+msgid "Could not be saved. Please, try again."
+msgstr "No se puede guardar. Por favor, inténtelo de nuevo."
+
+msgid "Could not connect to database."
+msgstr "No se puede conectar a la base de datos."
+
+msgid "Could not connect to database: %s"
+msgstr "No se puede conectar a la base de datos: %s"
+
+msgid "Could not load database: %s"
+msgstr "No se puede cargar la base de datos: %s"
+
+msgid "Could not write database.php file."
+msgstr "No se puede escribir el fichero database.php"
+
+msgid "Could not write email.php file."
+msgstr "No se puede escribir el fichero email.php"
+
+msgid "Created"
+msgstr "Creado"
+
+msgid "Database and data"
+msgstr "Base de datos y datos"
+
+msgid "Database connection file already exists"
+msgstr "Ya existe el fichero de conexión de base de datos"
+
+msgid "Delete"
+msgstr "Borrar"
+
+msgid "Delete %s"
+msgstr "Borrar %s"
+
+msgid "Deleted with success."
+msgstr "Borrado con éxito."
+
+msgid "Deny"
+msgstr "Denegar"
+
+msgid "Denyed"
+msgstr "Denegado"
+
+msgid "Diagnostics"
+msgstr "Diagnósticos"
+
+msgid "Dont forget to restore default access values to Config and tmp directory."
+msgstr "No olvide restaurar los valores de acceso por defecto a los directorios Config y tmp"
+
+msgid "Down"
+msgstr "Abajo"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Edit %s"
+msgstr "Editar %s"
+
+msgid "Edit Profile"
+msgstr "Editar Perfil"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Email settings file already exists"
+msgstr "Ya existe el fichero de configuración de email"
+
+msgid "Empty"
+msgstr "Vacío"
+
+msgid "Enable change password"
+msgstr "¿Cambiar password?"
+
+msgid "End Session"
+msgstr "Finalizar Sesión"
+
+msgid "From Email"
+msgstr "Desde Email"
+
+msgid "From Name"
+msgstr "Desde Nombre"
+
+msgid "Group / User"
+msgstr "Grupo / Usuario"
+
+msgid "Group / User name must be unique!!"
+msgstr "El nombre de Grupo / Usuario debe ser único!!"
+
+msgid "Help"
+msgstr "Ayuda"
+
+msgid "Id"
+msgstr "Id"
+
+msgid "Installation cannot continue as minimum requirements are not found."
+msgstr "La instalación no puede continuar al no cumplir con los requerimientos mínimos"
+
+msgid "Installation completed successfully"
+msgstr "La instalación se ha completado con éxito"
+
+msgid "Installation not completed successfully"
+msgstr "La instalación no se ha completado con éxito"
+
+msgid "Installation: Welcome"
+msgstr "Instalación: Bienvenido"
+
+msgid "Invalid email"
+msgstr "Email incorrecto"
+
+msgid "Invalid request."
+msgstr "Solicitud incorrecta."
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "List %s"
+msgstr "Lista %s"
+
+msgid "Load data"
+msgstr "Cargar datos"
+
+msgid "Login failed. Invalid username or password."
+msgstr "Acceso fallido. Id. Usuario o password incorrectos"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Modified"
+msgstr "Modificado"
+
+msgid "Must be unique"
+msgstr "Debe ser único"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "New Password"
+msgstr "Nuevo Password"
+
+msgid "Next"
+msgstr "Siguiente"
+
+msgid "No"
+msgstr "No"
+
+msgid "No records found!!!"
+msgstr "Sin registros!!!"
+
+msgid "Notification"
+msgid_plural "Notifications"
+msgstr[0] "Notificación"
+msgstr[1] "Notificaciones"
+
+msgid "Notifier"
+msgstr "Notificador"
+
+msgid "PHKAPA Admin panel: %s"
+msgstr "Panel PHKAPA Admin: %s"
+
+msgid "PHKAPA: %s"
+msgstr "PHKAPA: %s"
+
+msgid "PHP version %s < 5.2"
+msgstr "Versión de PHP %s < 5.2"
+
+msgid "PHP version %s > 5.2"
+msgstr "Versión de PHP %s > 5.2"
+
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr "Página %page% de %pages%, mostrando %current% registros de %count%, desde el registro %start% al registro %end%"
+
+msgid "Parent node"
+msgstr "Nodo padre"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Passwords dont match"
+msgstr "Los passwords no concuerdan"
+
+msgid "Passwords secured and updated for all users"
+msgstr "Passwords seguros y actualizados para todos los usuarios"
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Read"
+msgstr "Leer"
+
+msgid "Record"
+msgstr "Registro"
+
+msgid "Rename config/database.php.default to config/database.php"
+msgstr "Renombrar config/database.php.default a config/database.php"
+
+msgid "Resources"
+msgstr "Recursos"
+
+msgid "Root"
+msgstr "Raiz"
+
+msgid "Saved with success."
+msgstr "Guardado con éxito."
+
+msgid "Search..."
+msgstr "Búsqueda..."
+
+msgid "Setup database connection"
+msgstr "Configuración de la conexión de base de datos"
+
+msgid "Setup notification email"
+msgstr "Configuración del email de notificación"
+
+msgid "Something went wrong during installation. Please check your server logs."
+msgstr "Algo fue mal durante la instalación. Por favor revise los logs de su servidor."
+
+msgid "Start Session"
+msgstr "Inicio de sesión"
+
+msgid "Step 1 : Database connection"
+msgstr "Paso 1: Conexión a la base de datos"
+
+msgid "Step 2 : Build database , load table values"
+msgstr "Paso 2: Creación de la base de datos, carga de tablas"
+
+msgid "Step 3 : Email notification"
+msgstr "Paso 3: Notificaciones de email"
+
+msgid "Step 4 : Secure app and set new administrator password"
+msgstr "Paso 4: Securización de la aplicación y establecimiento de un nuevo password de administrador"
+
+msgid "Subject"
+msgstr "Asunto"
+
+msgid "Submit"
+msgstr "Enviar"
+
+msgid "The %s is being used for caching. To change the config edit APP/config/core.php "
+msgstr "%s está siendo utilizado para almacenamiento en caché . Para cambiar la configuración editar APP/config/core.php"
+
+msgid "Time Zone"
+msgstr "Zona Horaria"
+
+msgid "This application is now on maintenance mode, back soon as possible!"
+msgstr "Esta aplicación está ahora en modo de mantenimiento, vuelva tan pronto como pueda!"
+
+msgid "This application will be on maintenance mode at  %s "
+msgstr "Esta aplicación estará en modo de mantenimiento en %s"
+
+msgid "This name is restricted by system."
+msgstr "Este nombre está restringido por el sistema"
+
+msgid "This will also delete childs!!"
+msgstr "Esto borrará también los hijos!!"
+
+msgid "Type Group"
+msgstr "Tipo Grupo"
+
+msgid "Unable to create administrative user."
+msgstr "No se ha podido crear el usuario de administración."
+
+msgid "Unable to generate users password."
+msgstr "No se ha podido crear el password de usuarios"
+
+msgid "Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions."
+msgstr "No se puede securizar su aplicación, su fichero de Config %s core.php no tiene permiso de escritura. Por favor compruebe los permisos."
+
+msgid "Up"
+msgstr "Arriba"
+
+msgid "User"
+msgid_plural "Users"
+msgstr[0] "Usuario"
+msgstr[1] "Usuarios"
+
+msgid "Username"
+msgstr "ID. Usuario"
+
+msgid "Verify Password"
+msgstr "Verificar Password"
+
+msgid "View"
+msgstr "Ver"
+
+msgid "View %s"
+msgstr "Ver %s"
+
+msgid "Yes"
+msgstr "Si"
+
+msgid "Your Config directory is NOT writable."
+msgstr "Su directorio Config NO tiene permiso de escritura"
+
+msgid "Your Config directory is writable."
+msgstr "Su directorio Config tiene permiso de escritura"
+
+msgid "Your cache is NOT working. Please check the settings in APP/config/core.php"
+msgstr "Su cache NO está funcionando. Por favor compruebe la configuración en APP/config/core.php"
+
+msgid "Your database configuration file is NOT present."
+msgstr "Su fichero de configuración de base de datos NO está presente"
+
+msgid "Your database configuration file is present."
+msgstr "Su fichero de configuración de base de datos está presente"
+
+msgid "Your tmp directory is NOT writable."
+msgstr "Su directorio tmp NO tiene permiso de escritura"

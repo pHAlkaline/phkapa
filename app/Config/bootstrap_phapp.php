@@ -13,6 +13,7 @@ Configure::write('Language.list',array(
     'deu'=>'Deutsch',
     'por'=>'Português',
     'pt_BR'=>'Portugues ( Brasil )',
+    'spa'=>'Español'
     )); 
 
 /**
