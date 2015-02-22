@@ -38,7 +38,7 @@
             $this->Paginator->sort('ModifyUser.name',__d('phkapa','Last Modification By')),
             $this->Paginator->sort('modified',__d('phkapa','Modified')),
             $this->Paginator->sort('created',__d('phkapa','Created')), 
-            __dn('phkapa','Action','Actions',2),));
+            array(__dn('phkapa','Action','Actions',2)=>array('class'=>'actions'))));
         echo '<thead class="ui-state-default"' . $tableHeaders . '</thead>';
         ?>
 

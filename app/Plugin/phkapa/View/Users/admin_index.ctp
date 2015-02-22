@@ -26,8 +26,7 @@
                 $this->Paginator->sort('username',__d('phkapa','Username')), 
                 $this->Paginator->sort('email',__('phkapa','Email')), 
                 $this->Paginator->sort('active',__d('phkapa','Active')), 
-                __dn('phkapa','Action','Actions',2)
-                ));
+                array(__dn('phkapa','Action','Actions',2)=>array('class'=>'actions'))));
             echo '<thead class="ui-state-default"' . $tableHeaders . '</thead>';
             ?>
 
