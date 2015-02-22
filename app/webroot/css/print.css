@@ -1,0 +1,30 @@
+/* 
+    Document   : print.css
+    Created on : 22/Fev/2015, 22:22:49
+    Author     : paulo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@media print {
+    
+    @page{
+        margin:1cm;
+    }
+root { 
+    display: block;
+}
+
+.actions, #actions , #admin-left-menu, div#header_separator, .searchBox, .flash-message, .flash-error, .flash-success, .flash-warning {
+    display: none;
+}
+
+#header{
+    height: 35pt;
+}
+
+
+.zoom img {
+    width: 50%;
+    height: 50%;
+}
+}

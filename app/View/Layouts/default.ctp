@@ -5,7 +5,7 @@
         <title><?php echo $title_for_layout; ?></title>
         <?php
         echo $this->Html->meta('icon');
-        echo $this->Html->css(array('reset', 'text', 'grid', 'layout', 'jquery-ui-theme/jquery-ui-1.8.23.custom'));
+        echo $this->Html->css(array('reset', 'text', 'grid', 'layout', 'jquery-ui-theme/jquery-ui-1.8.23.custom', 'print'));
         echo '<!--[if IE 6]>' . $this->Html->css('ie6') . '<![endif]-->';
         echo '<!--[if IE 7]>' . $this->Html->css('ie') . '<![endif]-->';
         ?>

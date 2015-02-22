@@ -157,6 +157,8 @@ class QueryController extends PhkapaAppController {
 
         $this->set('ticket', $ticket);
     }
+    
+    
 
     /**
      * Export
