@@ -150,25 +150,25 @@ class TicketsController extends PhkapaAppController {
         
     }
     
-    /**
-     * admin_pdf method
+     /**
+     * admin_print_report method
      *
      * @throws NotFoundException
      * @param string $id
      * @return void
      */
-    public function admin_pdf($id) {
-        // increase memory limit in PHP 
-        ini_set('memory_limit', '256M');
+    public function admin_print_report($id) {
         if (!$id) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-        $this->Ticket->recursive = 2;
-        $this->_setupModel();
-
-
-        $this->set('ticket', $this->Ticket->read(null, $id));
+        
+        App::uses('CakeEvent', 'Event');
+        App::uses('CakeEventManager', 'Event');
+        $event = new CakeEvent('Phkapa.Ticket.PrintReport', $this, array(
+            'id' => $id,
+        ));
+        $this->getEventManager()->dispatch($event);
     }
 
     /**

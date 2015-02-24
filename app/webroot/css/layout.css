@@ -636,3 +636,18 @@ p.error em {
 .left { text-align: left; }
 .right { text-align: right; }
 .center { text-align: center; }
+
+
+/* 
+    Page: Invoice
+*/
+.invoice {
+  position: relative;
+  width: 90%;
+  margin: 10px auto;
+  background: #fff;
+  
+}
+.invoice-title {
+  margin-top: 0;
+}
