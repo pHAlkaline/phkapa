@@ -381,3 +381,12 @@ msgstr ""
 
 msgid "Your tmp directory is writable."
 msgstr ""
+
+msgid "Its time to create your own Plugin ou request one contacting pHAlkaline."
+msgstr ""
+
+msgid "Ticket Report"
+msgstr ""
+
+msgid "Ticket Details"
+msgstr ""
