@@ -1,12 +1,13 @@
 <html>
     <head>
-        <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title></title>
         <style type="text/css">
             <!--
             @page { size: 21.59cm 27.94cm; margin-left: 1.50cm; margin-right: 0.50cm; margin-top: 0.50cm; margin-bottom: 1.00cm }
             @page:first { }
-            body { font-family: "Trebuchet MS, sans-serif";}
+            body { font-family: DejaVu Sans, sans-serif; font-size: 0.9em; }
+
             P { margin-bottom: 0.21cm; direction: ltr; color: #000000; line-height: 100%; widows: 2; orphans: 2 }
             H1, .tableActions { margin-top: 0.07cm; margin-bottom: 0.07cm; border-top: none; border-bottom: 1px solid #00aeff; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.07cm; padding-left: 0cm; padding-right: 0cm; direction: ltr; color: #00aeff; line-height: 100%; widows: 2; orphans: 2 }
             H1.western { font-family: "Trebuchet MS, sans-serif", serif; font-size: 18pt; font-weight: normal }
@@ -273,7 +274,8 @@
         <p style="margin-top: 0.07cm; margin-bottom: 0.07cm"><br><br></p>
         <p><?php echo __('Actions'); ?></p>
         <?php $count = 0;
-        $page = 1 ?>
+        $page = 1
+        ?>
         <?php if (!empty($ticket['Action'])) { ?>
 
     <?php foreach ($ticket['Action'] as $action): ?>
@@ -375,7 +377,7 @@
                         <b><?php echo __d('phkapa', 'Page'); ?>: <?php echo $page - 1; ?></b>
                     </p>
                     <h1 class="western" style="background: transparent; text-align: right;">
-                    <?php echo __d('phkapa', 'Ticket Report'); ?>
+            <?php echo __d('phkapa', 'Ticket Report'); ?>
                     </h1>
                     <br/><br/>
                 <?php } ?>
@@ -391,7 +393,7 @@
                         <b><?php echo __d('phkapa', 'Page'); ?>: <?php echo $page - 1; ?></b>
                     </p>
                     <h1 class="western" style="background: transparent; text-align: right;">
-                    <?php echo __d('phkapa', 'Ticket Report'); ?>
+            <?php echo __d('phkapa', 'Ticket Report'); ?>
                     </h1>
                     <br/><br/>
                 <?php } ?>
