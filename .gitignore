@@ -72,3 +72,4 @@ Thumbs.db
 /TODO.php
 /app/Locale/cake.pot
 *.pot
+/app/Plugin/PrintReport/
