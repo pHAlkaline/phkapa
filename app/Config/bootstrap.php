@@ -182,7 +182,7 @@ CakeLog::config('error', array(
 
 
 /**
- * app Plugins
+ * app Plugin
  */
 CakePlugin::load('Phkapa', array('bootstrap' => false, 'routes' => false));
 
