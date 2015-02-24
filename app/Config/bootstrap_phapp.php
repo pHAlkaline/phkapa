@@ -1,8 +1,11 @@
 <?php
 
+
 /**
- * Default app settings
+ * app Plugins
  */
+CakePlugin::load('Phkapa', array('bootstrap' => false, 'routes' => false));
+CakePlugin::load('PrintReport', array('bootstrap' => true, 'routes' => false));
 
 /**
  * Languages available
