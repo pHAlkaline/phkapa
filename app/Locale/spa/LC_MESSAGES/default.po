@@ -60,7 +60,7 @@ msgid "Application Offline"
 msgstr "Aplicación fuera de linea"
 
 msgid "Are you sure you want to delete # %s?"
-msgstr "¿Está seguro de que quiere borrar el nº %s?"
+msgstr "Está seguro de que quiere borrar el nº %s?"
 
 msgid "Aro"
 msgid_plural "Aros"
@@ -158,7 +158,7 @@ msgid "Empty"
 msgstr "Vacío"
 
 msgid "Enable change password"
-msgstr "¿Cambiar password?"
+msgstr "Cambiar password?"
 
 msgid "End Session"
 msgstr "Finalizar Sesión"
@@ -394,3 +394,15 @@ msgstr "Su fichero de configuración de base de datos está presente"
 
 msgid "Your tmp directory is NOT writable."
 msgstr "Su directorio tmp NO tiene permiso de escritura"
+
+msgid "Print report not found."
+msgstr "Abrir informe no se encuentra."
+
+msgid "Its time to create your own Plugin ou request one contacting pHAlkaline."
+msgstr "Crear su propio Plugin ou solicitar una a pHAlkaline."
+
+msgid "Ticket Report"
+msgstr "Informe"
+
+msgid "Ticket Details"
+msgstr "Detalles del informe"

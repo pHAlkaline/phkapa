@@ -380,3 +380,12 @@ msgstr "TMP-Verzeichnis ist NICHT beschreibbar."
 
 msgid "Your tmp directory is writable."
 msgstr "TMP-Verzeichnis ist beschreibbar."
+
+msgid "Its time to create your own Plugin ou request one contacting pHAlkaline."
+msgstr "Seine Zeit, Ihre eigenen Plugins zu erstellen oder fordern Sie eine Kontaktierung pHAlkaline."
+
+msgid "Ticket Report"
+msgstr "Ticket-Bericht"
+
+msgid "Ticket Details"
+msgstr "Ticketinfos"
