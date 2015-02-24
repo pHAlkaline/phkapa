@@ -180,4 +180,11 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
+
+/**
+ * app Plugins
+ */
+CakePlugin::load('Phkapa', array('bootstrap' => false, 'routes' => false));
+
+
 require 'bootstrap_phapp.php';
