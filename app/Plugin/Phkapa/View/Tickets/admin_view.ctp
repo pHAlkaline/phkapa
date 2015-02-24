@@ -21,7 +21,7 @@
                     <li><?php echo $this->Html->link(__d('phkapa', 'Open new related ticket'), array('action' => 'add', $ticket['Ticket']['id'])); ?></li>
                     
                 <?php endif; ?>
-                     <li class="list-group-item"><?php echo $this->Html->link(__d('phkapa', 'Open Report'), array('action' => 'pdf', $ticket['Ticket']['id'],'ext'=>'pdf'), array('target'=>'_blank','class' => '')); ?> </li>
+                     <li class="list-group-item"><?php echo $this->Html->link(__d('phkapa', 'Open Report'), array('action' => 'print_report', $ticket['Ticket']['id']), array('target'=>'_blank','class' => '')); ?> </li>
 
 
             </ul>

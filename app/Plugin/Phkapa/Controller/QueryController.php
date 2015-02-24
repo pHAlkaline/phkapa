@@ -136,26 +136,26 @@ class QueryController extends PhkapaAppController {
         $this->set('action', $this->Ticket->Action->read(null, $id));
     }
 
-    /**
-     * pdf method
+   
+     /**
+     * print_report method
      *
      * @throws NotFoundException
      * @param string $id
      * @return void
      */
-    public function pdf($id) {
-        // increase memory limit in PHP 
-        ini_set('memory_limit', '256M');
-        $this->Ticket->recursive = 2;
-        $this->_setupModel();
-        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('AND' => array('Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
-        if (!$id || count($ticket) == 0) {
+    public function print_report($id) {
+         if (!$id) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
-            //$this->redirect(array('action' => 'index'));
+            $this->redirect(array('action' => 'index'));
         }
-
-
-        $this->set('ticket', $ticket);
+        
+        App::uses('CakeEvent', 'Event');
+        App::uses('CakeEventManager', 'Event');
+        $event = new CakeEvent('Phkapa.Ticket.PrintReport', $this, array(
+            'id' => $id,
+        ));
+        $this->getEventManager()->dispatch($event);
     }
     
     
