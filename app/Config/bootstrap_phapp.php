@@ -3,7 +3,8 @@
 /**
  * app Plugins
  */
-
+//CakePlugin::load('PrintReport', array('bootstrap' => true, 'routes' => false));
+//CakePlugin::load('CsvView', array('bootstrap' => true, 'routes' => false));
 
 /**
  * Languages available

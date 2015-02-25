@@ -20,7 +20,7 @@ class TicketsController extends PhkapaAppController {
      * @var array
      */
     public $components = array('RequestHandler');
-    
+
     /**
      * Controller name
      *
@@ -69,8 +69,8 @@ class TicketsController extends PhkapaAppController {
      */
     public function admin_index() {
         $this->Ticket->recursive = 0;
-        $this->paginate=array('order' => array(
-            'Priority.order' => 'asc'
+        $this->paginate = array('order' => array(
+                'Priority.order' => 'asc'
         ));
         if (isset($this->request->params['named']['keyword'])) {
             $keyword = $this->request->params['named']['keyword'];
@@ -103,7 +103,7 @@ class TicketsController extends PhkapaAppController {
             );
             $this->set('keyword', $keyword);
         }
-        
+
         $this->set('tickets', $this->paginate());
     }
 
@@ -124,12 +124,11 @@ class TicketsController extends PhkapaAppController {
 
 
         $this->set('ticket', $this->Ticket->read(null, $id));
-        if (in_array($this->Ticket->name,Configure::read('Revision.tables'))){
-           $this->set('ticket_revisions', $this->Ticket->revisions()); 
+        if (in_array($this->Ticket->name, Configure::read('Revision.tables'))) {
+            $this->set('ticket_revisions', $this->Ticket->revisions());
         }
-        
     }
-    
+
     /**
      * Admin view revision
      *
@@ -137,20 +136,18 @@ class TicketsController extends PhkapaAppController {
      * @return void
      * @access public
      */
-    public function admin_view_revision($id = null, $ticketId =null) {
-        if (!$id || !$ticketId || !in_array($this->Ticket->name,Configure::read('Revision.tables'))) {
+    public function admin_view_revision($id = null, $ticketId = null) {
+        if (!$id || !$ticketId || !in_array($this->Ticket->name, Configure::read('Revision.tables'))) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
-            $this->redirect(array('action' => 'view',$ticketId));
+            $this->redirect(array('action' => 'view', $ticketId));
         }
-        
-        $this->Ticket->id=$ticketId;
-        $revision=$this->Ticket->revisions(array('conditions'=>array('version_id'=>$id)));
-        $this->set('ticket',$revision[0] );
-        
-        
+
+        $this->Ticket->id = $ticketId;
+        $revision = $this->Ticket->revisions(array('conditions' => array('version_id' => $id)));
+        $this->set('ticket', $revision[0]);
     }
-    
-     /**
+
+    /**
      * admin_print_report method
      *
      * @throws NotFoundException
@@ -162,7 +159,7 @@ class TicketsController extends PhkapaAppController {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-        
+
         App::uses('CakeEvent', 'Event');
         App::uses('CakeEventManager', 'Event');
         $event = new CakeEvent('Phkapa.Ticket.PrintReport', $this, array(
@@ -216,10 +213,10 @@ class TicketsController extends PhkapaAppController {
         $activities = $this->Ticket->Activity->find('list', $this->activityOptions);
         $suppliers = $this->Ticket->Supplier->find('list', array('conditions' => array('Supplier.active' => '1')));
         $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
-        $workflows = $this->Ticket->Workflow->find('list', array('conditions' => array('Workflow.active' => '1'),'order'=>'Workflow.order'));
+        $workflows = $this->Ticket->Workflow->find('list', array('conditions' => array('Workflow.active' => '1'), 'order' => 'Workflow.order'));
         $closeUsers = $this->Ticket->CloseUser->find('list', array('conditions' => array('CloseUser.active' => '1')));
-        
-        $this->set(compact('types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'causes', 'suppliers','closeUsers'));
+
+        $this->set(compact('types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'causes', 'suppliers', 'closeUsers'));
     }
 
     /**
@@ -230,7 +227,7 @@ class TicketsController extends PhkapaAppController {
      * @access public
      */
     public function admin_edit($id = null) {
-        $this->Ticket->recursive=-1;
+        $this->Ticket->recursive = -1;
         if (!$id && empty($this->request->data)) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
@@ -244,9 +241,8 @@ class TicketsController extends PhkapaAppController {
             }
         }
         if (empty($this->request->data)) {
-            
-            $this->request->data = $this->Ticket->find('first', array('conditions'=>array('id'=>$id),'order'=>''));
-        
+
+            $this->request->data = $this->Ticket->find('first', array('conditions' => array('id' => $id), 'order' => ''));
         }
         $types = $this->Ticket->Type->find('list', array('conditions' => array('Type.active' => '1')));
         $priorities = $this->Ticket->Priority->find('list', array('conditions' => array('Priority.active' => '1')));
@@ -260,7 +256,7 @@ class TicketsController extends PhkapaAppController {
         $causes = $this->Ticket->Cause->find('list', array('conditions' => array('Cause.active' => '1')));
         $workflows = $this->Ticket->Workflow->find('list', array('conditions' => array('Workflow.active' => '1'), 'order' => 'Workflow.order'));
         $closeUsers = $this->Ticket->CloseUser->find('list', array('conditions' => array('CloseUser.active' => '1')));
-       
+
         $this->set(compact('types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'causes', 'workflows', 'suppliers', 'closeUsers'));
     }
 
@@ -284,26 +280,88 @@ class TicketsController extends PhkapaAppController {
         $this->redirect(array('action' => 'index'));
     }
 
-    
-    
     /**
      * Admin export
-     * Export Excel file with ticket records filtered by date range
+     * Export filtered by date range
      *
      * @return void
      * @access public
      */
     public function admin_export() {
-        if (!empty($this->request->data)) {
-            $this->_setupModel();
-            $this->Ticket->recursive = 2;
-            $range['start'] = $this->request->data['Ticket']['startdate'];
-            $range['end'] = $this->request->data['Ticket']['enddate'];
+        
+    }
 
-            $data = $this->Ticket->find('all', array('conditions' => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'], 'Ticket.origin_date <=' => $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day']))));
-            $this->set('tickets', $data);
-            $this->render('xls_data', 'export');
+    /**
+     * admin_export_csv method
+     * Export CSV file with ticket records filtered by date range
+     *
+     * @return void
+     * @access public
+     */
+    public function admin_export_csv() {
+        $this->_setupModel();
+        $this->Ticket->recursive = 2;
+        $range['start'] = $this->request->data['Ticket']['startdate'];
+        $range['end'] = $this->request->data['Ticket']['enddate'];
+
+        $data = $this->Ticket->find('all', array('conditions' => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'], 'Ticket.origin_date <=' => $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day']))));
+        if ($this->request->data['Ticket']['data_to_export'] == 'a') {
+            $this->admin_export_csv_actions(Set::extract('/Ticket/id',$data));
+            return;
         }
+        $excludePaths = array(
+            'Ticket.cause_id', 'Cause.id',
+            'Ticket.type_id', 'Type.id',
+            'Ticket.process_id', 'Process.id',
+            'Ticket.priority_id', 'Priority.id',
+            'Ticket.safety_id', 'Safety.id',
+            'Ticket.registar_id', 'Registar.id',
+            'Ticket.activity_id', 'Activity.id',
+            'Ticket.category_id', 'Category.id',
+            'Ticket.origin_id', 'Origin.id',
+            'Ticket.supplier_id', 'Supplier.id',
+            'Ticket.workflow_id', 'Workflow.id',
+            'Ticket.modified_user_id', 'ModifiedUser.id',
+            'Ticket.close_user_id', 'CloseUser.id',
+        );
+        $this->response->download('phkapa_admin_tickets_export.csv');
+
+        App::uses('CakeEvent', 'Event');
+        App::uses('CakeEventManager', 'Event');
+        $event = new CakeEvent('Phkapa.Ticket.Export', $this, array(
+            'data' => $data,
+            'excludePaths' => $excludePaths
+        ));
+        $this->getEventManager()->dispatch($event);
+    }
+    
+    /**
+     * export_csv_acions method
+     * Export CSV file with actions records filtered by tickets on date range
+     *
+     * @return void
+     * @access public
+     */
+    public function admin_export_csv_actions($tickets) {
+        $this->Ticket->Action->recursive = 2;
+        $data = $this->Ticket->Action->find('all', array('conditions' => array('ticket_id'=>$tickets)));
+        
+        $excludePaths = array(
+            'Action.action_type_id', 'ActionType.id',
+            'Action.action_effectiveness_id', 'ActionEffectiveness.id',
+            'Action.verify_user_id', 'VerifyUser.id',
+            'Action.close_user_id', 'CloseUser.id',
+            'Action.modified_user_id', 'ModifiedUser.id',
+        );
+        $this->response->download('phkapa_admin_actions_export.csv');
+
+        App::uses('CakeEvent', 'Event');
+        App::uses('CakeEventManager', 'Event');
+        $event = new CakeEvent('Phkapa.Ticket.Export', $this, array(
+            'data' => $data,
+            'excludePaths' => $excludePaths
+        ));
+        $this->getEventManager()->dispatch($event);
     }
 
     /**

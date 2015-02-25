@@ -15,14 +15,15 @@
         </div>
 
     </div>
-    <?php echo $this->Form->create('Ticket'); ?>
+    <?php echo $this->Form->create('Ticket', array('id' => 'exportFrm','target'=>'_blank','url'=>array('action'=>'export_csv'))); ?>
+    
     <fieldset class="ui-corner-all ui-widget-content" >
-        <legend><?php echo __d('phkapa','Export to Excel'); ?></legend>
-        <div class="input">
-        <label><?php echo ''; ?></label>
-        <h5><?php echo __d('phkapa','Filter Origin Date'); ?></h5>
+        <legend><?php echo __d('phkapa','Export to CSV'); ?></legend>
+       <div class="input">
+            <label><?php echo ''; ?></label>
+            <h5><?php echo __d('phkapa', 'Filter By Ticket Origin Date'); ?></h5>
         </div>
-            <?php
+        <?php
         $beginDate = explode("-", date('d-m-Y', strtotime('-1 month')));
         //$begin['hour'] = '00';
         //$begin['min'] = '00';
@@ -35,9 +36,13 @@
         $end['year'] = $endDate[2];
         $end['month'] = $endDate[1];
         $end['day'] = $endDate[0];
-        
-        echo $this->html->div('input', $this->Form->label(__d('phkapa','Start Date')) . $this->Form->dateTime('startdate', $dateFormat = 'DMY', null, $attributes = array('value'=>$begin, 'label' => __d('phkapa','Start Date'), 'empty' => false, 'minYear' => '2009', 'maxYear' => date('Y') + 1)));
-        echo $this->html->div('input', $this->Form->label(__d('phkapa','End Date')) . $this->Form->dateTime('enddate', $dateFormat = 'DMY', null, $attributes = array('value'=>$end, 'label' => __d('phkapa','End Date'), 'empty' => false, 'minYear' => '2009', 'maxYear' => date('Y') + 1)));
+        $options = array('t' => __d('phkapa', 'Tickets'), 'a' => __d('phkapa', 'Actions From Tickets'));
+        echo $this->Form->input(
+                'data_to_export', array('label'=>__d('phkapa','Data To Export'),'options' => $options, 'default' => 't')
+        );
+
+        echo $this->html->div('input', $this->Form->label(__d('phkapa', 'Start Date')) . $this->Form->dateTime('startdate', $dateFormat = 'DMY', null, $attributes = array('value' => $begin, 'label' => __d('phkapa', 'Start Date'), 'empty' => false, 'minYear' => '2009', 'maxYear' => date('Y') + 1)));
+        echo $this->html->div('input', $this->Form->label(__d('phkapa', 'End Date')) . $this->Form->dateTime('enddate', $dateFormat = 'DMY', /* $timeFormat = '24' */ null, $attributes = array('value' => $end, 'label' => __d('phkapa', 'End Date'), 'empty' => false, 'minYear' => '2009', 'maxYear' => date('Y') + 1)));
         ?>
     </fieldset>
     <?php echo $this->Form->end(__d('phkapa','Download File')); ?>

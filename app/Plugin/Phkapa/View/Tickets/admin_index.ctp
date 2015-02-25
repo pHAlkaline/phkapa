@@ -10,7 +10,7 @@
             <ul class="menu">
 
                 <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Ticket')), array('action' => 'add')); ?></li>
-                <li><?php echo $this->Html->link(__d('phkapa', 'Export to Excel'), array('action' => 'export')); ?></li>
+                <li><?php echo $this->Html->link(__d('phkapa', 'Export to CSV'), array('action' => 'export')); ?></li>
             </ul>
             </ul>
              

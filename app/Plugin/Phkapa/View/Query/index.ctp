@@ -7,7 +7,7 @@
         <div class="block" id="admin-actions">
             <h5><?php echo __dn('phkapa','Ticket','Tickets',2); ?></h5>
             <ul class="menu">
-                <li><?php echo $this->Html->link(__d('phkapa','Export to Excel'), array('action' => 'export')); ?></li>
+                <li><?php echo $this->Html->link(__d('phkapa','Export to CSV'), array('action' => 'export')); ?></li>
             </ul>
         </div>
 
