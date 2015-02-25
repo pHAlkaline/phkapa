@@ -186,11 +186,14 @@ msgstr "Data de Finalização"
 msgid "Expiry"
 msgstr "Expira"
 
-msgid "Export to Excel"
-msgstr "Exportar para Excel"
+msgid "Export to CSV"
+msgstr "Exportar para CSV"
 
-msgid "Filter Origin Date"
-msgstr "Filtro aplicado na Data de Origem"
+msgid "Filter By Ticket Origin Date"
+msgstr "Filtro aplicado a Incidências na Data de Origem"
+
+msgid "Data To Export"
+msgstr "Dados a exportar"
 
 msgid "Id"
 msgstr ""

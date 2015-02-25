@@ -185,11 +185,14 @@ msgstr "Enddatum"
 msgid "Expiry"
 msgstr "Fälligkeitsdatum"
 
-msgid "Export to Excel"
-msgstr "Nach Excel exportieren"
+msgid "Export to CSV"
+msgstr "Nach CSV exportieren"
 
-msgid "Filter Origin Date"
+msgid "Filter By Ticket Origin Date"
 msgstr "Nach Erstelldatum filtern"
+
+msgid "Data To Export"
+msgstr "Typ to exportieren"
 
 msgid "Id"
 msgstr "ID"

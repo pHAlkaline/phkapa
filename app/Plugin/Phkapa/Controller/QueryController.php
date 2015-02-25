@@ -136,8 +136,7 @@ class QueryController extends PhkapaAppController {
         $this->set('action', $this->Ticket->Action->read(null, $id));
     }
 
-   
-     /**
+    /**
      * print_report method
      *
      * @throws NotFoundException
@@ -145,11 +144,11 @@ class QueryController extends PhkapaAppController {
      * @return void
      */
     public function print_report($id) {
-         if (!$id) {
+        if (!$id) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-        
+
         App::uses('CakeEvent', 'Event');
         App::uses('CakeEventManager', 'Event');
         $event = new CakeEvent('Phkapa.Ticket.PrintReport', $this, array(
@@ -157,29 +156,91 @@ class QueryController extends PhkapaAppController {
         ));
         $this->getEventManager()->dispatch($event);
     }
-    
-    
 
     /**
-     * Export
-     * Export Excel file with ticket records filtered by date range
+     * export method
+     * Export filtered by date range
      *
      * @return void
      * @access public
      */
     public function export() {
-        if (!empty($this->request->data)) {
-            $this->Ticket->recursive = 2;
-            $this->Ticket->unbindModel(array(
-                'hasMany' => array('Children')
-                    ), false);
+        
+    }
 
-            $range['start'] = $this->request->data['Ticket']['startdate'];
-            $range['end'] = $this->request->data['Ticket']['enddate'];
-            $data = $this->Ticket->find('all', array('order' => 'Ticket.created', 'conditions' => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'], $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day']), "AND" => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
-            $this->set('tickets', $data);
-            $this->render('xls_data', 'export');
+    /**
+     * export_csv method
+     * Export CSV file with ticket records filtered by date range
+     *
+     * @return void
+     * @access public
+     */
+    public function export_csv() {
+        $this->_setupModel();
+        $this->Ticket->recursive = 2;
+        $this->Ticket->unbindModel(array(
+            'hasMany' => array('Children')
+                ), false);
+
+        $range['start'] = $this->request->data['Ticket']['startdate'];
+        $range['end'] = $this->request->data['Ticket']['enddate'];
+        $data = $this->Ticket->find('all', array('order' => 'Ticket.created', 'conditions' => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'], $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day']), "AND" => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
+         if ($this->request->data['Ticket']['data_to_export'] == 'a') {
+            $this->export_csv_actions(Set::extract('/Ticket/id',$data));
+            return;
         }
+        $excludePaths = array(
+            'Ticket.cause_id', 'Cause.id',
+            'Ticket.type_id', 'Type.id',
+            'Ticket.process_id', 'Process.id',
+            'Ticket.priority_id', 'Priority.id',
+            'Ticket.safety_id', 'Safety.id',
+            'Ticket.registar_id', 'Registar.id',
+            'Ticket.activity_id', 'Activity.id',
+            'Ticket.category_id', 'Category.id',
+            'Ticket.origin_id', 'Origin.id',
+            'Ticket.supplier_id', 'Supplier.id',
+            'Ticket.workflow_id', 'Workflow.id',
+            'Ticket.modified_user_id', 'ModifiedUser.id',
+            'Ticket.close_user_id', 'CloseUser.id',
+        );
+        $this->response->download('phkapa_tickets_export.csv');
+        $this->set('_null','');
+        App::uses('CakeEvent', 'Event');
+        App::uses('CakeEventManager', 'Event');
+        $event = new CakeEvent('Phkapa.Ticket.Export', $this, array(
+            'data' => $data,
+            'excludePaths' => $excludePaths
+        ));
+        $this->getEventManager()->dispatch($event);
+    }
+
+    /**
+     * export_csv_acions method
+     * Export CSV file with actions records filtered by tickets on date range
+     *
+     * @return void
+     * @access public
+     */
+    public function export_csv_actions($tickets) {
+        $this->Ticket->Action->recursive = 2;
+        $data = $this->Ticket->Action->find('all', array('conditions' => array('ticket_id'=>$tickets)));
+
+         $excludePaths = array(
+            'Action.action_type_id', 'ActionType.id',
+            'Action.action_effectiveness_id', 'ActionEffectiveness.id',
+            'Action.verify_user_id', 'VerifyUser.id',
+            'Action.close_user_id', 'CloseUser.id',
+            'Action.modified_user_id', 'ModifiedUser.id',
+        );
+        $this->response->download('phkapa_actions_export.csv');
+        App::uses('CakeEvent', 'Event');
+        App::uses('CakeEventManager', 'Event');
+        $event = new CakeEvent('Phkapa.Ticket.Export', $this, array(
+            'data' => $data,
+            'excludePaths' => $excludePaths
+        ));
+        $this->getEventManager()->dispatch($event);
     }
 
     /**
@@ -243,8 +304,6 @@ class QueryController extends PhkapaAppController {
 
         $this->Ticket->Activity->unbindModel(array(
             'hasAndBelongsToMany' => array('Process')), false);
-
-
 
         $this->Ticket->Cause->unbindModel(array(
             'hasAndBelongsToMany' => array('Category')), false);
