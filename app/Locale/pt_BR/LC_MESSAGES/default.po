@@ -382,7 +382,7 @@ msgstr "O diretorio tmp não permite escrita."
 msgid "Your tmp directory is writable."
 msgstr "O diretorio tmp tem permisão de escrita"
 
-msgid "Its time to create your own Plugin ou request one contacting pHAlkaline."
+msgid "Plugin not found, request one to pHAlkaline or develop one according to your needs."
 msgstr "Deve criar o seu próprio Plugin ou requesitar um a pHAlkaline."
 
 msgid "Ticket Report"

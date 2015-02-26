@@ -306,7 +306,7 @@ class TicketsController extends PhkapaAppController {
 
         $data = $this->Ticket->find('all', array('conditions' => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'], 'Ticket.origin_date <=' => $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day']))));
         if ($this->request->data['Ticket']['data_to_export'] == 'a') {
-            $this->admin_export_csv_actions(Set::extract('/Ticket/id',$data));
+            $this->admin_export_csv_actions(Set::extract('/Ticket/id', $data));
             return;
         }
         $excludePaths = array(
@@ -324,17 +324,17 @@ class TicketsController extends PhkapaAppController {
             'Ticket.modified_user_id', 'ModifiedUser.id',
             'Ticket.close_user_id', 'CloseUser.id',
         );
-        $this->response->download('phkapa_admin_tickets_export.csv');
 
         App::uses('CakeEvent', 'Event');
         App::uses('CakeEventManager', 'Event');
         $event = new CakeEvent('Phkapa.Ticket.Export', $this, array(
             'data' => $data,
-            'excludePaths' => $excludePaths
+            'excludePaths' => $excludePaths,
+            'fileName' => 'phkapa_tickets_export.csv'
         ));
         $this->getEventManager()->dispatch($event);
     }
-    
+
     /**
      * export_csv_acions method
      * Export CSV file with actions records filtered by tickets on date range
@@ -344,8 +344,8 @@ class TicketsController extends PhkapaAppController {
      */
     public function admin_export_csv_actions($tickets) {
         $this->Ticket->Action->recursive = 2;
-        $data = $this->Ticket->Action->find('all', array('conditions' => array('ticket_id'=>$tickets)));
-        
+        $data = $this->Ticket->Action->find('all', array('conditions' => array('ticket_id' => $tickets)));
+
         $excludePaths = array(
             'Action.action_type_id', 'ActionType.id',
             'Action.action_effectiveness_id', 'ActionEffectiveness.id',
@@ -353,13 +353,12 @@ class TicketsController extends PhkapaAppController {
             'Action.close_user_id', 'CloseUser.id',
             'Action.modified_user_id', 'ModifiedUser.id',
         );
-        $this->response->download('phkapa_admin_actions_export.csv');
-
         App::uses('CakeEvent', 'Event');
         App::uses('CakeEventManager', 'Event');
-        $event = new CakeEvent('Phkapa.Ticket.Export', $this, array(
+        $event = new CakeEvent('Phkapa.TicketAction.Export', $this, array(
             'data' => $data,
-            'excludePaths' => $excludePaths
+            'excludePaths' => $excludePaths,
+            'fileName' => 'phkapa_tickets_actions_export.csv'
         ));
         $this->getEventManager()->dispatch($event);
     }
