@@ -17,7 +17,7 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
   * All built-in drivers require PDO. You should make sure you have the correct PDO extensions installed.
 
 ## Git install 
-( phkapa and submodules cakephp and dompdf )
+( phkapa and submodule cakephp )
 
 git clone --recursive https://github.com/pHAlkaline/phkapa.git
 
