@@ -91,10 +91,10 @@
                             <td>macs&nbsp;</td>
                             <td>macs&nbsp;</td>
 
-                        </tr>
+                        </tr>e
                         <tr>
                             <td>MINOR USER&nbsp;</td>
-                            <td>Managment Control and Businees&nbsp;</td>
+                            <td>Management Control and Businees&nbsp;</td>
                             <td>mcb&nbsp;</td>
                             <td>mcb&nbsp;</td>
 

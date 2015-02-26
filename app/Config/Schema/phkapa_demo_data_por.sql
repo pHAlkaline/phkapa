@@ -27,15 +27,15 @@ SET time_zone = "+00:00";
 --
 
 INSERT INTO `aros` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `rght`) VALUES
-(28, 2, 'User', 8, 'Management Control and Businees', 14, 15),
-(27, 2, 'User', 7, 'Management and Client Support', 12, 13),
-(26, 2, 'User', 13, 'Human Recources', 10, 11),
-(25, 2, 'User', 12, 'Comercial Department', 8, 9),
-(24, 2, 'User', 16, 'Administrative and Finance', 6, 7),
-(29, 2, 'User', 5, 'Operations Platform', 16, 17),
+(28, 2, 'User', 8, 'Controlo de Gestão e Negócio', 14, 15),
+(27, 2, 'User', 7, 'Gestão e Suporte ao Cliente', 12, 13),
+(26, 2, 'User', 13, 'Recursos Humanos', 10, 11),
+(25, 2, 'User', 12, 'Departamento Comercial', 8, 9),
+(24, 2, 'User', 16, 'Administração e Finanças', 6, 7),
+(29, 2, 'User', 5, 'Plataforma de Operações', 16, 17),
 (30, 2, 'User', 17, 'PHKAPA', 18, 19),
-(31, 2, 'User', 2, 'Quality Management', 20, 21),
-(32, 2, 'User', 10, 'Reception', 22, 23);
+(31, 2, 'User', 2, 'Gestão da Qualidade', 20, 21),
+(32, 2, 'User', 10, 'Recepção', 22, 23);
 
 --
 -- Dumping data for table `aros_acos`
@@ -86,35 +86,35 @@ INSERT INTO `aros_acos` (`id`, `aro_id`, `aco_id`, `_allow`) VALUES
 --
 
 INSERT INTO `phkapa_activities` (`id`, `name`, `active`, `created`, `modified`) VALUES
-(2, 'Reception', 1, '2014-08-21 08:10:39', '2014-08-21 08:10:39'),
-(4, 'Client support', 0, '2014-08-21 08:10:39', '2014-08-21 08:10:39'),
+(2, 'Recepção', 1, '2014-08-21 08:10:39', '2014-08-21 08:10:39'),
+(4, 'Suporte ao cliente', 0, '2014-08-21 08:10:39', '2014-08-21 08:10:39'),
 (5, 'Backoffice', 1, '2014-08-21 08:10:39', '2014-01-17 13:18:18'),
-(6, 'Client management', 1, '2014-08-21 08:10:39', '2014-08-21 12:02:40'),
+(6, 'Gestão de clientes', 1, '2014-08-21 08:10:39', '2014-08-21 12:02:40'),
 (8, 'Inflow', 1, '2014-08-21 08:10:39', '2014-08-21 12:12:26'),
 (10, 'Outflow', 1, '2014-08-21 08:10:39', '2014-08-21 12:12:19'),
-(12, 'Returns', 1, '2014-08-21 08:10:39', '2014-08-21 08:10:39'),
-(14, 'Routes and deliveries', 1, '2014-08-21 08:10:39', '2014-08-21 08:10:39'),
-(15, 'Fleet Management', 1, '2014-08-21 08:10:39', '2014-08-21 12:08:42'),
-(22, 'Transportation of goods', 1, '2014-08-21 08:10:39', '2014-08-21 12:06:22'),
-(23, 'Route Planning and Delivery', 1, '2014-08-21 08:10:39', '2014-08-21 12:05:16'),
-(24, 'Transport returns', 1, '2014-08-21 08:10:39', '2014-08-21 12:06:48'),
-(27, 'Management Workshop', 1, '2014-08-21 08:10:39', '2014-08-21 12:26:03'),
-(28, 'Return flow', 1, '2014-08-21 12:12:43', '2014-08-21 12:12:43'),
-(29, 'Planning and control', 1, '2014-08-21 12:13:23', '2014-08-21 12:14:26'),
+(12, 'Devoluções', 1, '2014-08-21 08:10:39', '2014-08-21 08:10:39'),
+(14, 'Rotas e entregas', 1, '2014-08-21 08:10:39', '2014-08-21 08:10:39'),
+(15, 'Gestão de Frotas', 1, '2014-08-21 08:10:39', '2014-08-21 12:08:42'),
+(22, 'Transporte de mercadorias', 1, '2014-08-21 08:10:39', '2014-08-21 12:06:22'),
+(23, 'Planeamento de rotas de entrega', 1, '2014-08-21 08:10:39', '2014-08-21 12:05:16'),
+(24, 'Trasporte de devoluções', 1, '2014-08-21 08:10:39', '2014-08-21 12:06:48'),
+(27, 'Workshop de Gestão', 1, '2014-08-21 08:10:39', '2014-08-21 12:26:03'),
+(28, 'Fluxo de retorno', 1, '2014-08-21 12:12:43', '2014-08-21 12:12:43'),
+(29, 'Plaejamento e controle', 1, '2014-08-21 12:13:23', '2014-08-21 12:14:26'),
 (31, 'PNC / PB', 1, '2014-08-21 12:15:07', '2014-08-21 12:15:07'),
-(32, 'Complaints management', 1, '2014-08-21 12:16:05', '2014-08-21 12:16:05'),
-(33, 'Quality Management', 1, '2014-08-21 12:18:09', '2014-08-21 12:18:09'),
-(35, 'Refrigeration system', 1, '2014-08-21 12:19:16', '2014-08-21 12:19:16'),
-(36, 'Electrical', 1, '2014-08-21 12:19:44', '2014-08-21 12:19:44'),
-(37, 'Management Network', 1, '2014-08-21 12:20:02', '2014-08-21 12:20:02'),
-(38, 'Helpdesk', 1, '2014-08-21 12:20:54', '2014-08-21 12:20:54'),
-(39, 'Human resources', 1, '2014-08-21 12:21:17', '2014-08-21 12:21:17'),
-(40, 'Accounting and financial', 1, '2014-08-21 12:21:45', '2014-08-21 12:22:24'),
-(41, 'Health and safety at work', 1, '2014-08-21 12:22:54', '2014-08-21 12:22:54'),
-(42, 'Communication and marketing', 1, '2014-08-21 12:23:26', '2014-08-21 12:23:26'),
-(43, 'Communication Systems', 1, '2014-08-21 12:23:50', '2014-08-21 12:23:50'),
-(44, 'General', 1, '2014-08-24 05:43:10', '2014-09-03 00:23:08'),
-(45, 'Maintenance / Cleaning', 1, '2014-08-24 06:24:14', '2014-08-24 06:24:14');
+(32, 'Gestão de reclamações', 1, '2014-08-21 12:16:05', '2014-08-21 12:16:05'),
+(33, 'Gestão da Qualidade', 1, '2014-08-21 12:18:09', '2014-08-21 12:18:09'),
+(35, 'Sistema de refrigeração', 1, '2014-08-21 12:19:16', '2014-08-21 12:19:16'),
+(36, 'Elétrico', 1, '2014-08-21 12:19:44', '2014-08-21 12:19:44'),
+(37, 'Gestão de Redes', 1, '2014-08-21 12:20:02', '2014-08-21 12:20:02'),
+(38, 'Apoio ao cliente', 1, '2014-08-21 12:20:54', '2014-08-21 12:20:54'),
+(39, 'Recursos Humanos', 1, '2014-08-21 12:21:17', '2014-08-21 12:21:17'),
+(40, 'Contabilidade e Financeira', 1, '2014-08-21 12:21:45', '2014-08-21 12:22:24'),
+(41, 'Saude e segurança no trabalho', 1, '2014-08-21 12:22:54', '2014-08-21 12:22:54'),
+(42, 'Comunicação e marketing', 1, '2014-08-21 12:23:26', '2014-08-21 12:23:26'),
+(43, 'Sistemas de comunicação', 1, '2014-08-21 12:23:50', '2014-08-21 12:23:50'),
+(44, 'Geral', 1, '2014-08-24 05:43:10', '2014-09-03 00:23:08'),
+(45, 'Manutenção e limpeza', 1, '2014-08-24 06:24:14', '2014-08-24 06:24:14');
 
 --
 -- Dumping data for table `phkapa_activities_processes`
@@ -157,12 +157,12 @@ INSERT INTO `phkapa_activities_processes` (`activity_id`, `process_id`) VALUES
 --
 
 INSERT INTO `phkapa_categories` (`id`, `name`, `active`, `created`, `modified`) VALUES
-(21, 'Facilities / Venues', 1, '2014-08-21 08:11:00', '2014-08-22 04:35:33'),
-(43, 'Efficiency / Performance', 1, '2014-08-21 08:11:00', '2014-01-17 13:18:27'),
-(49, 'Provider / Supplier', 1, '2014-08-21 08:11:00', '2014-08-22 04:34:46'),
-(58, 'Material / Equipment', 1, '2014-08-21 08:11:00', '2014-08-22 04:35:52'),
-(62, 'Food Security', 1, '2014-08-22 04:59:57', '2014-09-02 02:30:37'),
-(64, 'Traceability', 1, '2014-08-22 05:00:55', '2014-08-22 05:00:55');
+(21, 'Instalações / Locais', 1, '2014-08-21 08:11:00', '2014-08-22 04:35:33'),
+(43, 'Eficiência / Performance', 1, '2014-08-21 08:11:00', '2014-01-17 13:18:27'),
+(49, 'Fabricante / Fornecedor', 1, '2014-08-21 08:11:00', '2014-08-22 04:34:46'),
+(58, 'Material / Equipamento', 1, '2014-08-21 08:11:00', '2014-08-22 04:35:52'),
+(62, 'Segurança Alimentar', 1, '2014-08-22 04:59:57', '2014-09-02 02:30:37'),
+(64, 'Rastreio', 1, '2014-08-22 05:00:55', '2014-08-22 05:00:55');
 
 --
 -- Dumping data for table `phkapa_categories_causes`
@@ -253,46 +253,46 @@ INSERT INTO `phkapa_categories_processes` (`category_id`, `process_id`) VALUES
 --
 
 INSERT INTO `phkapa_causes` (`id`, `name`, `active`, `created`, `modified`) VALUES
-(1, 'Lack of maintenance', 1, '2014-08-22 04:44:25', '2014-01-17 13:18:47'),
-(2, 'Lack of cleaning / housekeeping', 1, '2014-08-22 04:45:29', '2014-08-22 04:45:29'),
-(3, 'Lack of resources', 1, '2014-08-22 04:45:55', '2014-08-22 04:53:21'),
-(4, 'Unsuitable resources', 1, '2014-08-22 04:46:40', '2014-08-22 04:53:49'),
-(5, 'Inapplicable', 1, '2014-08-22 04:48:06', '2014-08-22 04:48:06'),
-(6, 'Communication failure', 1, '2014-08-22 04:49:19', '2014-08-22 04:49:19'),
-(7, 'Lack of procedures / rules', 1, '2014-08-22 04:53:08', '2014-08-22 04:54:43'),
-(8, 'Breach of rules', 1, '2014-08-22 04:55:41', '2014-08-22 04:55:41'),
-(9, 'Underperformance', 1, '2014-08-22 05:03:09', '2014-08-22 05:03:09'),
-(10, 'Ignorance', 1, '2014-08-24 06:12:24', '2014-08-24 06:12:24');
+(1, 'Falta de manutenção', 1, '2014-08-22 04:44:25', '2014-01-17 13:18:47'),
+(2, 'Falta de limpeza / arrumação', 1, '2014-08-22 04:45:29', '2014-08-22 04:45:29'),
+(3, 'Falta de recursos', 1, '2014-08-22 04:45:55', '2014-08-22 04:53:21'),
+(4, 'Recursos inadequados', 1, '2014-08-22 04:46:40', '2014-08-22 04:53:49'),
+(5, 'Inaplicável', 1, '2014-08-22 04:48:06', '2014-08-22 04:48:06'),
+(6, 'Falha de comunicação', 1, '2014-08-22 04:49:19', '2014-08-22 04:49:19'),
+(7, 'Falta de regras / procedimentos', 1, '2014-08-22 04:53:08', '2014-08-22 04:54:43'),
+(8, 'Violação das regras', 1, '2014-08-22 04:55:41', '2014-08-22 04:55:41'),
+(9, 'Fraco desempenho', 1, '2014-08-22 05:03:09', '2014-08-22 05:03:09'),
+(10, 'Ignorância', 1, '2014-08-24 06:12:24', '2014-08-24 06:12:24');
 
 --
 -- Dumping data for table `phkapa_origins`
 --
 
 INSERT INTO `phkapa_origins` (`id`, `name`, `active`, `created`, `modified`) VALUES
-(1, 'External audit', 1, '2014-08-21 08:11:36', '2014-08-21 09:08:31'),
-(3, 'Internal audit', 1, '2014-08-21 08:11:36', '2014-08-21 08:11:36'),
-(5, 'Voluntary recall of product', 1, '2014-08-21 08:11:36', '2014-08-21 08:11:36'),
-(6, 'Mandatory recall of product', 1, '2014-08-21 08:11:36', '2014-08-21 08:11:36'),
-(7, 'Feedback of manufacturability of product', 1, '2014-08-21 08:11:36', '2014-08-21 08:11:36'),
-(8, 'Feedback of process operations', 1, '2014-08-21 08:11:36', '2014-01-17 13:18:54'),
-(13, 'Customer Complain', 1, '2014-08-21 08:11:36', '2014-08-21 09:15:45'),
-(14, 'Review of NCMRS', 1, '2014-02-01 14:34:12', '2014-02-01 14:34:12'),
-(15, 'Medical Device Report (MDR)', 1, '2014-02-01 14:34:12', '2014-02-01 14:34:12'),
-(16, 'Medical Devices Vigilance System (MDVS)', 1, '2014-02-01 14:34:12', '2014-02-01 14:34:12'),
-(17, 'Product, process, or system nonconformance', 1, '2014-02-01 14:36:18', '2014-02-01 14:36:18'),
-(18, 'Other.', 1, '2014-02-01 14:36:18', '2014-02-01 14:36:18');
+(1, 'Auditoria externa', 1, '2014-08-21 08:11:36', '2014-08-21 09:08:31'),
+(3, 'Auditoria interna', 1, '2014-08-21 08:11:36', '2014-08-21 08:11:36'),
+(5, 'Retirada voluntário de produto', 1, '2014-08-21 08:11:36', '2014-08-21 08:11:36'),
+(6, 'Retirada obrigatória de produto', 1, '2014-08-21 08:11:36', '2014-08-21 08:11:36'),
+(7, 'Qualificações de fabricação do produto', 1, '2014-08-21 08:11:36', '2014-08-21 08:11:36'),
+(8, 'Qualificações de operações de processo', 1, '2014-08-21 08:11:36', '2014-01-17 13:18:54'),
+(13, 'Queixa do Cliente', 1, '2014-08-21 08:11:36', '2014-08-21 09:15:45'),
+(14, 'Revisão of NCMRS', 1, '2014-02-01 14:34:12', '2014-02-01 14:34:12'),
+(15, 'Relatório de Dispositivos Médicos', 1, '2014-02-01 14:34:12', '2014-02-01 14:34:12'),
+(16, 'Dispositivos Médicos Sistema de Vigilância (MDVS)', 1, '2014-02-01 14:34:12', '2014-02-01 14:34:12'),
+(17, 'Produto, processo ou sistema não conformidades', 1, '2014-02-01 14:36:18', '2014-02-01 14:36:18'),
+(18, 'Outros', 1, '2014-02-01 14:36:18', '2014-02-01 14:36:18');
 
 --
 -- Dumping data for table `phkapa_processes`
 --
 
 INSERT INTO `phkapa_processes` (`id`, `name`, `active`, `created`, `modified`) VALUES
-(1, 'Management and Customer Support', 1, '2014-08-21 08:11:52', '2014-08-21 08:11:52'),
-(2, 'Distribution Operations', 1, '2014-08-21 08:11:52', '2014-01-17 13:19:00'),
-(3, 'Platform Operations ', 1, '2014-08-21 08:11:52', '2014-08-21 08:11:52'),
-(6, 'Information Systems', 1, '2014-08-21 08:11:52', '2014-08-21 11:48:14'),
-(7, 'Operational Support', 1, '2014-08-21 08:11:52', '2014-08-21 11:47:54'),
-(10, 'Administrative Support', 1, '2014-08-21 08:11:52', '2014-08-21 11:46:40');
+(1, 'Gestão e Suporte ao Cliente', 1, '2014-08-21 08:11:52', '2014-08-21 08:11:52'),
+(2, 'Operações de Distribuição', 1, '2014-08-21 08:11:52', '2014-01-17 13:19:00'),
+(3, 'Operações de Plataforma', 1, '2014-08-21 08:11:52', '2014-08-21 08:11:52'),
+(6, 'Sistemas de Informação', 1, '2014-08-21 08:11:52', '2014-08-21 11:48:14'),
+(7, 'Apoio Operacional', 1, '2014-08-21 08:11:52', '2014-08-21 11:47:54'),
+(10, 'Apoio Administrativo', 1, '2014-08-21 08:11:52', '2014-08-21 11:46:40');
 
 --
 -- Dumping data for table `phkapa_processes_users`
@@ -343,8 +343,8 @@ INSERT INTO `phkapa_suppliers` (`id`, `name`, `active`, `created`, `modified`) V
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `active`, `modified`, `created`) VALUES
 (2, 'Quality Dep Manager', 'quality', '956a5341e2866143875974fe505c6e1015e8cade', 1, '2014-02-01 00:13:43', '2014-08-21 08:12:50'),
 (5, 'Operations Platform', 'op', 'a6a32d45cc556fb207296c19dd2535195999a2cb', 1, '2014-02-01 00:13:29', '2014-08-21 08:12:50'),
-(7, 'Managementm and Client Support', 'macs', 'f25d69055f8f6b04902a4a600924f4b322331e5c', 1, '2014-02-01 00:13:11', '2014-08-21 08:12:50'),
-(8, 'Management Control and Businees', 'mcb', 'c68d6262c3c505db043c9cf5aa8d412c3f61500a', 1, '2014-02-01 00:13:19', '2014-08-21 08:12:50'),
+(7, 'Managment and Client Support', 'macs', 'f25d69055f8f6b04902a4a600924f4b322331e5c', 1, '2014-02-01 00:13:11', '2014-08-21 08:12:50'),
+(8, 'Managment Control and Businees', 'mcb', 'c68d6262c3c505db043c9cf5aa8d412c3f61500a', 1, '2014-02-01 00:13:19', '2014-08-21 08:12:50'),
 (10, 'Reception', 'rec', '724edb893a9635719d6e5b9ac8f541ae5e08b47c', 1, '2014-02-01 00:13:50', '2014-08-21 08:12:50'),
 (12, 'Comercial Department', 'cd', '1838778552448119e8b08f4e6b4fc0197b1cef51', 1, '2014-02-01 23:30:34', '2014-08-21 08:12:50'),
 (13, 'Human Recources', 'hr', '55ffba6ae3cabb6702efe405ef073262b10ce3fb', 1, '2014-02-01 00:12:59', '2014-08-21 08:12:50'),

@@ -1,6 +1,14 @@
 <h2 class="grid_16" id="page-heading"><?php echo $title_for_step; ?></h2>
 <div class="grid_16 actionsContainer">
-    
+     <?php echo $this->Form->create('Install', array('id' => 'languageFrm')); ?>
+
+    <fieldset class="ui-corner-all ui-widget-content" >
+        <legend><?php echo __('Language'); ?></legend>
+       <?php
+       echo $this->Form->input('language', array('options' => Configure::read('Language.list'), 'empty' => '(choose one)','onchange'=>'this.form.submit();'));
+        ?>
+    </fieldset>
+    <?php echo $this->Form->end(); ?>
     <div class="install index">
         <?php
         $check = true;
@@ -26,17 +34,17 @@
         }
 
         // php version
-        if (version_compare(phpversion(), 5.2, '>=')) {
-            $message = sprintf(__('PHP version %s > 5.2'), phpversion());
+        if (version_compare(phpversion(), 5.3, '>=')) {
+            $message = sprintf(__('PHP version %s >= 5.3'), phpversion());
             echoMessage($message);
         } else {
             $check = false;
-            $message = sprintf(__('PHP version %s < 5.2'), phpversion());
+            $message = sprintf(__('PHP version %s < 5.3'), phpversion());
             echoError($message);
         }
 
         // php version
-        $minCakeVersion = '2.5.2';
+        $minCakeVersion = '2.6.2';
         $cakeVersion = Configure::version();
         if (version_compare($cakeVersion, $minCakeVersion, '>=')) {
             $message = __('CakePhp version %s >= %s', $cakeVersion, $minCakeVersion);

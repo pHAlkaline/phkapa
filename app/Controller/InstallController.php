@@ -59,7 +59,7 @@ class InstallController extends AppController {
         'encoding' => 'UTF8',
         'port' => null,
     );
-    
+
     /*
      * Default email configuration
      * 
@@ -70,7 +70,7 @@ class InstallController extends AppController {
         'email' => 'noreply@yourdomain.com',
         'name' => 'reply to',
         'subject' => 'PHKAPA Notification'
-        );
+    );
 
     /**
      * beforeFilter
@@ -82,10 +82,10 @@ class InstallController extends AppController {
         $this->Components->unload('Notify');
         parent::beforeFilter();
         $this->Auth->allow();
-        
+
         //$this->layout = 'install';
     }
-    
+
     /**
      * beforeRender callback
      *
@@ -94,7 +94,9 @@ class InstallController extends AppController {
      * @access public
      * @throws 
      */
-    public function beforeRender() {}
+    public function beforeRender() {
+        
+    }
 
     /**
      * If installed.txt exists, app is already installed
@@ -118,6 +120,10 @@ class InstallController extends AppController {
      */
     public function index() {
         $this->_check();
+        if (isset($this->data['Install']['language']) && $this->data['Install']['language'] != '') {
+            $this->Session->write('User.language', $this->data['Install']['language']);
+            Configure::write('Config.language', $this->Session->read('User.language'));
+        }
         $this->set('title_for_layout', __('Installation: Welcome'));
         $this->set('title_for_step', __('Installation: Welcome'));
     }
@@ -153,7 +159,7 @@ class InstallController extends AppController {
                 $config[$key] = $value;
             }
         }
-        
+
         try {
             ConnectionManager::create('default', $config);
             $db = ConnectionManager::getDataSource('default');
@@ -180,7 +186,6 @@ class InstallController extends AppController {
             return;
         }
         return $this->redirect(array('action' => 'data'));
-        
     }
 
     /**
@@ -206,18 +211,24 @@ class InstallController extends AppController {
         if (!$db->isConnected()) {
             $this->Session->setFlash(__('Could not connect to database.'), 'flash_message_error');
         } else {
-
+            $structure_file=APP . 'Config' . DS . 'Schema' . DS . 'phkapa_structure_'.Configure::read('Config.language').'.sql';
+            if (!file_exists($structure_file)) {
+                $structure_file=APP . 'Config' . DS . 'Schema' . DS . 'phkapa_structure.sql';
+            }
             try {
-                $this->__executeSQLScript($db, APP . 'Config' . DS . 'Schema' . DS . 'phkapa_structure.sql');
+                $this->__executeSQLScript($db, $structure_file);
             } catch (MissingConnectionException $e) {
 
                 $this->Session->setFlash(__('Could not load database: %s', $e->getMessage()), 'flash_message_info');
                 return;
             }
-
+            $demo_data_file=APP . 'Config' . DS . 'Schema' . DS . 'phkapa_demo_data_'.Configure::read('Config.language').'.sql';
+            if (!file_exists($demo_data_file)) {
+                $demo_data_file=APP . 'Config' . DS . 'Schema' . DS . 'phkapa_demo_data.sql';
+            }
             try {
                 if ($this->request->data['demo_data'] == '1') {
-                    $this->__executeSQLScript($db, APP . 'Config' . DS . 'Schema' . DS . 'phkapa_demo_data.sql');
+                    $this->__executeSQLScript($db, $demo_data_file);
                 }
             } catch (MissingConnectionException $e) {
 
@@ -262,7 +273,7 @@ class InstallController extends AppController {
         }
         return true;
     }
-    
+
     /**
      * Step : email
      *
@@ -303,7 +314,6 @@ class InstallController extends AppController {
             return;
         }
         return $this->redirect(array('action' => 'adminuser'));
-        
     }
 
     /**
