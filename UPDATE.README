@@ -1,6 +1,10 @@
---> From V1.1.2 to V1.1.3
-- Some bugfixes
-- Some changes due to framework updates
-- Framework Update in /lib/cakephp directory!!! 
+--> To 1.2
+Version Update
+Install refactoring with language support.
+Framework Update.
+Locale Update with Spanish language added , THANK YOU to : DATAGUNE CONSULTING S.L.
+Due to different requirements in different contexts from different clients, Report and Export Data Plugins were removed, you should develop this features based on the Framwework Event/Observer System. You can also require a Sample to pHAlkaline.
+Export to Excel Sample is now Export to CSV.
+Print Report Sample is now based on Browser print capabilities, we removed PDF support, relying on client native capabilities to save as PDF.
 # Update Files / Directories use your Diff/Merge tool.
 # Dont forget to delete files in tmp/cache models, persistent and view directories.
