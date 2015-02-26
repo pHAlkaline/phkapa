@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 01, 2014 at 11:52 PM
+-- Generation Time: Feb 01, 2013 at 11:52 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -665,19 +665,19 @@ INSERT INTO `aros_acos` (`id`, `aro_id`, `aco_id`, `_allow`) VALUES
 --
 
 INSERT INTO `phkapa_action_effectivenesses` (`id`, `name`, `active`, `created`, `modified`) VALUES
-(1, 'Waits Verification', 1, '2014-08-21 08:09:34', '2014-08-21 08:09:34'),
-(2, 'Efective', 1, '2014-08-21 08:09:34', '2014-08-21 08:09:34'),
-(3, 'Non efective', 1, '2014-08-21 08:09:34', '2014-08-21 08:09:34');
+(1, 'Aguarda Verificação', 1, '2012-08-21 08:09:34', '2012-08-21 08:09:34'),
+(2, 'Eficaz', 1, '2012-08-21 08:09:34', '2012-08-21 08:09:34'),
+(3, 'Não eficaz', 1, '2012-08-21 08:09:34', '2012-08-21 08:09:34');
 
 --
 -- Dumping data for table `phkapa_action_types`
 --
 
 INSERT INTO `phkapa_action_types` (`id`, `name`, `verification`, `active`, `created`, `modified`) VALUES
-(1, 'Adaptive', 1, 1, '2014-08-21 08:10:24', '2014-08-21 08:10:24'),
-(2, 'Corrective', 1, 1, '2014-08-21 08:10:24', '2014-08-21 08:10:24'),
-(3, 'Preventive', 0, 1, '2014-08-21 08:10:24', '2014-08-21 08:10:24'),
-(4, 'Interim', 0, 1, '2014-02-20 23:13:35', '2014-02-20 23:13:35');
+(1, 'Adaptiva', 1, 1, '2012-08-21 08:10:24', '2012-08-21 08:10:24'),
+(2, 'Correctiva', 1, 1, '2012-08-21 08:10:24', '2012-08-21 08:10:24'),
+(3, 'Preventiva', 0, 1, '2012-08-21 08:10:24', '2012-08-21 08:10:24'),
+(4, 'Intermédia', 0, 1, '2013-02-20 23:13:35', '2013-02-20 23:13:35');
 
 
 --
@@ -685,18 +685,18 @@ INSERT INTO `phkapa_action_types` (`id`, `name`, `verification`, `active`, `crea
 --
 
 INSERT INTO `phkapa_workflows` (`id`, `name`, `active`, `order`, `created`, `modified`) VALUES
-(1, 'Register', 1, 1, '2014-08-21 08:12:37', '2014-08-21 08:12:37'),
-(2, 'Review', 1, 2, '2014-08-21 08:12:37', '2014-08-21 08:12:37'),
-(3, 'Plan', 1, 3, '2014-08-21 08:12:37', '2014-08-21 08:12:37'),
-(4, 'Verify', 1, 4, '2014-08-21 08:12:37', '2014-08-21 08:12:37'),
-(5, 'Closed', 1, 5, '2014-08-21 08:12:37', '2014-08-21 08:12:37');
+(1, 'Registo', 1, 1, '2012-08-21 08:12:37', '2012-08-21 08:12:37'),
+(2, 'Revisão', 1, 2, '2012-08-21 08:12:37', '2012-08-21 08:12:37'),
+(3, 'Planificação', 1, 3, '2012-08-21 08:12:37', '2012-08-21 08:12:37'),
+(4, 'Verificação', 1, 4, '2012-08-21 08:12:37', '2012-08-21 08:12:37'),
+(5, 'Fechado', 1, 5, '2012-08-21 08:12:37', '2012-08-21 08:12:37');
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `active`, `modified`, `created`) VALUES
-(1, 'Admin', 'admin', '8b404da7bfc9a93aec1a46653d347e5edf2ca683', 1, '2014-01-01 00:00:00', '2014-01-01 00:00:00');
+(1, 'Admin', 'admin', '8b404da7bfc9a93aec1a46653d347e5edf2ca683', 1, '2013-01-01 00:00:00', '2013-01-01 00:00:00');
 SET FOREIGN_KEY_CHECKS=1;
 
 --
@@ -704,9 +704,9 @@ SET FOREIGN_KEY_CHECKS=1;
 --
 
 INSERT INTO `phkapa_priorities` (`id`, `name`, `active`, `order`, `created`, `modified`) VALUES
-(1, 'High', 1, 1, '2014-02-20 20:59:27', '2014-02-20 23:40:24'),
-(2, 'Medium', 1, 2, '2014-02-20 21:00:13', '2014-02-22 23:22:59'),
-(3, 'Low', 1, 3, '2014-02-20 21:00:36', '2014-02-22 23:22:32');
+(1, 'Alta', 1, 1, '2013-02-20 20:59:27', '2013-02-20 23:40:24'),
+(2, 'Media', 1, 2, '2013-02-20 21:00:13', '2013-02-22 23:22:59'),
+(3, 'Baixa', 1, 3, '2013-02-20 21:00:36', '2013-02-22 23:22:32');
 
 
 --
@@ -714,17 +714,17 @@ INSERT INTO `phkapa_priorities` (`id`, `name`, `active`, `order`, `created`, `mo
 --
 
 INSERT INTO `phkapa_safeties` (`id`, `name`, `active`, `order`, `created`, `modified`) VALUES
-(1, 'High', 1, 1, '2014-02-20 20:59:27', '2014-02-20 23:40:24'),
-(2, 'Medium', 1, 2, '2014-02-20 21:00:13', '2014-02-22 23:22:59'),
-(3, 'Low', 1, 3, '2014-02-20 21:00:36', '2014-02-22 23:22:32');
+(1, 'Alto', 1, 1, '2013-02-20 20:59:27', '2013-02-20 23:40:24'),
+(2, 'Medio', 1, 2, '2013-02-20 21:00:13', '2013-02-22 23:22:59'),
+(3, 'Baixo', 1, 3, '2013-02-20 21:00:36', '2013-02-22 23:22:32');
 
 --
 -- Dumping data for table `phkapa_types`
 --
 INSERT INTO `phkapa_types` (`id`, `name`, `active`, `created`, `modified`) VALUES
-(1, 'Nonconformity', 1, '2014-08-21 08:12:26', '2014-01-17 13:25:40'),
-(2, 'Observation', 1, '2014-08-21 08:12:26', '2014-08-21 08:12:26'),
-(3, 'PNC / PB', 0, '2014-08-21 08:12:26', '2014-08-21 08:12:26');
+(1, 'Não Conformidade', 1, '2012-08-21 08:12:26', '2013-01-17 13:25:40'),
+(2, 'Observação', 1, '2012-08-21 08:12:26', '2012-08-21 08:12:26'),
+(3, 'PNC / PB', 0, '2012-08-21 08:12:26', '2012-08-21 08:12:26');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
