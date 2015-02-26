@@ -382,7 +382,7 @@ msgstr ""
 msgid "Your tmp directory is writable."
 msgstr ""
 
-msgid "Its time to create your own Plugin ou request one contacting pHAlkaline."
+msgid "Plugin not found, request one to pHAlkaline or develop one according to your needs."
 msgstr ""
 
 msgid "Ticket Report"

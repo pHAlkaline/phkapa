@@ -204,13 +204,13 @@ class QueryController extends PhkapaAppController {
             'Ticket.modified_user_id', 'ModifiedUser.id',
             'Ticket.close_user_id', 'CloseUser.id',
         );
-        $this->response->download('phkapa_tickets_export.csv');
-        $this->set('_null','');
+        
         App::uses('CakeEvent', 'Event');
         App::uses('CakeEventManager', 'Event');
         $event = new CakeEvent('Phkapa.Ticket.Export', $this, array(
             'data' => $data,
-            'excludePaths' => $excludePaths
+            'excludePaths' => $excludePaths,
+            'fileName'=>'phkapa_tickets_export.csv'
         ));
         $this->getEventManager()->dispatch($event);
     }
@@ -233,12 +233,13 @@ class QueryController extends PhkapaAppController {
             'Action.close_user_id', 'CloseUser.id',
             'Action.modified_user_id', 'ModifiedUser.id',
         );
-        $this->response->download('phkapa_actions_export.csv');
+        
         App::uses('CakeEvent', 'Event');
         App::uses('CakeEventManager', 'Event');
-        $event = new CakeEvent('Phkapa.Ticket.Export', $this, array(
+        $event = new CakeEvent('Phkapa.TicketAction.Export', $this, array(
             'data' => $data,
-            'excludePaths' => $excludePaths
+            'excludePaths' => $excludePaths,
+            'fileName' => 'phkapa_tickets_actions_export.csv'
         ));
         $this->getEventManager()->dispatch($event);
     }

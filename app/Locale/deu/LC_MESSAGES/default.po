@@ -381,7 +381,7 @@ msgstr "TMP-Verzeichnis ist NICHT beschreibbar."
 msgid "Your tmp directory is writable."
 msgstr "TMP-Verzeichnis ist beschreibbar."
 
-msgid "Its time to create your own Plugin ou request one contacting pHAlkaline."
+msgid "Plugin not found, request one to pHAlkaline or develop one according to your needs."
 msgstr "Seine Zeit, Ihre eigenen Plugins zu erstellen oder fordern Sie eine Kontaktierung pHAlkaline."
 
 msgid "Ticket Report"
