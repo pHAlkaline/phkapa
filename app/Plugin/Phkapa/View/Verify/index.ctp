@@ -62,7 +62,7 @@
                         <?php echo $this->Html->link(__d('phkapa','View'), array('action' => 'view', $ticket['Ticket']['id'])); ?>
                         <?php
                         if ($closeOk) {
-                            echo ' | ' . $this->Html->link(__d('phkapa','Close'), array('action' => 'close', $ticket['Ticket']['id']), null, __d('phkapa','Are you sure you want to close # %s?', $ticket['Ticket']['id']).' '.$closeMessage);
+                            echo ' | ' . $this->Html->link(__d('phkapa','Close'), array('action' => 'close', $ticket['Ticket']['id']), array('confirm'=> __d('phkapa','Are you sure you want to close # %s?', $ticket['Ticket']['id']).' '.$closeMessage));
                         }
                         ?>
 

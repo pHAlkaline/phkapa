@@ -1,11 +1,12 @@
 # LANGUAGE translation of PHKAPA Application
 # Copyright pHAlkaline <contact@phalkaline.eu>
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: phkapa.net\n"
-"POT-Creation-Date: 2013-11-16 21:57+0000\n"
-"PO-Revision-Date: 2015-01-21 16:18+0100\n"
+"POT-Creation-Date: 2013-02-12 21:57+0000\n"
+"PO-Revision-Date: 2015-01-22 11:24+0100\n"
 "Last-Translator: DATAGUNE CONSULTING S.L. <datagune@datagune-consulting.com>\n"
 "Language-Team: DATAGUNE CONSULTING S.L. <datagune@datagune-consulting.com>\n"
 "MIME-Version: 1.0\n"
