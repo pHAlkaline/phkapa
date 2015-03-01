@@ -7,7 +7,7 @@
         <div class="block" id="admin-actions">
             <h5><?php echo __dn('phkapa', 'Ticket', 'Tickets', 2); ?></h5>
             <ul class="menu">
-                <li><?php echo $this->Html->link(__d('phkapa', 'Send %s', __d('phkapa', 'Ticket')), array('action' => 'send', $ticket['Ticket']['id']), null, __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])); ?> </li>
+                <li><?php echo $this->Html->link(__d('phkapa', 'Send %s', __d('phkapa', 'Ticket')), array('action' => 'send', $ticket['Ticket']['id']), array('confirm'=> __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id']))); ?> </li>
                 <li><?php echo $this->Html->link(__d('phkapa', 'Edit %s', __d('phkapa', 'Ticket')), array('action' => 'edit', $ticket['Ticket']['id'])); ?> </li>
                 <li><?php echo $this->Html->link(__d('phkapa', 'Delete %s', __d('phkapa', 'Ticket')), array('action' => 'delete', $ticket['Ticket']['id']), array('confirm'=> __d('phkapa','Are you sure you want to delete # %s?', $ticket['Ticket']['id']))); ?> </li>
                 <li><?php echo $this->Html->link(__d('phkapa', 'List %s', __dn('phkapa', 'Ticket', 'Tickets', 2)), array('action' => 'index')); ?> </li>

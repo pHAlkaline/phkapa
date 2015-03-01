@@ -27,13 +27,13 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
             <ul class="menu">
                 <?php if ($closeOk) : ?>
                     <li>
-                        <?php echo $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close', $ticket['Ticket']['id']), null, __d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id']) . ' ' . $closeMessage);
+                        <?php echo $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close', $ticket['Ticket']['id']), array('confirm'=>__d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id']) . ' ' . $closeMessage));
                         ?>
                     </li>
                 <?php endif; ?>
                 <?php //if ($closeMessage!='') : ?>
                 <li>
-                    <?php echo $this->Html->link(__d('phkapa', 'Replan'), array('action' => 'replan', $ticket['Ticket']['id']), null, __d('phkapa', 'Are you sure you want to replan # %s?', $ticket['Ticket']['id']));
+                    <?php echo $this->Html->link(__d('phkapa', 'Replan'), array('action' => 'replan', $ticket['Ticket']['id']), array('confirm'=> __d('phkapa', 'Are you sure you want to replan # %s?', $ticket['Ticket']['id'])));
                     ?>
                 </li>
                 <?php //endif; ?>

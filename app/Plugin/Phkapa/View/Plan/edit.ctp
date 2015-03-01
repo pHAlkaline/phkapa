@@ -71,10 +71,10 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                 <li>
                     <?php
                     if ($sendOk) {
-                        echo $this->Html->link(__d('phkapa', 'Send %s', __d('phkapa', 'Ticket')), array('action' => 'send', $ticket['Ticket']['id']), null, __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id']));
+                        echo $this->Html->link(__d('phkapa', 'Send %s', __d('phkapa', 'Ticket')), array('action' => 'send', $ticket['Ticket']['id']), array('confirm'=> __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
                     }
                     if ($closeOk) {
-                        echo $this->Html->link(__d('phkapa', 'Close %s', __d('phkapa', 'Ticket')), array('action' => 'close', $ticket['Ticket']['id']), null, __d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id']));
+                        echo $this->Html->link(__d('phkapa', 'Close %s', __d('phkapa', 'Ticket')), array('action' => 'close', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id'])));
                     }
                     ?>
                 </li>
@@ -375,10 +375,10 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
 
                                     <td class="nowrap actions">
                                         <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit_action', $action['id'], $ticket['Ticket']['id'])); ?>
-                                        <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'delete_action', $action['id'], $ticket['Ticket']['id']), null, __d('phkapa', 'Are you sure you want to delete # %s?', $action['id'])); ?>
+                                        <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'delete_action', $action['id'], $ticket['Ticket']['id']), array('confirm'=>__d('phkapa', 'Are you sure you want to delete # %s?', $action['id']))); ?>
                                         <?php
                                         if ($action['closed'] == 0) {
-                                            echo ' | ' . $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close_action', $action['id'], $ticket['Ticket']['id']), null, __d('phkapa', 'Are you sure you want to close # %s?', $action['id']));
+                                            echo ' | ' . $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close_action', $action['id'], $ticket['Ticket']['id']), array('confirm'=> __d('phkapa', 'Are you sure you want to close # %s?', $action['id'])));
                                         }
                                         ?>
                                     </td>
