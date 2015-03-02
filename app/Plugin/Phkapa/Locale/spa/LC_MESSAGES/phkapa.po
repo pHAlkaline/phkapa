@@ -1,7 +1,6 @@
 # LANGUAGE translation of PHKAPA Application
 # Copyright pHAlkaline <contact@phalkaline.eu>
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: phkapa.net\n"
@@ -75,16 +74,16 @@ msgid "Approved"
 msgstr "Aprobado"
 
 msgid "Are you sure you want to close # %s?"
-msgstr "Está seguro de que quiere cerrar el nº %s?"
+msgstr "¿Está seguro de que quiere cerrar el nº %s?"
 
 msgid "Are you sure you want to delete # %s?"
-msgstr "Está seguro de que quiere borrar el nº %s?"
+msgstr "¿Está seguro de que quiere borrar el nº %s?"
 
 msgid "Are you sure you want to replan # %s?"
-msgstr "Está seguro de que quiere replanificar el nº %s?"
+msgstr "¿Está seguro de que quiere replanificar el nº %s?"
 
 msgid "Are you sure you want to send # %s?"
-msgstr "Está seguro de que desea enviar el nº %s?"
+msgstr "¿Está seguro de que desea enviar el nº %s?"
 
 msgid "Boolean"
 msgstr "Booleano"
@@ -226,7 +225,9 @@ msgid "Modified"
 msgstr "Modificado"
 
 msgid "Must be between ticket origin date and ticket close date"
-msgstr "Debe estar comprendida entre la fecha origen del ticket y la fecha de cierre del ticket"
+msgstr ""
+"Debe estar comprendida entre la fecha origen del ticket y la fecha de cierre "
+"del ticket"
 
 msgid "Name"
 msgstr "Nombre"

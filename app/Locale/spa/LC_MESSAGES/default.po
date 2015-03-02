@@ -1,7 +1,6 @@
 # LANGUAGE translation of PHKAPA Application
 # Copyright pHAlkaline <contact@phalkaline.eu>
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: phkapa.net\n"
@@ -61,7 +60,7 @@ msgid "Application Offline"
 msgstr "Aplicación fuera de linea"
 
 msgid "Are you sure you want to delete # %s?"
-msgstr "Está seguro de que quiere borrar el nº %s?"
+msgstr "¿Está seguro de que quiere borrar el nº %s?"
 
 msgid "Aro"
 msgid_plural "Aros"
@@ -134,7 +133,8 @@ msgstr "Denegado"
 msgid "Diagnostics"
 msgstr "Diagnósticos"
 
-msgid "Dont forget to restore default access values to Config and tmp directory."
+msgid ""
+"Dont forget to restore default access values to Config and tmp directory."
 msgstr "No olvide restaurar los valores de acceso por defecto a los directorios Config y tmp"
 
 msgid "Down"
@@ -159,7 +159,7 @@ msgid "Empty"
 msgstr "Vacío"
 
 msgid "Enable change password"
-msgstr "Cambiar password?"
+msgstr "¿Cambiar password?"
 
 msgid "End Session"
 msgstr "Finalizar Sesión"
