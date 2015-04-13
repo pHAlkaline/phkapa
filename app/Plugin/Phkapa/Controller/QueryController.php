@@ -94,6 +94,7 @@ class QueryController extends PhkapaAppController {
         } else {
             $this->paginate = array('conditions' => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))));
         }
+        $this->paginate= array('order'=>array('Ticket.origin_date'=>'DESC'));
         $this->Ticket->unbindModel(array(
             'hasMany' => array('Children')
                 ), false);
