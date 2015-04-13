@@ -1,4 +1,5 @@
 <?php
+App::uses('CakeTime', 'Utility');
 /**
  * Ticket
  *
@@ -45,8 +46,11 @@ class Ticket extends PhkapaAppModel {
             'date' => array(
                 'rule' => array('date'),
                 'message' => 'Invalid date',
-            //'allowEmpty' => false
             ),
+            'past' => array(
+                'rule' => array('checkPastDate'),
+                'message' => 'invalid date'
+            )
         ),
         'type_id' => array(
             'notempty' => array(
@@ -203,6 +207,10 @@ class Ticket extends PhkapaAppModel {
                 'message' => 'Invalid date',
             //'allowEmpty' => false
             ),
+            'past' => array(
+                'rule' => array('checkPastDate'),
+                'message' => 'invalid date'
+            )
         ),
         'type_id' => array(
             'notempty' => array(
@@ -535,6 +543,19 @@ class Ticket extends PhkapaAppModel {
      */
     public function checkCause($check) {
         return ($this->data['Ticket']['workflow_id'] == 4 && $check['cause_id'] == null) ? false : true;
+    }
+    
+    /**
+     * checkPastDate
+     * Custom Validation Rule: Ensures a selected date is either the
+     * present day or in the past.
+     *
+     * @param array $check Contains the value passed from the view to be validated
+     * @return bool True if in the past or today, False otherwise
+     */
+    public function checkPastDate($check) {
+        $value = array_values($check);
+        return CakeTime::fromString($value['0']) <= CakeTime::fromString(date('Y-m-d'));
     }
 
     /**

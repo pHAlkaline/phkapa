@@ -19,7 +19,7 @@ App::uses('Notification', 'Model');
 class NotifyComponent extends Component {
 
     /**
-     * Other components utilized by NotifyComponent
+     * Other components required by NotifyComponent
      *
      * @var array
      * @access public
