@@ -115,7 +115,7 @@ class QueryController extends PhkapaAppController {
         $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('AND' => array('Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
         if (!$id || count($ticket) == 0) {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
-            //$this->redirect(array('action' => 'index'));
+            $this->redirect(array('action' => 'index'));
         }
 
 
