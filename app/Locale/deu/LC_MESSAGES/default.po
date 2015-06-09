@@ -1,6 +1,7 @@
 # LANGUAGE translation of PHKAPA Application
 # Copyright pHAlkaline <contact@phalkaline.eu>
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: phkapa.net\n"
