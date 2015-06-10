@@ -1,0 +1,477 @@
+# LANGUAGE translation of PHKAPA Application
+# Copyright pHAlkaline <contact@phalkaline.eu>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phkapa.net\n"
+"POT-Creation-Date: 2013-02-12 21:57+0000\n"
+"PO-Revision-Date: 2015-06-09 19:31+0200\n"
+"Last-Translator: DATAGUNE CONSULTING S.L. <datagune@datagune-consulting."
+"com>\n"
+"Language-Team: Dragos Pascale <dragos.pascale@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.5\n"
+"Language: rum\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "(choose one)"
+msgstr "(alegeți una)"
+
+msgid "Action"
+msgid_plural "Actions"
+msgstr[0] "Acțiune"
+msgstr[1] "Acțiuni"
+
+msgid "Action Effectiveness"
+msgstr "Eficiența  Acțiunii"
+
+msgid "Action deadline expired!!!"
+msgstr "Termenul limită al acțiunii a expirat!!"
+
+msgid "Action is closed, must have closed date"
+msgstr "La acțiunea este închisă, trebuie să aveți o dată de închidere"
+
+msgid "Action requires closed by"
+msgstr "Acțiunea necesită închisă de către"
+
+msgid "Action Type"
+msgid_plural "Action Types"
+msgstr[0] "Tip de Acțiune"
+msgstr[1] "Tipuri de  Acțiune"
+
+msgid "Action type requires verification on close"
+msgstr "Acest tip de acțiune necesită verificare la închidere"
+
+msgid "Action type requires verified by"
+msgstr "Tipul de acțiune necesită verificat de "
+
+msgid "Action type requires closed by"
+msgstr "Tipul de acțiune necesită închis de "
+
+msgid "Active"
+msgstr "Activ"
+
+msgid "Activity"
+msgid_plural "Activities"
+msgstr[0] "Activitate"
+msgstr[1] "Activități"
+
+msgid "Add %s"
+msgstr "Adaugă %s"
+
+msgid "Administration"
+msgstr "Administrare"
+
+msgid "After Deadline"
+msgstr "După data limită"
+
+msgid "Application Offline"
+msgstr "Aplicația este oprită"
+
+msgid "Approved"
+msgstr "Aprobat"
+
+msgid "Are you sure you want to close # %s?"
+msgstr "Ești sigur(ă) că vrei să închizi nº %s?"
+
+msgid "Are you sure you want to delete # %s?"
+msgstr "Ești sigur(ă) că vrei să ștergi nº %s?"
+
+msgid "Are you sure you want to replan # %s?"
+msgstr "Ești sigur(ă) că vrei să replanifici nº %s?"
+
+msgid "Are you sure you want to send # %s?"
+msgstr "Ești sigur(ă) că vrei să trimiți nº %s?"
+
+msgid "Boolean"
+msgstr "Boolean"
+
+msgid "Category"
+msgid_plural "Categories"
+msgstr[0] "Categorie"
+msgstr[1] "Categorii"
+
+msgid "Cause"
+msgid_plural "Causes"
+msgstr[0] "Cauză"
+msgstr[1] "Cauze"
+
+msgid "Cause Notes"
+msgstr "Note despre Cauză"
+
+msgid "Choose one option"
+msgstr "Alege o opțiune"
+
+msgid "Close"
+msgstr "Închide"
+
+msgid "Close %s"
+msgstr "Închide %s"
+
+msgid "Close Date"
+msgstr "Data de Închidere"
+
+msgid "Close date must be between origin date and today"
+msgstr "Data de închidere trebuie să fie între data de origine și data de azi"
+
+msgid "Closed"
+msgstr "Închis"
+
+msgid "Closed By"
+msgstr "Închis de "
+
+msgid "Closed with success."
+msgstr "Închis cu succes"
+
+msgid "Continue"
+msgstr "Continuă"
+
+msgid "Could not be closed."
+msgstr "Nu a putut fi închis."
+
+msgid "Could not be deleted."
+msgstr "Nu a putut fi șters"
+
+msgid "Could not be saved. Please, try again."
+msgstr "Nu a putut fi salvat. Vă rog încercați din nou."
+
+msgid "Created"
+msgstr "Creat"
+
+msgid "Days"
+msgstr "Zile"
+
+msgid "Deadline"
+msgstr "Data limită"
+
+msgid "Delete"
+msgstr "Șterge"
+
+msgid "Delete %s"
+msgstr "Șterge %s"
+
+msgid "Deleted with success."
+msgstr "Șters cu succes."
+
+msgid "Description"
+msgstr "Descriere"
+
+msgid "Download File"
+msgstr "Descarcă fișierul"
+
+msgid "Edit"
+msgstr "Editează"
+
+msgid "Edit %s"
+msgstr "Editează %s"
+
+msgid "Effectiveness"
+msgstr "Eficiență"
+
+msgid "Effectiveness Notes"
+msgstr "Note despre Eficiență"
+
+msgid "Efficiency"
+msgstr "Eficiență"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Empty"
+msgstr "Golește"
+
+msgid "End Date"
+msgstr "Data de sfârșit"
+
+msgid "Expiry"
+msgstr "Expiră"
+
+msgid "Export to CSV"
+msgstr "Exportă în format  CSV"
+
+msgid "Filter By Ticket Origin Date"
+msgstr "Filtrează după data de origine a tichetului"
+
+msgid "Data To Export"
+msgstr "Date de Exportat"
+
+msgid "Id"
+msgstr "Id"
+
+msgid "Invalid date"
+msgstr "Dată invalidă"
+
+msgid "Invalid parent"
+msgstr "Părinte invalid"
+
+msgid "Invalid request."
+msgstr "Solicitare invalidă"
+
+msgid "Last Modification By"
+msgstr "Ultima modificare făcută de"
+
+msgid "List %s"
+msgstr "Lista %s"
+
+msgid "Loading process data"
+msgstr "Se încarcă datele de proces"
+
+msgid "Menu"
+msgstr "Meniu"
+
+msgid "Modified"
+msgstr "Modificat"
+
+msgid "Must be between ticket origin date and ticket close date"
+msgstr "Trebuie să fie între data de origine a tichetului și data de închidere"
+
+msgid "Name"
+msgstr "Nume"
+
+msgid "New ticket registered"
+msgstr "S-a întrgistrat un nou tichet"
+
+msgid "Next"
+msgstr "Următorul"
+
+msgid "No"
+msgstr "Nu"
+
+msgid "No cause!!!"
+msgstr "Nu există cauze !!!"
+
+msgid "No plan!!!"
+msgstr "Nu există planificări !!!"
+
+msgid "No records found!!!"
+msgstr "Nu s-au găsit înregistrări !!!"
+
+msgid "Notes"
+msgstr "Note"
+
+msgid "Notification"
+msgid_plural "Notifications"
+msgstr[0] "Notificare"
+msgstr[1] "Notificări"
+
+msgid "Numeric"
+msgstr "Numeric"
+
+msgid "Open Report"
+msgstr "Deschide Raportul"
+
+msgid "Open new related ticket"
+msgstr "Deschide un tichet nou asociat"
+
+msgid "Option"
+msgid_plural "Options"
+msgstr[0] "Opțiune"
+msgstr[1] "Opțiuni"
+
+msgid "Order"
+msgstr "Ordonează"
+
+msgid "Origin"
+msgid_plural "Origins"
+msgstr[0] "Origine"
+msgstr[1] "Origini"
+
+msgid "Origin Date"
+msgstr "Data de origine"
+
+msgid "PHKAPA"
+msgstr "PHKAPA"
+
+msgid "Page"
+msgstr "Pagina"
+
+msgid ""
+"Page %page% of %pages%, showing %current% records out of %count% total, "
+"starting on record %start%, ending on %end%"
+msgstr ""
+"Pagina %page% din %pages%, arată %current% înregistrări dintr-un total de "
+"%count%, începând cu înregistrarea %start% și terminând cu înregistrarea %end"
+"%"
+
+msgid "Password"
+msgstr "Parolă"
+
+msgid "Plan"
+msgstr "Planifică"
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Priority"
+msgid_plural "Priorities"
+msgstr[0] "Prioritate"
+msgstr[1] "Priorități"
+
+msgid "Process"
+msgid_plural "Processes"
+msgstr[0] "Proces"
+msgstr[1] "Procese"
+
+msgid "Query"
+msgstr "Interogare"
+
+msgid "Record"
+msgstr "Înregistrare"
+
+msgid "Record %s"
+msgstr "Înregistrarea %s"
+
+msgid "Registar"
+msgstr "Înregistrat de"
+
+msgid "Register"
+msgstr "Înregistrează"
+
+msgid "Related"
+msgstr "Relaționat"
+
+msgid "Related Child Tickets and actions will also be deleted!!"
+msgstr "Tichetele copii asociate și acțiunile lor vor fi de asemenea șterse"
+
+msgid "Related Tickets"
+msgstr "Tichete asociate"
+
+msgid "Replan"
+msgstr "Replanificare"
+
+msgid "Request"
+msgstr "Solicitare"
+
+msgid "Revision"
+msgid_plural "Revisions"
+msgstr[0] "Revizie"
+msgstr[1] "Revizii"
+
+msgid "Review"
+msgstr "Revizie"
+
+msgid "Review Notes"
+msgstr "Note de Revizie"
+
+msgid "Role"
+msgstr "Rol"
+
+msgid "Safety"
+msgid_plural "Safeties"
+msgstr[0] "Securitate"
+msgstr[1] "Securitate"
+
+msgid "Saved with success."
+msgstr "Salvat cu succes"
+
+msgid "See ticket parent data"
+msgstr "Vizualizează datele tichetului părinte"
+
+msgid "Select Supplier"
+msgstr "Selectează Furnizor"
+
+msgid "Send"
+msgstr "Trimite"
+
+msgid "Send %s"
+msgstr "Enviar %s"
+
+msgid "Start Date"
+msgstr "Dată de început"
+
+msgid "Submit"
+msgstr "Transmite"
+
+msgid "Supplier"
+msgid_plural "Suppliers"
+msgstr[0] "Furnizor"
+msgstr[1] "Furnizori"
+
+msgid "This application is now on maintenance mode, back soon as possible!"
+msgstr "Aplicația este în mod mentenanță, reveniți cât de curând"
+
+msgid ""
+"This ticket has actions that were not effective, please choose cancel if you "
+"want replan or create a new related ticket before closing."
+msgstr ""
+"Acest tichet are asociate acțiuni care nu au fost eficiente, alegeți renunță "
+"dacă doriți să replanificați sau să creați un tichet asociat înainte de "
+"închidere."
+
+msgid "This workflow requires cause"
+msgstr "Acest flux de lucru necesită o cauză"
+
+msgid "This workflow requires close date"
+msgstr "Acest flux de lucru necesită o dată de închidere"
+
+msgid "This workflow requires close by"
+msgstr "Acest flux de lucru necesită închis de "
+
+msgid "Ticket"
+msgid_plural "Tickets"
+msgstr[0] "Tichet"
+msgstr[1] "Tichete"
+
+msgid "Ticket # %s has been closed"
+msgstr "Tichetul nº %s a fost închis"
+
+msgid "Ticket # %s has new plan"
+msgstr "Tichetul nº %s are un plan nou"
+
+msgid "Ticket Parent"
+msgstr "Părintele Tichetului"
+
+msgid "Ticket Report"
+msgstr "Raportul Tichetului"
+
+msgid "Type"
+msgid_plural "Types"
+msgstr[0] "Tip"
+msgstr[1] "Tipuri"
+
+msgid "User"
+msgid_plural "Users"
+msgstr[0] "Utilizator"
+msgstr[1] "Utilizatori"
+
+msgid "Username"
+msgstr "Nume utilizator"
+
+msgid "Users"
+msgstr "Utilizatori"
+
+msgid "Verification"
+msgstr "Verificare"
+
+msgid "Verified By"
+msgstr "Verificat de"
+
+msgid "Verify"
+msgstr "Verifică"
+
+msgid "Version"
+msgstr "Versiune"
+
+msgid "Version Created"
+msgstr "Versiune Creată"
+
+msgid "View"
+msgstr "Vizualizează"
+
+msgid "View %s"
+msgstr "Vizualizează %s"
+
+msgid "Workflow"
+msgstr "Flux de lucru"
+
+msgid "Yes"
+msgstr "Da"
+
+msgid "set todays date"
+msgstr "Stabilește ziua de astăzi"
+
+msgid "Language"
+msgstr "Limba"

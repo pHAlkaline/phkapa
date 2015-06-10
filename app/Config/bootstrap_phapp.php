@@ -11,10 +11,11 @@
  */
 Configure::write('Config.language', 'eng'); 
 Configure::write('Language.list',array(
-    'eng'=>'English',
     'deu'=>'Deutsch',
+    'eng'=>'English',
     'por'=>'Português',
     'pt_BR'=>'Portugues ( Brasil )',
+    'ron' =>'Român',
     'spa'=>'Español'
     )); 
 
@@ -36,13 +37,14 @@ Configure::write('Maintenance.offline_destroy_session', false); // true or false
 
 /**
 * Settings for revision / history behavior
-* By default available for Ticket and Action tables
+* By default deactivated
+* To activate include values in array()
 */
-Configure::write('Revision.tables', array()); // Use Ticket , Action or Both => array('Ticket','Action')
+Configure::write('Revision.tables', array()); // Set Ticket or Action or Both => array('Ticket','Action')
 
 /**
  * The settings below can be used to open access to all users or one specified user.
  * - 'All' -> after login , all users have TOTAL access
  * - '{User NAME field}' -> after login this user has total control 
  */
-Configure::write('Access.open', ''); // Keep this clean , use only on emergency.
+Configure::write('Access.open', ''); // Keep this clean , use only on emergency, exmaple is case you forgot your access to phKapa
