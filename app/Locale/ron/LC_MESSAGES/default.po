@@ -1,0 +1,442 @@
+# LANGUAGE translation of PHKAPA Application
+# Copyright pHAlkaline <contact@phalkaline.eu>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phkapa.net\n"
+"POT-Creation-Date: 2013-02-12 21:57+0000\n"
+"PO-Revision-Date: 2015-06-09 19:29+0200\n"
+"Last-Translator: DATAGUNE CONSULTING S.L. <datagune@datagune-consulting."
+"com>\n"
+"Language-Team: Dragos Pascale <dragos.pascale@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.5\n"
+"Language: rum\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "(choose one)"
+msgstr "(alegeți una)"
+
+msgid "Aco"
+msgid_plural "Acos"
+msgstr[0] "Control al Accesului"
+msgstr[1] "Controale ale accesului"
+
+msgid "Action Type"
+msgid_plural "Action Types"
+msgstr[0] "Tip de Acțiune"
+msgstr[1] "Tipuri de Acțiune"
+
+msgid "Actions"
+msgstr "Acțiuni"
+
+msgid "Active"
+msgstr "Activă"
+
+msgid "Add %s"
+msgstr "Adaugă %s"
+
+msgid "Admin panel: %s"
+msgstr "Panou de Administrare: %s"
+
+msgid "Admin user password"
+msgstr "Parola utilizatorului admin"
+
+msgid "Administration"
+msgstr "Administrare"
+
+msgid "Allow"
+msgstr "Permite"
+
+msgid "Allowed"
+msgstr "Permis"
+
+msgid "Already Installed"
+msgstr "Deja Instalat"
+
+msgid "Application Offline"
+msgstr "Aplicație offline"
+
+msgid "Are you sure you want to delete # %s?"
+msgstr "Ești sigur că vrei să ștergi nº %s?"
+
+msgid "Aro"
+msgid_plural "Aros"
+msgstr[0] "Acces"
+msgstr[1] "Accese"
+
+msgid "Cake is NOT able to connect to the database."
+msgstr "Cake nu se poate conecta la baza de date"
+
+msgid "Cake is able to connect to the database."
+msgstr "Cake se poate conecta la baza de date"
+
+msgid "CakePHP version %s < %s"
+msgstr "Versiunea CakePHP %s < %s"
+
+msgid "CakePhp version %s >= %s"
+msgstr "Versiunea CakePHP %s >= %s"
+
+msgid ""
+"Check load data option to insert dafault values to action types, activities, "
+"categories, causes, origins, processes, suppliers and finaly some example "
+"users and their access configuration."
+msgstr ""
+"Elegir la opción de carga de datos para insertar valores por defecto para "
+"tipos de acción, actividades, categorías, causas, orígenes, procesos, "
+"proveedores y por último algunos usuarios de ejemplo con sus configuraciones "
+"de acceso."
+
+msgid "Click here to begin installation"
+msgstr "Click aici pentru a începe instalarea"
+
+msgid "Could not be deleted."
+msgstr "Nu poate fi șters."
+
+msgid "Could not be saved. Please, try again."
+msgstr "Nu poate fi salvat. Vă rog încercați din nou"
+
+msgid "Could not connect to database."
+msgstr "Nu mă pot conecta la baza de date"
+
+msgid "Could not connect to database: %s"
+msgstr "Nu mă pot conecta la baza de date: %s"
+
+msgid "Could not load database: %s"
+msgstr "Nu pot încărca baza de date: %s"
+
+msgid "Could not write database.php file."
+msgstr "Nu pot să scriu fișierul database.php"
+
+msgid "Could not write email.php file."
+msgstr "Nu pot să scriu fișierul  email.php"
+
+msgid "Created"
+msgstr "Creat"
+
+msgid "Database and data"
+msgstr "Baza de date și date"
+
+msgid "Database connection file already exists"
+msgstr "Fișierul de conexiune la baza de date există deja"
+
+msgid "Delete"
+msgstr "Șterge"
+
+msgid "Delete %s"
+msgstr "Șterge %s"
+
+msgid "Deleted with success."
+msgstr "Șters cu succes"
+
+msgid "Deny"
+msgstr "Interzice"
+
+msgid "Denyed"
+msgstr "Interzis"
+
+msgid "Diagnostics"
+msgstr "Diagnostice"
+
+msgid ""
+"Dont forget to restore default access values to Config and tmp directory."
+msgstr "Nu uita să restaurezi accesul implicit la Config și la directorul tmp"
+
+msgid "Down"
+msgstr "Jos"
+
+msgid "Edit"
+msgstr "Editează"
+
+msgid "Edit %s"
+msgstr "Editează %s"
+
+msgid "Edit Profile"
+msgstr "Editează Profil"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Email settings file already exists"
+msgstr "Fișierul de setări pentru email există deja"
+
+msgid "Empty"
+msgstr "Gol"
+
+msgid "Enable change password"
+msgstr "Permite schimbarea parolei"
+
+msgid "End Session"
+msgstr "Închide sesiunea"
+
+msgid "From Email"
+msgstr "De la Email"
+
+msgid "From Name"
+msgstr "De la Nume"
+
+msgid "Group / User"
+msgstr "Grup / Utilizator"
+
+msgid "Group / User name must be unique!!"
+msgstr "Numere Grupului / Utilizatorului trebuie să fie unic"
+
+msgid "Help"
+msgstr "Ajutor"
+
+msgid "Id"
+msgstr "Id"
+
+msgid "Installation cannot continue as minimum requirements are not found."
+msgstr ""
+"Instalarea nu poate continua deoarece cerințele minime nu sunt îndeplinite"
+
+msgid "Installation completed successfully"
+msgstr "Instalarea s-a finalizat cu succes"
+
+msgid "Installation not completed successfully"
+msgstr "Instalarea nu  s-a încheiat cu succes"
+
+msgid "Installation: Welcome"
+msgstr "Instalare: Bun Venit !"
+
+msgid "Invalid email"
+msgstr "Email incorect"
+
+msgid "Invalid request."
+msgstr "Cerere incorectă"
+
+msgid "Language"
+msgstr "Limbă"
+
+msgid "List %s"
+msgstr "Lista %s"
+
+msgid "Load data"
+msgstr "Încarcă date"
+
+msgid "Login failed. Invalid username or password."
+msgstr "Acces eșuat. Id. utilizator sau parolă incorecte"
+
+msgid "Menu"
+msgstr "Meniu"
+
+msgid "Modified"
+msgstr "Modificat"
+
+msgid "Must be unique"
+msgstr "Trebuie să fie unic"
+
+msgid "Name"
+msgstr "Nume"
+
+msgid "New Password"
+msgstr "Parolă nouă"
+
+msgid "Next"
+msgstr "Următorul"
+
+msgid "No"
+msgstr "Nu"
+
+msgid "No records found!!!"
+msgstr "Nu au fost găsite înregistrări"
+
+msgid "Notification"
+msgid_plural "Notifications"
+msgstr[0] "Notificare"
+msgstr[1] "Notificări"
+
+msgid "Notifier"
+msgstr "Notificator"
+
+msgid "PHKAPA Admin panel: %s"
+msgstr "Panou de administrare PHKAPA: %s"
+
+msgid "PHKAPA: %s"
+msgstr "PHKAPA: %s"
+
+msgid "PHP version %s < 5.2"
+msgstr "Versiunea de PHP %s < 5.2"
+
+msgid "PHP version %s > 5.2"
+msgstr "Versiunea de PHP %s > 5.2"
+
+msgid ""
+"Page %page% of %pages%, showing %current% records out of %count% total, "
+"starting on record %start%, ending on %end%"
+msgstr ""
+"Página %page% din %pages%, care arată %current% de înregistrări din total "
+"%count%, începând de la %start% și terminând la %end%"
+
+msgid "Parent node"
+msgstr "Nodul părinte"
+
+msgid "Password"
+msgstr "Parola"
+
+msgid "Passwords dont match"
+msgstr "Parolele nu se potrivesc"
+
+msgid "Passwords secured and updated for all users"
+msgstr "Parolele securizate și actualizate pentru toți utilizatorii"
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Read"
+msgstr "Citește"
+
+msgid "Record"
+msgstr "Inregistrează"
+
+msgid "Rename config/database.php.default to config/database.php"
+msgstr "Redenumește config/database.php.default în config/database.php"
+
+msgid "Resources"
+msgstr "Resurse"
+
+msgid "Root"
+msgstr "Rădăcină"
+
+msgid "Saved with success."
+msgstr "Salvat cu succes"
+
+msgid "Search..."
+msgstr "Caută..."
+
+msgid "Setup database connection"
+msgstr "Configurarea conexiunii la baza de date"
+
+msgid "Setup notification email"
+msgstr "Configurare notificării prin email"
+
+msgid ""
+"Something went wrong during installation. Please check your server logs."
+msgstr ""
+"Ceva nu a mers bine în timpul instalării. Vă rog verificați log-urile de pe "
+"server."
+
+msgid "Start Session"
+msgstr "Inițiază sesiunea"
+
+msgid "Step 1 : Database connection"
+msgstr "Pasul 1: Conexiunea la baza de date"
+
+msgid "Step 2 : Build database , load table values"
+msgstr "Pasul 2: Crearea bazei de date, încărcarea valorilor în tabele"
+
+msgid "Step 3 : Email notification"
+msgstr "Pasul 3: Notificarea prin email"
+
+msgid "Step 4 : Secure app and set new administrator password"
+msgstr ""
+"Pasul 4: Securizarea aplicației și stabilirea unei noi parole pentru "
+"administrare"
+
+msgid "Subject"
+msgstr "Subiect"
+
+msgid "Submit"
+msgstr "Transmite"
+
+msgid ""
+"The %s is being used for caching. To change the config edit APP/config/core."
+"php "
+msgstr ""
+"%s a post utilizat pentru caching.Pentru a schimba configurația editați "
+"fișierul  APP/config/core.php"
+
+msgid "Time Zone"
+msgstr "Fusul orar"
+
+msgid "This application is now on maintenance mode, back soon as possible!"
+msgstr "Aplicația este acum în modulo mentenanță, reveniți în curând !"
+
+msgid "This application will be on maintenance mode at  %s "
+msgstr "Aplicația va intra ăn modul mentenanță în %s"
+
+msgid "This name is restricted by system."
+msgstr "Numele este rezervat de sistem"
+
+msgid "This will also delete childs!!"
+msgstr "Aceasta va șterge și copiii !!"
+
+msgid "Type Group"
+msgstr "Tip de  Grup"
+
+msgid "Unable to create administrative user."
+msgstr "Nu am putut să creez utilizatorul administrator"
+
+msgid "Unable to generate users password."
+msgstr "Nu am putut să generez parolele utilizator"
+
+msgid ""
+"Unable to secure your application, your Config %s core.php file is not "
+"writable. Please check the permissions."
+msgstr ""
+"Nu am putut să securizez aplicația, fișierul de configurare %s core.php nu "
+"poate fi scris. Vă rog verificați permisiunile."
+
+msgid "Up"
+msgstr "Sus"
+
+msgid "User"
+msgid_plural "Users"
+msgstr[0] "Utilizator"
+msgstr[1] "Utilizatori"
+
+msgid "Username"
+msgstr "Nume utilizator"
+
+msgid "Verify Password"
+msgstr "Verifică parola"
+
+msgid "View"
+msgstr "Vizualizare"
+
+msgid "View %s"
+msgstr "Vizualizare %s"
+
+msgid "Yes"
+msgstr "Da"
+
+msgid "Your Config directory is NOT writable."
+msgstr "Directorul de configurare NU are permisiunea de scriere"
+
+msgid "Your Config directory is writable."
+msgstr "Directorul de configurare ARE permisiunea de scriere"
+
+msgid ""
+"Your cache is NOT working. Please check the settings in APP/config/core.php"
+msgstr ""
+"Cache-ul nu funcționează. vă rog verificați setările din fișierul APP/config/"
+"core.php"
+
+msgid "Your database configuration file is NOT present."
+msgstr "Fișierul de configurare al bazei de date NU este prezent"
+
+msgid "Your database configuration file is present."
+msgstr "Fișierul de configurare al bazei de date este prezent"
+
+msgid "Your tmp directory is NOT writable."
+msgstr "Directorul tmp nu poate fi scris"
+
+msgid "Print report not found."
+msgstr "Raportul printat nu a fost găsit"
+
+msgid ""
+"Plugin not found, request one to pHAlkaline or develop one according to your "
+"needs."
+msgstr ""
+"Plugin negăsit, solicita unul la pHAlkaline sau dezvoltă unul după "
+"necesitățile tale"
+
+msgid "Ticket Report"
+msgstr "Raport despre Tichet"
+
+msgid "Ticket Details"
+msgstr "Detaliile tichetului"
