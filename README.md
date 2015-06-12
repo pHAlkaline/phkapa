@@ -16,17 +16,12 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
   * MySQL 5 or higher
   * All built-in drivers require PDO. You should make sure you have the correct PDO extensions installed.
 
-## Git install 
-( phkapa and submodule cakephp )
+## Git/Composer install 
 
-git clone --recursive https://github.com/pHAlkaline/phkapa.git
+`git clone https://github.com/pHAlkaline/phkapa.git`
 
-or
+`cd [phkapa directory] `
 
-git clone https://github.com/pHAlkaline/phkapa.git
-
-git submodule init
-
-git submodule update
+`composer update`
 
 
