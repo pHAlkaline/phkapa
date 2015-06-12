@@ -18,10 +18,31 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
 
 ## Git/Composer install 
 
+Run:
+
 `git clone https://github.com/pHAlkaline/phkapa.git`
 
-`cd [phkapa directory] `
+`cd [phkapa_directory] `
 
 `composer update`
+
+and goto http://wiki.phkapa.net/doku.php/install to start using ..
+
+## Use Composer
+
+You can install pHKapa using [Composer](https://getcomposer.org/)
+
+Download Composer or update: 
+`composer self-update`
+
+Run:
+
+`php composer.phar create-project -s dev phalkaline/phkapa [phkapa_directory]`
+
+If Composer is installed globally, run:
+
+`composer create-project -s stable phalkaline/phkapa [phkapa_directory]`
+
+and goto http://wiki.phkapa.net/doku.php/install to start using .. .
 
 
