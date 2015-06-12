@@ -10,7 +10,7 @@ App::uses('Notification', 'Model');
  * PHP version 5
  *
  * @category Component
- * @package  PHKAPA
+ * @package  PHKAPA.app.Controller.Component
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
