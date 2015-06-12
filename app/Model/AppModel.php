@@ -15,7 +15,7 @@
  */
 App::uses('Model', 'Model');
 class AppModel extends Model {
-    
+    public $recursive=-1;
     /**
      * Model revision version_description
      *
