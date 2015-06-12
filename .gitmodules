@@ -1,4 +1,0 @@
-[submodule "vendor/cakephp"]
-	path = vendor/cakephp
-	url = https://github.com/cakephp/cakephp.git
-	branch = 2.6.7
