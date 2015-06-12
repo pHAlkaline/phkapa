@@ -43,6 +43,6 @@ If Composer is installed globally, run:
 
 `composer create-project -s dev phalkaline/phkapa [phkapa_directory]`
 
-and goto http://wiki.phkapa.net/doku.php/install to start using .. .
+and goto http://wiki.phkapa.net/doku.php/install to start using ...
 
 
