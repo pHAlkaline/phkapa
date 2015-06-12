@@ -1,0 +1,35 @@
+{
+    "name": "phalkaline/phkapa",
+    "description": "Corrective Preventive action with nonconformity management, software for quality assurance.",
+    "type": "project",
+    "keywords": ["application", "php", "corrective action", "preventive action", "nonconformity", "quality assurance"],
+    "homepage": "http://phkapa.net",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "pHAlkaline",
+            "homepage": "http://phalkaline.eu"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/pHAlkaline/phkapa/issues",
+        "forum": "http://groups.google.com/group/phkapa",
+        "wiki": "http://wiki.phkapa.net/",
+        "source": "https://github.com/pHAlkaline/phkapa.git"
+    },
+    "extra": {
+        "installer-paths": {
+            "app/Plugin/DebugKit": ["cakephp/debug_kit"]
+        }
+
+    },
+    "require": {
+        "php": ">=5.2.8",
+        "ext-mcrypt": "*",
+        "cakephp/cakephp": "2.6.7",
+        "cakephp/debug_kit": "2.2.*"
+
+
+    }
+
+}
