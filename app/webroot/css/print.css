@@ -1,10 +1,8 @@
-/* 
-    Document   : print.css
-    Created on : 22/Fev/2015, 22:22:49
-    Author     : paulo
-    Description:
-        Purpose of the stylesheet follows.
-*/
+/**
+ * @author   Paulo Homem <contact@phalkaline.eu>
+ * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
+ * @link     http://phkapa.net
+ */
 @media print {
     
     @page{

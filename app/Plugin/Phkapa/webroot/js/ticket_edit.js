@@ -1,3 +1,9 @@
+/**
+ * @author   Paulo Homem <contact@phalkaline.eu>
+ * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
+ * @link     http://phkapa.net
+ */
+
 $(function(){
     
     $("#setTodayCloseDate").click(function() {
