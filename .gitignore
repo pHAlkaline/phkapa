@@ -18,7 +18,7 @@
 
 # Plugins
 /app/Plugin
-!/app/Plugin/Phkapa
+!/app/Plugin/Phkapa/
 
 # OS generated files #
 ######################
