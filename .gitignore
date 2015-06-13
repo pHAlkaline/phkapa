@@ -17,8 +17,10 @@
 /tags
 
 # Plugins
-/app/Plugin
-!/app/Plugin/Phkapa/
+/app/Plugin/CsvView
+/app/Plugin/DebugKit
+/app/Plugin/PrintReport
+
 
 # OS generated files #
 ######################
