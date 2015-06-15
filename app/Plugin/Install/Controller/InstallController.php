@@ -14,7 +14,7 @@ App::uses('File', 'Utility');
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://phkapa.net
  */
-class InstallController extends AppController {
+class InstallController extends InstallAppController {
 
     /**
      * Controller name
