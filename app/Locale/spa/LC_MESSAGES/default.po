@@ -399,8 +399,8 @@ msgstr "Su directorio tmp NO tiene permiso de escritura"
 msgid "Print report not found."
 msgstr "Abrir informe no se encuentra."
 
-msgid "Plugin not found, request one to pHAlkaline or develop one according to your needs."
-msgstr "Crear su propio Plugin ou solicitar una a pHAlkaline."
+msgid "Plugin not found, this Plugin is only available to Donators, Contributors or Service clients."
+msgstr "Plugin no encontrado , este plugin está disponible sólo para los donantes, los contribuyentes o servicio al cliente."
 
 msgid "Ticket Report"
 msgstr "Informe"
