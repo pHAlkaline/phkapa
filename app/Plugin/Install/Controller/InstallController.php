@@ -122,7 +122,7 @@ class InstallController extends InstallAppController {
         $this->_check();
         if (isset($this->data['Install']['language']) && $this->data['Install']['language'] != '') {
             $this->Session->write('User.language', $this->data['Install']['language']);
-            Configure::write('Config.language', $this->Session->read('User.language'));
+            $this->redirect(array('action' => 'index'));
         }
         $this->set('title_for_layout', __('Installation: Welcome'));
         $this->set('title_for_step', __('Installation: Welcome'));
