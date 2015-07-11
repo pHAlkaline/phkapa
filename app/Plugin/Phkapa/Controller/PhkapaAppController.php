@@ -89,7 +89,7 @@ class PhkapaAppController extends AppController {
                             'unique' => true,
                             'conditions' => array('User.active' => '1', 'User.id <>' => $registarId),
                     ))));
-
+        $this->Ticket->Process->recursive=2;
         $processUsers = $this->Ticket->Process->find('all', array('conditions' => $conditions));
         $reference = Router::url(array('controller' => 'query', 'action' => 'view', $ticket_id,'base'=>false));
         foreach ($processUsers[0]['User'] as $User):

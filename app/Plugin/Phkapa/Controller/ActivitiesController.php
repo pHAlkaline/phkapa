@@ -45,7 +45,8 @@ class ActivitiesController extends PhkapaAppController {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-        $this->set('activity', $this->Activity->read(null, $id));
+        $this->Activity->recursive=2;
+        $this->set('activity', $this->Activity->find('first', array('conditions'=>array('Activity.id'=>$id))));
     }
 
     /**
@@ -99,7 +100,8 @@ class ActivitiesController extends PhkapaAppController {
             }
         }
         if (empty($this->request->data)) {
-            $this->request->data = $this->Activity->read(null, $id);
+            $this->Activity->recursive=2;
+            $this->request->data = $this->Activity->find('first', array('conditions'=>array('Activity.id'=>$id)));
         }
         $processes = $this->Activity->Process->find('list');
         $this->set(compact('processes'));

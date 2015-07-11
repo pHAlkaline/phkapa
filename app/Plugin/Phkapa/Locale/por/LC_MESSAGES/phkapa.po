@@ -379,7 +379,7 @@ msgid "This application is now on maintenance mode, back soon as possible!"
 msgstr "Esta aplicação está agora em modo de manutenção, voltamos em breve!"
 
 msgid "This ticket has actions that were not effective, please choose cancel if you want replan or create a new related ticket before closing."
-msgstr "Registo sem eficacia, pode canceler e criar um novo plano ou registar um novo registo dependente."
+msgstr "Registo sem eficacia, pode cancelar e criar um novo plano ou registar um novo registo dependente."
 
 msgid "This workflow requires cause"
 msgstr "Este fluxo requer causa"

@@ -374,13 +374,16 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                                     
 
                                     <td class="nowrap actions">
-                                        <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit_action', $action['id'], $ticket['Ticket']['id'])); ?>
-                                        <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'delete_action', $action['id'], $ticket['Ticket']['id']), array('confirm'=>__d('phkapa', 'Are you sure you want to delete # %s?', $action['id']))); ?>
                                         <?php
                                         if ($action['closed'] == 0) {
-                                            echo ' | ' . $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close_action', $action['id'], $ticket['Ticket']['id']), array('confirm'=> __d('phkapa', 'Are you sure you want to close # %s?', $action['id'])));
+                                            echo $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close_action', $action['id'], $ticket['Ticket']['id']), array('confirm'=> __d('phkapa', 'Are you sure you want to close # %s?', $action['id'])));
+                                            echo ' | ';
+                                            
                                         }
                                         ?>
+                                        <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit_action', $action['id'], $ticket['Ticket']['id'])); ?>
+                                        <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'delete_action', $action['id'], $ticket['Ticket']['id']), array('confirm'=>__d('phkapa', 'Are you sure you want to delete # %s?', $action['id']))); ?>
+                                        
                                     </td>
                                     <td>
                                         <?php

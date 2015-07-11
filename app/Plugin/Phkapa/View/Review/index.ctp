@@ -59,14 +59,13 @@
                     <!--td class="nowrap"><?php //echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['created']); ?>&nbsp;</td-->
 
                     <td class="actions">
-                         <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit', $ticket['Ticket']['id'])); ?>
-
-                        <?php
+                         <?php
                         if ($sendOk) {
-                            echo ' | '. $this->Html->link(__d('phkapa', 'Send'), array('action' => 'send', $ticket['Ticket']['id']),array('confirm'=> __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
-                            
+                            echo $this->Html->link(__d('phkapa', 'Send'), array('action' => 'send', $ticket['Ticket']['id']),array('confirm'=> __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
+                            echo ' | ';
                         }
                         ?>
+                        <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit', $ticket['Ticket']['id'])); ?>
                         <?php
                         if ($closeOk) {
                             echo ' | ' . $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close', $ticket['Ticket']['id']), array('confirm'=> __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));

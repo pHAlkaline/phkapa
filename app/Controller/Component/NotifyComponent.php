@@ -76,6 +76,7 @@ class NotifyComponent extends Component {
         if ($notified_id == null) {
             return;
         }
+        $this->_model->recursive=1;
         return $this->_model->find('all', array('conditions' => array('notified_id' => $notified_id)));
     }
 

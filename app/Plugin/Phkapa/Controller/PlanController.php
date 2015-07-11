@@ -321,7 +321,7 @@ class PlanController extends PhkapaAppController {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-
+        $this->Ticket->Action->recursive=1;
         $actions = $this->Ticket->Action->find('all', array('conditions' => array('Action.ticket_id' => $id)));
 
         $workflowId = 5;

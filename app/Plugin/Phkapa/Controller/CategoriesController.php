@@ -45,7 +45,8 @@ class CategoriesController extends PhkapaAppController {
             $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-        $this->set('category', $this->Category->read(null, $id));
+        $this->Category->recursive=2;
+        $this->set('category', $this->Category->find('first', array('conditions'=>array('Category.id'=>$id))));
     }
 
     /**
@@ -98,7 +99,8 @@ class CategoriesController extends PhkapaAppController {
             }
         }
         if (empty($this->request->data)) {
-            $this->request->data = $this->Category->read(null, $id);
+            $this->Category->recursive=2;
+            $this->request->data =  $this->Category->find('first', array('conditions'=>array('Category.id'=>$id)));
         }
         $processes = $this->Category->Process->find('list');
         $causes = $this->Category->Cause->find('list');

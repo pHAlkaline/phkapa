@@ -217,7 +217,8 @@ class VerifyController extends PhkapaAppController {
             }
         }
         
-        $action = $this->Ticket->Action->read(null, $id);
+        $this->Ticket->Action->recursive=1;
+        $action = $this->Ticket->Action->find('first', array('conditions'=>array('Action.id'=>$id)));
         
         if (empty($this->request->data)) {
             $this->request->data = $action;
