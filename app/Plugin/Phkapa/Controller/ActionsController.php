@@ -72,10 +72,12 @@ class ActionsController extends PhkapaAppController {
             $this->Session->setFlash(__d('phkapa','Invalid request.'), 'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-        $this->set('action', $this->Action->read(null, $id));
+        $this->Action->recursive=1;
+        $this->set('action', $this->Action->find('first', array('Action.id'=>$id)));
         
         if (in_array($this->Action->name,Configure::read('Revision.tables'))){
-           $this->set('action_revisions', $this->Action->revisions()); 
+            $this->Action->id=$id;
+            $this->set('action_revisions', $this->Action->revisions()); 
         }
     }
     
@@ -124,8 +126,10 @@ class ActionsController extends PhkapaAppController {
             $this->request->data['Action']['ticket_id'] = $ticket_id;
         $tickets = $this->Action->Ticket->find('list',array('order'=>array('Ticket.id'),'recursive'=>0));
         $actionTypes = $this->Action->ActionType->find('list');
+        $verifyUsers = $this->Action->VerifyUser->find('list');
+        $closeUsers = $this->Action->CloseUser->find('list');
         $actionEffectivenesses = $this->Action->ActionEffectiveness->find('list');
-        $this->set(compact('tickets', 'actionTypes', 'actionEffectivenesses'));
+        $this->set(compact('tickets', 'actionTypes', 'actionEffectivenesses', 'verifyUsers', 'closeUsers'));
     }
 
     /**

@@ -329,7 +329,7 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                                 <td class="actions">
                                     <?php
                                     if ($action['ActionType']['verification'] != 0) {
-                                        echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit_action', $action['id'], $ticket['Ticket']['id']));
+                                        echo $this->Html->link(__d('phkapa', 'Verify'), array('action' => 'edit_action', $action['id'], $ticket['Ticket']['id']));
                                     }
                                     ?>
 

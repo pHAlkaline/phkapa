@@ -123,8 +123,9 @@ class TicketsController extends PhkapaAppController {
         $this->_setupModel();
 
 
-        $this->set('ticket', $this->Ticket->read(null, $id));
+        $this->set('ticket', $this->Ticket->find('first', array('conditions'=>array('Ticket.id'=>$id))));
         if (in_array($this->Ticket->name, Configure::read('Revision.tables'))) {
+            $this->Ticket->id=$id;
             $this->set('ticket_revisions', $this->Ticket->revisions());
         }
     }

@@ -39,7 +39,7 @@ Configure::write('Language.list',array(
 Configure::write('Config.timezone', 'Europe/London'); // Europe/Lisbon
 Configure::write('dateFormat', 'd-m-Y H:i:s'); // Date Format with time
 Configure::write('dateFormatSimple', 'd-m-Y'); // Date Format without time
-Configure::write('Application.mode', 'phkapa'); // phkapa , demo , use demo for demo mode;
+Configure::write('Application.mode', 'demo'); // phkapa , demo , use demo for demo mode;
 
 /**
  * Settings for maintenance component 

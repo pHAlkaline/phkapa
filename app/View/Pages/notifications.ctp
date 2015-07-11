@@ -29,7 +29,6 @@
                 <tr<?php echo $class; ?>>
                     <td><?php echo $notification['Notification']['id']; ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $notification['Notification']['created']); ?>&nbsp;</td>
-
                     <td class="nowrap"><?php echo $notification['Notifier']['name']; ?></td>
                     <td class="nowrap"><?php echo $notification['Notification']['notification']; ?></td>
                     <td class="nowrap"><?php echo $this->Utils->yesOrNo($notification['Notification']['read']); ?></td>

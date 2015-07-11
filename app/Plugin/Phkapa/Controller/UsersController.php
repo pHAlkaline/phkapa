@@ -51,7 +51,8 @@ class UsersController extends PhkapaAppController {
             $this->Session->setFlash(__d('phkapa','Invalid request.'),'flash_message_error');
             $this->redirect(array('action' => 'index'));
         }
-        $this->set('user', $this->User->read(null, $id));
+        $this->User->recursive=1;
+        $this->set('user', $this->User->find('first', array('conditions'=>array('User.id'=>$id))));
     }
 
     /**
@@ -92,14 +93,13 @@ class UsersController extends PhkapaAppController {
             }
         }
         if (empty($this->request->data)) {
-            $this->request->data = $this->User->read(null, $id);
+            $this->User->recursive=1;
+            $this->request->data = $this->User->find('first', array('conditions'=>array('User.id'=>$id)));
             if (empty($this->request->data)) {
                 $this->Session->setFlash(__d('phkapa','Invalid request.'),'flash_message_error');
                 $this->redirect(array('action' => 'index'));
             }
         }
-
-        
         $processes = $this->User->Process->find('list');
         $this->set(compact('processes'));
     }
