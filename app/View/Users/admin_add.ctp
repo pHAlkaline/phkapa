@@ -18,11 +18,11 @@
         <fieldset class="ui-corner-all ui-widget-content" >
             <legend><?php echo __('Record').' '. __('User'); ?></legend>
             <?php
-            echo $this->Form->input('name',array('label' => __('Name')));
+            echo $this->Form->input('name',array('maxlength'=>'64','label' => __('Name')));
             echo $this->Form->input('email',array('maxlength'=>'256','label' => __('Email')));
             echo '<br/>';
-            echo $this->Form->input('username',array('maxlength'=>'8','label' => __('Username')));
-            echo $this->Form->input('password',array('maxlength'=>'8','label' => __('Password')));
+            echo $this->Form->input('username',array('maxlength'=>'40','label' => __('Username')));
+            echo $this->Form->input('password',array('maxlength'=>'40','label' => __('Password')));
             echo $this->Form->input('active',array('label' => __('Active')));
             
             ?>

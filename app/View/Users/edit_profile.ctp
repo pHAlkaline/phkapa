@@ -10,14 +10,14 @@ $this->html->script('user_edit', false);
             <legend><?php echo __('Record').' '. __('User'); ?></legend>
             <?php
             echo $this->Form->input('id');
-            echo $this->Form->input('name',array('label' => __('Name')));
+            echo $this->Form->input('name',array('maxlength'=>'64','label' => __('Name')));
             echo $this->Form->input('email',array('maxlength'=>'256','label' => __('Email')));
             echo '<br/>';
             
-            echo $this->Form->input('username',array('maxlength'=>'8','label' => __('Username')));
+            echo $this->Form->input('username',array('maxlength'=>'40','label' => __('Username')));
             echo "<hr/>";
             echo $this->Form->input('edpassword', array('label' => __('Enable change password'),'type'=>'checkbox'));
-            echo $this->Form->input('password',array('maxlength'=>'8','label' => __('Password'),'disabled'=>'disabled'));
+            echo $this->Form->input('password',array('maxlength'=>'40','label' => __('Password'),'disabled'=>'disabled'));
             
            
             ?>
