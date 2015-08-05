@@ -22,8 +22,8 @@
                 <?php echo $this->Form->create('User', array('url' => '/users/login')); ?>
                 <fieldset class="ui-corner-all ui-widget-content" >
                     <?php
-                    echo $this->Form->input('username', array('maxlength' => '8', 'label' => __('Username')));
-                    echo $this->Form->input('password', array('maxlength' => '8', 'label' => __('Password')));
+                    echo $this->Form->input('username', array('maxlength' => '40', 'label' => __('Username')));
+                    echo $this->Form->input('password', array('maxlength' => '40', 'label' => __('Password')));
                     echo $this->Form->input('language', array('options' => Configure::read('Language.list'), 'empty' => '(choose one)'));
                     
                     ?>
