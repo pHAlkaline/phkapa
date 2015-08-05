@@ -21,9 +21,7 @@
 !/app/Plugin/empty
 !/app/Plugin/Phkapa
 !/app/Plugin/Install
-#/app/Plugin/CsvView
-#/app/Plugin/DebugKit
-#/app/Plugin/PrintReport
+
 
 # OS generated files #
 ######################
