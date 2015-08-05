@@ -16,8 +16,6 @@
  * app Plugins
  */
 //CakePlugin::load('DebugKit');
-//CakePlugin::load('PrintReport', array('bootstrap' => true, 'routes' => false));
-//CakePlugin::load('CsvView', array('bootstrap' => true, 'routes' => false));
 CakePlugin::load('Install', array('bootstrap' => false, 'routes' => false));
 
 /**
@@ -39,12 +37,12 @@ Configure::write('Language.list',array(
 Configure::write('Config.timezone', 'Europe/London'); // Europe/Lisbon
 Configure::write('dateFormat', 'd-m-Y H:i:s'); // Date Format with time
 Configure::write('dateFormatSimple', 'd-m-Y'); // Date Format without time
-Configure::write('Application.mode', 'demo'); // phkapa , demo , use demo for demo mode;
+Configure::write('Application.mode', 'phkapa'); // phkapa , demo , use demo for demo mode;
 
 /**
  * Settings for maintenance component 
  */
-Configure::write('Maintenance.start', '31-07-2014 00:00'); 
+Configure::write('Maintenance.start', '31-12-1999 23:59'); 
 Configure::write('Maintenance.duration', '2'); // Duration in hours
 Configure::write('Maintenance.site_offline_url', '/pages/offline');
 Configure::write('Maintenance.offline_destroy_session', false); // true or false , with true - Offline will destroy user sessions
