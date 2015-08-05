@@ -11,8 +11,8 @@
         <fieldset class="ui-corner-all ui-widget-content" >
             <legend><?php echo __('Admin user password'); ?></legend>
             <?php
-                echo $this->Form->input('User.password', array('maxlength'=>'8','label' => __('New Password'), 'value' => ''));
-		echo $this->Form->input('User.verify_password', array('maxlength'=>'8','label' => __('Verify Password'), 'type' => 'password', 'value' => ''));
+                echo $this->Form->input('User.password', array('maxlength'=>'40','label' => __('New Password'), 'value' => ''));
+		echo $this->Form->input('User.verify_password', array('maxlength'=>'40','label' => __('Verify Password'), 'type' => 'password', 'value' => ''));
             ?>
         </fieldset>
         <?php echo $this->Form->end(__('Submit')); ?>

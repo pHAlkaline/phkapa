@@ -4,7 +4,7 @@
  * User
  *
  * PHP version 5
- * 
+ *
  * @category Model
  * @package  PHKAPA
  * @version  V1
@@ -98,7 +98,7 @@ class User extends AppModel {
                 'rule' => array('matchPasswords'),
                 'message' => 'Passwords dont match',
                 'required' => false),
-              
+
         ),
         'email' => array(
             'email' => array(
@@ -113,12 +113,12 @@ class User extends AppModel {
             //'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            
+
         ),
     );
 
     function matchPasswords($data) {
-        
+
         if ($data['verify_password'] == $this->data['User']['password']) {
             return true;
         }
@@ -152,7 +152,7 @@ class User extends AppModel {
             $aro = $aro['Aro'];
             $this->Aro->set($aro);
         }
-        
+
         if ($aro && !$this->Aro->validates($aro)) {
             $errors = $this->Aro->validationErrors;
             $this->data = null;
@@ -161,12 +161,12 @@ class User extends AppModel {
 
         // crypt and truncate password
         if (isset($this->data[$this->alias]['password'])) {
-            $this->data[$this->alias]['password'] = AuthComponent::password(substr($this->data[$this->alias]['password'],0,8));
+            $this->data[$this->alias]['password'] = AuthComponent::password(substr($this->data[$this->alias]['password'],0,40));
         }
-        
+
         // truncate username
         if (isset($this->data[$this->alias]['username'])) {
-            $this->data[$this->alias]['username'] = substr($this->data[$this->alias]['username'],0,8);
+            $this->data[$this->alias]['username'] = substr($this->data[$this->alias]['username'],0,40);
         }
 
         return true;
