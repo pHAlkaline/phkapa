@@ -12,7 +12,7 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
 
 ## Requirements
   * HTTP Server. For example: Apache. mod_rewrite is preferred, but by no means required
-  * PHP 5.2.8 or greater.
+  * PHP 5.3 or greater.
   * MySQL 5 or higher
   * All built-in drivers require PDO. You should make sure you have the correct PDO extensions installed.
 
@@ -25,11 +25,11 @@ Download Composer or update:
 
 Run:
 
-`php composer.phar create-project -s dev phalkaline/phkapa [phkapa_directory]`
+`php composer.phar create-project -s stable phalkaline/phkapa [phkapa_directory]`
 
 If Composer is installed globally, run:
 
-`composer create-project -s dev phalkaline/phkapa [phkapa_directory]`
+`composer create-project -s stable phalkaline/phkapa [phkapa_directory]`
 
 and goto http://wiki.phkapa.net/doku.php/install to start using .. .
 
@@ -53,7 +53,7 @@ Run:
 
 `cd [phkapa directory] `
 
-`git clone -b 2.6.7 http://github.com/cakephp/cakephp.git vendor/cakephp/cakephp`
+`git clone -b 2.7.2 http://github.com/cakephp/cakephp.git vendor/cakephp/cakephp`
 
 and goto http://wiki.phkapa.net/doku.php/install to start using ...
 
