@@ -44,11 +44,11 @@ class UsersController extends PhkapaAppController {
      */ 
     public function admin_view($id = null) {
         if (!$id) {
-            $this->Session->setFlash(__d('phkapa','Invalid request.'),'flash_message_error');
+            $this->Flash->error(__d('phkapa','Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         if (!in_array($id, $this->_allowedUsers())){
-            $this->Session->setFlash(__d('phkapa','Invalid request.'),'flash_message_error');
+            $this->Flash->error(__d('phkapa','Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->User->recursive=1;
@@ -62,7 +62,7 @@ class UsersController extends PhkapaAppController {
      * @access public
      */ 
     public function admin_add() {
-        $this->Session->setFlash(__d('phkapa','Invalid request.'),'flash_message_error');
+        $this->Flash->error(__d('phkapa','Invalid request.'));
         $this->redirect(array('action' => 'index'));
        
     }
@@ -77,26 +77,26 @@ class UsersController extends PhkapaAppController {
     public function admin_edit($id = null) {
         
         if (!$id && empty($this->request->data)) {
-            $this->Session->setFlash(__d('phkapa','Invalid request.'),'flash_message_error');
+            $this->Flash->error(__d('phkapa','Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         if (!in_array($id, $this->_allowedUsers())){
-            $this->Session->setFlash(__d('phkapa','Invalid request.'),'flash_message_error');
+            $this->Flash->error(__d('phkapa','Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->request->data)) {
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa','Saved with success.'),'flash_message_info');
+                $this->Flash->info(__('Saved with success.'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__d('phkapa','Could not be saved. Please, try again.'),'flash_message_error');
+                $this->Flash->error(__d('phkapa','Could not be saved. Please, try again.'));
             }
         }
         if (empty($this->request->data)) {
             $this->User->recursive=1;
             $this->request->data = $this->User->find('first', array('conditions'=>array('User.id'=>$id)));
             if (empty($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa','Invalid request.'),'flash_message_error');
+                $this->Flash->error(__d('phkapa','Invalid request.'));
                 $this->redirect(array('action' => 'index'));
             }
         }

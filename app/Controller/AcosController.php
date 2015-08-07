@@ -67,10 +67,10 @@ class AcosController extends AppController {
 
         if (!empty($this->request->data)) {
             if ($this->Node->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with success.'), '');
+                $this->Flash->info(__('Saved with success.'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__('Could not be saved. Please, try again.'));
             }
         }
         $parents[0] = "[ No Parent ]";
@@ -93,16 +93,16 @@ class AcosController extends AppController {
      */
     public function admin_edit($id = null) {
         if ($id == null || $id < 3) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
 
         if (!empty($this->request->data)) {
             if ($this->Node->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__('Saved with success.'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__('Could not be saved. Please, try again.'));
             }
         } else {
             $this->request->data = $this->Node->read(null, $id);
@@ -127,15 +127,15 @@ class AcosController extends AppController {
      */
     public function admin_delete($id = null) {
         if ($id == null || $id < 3) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->Node->id = $id;
         if ($this->Node->delete()) {
-            $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+            $this->Flash->info(__('Saved with success.'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+            $this->Flash->error(__('Could not be saved. Please, try again.'));
         }
     }
 
@@ -148,15 +148,15 @@ class AcosController extends AppController {
      */
     public function admin_moveup($id = null) {
         if ($id == null || $id < 3) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->Node->id = $id;
         if ($this->Node->moveUp()) {
-            $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+            $this->Flash->info(__('Saved with success.'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+            $this->Flash->error(__('Could not be saved. Please, try again.'));
         }
     }
 
@@ -169,15 +169,15 @@ class AcosController extends AppController {
      */
     public function admin_movedown($id = null) {
         if ($id == null || $id < 3) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->Node->id = $id;
         if ($this->Node->moveDown()) {
-            $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+            $this->Flash->info(__('Saved with success.'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+            $this->Flash->error(__('Could not be saved. Please, try again.'));
         }
     }
 

@@ -114,7 +114,7 @@ class QueryController extends PhkapaAppController {
         $this->_setupModel();
         $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('AND' => array('Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
         if (!$id || count($ticket) == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->set('ticket', $ticket);
@@ -129,7 +129,7 @@ class QueryController extends PhkapaAppController {
      */
     public function view_action($id = null) {
         if (!$id) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->Ticket->Action->recursive=1;
@@ -145,7 +145,7 @@ class QueryController extends PhkapaAppController {
      */
     public function print_report($id) {
         if (!$id) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
 

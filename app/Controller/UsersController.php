@@ -50,7 +50,7 @@ class UsersController extends AppController {
      */
     public function admin_view($id = null) {
         if (!$id) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->set('user', $this->User->read(null, $id));
@@ -66,10 +66,10 @@ class UsersController extends AppController {
         if (!empty($this->request->data)) {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__('Saved with success.'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__('Could not be saved. Please, try again.'));
             }
         }
     }
@@ -83,11 +83,11 @@ class UsersController extends AppController {
      */
     public function admin_edit($id = null) {
         if ($id == null ) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         if (!$id && empty($this->request->data)) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
 
@@ -97,7 +97,7 @@ class UsersController extends AppController {
             // Restrict alias ( Aro alias field must be unique ) 
 
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__('Saved with success.'));
                 // Update aro/request access alias ('name')
                 // Force login data if user is same
                 if ($this->Auth->user('id') == $id) {
@@ -106,7 +106,7 @@ class UsersController extends AppController {
 
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__('Could not be saved. Please, try again.'));
             }
         }
         if (empty($this->request->data)) {
@@ -126,7 +126,7 @@ class UsersController extends AppController {
      */
     public function edit_profile() {
         if (!$this->Auth->loggedIn() || Configure::read('Application.mode') == 'demo') {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(Router::url('/', true));
         }
 
@@ -138,7 +138,7 @@ class UsersController extends AppController {
             // Restrict alias ( Aro alias field must be unique ) 
 
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__('Saved with success.'));
                 // Update aro/request access alias ('name')
                 // Force login data if user is same
                 if ($this->Auth->user('id') == $id) {
@@ -147,7 +147,7 @@ class UsersController extends AppController {
 
                 $this->redirect(array('action' => 'edit_profile'));
             } else {
-                $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__('Could not be saved. Please, try again.'));
             }
         }
         if (empty($this->request->data)) {
@@ -168,14 +168,14 @@ class UsersController extends AppController {
      */
     public function admin_delete($id = null) {
         if ($id == null || $id == 1) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         if ($this->User->delete($id)) {
-            $this->Session->setFlash(__('Deleted with success.'), 'flash_message_info');
+            $this->Flash->info(__('Deleted with success.'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Session->setFlash(__('Could not be deleted.'), 'flash_message_error');
+        $this->Flash->error(__('Could not be deleted.'));
         $this->redirect(array('action' => 'index'));
     }
 
@@ -194,7 +194,7 @@ class UsersController extends AppController {
                 }
                 return $this->redirect($this->Auth->redirect());
             } else {
-                $this->Session->setFlash(__('Login failed. Invalid username or password.'), 'flash_message_error', array(), 'auth');
+                $this->Flash->error(__('Login failed. Invalid username or password.'));
             }
         }
     }
@@ -223,7 +223,7 @@ class UsersController extends AppController {
         $this->User->read(null, 1);
        
         if (empty($this->request->data)) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
 
@@ -236,7 +236,7 @@ class UsersController extends AppController {
             // Restrict alias ( Aro alias field must be unique ) 
 
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__('Saved with success.'));
                 // Update aro/request access alias ('name')
                 // Force login data if user is same
                 if ($this->Auth->user('id') == $id) {
@@ -245,7 +245,7 @@ class UsersController extends AppController {
 
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__('Could not be saved. Please, try again.'));
             }
         }
         if (empty($this->request->data)) {

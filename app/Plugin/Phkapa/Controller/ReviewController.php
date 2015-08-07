@@ -128,7 +128,7 @@ class ReviewController extends PhkapaAppController {
         $this->_setupModel();
         $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         if (!$id || count($ticket) == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->request->data)) {
@@ -136,10 +136,10 @@ class ReviewController extends PhkapaAppController {
                 $this->request->data['Ticket']['approved'] = null;
             }
             if ($this->Ticket->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__d('phkapa', 'Saved with success.'));
                 $this->redirect(array('action' => 'index', $id));
             } else {
-                $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
             }
         }
         if (empty($this->request->data)) {
@@ -172,7 +172,7 @@ class ReviewController extends PhkapaAppController {
         $ticketCount = $this->Ticket->find('count', array('order' => '', 'conditions' => array('Ticket.approved' => 1, 'Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if (!$id || $ticketCount == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         //$now = $this->Ticket->timeFormatedField('modified', time());
@@ -182,10 +182,10 @@ class ReviewController extends PhkapaAppController {
             'modified_user_id' => $this->Auth->user('id')
         ));
         if ($this->Ticket->save()) {
-            $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
+            $this->Flash->info(__d('phkapa', 'Saved with success.'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
+        $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
         $this->redirect(array('action' => 'index'));
     }
 
@@ -203,7 +203,7 @@ class ReviewController extends PhkapaAppController {
         $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.approved' => '0', 'Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if (!$id || count($ticket) == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
 
@@ -219,10 +219,10 @@ class ReviewController extends PhkapaAppController {
         ));
         if ($this->Ticket->save()) {
             $this->_addNotification($id, __d('phkapa', 'Ticket # %s has been closed', $id));
-            $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
+            $this->Flash->info(__d('phkapa', 'Saved with success.'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
+        $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
         $this->redirect(array('action' => 'index'));
     }
 

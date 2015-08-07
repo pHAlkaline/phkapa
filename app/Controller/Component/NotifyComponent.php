@@ -147,14 +147,14 @@ class NotifyComponent extends Component {
      */
     public function delete($id, $notified_id) {
         if (!$id || !$notified_id) {
-            //$this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            //$this->Flash->error(__('Invalid request.'));
             return;
         }
         if ($this->_model->deleteAll(array($this->_model->name . '.id' => $id, $this->_model->name . '.notified_id' => $notified_id), false)) {
-            //$this->Session->setFlash(__('Deleted with success.'), 'flash_message_info');
+            //$this->Flash->info(__('Deleted with success.'));
             return;
         }
-        //$this->Session->setFlash(__( 'Could not be deleted.'), 'flash_message_error');
+        //$this->Flash->error(__( 'Could not be deleted.'));
         return;
     }
 

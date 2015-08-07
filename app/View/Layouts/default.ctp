@@ -136,9 +136,7 @@
             <?php //echo $this->Html->image('load.gif', array('id' => 'loading-indicator'));     ?>
             <div id="loading-indicator"></div>
             <div class="clear" style="height: 10px; width: 100%;"></div>
-            <?php echo $this->Session->flash(); ?>
-            <?php echo $this->Session->flash('auth', array('element' => 'flash_message_error')); ?>
-            <?php echo $this->Session->flash('maintenance'); ?>
+            <?php echo $this->Flash->render() ?>
             <?php echo $this->fetch('content'); ?>
             <div class="clear"></div>
         </div>

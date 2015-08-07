@@ -33,7 +33,7 @@
             echo $this->Form->input('action_type_id',array('label' => __d('phkapa','Action Type')));
             echo $this->Form->input('description',array('label' => __d('phkapa','Description')));
             echo $this->Form->input('deadline',array('min'=>'0','label' => __d('phkapa','Deadline').' ('.__d('phkapa','Days').' )'));
-            echo $this->Form->input('closed',array('label' => __d('phkapa','Closed'),));
+            echo $this->Form->input('closed',array('label' => __d('phkapa','Closed')));
             echo $this->Form->input('close_date', array('label' => __d('phkapa','Close Date'),'empty' => __d('phkapa','(choose one)'), 'dateFormat' => 'DMY', 'maxYear' => date('Y'),'after'=>$this->Html->link( __d('phkapa','set todays date'), '#', array('style' => 'padding-left:10px;', 'id' => 'setTodayCloseDate'))));
             echo $this->Form->input('close_user_id',array('label' => __d('phkapa','Closed By'),'empty' => __d('phkapa','(choose one)')));
             echo $this->Form->input('action_effectiveness_id', array('label' => __d('phkapa','Action Effectiveness'),'empty' => __d('phkapa','(choose one)')));

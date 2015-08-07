@@ -102,7 +102,7 @@ class RegisterController extends PhkapaAppController {
         $ticket = $this->Ticket->find('first', array('conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if (!$id || count($ticket) == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->set('ticket', $ticket);
@@ -124,10 +124,10 @@ class RegisterController extends PhkapaAppController {
             $this->request->data['Ticket']['workflow_id'] = 1;
             if ($this->Ticket->save($this->request->data)) {
                 $this->_addNotification($this->Ticket->id, __d('phkapa', 'New ticket registered') . ' #' . $this->Ticket->id);
-                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__d('phkapa', 'Saved with success.'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
             }
         }
 
@@ -135,7 +135,7 @@ class RegisterController extends PhkapaAppController {
             // parent ticket must be on workflow 4 or 5 ( Verify or Closed )
             $this->request->data = $this->Ticket->find('first', array('conditions' => array('Ticket.workflow_id' => array('4', '5'), 'Ticket.id' => $ticket_parent)));
             if (!isset($this->request->data['Ticket'])) {
-                $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+                $this->Flash->error(__d('phkapa', 'Invalid request.'));
                 $this->redirect(array('action' => 'index'));
             }
             $this->request->data['Ticket']['ticket_parent'] = $ticket_parent;
@@ -193,7 +193,7 @@ class RegisterController extends PhkapaAppController {
         $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if ((!$id && empty($this->request->data)) || count($ticket) == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->request->data) && $this->request->data['Ticket']['process_change'] == '') {
@@ -204,17 +204,17 @@ class RegisterController extends PhkapaAppController {
                 // parent ticket must be on workflow 4 or 5 ( Verify or Closed )
                 $validTicketParent = $this->Ticket->find('count', array('conditions' => array('Ticket.workflow_id' => array('4', '5'), 'Ticket.id' => $this->request->data['Ticket']['ticket_parent'])));
                 if ($validTicketParent == 0) {
-                    $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+                    $this->Flash->error(__d('phkapa', 'Invalid request.'));
                     $this->redirect(array('action' => 'index'));
                 }
             }
 
 
             if ($this->Ticket->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__d('phkapa', 'Saved with success.'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
             }
         }
         if (empty($this->request->data)) {
@@ -247,14 +247,14 @@ class RegisterController extends PhkapaAppController {
         $ticketCount = $this->Ticket->find('count', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if (!$id || $ticketCount == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Ticket->deleteAll(array('Ticket.id' => $id))) {
-            $this->Session->setFlash(__d('phkapa', 'Deleted with success.'), 'flash_message_info');
+            $this->Flash->info(__d('phkapa', 'Deleted with success.'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Session->setFlash(__d('phkapa', 'Could not be deleted.'), 'flash_message_error');
+        $this->Flash->error(__d('phkapa', 'Could not be deleted.'));
         $this->redirect(array('action' => 'index'));
     }
 
@@ -271,7 +271,7 @@ class RegisterController extends PhkapaAppController {
         $ticketCount = $this->Ticket->find('count', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if (!$id || $ticketCount == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
 
@@ -282,10 +282,10 @@ class RegisterController extends PhkapaAppController {
             'modified_user_id' => $this->Auth->user('id')
         ));
         if ($this->Ticket->save()) {
-            $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
+            $this->Flash->info(__d('phkapa', 'Saved with success.'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
+        $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
         $this->redirect(array('action' => 'index'));
     }
 

@@ -105,7 +105,7 @@ class InstallController extends InstallAppController {
      */
     protected function _check() {
         if (file_exists(TMP . 'installed.txt')) {
-            $this->Session->setFlash(__('Already Installed'), 'flash_message_info');
+            $this->Flash->info(__('Already Installed'));
             $this->redirect('/');
         }
     }
@@ -144,7 +144,7 @@ class InstallController extends InstallAppController {
         $this->set('title_for_step', __('Step 1 : Database connection'));
 
         if (file_exists(APP . 'Config' . DS . 'database.php')) {
-            $this->Session->setFlash(__('Database connection file already exists'), 'flash_message_info');
+            $this->Flash->info(__('Database connection file already exists'));
             $this->redirect(array('action' => 'data'));
         }
 
@@ -165,11 +165,11 @@ class InstallController extends InstallAppController {
             $db = ConnectionManager::getDataSource('default');
         } catch (MissingConnectionException $e) {
 
-            $this->Session->setFlash(__('Could not connect to database: %s', $e->getMessage()), 'flash_message_info');
+            $this->Flash->info(__('Could not connect to database: %s', $e->getMessage()));
             return;
         }
         if (!$db->isConnected()) {
-            $this->Session->setFlash(__('Could not connect to database.'), 'flash_message_info');
+            $this->Flash->info(__('Could not connect to database.'));
             return;
         }
 
@@ -182,7 +182,7 @@ class InstallController extends InstallAppController {
         }
 
         if (!$file->write($content)) {
-            $this->Session->setFlash(__('Could not write database.php file.'), 'flash_message_error');
+            $this->Flash->error(__('Could not write database.php file.'));
             return;
         }
         return $this->redirect(array('action' => 'data'));
@@ -209,7 +209,7 @@ class InstallController extends InstallAppController {
         $db = ConnectionManager::getDataSource('default');
         $brokenSequence = $db instanceof Postgres;
         if (!$db->isConnected()) {
-            $this->Session->setFlash(__('Could not connect to database.'), 'flash_message_error');
+            $this->Flash->error(__('Could not connect to database.'));
         } else {
             $structure_file=APP . 'Config' . DS . 'Schema' . DS . 'phkapa_structure_'.Configure::read('Config.language').'.sql';
             if (!file_exists($structure_file)) {
@@ -219,7 +219,7 @@ class InstallController extends InstallAppController {
                 $this->__executeSQLScript($db, $structure_file);
             } catch (MissingConnectionException $e) {
 
-                $this->Session->setFlash(__('Could not load database: %s', $e->getMessage()), 'flash_message_info');
+                $this->Flash->info(__('Could not load database: %s', $e->getMessage()));
                 return;
             }
             $demo_data_file=APP . 'Config' . DS . 'Schema' . DS . 'phkapa_demo_data_'.Configure::read('Config.language').'.sql';
@@ -232,7 +232,7 @@ class InstallController extends InstallAppController {
                 }
             } catch (MissingConnectionException $e) {
 
-                $this->Session->setFlash(__('Could not load database: %s', $e->getMessage()), 'flash_message_info');
+                $this->Flash->info(__('Could not load database: %s', $e->getMessage()));
                 return;
             }
         }
@@ -264,7 +264,7 @@ class InstallController extends InstallAppController {
             $contents = preg_replace('/(?<=Configure::write\(\'Security.salt\', \')([^\' ]+)(?=\'\))/', $salt, $contents);
             $contents = preg_replace('/(?<=Configure::write\(\'Security.cipherSeed\', \')(\d+)(?=\'\))/', $seed, $contents);
             if (!$File->write($contents)) {
-                $this->Session->setFlash(__('Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions.', DS), 'flash_message_info');
+                $this->Flash->info(__('Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions.', DS));
                 $this->log('Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions.', DS);
                 return false;
             }
@@ -288,7 +288,7 @@ class InstallController extends InstallAppController {
         $this->set('title_for_step', __('Step 3 : Email notification'));
 
         if (file_exists(APP . 'Config' . DS . 'email.php')) {
-            $this->Session->setFlash(__('Email settings file already exists'), 'flash_message_info');
+            $this->Flash->info(__('Email settings file already exists'));
             $this->redirect(array('action' => 'adminuser'));
         }
 
@@ -310,7 +310,7 @@ class InstallController extends InstallAppController {
         }
 
         if (!$file->write($content)) {
-            $this->Session->setFlash(__('Could not write email.php file.'), 'flash_message_error');
+            $this->Flash->error(__('Could not write email.php file.'));
             return;
         }
         return $this->redirect(array('action' => 'adminuser'));
@@ -341,14 +341,14 @@ class InstallController extends InstallAppController {
             $this->User->read(null, 1);
             $this->User->set($this->request->data);
             if ($this->User->save()) {
-                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__('Saved with success.'));
                 $token = uniqid();
                 $this->Session->write('Install', array(
                     'token' => $token
                 ));
                 $this->redirect(array('action' => 'finish', $token));
             } else {
-                $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__('Could not be saved. Please, try again.'));
                 $this->log(__('Unable to create administrative user.'));
                 $this->log($this->User->validationErrors);
             }
@@ -376,11 +376,11 @@ class InstallController extends InstallAppController {
             if ($file) {
                 $file->append(__('Installation completed successfully'));
                 $file->close();
-                $this->Session->setFlash(__('Installation completed successfully'), 'flash_message_info');
+                $this->Flash->info(__('Installation completed successfully'));
             } else {
                 $this->set('title_for_layout', __('Installation not completed successfully'));
                 $this->set('title_for_step', __('Installation not completed successfully'));
-                $this->Session->setFlash(__('Something went wrong during installation. Please check your server logs.'), 'flash_message_error');
+                $this->Flash->error(__('Something went wrong during installation. Please check your server logs.'));
                 //$this->redirect(array('action' => 'adminuser'));
             }
             $this->Session->delete('Install');
@@ -435,7 +435,7 @@ class InstallController extends InstallAppController {
         // update all users
         if (!$this->User->saveAll($users)) {
 
-            $this->Session->setFlash(__('Unable to generate users password.'), 'flash_message_error');
+            $this->Flash->error(__('Unable to generate users password.'));
             $this->log(__('Unable to generate users password.'));
             $this->log($User->validationErrors);
             return false;

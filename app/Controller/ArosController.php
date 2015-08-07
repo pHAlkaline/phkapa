@@ -82,10 +82,10 @@ class ArosController extends AppController {
                     ));
 
             if ($this->Node->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__('Saved with success.'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__('Could not be saved. Please, try again.'));
             }
         }
         $parents[0] = "[ No Parent ]";
@@ -109,7 +109,7 @@ class ArosController extends AppController {
     public function admin_edit($id = null) {
         // Protect against administrator edit
         if ($id == null || $id < 4) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
 
@@ -134,10 +134,10 @@ class ArosController extends AppController {
                     ));
 
             if ($this->Node->save($this->request->data)) {
-                $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__('Saved with success.'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__('Could not be saved. Please, try again.'));
             }
         }
 
@@ -190,7 +190,7 @@ class ArosController extends AppController {
      */
     public function admin_allow($id = null, $aco = null, $aro = null) {
         if ($id == null || $id < 4) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $aco = str_replace("*", "/", $aco);
@@ -209,7 +209,7 @@ class ArosController extends AppController {
      */
     public function admin_deny($id = null, $aco = null, $aro = null) {
         if ($id == null || $id < 4) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $aco = str_replace("*", "/", $aco);
@@ -228,7 +228,7 @@ class ArosController extends AppController {
      */
     public function admin_remove($id = null, $aco = null, $aro = null) {
         if ($id == null || $id < 4) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
 
@@ -244,15 +244,15 @@ class ArosController extends AppController {
      */
     public function admin_delete($id = null) {
         if ($id == null || $id < 4) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->Node->id = $id;
         if ($this->Node->delete()) {
-            $this->Session->setFlash(__('Deleted with success.'), 'flash_message_info');
+            $this->Flash->info(__('Deleted with success.'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Session->setFlash(__('Could not be deleted.'), 'flash_message_error');
+        $this->Flash->error(__('Could not be deleted.'));
         $this->redirect(array('action' => 'index'));
     }
 
@@ -265,15 +265,15 @@ class ArosController extends AppController {
      */
     public function admin_moveup($id = null) {
         if ($id == null || $id < 4) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->Node->id = $id;
         if ($this->Node->moveUp()) {
-            $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+            $this->Flash->info(__('Saved with success.'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+            $this->Flash->error(__('Could not be saved. Please, try again.'));
         }
         $this->redirect(array('action' => 'index'));
     }
@@ -287,15 +287,15 @@ class ArosController extends AppController {
      */
     public function admin_movedown($id = null) {
         if ($id == null || $id < 4) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->Node->id = $id;
         if ($this->Node->moveDown()) {
-            $this->Session->setFlash(__('Saved with success.'), 'flash_message_info');
+            $this->Flash->info(__('Saved with success.'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Session->setFlash(__('Could not be saved. Please, try again.'), 'flash_message_error');
+            $this->Flash->error(__('Could not be saved. Please, try again.'));
         }
         $this->redirect(array('action' => 'index'));
     }
