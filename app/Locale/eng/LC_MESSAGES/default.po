@@ -385,6 +385,12 @@ msgstr ""
 msgid "Plugin not found, this Plugin is available to Donors, Contributors or Service clients."
 msgstr ""
 
+msgid "This plugin will save you some time or spare you a programmer headache."
+msgstr ""
+
+msgid "Please make a contribution and get the Plugin code."
+msgstr ""
+
 msgid "Ticket Report"
 msgstr ""
 

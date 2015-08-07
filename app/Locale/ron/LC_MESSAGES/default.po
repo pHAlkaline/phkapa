@@ -428,7 +428,13 @@ msgid "Print report not found."
 msgstr "Raportul printat nu a fost găsit"
 
 msgid "Plugin not found, this Plugin is available to Donors, Contributors or Service clients."
-msgstr "PlugIn nu a fost găsit , acest plugin este disponibil doar pentru donatori, colaboratori sau servicii pentru clienți."
+msgstr "Plugin nu a fost găsit , acest plugin este disponibil pentru donatori, colaboratori sau clienți de servicii."
+
+msgid "This plugin will save you some time or spare you a programmer headache."
+msgstr "Acest plugin va salva ceva timp sau o durere de cap de schimb programator."
+
+msgid "Please make a contribution and get the Plugin code."
+msgstr "Vă rugăm să aducă o contribuție și obține codul Plugin."
 
 msgid "Ticket Report"
 msgstr "Raport despre Tichet"
