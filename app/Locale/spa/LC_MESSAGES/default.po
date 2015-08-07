@@ -400,7 +400,13 @@ msgid "Print report not found."
 msgstr "Abrir informe no se encuentra."
 
 msgid "Plugin not found, this Plugin is available to Donors, Contributors or Service clients."
-msgstr "Plugin no encontrado , este plugin está disponible sólo para los donantes, los contribuyentes o servicio al cliente."
+msgstr "Plugin no encontrado , este plugin está disponible para los donantes , colaboradores o clientes de servicios."
+
+msgid "This plugin will save you some time or spare you a programmer headache."
+msgstr "Este plugin le ahorrará algo de tiempo o te ahorrará un dolor de cabeza programador."
+
+msgid "Please make a contribution and get the Plugin code."
+msgstr "Por favor, haga una contribución y obtener el código Plugin."
 
 msgid "Ticket Report"
 msgstr "Informe"

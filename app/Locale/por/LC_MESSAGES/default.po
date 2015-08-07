@@ -385,6 +385,12 @@ msgstr "A directoria tmp tem permisão de escrita"
 msgid "Plugin not found, this Plugin is available to Donors, Contributors or Service clients."
 msgstr "Plugin não encontrado , este Plugin está disponível apenas para Doadores , contribuintes ou Clientes."
 
+msgid "This plugin will save you some time or spare you a programmer headache."
+msgstr "Este plugin irá poupar-lhe algum tempo ou e evita uma dor de cabeça à programador."
+
+msgid "Please make a contribution and get the Plugin code."
+msgstr "Por favor, faça uma contribuição e obtenha o código do Plugin."
+
 msgid "Ticket Report"
 msgstr "Relatório"
 
