@@ -84,7 +84,7 @@ class MaintenanceComponent extends Component {
         
         // Maintenance mode scheduled show message!!    
         if ($this->hasSchedule()) {
-            $this->Session->setFlash(__('This application will be on maintenance mode at  %s ', Configure::read('Maintenance.start')), $this->flashElement, array(), 'maintenance');
+            $this->Flash->maintenance(__('This application will be on maintenance mode at  %s ', Configure::read('Maintenance.start')));
         }
     }
 

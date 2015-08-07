@@ -54,9 +54,9 @@
             echo $this->Form->input('activity_id', array('label' => __d('phkapa', 'Activity'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('category_id', array('label' => __d('phkapa', 'Category'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('supplier_id', array('label' => __d('phkapa', 'Supplier'), 'empty' => __d('phkapa', '(choose one)')));
-            echo $this->Form->input('approved', array('label' => __d('phkapa', 'Approved'),));
-            echo $this->Form->input('review_notes', array('label' => __d('phkapa', 'Review Notes'),));
-            echo $this->Form->input('description', array('label' => __d('phkapa', 'Description'),));
+            echo $this->Form->input('approved', array('label' => __d('phkapa', 'Approved')));
+            echo $this->Form->input('review_notes', array('label' => __d('phkapa', 'Review Notes')));
+            echo $this->Form->input('description', array('label' => __d('phkapa', 'Description')));
             echo $this->Form->input('cause_id', array('label' => __d('phkapa', 'Cause'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('cause_notes', array('label' => __d('phkapa', 'Cause Notes')));
             echo "<hr/>";

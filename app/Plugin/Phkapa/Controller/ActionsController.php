@@ -69,7 +69,7 @@ class ActionsController extends PhkapaAppController {
      */ 
     public function admin_view($id = null) {
         if (!$id) {
-            $this->Session->setFlash(__d('phkapa','Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa','Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->Action->recursive=1;
@@ -91,7 +91,7 @@ class ActionsController extends PhkapaAppController {
      */
     public function admin_view_revision($id = null, $actionId =null) {
         if (!$id || !$actionId || !in_array($this->Action->name,Configure::read('Revision.tables'))) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'view',$actionId));
         }
         
@@ -116,10 +116,10 @@ class ActionsController extends PhkapaAppController {
             }
             $this->Action->create();
             if ($this->Action->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa','Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__d('phkapa','Saved with success.'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__d('phkapa','Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__d('phkapa','Could not be saved. Please, try again.'));
             }
         }
         if ($ticket_id != null)
@@ -141,15 +141,15 @@ class ActionsController extends PhkapaAppController {
      */ 
     public function admin_edit($id = null) {
         if (!$id && empty($this->request->data)) {
-            $this->Session->setFlash(__d('phkapa','Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa','Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->request->data)) {
             if ($this->Action->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa','Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__d('phkapa','Saved with success.'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__d('phkapa','Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__d('phkapa','Could not be saved. Please, try again.'));
             }
         }
         if (empty($this->request->data)) {
@@ -172,14 +172,14 @@ class ActionsController extends PhkapaAppController {
      */ 
     public function admin_delete($id = null) {
         if (!$id) {
-            $this->Session->setFlash(__d('phkapa','Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa','Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Action->delete($id)) {
-            $this->Session->setFlash(__d('phkapa','Deleted with success.'), 'flash_message_info');
+            $this->Flash->info(__d('phkapa','Deleted with success.'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Session->setFlash(__d('phkapa','Could not be deleted.'), 'flash_message_error');
+        $this->Flash->error(__d('phkapa','Could not be deleted.'));
         $this->redirect(array('action' => 'index'));
     }
 

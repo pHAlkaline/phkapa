@@ -113,17 +113,17 @@ class PlanController extends PhkapaAppController {
         $this->_setupModel();
         $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '3', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         if (!$id || count($ticket) == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->request->data)) {
             $this->request->data['Ticket']['registar_id'] = $this->Auth->user('id');
             $this->request->data['Ticket']['workflow_id'] = 3;
             if ($this->Ticket->save($this->request->data)) {
-                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__d('phkapa', 'Saved with success.'));
                 $this->redirect(array('action' => 'edit', $id));
             } else {
-                $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
             }
         }
         if (empty($this->request->data)) {
@@ -149,7 +149,7 @@ class PlanController extends PhkapaAppController {
         }
         $ticket = $this->Ticket->find('first', array('conditions' => array('Ticket.workflow_id' => '3', 'Ticket.id' => $ticketId, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         if (count($ticket) == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->request->data)) {
@@ -161,15 +161,15 @@ class PlanController extends PhkapaAppController {
             if ($this->Ticket->Action->save($this->request->data)) {
                 $this->Ticket->id = $ticketId;
                 $this->Ticket->saveField('modified_user_id', $this->Auth->user('id'));
-                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__d('phkapa', 'Saved with success.'));
                 $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id']));
             } else {
-                $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
             }
         }
         $actionTypes = $this->Ticket->Action->ActionType->find('list', array('conditions' => array('ActionType.active' => '1')));
         if (count($actionTypes) == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
 
@@ -194,7 +194,7 @@ class PlanController extends PhkapaAppController {
         $ticket = $this->Ticket->find('first', array('conditions' => array('Ticket.workflow_id' => '3', 'Ticket.id' => $ticketId, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if (count($ticket) == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id']));
         }
         //$this->loadModel('Phkapa.Action');
@@ -212,17 +212,17 @@ class PlanController extends PhkapaAppController {
             if ($this->Ticket->Action->save($this->request->data)) {
                 $this->Ticket->id = $ticketId;
                 $this->Ticket->saveField('modified_user_id', $this->Auth->user('id'));
-                $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
+                $this->Flash->info(__d('phkapa', 'Saved with success.'));
                 $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id']));
             } else {
-                $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
+                $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
             }
         } else {
             $this->request->data = $this->Ticket->Action->read(null, $id);
         }
         $actionTypes = $this->Ticket->Action->ActionType->find('list', array('conditions' => array('ActionType.active' => '1')));
         if (count($actionTypes) == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->set(compact('actionTypes', 'ticket'));
@@ -240,17 +240,17 @@ class PlanController extends PhkapaAppController {
         $this->Ticket->recursive = 0;
         $countTicket = $this->Ticket->find('count', array('conditions' => array('Ticket.workflow_id' => '3', 'Ticket.id' => $ticketId, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         if ($countTicket == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'edit', $ticketId));
         }
         //$this->loadModel('Phkapa.Action');
         if ($this->Ticket->Action->deleteAll(array('Action.ticket_id' => $ticketId, 'Action.id' => $id))) {
             $this->Ticket->id = $ticketId;
             $this->Ticket->saveField('modified_user_id', $this->Auth->user('id'));
-            $this->Session->setFlash(__d('phkapa', 'Deleted with success.'), 'flash_message_info');
+            $this->Flash->info(__d('phkapa', 'Deleted with success.'));
             $this->redirect(array('action' => 'edit', $ticketId));
         }
-        $this->Session->setFlash(__d('phkapa', 'Could not be deleted.'), 'flash_message_error');
+        $this->Flash->error(__d('phkapa', 'Could not be deleted.'));
         $this->redirect(array('action' => 'edit', $ticketId));
     }
 
@@ -266,7 +266,7 @@ class PlanController extends PhkapaAppController {
         $this->Ticket->recursive = 0;
         $countTicket = $this->Ticket->find('count', array('conditions' => array('Ticket.workflow_id' => '3', 'Ticket.id' => $ticketId, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         if ($countTicket == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'edit', $ticketId));
         }
         //$this->loadModel('Phkapa.Action');
@@ -282,10 +282,10 @@ class PlanController extends PhkapaAppController {
         if ($this->Ticket->Action->save()) {
             $this->Ticket->id = $ticketId;
             $this->Ticket->saveField('modified_user_id', $this->Auth->user('id'));
-            $this->Session->setFlash(__d('phkapa', 'Closed with success.'), 'flash_message_info');
+            $this->Flash->info(__d('phkapa', 'Closed with success.'));
             $this->redirect(array('action' => 'edit', $ticketId));
         }
-        $this->Session->setFlash(__d('phkapa', 'Could not be closed.'), 'flash_message_error');
+        $this->Flash->error(__d('phkapa', 'Could not be closed.'));
         $this->redirect(array('action' => 'edit', $ticketId));
     }
 
@@ -313,12 +313,12 @@ class PlanController extends PhkapaAppController {
         $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '3', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         
         if (count($ticket) == 0) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
 
         if ($ticket['Ticket']['cause_id'] == null) {
-            $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
         $this->Ticket->Action->recursive=1;
@@ -330,7 +330,7 @@ class PlanController extends PhkapaAppController {
         foreach ($actions as $action) {
 
             if ($action['Action']['closed'] == 0) {
-                $this->Session->setFlash(__d('phkapa', 'Invalid request.'), 'flash_message_error');
+                $this->Flash->error(__d('phkapa', 'Invalid request.'));
                 $this->redirect(array('action' => 'index'));
             }
             if ($action['ActionType']['verification'] != 0) {
@@ -351,10 +351,10 @@ class PlanController extends PhkapaAppController {
 
                 $this->_addNotification($id, __d('phkapa', 'Ticket # %s has been closed', $id));
             }
-            $this->Session->setFlash(__d('phkapa', 'Saved with success.'), 'flash_message_info');
+            $this->Flash->info(__d('phkapa', 'Saved with success.'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Session->setFlash(__d('phkapa', 'Could not be saved. Please, try again.'), 'flash_message_error');
+        $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
         $this->redirect(array('action' => 'index'));
     }
 

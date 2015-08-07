@@ -23,6 +23,7 @@ class AppController extends Controller {
      * @access public
      */
     public $components = array(
+        'Flash',
         'Session', 
         'Acl', 
         'Maintenance', 
@@ -39,7 +40,7 @@ class AppController extends Controller {
      * @var array
      * @access public
      */
-    public $helpers = array('Time', 'Session', 'Html', 'Form', 'Utils');
+    public $helpers = array('Time', 'Session', 'Flash', 'Html', 'Form', 'Utils');
 
     /**
      * beforeFilter
@@ -55,7 +56,7 @@ class AppController extends Controller {
         $this->Auth->loginRedirect = array('admin' => false, 'plugin' => 'phkapa', 'controller' => 'query', 'action' => 'index');
         $this->Auth->allow('display', 'login', 'logout','edit_profile','secure','notifications');
         $this->Auth->authorize = array('Controller');
-        $this->Auth->flashElement = 'flash_message_error';
+        //$this->Auth->flashElement = 'error';
         $this->Auth->authenticate = array(  AuthComponent::ALL => array('userModel' => 'User', 'scope' => array("User.active" => 1)),'Form');
 
 

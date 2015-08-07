@@ -121,7 +121,7 @@ class PagesController extends AppController {
      */
     function notifications($option=null,$id=null){
         if (!$this->Auth->loggedIn()) {
-            $this->Session->setFlash(__('Invalid request.'), 'flash_message_error');
+            $this->Flash->error(__('Invalid request.'));
             $this->redirect(Router::url('/', true));
         }
         if ($option!=null && $option=='delete'){
