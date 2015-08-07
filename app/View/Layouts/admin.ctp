@@ -198,9 +198,7 @@
             <div id="loading-indicator"></div>
             <div class="clear" style="height: 10px; width: 100%;"></div>
 
-            <?php echo $this->Session->flash(); ?>
-            <?php echo $this->Session->flash('auth'); ?>
-            <?php echo $this->Session->flash('maintenance'); ?>
+            <?php echo $this->Flash->render() ?>
             <?php
             echo $this->fetch('content');
             ;
