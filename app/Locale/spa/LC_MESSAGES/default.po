@@ -399,7 +399,7 @@ msgstr "Su directorio tmp NO tiene permiso de escritura"
 msgid "Print report not found."
 msgstr "Abrir informe no se encuentra."
 
-msgid "Plugin not found, this Plugin is only available to Donators, Contributors or Service clients."
+msgid "Plugin not found, this Plugin is available to Donors, Contributors or Service clients."
 msgstr "Plugin no encontrado , este plugin está disponible sólo para los donantes, los contribuyentes o servicio al cliente."
 
 msgid "Ticket Report"

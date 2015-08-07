@@ -382,7 +382,7 @@ msgstr "TMP-Verzeichnis ist NICHT beschreibbar."
 msgid "Your tmp directory is writable."
 msgstr "TMP-Verzeichnis ist beschreibbar."
 
-msgid "Plugin not found, this Plugin is only available to Donators, Contributors or Service clients."
+msgid "Plugin not found, this Plugin is available to Donors, Contributors or Service clients."
 msgstr "Plugin nicht gefunden , ist dies Plugin nur für Spender , Mitwirkende oder Service-Clients zur Verfügung."
 
 msgid "Ticket Report"

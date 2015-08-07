@@ -382,7 +382,7 @@ msgstr "O diretorio tmp não permite escrita."
 msgid "Your tmp directory is writable."
 msgstr "O diretorio tmp tem permisão de escrita"
 
-msgid "Plugin not found, this Plugin is only available to Donators, Contributors or Service clients."
+msgid "Plugin not found, this Plugin is available to Donors, Contributors or Service clients."
 msgstr "Plugin não encontrado , este Plugin está disponível apenas para Doadores , contribuintes ou Clientes."
 
 msgid "Ticket Report"

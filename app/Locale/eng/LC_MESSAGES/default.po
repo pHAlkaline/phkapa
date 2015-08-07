@@ -382,7 +382,7 @@ msgstr ""
 msgid "Your tmp directory is writable."
 msgstr ""
 
-msgid "Plugin not found, this Plugin is only available to Donators, Contributors or Service clients."
+msgid "Plugin not found, this Plugin is available to Donors, Contributors or Service clients."
 msgstr ""
 
 msgid "Ticket Report"
