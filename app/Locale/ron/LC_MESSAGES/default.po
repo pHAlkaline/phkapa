@@ -427,7 +427,7 @@ msgstr "Directorul tmp nu poate fi scris"
 msgid "Print report not found."
 msgstr "Raportul printat nu a fost găsit"
 
-msgid "Plugin not found, this Plugin is only available to Donators, Contributors or Service clients."
+msgid "Plugin not found, this Plugin is available to Donors, Contributors or Service clients."
 msgstr "PlugIn nu a fost găsit , acest plugin este disponibil doar pentru donatori, colaboratori sau servicii pentru clienți."
 
 msgid "Ticket Report"

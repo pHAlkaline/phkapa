@@ -16,7 +16,7 @@
  * app Plugins
  */
 //CakePlugin::load('DebugKit');
-CakePlugin::load('Install', array('bootstrap' => false, 'routes' => false));
+
 
 /**
  * Languages available
