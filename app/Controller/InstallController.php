@@ -58,12 +58,14 @@ class InstallController extends AppController {
      */
     public function secure() {
 
-        // secure app
-        if (!$this->__setNewSaltSeed())
-            return;
+        // secure app with new salt/seed
+        if (!$this->__setNewSaltSeed()){
+            $this->redirect('/');
+        }
         // update all user passwords with new salt/seed 
-        if (!$this->__updatePasswords())
-            return;
+        if (!$this->__updatePasswords()){
+            $this->redirect('/');
+        }
 
         $token = uniqid();
         $this->Session->write('Install', array(
