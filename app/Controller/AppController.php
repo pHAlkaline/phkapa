@@ -56,7 +56,7 @@ class AppController extends Controller {
         $this->Auth->loginRedirect = array('admin' => false, 'plugin' => 'phkapa', 'controller' => 'query', 'action' => 'index');
         $this->Auth->allow('display', 'login', 'logout','edit_profile','secure','notifications');
         $this->Auth->authorize = array('Controller');
-        $this->Auth->flash = array('element' => 'error', 'key' => null, 'params' => array());
+        $this->Auth->flash = array('element' => 'error');
         $this->Auth->authenticate = array(  AuthComponent::ALL => array('userModel' => 'User', 'scope' => array("User.active" => 1)),'Form');
 
 
