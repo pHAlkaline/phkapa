@@ -427,7 +427,7 @@ msgstr "Directorul tmp nu poate fi scris"
 msgid "Print report not found."
 msgstr "Raportul printat nu a fost găsit"
 
-msgid "Plugin not found, this Plugin is available to Donors, Contributors or Service clients."
+msgid "Plugin not found, this Plugin is available to donors, contributors or service clients."
 msgstr "Plugin nu a fost găsit , acest plugin este disponibil pentru donatori, colaboratori sau clienți de servicii."
 
 msgid "This plugin will save you some time or spare you a programmer headache."
@@ -435,6 +435,9 @@ msgstr "Acest plugin va salva ceva timp sau o durere de cap de schimb programato
 
 msgid "Please make a contribution and get the Plugin code."
 msgstr "Vă rugăm să aducă o contribuție și obține codul Plugin."
+
+msgid "This Plugin is also available with the pHKapa FULL PACK."
+msgstr "Acest plugin este de asemenea disponibil cu pHKapa FULL PACK"
 
 msgid "Ticket Report"
 msgstr "Raport despre Tichet"
