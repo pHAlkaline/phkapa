@@ -382,13 +382,16 @@ msgstr ""
 msgid "Your tmp directory is writable."
 msgstr ""
 
-msgid "Plugin not found, this Plugin is available to Donors, Contributors or Service clients."
+msgid "Plugin not found, this Plugin is available to donors, contributors or service clients."
 msgstr ""
 
 msgid "This plugin will save you some time or spare you a programmer headache."
 msgstr ""
 
 msgid "Please make a contribution and get the Plugin code."
+msgstr ""
+
+msgid "This Plugin is also available with the pHKapa FULL PACK."
 msgstr ""
 
 msgid "Ticket Report"
