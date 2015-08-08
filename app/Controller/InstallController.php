@@ -69,7 +69,7 @@ class InstallController extends AppController {
         $this->Session->write('Install', array(
             'token' => $token
         ));
-        $this->redirect(array('action' => 'finish', $token));
+       
     }
     
      private function __setNewSaltSeed() {
