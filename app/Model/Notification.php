@@ -48,8 +48,8 @@ class Notification extends AppModel {
      */
     public $validate = array(
         'notifier_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -58,8 +58,8 @@ class Notification extends AppModel {
             ),
         ),
         'notified_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -68,8 +68,8 @@ class Notification extends AppModel {
             ),
         ),
         'url' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Empty',
             //'allowEmpty' => false,
             //'required' => false,
@@ -78,8 +78,8 @@ class Notification extends AppModel {
             ),
         ),
         'notification' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Empty',
             //'allowEmpty' => false,
             //'required' => false,

@@ -53,8 +53,8 @@ class Ticket extends PhkapaAppModel {
             )
         ),
         'type_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -63,8 +63,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'process_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -73,8 +73,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'priority_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -83,8 +83,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'safety_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -93,8 +93,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'registar_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -103,8 +103,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'activity_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -113,8 +113,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'category_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -123,8 +123,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'origin_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -139,8 +139,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'workflow_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -156,7 +156,7 @@ class Ticket extends PhkapaAppModel {
                 'required' => false,
                 'last' => false
             ),
-            'notempty' => array(
+            'notBlank' => array(
                 'rule' => array('naturalNumber', true),
                 'message' => 'Numeric',
                 'allowEmpty' => true,
@@ -213,8 +213,8 @@ class Ticket extends PhkapaAppModel {
             )
         ),
         'type_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -223,8 +223,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'process_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -233,8 +233,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'priority_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -243,8 +243,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'safety_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -253,8 +253,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'registar_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -263,8 +263,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'activity_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -273,8 +273,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'category_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -283,8 +283,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'origin_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -293,8 +293,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'supplier_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -303,8 +303,8 @@ class Ticket extends PhkapaAppModel {
             ),
         ),
         'workflow_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,

@@ -46,8 +46,8 @@ class Priority extends PhkapaAppModel {
      */
     public $validate = array(
         'name' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Empty',
             //'allowEmpty' => false,
             //'required' => false,
