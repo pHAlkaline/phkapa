@@ -19,10 +19,9 @@
 <body>
 	<div id="container">
 		<div id="content">
-
+                        <?php echo $this->Flash->render('Auth'); ?>
 			<?php echo $this->Flash->render(); ?>
-
-			<?php echo $this->fetch('content'); ?>
+                        <?php echo $this->fetch('content'); ?>
 		</div>
 		
 	</div>
