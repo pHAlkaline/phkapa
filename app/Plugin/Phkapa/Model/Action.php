@@ -46,8 +46,8 @@ class Action extends PhkapaAppModel {
      */
     public $validate = array(
         'ticket_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -56,8 +56,8 @@ class Action extends PhkapaAppModel {
             ),
         ),
         'action_type_id' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
             //'allowEmpty' => false,
             //'required' => false,
@@ -71,8 +71,8 @@ class Action extends PhkapaAppModel {
                 'message' => 'Action type requires verification on close',
                 'required' => false,
             ),
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Choose one option',
                 'allowEmpty' => true,
                 'required' => false,
@@ -89,8 +89,8 @@ class Action extends PhkapaAppModel {
             
         ),
         'description' => array(
-            'notempty' => array(
-                'rule' => array('notempty'),
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Empty',
             //'allowEmpty' => false,
             //'required' => false,
