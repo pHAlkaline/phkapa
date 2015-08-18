@@ -1,6 +1,6 @@
 {
     "name": "phalkaline/phkapa",
-    "description": "Corrective Preventive action with nonconformity management, software for quality assurance.",
+    "description": "Nonconformity management software for quality assurance.",
     "type": "project",
     "keywords": ["application", "php", "corrective action", "preventive action", "nonconformity", "quality assurance"],
     "homepage": "http://phkapa.net",
