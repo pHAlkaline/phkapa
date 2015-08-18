@@ -207,7 +207,7 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Ticket']['description'].'<br/>'.$ticket['Ticket']['review_notes']; ?>
+                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['description']).'<br/>'.$this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -229,7 +229,7 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Ticket']['cause_notes']; ?>
+                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['cause_notes']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -314,7 +314,13 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                             <tr<?php echo $class; ?>>
                                 <td><?php echo $action['id']; ?></td>
                                 <td><?php echo $action['ActionType']['name']; ?></td>
-                                <td><?php echo $action['description']; ?></td>
+                                <td><?php
+        echo $this->Text->truncate(
+                $this->Text->autoParagraph($action['description']), 60, array(
+            'ellipsis' => '...',
+            'exact' => false
+        ));
+                ?></td>
                                 <td><?php
                     if (isset($action['ActionEffectiveness']['name']))
                         echo $action['ActionEffectiveness']['name'];

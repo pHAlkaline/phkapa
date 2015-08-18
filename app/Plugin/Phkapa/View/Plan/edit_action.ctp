@@ -171,7 +171,7 @@ if ($i % 2 == 0)
                     if ($i++ % 2 == 0)
                         echo $class;
 ?>>
-<?php echo $ticket['Ticket']['description'] . '<br/>' . $ticket['Ticket']['review_notes']; ?>
+<?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php

@@ -231,7 +231,7 @@
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Ticket']['description'] . '<br/>' . $ticket['Ticket']['review_notes']; ?>
+                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' .$this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -253,7 +253,7 @@
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Ticket']['cause_notes']; ?>
+                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['cause_notes']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -421,7 +421,13 @@
                                 <td><?php echo $children['Origin']['name']; ?></td>
                                 <td class="nowrap"><?php echo $children['Process']['name']; ?></td>
                                 <td><?php echo $children['Category']['name']; ?></td>
-                                <td><?php echo $children['description']; ?>&nbsp;</td>
+                                <td><?php
+                        echo $this->Text->truncate(
+                                $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
+                            'ellipsis' => '...',
+                            'exact' => false
+                        ));
+                        ?>&nbsp;</td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $children['created']); ?>&nbsp;</td>
 
                                 <td>

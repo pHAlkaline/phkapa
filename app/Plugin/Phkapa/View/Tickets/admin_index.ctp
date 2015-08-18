@@ -13,7 +13,7 @@
                 <li><?php echo $this->Html->link(__d('phkapa', 'Export to CSV'), array('action' => 'export')); ?></li>
             </ul>
             </ul>
-             
+
         </div>
 
     </div>
@@ -58,18 +58,24 @@
                     <td><?php echo $this->Html->link($ticket['Type']['name'], array('controller' => 'types', 'action' => 'view', $ticket['Type']['id'])); ?></td>
                     <td><?php echo $this->Html->link($ticket['Origin']['name'], array('controller' => 'origins', 'action' => 'view', $ticket['Origin']['id'])); ?></td>
                     <td><?php echo $this->Html->link($ticket['Process']['name'], array('controller' => 'processes', 'action' => 'view', $ticket['Process']['id'])); ?></td>
-                    <!--td><?php //echo $this->Html->link($ticket['Category']['name'], array('controller' => 'categories', 'action' => 'view', $ticket['Category']['id'])); ?></td-->
+                    <!--td><?php //echo $this->Html->link($ticket['Category']['name'], array('controller' => 'categories', 'action' => 'view', $ticket['Category']['id']));  ?></td-->
                     <td><?php echo $this->Html->link($ticket['Activity']['name'], array('controller' => 'activities', 'action' => 'view', $ticket['Activity']['id'])); ?></td>
 
-                    <td><?php echo $ticket['Ticket']['description'] . '<br/>' . $ticket['Ticket']['review_notes']; ?>&nbsp;</td>
-                    <!--td class="nowrap"><?php //echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['created']); ?>&nbsp;</td-->
+                    <td><?php
+                        echo $this->Text->truncate(
+                                $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
+                            'ellipsis' => '...',
+                            'exact' => false
+                        ));
+                        ?>&nbsp;</td>
+                    <!--td class="nowrap"><?php //echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['created']);  ?>&nbsp;</td-->
                     <td>
                         <?php echo $ticket['Workflow']['name']; ?>
                     </td>
                     <td class="actions">
                         <?php echo $this->Html->link(__d('phkapa', 'View'), array('action' => 'view', $ticket['Ticket']['id'])); ?>
                         <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit', $ticket['Ticket']['id'])); ?>
-                        <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'delete', $ticket['Ticket']['id']), array('escape' => false, 'confirm'=>__d('phkapa', 'Are you sure you want to delete # %s?', $ticket['Ticket']['id']) . ' ' . __d('phkapa', 'Related Child Tickets and actions will also be deleted!!'))); ?>
+                        <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'delete', $ticket['Ticket']['id']), array('escape' => false, 'confirm' => __d('phkapa', 'Are you sure you want to delete # %s?', $ticket['Ticket']['id']) . ' ' . __d('phkapa', 'Related Child Tickets and actions will also be deleted!!'))); ?>
                     </td>
 
                 </tr>

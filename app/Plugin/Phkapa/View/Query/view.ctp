@@ -45,7 +45,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     <li> <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('controller' => $controller, 'action' => $action, $ticket['Ticket']['id'])); ?></li>
 
                 <?php endif ?>
-                    <li class="list-group-item"><?php echo $this->Html->link(__d('phkapa', 'Open Report'), array('action' => 'print_report', $ticket['Ticket']['id']), array('target'=>'_blank','class' => '')); ?> </li>
+                <li class="list-group-item"><?php echo $this->Html->link(__d('phkapa', 'Open Report'), array('action' => 'print_report', $ticket['Ticket']['id']), array('target' => '_blank', 'class' => '')); ?> </li>
             </ul>
 
         </div>
@@ -56,24 +56,24 @@ if ($ticket['Workflow']['id'] < 5) {
 
             <div class="block">
                 <dl><?php
-                $i = 0;
-                $class = ' class="altrow"';
-                ?>
+                    $i = 0;
+                    $class = ' class="altrow"';
+                    ?>
                     <dt<?php
                     if ($i % 2 == 0)
                         echo $class;
-                ?>><?php echo __d('phkapa', 'Id'); ?></dt>
+                    ?>><?php echo __d('phkapa', 'Id'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $ticket['Ticket']['id']; ?>
                         &nbsp;
                     </dd>
                     <?php if ($ticket['Ticket']['ticket_parent'] != '') { ?>
                         <dt<?php
-                    if ($i % 2 == 0)
-                        echo $class;
+                        if ($i % 2 == 0)
+                            echo $class;
                         ?>><?php echo __d('phkapa', 'Ticket Parent'); ?></dt>
                         <dd<?php
                         if ($i++ % 2 == 0)
@@ -90,53 +90,53 @@ if ($ticket['Workflow']['id'] < 5) {
                         echo $class;
                     ?>><?php echo __d('phkapa', 'Workflow'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
+                    if ($i++ % 2 == 0)
+                        echo $class;
                     ?>>
                             <?php echo $ticket['Workflow']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Registar'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Registar'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $ticket['Registar']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Priority'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Priority'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $ticket['Priority']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Safety'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Safety'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $ticket['Safety']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Origin Date'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Origin Date'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php
                             if ($ticket['Ticket']['origin_date']) {
                                 echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['origin_date']);
@@ -145,126 +145,126 @@ if ($ticket['Workflow']['id'] < 5) {
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Type'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Type'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $ticket['Type']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Origin'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Origin'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $ticket['Origin']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Process'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Process'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $ticket['Process']['name']; ?>
                         &nbsp;
                     </dd>
 
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Activity'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Activity'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $ticket['Activity']['name']; ?>
                         &nbsp;
                     </dd>
 
 
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Category'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Category'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $ticket['Category']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Supplier'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Supplier'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $ticket['Supplier']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Approved'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Approved'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $this->Utils->yesOrNo($ticket['Ticket']['approved']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Description'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Description'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
-                            <?php echo $ticket['Ticket']['description'] . '<br/>' . $ticket['Ticket']['review_notes']; ?>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Cause'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Cause'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $ticket['Cause']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Cause Notes'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Cause Notes'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
-                            <?php echo $ticket['Ticket']['cause_notes']; ?>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['cause_notes']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Close Date'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Close Date'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php
                             if ($ticket['Ticket']['close_date']) {
                                 echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['close_date']);
@@ -273,46 +273,46 @@ if ($ticket['Workflow']['id'] < 5) {
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Closed By'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Closed By'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $ticket['CloseUser']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Last Modification By'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Last Modification By'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $ticket['ModifiedUser']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Modified'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Modified'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['modified']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Created'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Created'); ?></dt>
                     <dd<?php
-                        if ($i++ % 2 == 0)
-                            echo $class;
-                            ?>>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
                             <?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['created']); ?>
                         &nbsp;
                     </dd>
@@ -353,9 +353,8 @@ if ($ticket['Workflow']['id'] < 5) {
                             if ($i++ % 2 == 0) {
                                 $class = ' class="altrow"';
                             }
-                            
                             ?>
-                             <tr<?php echo $class; ?>>
+                            <tr<?php echo $class; ?>>
                                 <td><?php echo $action['id']; ?></td>
                                 <td><?php echo $action['ActionType']['name']; ?></td>
                                 <td><?php echo $this->Utils->yesOrNo($action['closed']); ?></td>
@@ -366,15 +365,15 @@ if ($ticket['Workflow']['id'] < 5) {
                                         echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']);
                                     ?>
                                 </td>
-                                
-                                <td><?php if (isset($action['ActionEffectiveness']['name'])) echo $action['ActionEffectiveness']['name'];?></td>
+
+                                <td><?php if (isset($action['ActionEffectiveness']['name'])) echo $action['ActionEffectiveness']['name']; ?></td>
                                 <td><?php if (isset($action['VerifyUser']['name'])) echo $action['VerifyUser']['name']; ?></td>
                                 <td><?php if (isset($action['ModifiedUser']['name'])) echo $action['ModifiedUser']['name']; ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['modified']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
                                 <td class="actions">
                                     <?php echo $this->Html->link(__d('phkapa', 'View'), array('controller' => 'query', 'action' => 'view_action', $action['id'])); ?>
-                                   
+
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -410,7 +409,7 @@ if ($ticket['Workflow']['id'] < 5) {
                         <?php
                         $i = 0;
                         foreach ($ticket['Children'] as $children):
-                            
+
                             $class = null;
                             if ($i++ % 2 == 0) {
                                 $class = ' class="altrow"';
@@ -449,7 +448,13 @@ if ($ticket['Workflow']['id'] < 5) {
                                 <td><?php echo $children['Origin']['name']; ?></td>
                                 <td class="nowrap"><?php echo $children['Process']['name']; ?></td>
                                 <td><?php echo $children['Category']['name']; ?></td>
-                                <td><?php echo $children['description']; ?>&nbsp;</td>
+                                <td><?php
+                    echo $this->Text->truncate(
+                            $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
+                        'ellipsis' => '...',
+                        'exact' => false
+                    ));
+                            ?>&nbsp;</td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $children['created']); ?>&nbsp;</td>
                                 <td><?php echo $children['Workflow']['name']; ?></td>
                                 <td class="actions">

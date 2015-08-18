@@ -175,7 +175,7 @@ $class = ' class="altrow"';
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Ticket']['description']; ?>
+                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['description']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php

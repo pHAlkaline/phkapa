@@ -180,7 +180,7 @@ $class = ' class="altrow"';
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Ticket']['description'].'<br/>'.$ticket['Ticket']['review_notes']; ?>
+                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['description']).'<br/>'.$this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -202,7 +202,7 @@ $class = ' class="altrow"';
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $ticket['Ticket']['cause_notes']; ?>
+                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['cause_notes']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -271,7 +271,7 @@ $class = ' class="altrow"';
                     if ($i++ % 2 == 0)
                         echo $class;
                         ?>>
-                        <?php echo $action['Action']['description']; ?>
+                        <?php echo $this->Text->autoParagraph($action['Action']['description']); ?>
                     &nbsp;
                 </dd>
                 <dt<?php
