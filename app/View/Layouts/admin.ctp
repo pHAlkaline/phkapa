@@ -197,7 +197,7 @@
             <?php //echo $this->Html->image('load.gif', array('id' => 'loading-indicator'));  ?>
             <div id="loading-indicator"></div>
             <div class="clear" style="height: 10px; width: 100%;"></div>
-
+            <?php echo $this->Flash->render('Auth'); ?>
             <?php echo $this->Flash->render(); ?>
             <?php
             echo $this->fetch('content');
