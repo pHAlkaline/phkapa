@@ -49,7 +49,7 @@ class InstallController extends AppController {
     public function index() {
         
     }
-    
+
     /**
      * This method should be called on first time run after manual instalation
      *
@@ -59,11 +59,11 @@ class InstallController extends AppController {
     public function secure() {
 
         // secure app with new salt/seed
-        if (!$this->__setNewSaltSeed()){
+        if (!$this->__setNewSaltSeed()) {
             $this->redirect('/');
         }
         // update all user passwords with new salt/seed 
-        if (!$this->__updatePasswords()){
+        if (!$this->__updatePasswords()) {
             $this->redirect('/');
         }
 
@@ -71,30 +71,27 @@ class InstallController extends AppController {
         $this->Session->write('Install', array(
             'token' => $token
         ));
-       
     }
-    
-     private function __setNewSaltSeed() {
-        // set new salt and seed value
-        if (Configure::read('Security.salt') == 'zshlC2wMeCWMnRH8BmqmLQUFeBIT4uwBGSMS4k1w' || Configure::read('Security.cipherSeed') == '2973937642728344649949541921993430529846') {
 
-            $File = & new File(APP . 'Config' . DS . 'core.php');
-            $salt = Security::generateAuthKey();
-            $seed = mt_rand() . mt_rand();
-            $contents = $File->read();
-            $contents = preg_replace('/(?<=Configure::write\(\'Security.salt\', \')([^\' ]+)(?=\'\))/', $salt, $contents);
-            $contents = preg_replace('/(?<=Configure::write\(\'Security.cipherSeed\', \')(\d+)(?=\'\))/', $seed, $contents);
-            if (!$File->write($contents)) {
-                $this->Flash->info(__('Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions.', DS));
-                $this->log('Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions.', DS);
-                return false;
-            }
-            Configure::write('Security.salt', $salt);
-            Configure::write('Security.cipherSeed', $seed);
+    private function __setNewSaltSeed() {
+        // set new salt and seed value
+        $File = & new File(APP . 'Config' . DS . 'core.php');
+        $salt = Security::generateAuthKey();
+        $seed = mt_rand() . mt_rand();
+        $contents = $File->read();
+        $contents = preg_replace('/(?<=Configure::write\(\'Security.salt\', \')([^\' ]+)(?=\'\))/', $salt, $contents);
+        $contents = preg_replace('/(?<=Configure::write\(\'Security.cipherSeed\', \')(\d+)(?=\'\))/', $seed, $contents);
+        if (!$File->write($contents)) {
+            $this->Flash->info(__('Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions.', DS));
+            $this->log('Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions.', DS);
+            return false;
         }
+        Configure::write('Security.salt', $salt);
+        Configure::write('Security.cipherSeed', $seed);
+
         return true;
     }
-    
+
     /**
      * Update Passwords
      *
@@ -122,7 +119,6 @@ class InstallController extends AppController {
         return true;
     }
 
-
     /**
      * isAuthorized
      *
@@ -136,7 +132,7 @@ class InstallController extends AppController {
         $result = true;
         return $result;
     }
-    
+
     /**
      * beforeFilter
      *
@@ -150,6 +146,5 @@ class InstallController extends AppController {
 
         //$this->layout = 'install';
     }
-
 
 }
