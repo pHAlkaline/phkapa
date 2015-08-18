@@ -7,8 +7,8 @@
             <?php
             $tableHeaders = $this->html->tableHeaders(array(
                 $this->Paginator->sort('id', __d('phkapa', 'Id')),
-                $this->Paginator->sort('Priority.order',__d('phkapa','Priority')),
-                $this->Paginator->sort('Safety.order',__d('phkapa','Safety')),
+                $this->Paginator->sort('Priority.order', __d('phkapa', 'Priority')),
+                $this->Paginator->sort('Safety.order', __d('phkapa', 'Safety')),
                 $this->Paginator->sort('origin_date', __d('phkapa', 'Origin Date')),
                 $this->Paginator->sort('Type.name', __d('phkapa', 'Type')),
                 $this->Paginator->sort('Origin.name', __d('phkapa', 'Origin')),
@@ -42,62 +42,66 @@
                     $sendOk = false;
                     $closeOk = false;
                 }
-                
                 ?>
                 <tr<?php echo $class; ?>>
                     <td><?php echo $ticket['Ticket']['id']; ?>&nbsp;</td>
-                     <td class="nowrap"><?php echo $ticket['Priority']['name']; ?></td>
-                     <td class="nowrap"><?php echo $ticket['Safety']['name']; ?></td>
+                    <td class="nowrap"><?php echo $ticket['Priority']['name']; ?></td>
+                    <td class="nowrap"><?php echo $ticket['Safety']['name']; ?></td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['origin_date']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $ticket['Type']['name']; ?></td>
                     <td><?php echo $ticket['Origin']['name']; ?></td>
                     <td class="nowrap"><?php echo $ticket['Process']['name']; ?></td>
-                    <!--td><?php //echo $ticket['Category']['name']; ?></td-->
+                    <!--td><?php //echo $ticket['Category']['name'];  ?></td-->
                     <td><?php echo $ticket['Activity']['name']; ?></td>
-                    <td><?php echo $ticket['Ticket']['description'].'<br/>'.$ticket['Ticket']['review_notes']; ?>&nbsp;</td>
+                    <td><?php
+        echo $this->Text->truncate(
+                $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
+            'ellipsis' => '...',
+            'exact' => false
+        ));
+                ?>&nbsp;</td>
                     <td><?php echo $this->Utils->yesOrNo($ticket['Ticket']['approved']); ?></td>
-                    <!--td class="nowrap"><?php //echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['created']); ?>&nbsp;</td-->
+                    <!--td class="nowrap"><?php //echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['created']);  ?>&nbsp;</td-->
 
                     <td class="actions">
-                         <?php
+                        <?php
                         if ($sendOk) {
-                            echo $this->Html->link(__d('phkapa', 'Send'), array('action' => 'send', $ticket['Ticket']['id']),array('confirm'=> __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
+                            echo $this->Html->link(__d('phkapa', 'Send'), array('action' => 'send', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
                             echo ' | ';
                         }
                         ?>
                         <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit', $ticket['Ticket']['id'])); ?>
                         <?php
                         if ($closeOk) {
-                            echo ' | ' . $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close', $ticket['Ticket']['id']), array('confirm'=> __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
-                            
+                            echo ' | ' . $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
                         }
                         ?>
-                       
+
 
                     </td>
                 </tr>
-            <?php endforeach; ?>
-            <?php //echo '<tfoot class=\'dark\'>'.$tableHeaders.'</tfoot>';     ?>    </table>
+    <?php endforeach; ?>
+            <?php //echo '<tfoot class=\'dark\'>'.$tableHeaders.'</tfoot>';      ?>    </table>
 
         <p class="paging">
-            <?php
-            echo $this->Paginator->counter(array(
-                'format' => __d('phkapa', 'Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%')
-            ));
-            ?>	</p>
+    <?php
+    echo $this->Paginator->counter(array(
+        'format' => __d('phkapa', 'Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%')
+    ));
+    ?>	</p>
 
         <div class="paging">
-            <?php echo $this->Paginator->prev('<< ' . __d('phkapa', 'Previous'), array(), null, array('class' => 'disabled')); ?>
+    <?php echo $this->Paginator->prev('<< ' . __d('phkapa', 'Previous'), array(), null, array('class' => 'disabled')); ?>
             | 	<?php echo $this->Paginator->numbers(); ?>
             |
-            <?php echo $this->Paginator->Next(__d('phkapa', 'Next') . ' >>', array(), null, array('class' => 'disabled')); ?>
+    <?php echo $this->Paginator->Next(__d('phkapa', 'Next') . ' >>', array(), null, array('class' => 'disabled')); ?>
 
         </div>
-        <?php
-    } else {
-        echo __d('phkapa', 'No records found!!!');
-    }
-    ?>
+    <?php
+} else {
+    echo __d('phkapa', 'No records found!!!');
+}
+?>
 </div>
 <div class="clear"></div>
 

@@ -54,7 +54,13 @@
                     <td class="nowrap"><?php echo $ticket['Process']['name']; ?></td>
                     <!--td><?php //echo $ticket['Category']['name']; ?></td-->
                     <td><?php echo $ticket['Activity']['name']; ?></td>
-                    <td><?php echo $ticket['Ticket']['description'].'<br/>'.$ticket['Ticket']['review_notes']; ?>&nbsp;</td>
+                    <td><?php
+        echo $this->Text->truncate(
+                $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
+            'ellipsis' => '...',
+            'exact' => false
+        ));
+                ?>&nbsp;</td>
                     <!--td class="nowrap"><?php //echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['created']); ?>&nbsp;</td-->
 
 

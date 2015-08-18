@@ -46,7 +46,7 @@ $class = ' class="altrow"'; ?>
                                 echo $class; ?>><?php echo __d('phkapa','Description'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
-                            <?php echo $action['Action']['description']; ?>
+                            <?php echo $this->Text->autoParagraph($action['Action']['description']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)
@@ -94,7 +94,7 @@ $class = ' class="altrow"'; ?>
                                 echo $class; ?>><?php echo __d('phkapa','Effectiveness Notes'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
-                            <?php echo $action['Action']['effectiveness_notes']; ?>
+                            <?php echo $this->Text->autoParagraph($action['Action']['effectiveness_notes']); ?>
                         &nbsp;
                     </dd>
                      <dt<?php if ($i % 2 == 0)

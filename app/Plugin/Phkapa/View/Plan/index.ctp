@@ -134,28 +134,31 @@
                     <td class="nowrap"><?php echo $ticket['Priority']['name']; ?></td>
                     <td class="nowrap"><?php echo $ticket['Safety']['name']; ?></td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['origin_date']); ?>&nbsp;</td>
-                    
+
                     <td class="nowrap"><?php echo $ticket['Type']['name']; ?></td>
                     <td ><?php echo $ticket['Origin']['name']; ?></td>
                     <td class="nowrap"><?php echo $ticket['Process']['name']; ?></td>
-                    <!--td><?php //echo $ticket['Category']['name']; ?></td-->
+                    <!--td><?php //echo $ticket['Category']['name'];  ?></td-->
                     <td><?php echo $ticket['Activity']['name']; ?></td>
                     <td><?php
-        echo $ticket['Ticket']['description'] . '<br/>' . $ticket['Ticket']['review_notes'];
-        ;
-        ?>&nbsp;</td>
-                    <!--td class="nowrap"><?php //echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['created']); ?>&nbsp;</td-->
+                        echo $this->Text->truncate(
+                                $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
+                            'ellipsis' => '...',
+                            'exact' => false
+                        ));
+                        ?>&nbsp;</td>
+                    <!--td class="nowrap"><?php //echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['created']);  ?>&nbsp;</td-->
 
 
                     <td class="actions">
                         <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit', $ticket['Ticket']['id'])); ?>
                         <?php
                         if ($sendOk) {
-                            echo ' | ' . $this->Html->link(__d('phkapa', 'Send'), array('action' => 'send', $ticket['Ticket']['id']), array('confirm'=> __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
+                            echo ' | ' . $this->Html->link(__d('phkapa', 'Send'), array('action' => 'send', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
                         }
 
                         if ($closeOk) {
-                            echo ' | ' . $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close', $ticket['Ticket']['id']), array('confirm'=> __d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id'])));
+                            echo ' | ' . $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id'])));
                         }
                         ?>
 
@@ -166,7 +169,7 @@
                         ?></td>
                 </tr>
             <?php endforeach; ?>
-    <?php //echo '<tfoot class=\'dark\'>'.$tableHeaders.'</tfoot>';    ?>    </table>
+            <?php //echo '<tfoot class=\'dark\'>'.$tableHeaders.'</tfoot>';    ?>    </table>
 
         <p class="paging">
             <?php
@@ -176,7 +179,7 @@
             ?>	</p>
 
         <div class="paging">
-    <?php echo $this->Paginator->prev('<< ' . __d('phkapa', 'Previous'), array(), null, array('class' => 'disabled')); ?>
+            <?php echo $this->Paginator->prev('<< ' . __d('phkapa', 'Previous'), array(), null, array('class' => 'disabled')); ?>
             | <?php echo $this->Paginator->numbers(); ?>
             | <?php echo $this->Paginator->Next(__d('phkapa', 'Next') . ' >>', array(), null, array('class' => 'disabled')); ?>
         </div>
