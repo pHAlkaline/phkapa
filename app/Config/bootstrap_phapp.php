@@ -37,7 +37,13 @@ Configure::write('Language.list',array(
 Configure::write('Config.timezone', 'Europe/London'); // Europe/Lisbon
 Configure::write('dateFormat', 'd-m-Y H:i:s'); // Date Format with time
 Configure::write('dateFormatSimple', 'd-m-Y'); // Date Format without time
+
+/**
+ * Other Settings
+ */
 Configure::write('Application.mode', 'phkapa'); // options ( phkapa or demo )  , use demo for demo mode;
+Configure::write('Application.logo_image', 'yourlogo.png'); // upload image to app/webroot/img or app/View/Themed/{your_theme}/webroot/img
+Configure::write('Application.theme', 'Phkapa'); // activate theme - app/View/Themed
 
 /**
  * Settings for maintenance component 

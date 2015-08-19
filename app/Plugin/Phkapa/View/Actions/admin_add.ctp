@@ -1,4 +1,4 @@
-<?php $this->html->script('/phkapa/js/action_edit_add', false); ?>
+<?php $this->html->script('Phkapa.action_edit_add', false); ?>
 <h2 class="grid_16" id="page-heading"><?php echo __d('phkapa','Add %s', __d('phkapa','Action')); ?></h2>
 <div class="grid_16 actionsContainer">
     <div class="grid_4" id="actions">	
