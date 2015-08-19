@@ -16,6 +16,8 @@
  */
 class AppController extends Controller {
 
+     public $theme = "Phkapa";
+     
     /**
      * Components
      *
@@ -65,7 +67,6 @@ class AppController extends Controller {
         }
         
         if ($this->Session->read('User.language')){
-        
             Configure::write('Config.language', $this->Session->read('User.language'));
         }
             
@@ -96,7 +97,7 @@ class AppController extends Controller {
      */
     public function beforeRender() {
         $this->set('title_for_layout', '');
-        
+        $this->theme = Configure::read('Application.theme');
         $this->set('unread_notifications',$this->Notify->countNotifications(AuthComponent::user('id')));
         
         if (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {

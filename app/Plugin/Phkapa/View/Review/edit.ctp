@@ -1,4 +1,4 @@
-<?php $this->html->script('/phkapa/js/register_add', false); ?>
+<?php $this->html->script('Phkapa.register_add', false); ?>
 <?php
 $sendOk = false;
 $closeOk = false;
