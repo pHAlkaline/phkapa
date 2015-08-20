@@ -1,5 +1,5 @@
 <?php
-$this->html->script('aro_add_edit', false);
+$this->html->script('Access.aro_add_edit', false);
 $empty = __('Type Group');
 if ($this->Form->value('Aro.foreign_key')){
    $empty=null; 

@@ -1,5 +1,5 @@
 <?php
-$this->html->script('user_edit', false);
+$this->html->script('Access.user_edit', false);
 ?>
 <h2 class="grid_16" id="page-heading"><?php echo __('Edit %s', __('User')); ?></h2>
 <div class="grid_16 actionsContainer">
