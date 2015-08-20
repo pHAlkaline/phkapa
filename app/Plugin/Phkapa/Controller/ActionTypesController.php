@@ -30,7 +30,7 @@ class ActionTypesController extends PhkapaAppController {
      */
     public function admin_index() {
         $this->ActionType->recursive = 0;
-        $this->set('action_types', $this->paginate());
+        $this->set('action_types', $this->Paginator->paginate());
     }
 
     /**

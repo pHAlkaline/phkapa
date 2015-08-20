@@ -86,7 +86,7 @@ class TicketsController extends PhkapaAppController {
         }
 
         if (isset($keyword)) {
-            $this->paginate = array('conditions' => array
+            $this->Paginator->settings['conditions'] = array
                     ("OR" => array(
                         "Ticket.id LIKE" => "%" . $keyword . "%",
                         "Priority.name LIKE" => "%" . $keyword . "%",
@@ -99,12 +99,12 @@ class TicketsController extends PhkapaAppController {
                         "Cause.name LIKE" => "%" . $keyword . "%",
                         "Supplier.name LIKE" => "%" . $keyword . "%",
                         "Workflow.name LIKE" => "%" . $keyword . "%"),
-                )
+                
             );
             $this->set('keyword', $keyword);
         }
 
-        $this->set('tickets', $this->paginate());
+        $this->set('tickets', $this->Paginator->paginate());
     }
 
     /**

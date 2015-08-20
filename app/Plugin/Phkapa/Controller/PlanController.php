@@ -79,7 +79,7 @@ class PlanController extends PhkapaAppController {
         }
 
         if (isset($keyword)) {
-            $this->paginate = array('conditions' => array
+            $this->Paginator->settings['conditions'] = array
                     ("OR" => array(
                         "Ticket.id LIKE" => "%" . $keyword . "%",
                         "Priority.name LIKE" => "%" . $keyword . "%",
@@ -91,14 +91,14 @@ class PlanController extends PhkapaAppController {
                         "Activity.name LIKE" => "%" . $keyword . "%",
                         "Cause.name LIKE" => "%" . $keyword . "%",
                         "Supplier.name LIKE" => "%" . $keyword . "%"),
-                    "AND" => array('Ticket.workflow_id' => '3', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))
+                    "AND" => array('Ticket.workflow_id' => '3', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))
             );
             $this->set('keyword', $keyword);
         } else {
-            $this->paginate = array('conditions' => array('Ticket.workflow_id' => '3', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))));
+            $this->Paginator->settings['conditions'] = array('Ticket.workflow_id' => '3', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')));
         }
 
-        $this->set('tickets', $this->paginate());
+        $this->set('tickets', $this->Paginator->paginate('Ticket'));
     }
 
     /**

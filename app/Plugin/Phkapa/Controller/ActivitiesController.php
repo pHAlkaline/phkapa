@@ -30,7 +30,7 @@ class ActivitiesController extends PhkapaAppController {
      */
     public function admin_index() {
         $this->Activity->recursive = 0;
-        $this->set('activities', $this->paginate());
+        $this->set('activities', $this->Paginator->paginate());
     }
 
     /**

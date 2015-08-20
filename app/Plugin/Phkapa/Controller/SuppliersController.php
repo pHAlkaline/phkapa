@@ -30,7 +30,7 @@ class SuppliersController extends PhkapaAppController {
      */
     public function admin_index() {
         $this->Supplier->recursive = 0;
-        $this->set('suppliers', $this->paginate());
+        $this->set('suppliers', $this->Paginator->paginate());
     }
 
     /**

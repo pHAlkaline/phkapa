@@ -30,7 +30,7 @@ class CategoriesController extends PhkapaAppController {
      */
     public function admin_index() {
         $this->Category->recursive = 0;
-        $this->set('categories', $this->paginate());
+        $this->set('categories', $this->Paginator->paginate());
     }
 
     /**

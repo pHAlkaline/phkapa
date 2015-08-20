@@ -31,8 +31,8 @@ class UsersController extends PhkapaAppController {
         $allowedUsers=$this->_allowedUsers();
         $this->set(compact('allowedUsers'));
         $this->User->recursive = 0;
-        $this->paginate = array('conditions' => array ('User.id' => $allowedUsers));
-        $this->set('users', $this->paginate());
+        $this->Paginator->settings['conditions'] = array ('User.id' => $allowedUsers);
+        $this->set('users', $this->Paginator->paginate());
     }
 
     /**

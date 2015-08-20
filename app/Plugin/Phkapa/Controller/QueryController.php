@@ -15,13 +15,6 @@
 class QueryController extends PhkapaAppController {
 
     /**
-     * Components
-     *
-     * @var array
-     */
-    public $components = array('RequestHandler');
-
-    /**
      * Controller name
      *
      * @var string
@@ -76,7 +69,7 @@ class QueryController extends PhkapaAppController {
         }
 
         if (isset($keyword)) {
-            $this->paginate = array('conditions' => array
+            $this->Paginator->settings['conditions']= array
                     ("OR" => array(
                         "Ticket.id LIKE" => "%" . $keyword . "%",
                         "Priority.name LIKE" => "%" . $keyword . "%",
@@ -89,17 +82,17 @@ class QueryController extends PhkapaAppController {
                         "Cause.name LIKE" => "%" . $keyword . "%",
                         "Supplier.name LIKE" => "%" . $keyword . "%",
                         "Workflow.name LIKE" => "%" . $keyword . "%"),
-                    "AND" => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
+                    "AND" => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))));
             $this->set('keyword', $keyword);
         } else {
-            $this->paginate = array('conditions' => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))));
+            $this->Paginator->settings['conditions'] = array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')));
         }
-        $this->paginate= array('order'=>array('Ticket.origin_date'=>'DESC'));
+        $this->Paginator->settings['order']=array('Ticket.origin_date'=>'DESC');
         $this->Ticket->unbindModel(array(
             'hasMany' => array('Children')
                 ), false);
 
-        $this->set('tickets', $this->paginate());
+        $this->set('tickets', $this->Paginator->paginate('Ticket'));
     }
 
     /**

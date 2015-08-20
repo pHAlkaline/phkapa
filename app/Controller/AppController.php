@@ -25,6 +25,8 @@ class AppController extends Controller {
      * @access public
      */
     public $components = array(
+        'Paginator',
+        'RequestHandler',
         'Flash',
         'Session', 
         'Acl', 
