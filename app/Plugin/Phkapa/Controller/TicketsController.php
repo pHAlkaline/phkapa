@@ -161,12 +161,19 @@ class TicketsController extends PhkapaAppController {
             $this->redirect(array('action' => 'index'));
         }
 
+        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.id' => $id)));
+        if (count($ticket) == 0) {
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
+            $this->redirect(array('action' => 'index'));
+        }
         App::uses('CakeEvent', 'Event');
         App::uses('CakeEventManager', 'Event');
         $event = new CakeEvent('Phkapa.Ticket.PrintReport', $this, array(
             'id' => $id,
+            'data' => $ticket,
         ));
         $this->getEventManager()->dispatch($event);
+        
     }
 
     /**

@@ -78,7 +78,7 @@ class RegisterController extends PhkapaAppController {
      */
     public function index() {
         $this->Ticket->recursive = 0;
-        $this->Paginator->settings['order'] = array('order' => 'Priority.order', 'conditions' => array('Ticket.workflow_id' => '1', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))));
+        $this->Paginator->settings = array('order' => 'Priority.order', 'conditions' => array('Ticket.workflow_id' => '1','AND' => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         $this->set('tickets', $this->Paginator->paginate('Ticket'));
     }
 
@@ -91,9 +91,7 @@ class RegisterController extends PhkapaAppController {
      */
     public function view($id = null) {
         $this->Ticket->recursive = 0;
-        $ticket = $this->Ticket->find('first', array('conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
-
-        if (!$id || count($ticket) == 0) {
+        if (!$id || $this->ticketAllowed() == 0){
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
@@ -182,9 +180,7 @@ class RegisterController extends PhkapaAppController {
     public function edit($id = null) {
         $this->Ticket->recursive = -1;
         $this->Ticket->order = null;
-        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
-
-        if ((!$id && empty($this->request->data)) || count($ticket) == 0) {
+        if ((!$id && empty($this->request->data)) || $this->ticketAllowed($id) == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
@@ -236,9 +232,7 @@ class RegisterController extends PhkapaAppController {
     public function delete($id = null) {
         $this->Ticket->recursive = -1;
         $this->Ticket->order = null;
-        $ticketCount = $this->Ticket->find('count', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
-
-        if (!$id || $ticketCount == 0) {
+        if (!$id || $this->ticketAllowed() == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
@@ -260,9 +254,8 @@ class RegisterController extends PhkapaAppController {
     public function send($id = null) {
         $this->Ticket->recursive = -1;
         $this->Ticket->order = null;
-        $ticketCount = $this->Ticket->find('count', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
-
-        if (!$id || $ticketCount == 0) {
+        
+        if (!$id || $this->ticketAllowed() == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
@@ -414,6 +407,11 @@ class RegisterController extends PhkapaAppController {
 
         $this->Ticket->Category->unbindModel(array(
             'hasAndBelongsToMany' => array('Process', 'Cause')), false);
+    }
+    
+    
+    protected function ticketAllowed($id=null){
+        return $this->Ticket->find('count', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'AND' => array( 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
     }
 
     /**
