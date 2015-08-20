@@ -383,7 +383,7 @@ msgid "Your tmp directory is writable."
 msgstr "O diretorio tmp tem permisão de escrita"
 
 msgid "Plugin not found, this Plugin is available to donors, contributors or service clients."
-msgstr "Plugin não encontrado , este Plugin está disponível apenas para Doadores , contribuintes ou Clientes."
+msgstr "Plugin não encontrado , este Plugin está disponível apenas para doadores , contribuintes ou clientes."
 
 msgid "This plugin will save you some time or spare you a programmer headache."
 msgstr "Este plugin irá poupar-lhe algum tempo ou e evita uma dor de cabeça à programador."
