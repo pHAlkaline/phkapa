@@ -30,7 +30,7 @@ class CausesController extends PhkapaAppController {
      */
     public function admin_index() {
         $this->Cause->recursive = 0;
-        $this->set('causes', $this->paginate());
+        $this->set('causes', $this->Paginator->paginate());
     }
 
     /**

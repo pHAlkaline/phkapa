@@ -42,7 +42,7 @@ class ActionsController extends PhkapaAppController {
         }
 
         if (isset($keyword)) {
-            $this->paginate = array('conditions' => array
+            $this->Paginator->settings['conditions'] = array
                     ("OR" => array(
                         "Action.id LIKE" => "%" . $keyword . "%",
                         "Action.ticket_id LIKE" => "%" . $keyword . "%",
@@ -52,12 +52,12 @@ class ActionsController extends PhkapaAppController {
                         "ActionEffectiveness.name LIKE" => "%" . $keyword . "%",
                         "Action.ticket_id LIKE" => "%" . $keyword . "%"),
                         
-                )
+                
             );
             $this->set('keyword', $keyword);
         }
         $this->Action->recursive = 0;
-        $this->set('actions', $this->paginate());
+        $this->set('actions', $this->Paginator->paginate());
     }
 
     /**

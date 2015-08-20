@@ -30,7 +30,7 @@ class ProcessesController extends PhkapaAppController {
      */
     public function admin_index() {
         $this->Process->recursive = 0;
-        $this->set('processes', $this->paginate());
+        $this->set('processes', $this->Paginator->paginate());
     }
 
     /**

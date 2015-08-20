@@ -63,14 +63,6 @@ class RegisterController extends PhkapaAppController {
     public $processFilter = array();
 
     /**
-     * List of Components for this Controller
-     *
-     * @var array
-     * @access public
-     */
-    public $components = array('RequestHandler');
-
-    /**
      * List of Helpers for this Controller
      *
      * @var array
@@ -86,8 +78,8 @@ class RegisterController extends PhkapaAppController {
      */
     public function index() {
         $this->Ticket->recursive = 0;
-        $this->paginate = array('order' => 'Priority.order', 'conditions' => array('Ticket.workflow_id' => '1', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))));
-        $this->set('tickets', $this->paginate());
+        $this->Paginator->settings['order'] = array('order' => 'Priority.order', 'conditions' => array('Ticket.workflow_id' => '1', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))));
+        $this->set('tickets', $this->Paginator->paginate('Ticket'));
     }
 
     /**

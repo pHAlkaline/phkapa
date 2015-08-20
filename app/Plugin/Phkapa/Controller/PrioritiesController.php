@@ -30,7 +30,7 @@ class PrioritiesController extends PhkapaAppController {
      */
     public function admin_index() {
         $this->Priority->recursive = 0;
-        $this->set('priorities', $this->paginate());
+        $this->set('priorities', $this->Paginator->paginate());
     }
 
     /**

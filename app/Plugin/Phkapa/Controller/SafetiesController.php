@@ -30,7 +30,7 @@ class SafetiesController extends PhkapaAppController {
      */
     public function admin_index() {
         $this->Safety->recursive = 0;
-        $this->set('safeties', $this->paginate());
+        $this->set('safeties', $this->Paginator->paginate());
     }
 
     /**

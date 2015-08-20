@@ -30,7 +30,7 @@ class TypesController extends PhkapaAppController {
      */
     public function admin_index() {
         $this->Type->recursive = 0;
-        $this->set('types', $this->paginate());
+        $this->set('types', $this->Paginator->paginate());
     }
 
     /**

@@ -29,7 +29,7 @@ class OriginsController extends PhkapaAppController {
      */
     public function admin_index() {
         $this->Origin->recursive = 0;
-        $this->set('origins', $this->paginate());
+        $this->set('origins', $this->Paginator->paginate());
     }
 
     /**
