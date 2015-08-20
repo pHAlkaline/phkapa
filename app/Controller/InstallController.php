@@ -47,7 +47,7 @@ class InstallController extends AppController {
      * @access public
      */
     public function index() {
-        
+        $this->render('notFound');
     }
 
     /**
