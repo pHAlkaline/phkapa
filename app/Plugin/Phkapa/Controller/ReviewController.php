@@ -102,7 +102,7 @@ class ReviewController extends PhkapaAppController {
             );
             $this->set('keyword', $keyword);
         } else {
-            $this->Paginator->settings['conditions'] = array('AND'=>array('Ticket.workflow_id' => '2', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))));
+            $this->Paginator->settings['conditions'] = array('Ticket.workflow_id' => '2', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')));
         }
 
         $this->set('tickets', $this->Paginator->paginate('Ticket'));
@@ -122,7 +122,7 @@ class ReviewController extends PhkapaAppController {
         }
         $this->Ticket->recursive = 0;
         $this->_setupModel();
-        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('AND'=>array('Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
+        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         if (count($ticket) == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
@@ -169,7 +169,7 @@ class ReviewController extends PhkapaAppController {
         $this->Ticket->recursive = -1;
         $this->Ticket->order = null;
         $this->_setupModel();
-        $ticketCount = $this->Ticket->find('count', array('order' => '', 'conditions' => array('AND'=>array('Ticket.approved' => 1, 'Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
+        $ticketCount = $this->Ticket->find('count', array('order' => '', 'conditions' => array('Ticket.approved' => 1, 'Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if ($ticketCount == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
@@ -204,7 +204,7 @@ class ReviewController extends PhkapaAppController {
         $this->Ticket->recursive = -1;
         $this->Ticket->order = null;
         $this->_setupModel();
-        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('AND'=>array('Ticket.approved' => '0', 'Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
+        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.approved' => '0', 'Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
 
         if (count($ticket) == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));

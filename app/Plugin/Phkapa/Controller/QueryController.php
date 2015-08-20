@@ -130,7 +130,17 @@ class QueryController extends PhkapaAppController {
             $this->redirect(array('action' => 'index'));
         }
         $this->Ticket->Action->recursive=1;
-        $this->set('action', $this->Ticket->Action->find('first', array('conditions'=>array('Action.id'=>$id))));
+        $action=$this->Ticket->Action->find('first', array('conditions'=>array('Action.id'=>$id)));
+        if (count($action) == 0) {
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
+            $this->redirect(array('action' => 'index'));
+        }
+        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.id' => $action['Action']['ticket_id'], 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
+        if (count($ticket) == 0) {
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->set('action', $action);
     }
 
     /**
@@ -147,7 +157,7 @@ class QueryController extends PhkapaAppController {
         }
         $this->Ticket->recursive = 2;
         $this->_setupModel();
-        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('AND' => array('Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
+        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         if (count($ticket) == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
@@ -190,7 +200,7 @@ class QueryController extends PhkapaAppController {
 
         $range['start'] = $this->request->data['Ticket']['startdate'];
         $range['end'] = $this->request->data['Ticket']['enddate'];
-        $data = $this->Ticket->find('all', array('order' => 'Ticket.created', 'conditions' => array("AND" => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'], $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day']), 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
+        $data = $this->Ticket->find('all', array('order' => 'Ticket.created', 'conditions' => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'], $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day']), 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         if ($this->request->data['Ticket']['data_to_export'] == 'a') {
             $this->export_csv_actions(Set::extract('/Ticket/id',$data));
             return;
