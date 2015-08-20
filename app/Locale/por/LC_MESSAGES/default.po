@@ -365,7 +365,13 @@ msgid "Your Config directory is NOT writable."
 msgstr "A directoria Config não tem permisão de escrita."
 
 msgid "Your Config directory is writable."
-msgstr "A directoria Config tem permisão de escrita"
+msgstr "A directoria Config tem permisão de escrita."
+
+msgid "Your Config/core.php file is NOT writable."
+msgstr "A ficheiro Config/core.php não tem permisão de escrita."
+
+msgid "Your Config/core.php file is writable."
+msgstr "A ficheiro Config/core.php tem permisão de escrita."
 
 msgid "Your cache is NOT working. Please check the settings in APP/config/core.php"
 msgstr "O sistema de cache está a funcionar. verifique as configurações em APP/config/core.php"

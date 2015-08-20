@@ -367,6 +367,12 @@ msgstr "CONFIG-Verzeichnis ist NICHT beschreibbar."
 msgid "Your Config directory is writable."
 msgstr "CONFIG-Verzeichnis ist beschreibbar."
 
+msgid "Your Config/core.php file is NOT writable."
+msgstr "Config/core.php ist NICHT beschreibbar."
+
+msgid "Your Config/core.php file is writable."
+msgstr "Config/core.php ist beschreibbar."
+
 msgid "Your cache is NOT working. Please check the settings in APP/config/core.php"
 msgstr ""
 

@@ -104,17 +104,6 @@ class UsersController extends PhkapaAppController {
         $this->set(compact('processes'));
     }
 
-    /* public function beforeFilter() {
-        parent::beforeFilter();
-        
-    }
-
-     public function beforeRender() {
-        parent::beforeRender();
-        //$this->_allowedUsers();
-        
-    }*/
-    
     /**
      * List of allowed users with access to phkapa plugin
      *
