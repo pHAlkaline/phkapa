@@ -1,5 +1,5 @@
 <?php
-$this->html->script('aro_add_edit', false);
+$this->html->script('Access.aro_add_edit', false);
 ?>
 
 <h2 class="grid_16" id="page-heading"><?php echo __('Add %s', __('Aro')); ?></h2>
