@@ -53,9 +53,6 @@ msgstr "Habilitar"
 msgid "Allowed"
 msgstr "Habilitado"
 
-msgid "Already Installed"
-msgstr "Ya Instalado"
-
 msgid "Application Offline"
 msgstr "Aplicación fuera de linea"
 
@@ -91,29 +88,14 @@ msgstr "No se puede borrar."
 msgid "Could not be saved. Please, try again."
 msgstr "No se puede guardar. Por favor, inténtelo de nuevo."
 
-msgid "Could not connect to database."
-msgstr "No se puede conectar a la base de datos."
-
-msgid "Could not connect to database: %s"
-msgstr "No se puede conectar a la base de datos: %s"
-
 msgid "Could not load database: %s"
 msgstr "No se puede cargar la base de datos: %s"
-
-msgid "Could not write database.php file."
-msgstr "No se puede escribir el fichero database.php"
-
-msgid "Could not write email.php file."
-msgstr "No se puede escribir el fichero email.php"
 
 msgid "Created"
 msgstr "Creado"
 
 msgid "Database and data"
 msgstr "Base de datos y datos"
-
-msgid "Database connection file already exists"
-msgstr "Ya existe el fichero de conexión de base de datos"
 
 msgid "Delete"
 msgstr "Borrar"
@@ -152,9 +134,6 @@ msgstr "Editar Perfil"
 msgid "Email"
 msgstr "Email"
 
-msgid "Email settings file already exists"
-msgstr "Ya existe el fichero de configuración de email"
-
 msgid "Empty"
 msgstr "Vacío"
 
@@ -184,15 +163,6 @@ msgstr "Id"
 
 msgid "Installation cannot continue as minimum requirements are not found."
 msgstr "La instalación no puede continuar al no cumplir con los requerimientos mínimos"
-
-msgid "Installation completed successfully"
-msgstr "La instalación se ha completado con éxito"
-
-msgid "Installation not completed successfully"
-msgstr "La instalación no se ha completado con éxito"
-
-msgid "Installation: Welcome"
-msgstr "Instalación: Bienvenido"
 
 msgid "Invalid email"
 msgstr "Email incorrecto"
@@ -307,17 +277,8 @@ msgstr "Algo fue mal durante la instalación. Por favor revise los logs de su se
 msgid "Start Session"
 msgstr "Inicio de sesión"
 
-msgid "Step 1 : Database connection"
-msgstr "Paso 1: Conexión a la base de datos"
-
 msgid "Step 2 : Build database , load table values"
 msgstr "Paso 2: Creación de la base de datos, carga de tablas"
-
-msgid "Step 3 : Email notification"
-msgstr "Paso 3: Notificaciones de email"
-
-msgid "Step 4 : Secure app and set new administrator password"
-msgstr "Paso 4: Securización de la aplicación y establecimiento de un nuevo password de administrador"
 
 msgid "Subject"
 msgstr "Asunto"
@@ -346,14 +307,8 @@ msgstr "Esto borrará también los hijos!!"
 msgid "Type Group"
 msgstr "Tipo Grupo"
 
-msgid "Unable to create administrative user."
-msgstr "No se ha podido crear el usuario de administración."
-
 msgid "Unable to generate users password."
 msgstr "No se ha podido crear el password de usuarios"
-
-msgid "Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions."
-msgstr "No se puede securizar su aplicación, su fichero de Config %s core.php no tiene permiso de escritura. Por favor compruebe los permisos."
 
 msgid "Up"
 msgstr "Arriba"

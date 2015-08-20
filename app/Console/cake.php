@@ -22,7 +22,7 @@ if (!defined('DS')) {
 }
 
 //$dispatcher = 'Cake' . DS . 'Console' . DS . 'ShellDispatcher.php';
-$dispatcher = dirname(dirname(__DIR__)) . DS . 'lib' . DS . 'cakephp' . DS . 'lib' . DS . 'Cake' . DS . 'Console' . DS . 'ShellDispatcher.php';
+$dispatcher = dirname(dirname(__DIR__)) . DS . 'vendor' . DS . 'cakephp' . DS . 'cakephp' . DS . 'lib' . DS . 'Cake' . DS . 'Console' . DS . 'ShellDispatcher.php';
 
 if (function_exists('ini_set')) {
 	$root = dirname(dirname(dirname(__FILE__)));

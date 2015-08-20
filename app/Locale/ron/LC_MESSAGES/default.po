@@ -53,9 +53,6 @@ msgstr "Permite"
 msgid "Allowed"
 msgstr "Permis"
 
-msgid "Already Installed"
-msgstr "Deja Instalat"
-
 msgid "Application Offline"
 msgstr "Aplicație offline"
 
@@ -98,29 +95,11 @@ msgstr "Nu poate fi șters."
 msgid "Could not be saved. Please, try again."
 msgstr "Nu poate fi salvat. Vă rog încercați din nou"
 
-msgid "Could not connect to database."
-msgstr "Nu mă pot conecta la baza de date"
-
-msgid "Could not connect to database: %s"
-msgstr "Nu mă pot conecta la baza de date: %s"
-
-msgid "Could not load database: %s"
-msgstr "Nu pot încărca baza de date: %s"
-
-msgid "Could not write database.php file."
-msgstr "Nu pot să scriu fișierul database.php"
-
-msgid "Could not write email.php file."
-msgstr "Nu pot să scriu fișierul  email.php"
-
 msgid "Created"
 msgstr "Creat"
 
 msgid "Database and data"
 msgstr "Baza de date și date"
-
-msgid "Database connection file already exists"
-msgstr "Fișierul de conexiune la baza de date există deja"
 
 msgid "Delete"
 msgstr "Șterge"
@@ -159,9 +138,6 @@ msgstr "Editează Profil"
 msgid "Email"
 msgstr "Email"
 
-msgid "Email settings file already exists"
-msgstr "Fișierul de setări pentru email există deja"
-
 msgid "Empty"
 msgstr "Gol"
 
@@ -192,15 +168,6 @@ msgstr "Id"
 msgid "Installation cannot continue as minimum requirements are not found."
 msgstr ""
 "Instalarea nu poate continua deoarece cerințele minime nu sunt îndeplinite"
-
-msgid "Installation completed successfully"
-msgstr "Instalarea s-a finalizat cu succes"
-
-msgid "Installation not completed successfully"
-msgstr "Instalarea nu  s-a încheiat cu succes"
-
-msgid "Installation: Welcome"
-msgstr "Instalare: Bun Venit !"
 
 msgid "Invalid email"
 msgstr "Email incorect"
@@ -322,19 +289,8 @@ msgstr ""
 msgid "Start Session"
 msgstr "Inițiază sesiunea"
 
-msgid "Step 1 : Database connection"
-msgstr "Pasul 1: Conexiunea la baza de date"
-
 msgid "Step 2 : Build database , load table values"
 msgstr "Pasul 2: Crearea bazei de date, încărcarea valorilor în tabele"
-
-msgid "Step 3 : Email notification"
-msgstr "Pasul 3: Notificarea prin email"
-
-msgid "Step 4 : Secure app and set new administrator password"
-msgstr ""
-"Pasul 4: Securizarea aplicației și stabilirea unei noi parole pentru "
-"administrare"
 
 msgid "Subject"
 msgstr "Subiect"
@@ -367,18 +323,8 @@ msgstr "Aceasta va șterge și copiii !!"
 msgid "Type Group"
 msgstr "Tip de  Grup"
 
-msgid "Unable to create administrative user."
-msgstr "Nu am putut să creez utilizatorul administrator"
-
 msgid "Unable to generate users password."
 msgstr "Nu am putut să generez parolele utilizator"
-
-msgid ""
-"Unable to secure your application, your Config %s core.php file is not "
-"writable. Please check the permissions."
-msgstr ""
-"Nu am putut să securizez aplicația, fișierul de configurare %s core.php nu "
-"poate fi scris. Vă rog verificați permisiunile."
 
 msgid "Up"
 msgstr "Sus"

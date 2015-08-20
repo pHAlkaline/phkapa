@@ -46,9 +46,6 @@ msgstr "Permite"
 msgid "Allowed"
 msgstr "Permitido"
 
-msgid "Already Installed"
-msgstr "Aplicação instalada"
-
 msgid "Application Offline"
 msgstr "Applicação em Manutenção"
 
@@ -81,29 +78,14 @@ msgstr "Não foi possível apagar."
 msgid "Could not be saved. Please, try again."
 msgstr "Não foi possível gravar. Por favor tente outra vez."
 
-msgid "Could not connect to database."
-msgstr "Não foi possível a ligação à base de dados."
-
-msgid "Could not connect to database: %s"
-msgstr "Não foi possível a ligação à base de dados: %s"
-
 msgid "Could not load database: %s"
 msgstr "Não foi possível carregar a base de dados: %s"
-
-msgid "Could not write database.php file."
-msgstr "Não foi possivél gravar a pasta database.php"
-
-msgid "Could not write email.php file."
-msgstr "Não foi possivél gravar o ficheiro email.php"
 
 msgid "Created"
 msgstr "Criado"
 
 msgid "Database and data"
 msgstr "Base de Dados e respectivos dados"
-
-msgid "Database connection file already exists"
-msgstr "Pasta de configuração de acesso à base de dados já existe"
 
 msgid "Delete"
 msgstr "Apagar"
@@ -170,15 +152,6 @@ msgstr ""
 
 msgid "Installation cannot continue as minimum requirements are not found."
 msgstr "A instalação não pode continuar, requisitos minimos não foram encontrados."
-
-msgid "Installation completed successfully"
-msgstr "A Instalação terminou com sucesso"
-
-msgid "Installation not completed successfully"
-msgstr "Não foi possível terminar a instalação com sucesso"
-
-msgid "Installation: Welcome"
-msgstr "Instalação: Bem Vindo"
 
 msgid "Invalid email"
 msgstr "Email inválido"
@@ -293,18 +266,6 @@ msgstr "Algo correu mal durante a instalação. Verifique os logs do servidor."
 msgid "Start Session"
 msgstr "Iniciar Sessão"
 
-msgid "Step 1 : Database connection"
-msgstr "Passo 1 : Configuração de acesso à base de dados"
-
-msgid "Step 2 : Build database , load table values"
-msgstr "Passo 2 : Construir base de dados e carregar valores nas tabelas"
-
-msgid "Step 3 : Email notification"
-msgstr "Passo 3 : Configuração de notificações por email"
-
-msgid "Step 4 : Secure app and set new administrator password"
-msgstr "Passo 4 : Tornar a aplicação mais segura e defenir nova senha de administrador"
-
 msgid "Subject"
 msgstr "Assunto"
 
@@ -329,14 +290,8 @@ msgstr "Ira ser apagado todos os registros dependentes!!"
 msgid "Type Group"
 msgstr "Tipo de Grupo"
 
-msgid "Unable to create administrative user."
-msgstr "Não foi possivel gerar usuário de administração."
-
 msgid "Unable to generate users password."
 msgstr "Não foi possível gerar senha para usuários."
-
-msgid "Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions."
-msgstr "Não foi possivel tornar a aplicação mais segura, a sua pasta Config %s core.php não permite escrita. Verifique as permisões."
 
 msgid "Up"
 msgstr "Cima"

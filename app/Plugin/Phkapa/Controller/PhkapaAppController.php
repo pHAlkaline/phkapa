@@ -55,6 +55,8 @@ class PhkapaAppController extends AppController {
                 $menuItems[$key] = str_replace('Controller', '', $value);
             }
             sort($menuItems);
+            $this->set('user_at_string', __('User') . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __('pHKapa Setup'));
+    
         } else {
             $menuItems = array('Query', 'Register', 'Review', 'Plan', 'Verify');
             $user = $this->Auth->user('name');
@@ -63,6 +65,8 @@ class PhkapaAppController extends AppController {
               unset($menuItems[$key]);
               }
               endforeach; */
+            $this->set('user_at_string', __('User') . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __('pHKapa'));
+    
         }
 
         $this->set(compact('menuItems'));
@@ -109,7 +113,6 @@ class PhkapaAppController extends AppController {
      */
     public function isAuthorized($user = null) {
         $result = false;
-        //$user = $this->Auth->user('User');
         if (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {
             return $this->Acl->check($user['name'], 'Phkapa/Administration');
         }

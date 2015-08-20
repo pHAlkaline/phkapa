@@ -101,13 +101,8 @@ class AppController extends Controller {
         $this->theme = Configure::read('Application.theme');
         $this->set('unread_notifications',$this->Notify->countNotifications(AuthComponent::user('id')));
         
-        if (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {
-            $menuItems = array('Users', 'Aros');
-            $this->set(compact('menuItems'));
-            $this->set('title_for_layout', __('Administration'));
-            $this->set('admin_root', '');
-        }
-        
+        $this->set('user_at_string', __('User') . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __('pHkapa'));
+    
         // if is set layout for error , clear menuItems
         if ($this->_setErrorLayout()) {
             $menuItems = array();
