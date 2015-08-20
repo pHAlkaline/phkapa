@@ -185,6 +185,8 @@ CakeLog::config('error', array(
  * app Plugin
  */
 CakePlugin::load('Phkapa', array('bootstrap' => false, 'routes' => false));
+CakePlugin::load('Access', array('bootstrap' => false, 'routes' => false));
+CakePlugin::load('DebugKit');
 
 
 require 'bootstrap_phapp.php';

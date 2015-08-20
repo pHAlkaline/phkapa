@@ -6,7 +6,7 @@
         <?php
         echo $this->Html->meta('icon');
         //echo $this->Html->css('cake.generic');
-        echo $this->Html->css(array('reset', 'text', 'grid', 'layout', 'jquery-ui-theme/jquery-ui-1.8.23.custom','print'));
+        echo $this->Html->css(array('reset', 'text', 'grid', 'layout', 'jquery-ui-theme/jquery-ui-1.8.23.custom', 'print'));
         echo '<!--[if IE 6]>' . $this->Html->css('ie6') . '<![endif]-->';
         echo '<!--[if IE 7]>' . $this->Html->css('ie') . '<![endif]-->';
         echo $this->Html->script(array('jquery-1.8.0.min.js', 'jquery-ui-1.8.23.custom.min.js', 'jquery-fluid16.js', 'jquery-cookie.js', 'spin.js'));
@@ -18,38 +18,40 @@
             $(document).ready(function () {
                 //$('#phkapa').fadeIn(2000);
                 $('#mainContainer').fadeIn(1000);
-                if (!$.cookie('appMaintenance')){
+                if (!$.cookie('appMaintenance')) {
                     $('#maintenanceMessage').fadeIn(2000);
                 }
-                $('#maintenanceMessage').click(function(){
-                    $.cookie('appMaintenance','foo');
+                $('#maintenanceMessage').click(function () {
+                    $.cookie('appMaintenance', 'foo');
                     $('#maintenanceMessage').fadeOut(2000);
                 })
-                $('.flash_message').click(function(){
+                $('.flash_message').click(function () {
                     alert("hello");
                     $(this).fadeOut(500);
                 })
-                $('a').each(function(){
-                    var onClickEval=$(this).attr('onclick');
-                    if (/confirm/i.test(onClickEval)){
+                $('a').each(function () {
+                    var onClickEval = $(this).attr('onclick');
+                    if (/confirm/i.test(onClickEval)) {
                         //console.log(onClickEval);
-                        $(this).attr('onClickEval',onClickEval);
+                        $(this).attr('onClickEval', onClickEval);
                         $(this).removeAttr('onclick');
                         $(this).bind('click', function (e) {
-                            var evalString=$(this).attr('onClickEval');
+                            var evalString = $(this).attr('onClickEval');
                             //console.log(evalString);
-                            evalString=evalString.match(/".*"/);
-                            if (evalString==null) evalString=evalString.match(/'.*'/);
-                            if (evalString==null) evalString='Please Confirm Action!!';
+                            evalString = evalString.match(/".*"/);
+                            if (evalString == null)
+                                evalString = evalString.match(/'.*'/);
+                            if (evalString == null)
+                                evalString = 'Please Confirm Action!!';
                             //console.log(evalString);
-                            result = confirm (evalString);
+                            result = confirm(evalString);
                             //console.log(e.result);
                             return result;
                         });
-                    }  
-                    
+                    }
+
                 });
-                
+
                 var opts = {
                     lines: 8, // The number of lines to draw
                     length: 11, // The length of each line
@@ -63,63 +65,69 @@
                 var target = document.getElementById('loading-indicator');
                 $("a").bind('click', function (e) {
                     //console.log(e.result);
-                    if (e.result==false) return false;
-                    if (this.id=='toggle-admin-actions') return;
-                    if (this.id=='toggle-related-records') return;
-                    if (this.target=='_blank') return true;
+                    if (e.result == false)
+                        return false;
+                    if (this.id == 'toggle-admin-actions')
+                        return;
+                    if (this.id == 'toggle-related-records')
+                        return;
+                    if (this.target == '_blank')
+                        return true;
                     $("#mainContainer div, h2").slice(4).hide();
                     var spinner = new Spinner(opts).spin(target);
                     $("#loading-indicator").show();
                     return true;
                 });
-                
-                
+
+
                 $("form").submit(function () {
-                    var frmAction=$(this).attr('action');
-                    if (/export/i.test(frmAction)){ return true;}
+                    var frmAction = $(this).attr('action');
+                    if (/export/i.test(frmAction)) {
+                        return true;
+                    }
                     $("#mainContainer div, h2").slice(4).hide();
                     var spinner = new Spinner(opts).spin(target);
                     $("#loading-indicator").show();
                     return true;
-                    
+
                 });
-                
+
                 $("input:submit").button();
-                
+
                 $("#actions").accordion({
                     collapsible: true,
                     active: false
                 });
-                
+
                 $("#related").accordion({
                     collapsible: true,
                     autoHeight: false,
                     active: 0
-                        
+
                 });
                 $("#related-action").accordion({
                     collapsible: true,
                     autoHeight: false,
                     active: 0
-                        
+
                 });
-               
-                
-                
-				
+
+
+
+
             });
-            
+
         </script>
         <script>
             $(document).ready(function () {
 <?php if (isset($unread_notifications) && $unread_notifications) { ?>
-                            blinkNotification();
+                    blinkNotification();
 <?php } ?>
-                    });
-                    
-                    function blinkNotification(){
-                        $('.notification').delay(200).fadeTo(200,0.5).delay(100).fadeTo(100,1, blinkNotification);
-                    }    
+            });
+
+            function blinkNotification() {
+                $('.notification').delay(200).fadeTo(200, 0.5).delay(100).fadeTo(100, 1, blinkNotification);
+            }
 
         </script>
     </head>
@@ -133,51 +141,13 @@
             </h1>
 
         </div>
-        <div id="header_separator">
+        <div id="header_separator" >
             <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __('Help'); ?>">
                 <a href="http://wiki.phkapa.net" target="_blank">
                     <span class="ui-icon ui-icon-help"></span>
                 </a>
             </div>
-            <?php
-            if ($this->Session->read('Auth.User.name')) {
-                ?>
-                <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __('End Session'); ?>">
-                    <a href="<?php echo Router::url('/users/logout', true); ?>" target="_self">
-                        <span class="ui-icon ui-icon-power"></span>
-                    </a>
-                </div>
-                <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all notification" title="<?php echo __d('phkapa', 'Notifications'); ?>">
-                    <a href="<?php echo Router::url('/pages/notifications', true); ?>" target="_self"><span class="ui-icon ui-icon-flag"></span></a>
-                </div>
-
-                <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __('Edit Profile'); ?>">
-                    <a href="<?php echo Router::url('/users/edit_profile', true); ?>" target="_self">
-                        <span class="ui-icon ui-icon-person"></span>
-                    </a>
-                </div>
-                <?php if ($admin_root == "phkapa") { ?>
-                    <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __n('Aro', 'Aros', 2) ?>">
-                        <a href="<?php echo Router::url('/admin', true); ?>" target="_self"><span class="ui-icon ui-icon-key"></span></a>
-                    </div>
-
-                    <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __d('phkapa', 'PHKAPA'); ?>">
-                        <a href="<?php echo Router::url('/phkapa', true); ?>" target="_self"><span class="ui-icon ui-icon-calculator"></span></a></div>
-                    <div style="margin: 5px; float:right; color: #ffffff;"><?php echo __('User') . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __d('phkapa', 'PHKAPA') . ' ' . __d('phkapa', 'Administration'); ?> </div>
-                <?php } else { ?>
-                    <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __d('phkapa', 'PHKAPA') . ' ' . __d('phkapa', 'Administration'); ?>">
-                        <a href="<?php echo Router::url('/admin/phkapa', true); ?>" target="_self"><span class="ui-icon ui-icon-wrench"></span></a>
-                    </div>
-
-                    <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __d('phkapa', 'PHKAPA'); ?>">
-                        <a href="<?php echo Router::url('/phkapa', true); ?>" target="_self"><span class="ui-icon ui-icon-calculator"></span></a></div>
-                    <div style="margin: 5px; float:right; color: #ffffff;"><?php echo __('User') . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __n('Aro', 'Aros', 2) . ' ' . __d('phkapa', 'Administration') ?> </div>
-                <?php } ?>
-
-
-                <?php
-            }
-            ?>
+            <?php echo $this->element('topMenu'); ?>
         </div>
         <div class="clear" style="height: 35px;"></div>
         <div class="container_16" id="mainContainer">
@@ -207,6 +177,6 @@
             <div class="clear"></div>
         </div>
         <div style="text-align: center;">Copyright (c) pHAlkaline (<a href="http://phalkaline.eu" target="_blank">http://phalkaline.eu</a>)<div/>
-        <?php //echo $this->element('sql_dump'); ?>
+            <?php //echo $this->element('sql_dump'); ?>
     </body>
 </html>

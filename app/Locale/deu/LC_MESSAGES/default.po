@@ -46,9 +46,6 @@ msgstr "Erlauben"
 msgid "Allowed"
 msgstr "Erlaubt"
 
-msgid "Already Installed"
-msgstr "Bereits installiert."
-
 msgid "Application Offline"
 msgstr "Selbstzerstörungsmodus aktiviert. Deckung!"
 
@@ -84,28 +81,10 @@ msgstr "Löschen fehlgeschlagen."
 msgid "Could not be saved. Please, try again."
 msgstr "Speichern fehlgeschlagen. Bitte erneut versuchen."
 
-msgid "Could not connect to database."
-msgstr ""
-
-msgid "Could not connect to database: %s"
-msgstr ""
-
-msgid "Could not load database: %s"
-msgstr ""
-
-msgid "Could not write database.php file."
-msgstr ""
-
-msgid "Could not write email.php file." 	 	
-msgstr ""
-
 msgid "Created"
 msgstr "Erstellt"
 
 msgid "Database and data"
-msgstr ""
-
-msgid "Database connection file already exists"
 msgstr ""
 
 msgid "Delete"
@@ -144,9 +123,6 @@ msgstr "Profil bearbeiten"
 msgid "Email" 	 	
 msgstr ""
 
-msgid "Email settings file already exists" 	 	
-msgstr ""
-
 msgid "Empty"
 msgstr "Leer"
 
@@ -173,15 +149,6 @@ msgstr "ID"
 
 msgid "Installation cannot continue as minimum requirements are not found."
 msgstr "Mindestanforderungen nicht erfüllt. Installation wird angehalten."
-
-msgid "Installation completed successfully"
-msgstr ""
-
-msgid "Installation not completed successfully"
-msgstr ""
-
-msgid "Installation: Welcome"
-msgstr "Installation: Willkommen"
 
 msgid "Invalid email"
 msgstr "Ungültige Email"
@@ -293,18 +260,6 @@ msgstr ""
 msgid "Start Session"
 msgstr "Anmelden"
 
-msgid "Step 1 : Database connection"
-msgstr ""
-
-msgid "Step 2 : Build database , load table values"
-msgstr ""
-
-msgid "Step 3 : Email notification"
-msgstr ""
-
-msgid "Step 4 : Secure app and set new administrator password" 	 	
-msgstr ""
-
 msgid "Subject"
 msgstr ""
 
@@ -329,13 +284,7 @@ msgstr "Abgeleitete Vorgänge werden ebenfalls gelöscht!!"
 msgid "Type Group"
 msgstr "Auswählen"
 
-msgid "Unable to create administrative user." 	 	
-msgstr "" 
-
 msgid "Unable to generate users password."
-msgstr ""
-
-msgid "Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions."
 msgstr ""
 
 msgid "Up"
