@@ -103,10 +103,14 @@ class QueryController extends PhkapaAppController {
      * @access public
      */
     public function view($id = null) {
+        if (!$id) {
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
+            $this->redirect(array('action' => 'index'));
+        }
         $this->Ticket->recursive = 2;
         $this->_setupModel();
         $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('AND' => array('Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
-        if (!$id || count($ticket) == 0) {
+        if (count($ticket) == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
@@ -137,17 +141,26 @@ class QueryController extends PhkapaAppController {
      * @return void
      */
     public function print_report($id) {
-        if (!$id) {
+       if (!$id) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
-
+        $this->Ticket->recursive = 2;
+        $this->_setupModel();
+        $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('AND' => array('Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
+        if (count($ticket) == 0) {
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
+            $this->redirect(array('action' => 'index'));
+        }
         App::uses('CakeEvent', 'Event');
         App::uses('CakeEventManager', 'Event');
         $event = new CakeEvent('Phkapa.Ticket.PrintReport', $this, array(
             'id' => $id,
+            'data' => $ticket,
         ));
         $this->getEventManager()->dispatch($event);
+        
+        
     }
 
     /**
@@ -177,8 +190,8 @@ class QueryController extends PhkapaAppController {
 
         $range['start'] = $this->request->data['Ticket']['startdate'];
         $range['end'] = $this->request->data['Ticket']['enddate'];
-        $data = $this->Ticket->find('all', array('order' => 'Ticket.created', 'conditions' => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'], $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day']), "AND" => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
-         if ($this->request->data['Ticket']['data_to_export'] == 'a') {
+        $data = $this->Ticket->find('all', array('order' => 'Ticket.created', 'conditions' => array("AND" => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'], $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day']), 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))))));
+        if ($this->request->data['Ticket']['data_to_export'] == 'a') {
             $this->export_csv_actions(Set::extract('/Ticket/id',$data));
             return;
         }
@@ -305,7 +318,7 @@ class QueryController extends PhkapaAppController {
         $this->Ticket->Category->unbindModel(array(
             'hasAndBelongsToMany' => array('Process', 'Cause')), false);
     }
-
+    
     /**
      * beforeFilter callback
      *
