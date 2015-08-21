@@ -19,6 +19,31 @@ msgstr ""
 msgid "Access Setup"
 msgstr ""
 
+msgid "Aco"
+msgid_plural "Acos"
+msgstr[0] "Control al Accesului"
+msgstr[1] "Controale ale accesului"
+
+msgid "Allow"
+msgstr "Permite"
+
+msgid "Allowed"
+msgstr "Permis"
+
+msgid "Aro"
+msgid_plural "Aros"
+msgstr[0] "Acces"
+msgstr[1] "Accese"
+
+msgid "Deny"
+msgstr "Interzice"
+
+msgid "Denyed"
+msgstr "Interzis"
+
+msgid "Group / User"
+msgstr "Grup / Utilizator"
+
 msgid "Group / User name must be unique!!"
 msgstr "Numere Grupului / Utilizatorului trebuie să fie unic"
 
@@ -28,34 +53,8 @@ msgstr "Raiz"
 msgid "This name is restricted by system."
 msgstr "Numele este rezervat de sistem"
 
-msgid "Aco"
-msgid_plural "Acos"
-msgstr[0] "Control al Accesului"
-msgstr[1] "Controale ale accesului"
-
 msgid "Type Group"
 msgstr "Tip de  Grup"
-
-msgid "Aro"
-msgid_plural "Aros"
-msgstr[0] "Acces"
-msgstr[1] "Accese"
-
-msgid "Group / User"
-msgstr "Grup / Utilizator"
-
-msgid "Allow"
-msgstr "Permite"
-
-msgid "Deny"
-msgstr "Interzice"
-
-msgid "Allowed"
-msgstr "Permis"
-
-msgid "Denyed"
-msgstr "Interzis"
-
 
 msgid "User"
 msgid_plural "Users"
