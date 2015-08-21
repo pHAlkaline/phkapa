@@ -17,11 +17,6 @@ msgstr ""
 "Language: eng\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-msgid "Aco"
-msgid_plural "Acos"
-msgstr[0] "Access Control"
-msgstr[1] "Access Control"
-
 msgid "Actions"
 msgstr ""
 
@@ -37,22 +32,11 @@ msgstr ""
 msgid "Administration"
 msgstr ""
 
-msgid "Allow"
-msgstr ""
-
-msgid "Allowed"
-msgstr ""
-
 msgid "Application Offline"
 msgstr ""
 
 msgid "Are you sure you want to delete # %s?"
 msgstr ""
-
-msgid "Aro"
-msgid_plural "Aros"
-msgstr[0] "Access"
-msgstr[1] "Access"
 
 msgid "Cake is NOT able to connect to the database."
 msgstr ""
@@ -90,12 +74,6 @@ msgstr ""
 msgid "Deleted with success."
 msgstr ""
 
-msgid "Deny"
-msgstr ""
-
-msgid "Denyed"
-msgstr ""
-
 msgid "Diagnostics"
 msgstr ""
 
@@ -130,12 +108,6 @@ msgid "From Email"
 msgstr ""
 
 msgid "From Name"
-msgstr ""
-
-msgid "Group / User"
-msgstr ""
-
-msgid "Group / User name must be unique!!"
 msgstr ""
 
 msgid "Id"
@@ -227,9 +199,6 @@ msgstr ""
 msgid "Resources"
 msgstr ""
 
-msgid "Root"
-msgstr ""
-
 msgid "Saved with success."
 msgstr ""
 
@@ -260,13 +229,7 @@ msgstr ""
 msgid "This application will be on maintenance mode at  %s "
 msgstr ""
 
-msgid "This name is restricted by system."
-msgstr ""
-
 msgid "This will also delete childs!!"
-msgstr ""
-
-msgid "Type Group"
 msgstr ""
 
 msgid "Unable to generate users password."

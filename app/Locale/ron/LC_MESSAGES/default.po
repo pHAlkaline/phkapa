@@ -19,11 +19,6 @@ msgstr ""
 msgid "(choose one)"
 msgstr "(alegeți una)"
 
-msgid "Aco"
-msgid_plural "Acos"
-msgstr[0] "Control al Accesului"
-msgstr[1] "Controale ale accesului"
-
 msgid "Actions"
 msgstr "Acțiuni"
 
@@ -39,24 +34,13 @@ msgstr "Panou de Administrare: %s"
 msgid "Administration"
 msgstr "Administrare"
 
-msgid "Allow"
-msgstr "Permite"
-
-msgid "Allowed"
-msgstr "Permis"
-
 msgid "Application Offline"
 msgstr "Aplicație offline"
 
 msgid "Are you sure you want to delete # %s?"
 msgstr "Ești sigur că vrei să ștergi nº %s?"
 
-msgid "Aro"
-msgid_plural "Aros"
-msgstr[0] "Acces"
-msgstr[1] "Accese"
-
-msgid "Cake is NOT able to connect to the database."
+mmsgid "Cake is NOT able to connect to the database."
 msgstr "Cake nu se poate conecta la baza de date"
 
 msgid "Cake is able to connect to the database."
@@ -99,12 +83,6 @@ msgstr "Șterge %s"
 msgid "Deleted with success."
 msgstr "Șters cu succes"
 
-msgid "Deny"
-msgstr "Interzice"
-
-msgid "Denyed"
-msgstr "Interzis"
-
 msgid "Diagnostics"
 msgstr "Diagnostice"
 
@@ -141,12 +119,6 @@ msgstr "De la Email"
 
 msgid "From Name"
 msgstr "De la Nume"
-
-msgid "Group / User"
-msgstr "Grup / Utilizator"
-
-msgid "Group / User name must be unique!!"
-msgstr "Numere Grupului / Utilizatorului trebuie să fie unic"
 
 msgid "Help"
 msgstr "Ajutor"
@@ -291,14 +263,8 @@ msgstr "Aplicația este acum în modulo mentenanță, reveniți în curând !"
 msgid "This application will be on maintenance mode at  %s "
 msgstr "Aplicația va intra ăn modul mentenanță în %s"
 
-msgid "This name is restricted by system."
-msgstr "Numele este rezervat de sistem"
-
 msgid "This will also delete childs!!"
 msgstr "Aceasta va șterge și copiii !!"
-
-msgid "Type Group"
-msgstr "Tip de  Grup"
 
 msgid "Unable to generate users password."
 msgstr "Nu am putut să generez parolele utilizator"
