@@ -20,6 +20,31 @@ msgstr ""
 msgid "Access Setup"
 msgstr ""
 
+msgid "Aco"
+msgid_plural "Acos"
+msgstr[0] "Access Control"
+msgstr[1] "Access Control"
+
+msgid "Allow"
+msgstr ""
+
+msgid "Allowed"
+msgstr ""
+
+msgid "Aro"
+msgid_plural "Aros"
+msgstr[0] "Access"
+msgstr[1] "Access"
+
+msgid "Deny"
+msgstr ""
+
+msgid "Denyed"
+msgstr ""
+
+msgid "Group / User"
+msgstr ""
+
 msgid "Group / User name must be unique!!"
 msgstr ""
 
@@ -29,34 +54,8 @@ msgstr ""
 msgid "This name is restricted by system."
 msgstr ""
 
-msgid "Aco"
-msgid_plural "Acos"
-msgstr[0] "Access Control"
-msgstr[1] "Access Control"
-
 msgid "Type Group"
 msgstr ""
-
-msgid "Aro"
-msgid_plural "Aros"
-msgstr[0] "Access"
-msgstr[1] "Access"
-
-msgid "Group / User"
-msgstr ""
-
-msgid "Allow"
-msgstr ""
-
-msgid "Deny"
-msgstr ""
-
-msgid "Allowed"
-msgstr ""
-
-msgid "Denyed"
-msgstr ""
-
 
 msgid "User"
 msgid_plural "Users"
