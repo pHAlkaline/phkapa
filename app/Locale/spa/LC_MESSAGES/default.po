@@ -24,11 +24,6 @@ msgid_plural "Acos"
 msgstr[0] "Control de Acceso"
 msgstr[1] "Controles de Acceso"
 
-msgid "Action Type"
-msgid_plural "Action Types"
-msgstr[0] "Tipo de Acción"
-msgstr[1] "Tipos de Acción"
-
 msgid "Actions"
 msgstr "Acciones"
 
@@ -40,9 +35,6 @@ msgstr "Añadir %s"
 
 msgid "Admin panel: %s"
 msgstr "Panel de admin: %s"
-
-msgid "Admin user password"
-msgstr "Password de usuario admin"
 
 msgid "Administration"
 msgstr "Administración"
@@ -76,9 +68,6 @@ msgstr "Versión de CakePHP %s < %s"
 msgid "CakePhp version %s >= %s"
 msgstr "Versión de CakePHP %s >= %s"
 
-msgid "Check load data option to insert dafault values to action types, activities, categories, causes, origins, processes, suppliers and finaly some example users and their access configuration."
-msgstr "Elegir la opción de carga de datos para insertar valores por defecto para tipos de acción, actividades, categorías, causas, orígenes, procesos, proveedores y por último algunos usuarios de ejemplo con sus configuraciones de acceso."
-
 msgid "Click here to begin installation"
 msgstr "Haga click aquí para comenzar la instalación"
 
@@ -93,9 +82,6 @@ msgstr "No se puede cargar la base de datos: %s"
 
 msgid "Created"
 msgstr "Creado"
-
-msgid "Database and data"
-msgstr "Base de datos y datos"
 
 msgid "Delete"
 msgstr "Borrar"
@@ -176,9 +162,6 @@ msgstr "Idioma"
 msgid "List %s"
 msgstr "Lista %s"
 
-msgid "Load data"
-msgstr "Cargar datos"
-
 msgid "Login failed. Invalid username or password."
 msgstr "Acceso fallido. Id. Usuario o password incorrectos"
 
@@ -193,9 +176,6 @@ msgstr "Debe ser único"
 
 msgid "Name"
 msgstr "Nombre"
-
-msgid "New Password"
-msgstr "Nuevo Password"
 
 msgid "Next"
 msgstr "Siguiente"
@@ -271,9 +251,6 @@ msgstr "Configuración de la conexión de base de datos"
 msgid "Setup notification email"
 msgstr "Configuración del email de notificación"
 
-msgid "Something went wrong during installation. Please check your server logs."
-msgstr "Algo fue mal durante la instalación. Por favor revise los logs de su servidor."
-
 msgid "Start Session"
 msgstr "Inicio de sesión"
 
@@ -320,9 +297,6 @@ msgstr[1] "Usuarios"
 
 msgid "Username"
 msgstr "ID. Usuario"
-
-msgid "Verify Password"
-msgstr "Verificar Password"
 
 msgid "View"
 msgstr "Ver"

@@ -101,7 +101,7 @@ class AppController extends Controller {
         $this->theme = Configure::read('Application.theme');
         $this->set('unread_notifications',$this->Notify->countNotifications(AuthComponent::user('id')));
         
-        $this->set('user_at_string', __('User') . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __('pHkapa'));
+        $this->set('user_at_string', __n('User','Users',1) . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __('pHkapa'));
     
         // if is set layout for error , clear menuItems
         if ($this->_setErrorLayout()) {

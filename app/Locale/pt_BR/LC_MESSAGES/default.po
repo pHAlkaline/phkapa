@@ -34,9 +34,6 @@ msgstr "Adicionar %s"
 msgid "Admin panel: %s"
 msgstr "Painel de Administração: %s"
 
-msgid "Admin user password"
-msgstr "Senha do usuário administrador"
-
 msgid "Administration"
 msgstr "Administração"
 
@@ -66,9 +63,6 @@ msgstr "Versão Framework CakePHP %s < %s"
 msgid "CakePhp version %s >= %s"
 msgstr "Versão Framework CakePHP %s >= %s"
 
-msgid "Check load data option to insert dafault values to action types, activities, categories, causes, origins, processes, suppliers and finaly some example users and their access configuration."
-msgstr "Clique em carregar dados para adicionar valores na base de dados. Carrega dados para tipos de ação, seção, categorias, causas, origens, departamentos, fornecedores e no fim alguns usuários e a sua configuração para acessos."
-
 msgid "Click here to begin installation"
 msgstr "Inicie aqui a sua instalação"
 
@@ -83,9 +77,6 @@ msgstr "Não foi possível carregar a base de dados: %s"
 
 msgid "Created"
 msgstr "Criado"
-
-msgid "Database and data"
-msgstr "Base de Dados e respectivos dados"
 
 msgid "Delete"
 msgstr "Apagar"
@@ -162,9 +153,6 @@ msgstr "Pedido inválido"
 msgid "List %s"
 msgstr "Listar %s"
 
-msgid "Load data"
-msgstr "Carregar dados"
-
 msgid "Login failed. Invalid username or password."
 msgstr "Iniciar sessão falhou. Nome do usuário ou senha inválida"
 
@@ -179,9 +167,6 @@ msgstr "Deve ser unico"
 
 msgid "Name"
 msgstr "Nome"
-
-msgid "New Password"
-msgstr "Nova Senha"
 
 msgid "Next"
 msgstr "Próximo"
@@ -260,9 +245,6 @@ msgstr "Defenir ligação á base de dados"
 msgid "Setup notification email"
 msgstr "Configuração notificações por email"
 
-msgid "Something went wrong during installation. Please check your server logs."
-msgstr "Algo correu mal durante a instalação. Verifique os logs do servidor."
-
 msgid "Start Session"
 msgstr "Iniciar Sessão"
 
@@ -303,9 +285,6 @@ msgstr[1] "Usuários"
 
 msgid "Username"
 msgstr "Nome do Usuário"
-
-msgid "Verify Password"
-msgstr "Verificar Senha"
 
 msgid "View"
 msgstr "Ver"

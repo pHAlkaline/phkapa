@@ -145,7 +145,7 @@ class User extends AccessAppModel {
         $this->Aro->validate = array(
             'alias' => array(
                 'rule' => 'isUnique',
-                'message' => __('This name is restricted by system.')
+                'message' => __d('access','This name is restricted by system.')
                 ));
 
         $aro = $this->Aro->findByForeignKey($this->id);

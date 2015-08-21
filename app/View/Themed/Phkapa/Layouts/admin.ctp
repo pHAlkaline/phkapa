@@ -16,7 +16,7 @@
         ?>
         <script type="text/javascript">
             $(document).ready(function () {
-                //$('#phkapa').fadeIn(2000);
+
                 $('#mainContainer').fadeIn(1000);
                 if (!$.cookie('appMaintenance')) {
                     $('#maintenanceMessage').fadeIn(2000);
@@ -26,79 +26,76 @@
                     $('#maintenanceMessage').fadeOut(2000);
                 })
                 $('.flash_message').click(function () {
-                    alert("hello");
                     $(this).fadeOut(500);
                 })
-                $('a').each(function () {
-                    var onClickEval = $(this).attr('onclick');
-                    if (/confirm/i.test(onClickEval)) {
-                        //console.log(onClickEval);
-                        $(this).attr('onClickEval', onClickEval);
-                        $(this).removeAttr('onclick');
-                        $(this).bind('click', function (e) {
-                            var evalString = $(this).attr('onClickEval');
-                            //console.log(evalString);
-                            evalString = evalString.match(/".*"/);
-                            if (evalString == null)
-                                evalString = evalString.match(/'.*'/);
-                            if (evalString == null)
-                                evalString = 'Please Confirm Action!!';
-                            //console.log(evalString);
-                            result = confirm(evalString);
-                            //console.log(e.result);
-                            return result;
-                        });
-                    }
-
-                });
-
-                var opts = {
-                    lines: 8, // The number of lines to draw
-                    length: 11, // The length of each line
-                    width: 3, // The line thickness
-                    radius: 6, // The radius of the inner circle
-                    color: '#00aeef', // #rgb or #rrggbb
-                    speed: 1, // Rounds per second
-                    trail: 54, // Afterglow percentage
-                    shadow: false // Whether to render a shadow
-                };
-                var target = document.getElementById('loading-indicator');
-                $("a").bind('click', function (e) {
-                    //console.log(e.result);
-                    if (e.result == false)
-                        return false;
-                    if (this.id == 'toggle-admin-actions')
-                        return;
-                    if (this.id == 'toggle-related-records')
-                        return;
-                    if (this.target == '_blank')
-                        return true;
-                    $("#mainContainer div, h2").slice(4).hide();
-                    var spinner = new Spinner(opts).spin(target);
-                    $("#loading-indicator").show();
-                    return true;
-                });
-
-
-                $("form").submit(function () {
-                    var frmAction = $(this).attr('action');
-                    if (/export/i.test(frmAction)) {
-                        return true;
-                    }
-                    $("#mainContainer div, h2").slice(4).hide();
-                    var spinner = new Spinner(opts).spin(target);
-                    $("#loading-indicator").show();
-                    return true;
-
-                });
+                /*$('a').each(function () {
+                 var onClickEval = $(this).attr('onclick');
+                 if (/confirm/i.test(onClickEval)) {
+                 //console.log(onClickEval);
+                 $(this).attr('onClickEval', onClickEval);
+                 $(this).removeAttr('onclick');
+                 $(this).bind('click', function (e) {
+                 var evalString = $(this).attr('onClickEval');
+                 //console.log(evalString);
+                 evalString = evalString.match(/".*"/);
+                 if (evalString == null)
+                 evalString = evalString.match(/'.*'/);
+                 if (evalString == null)
+                 evalString = 'Please Confirm Action!!';
+                 //console.log(evalString);
+                 result = confirm(evalString);
+                 //console.log(e.result);
+                 return result;
+                 });
+                 }
+                 
+                 });
+                 
+                 var opts = {
+                 lines: 8, // The number of lines to draw
+                 length: 11, // The length of each line
+                 width: 3, // The line thickness
+                 radius: 6, // The radius of the inner circle
+                 color: '#00aeef', // #rgb or #rrggbb
+                 speed: 1, // Rounds per second
+                 trail: 54, // Afterglow percentage
+                 shadow: false // Whether to render a shadow
+                 };
+                 var target = document.getElementById('loading-indicator');
+                 $("a").bind('click', function (e) {
+                 //console.log(e.result);
+                 if (e.result == false)
+                 return false;
+                 if (this.id == 'toggle-admin-actions')
+                 return;
+                 if (this.id == 'toggle-related-records')
+                 return;
+                 if (this.target == '_blank')
+                 return true;
+                 $("#mainContainer div, h2").slice(4).hide();
+                 var spinner = new Spinner(opts).spin(target);
+                 $("#loading-indicator").show();
+                 return true;
+                 });
+                 
+                 
+                 $("form").submit(function () {
+                 var frmAction = $(this).attr('action');
+                 if (/export/i.test(frmAction)) {
+                 return true;
+                 }
+                 $("#mainContainer div, h2").slice(4).hide();
+                 var spinner = new Spinner(opts).spin(target);
+                 $("#loading-indicator").show();
+                 return true;
+                 
+                 });*/
 
                 $("input:submit").button();
-
                 $("#actions").accordion({
                     collapsible: true,
                     active: false
                 });
-
                 $("#related").accordion({
                     collapsible: true,
                     autoHeight: false,
@@ -112,24 +109,19 @@
 
                 });
 
-
-
-
-            });
-
-        </script>
-        <script>
-            $(document).ready(function () {
 <?php if (isset($unread_notifications) && $unread_notifications) { ?>
                     blinkNotification();
 <?php } ?>
+
+                function blinkNotification() {
+                    $('.notification').delay(200).fadeTo(200, 0.5).delay(100).fadeTo(100, 1, blinkNotification);
+                }
+
+
             });
 
-            function blinkNotification() {
-                $('.notification').delay(200).fadeTo(200, 0.5).delay(100).fadeTo(100, 1, blinkNotification);
-            }
-
         </script>
+
     </head>
     <body>
         <div id="phkapa" ><!--img src="/img/PHKAPA_small.png" alt="PHKAPA"  /--></div>
@@ -154,7 +146,7 @@
             <div class="clear"></div>
             <div class="grid_16">
 
-                <?php // Possible menu here   ?>
+                <?php // Possible menu here    ?>
                 <?php
                 if (isset($pluginImage)) {
                     echo '<div style="float: right; padding-right: 7px">' . $this->Html->image($pluginImage) . '</div>';

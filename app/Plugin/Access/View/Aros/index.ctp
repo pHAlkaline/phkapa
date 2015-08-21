@@ -1,4 +1,4 @@
-<h2 id="page-heading"><?php echo __n('Aro','Aros',2); ?></h2>
+<h2 id="page-heading"><?php echo __dn('access','Aro','Aros',2); ?></h2>
 <div class="grid_16 actionsContainer">
     <div class="grid_4" id="actions">	
         			
@@ -8,7 +8,7 @@
             <div class="block" id="admin-actions">			
                 <h5><?php echo __('Actions'); ?></h5>
                 <ul class="menu">
-                    <li><?php echo $this->Html->link(__('Add %s', __('Aro')), array('action' => 'add')); ?></li>
+                    <li><?php echo $this->Html->link(__('Add %s', __dn('access','Aco','Acos',1)), array('action' => 'add')); ?></li>
                 </ul>
 
 
@@ -22,7 +22,7 @@
 
     <table cellpadding="0" cellspacing="0">
         <?php $tableHeaders = $this->Html->tableHeaders(
-                array( __('Group / User'), __('Actions')),
+                array( __d('access','Group / User'), __('Actions')),
                 null,
                 array('width'=>'80%')
                 
