@@ -30,7 +30,7 @@ class MaintenanceComponent extends Component {
      * @var string
      * @access public
      */
-    public $flashElement = 'flash_message_maintenace';
+    public $flashElement = 'warning';
 
     /**
      * Message to display when app is on maintenance mode.  For security purposes.
@@ -57,13 +57,13 @@ class MaintenanceComponent extends Component {
      * @access public
      */
     public function startup(Controller $controller) {
-        
+
         // Maintenance mode OFF but on offline page -> redirect to root url    
-        if (!$this->isOn() && strpos($controller->here, Configure::read('Maintenance.site_offline_url'))!==false) {
-            $controller->redirect(Router::url('/',true));
+        if (!$this->isOn() && strpos($controller->here, Configure::read('Maintenance.site_offline_url')) !== false) {
+            $controller->redirect(Router::url('/', true));
             return;
         }
-        
+
         // Maintenance mode ON user logoout allowed
         if ($this->isOn() && strpos($controller->here, 'users/logout') !== false) {
             return;
@@ -71,17 +71,16 @@ class MaintenanceComponent extends Component {
 
         // Maintenance mode ON but not in offline page requested - > redirect to offline page
         if ($this->isOn() && strpos($controller->here, Configure::read('Maintenance.site_offline_url')) === false) {
-            
+
             // All users auto logged off if setting is true
-            if(Configure::read('Maintenance.offline_destroy_session')){
+            if (Configure::read('Maintenance.offline_destroy_session')) {
                 $this->Session->destroy();
             }
-            
-            $controller->redirect(Router::url(Configure::read('Maintenance.site_offline_url'),true));
+
+            $controller->redirect(Router::url(Configure::read('Maintenance.site_offline_url'), true));
             return;
         }
-        
-        
+
         // Maintenance mode scheduled show message!!    
         if ($this->hasSchedule()) {
             $this->Flash->maintenance(__('This application will be on maintenance mode at  %s ', Configure::read('Maintenance.start')));
@@ -105,7 +104,7 @@ class MaintenanceComponent extends Component {
             $date1 = strtotime($date);
             $date2 = strtotime(Configure::read('Maintenance.start'));
             $interval = ($date1 - $date2) / (60 * 60);
-            if ($interval > 0 && $interval < Configure::read('Maintenance.duration')){
+            if ($interval > 0 && $interval < Configure::read('Maintenance.duration')) {
                 return true;
             }
         }
