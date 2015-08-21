@@ -5,7 +5,7 @@
  * PHP 5
  *
  * @category Controller
- * @package  PHKAPA.app.Config
+ * @package  pHKapa.app.Config
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

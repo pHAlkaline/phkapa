@@ -6,7 +6,7 @@ App::uses('CakeTime', 'Utility');
  * PHP version 5
  * 
  * @category Model
- * @package  PHKAPA
+ * @package  pHKapa
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

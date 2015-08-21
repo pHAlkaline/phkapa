@@ -1,12 +1,12 @@
 <?php
 
 /**
- * PHKAPA App Controller
+ * pHKapa App Controller
  *
  * PHP version 5
  *
  * @category Controller
- * @package  PHKAPA
+ * @package  pHKapa
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -26,10 +26,10 @@ class PhkapaAppController extends AppController {
         $this->_setMenu();
 
         if (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {
-            $this->set('title_for_layout', __d('phkapa', 'PHKAPA') . ' - ' . __d('phkapa', 'Administration'));
+            $this->set('title_for_layout', __d('phkapa', 'pHKapa') . ' - ' . __d('phkapa', 'Administration'));
             $this->set('admin_root', 'phkapa');
         } else {
-            $this->set('title_for_layout', __d('phkapa', 'PHKAPA'));
+            $this->set('title_for_layout', __d('phkapa', 'pHKapa'));
         }
         //$this->set('pluginImage', 'Phkapa.phkapa.png');
     }

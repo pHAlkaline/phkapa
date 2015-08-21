@@ -1,4 +1,4 @@
-# LANGUAGE translation of PHKAPA Application
+# LANGUAGE translation of pHKapa Application
 # Copyright pHAlkaline <contact@phalkaline.eu>
 #
 #, fuzzy
@@ -274,7 +274,7 @@ msgstr[1] ""
 msgid "Origin Date"
 msgstr ""
 
-msgid "PHKAPA"
+msgid "pHKapa"
 msgstr ""
 
 msgid "Page"

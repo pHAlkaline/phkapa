@@ -1,4 +1,4 @@
-# LANGUAGE translation of PHKAPA Application
+# LANGUAGE translation of pHKapa Application
 # Copyright pHAlkaline <contact@phalkaline.eu>
 #
 #, fuzzy
@@ -27,7 +27,7 @@ msgid "Add %s"
 msgstr "%s hinzufügen"
 
 msgid "Admin panel: %s"
-msgstr "Vorgänge verwalten"
+msgstr "Vorgänge verwalten: %s"
 
 msgid "Administration"
 msgstr "Administration"
@@ -74,9 +74,6 @@ msgstr "Gelöscht."
 msgid "Diagnostics"
 msgstr "Diagnose"
 
-msgid "Dont forget to restore default access values to Config and tmp directory."
-msgstr ""
-
 msgid "Down"
 msgstr "Runter"
 
@@ -100,12 +97,6 @@ msgstr "Passwort ändern"
 
 msgid "End Session"
 msgstr "Abmelden"
-
-msgid "From Email" 	 	
-msgstr ""
-
-msgid "From Name" 	 	
-msgstr ""
 
 msgid "Id"
 msgstr "ID"
@@ -154,11 +145,11 @@ msgstr[1] "Benachrichtigungen"
 msgid "Notifier"
 msgstr "Benachrichtiger"
 
-msgid "PHKAPA Admin panel: %s"
-msgstr "PHKAPA verwalten"
+msgid "pHKapa Admin panel: %s"
+msgstr "pHKapa verwalten: %s"
 
-msgid "PHKAPA: %s"
-msgstr "PHKAPA: %s"
+msgid "pHKapa: %s"
+msgstr "pHKapa: %s"
 
 msgid "PHP version %s < 5.2"
 msgstr ""
@@ -202,17 +193,8 @@ msgstr "Gespeichert."
 msgid "Search..."
 msgstr "Suche..."
 
-msgid "Setup database connection"
-msgstr ""
-
-msgid "Setup notification email" 	 	
-msgstr ""
-
 msgid "Start Session"
 msgstr "Anmelden"
-
-msgid "Subject"
-msgstr ""
 
 msgid "Submit"
 msgstr "Eintragen"
@@ -221,7 +203,7 @@ msgid "The %s is being used for caching. To change the config edit APP/config/co
 msgstr ""
 
 msgid "This application is now on maintenance mode, back soon as possible!"
-msgstr "PHKAPA ist im Wartungsmodus. Wir sind bald wieder da!"
+msgstr "pHKapa ist im Wartungsmodus. Wir sind bald wieder da!"
 
 msgid "This application will be on maintenance mode at  %s "
 msgstr "Anwendung wird um %s zur Wartung abgeschaltet."

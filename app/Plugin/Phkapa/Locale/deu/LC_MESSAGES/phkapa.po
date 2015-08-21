@@ -1,4 +1,4 @@
-# LANGUAGE translation of PHKAPA Application
+# LANGUAGE translation of pHKapa Application
 # Copyright pHAlkaline <contact@phalkaline.eu>
 #
 msgid ""
@@ -273,8 +273,8 @@ msgstr "Erstelldatum"
 msgid "Owner"
 msgstr "Eigentümer"
 
-msgid "PHKAPA"
-msgstr "PHKAPA"
+msgid "pHKapa"
+msgstr "pHKapa"
 
 msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
 msgstr "Seite %page% von %pages%, zeige %current% Einträge von insgesamt %count%, beginnend bei %start%, endend bei %end%"
@@ -374,7 +374,7 @@ msgstr[0] "Melder"
 msgstr[1] "Melder"
 
 msgid "This application is now on maintenance mode, back soon as possible!"
-msgstr "PHKAPA ist im Wartungsmodus. Wir sind bald wieder da!"
+msgstr "pHKapa ist im Wartungsmodus. Wir sind bald wieder da!"
 
 msgid "This ticket has actions that were not effective, please choose cancel if you want replan or create a new related ticket before closing."
 msgstr "Dieser Vorgang enthält Aktionen, welche nicht wirksam waren. Bitte \"Abbrechen\" wählen, falls neu geplant werden oder ein neuer Vorgang abgeleitet werden soll, bevor der Vorgang geschlossen wird."

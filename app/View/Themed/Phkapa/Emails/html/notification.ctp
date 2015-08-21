@@ -1,4 +1,4 @@
-<?php $title_for_layout=__('PHKAPA').' '.__n('Notification', 'Notifications', 1); ?>
+<?php $title_for_layout=__('pHKapa').' '.__n('Notification', 'Notifications', 1); ?>
 <h2 id="page-heading"><?php echo $title_for_layout; ?></h2>
 <h2 id="page-heading"><?php echo __n('Notification', 'Notifications', 1); ?>&nbsp;:</h2>
 <div class="grid_16 actionsContainer">

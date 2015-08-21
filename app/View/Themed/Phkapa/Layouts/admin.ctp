@@ -124,11 +124,11 @@
 
     </head>
     <body>
-        <div id="phkapa" ><!--img src="/img/PHKAPA_small.png" alt="PHKAPA"  /--></div>
+        <div id="phkapa" ><!--img src="/img/pHKapa_small.png" alt="pHKapa"  /--></div>
         <div id="header">
 
             <h1>
-                <?php echo $this->Html->link($this->Html->image('PHKAPAlogo2.png', array('alt' => 'PHKAPA')), Router::url('/admin/' . $admin_root, true), array('class' => 'zoom', 'target' => '_self', 'escape' => false)); ?>
+                <?php echo $this->Html->link($this->Html->image('pHKapalogo2.png', array('alt' => 'pHKapa')), Router::url('/admin/' . $admin_root, true), array('class' => 'zoom', 'target' => '_self', 'escape' => false)); ?>
 
             </h1>
 

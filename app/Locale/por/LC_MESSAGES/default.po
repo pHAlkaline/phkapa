@@ -1,4 +1,4 @@
-# LANGUAGE translation of PHKAPA Application
+# LANGUAGE translation of pHKapa Application
 # Copyright pHAlkaline <contact@phalkaline.eu>
 #
 #, fuzzy
@@ -39,7 +39,7 @@ msgid "Are you sure you want to delete # %s?"
 msgstr "Tem a certeza que quer apagar # %s?"
 
 msgid "Cake is able to connect to the database."
-msgstr "PHKAPA está ligado à base de dados"
+msgstr "pHKapa está ligado à base de dados"
 
 msgid "CakePHP version %s < %s"
 msgstr "Versão Framework CakePHP %s < %s"
@@ -77,9 +77,6 @@ msgstr "Apagado com sucesso."
 msgid "Diagnostics"
 msgstr "Diagnosticos"
 
-msgid "Dont forget to restore default access values to Config and tmp directory."
-msgstr "Não se esqueça de restaurar os valores de defeito para as directorias de Config e tmp"
-
 msgid "Down"
 msgstr "Baixo"
 
@@ -103,12 +100,6 @@ msgstr "Permitir alteração de palavra passe"
 
 msgid "End Session"
 msgstr "Terminar Sessão"
-
-msgid "From Email"
-msgstr "Email de envio"
-
-msgid "From Name"
-msgstr "Nome de envio"
 
 msgid "Group / User"
 msgstr "Grupo / Utilizador"
@@ -160,14 +151,14 @@ msgstr[1] "Notificações"
 msgid "Notifier"
 msgstr "Notificador"
 
-msgid "PHKAPA Admin panel: %s"
-msgstr "PHKAPA Painel de Administração: %s"
+msgid "pHKapa Admin panel: %s"
+msgstr "pHKapa Painel de Administração: %s"
 
-msgid "PHKAPA is NOT able to connect to the database."
-msgstr "PHKAPA não consegue ligação à base de dados"
+msgid "pHKapa is NOT able to connect to the database."
+msgstr "pHKapa não consegue ligação à base de dados"
 
-msgid "PHKAPA: %s"
-msgstr "PHKAPA: %s"
+msgid "pHKapa: %s"
+msgstr "pHKapa: %s"
 
 msgid "PHP version %s < 5.2"
 msgstr "Versão PHP %s < 5.2"
@@ -211,17 +202,8 @@ msgstr "Gravado com sucesso."
 msgid "Search..."
 msgstr "Pesquisa..."
 
-msgid "Setup database connection"
-msgstr "Defenir ligação á base de dados"
-
-msgid "Setup notification email"
-msgstr "Configuração notificações por email"
-
 msgid "Start Session"
 msgstr "Iniciar Sessão"
-
-msgid "Subject"
-msgstr "Assunto"
 
 msgid "Submit"
 msgstr "Submeter"

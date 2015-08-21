@@ -1,4 +1,4 @@
-# LANGUAGE translation of PHKAPA Application
+# LANGUAGE translation of pHKapa Application
 # Copyright pHAlkaline <contact@phalkaline.eu>
 #
 msgid ""
@@ -114,12 +114,6 @@ msgstr "Permite schimbarea parolei"
 msgid "End Session"
 msgstr "Închide sesiunea"
 
-msgid "From Email"
-msgstr "De la Email"
-
-msgid "From Name"
-msgstr "De la Nume"
-
 msgid "Help"
 msgstr "Ajutor"
 
@@ -174,11 +168,11 @@ msgstr[1] "Notificări"
 msgid "Notifier"
 msgstr "Notificator"
 
-msgid "PHKAPA Admin panel: %s"
-msgstr "Panou de administrare PHKAPA: %s"
+msgid "pHKapa Admin panel: %s"
+msgstr "Panou de administrare pHKapa: %s"
 
-msgid "PHKAPA: %s"
-msgstr "PHKAPA: %s"
+msgid "pHKapa: %s"
+msgstr "pHKapa: %s"
 
 msgid "PHP version %s < 5.2"
 msgstr "Versiunea de PHP %s < 5.2"
@@ -229,20 +223,11 @@ msgstr "Salvat cu succes"
 msgid "Search..."
 msgstr "Caută..."
 
-msgid "Setup database connection"
-msgstr "Configurarea conexiunii la baza de date"
-
-msgid "Setup notification email"
-msgstr "Configurare notificării prin email"
-
 msgid "Start Session"
 msgstr "Inițiază sesiunea"
 
 msgid "Step 2 : Build database , load table values"
 msgstr "Pasul 2: Crearea bazei de date, încărcarea valorilor în tabele"
-
-msgid "Subject"
-msgstr "Subiect"
 
 msgid "Submit"
 msgstr "Transmite"

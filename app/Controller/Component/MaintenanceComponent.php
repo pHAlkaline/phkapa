@@ -3,12 +3,12 @@
 App::uses('Component', 'Controller');
 
 /**
- * PHKAPA Component
+ * pHKapa Component
  *
  * PHP version 5
  *
  * @category Component
- * @package  PHKAPA.app.Controller.Component
+ * @package  pHKapa.app.Controller.Component
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

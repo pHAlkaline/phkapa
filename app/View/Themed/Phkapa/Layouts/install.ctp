@@ -118,9 +118,9 @@
         </script>
     </head>
     <body>
-        <div id="phkapa" ><!--img src="/img/PHKAPA_small.png" alt="PHKAPA"  --></div>
+        <div id="phkapa" ><!--img src="/img/pHKapa_small.png" alt="pHKapa"  --></div>
         <div id="header">
-            <h1><?php echo $this->Html->image('PHKAPAlogo.png', array('alt' => 'PHKAPA')); ?></h1>
+            <h1><?php echo $this->Html->image('pHKapalogo.png', array('alt' => 'pHKapa')); ?></h1>
         </div>
 
         <div id="header_separator"></div>
