@@ -31,16 +31,16 @@ msgstr ""
 
 msgid "Aco"
 msgid_plural "Acos"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Access Control"
+msgstr[1] "Access Control"
 
 msgid "Type Group"
 msgstr ""
 
 msgid "Aro"
 msgid_plural "Aros"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Access"
+msgstr[1] "Access"
 
 msgid "Group / User"
 msgstr ""
@@ -56,3 +56,9 @@ msgstr ""
 
 msgid "Denyed"
 msgstr ""
+
+
+msgid "User"
+msgid_plural "Users"
+msgstr[0] ""
+msgstr[1] ""

@@ -19,11 +19,6 @@ msgstr ""
 msgid "(choose one)"
 msgstr "(seleccione uno)"
 
-msgid "Aco"
-msgid_plural "Acos"
-msgstr[0] "Control de Acceso"
-msgstr[1] "Controles de Acceso"
-
 msgid "Actions"
 msgstr "Acciones"
 
@@ -39,22 +34,11 @@ msgstr "Panel de admin: %s"
 msgid "Administration"
 msgstr "Administración"
 
-msgid "Allow"
-msgstr "Habilitar"
-
-msgid "Allowed"
-msgstr "Habilitado"
-
 msgid "Application Offline"
 msgstr "Aplicación fuera de linea"
 
 msgid "Are you sure you want to delete # %s?"
 msgstr "¿Está seguro de que quiere borrar el nº %s?"
-
-msgid "Aro"
-msgid_plural "Aros"
-msgstr[0] "Acceso"
-msgstr[1] "Accesos"
 
 msgid "Cake is NOT able to connect to the database."
 msgstr "Cake NO puede conectarse a la base de datos."
@@ -92,12 +76,6 @@ msgstr "Borrar %s"
 msgid "Deleted with success."
 msgstr "Borrado con éxito."
 
-msgid "Deny"
-msgstr "Denegar"
-
-msgid "Denyed"
-msgstr "Denegado"
-
 msgid "Diagnostics"
 msgstr "Diagnósticos"
 
@@ -134,12 +112,6 @@ msgstr "Desde Email"
 
 msgid "From Name"
 msgstr "Desde Nombre"
-
-msgid "Group / User"
-msgstr "Grupo / Usuario"
-
-msgid "Group / User name must be unique!!"
-msgstr "El nombre de Grupo / Usuario debe ser único!!"
 
 msgid "Help"
 msgstr "Ayuda"
@@ -275,14 +247,8 @@ msgstr "Esta aplicación está ahora en modo de mantenimiento, vuelva tan pronto
 msgid "This application will be on maintenance mode at  %s "
 msgstr "Esta aplicación estará en modo de mantenimiento en %s"
 
-msgid "This name is restricted by system."
-msgstr "Este nombre está restringido por el sistema"
-
 msgid "This will also delete childs!!"
 msgstr "Esto borrará también los hijos!!"
-
-msgid "Type Group"
-msgstr "Tipo Grupo"
 
 msgid "Unable to generate users password."
 msgstr "No se ha podido crear el password de usuarios"

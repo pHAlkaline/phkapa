@@ -17,11 +17,6 @@ msgstr ""
 "Language: deu\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-msgid "Aco"
-msgid_plural "Acos"
-msgstr[0] "Zugriffssteuerung"
-msgstr[1] "Zugriffssteuerung"
-
 msgid "Actions"
 msgstr "Aktionen"
 
@@ -37,22 +32,11 @@ msgstr "Vorgänge verwalten"
 msgid "Administration"
 msgstr "Administration"
 
-msgid "Allow"
-msgstr "Erlauben"
-
-msgid "Allowed"
-msgstr "Erlaubt"
-
 msgid "Application Offline"
 msgstr "Selbstzerstörungsmodus aktiviert. Deckung!"
 
 msgid "Are you sure you want to delete # %s?"
 msgstr "Soll # %s wirklich gelöscht werden?"
-
-msgid "Aro"
-msgid_plural "Aros"
-msgstr[0] "Benutzergruppe"
-msgstr[1] "Benutzergruppen"
 
 msgid "Cake is NOT able to connect to the database."
 msgstr ""
@@ -86,12 +70,6 @@ msgstr "%s löschen"
 
 msgid "Deleted with success."
 msgstr "Gelöscht."
-
-msgid "Deny"
-msgstr "Verweigern"
-
-msgid "Denyed"
-msgstr "Verweigert"
 
 msgid "Diagnostics"
 msgstr "Diagnose"
@@ -128,12 +106,6 @@ msgstr ""
 
 msgid "From Name" 	 	
 msgstr ""
-
-msgid "Group / User"
-msgstr "Gruppe / Benutzer"
-
-msgid "Group / User name must be unique!!"
-msgstr "Bezeichnung muss eindeutig sein!!"
 
 msgid "Id"
 msgstr "ID"
@@ -224,9 +196,6 @@ msgstr ""
 msgid "Resources"
 msgstr "Ressourcen"
 
-msgid "Root"
-msgstr "Root"
-
 msgid "Saved with success."
 msgstr "Gespeichert."
 
@@ -257,14 +226,8 @@ msgstr "PHKAPA ist im Wartungsmodus. Wir sind bald wieder da!"
 msgid "This application will be on maintenance mode at  %s "
 msgstr "Anwendung wird um %s zur Wartung abgeschaltet."
 
-msgid "This name is restricted by system."
-msgstr "Bezeichnung ist systemseitig reserviert oder geblockt."
-
 msgid "This will also delete childs!!"
 msgstr "Abgeleitete Vorgänge werden ebenfalls gelöscht!!"
-
-msgid "Type Group"
-msgstr "Auswählen"
 
 msgid "Unable to generate users password."
 msgstr ""

@@ -17,11 +17,6 @@ msgstr ""
 "Language: pt_BR\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-msgid "Aco"
-msgid_plural "Acos"
-msgstr[0] "Controle de Acesso"
-msgstr[1] "Controle de Acessos"
-
 msgid "Actions"
 msgstr "Ações"
 
@@ -37,22 +32,11 @@ msgstr "Painel de Administração: %s"
 msgid "Administration"
 msgstr "Administração"
 
-msgid "Allow"
-msgstr "Permite"
-
-msgid "Allowed"
-msgstr "Permitido"
-
 msgid "Application Offline"
 msgstr "Applicação em Manutenção"
 
 msgid "Are you sure you want to delete # %s?"
 msgstr "Tem a certeza que quer apagar # %s?"
-
-msgid "Aro"
-msgid_plural "Aros"
-msgstr[0] "Gestão de Acesso"
-msgstr[1] "Gestão de Acessos"
 
 msgid "Cake is able to connect to the database."
 msgstr "PHKAPA está ligado à base de dados"
@@ -86,12 +70,6 @@ msgstr "Apagar %s"
 
 msgid "Deleted with success."
 msgstr "Apagado com sucesso."
-
-msgid "Deny"
-msgstr "Nega"
-
-msgid "Denyed"
-msgstr "Negado"
 
 msgid "Diagnostics"
 msgstr "Diagnosticos"
@@ -131,12 +109,6 @@ msgstr "Email de envio"
 
 msgid "From Name"
 msgstr "Nome de envio"
-
-msgid "Group / User"
-msgstr "Grupo / Usuário"
-
-msgid "Group / User name must be unique!!"
-msgstr "Grupo / Nome do usuário tem de ser único"
 
 msgid "Id"
 msgstr ""
@@ -263,14 +235,8 @@ msgstr "A Aplicação encontra-se em modo de manutenção, regressa em breve!"
 msgid "This application will be on maintenance mode at  %s "
 msgstr "Esta aplicação vai entrar em modo de manutenção as %s "
 
-msgid "This name is restricted by system."
-msgstr "Este nome é restrito pelo sistema"
-
 msgid "This will also delete childs!!"
 msgstr "Ira ser apagado todos os registros dependentes!!"
-
-msgid "Type Group"
-msgstr "Tipo de Grupo"
 
 msgid "Unable to generate users password."
 msgstr "Não foi possível gerar senha para usuários."

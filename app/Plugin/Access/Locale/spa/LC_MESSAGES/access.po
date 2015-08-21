@@ -20,38 +20,43 @@ msgid "Access Setup"
 msgstr ""
 
 msgid "Group / User name must be unique!!"
-msgstr ""
+msgstr "El nombre de Grupo / Usuario debe ser único!!"
 
 msgid "Root"
-msgstr ""
+msgstr "Raiz"
 
 msgid "This name is restricted by system."
-msgstr ""
+msgstr "Este nombre está restringido por el sistema"
 
 msgid "Aco"
 msgid_plural "Acos"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Control de Acceso"
+msgstr[1] "Controles de Acceso"
 
 msgid "Type Group"
-msgstr ""
+msgstr "Tipo Grupo"
 
 msgid "Aro"
 msgid_plural "Aros"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Acceso"
+msgstr[1] "Accesos"
 
 msgid "Group / User"
-msgstr ""
+msgstr "Grupo / Usuario"
 
 msgid "Allow"
-msgstr ""
+msgstr "Habilitar"
 
 msgid "Deny"
-msgstr ""
+msgstr "Denegar"
 
 msgid "Allowed"
-msgstr ""
+msgstr "Habilitado"
 
 msgid "Denyed"
-msgstr ""
+msgstr "Denegado"
+
+msgid "User"
+msgid_plural "Users"
+msgstr[0] "Usuario"
+msgstr[1] "Usuarios"
