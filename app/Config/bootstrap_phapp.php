@@ -50,8 +50,8 @@ Configure::write('Application.theme', 'Phkapa'); // activate theme - app/View/Th
 /**
  * Settings for maintenance component 
  */
-Configure::write('Maintenance.start', '31-12-1999 23:59'); 
-Configure::write('Maintenance.duration', '2'); // Duration in hours
+Configure::write('Maintenance.start', '21-08-2015 23:59'); 
+Configure::write('Maintenance.duration', '3'); // Duration in hours
 Configure::write('Maintenance.site_offline_url', '/pages/offline');
 Configure::write('Maintenance.offline_destroy_session', false); // true or false , with true - Offline will destroy user sessions
 
