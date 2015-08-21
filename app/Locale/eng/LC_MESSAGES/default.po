@@ -34,9 +34,6 @@ msgstr ""
 msgid "Admin panel: %s"
 msgstr ""
 
-msgid "Admin user password"
-msgstr ""
-
 msgid "Administration"
 msgstr ""
 
@@ -69,9 +66,6 @@ msgstr ""
 msgid "CakePhp version %s >= %s"
 msgstr ""
 
-msgid "Check load data option to insert dafault values to action types, activities, categories, causes, origins, processes, suppliers and finaly some example users and their access configuration."
-msgstr ""
-
 msgid "Click here to begin installation"
 msgstr ""
 
@@ -85,9 +79,6 @@ msgid "Could not load database: %s"
 msgstr ""
 
 msgid "Created"
-msgstr ""
-
-msgid "Database and data"
 msgstr ""
 
 msgid "Delete"
@@ -162,9 +153,6 @@ msgstr ""
 msgid "List %s"
 msgstr ""
 
-msgid "Load data"
-msgstr ""
-
 msgid "Login failed. Invalid username or password."
 msgstr ""
 
@@ -178,9 +166,6 @@ msgid "Must be unique"
 msgstr ""
 
 msgid "Name"
-msgstr ""
-
-msgid "New Password"
 msgstr ""
 
 msgid "Next"
@@ -257,9 +242,6 @@ msgstr ""
 msgid "Setup notification email"
 msgstr ""
 
-msgid "Something went wrong during installation. Please check your server logs."
-msgstr ""
-
 msgid "Start Session"
 msgstr ""
 
@@ -299,9 +281,6 @@ msgstr[0] ""
 msgstr[1] ""
 
 msgid "Username"
-msgstr ""
-
-msgid "Verify Password"
 msgstr ""
 
 msgid "View"

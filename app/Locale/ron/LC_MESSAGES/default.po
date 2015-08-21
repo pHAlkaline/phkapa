@@ -24,11 +24,6 @@ msgid_plural "Acos"
 msgstr[0] "Control al Accesului"
 msgstr[1] "Controale ale accesului"
 
-msgid "Action Type"
-msgid_plural "Action Types"
-msgstr[0] "Tip de Acțiune"
-msgstr[1] "Tipuri de Acțiune"
-
 msgid "Actions"
 msgstr "Acțiuni"
 
@@ -40,9 +35,6 @@ msgstr "Adaugă %s"
 
 msgid "Admin panel: %s"
 msgstr "Panou de Administrare: %s"
-
-msgid "Admin user password"
-msgstr "Parola utilizatorului admin"
 
 msgid "Administration"
 msgstr "Administrare"
@@ -97,9 +89,6 @@ msgstr "Nu poate fi salvat. Vă rog încercați din nou"
 
 msgid "Created"
 msgstr "Creat"
-
-msgid "Database and data"
-msgstr "Baza de date și date"
 
 msgid "Delete"
 msgstr "Șterge"
@@ -181,9 +170,6 @@ msgstr "Limbă"
 msgid "List %s"
 msgstr "Lista %s"
 
-msgid "Load data"
-msgstr "Încarcă date"
-
 msgid "Login failed. Invalid username or password."
 msgstr "Acces eșuat. Id. utilizator sau parolă incorecte"
 
@@ -198,9 +184,6 @@ msgstr "Trebuie să fie unic"
 
 msgid "Name"
 msgstr "Nume"
-
-msgid "New Password"
-msgstr "Parolă nouă"
 
 msgid "Next"
 msgstr "Următorul"
@@ -280,12 +263,6 @@ msgstr "Configurarea conexiunii la baza de date"
 msgid "Setup notification email"
 msgstr "Configurare notificării prin email"
 
-msgid ""
-"Something went wrong during installation. Please check your server logs."
-msgstr ""
-"Ceva nu a mers bine în timpul instalării. Vă rog verificați log-urile de pe "
-"server."
-
 msgid "Start Session"
 msgstr "Inițiază sesiunea"
 
@@ -336,9 +313,6 @@ msgstr[1] "Utilizatori"
 
 msgid "Username"
 msgstr "Nume utilizator"
-
-msgid "Verify Password"
-msgstr "Verifică parola"
 
 msgid "View"
 msgstr "Vizualizare"

@@ -7,7 +7,7 @@
             <div class="block" id="admin-actions">
                 <h5><?php echo __n('User','Users',2); ?></h5>
                 <ul class="menu">
-                    <li><?php echo $this->Html->link(__('Add %s', __('User')), array('action' => 'add')); ?></li>
+                    <li><?php echo $this->Html->link(__('Add %s', __n('User','Users',1)), array('action' => 'add')); ?></li>
                 
             </div>
         

@@ -1,7 +1,7 @@
 <?php
 $this->html->script('Access.user_edit', false);
 ?>
-<h2 class="grid_16" id="page-heading"><?php echo __('Edit %s', __('User')); ?></h2>
+<h2 class="grid_16" id="page-heading"><?php echo __('Edit %s', __n('User','Users',1)); ?></h2>
 <div class="grid_16 actionsContainer">
     <div class="grid_4" id="actions">	
        		
@@ -24,7 +24,7 @@ $this->html->script('Access.user_edit', false);
     <div class="users form">
         <?php echo $this->Form->create('User'); ?>
         <fieldset class="ui-corner-all ui-widget-content" >
-            <legend><?php echo __('Record').' '. __('User'); ?></legend>
+            <legend><?php echo __('Record').' '. __n('User','Users',1); ?></legend>
             <?php
             echo $this->Form->input('id');
             echo $this->Form->input('name',array('maxlength'=>'64','label' => __('Name')));

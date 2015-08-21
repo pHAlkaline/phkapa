@@ -34,9 +34,6 @@ msgstr "%s hinzufügen"
 msgid "Admin panel: %s"
 msgstr "Vorgänge verwalten"
 
-msgid "Admin user password"
-msgstr "Admin-Passwort"
-
 msgid "Administration"
 msgstr "Administration"
 
@@ -69,9 +66,6 @@ msgstr ""
 msgid "CakePhp version %s >= %s"
 msgstr ""
 
-msgid "Check load data option to insert dafault values to action types, activities, categories, causes, origins, processes, suppliers and finaly some example users and their access configuration."
-msgstr ""
-
 msgid "Click here to begin installation" 	 	
 msgstr ""
 
@@ -83,9 +77,6 @@ msgstr "Speichern fehlgeschlagen. Bitte erneut versuchen."
 
 msgid "Created"
 msgstr "Erstellt"
-
-msgid "Database and data"
-msgstr ""
 
 msgid "Delete"
 msgstr "Löschen"
@@ -159,9 +150,6 @@ msgstr "Ungültige Abfrage."
 msgid "List %s"
 msgstr "%s auflisten"
 
-msgid "Load data"
-msgstr ""
-
 msgid "Login failed. Invalid username or password."
 msgstr "Anmeldung fehlgeschlagen. Benutzername oder Passwort ungültig."
 
@@ -176,9 +164,6 @@ msgstr "Muss eindeutig sein"
 
 msgid "Name"
 msgstr "Bezeichnung"
-
-msgid "New Password"
-msgstr "Neues Passwort"
 
 msgid "Next"
 msgstr "Nächster"
@@ -254,9 +239,6 @@ msgstr ""
 msgid "Setup notification email" 	 	
 msgstr ""
 
-msgid "Something went wrong during installation. Please check your server logs." 	 	
-msgstr ""
-
 msgid "Start Session"
 msgstr "Anmelden"
 
@@ -297,9 +279,6 @@ msgstr[1] "Benutzer"
 
 msgid "Username"
 msgstr "Benutzername"
-
-msgid "Verify Password"
-msgstr "Passwort bestätigen"
 
 msgid "View"
 msgstr "Ansicht"

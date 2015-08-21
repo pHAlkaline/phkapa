@@ -78,7 +78,7 @@ class ArosController extends AccessAppController {
             $this->Node->validate = array(
                 'alias' => array(
                     'rule' => 'isUnique',
-                    'message' => __('Group / User name must be unique!!')
+                    'message' => __d('access','Group / User name must be unique!!')
                     ));
 
             if ($this->Node->save($this->request->data)) {
@@ -130,7 +130,7 @@ class ArosController extends AccessAppController {
             $this->Node->validate = array(
                 'alias' => array(
                     'rule' => 'isUnique',
-                    'message' => __('Group / User name must be unique!!')
+                    'message' => __d('access','Group / User name must be unique!!')
                     ));
 
             if ($this->Node->save($this->request->data)) {
@@ -144,7 +144,7 @@ class ArosController extends AccessAppController {
         if (empty($this->request->data)) {
             $this->request->data = $this->Node->read(null, $id);
         }
-        $parents[0] = "[ " . __('Root') . " ]";
+        $parents[0] = "[ " . __d('access','Root') . " ]";
         $nodelist = $this->Node->generateTreeList(null, '{n}.Aro.id', '{n}.Aro.alias', ' - ', '-1');
         $acolist = $this->Acl->Aco->generateTreeList(null, '{n}.Aco.id', '{n}.Aco.alias', ' - ', '-1');
         $acoAccessList = $this->Acl->Aco->generateTreeList(null, '{n}.Aco.id', '{n}.Aco.alias', '', '-1');

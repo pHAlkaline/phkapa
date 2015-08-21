@@ -1,0 +1,57 @@
+# LANGUAGE translation of pHKapa Access Plugin
+# Copyright pHAlkaline <contact@phalkaline.eu>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phkapa.net\n"
+"POT-Creation-Date: 2013-02-12 21:57+0000\n"
+"PO-Revision-Date: 2014-06-06 13:09+0100\n"
+"Last-Translator: NM <mnotheis@dqs-med.de>\n"
+"Language-Team: NM <mnotheis@dqs-med.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.6.5\n"
+"Language: deu\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Access Setup"
+msgstr ""
+
+msgid "Group / User name must be unique!!"
+msgstr ""
+
+msgid "Root"
+msgstr ""
+
+msgid "This name is restricted by system."
+msgstr ""
+
+msgid "Aco"
+msgid_plural "Acos"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Type Group"
+msgstr ""
+
+msgid "Aro"
+msgid_plural "Aros"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Group / User"
+msgstr ""
+
+msgid "Allow"
+msgstr ""
+
+msgid "Deny"
+msgstr ""
+
+msgid "Allowed"
+msgstr ""
+
+msgid "Denyed"
+msgstr ""

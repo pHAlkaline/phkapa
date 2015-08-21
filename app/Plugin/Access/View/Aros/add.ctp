@@ -2,7 +2,7 @@
 $this->html->script('Access.aro_add_edit', false);
 ?>
 
-<h2 class="grid_16" id="page-heading"><?php echo __('Add %s', __('Aro')); ?></h2>
+<h2 class="grid_16" id="page-heading"><?php echo __('Add %s', __dn('access','Aco','Acos',1)); ?></h2>
 <div class="grid_16 actionsContainer">
     <div class="grid_4" id="actions">	
         			
@@ -10,9 +10,9 @@ $this->html->script('Access.aro_add_edit', false);
                 <a href="#" id="toggle-admin-actions"><?php echo __('Menu'); ?></a>
             </h2>
             <div class="block" id="admin-actions">			
-                <h5><?php echo __n('Aro','Aros',2); ?></h5>
+                <h5><?php echo __dn('access','Aro','Aros',2); ?></h5>
                 <ul class="menu">
-                    <li><?php echo $this->Html->link(__('List %s', __n('Aro','Aros',2)), array('action' => 'index')); ?></li>
+                    <li><?php echo $this->Html->link(__('List %s', __dn('access','Aro','Aros',2)), array('action' => 'index')); ?></li>
                 </ul>
 
 
@@ -25,9 +25,9 @@ $this->html->script('Access.aro_add_edit', false);
     <div class="origins form">
         <?php echo $this->Form->create('Aro'); ?>
         <fieldset class="ui-corner-all ui-widget-content">
-            <legend><?php echo __('Record'). ' ' . __('Aro'); ?></legend>
+            <legend><?php echo __('Record'). ' ' . __dn('access','Aro','Aros',1); ?></legend>
             <?php
-            echo $this->Form->input('foreign_key', array('options'=>$foreignKeys, 'label' => __('User'), 'empty' => __('Type Group')));
+            echo $this->Form->input('foreign_key', array('options'=>$foreignKeys, 'label' => __n('User','Users',1), 'empty' => __d('access','Type Group')));
             echo $this->Form->input('alias', array('label' => __('Name')));
             echo $this->Form->input('parent_id',array('label' => __('Parent node')));
             

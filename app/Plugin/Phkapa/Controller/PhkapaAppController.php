@@ -55,7 +55,7 @@ class PhkapaAppController extends AppController {
                 $menuItems[$key] = str_replace('Controller', '', $value);
             }
             sort($menuItems);
-            $this->set('user_at_string', __('User') . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __('pHKapa Setup'));
+            $this->set('user_at_string', __n('User','Users',1) . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __('pHKapa Setup'));
     
         } else {
             $menuItems = array('Query', 'Register', 'Review', 'Plan', 'Verify');
@@ -65,11 +65,11 @@ class PhkapaAppController extends AppController {
               unset($menuItems[$key]);
               }
               endforeach; */
-            $this->set('user_at_string', __('User') . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __('pHKapa'));
+            $this->set('user_at_string', __n('User','Users',1) . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __('pHKapa'));
     
         }
-
-        $this->set(compact('menuItems'));
+        $translationDomain='phkapa';
+        $this->set(compact('menuItems','translationDomain'));
     }
 
     /**
