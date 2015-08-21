@@ -40,12 +40,6 @@ msgstr "Aplicación fuera de linea"
 msgid "Are you sure you want to delete # %s?"
 msgstr "¿Está seguro de que quiere borrar el nº %s?"
 
-msgid "Cake is NOT able to connect to the database."
-msgstr "Cake NO puede conectarse a la base de datos."
-
-msgid "Cake is able to connect to the database."
-msgstr "Cake puede conectarse a la base de datos."
-
 msgid "Could not be deleted."
 msgstr "No se puede borrar."
 
@@ -70,8 +64,7 @@ msgstr "Borrado con éxito."
 msgid "Diagnostics"
 msgstr "Diagnósticos"
 
-msgid ""
-"Dont forget to restore default access values to Config and tmp directory."
+msgid "Dont forget to restore default access values to Config and tmp directory."
 msgstr "No olvide restaurar los valores de acceso por defecto a los directorios Config y tmp"
 
 msgid "Down"
@@ -148,9 +141,6 @@ msgstr[1] "Notificaciones"
 msgid "Notifier"
 msgstr "Notificador"
 
-msgid "pHKapa Admin panel: %s"
-msgstr "Panel pHKapa Admin: %s"
-
 msgid "pHKapa: %s"
 msgstr "pHKapa: %s"
 
@@ -189,9 +179,6 @@ msgstr "Búsqueda..."
 
 msgid "Start Session"
 msgstr "Inicio de sesión"
-
-msgid "Step 2 : Build database , load table values"
-msgstr "Paso 2: Creación de la base de datos, carga de tablas"
 
 msgid "Submit"
 msgstr "Enviar"

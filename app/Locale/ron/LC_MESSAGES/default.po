@@ -40,12 +40,6 @@ msgstr "Aplicație offline"
 msgid "Are you sure you want to delete # %s?"
 msgstr "Ești sigur că vrei să ștergi nº %s?"
 
-mmsgid "Cake is NOT able to connect to the database."
-msgstr "Cake nu se poate conecta la baza de date"
-
-msgid "Cake is able to connect to the database."
-msgstr "Cake se poate conecta la baza de date"
-
 msgid "Check load data option to insert dafault values to action types, activities, categories, causes, origins, processes, suppliers and finaly some example users and their access configuration."
 msgstr "Elegir la opción de carga de datos para insertar valores por defecto para tipos de acción, actividades, categorías, causas, orígenes, procesos, proveedores y por último algunos usuarios de ejemplo con sus configuraciones de acceso."
 
@@ -70,8 +64,7 @@ msgstr "Șters cu succes"
 msgid "Diagnostics"
 msgstr "Diagnostice"
 
-msgid ""
-"Dont forget to restore default access values to Config and tmp directory."
+msgid "Dont forget to restore default access values to Config and tmp directory."
 msgstr "Nu uita să restaurezi accesul implicit la Config și la directorul tmp"
 
 msgid "Down"
@@ -148,9 +141,6 @@ msgstr[1] "Notificări"
 msgid "Notifier"
 msgstr "Notificator"
 
-msgid "pHKapa Admin panel: %s"
-msgstr "Panou de administrare pHKapa: %s"
-
 msgid "pHKapa: %s"
 msgstr "pHKapa: %s"
 
@@ -189,9 +179,6 @@ msgstr "Caută..."
 
 msgid "Start Session"
 msgstr "Inițiază sesiunea"
-
-msgid "Step 2 : Build database , load table values"
-msgstr "Pasul 2: Crearea bazei de date, încărcarea valorilor în tabele"
 
 msgid "Submit"
 msgstr "Transmite"
