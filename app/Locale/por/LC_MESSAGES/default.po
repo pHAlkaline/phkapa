@@ -47,9 +47,6 @@ msgstr "Versão Framework CakePHP %s < %s"
 msgid "CakePhp version %s >= %s"
 msgstr "Versão Framework CakePHP %s >= %s"
 
-msgid "Click here to begin installation"
-msgstr "Inicie aqui a sua instalação"
-
 msgid "Could not be deleted."
 msgstr "Não foi possível apagar."
 
@@ -107,9 +104,6 @@ msgstr "Grupo / Utilizador"
 msgid "Id"
 msgstr ""
 
-msgid "Installation cannot continue as minimum requirements are not found."
-msgstr "A instalação não pode continuar, requisitos minimos não foram encontrados."
-
 msgid "Invalid email"
 msgstr "Email inválido"
 
@@ -160,12 +154,6 @@ msgstr "pHKapa não consegue ligação à base de dados"
 msgid "pHKapa: %s"
 msgstr "pHKapa: %s"
 
-msgid "PHP version %s < 5.2"
-msgstr "Versão PHP %s < 5.2"
-
-msgid "PHP version %s > 5.2"
-msgstr "Versão PHP %s > 5.2"
-
 msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
 msgstr "Página %page% de %pages%, listado %current% de %count% no total, inicio no %start%, fim no %end%"
 
@@ -190,12 +178,6 @@ msgstr "Lido"
 msgid "Record"
 msgstr "Registo"
 
-msgid "Rename config/database.php.default to config/database.php"
-msgstr "Renomear config/database.php.default para config/database.php"
-
-msgid "Resources"
-msgstr "Recursos"
-
 msgid "Saved with success."
 msgstr "Gravado com sucesso."
 
@@ -207,9 +189,6 @@ msgstr "Iniciar Sessão"
 
 msgid "Submit"
 msgstr "Submeter"
-
-msgid "The %s is being used for caching. To change the config edit APP/config/core.php "
-msgstr "%s está a ser usado para caching. Para alterar a configuração editar APP/config/core.php "
 
 msgid "This application is now on maintenance mode, back soon as possible!"
 msgstr "A Aplicação encontra-se em modo de manutenção, regressa em breve!"
@@ -242,33 +221,6 @@ msgstr "Ver %s"
 
 msgid "Yes"
 msgstr "Sim"
-
-msgid "Your Config directory is NOT writable."
-msgstr "A directoria Config não tem permisão de escrita."
-
-msgid "Your Config directory is writable."
-msgstr "A directoria Config tem permisão de escrita."
-
-msgid "Your Config/core.php file is NOT writable."
-msgstr "A ficheiro Config/core.php não tem permisão de escrita."
-
-msgid "Your Config/core.php file is writable."
-msgstr "A ficheiro Config/core.php tem permisão de escrita."
-
-msgid "Your cache is NOT working. Please check the settings in APP/config/core.php"
-msgstr "O sistema de cache está a funcionar. verifique as configurações em APP/config/core.php"
-
-msgid "Your database configuration file is NOT present."
-msgstr "O ficheiro de configuração para a base de dados não foi encontrado."
-
-msgid "Your database configuration file is present."
-msgstr "O ficheiro de configuração para a base de dados foi encontrado."
-
-msgid "Your tmp directory is NOT writable."
-msgstr "A directoria tmp não permite escrita."
-
-msgid "Your tmp directory is writable."
-msgstr "A directoria tmp tem permisão de escrita"
 
 msgid "Plugin not found, this Plugin is available to donors, contributors or service clients."
 msgstr "Plugin não encontrado , este Plugin está disponível apenas para doadores , contribuintes ou clientes."

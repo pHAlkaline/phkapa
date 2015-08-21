@@ -44,15 +44,6 @@ msgstr ""
 msgid "Cake is able to connect to the database."
 msgstr ""
 
-msgid "CakePHP version %s < %s"
-msgstr ""
-
-msgid "CakePhp version %s >= %s"
-msgstr ""
-
-msgid "Click here to begin installation"
-msgstr ""
-
 msgid "Could not be deleted."
 msgstr ""
 
@@ -104,9 +95,6 @@ msgstr ""
 msgid "Id"
 msgstr ""
 
-msgid "Installation cannot continue as minimum requirements are not found."
-msgstr ""
-
 msgid "Invalid email"
 msgstr ""
 
@@ -154,12 +142,6 @@ msgstr ""
 msgid "pHKapa: %s"
 msgstr ""
 
-msgid "PHP version %s < 5.2"
-msgstr ""
-
-msgid "PHP version %s > 5.2"
-msgstr ""
-
 msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
 msgstr ""
 
@@ -184,12 +166,6 @@ msgstr ""
 msgid "Record"
 msgstr ""
 
-msgid "Rename config/database.php.default to config/database.php"
-msgstr ""
-
-msgid "Resources"
-msgstr ""
-
 msgid "Saved with success."
 msgstr ""
 
@@ -200,9 +176,6 @@ msgid "Start Session"
 msgstr ""
 
 msgid "Submit"
-msgstr ""
-
-msgid "The %s is being used for caching. To change the config edit APP/config/core.php "
 msgstr ""
 
 msgid "This application is now on maintenance mode, back soon as possible!"
@@ -235,33 +208,6 @@ msgid "View %s"
 msgstr ""
 
 msgid "Yes"
-msgstr ""
-
-msgid "Your Config directory is NOT writable."
-msgstr ""
-
-msgid "Your Config directory is writable."
-msgstr ""
-
-msgid "Your Config/core.php file is NOT writable."
-msgstr ""
-
-msgid "Your Config/core.php file is writable."
-msgstr ""
-
-msgid "Your cache is NOT working. Please check the settings in APP/config/core.php"
-msgstr ""
-
-msgid "Your database configuration file is NOT present."
-msgstr ""
-
-msgid "Your database configuration file is present."
-msgstr ""
-
-msgid "Your tmp directory is NOT writable."
-msgstr ""
-
-msgid "Your tmp directory is writable."
 msgstr ""
 
 msgid "Plugin not found, this Plugin is available to donors, contributors or service clients."

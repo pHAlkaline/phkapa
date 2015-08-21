@@ -46,24 +46,8 @@ msgstr "Cake nu se poate conecta la baza de date"
 msgid "Cake is able to connect to the database."
 msgstr "Cake se poate conecta la baza de date"
 
-msgid "CakePHP version %s < %s"
-msgstr "Versiunea CakePHP %s < %s"
-
-msgid "CakePhp version %s >= %s"
-msgstr "Versiunea CakePHP %s >= %s"
-
-msgid ""
-"Check load data option to insert dafault values to action types, activities, "
-"categories, causes, origins, processes, suppliers and finaly some example "
-"users and their access configuration."
-msgstr ""
-"Elegir la opción de carga de datos para insertar valores por defecto para "
-"tipos de acción, actividades, categorías, causas, orígenes, procesos, "
-"proveedores y por último algunos usuarios de ejemplo con sus configuraciones "
-"de acceso."
-
-msgid "Click here to begin installation"
-msgstr "Click aici pentru a începe instalarea"
+msgid "Check load data option to insert dafault values to action types, activities, categories, causes, origins, processes, suppliers and finaly some example users and their access configuration."
+msgstr "Elegir la opción de carga de datos para insertar valores por defecto para tipos de acción, actividades, categorías, causas, orígenes, procesos, proveedores y por último algunos usuarios de ejemplo con sus configuraciones de acceso."
 
 msgid "Could not be deleted."
 msgstr "Nu poate fi șters."
@@ -120,10 +104,6 @@ msgstr "Ajutor"
 msgid "Id"
 msgstr "Id"
 
-msgid "Installation cannot continue as minimum requirements are not found."
-msgstr ""
-"Instalarea nu poate continua deoarece cerințele minime nu sunt îndeplinite"
-
 msgid "Invalid email"
 msgstr "Email incorect"
 
@@ -174,18 +154,8 @@ msgstr "Panou de administrare pHKapa: %s"
 msgid "pHKapa: %s"
 msgstr "pHKapa: %s"
 
-msgid "PHP version %s < 5.2"
-msgstr "Versiunea de PHP %s < 5.2"
-
-msgid "PHP version %s > 5.2"
-msgstr "Versiunea de PHP %s > 5.2"
-
-msgid ""
-"Page %page% of %pages%, showing %current% records out of %count% total, "
-"starting on record %start%, ending on %end%"
-msgstr ""
-"Página %page% din %pages%, care arată %current% de înregistrări din total "
-"%count%, începând de la %start% și terminând la %end%"
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr "Página %page% din %pages%, care arată %current% de înregistrări din total %count%, începând de la %start% și terminând la %end%"
 
 msgid "Parent node"
 msgstr "Nodul părinte"
@@ -208,12 +178,6 @@ msgstr "Citește"
 msgid "Record"
 msgstr "Inregistrează"
 
-msgid "Rename config/database.php.default to config/database.php"
-msgstr "Redenumește config/database.php.default în config/database.php"
-
-msgid "Resources"
-msgstr "Resurse"
-
 msgid "Root"
 msgstr "Rădăcină"
 
@@ -231,13 +195,6 @@ msgstr "Pasul 2: Crearea bazei de date, încărcarea valorilor în tabele"
 
 msgid "Submit"
 msgstr "Transmite"
-
-msgid ""
-"The %s is being used for caching. To change the config edit APP/config/core."
-"php "
-msgstr ""
-"%s a post utilizat pentru caching.Pentru a schimba configurația editați "
-"fișierul  APP/config/core.php"
 
 msgid "Time Zone"
 msgstr "Fusul orar"
@@ -273,33 +230,6 @@ msgstr "Vizualizare %s"
 
 msgid "Yes"
 msgstr "Da"
-
-msgid "Your Config directory is NOT writable."
-msgstr "Directorul de configurare NU are permisiunea de scriere"
-
-msgid "Your Config directory is writable."
-msgstr "Directorul de configurare ARE permisiunea de scriere"
-
-msgid "Your Config/core.php file is NOT writable."
-msgstr "Config/core.php NU are permisiunea de scriere"
-
-msgid "Your Config/core.php file is writable."
-msgstr "Config/core.php ARE permisiunea de scriere"
-
-msgid ""
-"Your cache is NOT working. Please check the settings in APP/config/core.php"
-msgstr ""
-"Cache-ul nu funcționează. vă rog verificați setările din fișierul APP/config/"
-"core.php"
-
-msgid "Your database configuration file is NOT present."
-msgstr "Fișierul de configurare al bazei de date NU este prezent"
-
-msgid "Your database configuration file is present."
-msgstr "Fișierul de configurare al bazei de date este prezent"
-
-msgid "Your tmp directory is NOT writable."
-msgstr "Directorul tmp nu poate fi scris"
 
 msgid "Print report not found."
 msgstr "Raportul printat nu a fost găsit"
