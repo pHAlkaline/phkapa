@@ -38,19 +38,10 @@ msgstr ""
 msgid "Are you sure you want to delete # %s?"
 msgstr ""
 
-msgid "Cake is NOT able to connect to the database."
-msgstr ""
-
-msgid "Cake is able to connect to the database."
-msgstr ""
-
 msgid "Could not be deleted."
 msgstr ""
 
 msgid "Could not be saved. Please, try again."
-msgstr ""
-
-msgid "Could not load database: %s"
 msgstr ""
 
 msgid "Created"

@@ -26,9 +26,6 @@ msgstr "Ativo"
 msgid "Add %s"
 msgstr "Adicionar %s"
 
-msgid "Admin panel: %s"
-msgstr "Painel de Administração: %s"
-
 msgid "Administration"
 msgstr "Administração"
 
@@ -46,9 +43,6 @@ msgstr "Não foi possível apagar."
 
 msgid "Could not be saved. Please, try again."
 msgstr "Não foi possível gravar. Por favor tente outra vez."
-
-msgid "Could not load database: %s"
-msgstr "Não foi possível carregar a base de dados: %s"
 
 msgid "Created"
 msgstr "Criado"
@@ -79,9 +73,6 @@ msgstr "Editar Perfil"
 
 msgid "Email"
 msgstr ""
-
-msgid "Email settings file already exists"
-msgstr "Ficheiro de configuração email.php já existe"
 
 msgid "Empty"
 msgstr "Este campo não pode ser vazio"
@@ -135,12 +126,6 @@ msgstr[1] "Notificações"
 
 msgid "Notifier"
 msgstr "Notificador"
-
-msgid "pHKapa Admin panel: %s"
-msgstr "pHKapa Painel de Administração: %s"
-
-msgid "pHKapa is NOT able to connect to the database."
-msgstr "pHKapa não consegue ligação à base de dados"
 
 msgid "pHKapa: %s"
 msgstr "pHKapa: %s"

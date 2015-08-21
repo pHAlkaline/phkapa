@@ -26,9 +26,6 @@ msgstr "Activo"
 msgid "Add %s"
 msgstr "Adicionar %s"
 
-msgid "Admin panel: %s"
-msgstr "Painel de Administração: %s"
-
 msgid "Administration"
 msgstr "Administração"
 
@@ -38,29 +35,14 @@ msgstr "Applicação em Manutenção"
 msgid "Are you sure you want to delete # %s?"
 msgstr "Tem a certeza que quer apagar # %s?"
 
-msgid "Cake is able to connect to the database."
-msgstr "pHKapa está ligado à base de dados"
-
-msgid "CakePHP version %s < %s"
-msgstr "Versão Framework CakePHP %s < %s"
-
-msgid "CakePhp version %s >= %s"
-msgstr "Versão Framework CakePHP %s >= %s"
-
 msgid "Could not be deleted."
 msgstr "Não foi possível apagar."
 
 msgid "Could not be saved. Please, try again."
 msgstr "Não foi possível gravar. Por favor tente outra vez."
 
-msgid "Could not load database: %s"
-msgstr "Não foi possível carregar a base de dados: %s"
-
 msgid "Created"
 msgstr "Criado"
-
-msgid "Database connection file already exists"
-msgstr "Ficheiro de configuração de acesso à base de dados já existe"
 
 msgid "Delete"
 msgstr "Apagar"
@@ -144,12 +126,6 @@ msgstr[1] "Notificações"
 
 msgid "Notifier"
 msgstr "Notificador"
-
-msgid "pHKapa Admin panel: %s"
-msgstr "pHKapa Painel de Administração: %s"
-
-msgid "pHKapa is NOT able to connect to the database."
-msgstr "pHKapa não consegue ligação à base de dados"
 
 msgid "pHKapa: %s"
 msgstr "pHKapa: %s"
