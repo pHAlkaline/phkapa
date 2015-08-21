@@ -5,12 +5,12 @@ App::uses('CakeEmail', 'Network/Email');
 App::uses('Notification', 'Model');
 
 /**
- * PHKAPA Component
+ * pHKapa Component
  *
  * PHP version 5
  *
  * @category Component
- * @package  PHKAPA.app.Controller.Component
+ * @package  pHKapa.app.Controller.Component
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.eu>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -171,9 +171,9 @@ class NotifyComponent extends Component {
         $Email->template('notification','phkapa')->emailFormat('html');
         $Email->viewVars(array('notification' => $notification,'email'=>$email));
         // uncoment these lines to get more control over sender from and subject!!
-        //$Email->sender('noreply-contacta@phkapa.net', 'CONTACTA - PHKAPA');
-        //$Email->from(array('noreply-contacta@phkapa.net' => 'CONTACTA - PHKAPA'));
-        //$Email->subject(__('PHKAPA').' '.__n('Notification', 'Notifications', 1));
+        //$Email->sender('noreply-contacta@phkapa.net', 'CONTACTA - pHKapa');
+        //$Email->from(array('noreply-contacta@phkapa.net' => 'CONTACTA - pHKapa'));
+        //$Email->subject(__('pHKapa').' '.__n('Notification', 'Notifications', 1));
         
         $Email->to($email);
         $Email->send();

@@ -3,7 +3,7 @@
 
     <div class="grid_16" style="text-align:center">
 
-        <div id="PHKAPAHome" ><!--img src="/img/PHKAPA_big.png" alt="PHKAPA"  /--></div>
+        <div id="PHKAPAHome" ><!--img src="/img/PHKAPA_big.png" alt="pHKapa"  /--></div>
 
     </div>
     <div class="clear"></div>

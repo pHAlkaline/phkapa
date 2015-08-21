@@ -1,6 +1,6 @@
 The MIT License
 
-PHKAPA(tm) : (http://phkapa.net)
+pHKapa(tm) : (http://phkapa.net)
 Copyright (c) , pHAlkaline
 
 Permission is hereby granted, free of charge, to any person obtaining a

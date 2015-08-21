@@ -72,11 +72,11 @@
                             <?php
                             if ($connected && $connected->isConnected()):
                                 echo '<span class="notice success">';
-                                echo __('PHKAPA is able to connect to the database.');
+                                echo __('pHKapa is able to connect to the database.');
                                 echo '</span>';
                             else:
                                 echo '<span class="notice">';
-                                echo __('PHKAPA is NOT able to connect to the database.');
+                                echo __('pHKapa is NOT able to connect to the database.');
                                 echo '<br /><br />';
                                 echo $connectionError->getMessage();
                                 echo '</span>';

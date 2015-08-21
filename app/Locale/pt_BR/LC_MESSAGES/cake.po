@@ -1,4 +1,4 @@
-# LANGUAGE translation of PHKAPA Application
+# LANGUAGE translation of pHKapa Application
 # Copyright pHAlkaline <contact@phalkaline.eu>
 #
 #, fuzzy

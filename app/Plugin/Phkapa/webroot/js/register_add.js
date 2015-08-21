@@ -18,16 +18,16 @@ $(function(){
         //$('#TicketActivityId').attr("disabled", "disabled");
         //$('#TicketCategoryId').attr("disabled", "disabled");
         var href = $(location).attr('href');
-        var PHKAPAurl='';
+        var pHKapaurl='';
 	if (href.lastIndexOf("register")!=-1){
-            PHKAPAurl = href.slice(0, href.lastIndexOf("register"));
+            pHKapaurl = href.slice(0, href.lastIndexOf("register"));
         }
         if (href.lastIndexOf("review")!=-1){
-            PHKAPAurl = href.slice(0, href.lastIndexOf("review"));
+            pHKapaurl = href.slice(0, href.lastIndexOf("review"));
         }
         
         //alert(document.baseURI);
-        //alert(PHKAPAurl+"/phkapa/register/update_by_process");
+        //alert(pHKapaurl+"/phkapa/register/update_by_process");
         //console.log(x);
                 
         $.ajax({
@@ -45,7 +45,7 @@ $(function(){
                 $("#LoadProcessData").css('display', 'none');
             },
             type:"post",
-            url:PHKAPAurl+"register/update_by_process"
+            url:pHKapaurl+"register/update_by_process"
         });
         return false;
     });

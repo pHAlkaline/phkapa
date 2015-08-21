@@ -1,4 +1,4 @@
-# LANGUAGE translation of PHKAPA Application
+# LANGUAGE translation of pHKapa Application
 # Copyright pHAlkaline <contact@phalkaline.eu>
 #
 #, fuzzy
@@ -77,9 +77,6 @@ msgstr ""
 msgid "Diagnostics"
 msgstr ""
 
-msgid "Dont forget to restore default access values to Config and tmp directory."
-msgstr ""
-
 msgid "Down"
 msgstr ""
 
@@ -102,12 +99,6 @@ msgid "Enable change password"
 msgstr ""
 
 msgid "End Session"
-msgstr ""
-
-msgid "From Email"
-msgstr ""
-
-msgid "From Name"
 msgstr ""
 
 msgid "Id"
@@ -157,10 +148,10 @@ msgstr[1] ""
 msgid "Notifier"
 msgstr ""
 
-msgid "PHKAPA Admin panel: %s"
+msgid "pHKapa Admin panel: %s"
 msgstr ""
 
-msgid "PHKAPA: %s"
+msgid "pHKapa: %s"
 msgstr ""
 
 msgid "PHP version %s < 5.2"
@@ -205,16 +196,7 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-msgid "Setup database connection"
-msgstr ""
-
-msgid "Setup notification email"
-msgstr ""
-
 msgid "Start Session"
-msgstr ""
-
-msgid "Subject"
 msgstr ""
 
 msgid "Submit"

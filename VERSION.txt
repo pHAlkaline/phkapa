@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // +--------------------------------------------------------------------------------------------+ //
-// PHKAPA Version
+// pHKapa Version
 //
-// Holds a static string representing the current version of PHKAPA
+// Holds a static string representing the current version of pHKapa
 //
-// PHKAPA(tm) : Nonconformity management software for quality assurance. 
+// pHKapa(tm) : Nonconformity management software for quality assurance. 
 // Allows to generate action (CAPA) requests that routes through register, review, plan ( root cause , action plan) , and verification stages. 
 // It provides effective mechanisms to determinate the source and cost of problems.
 // Copyright (c) pHAlkaline (http://phalkaline.eu)
@@ -14,7 +14,7 @@
 //
 // @copyright     Copyright (c)  pHAlkaline (http://phalkaline.eu)
 // @link          http://phkapa.net
-// @since         PHKAPA v 0.0.1
+// @since         pHKapa v 0.0.1
 // @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
 // +--------------------------------------------------------------------------------------------+ //
 ////////////////////////////////////////////////////////////////////////////////////////////////////
