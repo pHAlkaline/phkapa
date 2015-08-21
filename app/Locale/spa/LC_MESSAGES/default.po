@@ -46,15 +46,6 @@ msgstr "Cake NO puede conectarse a la base de datos."
 msgid "Cake is able to connect to the database."
 msgstr "Cake puede conectarse a la base de datos."
 
-msgid "CakePHP version %s < %s"
-msgstr "Versión de CakePHP %s < %s"
-
-msgid "CakePhp version %s >= %s"
-msgstr "Versión de CakePHP %s >= %s"
-
-msgid "Click here to begin installation"
-msgstr "Haga click aquí para comenzar la instalación"
-
 msgid "Could not be deleted."
 msgstr "No se puede borrar."
 
@@ -113,9 +104,6 @@ msgstr "Ayuda"
 msgid "Id"
 msgstr "Id"
 
-msgid "Installation cannot continue as minimum requirements are not found."
-msgstr "La instalación no puede continuar al no cumplir con los requerimientos mínimos"
-
 msgid "Invalid email"
 msgstr "Email incorrecto"
 
@@ -166,12 +154,6 @@ msgstr "Panel pHKapa Admin: %s"
 msgid "pHKapa: %s"
 msgstr "pHKapa: %s"
 
-msgid "PHP version %s < 5.2"
-msgstr "Versión de PHP %s < 5.2"
-
-msgid "PHP version %s > 5.2"
-msgstr "Versión de PHP %s > 5.2"
-
 msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
 msgstr "Página %page% de %pages%, mostrando %current% registros de %count%, desde el registro %start% al registro %end%"
 
@@ -196,12 +178,6 @@ msgstr "Leer"
 msgid "Record"
 msgstr "Registro"
 
-msgid "Rename config/database.php.default to config/database.php"
-msgstr "Renombrar config/database.php.default a config/database.php"
-
-msgid "Resources"
-msgstr "Recursos"
-
 msgid "Root"
 msgstr "Raiz"
 
@@ -219,9 +195,6 @@ msgstr "Paso 2: Creación de la base de datos, carga de tablas"
 
 msgid "Submit"
 msgstr "Enviar"
-
-msgid "The %s is being used for caching. To change the config edit APP/config/core.php "
-msgstr "%s está siendo utilizado para almacenamiento en caché . Para cambiar la configuración editar APP/config/core.php"
 
 msgid "Time Zone"
 msgstr "Zona Horaria"
@@ -257,30 +230,6 @@ msgstr "Ver %s"
 
 msgid "Yes"
 msgstr "Si"
-
-msgid "Your Config directory is NOT writable."
-msgstr "Su directorio Config NO tiene permiso de escritura"
-
-msgid "Your Config directory is writable."
-msgstr "Su directorio Config tiene permiso de escritura"
-
-msgid "Your Config/core.php file is NOT writable."
-msgstr "Su Config/core.php NO tiene permiso de escritura."
-
-msgid "Your Config/core.php file is writable."
-msgstr "Su Config/core.php tiene permiso de escritura."
-
-msgid "Your cache is NOT working. Please check the settings in APP/config/core.php"
-msgstr "Su cache NO está funcionando. Por favor compruebe la configuración en APP/config/core.php"
-
-msgid "Your database configuration file is NOT present."
-msgstr "Su fichero de configuración de base de datos NO está presente"
-
-msgid "Your database configuration file is present."
-msgstr "Su fichero de configuración de base de datos está presente"
-
-msgid "Your tmp directory is NOT writable."
-msgstr "Su directorio tmp NO tiene permiso de escritura"
 
 msgid "Print report not found."
 msgstr "Abrir informe no se encuentra."

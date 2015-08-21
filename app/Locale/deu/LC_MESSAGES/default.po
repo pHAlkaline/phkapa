@@ -44,15 +44,6 @@ msgstr ""
 msgid "Cake is able to connect to the database."
 msgstr ""
 
-msgid "CakePHP version %s < %s"
-msgstr ""
-
-msgid "CakePhp version %s >= %s"
-msgstr ""
-
-msgid "Click here to begin installation" 	 	
-msgstr ""
-
 msgid "Could not be deleted."
 msgstr "Löschen fehlgeschlagen."
 
@@ -101,9 +92,6 @@ msgstr "Abmelden"
 msgid "Id"
 msgstr "ID"
 
-msgid "Installation cannot continue as minimum requirements are not found."
-msgstr "Mindestanforderungen nicht erfüllt. Installation wird angehalten."
-
 msgid "Invalid email"
 msgstr "Ungültige Email"
 
@@ -151,12 +139,6 @@ msgstr "pHKapa verwalten: %s"
 msgid "pHKapa: %s"
 msgstr "pHKapa: %s"
 
-msgid "PHP version %s < 5.2"
-msgstr ""
-
-msgid "PHP version %s > 5.2"
-msgstr ""
-
 msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
 msgstr ""
 
@@ -181,12 +163,6 @@ msgstr "Lesen"
 msgid "Record"
 msgstr "Vorgang"
 
-msgid "Rename config/database.php.default to config/database.php"
-msgstr ""
-
-msgid "Resources"
-msgstr "Ressourcen"
-
 msgid "Saved with success."
 msgstr "Gespeichert."
 
@@ -198,9 +174,6 @@ msgstr "Anmelden"
 
 msgid "Submit"
 msgstr "Eintragen"
-
-msgid "The %s is being used for caching. To change the config edit APP/config/core.php "
-msgstr ""
 
 msgid "This application is now on maintenance mode, back soon as possible!"
 msgstr "pHKapa ist im Wartungsmodus. Wir sind bald wieder da!"
@@ -233,33 +206,6 @@ msgstr "%s anzeigen"
 
 msgid "Yes"
 msgstr "Ja"
-
-msgid "Your Config directory is NOT writable."
-msgstr "CONFIG-Verzeichnis ist NICHT beschreibbar."
-
-msgid "Your Config directory is writable."
-msgstr "CONFIG-Verzeichnis ist beschreibbar."
-
-msgid "Your Config/core.php file is NOT writable."
-msgstr "Config/core.php ist NICHT beschreibbar."
-
-msgid "Your Config/core.php file is writable."
-msgstr "Config/core.php ist beschreibbar."
-
-msgid "Your cache is NOT working. Please check the settings in APP/config/core.php"
-msgstr ""
-
-msgid "Your database configuration file is NOT present."
-msgstr ""
-
-msgid "Your database configuration file is present."
-msgstr ""
-
-msgid "Your tmp directory is NOT writable."
-msgstr "TMP-Verzeichnis ist NICHT beschreibbar."
-
-msgid "Your tmp directory is writable."
-msgstr "TMP-Verzeichnis ist beschreibbar."
 
 msgid "Plugin not found, this Plugin is available to donors, contributors or service clients."
 msgstr "Plugin nicht gefunden , ist dies Plugin zur Verfügung, um Spender , Mitwirkende oder Service Clients."
