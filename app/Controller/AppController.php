@@ -32,7 +32,8 @@ class AppController extends Controller {
         'Notify', 
         'Auth' => array(
             'loginAction' => array('admin' => false, 'plugin' => false, 'controller' => 'users', 'action' => 'login')
-            )
+            ),
+        'DebugKit.Toolbar',
         );
     
 
@@ -52,8 +53,6 @@ class AppController extends Controller {
      * @throws 
      */
     public function beforeFilter() {
-        //parent::beforeFilter();
-        //$this->Auth->authenticate = array('Simple');
         $this->Auth->logoutRedirect = array('admin' => false, 'plugin' => false, 'controller' => 'pages', 'action' => 'display');
         $this->Auth->loginRedirect = array('admin' => false, 'plugin' => 'phkapa', 'controller' => 'query', 'action' => 'index');
         $this->Auth->allow('display', 'login', 'logout','edit_profile','secure','notifications');
