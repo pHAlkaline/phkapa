@@ -1,11 +1,13 @@
 <h2>&nbsp;</h2>
-<div class="grid_16 actionsContainer">
+<div class="grid_16" style="text-align:center" id="pHKapaHome">
+    <div>
 
-    <div class="grid_16" style="text-align:center">
-
-        <div id="PHKAPAHome" ><!--img src="/img/PHKAPA_big.png" alt="pHKapa"  /--></div>
-
+        <?php echo $this->Html->link($this->Html->image('pHKapa_big.png', array('alt' => 'pHKapa')), Router::url('/phkapa', true), array('style' => '', 'class' => 'zoom logo2', 'target' => '_self', 'escape' => false)); ?>
     </div>
-    <div class="clear"></div>
+    <!--div id="zoomContainer">
+        
+        
+
+    </div-->
 
 </div>

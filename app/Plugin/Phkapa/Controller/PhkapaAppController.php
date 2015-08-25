@@ -27,7 +27,6 @@ class PhkapaAppController extends AppController {
 
         if (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {
             $this->set('title_for_layout', __d('phkapa', 'pHKapa') . ' - ' . __d('phkapa', 'Administration'));
-            $this->set('admin_root', 'phkapa');
         } else {
             $this->set('title_for_layout', __d('phkapa', 'pHKapa'));
         }

@@ -39,7 +39,6 @@ class AccessAppController extends AppController {
         $translationDomain='access';
         $this->set(compact('menuItems','translationDomain'));
         $this->set('title_for_layout', __d('access','Access Setup'));
-        $this->set('admin_root', '');
         $this->set('user_at_string', __n('User','Users',1) . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __d('access', 'Access Setup'));
     }
 

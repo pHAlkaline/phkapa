@@ -128,7 +128,7 @@
         <div id="header">
 
             <h1>
-                <?php echo $this->Html->link($this->Html->image('pHKapalogo2.png', array('alt' => 'pHKapa')), Router::url('/admin/' . $admin_root, true), array('class' => 'zoom', 'target' => '_self', 'escape' => false)); ?>
+                <?php echo $this->Html->link($this->Html->image('pHKapalogo2.png', array('alt' => 'pHKapa')), Router::url('/', true), array('class' => 'zoom', 'target' => '_self', 'escape' => false)); ?>
 
             </h1>
 
