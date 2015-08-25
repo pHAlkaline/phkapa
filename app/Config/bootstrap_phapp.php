@@ -15,7 +15,7 @@
 /**
  * app Plugins
  */
-//CakePlugin::load('DebugKit');
+CakePlugin::load('DebugKit');
 
 
 /**

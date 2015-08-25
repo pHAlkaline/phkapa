@@ -207,6 +207,6 @@
             <div class="clear"></div>
         </div>
         <div style="text-align: center;">Copyright (c) pHAlkaline (<a href="http://phalkaline.eu" target="_blank">http://phalkaline.eu</a>)<div/>
-        <?php echo $this->element('sql_dump'); ?>
+        <?php //echo $this->element('sql_dump'); ?>
     </body>
 </html>
