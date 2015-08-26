@@ -15,9 +15,10 @@
 /**
  * app Plugins
  */
-//CakePlugin::load('PrintReport', array('bootstrap' => true, 'routes' => false));
-//CakePlugin::load('CsvView', array('bootstrap' => true, 'routes' => false));
-//CakePlugin::load('Install', array('bootstrap' => false, 'routes' => false));
+//CakePlugin::load('DebugKit');
+CakePlugin::load('PrintReport', array('bootstrap' => true, 'routes' => false));
+CakePlugin::load('CsvView', array('bootstrap' => true, 'routes' => false));
+CakePlugin::load('Install', array('bootstrap' => false, 'routes' => false));
 
 
 /**
