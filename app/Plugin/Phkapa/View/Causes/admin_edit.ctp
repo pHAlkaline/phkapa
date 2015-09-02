@@ -35,9 +35,10 @@
             echo $this->Form->input('name',array('label' => __d('phkapa','Name')));
             echo $this->Form->input('active',array('label' => __d('phkapa','Active')));
             echo $this->Form->input('Category',array('label' => __d('phkapa','Category')));
+            echo $this->Form->submit(__d('phkapa', 'Submit'));
             ?>
         </fieldset>
-        <?php echo $this->Form->end(__d('phkapa','Submit')); ?>
+        <?php echo $this->Form->end(); ?>
     </div>
 
 </div>

@@ -18,11 +18,10 @@ $this->html->script('user_edit', false);
             echo "<hr/>";
             echo $this->Form->input('edpassword', array('label' => __('Enable change password'),'type'=>'checkbox'));
             echo $this->Form->input('password',array('maxlength'=>'40','label' => __('Password'),'disabled'=>'disabled'));
-            
-           
+            echo $this->Form->submit(__( 'Submit'));
             ?>
         </fieldset>
-        <?php echo $this->Form->end(__('Submit')); ?>
+        <?php echo $this->Form->end(); ?>
     </div>
 
 </div>

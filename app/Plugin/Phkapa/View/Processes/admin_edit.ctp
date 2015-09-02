@@ -47,9 +47,10 @@
             echo $this->Form->input('Activity',array('label' => __d('phkapa','Activity')));
             echo $this->Form->input('Category',array('label' => __d('phkapa','Category')));
             echo $this->Form->input('User',array('label' => __d('phkapa','User')));
+            echo $this->Form->submit(__d('phkapa', 'Submit'));
             ?>
         </fieldset>
-        <?php echo $this->Form->end(__d('phkapa','Submit')); ?>
+        <?php echo $this->Form->end(); ?>
     </div>
 
 </div>
