@@ -37,18 +37,18 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-<?php echo $this->request->data['User']['id']; ?>
+                            <?php echo $this->request->data['User']['id']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                        if ($i % 2 == 0)
-                            echo $class;
-                        ?>><?php echo __d('phkapa', 'Name'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Name'); ?></dt>
                     <dd<?php
-                            if ($i++ % 2 == 0)
-                                echo $class;
-                            ?>>
-                    <?php echo $this->request->data['User']['name']; ?>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                            <?php echo $this->request->data['User']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -56,10 +56,10 @@
                         echo $class;
                     ?>><?php echo __d('phkapa', 'Username'); ?></dt>
                     <dd<?php
-                            if ($i++ % 2 == 0)
-                                echo $class;
+                    if ($i++ % 2 == 0)
+                        echo $class;
                     ?>>
-                    <?php echo $this->request->data['User']['username']; ?>
+                            <?php echo $this->request->data['User']['username']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -67,21 +67,21 @@
                         echo $class;
                     ?>><?php echo __d('phkapa', 'Email'); ?></dt>
                     <dd<?php
-                            if ($i++ % 2 == 0)
-                                echo $class;
+                    if ($i++ % 2 == 0)
+                        echo $class;
                     ?>>
-                    <?php echo $this->request->data['User']['email']; ?>
+                            <?php echo $this->request->data['User']['email']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Active'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Active'); ?></dt>
                     <dd<?php
-                            if ($i++ % 2 == 0)
-                                echo $class;
-                            ?>>
-<?php echo $this->Utils->yesOrNo($this->request->data['User']['active']); ?>
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                            <?php echo $this->Utils->yesOrNo($this->request->data['User']['active']); ?>
                         &nbsp;
                     </dd>
 
@@ -93,12 +93,13 @@
         <?php echo $this->Form->create('User'); ?>
         <fieldset class="ui-corner-all ui-widget-content" >
             <legend><?php echo __d('phkapa', 'Record') . ' ' . __d('phkapa', 'Process'); ?></legend>
-<?php
-echo $this->Form->input('id');
-echo $this->Form->input('Process', array('label' => __d('phkapa', 'Process')));
-?>
+            <?php
+            echo $this->Form->input('id');
+            echo $this->Form->input('Process', array('label' => __d('phkapa', 'Process')));
+            echo $this->Form->submit(__d('phkapa', 'Submit'));
+            ?>
         </fieldset>
-<?php echo $this->Form->end(__d('phkapa', 'Submit')); ?>
+        <?php echo $this->Form->end(); ?>
     </div>
 
 </div>

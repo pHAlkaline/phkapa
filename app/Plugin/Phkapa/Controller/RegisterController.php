@@ -90,7 +90,7 @@ class RegisterController extends PhkapaAppController {
      * @return void
      * @access public
      */
-    public function view($id = null) {
+    /*public function view($id = null) {
         if (!$id){
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
@@ -103,7 +103,7 @@ class RegisterController extends PhkapaAppController {
             $this->redirect(array('action' => 'index'));
         }
         $this->set('ticket', $ticket);
-    }
+    }*/
 
     /**
      * add

@@ -67,9 +67,10 @@
             echo $this->Form->input('close_user_id', array('label' => __d('phkapa', 'Closed By'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('modified', array('label' => __d('phkapa', 'Modified'), 'empty' => __d('phkapa', '(choose one)'), 'dateFormat' => 'DMY', 'minYear' => date('Y') - 1, 'maxYear' => date('Y') + 1));
             echo $this->Form->input('created', array('label' => __d('phkapa', 'Created'), 'empty' => __d('phkapa', '(choose one)'), 'dateFormat' => 'DMY', 'minYear' => date('Y') - 1, 'maxYear' => date('Y') + 1));
+            echo $this->Form->submit(__d('phkapa', 'Submit'));
             ?>
         </fieldset>
-        <?php echo $this->Form->end(__d('phkapa', 'Submit')); ?>
+        <?php echo $this->Form->end(); ?>
     </div>
     <div class="clear"></div>
     <?php

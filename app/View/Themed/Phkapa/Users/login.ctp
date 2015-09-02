@@ -13,8 +13,9 @@
                 <div><?php echo __('Time Zone'); ?>&nbsp;<?php echo Configure::read('Config.timezone'); ?></div>
             </div>
 
+            <?php echo $this->Form->submit(__('Start Session')); ?>
         </fieldset>
-        <?php echo $this->Form->end(__('Start Session')); ?>
+        <?php echo $this->Form->end(); ?>
     </div>
 
 </div>

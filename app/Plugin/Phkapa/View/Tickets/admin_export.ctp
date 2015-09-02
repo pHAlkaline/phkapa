@@ -43,9 +43,10 @@
 
         echo $this->html->div('input', $this->Form->label(__d('phkapa', 'Start Date')) . $this->Form->dateTime('startdate', $dateFormat = 'DMY', null, $attributes = array('value' => $begin, 'label' => __d('phkapa', 'Start Date'), 'empty' => false, 'minYear' => '2009', 'maxYear' => date('Y') + 1)));
         echo $this->html->div('input', $this->Form->label(__d('phkapa', 'End Date')) . $this->Form->dateTime('enddate', $dateFormat = 'DMY', /* $timeFormat = '24' */ null, $attributes = array('value' => $end, 'label' => __d('phkapa', 'End Date'), 'empty' => false, 'minYear' => '2009', 'maxYear' => date('Y') + 1)));
-        ?>
-    </fieldset>
-    <?php echo $this->Form->end(__d('phkapa','Download File')); ?>
+        echo $this->Form->submit(__d('phkapa', 'Submit'));
+            ?>
+        </fieldset>
+        <?php echo $this->Form->end(); ?>
 </div>
 <div class="clear"></div>
 

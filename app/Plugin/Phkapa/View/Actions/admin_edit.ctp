@@ -41,9 +41,10 @@
             echo $this->Form->input('effectiveness_notes',array('label' => __d('phkapa','Effectiveness Notes')));
             echo $this->Form->input('modified', array('label' => __d('phkapa','Modified'),'empty' => __d('phkapa','(choose one)'), 'dateFormat' => 'DMY', 'maxYear' => date('Y')));
             echo $this->Form->input('created', array('label' => __d('phkapa','Created'),'empty' => __d('phkapa','(choose one)'), 'dateFormat' => 'DMY', 'maxYear' => date('Y')));
+            echo $this->Form->submit(__d('phkapa', 'Submit'));
             ?>
         </fieldset>
-        <?php echo $this->Form->end(__d('phkapa','Submit')); ?>
+        <?php echo $this->Form->end(); ?>
     </div>
 
 </div>

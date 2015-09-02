@@ -27,9 +27,10 @@
             echo $this->Form->input('id');
             echo $this->Form->input('alias', array('label' => __('Name')));
             echo $this->Form->input('parent_id',array('label' => __('Parent node')));
+            echo $this->Form->submit(__('Submit'));
             ?>
         </fieldset>
-            <?php echo $this->Form->end(__('Submit')); ?>
+        <?php echo $this->Form->end(); ?>
     </div>
 
 </div>
