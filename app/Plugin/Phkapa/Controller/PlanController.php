@@ -160,6 +160,7 @@ class PlanController extends PhkapaAppController {
         if (isset($this->request->data['Action']['ticket_id'])) {
             $ticketId = $this->request->data['Action']['ticket_id'];
         }
+        $this->Ticket->recursive = 1;
         $ticket = $this->Ticket->find('first', array(
             'conditions' => array(
                 'Ticket.workflow_id' => '3',
@@ -218,7 +219,7 @@ class PlanController extends PhkapaAppController {
         }
 
         $this->_setupModel();
-
+        $this->Ticket->recursive = 1;
         $ticket = $this->Ticket->find('first', array(
             'conditions' => array(
                 'Ticket.workflow_id' => '3',

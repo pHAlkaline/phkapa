@@ -320,7 +320,38 @@ if ($ticket['Workflow']['id'] < 5) {
             </div>
         </div>
     </div>
+    <br/>
+    <?php
+    if (CakePlugin::loaded('Feedback')) {
+        ?>
+        <div class="ui-corner-all ui-widget" id="related-comment">
+            <h2>
+                <a href="#" id="toggle-related-comments"><?php echo __d('phkapa', 'Related') . ' - ' . __dn('phkapa', 'Comment', 'Comments', 2) . ' (' . count($ticket['Comment']) . ')'; ?></a>
+            </h2>
+            <div class="block ui-widget-content" id="related-records">
+                <div class="related">
+                    <?php echo $this->Comments->display_for($ticket, array('model' => 'Phkapa.Ticket')); ?>
+                </div>
+            </div>
 
+
+        </div>
+    <?php } else { ?>
+        <div class="ui-corner-all ui-widget" id="related-comment">
+            <h2>
+                <a href="#" id="toggle-related-comments"><?php echo __d('phkapa', 'Related') . ' - ' . __dn('phkapa', 'Comment', 'Comments', 2); ?></a>
+            </h2>
+            <div class="block ui-widget-content" id="related-records">
+                <div class="related">
+                    <?php
+                    echo $this->element('pluginNotFound');
+                    ?>
+                </div>
+            </div>
+
+
+        </div>           
+    <?php } ?>
     <div class="ui-corner-all ui-widget" id="related">
         <h2>
             <a href="#" id="toggle-related-records"><?php echo __d('phkapa', 'Related') . ' - ' . __dn('phkapa', 'Action', 'Actions', 2) . ' (' . count($ticket['Action']) . ')' . ' - ' . __dn('phkapa', 'Ticket', 'Tickets', 2) . ' (' . count($ticket['Children']) . ')'; ?></a>
@@ -449,12 +480,12 @@ if ($ticket['Workflow']['id'] < 5) {
                                 <td class="nowrap"><?php echo $children['Process']['name']; ?></td>
                                 <td><?php echo $children['Category']['name']; ?></td>
                                 <td><?php
-                    echo $this->Text->truncate(
-                            $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
-                        'ellipsis' => '...',
-                        'exact' => false
-                    ));
-                            ?>&nbsp;</td>
+                                    echo $this->Text->truncate(
+                                            $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
+                                        'ellipsis' => '...',
+                                        'exact' => false
+                                    ));
+                                    ?>&nbsp;</td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $children['created']); ?>&nbsp;</td>
                                 <td><?php echo $children['Workflow']['name']; ?></td>
                                 <td class="actions">
@@ -466,7 +497,7 @@ if ($ticket['Workflow']['id'] < 5) {
                                 </td>
                             </tr>
                         <?php endforeach; ?>
-                        <?php //echo '<tfoot class=\'dark\'>'.$tableHeaders.'</tfoot>';    ?>    </table>
+                        <?php //echo '<tfoot class=\'dark\'>'.$tableHeaders.'</tfoot>';      ?>    </table>
 
 
 

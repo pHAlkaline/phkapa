@@ -15,7 +15,6 @@ if ($ticket['Ticket']['approved'] === null) {
     $sendOk = false;
     $closeOk = false;
 }
-
 ?>
 <h2 id="page-heading"><?php echo __d('phkapa', 'Review'); ?> : <?php echo __d('phkapa', 'Ticket'); ?></h2>
 <div class="grid_16 actionsContainer">
@@ -30,7 +29,7 @@ if ($ticket['Ticket']['approved'] === null) {
 
                     <li>
                         <?php
-                        echo $this->Html->link(__d('phkapa', 'Send %s', __d('phkapa', 'Ticket')), array('action' => 'send', $ticket['Ticket']['id']), array('confirm'=> __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
+                        echo $this->Html->link(__d('phkapa', 'Send %s', __d('phkapa', 'Ticket')), array('action' => 'send', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
                         ?>  
                     </li>
                 <?php endif; ?>
@@ -38,7 +37,7 @@ if ($ticket['Ticket']['approved'] === null) {
 
                     <li>
                         <?php
-                        echo $this->Html->link(__d('phkapa', 'Close %s', __d('phkapa', 'Ticket')), array('action' => 'close', $ticket['Ticket']['id']), array('confirm'=>__d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id'])));
+                        echo $this->Html->link(__d('phkapa', 'Close %s', __d('phkapa', 'Ticket')), array('action' => 'close', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id'])));
                         ?>  
                     </li>
                 <?php endif; ?>
@@ -78,8 +77,8 @@ if ($ticket['Ticket']['approved'] === null) {
                         echo $class;
                         ?>>
                             <?php
-                            echo $this->Html->link($ticket['Ticket']['ticket_parent'] . ' ' . $this->Html->image("accept.png", array("alt" => __d('phkapa', "See ticket parent data"), "style" => "padding-left:100px;")) . ' ' . __d('phkapa', "See ticket parent data"), array('controller' => 'query', 'action' => 'view', $ticket['Ticket']['ticket_parent']), array('escape' => false));
-                            ?>
+                                echo $this->Html->link($ticket['Ticket']['ticket_parent'] . ' ' . $this->Html->image("accept.png", array("alt" => __d('phkapa', "See ticket parent data"), "style" => "padding-left:100px;")) . ' ' . __d('phkapa', "See ticket parent data"), array('controller' => 'query', 'action' => 'view', $ticket['Ticket']['ticket_parent']), array('escape' => false));
+                                ?>
                             &nbsp;
                         </dd>
                     <?php } ?>
@@ -132,6 +131,7 @@ if ($ticket['Ticket']['approved'] === null) {
             </div>
         </div>
     </div>
+    <div class="clear"></div>
     <div class="tickets form" >
         <?php echo $this->Form->create(); ?>
         <fieldset class="ui-corner-all ui-widget-content" >
@@ -175,8 +175,39 @@ if ($ticket['Ticket']['approved'] === null) {
             echo $this->Form->submit(__d('phkapa', 'Submit'));
             ?>
         </fieldset>
-            <?php echo $this->Form->end(); ?>
+        <?php echo $this->Form->end(); ?>
     </div>
+    <div class="clear"></div>
+    <?php
+    if (CakePlugin::loaded('Feedback')) {
+        ?>
+        <div class="ui-corner-all ui-widget" id="related-comment">
+            <h2>
+                <a href="#" id="toggle-related-comments"><?php echo __d('phkapa', 'Related') . ' - ' . __dn('phkapa', 'Comment', 'Comments', 2) . ' (' . count($ticket['Comment']) . ')'; ?></a>
+            </h2>
+            <div class="block ui-widget-content" id="related-records">
+                <div class="related">
+                    <?php echo $this->Comments->display_for($ticket, array('showForm' => true, 'model' => 'Phkapa.Ticket')); ?>
+                </div>
+            </div>
 
+
+        </div>
+    <?php } else { ?>
+        <div class="ui-corner-all ui-widget" id="related-comment">
+            <h2>
+                <a href="#" id="toggle-related-comments"><?php echo __d('phkapa', 'Related') . ' - ' . __dn('phkapa', 'Comment', 'Comments', 2); ?></a>
+            </h2>
+            <div class="block ui-widget-content" id="related-records">
+                <div class="related">
+                    <?php
+                    echo $this->element('pluginNotFound');
+                    ?>
+                </div>
+            </div>
+
+
+        </div>           
+    <?php } ?>
 </div>
 <div class="clear"></div>

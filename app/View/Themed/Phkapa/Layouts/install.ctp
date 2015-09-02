@@ -105,6 +105,12 @@
                     active: 0
 
                 });
+                $("#related-comment").accordion({
+                    collapsible: true,
+                    autoHeight: false,
+                    active: 0
+
+                });
                 $("#related-action").accordion({
                     collapsible: true,
                     autoHeight: false,

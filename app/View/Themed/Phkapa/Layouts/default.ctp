@@ -33,6 +33,7 @@
                     })
 
                     $("input:submit").button();
+                    
                     $("#actions").accordion({
                         collapsible: true,
                         active: false
@@ -40,19 +41,25 @@
                     $("#related").accordion({
                         collapsible: true,
                         autoHeight: false,
-                        active: 0
+                        active: false
+
+                    });
+                    $("#related-comment").accordion({
+                        collapsible: true,
+                        autoHeight: false,
+                        active: false
 
                     });
                     $("#related-action").accordion({
                         collapsible: true,
                         autoHeight: false,
-                        active: 0
+                        active: false
 
                     });
-                   
-                    <?php if (isset($unread_notifications) && $unread_notifications) { ?>
-                    blinkNotification();
-                    <?php } ?>
+
+<?php if (isset($unread_notifications) && $unread_notifications) { ?>
+                        blinkNotification();
+<?php } ?>
 
                     function blinkNotification() {
                         $('.notification').delay(200).fadeTo(200, 0.5).delay(100).fadeTo(100, 1, blinkNotification);

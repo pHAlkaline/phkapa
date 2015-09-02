@@ -120,7 +120,7 @@ class ReviewController extends PhkapaAppController {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Ticket->recursive = 0;
+        $this->Ticket->recursive = 1;
         $this->_setupModel();
         $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '2', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         if (count($ticket) == 0) {

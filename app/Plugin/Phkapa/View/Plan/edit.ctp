@@ -66,14 +66,14 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
             <h5><?php echo __dn('phkapa', 'Ticket', 'Tickets', 2); ?></h5>
             <ul class="menu">
                 <li>
-<?php
-if ($sendOk) {
-    echo $this->Html->link(__d('phkapa', 'Send %s', __d('phkapa', 'Ticket')), array('action' => 'send', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
-}
-if ($closeOk) {
-    echo $this->Html->link(__d('phkapa', 'Close %s', __d('phkapa', 'Ticket')), array('action' => 'close', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id'])));
-}
-?>
+                    <?php
+                    if ($sendOk) {
+                        echo $this->Html->link(__d('phkapa', 'Send %s', __d('phkapa', 'Ticket')), array('action' => 'send', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
+                    }
+                    if ($closeOk) {
+                        echo $this->Html->link(__d('phkapa', 'Close %s', __d('phkapa', 'Ticket')), array('action' => 'close', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id'])));
+                    }
+                    ?>
                 </li>
                 <li><?php echo $this->Html->link(__d('phkapa', 'List %s', __dn('phkapa', 'Ticket', 'Tickets', 2)), array('action' => 'index')); ?> </li>
 
@@ -89,7 +89,7 @@ if ($closeOk) {
                 <dl><?php
                     $i = 0;
                     $class = ' class="altrow"';
-?>
+                    ?>
                     <dt<?php
                     if ($i % 2 == 0)
                         echo $class;
@@ -98,33 +98,33 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $ticket['Ticket']['id']; ?>
+                            <?php echo $ticket['Ticket']['id']; ?>
                         &nbsp;
                     </dd>
-                            <?php if ($ticket['Ticket']['ticket_parent'] != '') { ?>
+                    <?php if ($ticket['Ticket']['ticket_parent'] != '') { ?>
                         <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Ticket Parent'); ?></dt>
+                        if ($i % 2 == 0)
+                            echo $class;
+                        ?>><?php echo __d('phkapa', 'Ticket Parent'); ?></dt>
                         <dd<?php
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                        <?php
-                        echo $this->Html->link($ticket['Ticket']['ticket_parent'] . ' ' . $this->Html->image("accept.png", array("alt" => __d('phkapa', "See ticket parent data"), "style" => "padding-left:100px;")) . ' ' . __d('phkapa', "See ticket parent data"), array('controller' => 'query', 'action' => 'view', $ticket['Ticket']['ticket_parent']), array('escape' => false));
-                        ?>
+                                <?php
+                                echo $this->Html->link($ticket['Ticket']['ticket_parent'] . ' ' . $this->Html->image("accept.png", array("alt" => __d('phkapa', "See ticket parent data"), "style" => "padding-left:100px;")) . ' ' . __d('phkapa', "See ticket parent data"), array('controller' => 'query', 'action' => 'view', $ticket['Ticket']['ticket_parent']), array('escape' => false));
+                                ?>
                             &nbsp;
                         </dd>
-                            <?php } ?>
+                    <?php } ?>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
-                            ?>><?php echo __d('phkapa', 'Registar'); ?></dt>
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Registar'); ?></dt>
                     <dd<?php
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $ticket['Registar']['name']; ?>
+                            <?php echo $ticket['Registar']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -135,7 +135,7 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $ticket['Priority']['name']; ?>
+                            <?php echo $ticket['Priority']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -146,7 +146,7 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $ticket['Safety']['name']; ?>
+                            <?php echo $ticket['Safety']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -157,7 +157,7 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $ticket['Safety']['name']; ?>
+                            <?php echo $ticket['Safety']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -168,22 +168,22 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php
-                    if ($ticket['Ticket']['origin_date']) {
-                        echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['origin_date']);
-                    }
-                    ?>
+                            <?php
+                            if ($ticket['Ticket']['origin_date']) {
+                                echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['origin_date']);
+                            }
+                            ?>
                         &nbsp;
                     </dd>
                     <dt<?php
-                            if ($i % 2 == 0)
-                                echo $class;
+                    if ($i % 2 == 0)
+                        echo $class;
                     ?>><?php echo __d('phkapa', 'Type'); ?></dt>
                     <dd<?php
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $ticket['Type']['name']; ?>
+                            <?php echo $ticket['Type']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -194,7 +194,7 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $ticket['Origin']['name']; ?>
+                            <?php echo $ticket['Origin']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -205,7 +205,7 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $ticket['Process']['name']; ?>
+                            <?php echo $ticket['Process']['name']; ?>
                         &nbsp;
                     </dd>
 
@@ -217,7 +217,7 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $ticket['Activity']['name']; ?>
+                            <?php echo $ticket['Activity']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -228,7 +228,7 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $ticket['Category']['name']; ?>
+                            <?php echo $ticket['Category']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -239,7 +239,7 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $ticket['Supplier']['name']; ?>
+                            <?php echo $ticket['Supplier']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -250,7 +250,7 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
+                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -261,7 +261,7 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $ticket['ModifiedUser']['name']; ?>
+                            <?php echo $ticket['ModifiedUser']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -272,7 +272,7 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['modified']); ?>
+                            <?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['modified']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -283,27 +283,30 @@ if ($closeOk) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                    <?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['created']); ?>
+                            <?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['created']); ?>
                         &nbsp;
                     </dd>
                 </dl>
             </div>
         </div>
     </div>
+    <div class="clear"></div>
+    
     <div class="tickets form" >
-<?php echo $this->Form->create(); ?>
+        <?php echo $this->Form->create(); ?>
         <fieldset class="ui-corner-all ui-widget-content" >
             <legend><?php echo __d('phkapa', 'Record %s', __d('phkapa', 'Cause')); ?></legend>
-        <?php
-        echo $this->Form->input('id');
-        echo $this->Form->input('cause_id', array('label' => __d('phkapa', 'Cause'), 'empty' => __d('phkapa', '(choose one)')));
-        echo $this->Form->input('cause_notes', array('label' => __d('phkapa', 'Cause Notes')));
-        echo $this->Form->submit(__d('phkapa', 'Submit'));
-        ?>
+            <?php
+            echo $this->Form->input('id');
+            echo $this->Form->input('cause_id', array('label' => __d('phkapa', 'Cause'), 'empty' => __d('phkapa', '(choose one)')));
+            echo $this->Form->input('cause_notes', array('placeholder' => '5 Whys', 'label' => __d('phkapa', 'Cause Notes')));
+            echo $this->Form->submit(__d('phkapa', 'Submit'));
+            ?>
         </fieldset>
-            <?php echo $this->Form->end(); ?>
+        <?php echo $this->Form->end(); ?>
     </div>
-        <?php if ($showActions) { ?>
+    <div class="clear"></div>
+    <?php if ($showActions) { ?>
         <div class="ui-corner-all ui-widget" id="related">
             <h2>
                 <a href="#" id="toggle-related-records"><?php echo __d('phkapa', 'List %s', __dn('phkapa', 'Action', 'Actions', 2)) . ' / ' . __d('phkapa', 'Plan'); ?></a>
@@ -311,7 +314,7 @@ if ($closeOk) {
             <div class="block ui-widget-content" id="related-records">
                 <div class="related">
 
-    <?php if (!empty($ticket['Action'])): ?>
+                    <?php if (!empty($ticket['Action'])): ?>
                         <table cellpadding = "0" cellspacing = "0">
                             <thead class="ui-state-default"
                                    <tr>
@@ -328,61 +331,61 @@ if ($closeOk) {
                                     <th></th>
                                 </tr>
                             </thead>
-        <?php
-        $i = 0;
-        foreach ($ticket['Action'] as $action):
-            $class = null;
+                            <?php
+                            $i = 0;
+                            foreach ($ticket['Action'] as $action):
+                                $class = null;
 
-            if ($i++ % 2 == 0) {
-                $class = ' class="altrow"';
-            }
+                                if ($i++ % 2 == 0) {
+                                    $class = ' class="altrow"';
+                                }
 
-            $expiry = '';
-            $red = '';
-            $dayDescription = ($action['deadline'] == 1) ? ' day' : ' days';
-            $expiry = strtotime(date($action['created']) . " +" . $action['deadline'] . $dayDescription);
+                                $expiry = '';
+                                $red = '';
+                                $dayDescription = ($action['deadline'] == 1) ? ' day' : ' days';
+                                $expiry = strtotime(date($action['created']) . " +" . $action['deadline'] . $dayDescription);
 
-            $deadlineAgo = '';
-            $hasFlag = false;
-            $flag = "red_flag_action.png";
-            $flagMessage = __d('phkapa', 'Action deadline expired!!!');
+                                $deadlineAgo = '';
+                                $hasFlag = false;
+                                $flag = "red_flag_action.png";
+                                $flagMessage = __d('phkapa', 'Action deadline expired!!!');
 
 
-            if ($action['closed'] == 0 && !$this->Time->wasWithinLast($action['deadline'] . $dayDescription, $action['created'])) {
-                $deadlineAgo = ' ( ' . $this->Time->timeAgoInWords($expiry, $options = array(), $backwards = null) . ' ) ';
-                $red = "red";
-                $hasFlag = true;
-            }
-            ?>
+                                if ($action['closed'] == 0 && !$this->Time->wasWithinLast($action['deadline'] . $dayDescription, $action['created'])) {
+                                    $deadlineAgo = ' ( ' . $this->Time->timeAgoInWords($expiry, $options = array(), $backwards = null) . ' ) ';
+                                    $red = "red";
+                                    $hasFlag = true;
+                                }
+                                ?>
                                 <tr<?php echo $class; ?>>
                                     <td><?php echo $action['id']; ?></td>
 
                                     <td><?php echo $action['ActionType']['name']; ?></td>
                                     <td><?php
-                    echo $this->Text->truncate(
-                            $this->Text->autoParagraph($action['description']), 60, array(
-                        'ellipsis' => '...',
-                        'exact' => false
-                    ));
-            ?></td>
+                                        echo $this->Text->truncate(
+                                                $this->Text->autoParagraph($action['description']), 60, array(
+                                            'ellipsis' => '...',
+                                            'exact' => false
+                                        ));
+                                        ?></td>
                                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
                                     <td class="nowrap"><?php echo $action['deadline'] . ' ' . __d('phkapa', 'Days'); ?></td>
                                     <td class="nowrap <?php echo $red ?>"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $expiry) . ' ' . $deadlineAgo; ?></td>
                                     <td class="nowrap"><?php echo $this->Utils->yesOrNo($action['closed']); ?></td>
                                     <td><?php if (isset($action['CloseUser']['name'])) echo $action['CloseUser']['name']; ?>&nbsp;</td>
                                     <td class="nowrap"><?php
-                            if ($action['close_date'])
-                                echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']);
-                            ?></td>
+                                        if ($action['close_date'])
+                                            echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']);
+                                        ?></td>
 
 
                                     <td class="nowrap actions">
-            <?php
-            if ($action['closed'] == 0) {
-                echo $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close_action', $action['id'], $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to close # %s?', $action['id'])));
-                echo ' | ';
-            }
-            ?>
+                                        <?php
+                                        if ($action['closed'] == 0) {
+                                            echo $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close_action', $action['id'], $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to close # %s?', $action['id'])));
+                                            echo ' | ';
+                                        }
+                                        ?>
                                         <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit_action', $action['id'], $ticket['Ticket']['id'])); ?>
                                         <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'delete_action', $action['id'], $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to delete # %s?', $action['id']))); ?>
 
@@ -394,9 +397,9 @@ if ($closeOk) {
                                             ?>
                                     </td>
                                 </tr>
-                                    <?php endforeach; ?>
+                            <?php endforeach; ?>
                         </table>
-    <?php endif; ?>
+                    <?php endif; ?>
 
 
                     <div class="actions">
@@ -411,6 +414,38 @@ if ($closeOk) {
                 </div>
             </div>
         </div>
-<?php } ?>
+    <?php } ?>
+    <div class="clear"></div>
+    <?php
+    if (CakePlugin::loaded('Feedback')) {
+        ?>
+        <div class="ui-corner-all ui-widget" id="related-comment">
+            <h2>
+                <a href="#" id="toggle-related-comments"><?php echo __dn('phkapa', 'Comment', 'Comments', 2) . ' (' . count($ticket['Comment']) . ')'; ?></a>
+            </h2>
+            <div class="block ui-widget-content" id="related-records">
+                <div class="related">
+                    <?php echo $this->Comments->display_for($ticket, array('model' => 'Phkapa.Ticket')); ?>
+                </div>
+            </div>
+
+
+        </div>
+    <?php } else { ?>
+        <div class="ui-corner-all ui-widget" id="related-comment">
+            <h2>
+                <a href="#" id="toggle-related-comments"><?php echo __d('phkapa', 'Related') . ' - ' . __dn('phkapa', 'Comment', 'Comments', 2); ?></a>
+            </h2>
+            <div class="block ui-widget-content" id="related-records">
+                <div class="related">
+                    <?php
+                    echo $this->element('pluginNotFound');
+                    ?>
+                </div>
+            </div>
+
+
+        </div>           
+    <?php } ?>
 </div>
 <div class="clear"></div>

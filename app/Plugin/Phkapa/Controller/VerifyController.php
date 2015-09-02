@@ -218,7 +218,7 @@ class VerifyController extends PhkapaAppController {
             $this->redirect(array('action' => 'index'));
         }
         
-        $this->Ticket->recursive = 0;
+        $this->Ticket->recursive = 1;
         $ticket = $this->Ticket->find('first', array('conditions' => array('Ticket.workflow_id' => '4', 'Ticket.id' => $ticketId, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         if (count($ticket) == 0) {
             $this->Flash->error(__d('phkapa','Invalid request.'));

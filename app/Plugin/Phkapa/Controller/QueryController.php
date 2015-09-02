@@ -14,6 +14,16 @@
  */
 class QueryController extends PhkapaAppController {
 
+    
+    /**
+     * Components
+     *
+     * @var array
+     */
+    public $components = array(
+        'Feedback.Comments' => array('on' => array('admin_view', 'view', 'edit'))
+        );
+
     /**
      * Controller name
      *

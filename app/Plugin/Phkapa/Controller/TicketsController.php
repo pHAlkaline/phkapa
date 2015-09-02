@@ -19,7 +19,9 @@ class TicketsController extends PhkapaAppController {
      *
      * @var array
      */
-    public $components = array('RequestHandler');
+    public $components = array(
+        'RequestHandler',
+        );
 
     /**
      * Controller name
@@ -235,7 +237,7 @@ class TicketsController extends PhkapaAppController {
      * @access public
      */
     public function admin_edit($id = null) {
-        $this->Ticket->recursive = -1;
+        $this->Ticket->recursive = 1;
         if (!$id && empty($this->request->data)) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
@@ -248,9 +250,10 @@ class TicketsController extends PhkapaAppController {
                 $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
             }
         }
+        $ticket=$this->Ticket->find('first', array('conditions' => array('Ticket.id' => $id), 'order' => ''));
         if (empty($this->request->data)) {
 
-            $this->request->data = $this->Ticket->find('first', array('conditions' => array('id' => $id), 'order' => ''));
+            $this->request->data = $ticket;
         }
         $types = $this->Ticket->Type->find('list', array('conditions' => array('Type.active' => '1')));
         $priorities = $this->Ticket->Priority->find('list', array('conditions' => array('Priority.active' => '1')));
@@ -264,8 +267,8 @@ class TicketsController extends PhkapaAppController {
         $causes = $this->Ticket->Cause->find('list', array('conditions' => array('Cause.active' => '1')));
         $workflows = $this->Ticket->Workflow->find('list', array('conditions' => array('Workflow.active' => '1'), 'order' => 'Workflow.order'));
         $closeUsers = $this->Ticket->CloseUser->find('list', array('conditions' => array('CloseUser.active' => '1')));
-
-        $this->set(compact('types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'causes', 'workflows', 'suppliers', 'closeUsers'));
+        $ticket=$this->request->data;
+        $this->set(compact('ticket','types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'causes', 'workflows', 'suppliers', 'closeUsers'));
     }
 
     /**
