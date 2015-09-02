@@ -179,7 +179,7 @@ h2#page-heading {
 /* paragraphs, quotes and lists
 ----------------------------------------------- */
 p {
-    margin-bottom:2em;
+    margin-bottom:0;
 }
 blockquote {
     font-family: Georgia, 'Times New Roman', serif;

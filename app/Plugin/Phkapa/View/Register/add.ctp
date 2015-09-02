@@ -53,12 +53,10 @@
             
             endif;
             ?>
-
+            <?php  echo $this->Form->submit(__d('phkapa', 'Submit')); ?>
             
         </fieldset>
-        <?php //echo $this->Js->submit(__d('phkapa','Submit'),array('url'=>'add_ajax','update'=>'fieldset'));   ?>
-        <?php echo $this->Form->end(__d('phkapa','Submit')); ?>
-        <?php //echo $this->Form->end();  ?>
+        <?php echo $this->Form->end();  ?>
     </div>
 
 </div>

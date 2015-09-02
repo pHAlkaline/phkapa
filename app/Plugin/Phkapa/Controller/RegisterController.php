@@ -14,6 +14,7 @@
  */
 class RegisterController extends PhkapaAppController {
 
+    
     /**
      * Controller name
      *
@@ -83,7 +84,7 @@ class RegisterController extends PhkapaAppController {
     }
 
     /**
-     * view
+     * view TBD
      *
      * @param integer $id
      * @return void
@@ -94,7 +95,7 @@ class RegisterController extends PhkapaAppController {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Ticket->recursive = 0;
+        $this->Ticket->recursive = 1;
         $ticket=$this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
   
         if (count($ticket) == 0){
@@ -188,7 +189,7 @@ class RegisterController extends PhkapaAppController {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Ticket->recursive = -1;
+        $this->Ticket->recursive = 1;
         $this->Ticket->order = null;
         
         $ticket=$this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
@@ -232,7 +233,7 @@ class RegisterController extends PhkapaAppController {
         $activities = $this->Ticket->Activity->find('list', $this->activityOptions);
         $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
         $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
-        $this->set(compact('types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
+        $this->set(compact('ticket','types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
     }
 
     /**

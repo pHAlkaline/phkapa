@@ -13,7 +13,10 @@ App::uses('CakeTime', 'Utility');
  * @link     http://phkapa.net
  */
 class Ticket extends PhkapaAppModel {
-    public $actsAs = array('Revision');
+    public $actsAs = array(
+        'Revision',
+        'Feedback.Commentable'
+        );
     /**
      * Model name
      *
@@ -21,6 +24,7 @@ class Ticket extends PhkapaAppModel {
      * @access public
      */
     public $name = 'Ticket';
+    
     /**
      * Display Fields for this model
      *

@@ -35,6 +35,7 @@ class AppController extends Controller {
         'Auth' => array(
             'loginAction' => array('admin' => false, 'plugin' => false, 'controller' => 'users', 'action' => 'login')
             ),
+        'Feedback.Comments' => array('on' => array('admin_view','admin_edit', 'view', 'edit','add_action','edit_action'))
         //'DebugKit.Toolbar',
         );
     
