@@ -164,7 +164,7 @@ msgid "Start Session"
 msgstr "Iniciar Sessão"
 
 msgid "Submit"
-msgstr "Submeter"
+msgstr "Registar"
 
 msgid "This application is now on maintenance mode, back soon as possible!"
 msgstr "A Aplicação encontra-se em modo de manutenção, regressa em breve!"

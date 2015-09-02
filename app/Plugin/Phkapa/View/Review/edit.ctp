@@ -29,7 +29,7 @@ if ($ticket['Ticket']['approved'] === null) {
 
                     <li>
                         <?php
-                        echo $this->Html->link(__d('phkapa', 'Send %s', __d('phkapa', 'Ticket')), array('action' => 'send', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
+                        echo $this->Html->link(__d('phkapa', 'Send %s', __d('phkapa', 'Plan')), array('action' => 'send', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
                         ?>  
                     </li>
                 <?php endif; ?>
