@@ -72,37 +72,6 @@
         </fieldset>
         <?php echo $this->Form->end(); ?>
     </div>
-    <div class="clear"></div>
-    <?php
-    if (CakePlugin::loaded('Feedback')) {
-        ?>
-        <div class="ui-corner-all ui-widget" id="related-comment">
-            <h2>
-                <a href="#" id="toggle-related-comments"><?php echo __dn('phkapa', 'Comment', 'Comments', 2) . ' (' . count($ticket['Comment']) . ')'; ?></a>
-            </h2>
-            <div class="block ui-widget-content" id="related-records">
-                <div class="related">
-                    <?php echo $this->Comments->display_for($ticket, array('model' => 'Phkapa.Ticket')); ?>
-                </div>
-            </div>
-
-
-        </div>
-    <?php } else { ?>
-        <div class="ui-corner-all ui-widget" id="related-comment">
-            <h2>
-                <a href="#" id="toggle-related-comments"><?php echo __dn('phkapa', 'Comment', 'Comments', 2); ?></a>
-            </h2>
-            <div class="block ui-widget-content" id="related-records">
-                <div class="related">
-                    <?php
-                    echo $this->element('pluginNotFound');
-                    ?>
-                </div>
-            </div>
-
-
-        </div>           
-    <?php } ?>
+   
 </div>
-<div class="clear"></div>
+

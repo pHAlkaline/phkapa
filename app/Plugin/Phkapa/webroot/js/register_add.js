@@ -60,17 +60,7 @@ $(function(){
         return false;
     });
 
-/* $("#dialog-message").dialog({
-        modal: true,
-        height: 530,
-        width: 500,
-        autoOpen: false,
-        buttons: {
-            Ok: function() {
-                $( this ).dialog( "close" );
-            }
-        }
-    }); */
+
 
    
 

@@ -96,24 +96,7 @@
                     collapsible: true,
                     active: false
                 });
-                $("#related").accordion({
-                    collapsible: true,
-                    autoHeight: false,
-                    active: 0
-
-                });
-                $("#related-comment").accordion({
-                    collapsible: true,
-                    autoHeight: false,
-                    active: 0
-
-                });
-                $("#related-action").accordion({
-                    collapsible: true,
-                    autoHeight: false,
-                    active: 0
-
-                });
+               $( "#tabs" ).tabs();
 
 <?php if (isset($unread_notifications) && $unread_notifications) { ?>
                     blinkNotification();
