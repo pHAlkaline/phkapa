@@ -51,9 +51,15 @@ if ($ticket['Workflow']['id'] < 5) {
         </div>
 
     </div>
-    <div class="box ui-corner-all ui-widget-content" >
-        <div class="tickets view">
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-details"><?php echo __dn('phkapa', 'Detail', 'Details', 2); ?></a></li>
+            <li><a href="#tabs-actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2) . ' (' . count($ticket['Action']) . ')'; ?></a></li>
+            <li><a href="#tabs-children"><?php echo __d('phkapa', 'Related') . ' (' . count($ticket['Children']) . ')'; ?></a></li>
+            <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2); ?></a></li>
 
+        </ul>
+        <div id="tabs-details">
             <div class="block">
                 <dl><?php
                     $i = 0;
@@ -317,49 +323,13 @@ if ($ticket['Workflow']['id'] < 5) {
                         &nbsp;
                     </dd>
                 </dl>
-            </div>
+            </div> 
         </div>
-    </div>
-    <br/>
-    <?php
-    if (CakePlugin::loaded('Feedback')) {
-        ?>
-        <div class="ui-corner-all ui-widget" id="related-comment">
-            <h2>
-                <a href="#" id="toggle-related-comments"><?php echo __dn('phkapa', 'Comment', 'Comments', 2) . ' (' . count($ticket['Comment']) . ')'; ?></a>
-            </h2>
-            <div class="block ui-widget-content" id="related-records">
-                <div class="related">
-                    <?php echo $this->Comments->display_for($ticket, array('model' => 'Phkapa.Ticket')); ?>
-                </div>
-            </div>
+        <div id="tabs-actions">
 
-
-        </div>
-    <?php } else { ?>
-        <div class="ui-corner-all ui-widget" id="related-comment">
-            <h2>
-                <a href="#" id="toggle-related-comments"><?php echo  __dn('phkapa', 'Comment', 'Comments', 2); ?></a>
-            </h2>
-            <div class="block ui-widget-content" id="related-records">
-                <div class="related">
-                    <?php
-                    echo $this->element('pluginNotFound');
-                    ?>
-                </div>
-            </div>
-
-
-        </div>           
-    <?php } ?>
-    <div class="ui-corner-all ui-widget" id="related">
-        <h2>
-            <a href="#" id="toggle-related-records"><?php echo __dn('phkapa', 'Action', 'Actions', 2) . ' (' . count($ticket['Action']) . ')' . ' - ' . __dn('phkapa', 'Ticket', 'Tickets', 2) . ' (' . count($ticket['Children']) . ')'; ?></a>
-        </h2>
-        <div class="block ui-widget-content" id="related-records">
             <?php if (!empty($ticket['Action'])): ?>
                 <div class="related">
-                    <h3><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></h3>
+
 
                     <table cellpadding = "0" cellspacing = "0">
                         <thead  class="ui-state-default">
@@ -415,10 +385,11 @@ if ($ticket['Workflow']['id'] < 5) {
                 </div>
             <?php endif; ?>    
 
+        </div>
+        <div id="tabs-children">
+
             <?php if (!empty($ticket['Children'])): ?>
                 <div class="related">
-                    <h3><?php echo __d('phkapa', 'Related Tickets'); ?></h3>
-
                     <table cellpadding = "0" cellspacing = "0">
                         <thead  class="ui-state-default">
                             <tr>
@@ -503,7 +474,34 @@ if ($ticket['Workflow']['id'] < 5) {
 
                 </div>
             <?php endif; ?>
+
         </div>
+        <div id="tabs-feedback">
+            <?php
+            if (CakePlugin::loaded('Feedback')) {
+                ?>
+
+
+                <div class="related">
+                    <?php echo $this->Comments->display_for($ticket, array('showForm'=>false,'model' => 'Phkapa.Ticket')); ?>
+                </div>
+
+
+
+
+            <?php } else { ?>
+
+
+                <div class="related">
+                    <?php
+                    echo $this->element('pluginNotFound');
+                    ?>
+                </div>
+
+
+
+
+            <?php } ?> </div>
     </div>
 
 </div>

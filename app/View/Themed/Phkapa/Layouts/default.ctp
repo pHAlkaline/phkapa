@@ -33,29 +33,13 @@
                     })
 
                     $("input:submit").button();
-                    
                     $("#actions").accordion({
-                        collapsible: true,
-                        active: false
-                    });
-                    $("#related").accordion({
-                        collapsible: true,
-                        autoHeight: false,
-                        active: false
-
-                    });
-                    $("#related-comment").accordion({
-                        collapsible: true,
-                        autoHeight: false,
-                        active: false
-
-                    });
-                    $("#related-action").accordion({
-                        collapsible: true,
-                        autoHeight: false,
-                        active: false
-
-                    });
+                    collapsible: true,
+                    active: false
+                });
+                    $( "#tabs" ).tabs();
+                    
+                   
 
 <?php if (isset($unread_notifications) && $unread_notifications) { ?>
                         blinkNotification();

@@ -19,11 +19,13 @@
         </div>
 
     </div>
-
-    <div class="box ui-corner-all ui-widget-content" >
-        <div class="tickets view">
-
-            <div class="block">
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-details"><?php echo __dn('phkapa', 'Detail', 'Details', 2); ?></a></li>
+            <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2); ?></a></li>
+        </ul>
+        <div id="tabs-details">
+            <div class="tickets view">
                 <dl><?php
                     $i = 0;
                     $class = ' class="altrow"';
@@ -238,59 +240,48 @@
                     </dd>
                 </dl>
             </div>
+
+            <div class="actions form">
+                <?php //echo $this->Form->create('Action', array('url' => array('controller' => 'plan', 'action' => 'add_action')));  ?>
+                <?php echo $this->Form->create('Action'); ?>
+
+                <fieldset class="ui-corner-all ui-widget-content" >
+                    <legend><?php echo __d('phkapa', 'Record') . ' ' . __d('phkapa', 'Action'); ?></legend>
+                    <?php
+                    echo $this->Form->hidden('ticket_id', array('label' => __d('phkapa', 'Ticket'), 'value' => $ticket['Ticket']['id']));
+                    echo $this->Form->input('action_type_id', array('label' => __d('phkapa', 'Action Type'), 'empty' => __d('phkapa', '(choose one)')));
+                    echo $this->Form->input('description', array('label' => __d('phkapa', 'Description')));
+                    echo $this->Form->input('deadline', array('min' => '0', 'label' => __d('phkapa', 'Deadline') . ' (' . __d('phkapa', 'Days') . ' )'));
+                    echo $this->Form->input('closed', array('label' => __d('phkapa', 'Closed')));
+                    echo $this->Form->submit(__d('phkapa', 'Submit'));
+                    ?>
+                </fieldset>
+                <?php echo $this->Form->end(); ?>
+            </div>
         </div>
-    </div>
 
-    <div class="clear"></div>
-
-    <div class="actions form">
-        <?php //echo $this->Form->create('Action', array('url' => array('controller' => 'plan', 'action' => 'add_action')));  ?>
-        <?php echo $this->Form->create('Action'); ?>
-
-        <fieldset class="ui-corner-all ui-widget-content" >
-            <legend><?php echo __d('phkapa', 'Record') . ' ' . __d('phkapa', 'Action'); ?></legend>
+        <div id="tabs-feedback">
             <?php
-            echo $this->Form->hidden('ticket_id', array('label' => __d('phkapa', 'Ticket'), 'value' => $ticket['Ticket']['id']));
-            echo $this->Form->input('action_type_id', array('label' => __d('phkapa', 'Action Type'), 'empty' => __d('phkapa', '(choose one)')));
-            echo $this->Form->input('description', array('label' => __d('phkapa', 'Description')));
-            echo $this->Form->input('deadline', array('min' => '0', 'label' => __d('phkapa', 'Deadline') . ' (' . __d('phkapa', 'Days') . ' )'));
-            echo $this->Form->input('closed', array('label' => __d('phkapa', 'Closed')));
-            echo $this->Form->submit(__d('phkapa', 'Submit'));
-            ?>
-        </fieldset>
-        <?php echo $this->Form->end(); ?>
-    </div>
-    <div class="clear"></div>
-    <?php
-    if (CakePlugin::loaded('Feedback')) {
-        ?>
-        <div class="ui-corner-all ui-widget" id="related-comment">
-            <h2>
-                <a href="#" id="toggle-related-comments"><?php echo __dn('phkapa', 'Comment', 'Comments', 2) . ' (' . count($ticket['Comment']) . ')'; ?></a>
-            </h2>
-            <div class="block ui-widget-content" id="related-records">
+            if (CakePlugin::loaded('Feedback')) {
+                ?>
                 <div class="related">
                     <?php echo $this->Comments->display_for($ticket, array('showForm' => false, 'model' => 'Phkapa.Ticket')); ?>
                 </div>
-            </div>
 
-
-        </div>
-    <?php } else { ?>
-        <div class="ui-corner-all ui-widget" id="related-comment">
-            <h2>
-                <a href="#" id="toggle-related-comments"><?php echo __dn('phkapa', 'Comment', 'Comments', 2); ?></a>
-            </h2>
-            <div class="block ui-widget-content" id="related-records">
+            <?php } else { ?>
                 <div class="related">
                     <?php
                     echo $this->element('pluginNotFound');
                     ?>
-                </div>
-            </div>
 
 
-        </div>           
-    <?php } ?>
+                </div>           
+            <?php } ?>
+        </div>
+
+
+    </div>
+
+
 </div>
-<div class="clear"></div>
+

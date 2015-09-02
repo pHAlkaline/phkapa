@@ -28,11 +28,13 @@
         </div>
 
     </div>
-    <div class="box ui-corner-all ui-widget-content" >
-        <div class="causes view">
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-details"><?php echo __dn('phkapa', 'Detail', 'Details', 2); ?></a></li>
+            <li><a href="#tabs-categories"><?php echo __dn('phkapa', 'Category', 'Categories', 2) . ' (' . count($cause['Category']) . ')'; ?></a></li>
 
-            <div class="block">
-                <dl><?php
+        </ul>
+        <div id="tabs-details">   <dl><?php
 $i = 0;
 $class = ' class="altrow"';
 ?>
@@ -91,17 +93,8 @@ $class = ' class="altrow"';
                             <?php echo $this->Time->format(Configure::read('dateFormat'), $cause['Cause']['modified']); ?>
                         &nbsp;
                     </dd>
-                </dl>
-            </div>
-        </div>
-    </div>
-    <div class="ui-corner-all ui-widget" id="related">
-        <h2>
-            <a href="#" id="toggle-related-records"><?php echo __dn('phkapa','Category','Categories',2) . ' (' . count($cause['Category']) . ')'; ?></a>
-        </h2>
-        <div class="block ui-widget-content" id="related-records">
-            <div class="related">
-                <h3><?php echo __dn('phkapa','Category','Categories',2); ?></h3>
+                </dl></div>
+        <div id="tabs-categories"> <div class="related">
                 <?php if (!empty($cause['Category'])): ?>
                     <table cellpadding = "0" cellspacing = "0">
                         <thead class="ui-state-default"
@@ -142,9 +135,10 @@ $class = ' class="altrow"';
                         <li><?php echo $this->Html->link(__d('phkapa','Add %s', __d('phkapa','Category')), array('controller' => 'categories', 'action' => 'add','cause',$cause['Cause']['id'])); ?> </li>
                     </ul>
                 </div>
-            </div>
-        </div>
+            </div></div>
     </div>
+    
+  
 
 </div>
-<div class="clear"></div>
+

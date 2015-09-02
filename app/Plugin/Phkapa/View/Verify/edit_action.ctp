@@ -19,12 +19,130 @@
         </div>
 
     </div>
-    <div class="ui-corner-all ui-widget" id="related">
-        <h2>
-            <a href="#" id="toggle-related-records"><?php echo __d('phkapa', 'Ticket'); ?></a>
-        </h2>
-        <div class="block ui-widget-content" id="related-records">
-            <div class="related">
+     <div id="tabs">
+        <ul>
+            <li><a href="#tabs-details"><?php echo __dn('phkapa', 'Detail', 'Details', 2); ?></a></li>
+            <li><a href="#tabs-ticket"><?php echo __dn('phkapa', 'Ticket', 'Ticket', 1); ?></a></li>
+            <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2); ?></a></li>
+
+        </ul>
+        <div id="tabs-details">
+             <div class="related">
+            <dl><?php
+                $i = 0;
+                $class = ' class="altrow"';
+                ?>
+                <dt<?php
+                if ($i % 2 == 0)
+                    echo $class;
+                ?>><?php echo __d('phkapa', 'Id'); ?></dt>
+                <dd<?php
+                if ($i++ % 2 == 0)
+                    echo $class;
+                ?>>
+                        <?php echo $action['Action']['id']; ?>
+                    &nbsp;
+                </dd>
+
+                <dt<?php
+                if ($i % 2 == 0)
+                    echo $class;
+                ?>><?php echo __d('phkapa', 'Action Type'); ?></dt>
+                <dd<?php
+                if ($i++ % 2 == 0)
+                    echo $class;
+                ?>>
+                        <?php echo $action['ActionType']['name']; ?>
+                    &nbsp;
+                </dd>
+                <dt<?php
+                if ($i % 2 == 0)
+                    echo $class;
+                ?>><?php echo __d('phkapa', 'Description'); ?></dt>
+                <dd<?php
+                if ($i++ % 2 == 0)
+                    echo $class;
+                ?>>
+                        <?php echo $this->Text->autoParagraph($action['Action']['description']); ?>
+                    &nbsp;
+                </dd>
+                <dt<?php
+                if ($i % 2 == 0)
+                    echo $class;
+                ?>><?php echo __d('phkapa', 'Deadline'); ?></dt>
+                <dd<?php
+                if ($i++ % 2 == 0)
+                    echo $class;
+                ?>>
+                        <?php echo $action['Action']['deadline'] . ' ' . __d('phkapa', 'Days'); ?>
+                    &nbsp;
+                </dd>
+                <dt<?php
+                if ($i % 2 == 0)
+                    echo $class;
+                ?>><?php echo __d('phkapa', 'Closed'); ?></dt>
+                <dd<?php
+                if ($i++ % 2 == 0)
+                    echo $class;
+                ?>>
+                        <?php echo $this->Utils->yesOrNo($action['Action']['closed']); ?>
+                    &nbsp;
+                </dd>
+                <dt<?php
+                if ($i % 2 == 0)
+                    echo $class;
+                ?>><?php echo __d('phkapa', 'Close Date'); ?></dt>
+                <dd<?php
+                if ($i++ % 2 == 0)
+                    echo $class;
+                ?>>
+                        <?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['Action']['close_date']); ?>
+                    &nbsp;
+                </dd>
+
+                <dt<?php
+                if ($i % 2 == 0)
+                    echo $class;
+                ?>><?php echo __d('phkapa', 'Modified'); ?></dt>
+                <dd<?php
+                if ($i++ % 2 == 0)
+                    echo $class;
+                ?>>
+                        <?php echo $this->Time->format(Configure::read('dateFormat'), $action['Action']['modified']); ?>
+                    &nbsp;
+                </dd>
+                <dt<?php
+                if ($i % 2 == 0)
+                    echo $class;
+                ?>><?php echo __d('phkapa', 'Created'); ?></dt>
+                <dd<?php
+                if ($i++ % 2 == 0)
+                    echo $class;
+                ?>>
+                        <?php echo $this->Time->format(Configure::read('dateFormat'), $action['Action']['created']); ?>
+                    &nbsp;
+                </dd>
+            </dl>
+        </div>
+        <div class="actions form">
+        <?php //echo $this->Form->create('Action', array('url' => array('controller' => 'verify', 'action' => 'edit_action'))); ?>
+        <?php echo $this->Form->create('Action'); ?>
+
+        <fieldset class="ui-corner-all ui-widget-content" >
+            <legend><?php echo __d('phkapa', 'Record') . ' ' . __d('phkapa', 'Action'); ?></legend>
+            <?php
+            echo $this->Form->hidden('id');
+            echo $this->Form->hidden('ticket_id');
+            echo $this->Form->input('action_effectiveness_id', array('label' => __d('phkapa', 'Action Effectiveness'), 'empty' => __d('phkapa', '(choose one)')));
+            echo $this->Form->input('effectiveness_notes', array('label' => __d('phkapa', 'Effectiveness Notes')));
+            echo $this->Form->submit(__d('phkapa', 'Submit'));
+            ?>
+        </fieldset>
+        <?php echo $this->Form->end(); ?>
+    </div>
+        </div>
+          <div id="tabs-ticket">
+    <div class="related">
 
                 <dl><?php
                     $i = 0;
@@ -228,161 +346,24 @@
                         &nbsp;
                     </dd>
                 </dl>
-            </div>
-        </div>
     </div>
-    <div class="clear"></div>
+          </div>
+          <div id="tabs-feedback">
     <?php
     if (CakePlugin::loaded('Feedback')) {
         ?>
-        <div class="ui-corner-all ui-widget" id="related-comment">
-            <h2>
-                <a href="#" id="toggle-related-comments"><?php echo __dn('phkapa', 'Comment', 'Comments', 2) . ' (' . count($ticket['Comment']) . ')'; ?></a>
-            </h2>
-            <div class="block ui-widget-content" id="related-records">
-                <div class="related">
+        <div class="related">
                     <?php echo $this->Comments->display_for($ticket, array('showForm' => false, 'model' => 'Phkapa.Ticket')); ?>
                 </div>
-            </div>
-
-
-        </div>
+           
     <?php } else { ?>
-        <div class="ui-corner-all ui-widget" id="related-comment">
-            <h2>
-                <a href="#" id="toggle-related-comments"><?php echo __dn('phkapa', 'Comment', 'Comments', 2); ?></a>
-            </h2>
-            <div class="block ui-widget-content" id="related-records">
-                <div class="related">
+         <div class="related">
                     <?php
                     echo $this->element('pluginNotFound');
                     ?>
                 </div>
-            </div>
-
-
-        </div>           
+                   
     <?php } ?>
-    <div class="ui-corner-all ui-widget" id="related-action">
-        <h2>
-            <a href="#" id="toggle-related-records"><?php echo (__d('phkapa', 'Action')); ?></a>
-        </h2>
-        <div class="block ui-widget-content" id="related-records">
-            <dl><?php
-                $i = 0;
-                $class = ' class="altrow"';
-                ?>
-                <dt<?php
-                if ($i % 2 == 0)
-                    echo $class;
-                ?>><?php echo __d('phkapa', 'Id'); ?></dt>
-                <dd<?php
-                if ($i++ % 2 == 0)
-                    echo $class;
-                ?>>
-                        <?php echo $action['Action']['id']; ?>
-                    &nbsp;
-                </dd>
-
-                <dt<?php
-                if ($i % 2 == 0)
-                    echo $class;
-                ?>><?php echo __d('phkapa', 'Action Type'); ?></dt>
-                <dd<?php
-                if ($i++ % 2 == 0)
-                    echo $class;
-                ?>>
-                        <?php echo $action['ActionType']['name']; ?>
-                    &nbsp;
-                </dd>
-                <dt<?php
-                if ($i % 2 == 0)
-                    echo $class;
-                ?>><?php echo __d('phkapa', 'Description'); ?></dt>
-                <dd<?php
-                if ($i++ % 2 == 0)
-                    echo $class;
-                ?>>
-                        <?php echo $this->Text->autoParagraph($action['Action']['description']); ?>
-                    &nbsp;
-                </dd>
-                <dt<?php
-                if ($i % 2 == 0)
-                    echo $class;
-                ?>><?php echo __d('phkapa', 'Deadline'); ?></dt>
-                <dd<?php
-                if ($i++ % 2 == 0)
-                    echo $class;
-                ?>>
-                        <?php echo $action['Action']['deadline'] . ' ' . __d('phkapa', 'Days'); ?>
-                    &nbsp;
-                </dd>
-                <dt<?php
-                if ($i % 2 == 0)
-                    echo $class;
-                ?>><?php echo __d('phkapa', 'Closed'); ?></dt>
-                <dd<?php
-                if ($i++ % 2 == 0)
-                    echo $class;
-                ?>>
-                        <?php echo $this->Utils->yesOrNo($action['Action']['closed']); ?>
-                    &nbsp;
-                </dd>
-                <dt<?php
-                if ($i % 2 == 0)
-                    echo $class;
-                ?>><?php echo __d('phkapa', 'Close Date'); ?></dt>
-                <dd<?php
-                if ($i++ % 2 == 0)
-                    echo $class;
-                ?>>
-                        <?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['Action']['close_date']); ?>
-                    &nbsp;
-                </dd>
-
-                <dt<?php
-                if ($i % 2 == 0)
-                    echo $class;
-                ?>><?php echo __d('phkapa', 'Modified'); ?></dt>
-                <dd<?php
-                if ($i++ % 2 == 0)
-                    echo $class;
-                ?>>
-                        <?php echo $this->Time->format(Configure::read('dateFormat'), $action['Action']['modified']); ?>
-                    &nbsp;
-                </dd>
-                <dt<?php
-                if ($i % 2 == 0)
-                    echo $class;
-                ?>><?php echo __d('phkapa', 'Created'); ?></dt>
-                <dd<?php
-                if ($i++ % 2 == 0)
-                    echo $class;
-                ?>>
-                        <?php echo $this->Time->format(Configure::read('dateFormat'), $action['Action']['created']); ?>
-                    &nbsp;
-                </dd>
-            </dl>
-        </div>
-    </div>
-
-
-
-    <div class="actions form">
-        <?php //echo $this->Form->create('Action', array('url' => array('controller' => 'verify', 'action' => 'edit_action'))); ?>
-        <?php echo $this->Form->create('Action'); ?>
-
-        <fieldset class="ui-corner-all ui-widget-content" >
-            <legend><?php echo __d('phkapa', 'Record') . ' ' . __d('phkapa', 'Action'); ?></legend>
-            <?php
-            echo $this->Form->hidden('id');
-            echo $this->Form->hidden('ticket_id');
-            echo $this->Form->input('action_effectiveness_id', array('label' => __d('phkapa', 'Action Effectiveness'), 'empty' => __d('phkapa', '(choose one)')));
-            echo $this->Form->input('effectiveness_notes', array('label' => __d('phkapa', 'Effectiveness Notes')));
-            echo $this->Form->submit(__d('phkapa', 'Submit'));
-            ?>
-        </fieldset>
-        <?php echo $this->Form->end(); ?>
-    </div>
+          </div>
+     </div>
 </div>
-<div class="clear"></div>

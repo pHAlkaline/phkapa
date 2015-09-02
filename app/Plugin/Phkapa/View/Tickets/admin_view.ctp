@@ -49,10 +49,20 @@
 
 
     </div>
-    <div class="box ui-corner-all ui-widget-content" >
-        <div class="tickets view">
+    
+    
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-details"><?php echo __dn('phkapa', 'Detail', 'Details', 2); ?></a></li>
+            <li><a href="#tabs-actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2) . ' (' . count($ticket['Action']) . ')'; ?></a></li>
+            <li><a href="#tabs-related"><?php echo __d('phkapa', 'Related') . ' (' . count($ticket['Children']) . ')'; ?></a></li>
+            <li><a href="#tabs-revisions"> <?php echo __dn('phkapa', 'Revision','Revisions',2). ' (' . count($ticket_revisions) . ')';; ?></a></li>
+            <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2); ?></a></li>
+           
 
-            <div class="block">
+        </ul>
+        <div id="tabs-details">
+                <div class="block">
                 <dl><?php
                 $i = 0;
                 $class = ' class="altrow"';
@@ -317,46 +327,25 @@
                 </dl>
             </div>
         </div>
-    </div>
-<div class="clear"></div>
-    <?php
+        <div id="tabs-feedback">
+             <?php
     if (CakePlugin::loaded('Feedback')) {
         ?>
-        <div class="ui-corner-all ui-widget" id="related-comment">
-            <h2>
-                <a href="#" id="toggle-related-comments"><?php echo __dn('phkapa', 'Comment', 'Comments', 2) . ' (' . count($ticket['Comment']) . ')'; ?></a>
-            </h2>
-            <div class="block ui-widget-content" id="related-records">
-                <div class="related">
-                    <?php echo $this->Comments->display_for($ticket, array('model' => 'Phkapa.Ticket')); ?>
+          <div class="related">
+                    <?php echo $this->Comments->display_for($ticket, array('showForm'=>false,'model' => 'Phkapa.Ticket')); ?>
                 </div>
-            </div>
-
-
-        </div>
+            
     <?php } else { ?>
-        <div class="ui-corner-all ui-widget" id="related-comment">
-            <h2>
-                <a href="#" id="toggle-related-comments"><?php echo __dn('phkapa', 'Comment', 'Comments', 2); ?></a>
-            </h2>
-            <div class="block ui-widget-content" id="related-records">
-                <div class="related">
+        <div class="related">
                     <?php
                     echo $this->element('pluginNotFound');
                     ?>
                 </div>
-            </div>
-
-
-        </div>           
+                  
     <?php } ?>
-    <div class="ui-corner-all ui-widget" id="related">
-        <h2>
-            <a href="#" id="toggle-related-records"><?php echo __dn('phkapa', 'Action', 'Actions', 2) . ' (' . count($ticket['Action']) . ')' . ' - ' . __dn('phkapa', 'Ticket', 'Tickets', 2) . ' (' . count($ticket['Children']) . ')'; ?></a>
-        </h2>
-        <div class="block ui-widget-content" id="related-records">
-            <div class="related">
-                <h3><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></h3>
+        </div>
+        <div id="tabs-actions">
+               <div class="related">
                 <?php if (!empty($ticket['Action'])): ?>
                     <table cellpadding = "0" cellspacing = "0">
                         <thead class="ui-state-default"
@@ -417,9 +406,9 @@
                     </ul>
                 </div>
             </div>
-            
-            <div class="related">
-                <h3><?php echo __d('phkapa', 'Related Tickets'); ?></h3>
+        </div>
+        <div id="tabs-related">
+             <div class="related">
                 <?php if (!empty($ticket['Children'])): ?>
                     <table cellpadding = "0" cellspacing = "0">
                         <thead class="ui-state-default"
@@ -485,8 +474,11 @@
                     </div>
                 <?php endif; ?>
             </div>
+            
+        </div>
+        <div id="tabs-revisions">
+             
             <div class="related">
-                <h3><?php echo __dn('phkapa', 'Revision','Revisions',2); ?></h3>
                 <?php if (!empty($ticket_revisions)): ?>
                     <table cellpadding = "0" cellspacing = "0">
                         <thead class="ui-state-default"
@@ -532,7 +524,6 @@
                 
             </div>
         </div>
-    </div>
-    
+   
 </div>
 <div class="clear"></div>
