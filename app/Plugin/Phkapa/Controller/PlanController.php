@@ -181,7 +181,7 @@ class PlanController extends PhkapaAppController {
                 $this->Ticket->id = $ticketId;
                 $this->Ticket->saveField('modified_user_id', $this->Auth->user('id'));
                 $this->Flash->info(__d('phkapa', 'Saved with success.'));
-                $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id']));
+                $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id'],'#'=>'tabs-actions'));
             } else {
                 $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
             }
@@ -229,7 +229,7 @@ class PlanController extends PhkapaAppController {
 
         if (count($ticket) == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
-            $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id']));
+            $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id'],'#'=>'tabs-actions'));
         }
         //$this->loadModel('Phkapa.Action');
         if (!empty($this->request->data)) {
@@ -247,7 +247,7 @@ class PlanController extends PhkapaAppController {
                 $this->Ticket->id = $ticketId;
                 $this->Ticket->saveField('modified_user_id', $this->Auth->user('id'));
                 $this->Flash->info(__d('phkapa', 'Saved with success.'));
-                $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id']));
+                $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id'],'#'=>'tabs-actions'));
             } else {
                 $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
             }
@@ -284,14 +284,14 @@ class PlanController extends PhkapaAppController {
         ));
         if ($countTicket == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
-            $this->redirect(array('action' => 'edit', $ticketId));
+            $this->redirect(array('action' => 'edit', $ticketId,'#'=>'tabs-actions'));
         }
         //$this->loadModel('Phkapa.Action');
         if ($this->Ticket->Action->deleteAll(array('Action.ticket_id' => $ticketId, 'Action.id' => $id))) {
             $this->Ticket->id = $ticketId;
             $this->Ticket->saveField('modified_user_id', $this->Auth->user('id'));
             $this->Flash->info(__d('phkapa', 'Deleted with success.'));
-            $this->redirect(array('action' => 'edit', $ticketId));
+             $this->redirect(array('action' => 'edit', $ticketId,'#'=>'tabs-actions'));
         }
         $this->Flash->error(__d('phkapa', 'Could not be deleted.'));
         $this->redirect(array('action' => 'edit', $ticketId));
@@ -320,7 +320,7 @@ class PlanController extends PhkapaAppController {
         ));
         if ($countTicket == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
-            $this->redirect(array('action' => 'edit', $ticketId));
+             $this->redirect(array('action' => 'edit', $ticketId,'#'=>'tabs-actions'));
         }
         //$this->loadModel('Phkapa.Action');
         $nowClose = $this->Ticket->Action->timeFormatedField('close_date', time());
@@ -336,7 +336,7 @@ class PlanController extends PhkapaAppController {
             $this->Ticket->id = $ticketId;
             $this->Ticket->saveField('modified_user_id', $this->Auth->user('id'));
             $this->Flash->info(__d('phkapa', 'Closed with success.'));
-            $this->redirect(array('action' => 'edit', $ticketId));
+             $this->redirect(array('action' => 'edit', $ticketId,'#'=>'tabs-actions'));
         }
         $this->Flash->error(__d('phkapa', 'Could not be closed.'));
         $this->redirect(array('action' => 'edit', $ticketId));
