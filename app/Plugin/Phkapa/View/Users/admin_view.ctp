@@ -94,7 +94,7 @@ $class = ' class="altrow"';
 
     <div class="ui-corner-all ui-widget" id="related">
         <h2>
-            <a href="#" id="toggle-related-records"><?php echo __d('phkapa','Related') . ' - ' . __dn('phkapa','Process','Processes',2) . ' (' . count($user['Process']) . ')'; ?></a>
+            <a href="#" id="toggle-related-records"><?php echo __dn('phkapa','Process','Processes',2) . ' (' . count($user['Process']) . ')'; ?></a>
         </h2>
         <div class="block ui-widget-content" id="related-records">
             <div class="related">

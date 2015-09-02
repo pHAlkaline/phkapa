@@ -188,7 +188,7 @@
                             if ($i++ % 2 == 0)
                                 echo $class;
                             ?>>
-<?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
+<?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -265,7 +265,7 @@ echo $this->Form->input('closed', array('label' => __d('phkapa', 'Closed')));
         ?>
         <div class="ui-corner-all ui-widget" id="related-comment">
             <h2>
-                <a href="#" id="toggle-related-comments"><?php echo __d('phkapa', 'Related') . ' - ' . __dn('phkapa', 'Comment', 'Comments', 2) . ' (' . count($ticket['Comment']) . ')'; ?></a>
+                <a href="#" id="toggle-related-comments"><?php echo __dn('phkapa', 'Comment', 'Comments', 2) . ' (' . count($ticket['Comment']) . ')'; ?></a>
             </h2>
             <div class="block ui-widget-content" id="related-records">
                 <div class="related">
@@ -278,7 +278,7 @@ echo $this->Form->input('closed', array('label' => __d('phkapa', 'Closed')));
         <?php } else { ?>
         <div class="ui-corner-all ui-widget" id="related-comment">
             <h2>
-                <a href="#" id="toggle-related-comments"><?php echo __d('phkapa', 'Related') . ' - ' . __dn('phkapa', 'Comment', 'Comments', 2); ?></a>
+                <a href="#" id="toggle-related-comments"><?php echo __dn('phkapa', 'Comment', 'Comments', 2); ?></a>
             </h2>
             <div class="block ui-widget-content" id="related-records">
                 <div class="related">

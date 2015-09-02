@@ -63,7 +63,7 @@
 
                     <td><?php
                         echo $this->Text->truncate(
-                                $this->Text->autoParagraph($ticket['Ticket']['description']) . '<br/>' . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
+                                $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
                             'ellipsis' => '...',
                             'exact' => false
                         ));
