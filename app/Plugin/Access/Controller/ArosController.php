@@ -195,7 +195,7 @@ class ArosController extends AccessAppController {
         }
         $aco = str_replace("*", "/", $aco);
         $this->Acl->allow($aro, $aco);
-        $this->redirect(array('action' => 'edit', $id));
+        $this->redirect(array('action' => 'edit', $id,'#'=>'tabs-access'));
     }
 
     /**
@@ -214,7 +214,7 @@ class ArosController extends AccessAppController {
         }
         $aco = str_replace("*", "/", $aco);
         $this->Acl->deny($aro, $aco);
-        $this->redirect(array('action' => 'edit', $id));
+        $this->redirect(array('action' => 'edit', $id,'#'=>'tabs-access'));
     }
 
     /**
