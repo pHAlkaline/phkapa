@@ -68,7 +68,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                 <li>
                     <?php
                     if ($sendOk) {
-                        echo $this->Html->link(__d('phkapa', 'Send %s', __d('phkapa', 'Ticket')), array('action' => 'send', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
+                        echo $this->Html->link(__d('phkapa', 'Verify').' '. __d('phkapa', 'Ticket'), array('action' => 'send', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
                     }
                     if ($closeOk) {
                         echo $this->Html->link(__d('phkapa', 'Close %s', __d('phkapa', 'Ticket')), array('action' => 'close', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id'])));

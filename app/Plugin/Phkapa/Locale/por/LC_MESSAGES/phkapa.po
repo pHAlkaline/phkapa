@@ -368,7 +368,7 @@ msgid "Start Date"
 msgstr "Data de Início"
 
 msgid "Submit"
-msgstr "Submeter"
+msgstr "Registar"
 
 msgid "Supplier"
 msgid_plural "Suppliers"

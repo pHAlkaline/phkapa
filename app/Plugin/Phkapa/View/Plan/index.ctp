@@ -154,7 +154,7 @@
                         <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit', $ticket['Ticket']['id'])); ?>
                         <?php
                         if ($sendOk) {
-                            echo ' | ' . $this->Html->link(__d('phkapa', 'Send'), array('action' => 'send', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
+                            echo ' | ' . $this->Html->link(__d('phkapa', 'Verify'), array('action' => 'send', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to send # %s?', $ticket['Ticket']['id'])));
                         }
 
                         if ($closeOk) {
