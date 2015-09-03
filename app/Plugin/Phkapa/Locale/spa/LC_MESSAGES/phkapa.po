@@ -125,6 +125,11 @@ msgstr "Cerrado Por"
 msgid "Closed with success."
 msgstr "Cerrado con éxito."
 
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] "Comentario"
+msgstr[1] "Comentarios"
+
 msgid "Continue"
 msgstr "Continuar"
 

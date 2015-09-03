@@ -125,6 +125,11 @@ msgstr "Închis de "
 msgid "Closed with success."
 msgstr "Închis cu succes"
 
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] "Comentariu"
+msgstr[1] "Comentarii"
+
 msgid "Continue"
 msgstr "Continuă"
 

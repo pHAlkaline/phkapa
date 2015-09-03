@@ -14,9 +14,7 @@ App::uses('CakeTime', 'Utility');
  */
 class Ticket extends PhkapaAppModel {
     public $actsAs = array(
-        'Revision',
-        'Feedback.Commentable'
-        );
+        'Revision');
     /**
      * Model name
      *
