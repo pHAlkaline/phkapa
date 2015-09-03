@@ -483,7 +483,7 @@ if ($ticket['Workflow']['id'] < 5) {
 
 
                 <div class="related">
-                    <?php echo $this->Comments->display_for($ticket, array('showForm'=>false,'model' => 'Phkapa.Ticket')); ?>
+                    <?php echo $this->Comments->display_for($ticket, array('showForm'=>true,'model' => 'Phkapa.Ticket')); ?>
                 </div>
 
 

@@ -15,6 +15,23 @@
 class PhkapaAppController extends AppController {
 
     /**
+     * beforeFilter
+     *
+     * @return void
+     * @access public
+     * @throws 
+     */
+    public function beforeFilter() {
+        parent::beforeFilter();
+        if (CakePlugin::loaded('Feedback')) {
+            $this->Comments = $this->Components->load('Feedback.Comments', array('on' => array('admin_view', 'admin_edit', 'view', 'edit', 'add_action', 'edit_action')));
+            if (get_class($this->Ticket) == 'Ticket') {
+                $this->Ticket->Behaviors->load('Feedback.Commentable');
+            }
+        }
+    }
+
+    /**
      * beforeRender callback
      *
      * @return void
@@ -54,8 +71,7 @@ class PhkapaAppController extends AppController {
                 $menuItems[$key] = str_replace('Controller', '', $value);
             }
             sort($menuItems);
-            $this->set('user_at_string', __n('User','Users',1) . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __('pHKapa Setup'));
-    
+            $this->set('user_at_string', __n('User', 'Users', 1) . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __('pHKapa Setup'));
         } else {
             $menuItems = array('Query', 'Register', 'Review', 'Plan', 'Verify');
             $user = $this->Auth->user('name');
@@ -64,11 +80,10 @@ class PhkapaAppController extends AppController {
               unset($menuItems[$key]);
               }
               endforeach; */
-            $this->set('user_at_string', __n('User','Users',1) . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __('pHKapa'));
-    
+            $this->set('user_at_string', __n('User', 'Users', 1) . ' ' . $this->Session->read('Auth.User.name') . ' @ ' . __('pHKapa'));
         }
-        $translationDomain='phkapa';
-        $this->set(compact('menuItems','translationDomain'));
+        $translationDomain = 'phkapa';
+        $this->set(compact('menuItems', 'translationDomain'));
     }
 
     /**
@@ -79,7 +94,7 @@ class PhkapaAppController extends AppController {
      * @access protected
      */
     protected function _addNotification($ticket_id = null, $notificationText = null) {
-        $ticket = $this->Ticket->find('first', array('recursive'=>'1','order'=>array('Ticket.id'),'conditions' => array('Ticket.id' => $ticket_id)));
+        $ticket = $this->Ticket->find('first', array('recursive' => '1', 'order' => array('Ticket.id'), 'conditions' => array('Ticket.id' => $ticket_id)));
         $registarId = $ticket['Ticket']['registar_id'];
         $conditions = array("Process.id" => $ticket['Process']['id']);
         $this->Ticket->Process->bindModel(
@@ -91,13 +106,13 @@ class PhkapaAppController extends AppController {
                             'associationForeignKey' => 'user_id',
                             'unique' => true,
                             'conditions' => array('User.active' => '1', 'User.id <>' => $registarId),
-                    ))));
-        $this->Ticket->Process->recursive=2;
+        ))));
+        $this->Ticket->Process->recursive = 2;
         $processUsers = $this->Ticket->Process->find('all', array('conditions' => $conditions));
-        $reference = Router::url(array('controller' => 'query', 'action' => 'view', $ticket_id,'base'=>false));
+        $reference = Router::url(array('controller' => 'query', 'action' => 'view', $ticket_id, 'base' => false));
         foreach ($processUsers[0]['User'] as $User):
-            $notifyData = array('notifier_id' => AuthComponent::user('id'), 'notified_id' => $User['id'], 'reference' => $reference, 'notification' => $notificationText,'read'=>0);
-            $this->Notify->addNotification($notifyData,$User['email']);
+            $notifyData = array('notifier_id' => AuthComponent::user('id'), 'notified_id' => $User['id'], 'reference' => $reference, 'notification' => $notificationText, 'read' => 0);
+            $this->Notify->addNotification($notifyData, $User['email']);
         endforeach;
         return;
     }

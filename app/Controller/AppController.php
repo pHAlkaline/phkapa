@@ -35,7 +35,6 @@ class AppController extends Controller {
         'Auth' => array(
             'loginAction' => array('admin' => false, 'plugin' => false, 'controller' => 'users', 'action' => 'login')
             ),
-        'Feedback.Comments' => array('on' => array('admin_view','admin_edit', 'view', 'edit','add_action','edit_action'))
         //'DebugKit.Toolbar',
         );
     
@@ -71,7 +70,12 @@ class AppController extends Controller {
         if ($this->Session->read('User.language')){
             Configure::write('Config.language', $this->Session->read('User.language'));
         }
-            
+        
+        if (CakePlugin::loaded('DebugKit')) {
+            $this->Comments = $this->Components->load('Feedback.Comments', array('on' => array('admin_view', 'admin_edit', 'view', 'edit', 'add_action', 'edit_action')));
+            $this->Ticket->Behaviors->load('Feedback.Commentable');
+        }
+             
     }
 
     /**
@@ -110,6 +114,7 @@ class AppController extends Controller {
             $this->set(compact('menuItems'));
             
         };
+        
         
     }
     
