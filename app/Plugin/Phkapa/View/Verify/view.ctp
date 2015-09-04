@@ -50,87 +50,99 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
 
     </div>
     <div id="tabs">
+        <?php
+        $countComment = null;
+        if (isset($ticket['Comment'])) {
+            $countComment = ' (' . count($ticket['Comment']) . ')';
+        }
+        $countAttachment = null;
+        if (isset($ticket['Attachment'])) {
+            $countAttachment = ' (' . count($ticket['Attachment']) . ')';
+        }
+        ?>
         <ul>
-            <li><a href="#tabs-actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2) . ' (' . count($ticket['Action']) . ')'; ?></a></li>
-           
-            <li><a href="#tabs-ticket"><?php echo __dn('phkapa', 'Ticket', 'Tickets', 1); ?></a></li>
-             <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2); ?></a></li>
+
+            <li><a href="#tabs-actions"><?php echo __dn('phkapa', 'Detail', 'Details', 2); ?></a></li>
+            <li><a href="#tabs-ticket"><?php echo __dn('phkapa', 'Ticket', 'Ticket', 1); ?></a></li>
+            <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2) . $countComment; ?></a></li>
+            <li><a href="#tabs-attachment"><?php echo __dn('phkapa', 'Attachment', 'Attachments', 2) . $countAttachment; ?></a></li>
+
 
         </ul>
-         <div id="tabs-actions">
-             <div class="related">
+        <div id="tabs-actions">
+            <div class="related">
 
-                        <?php if (!empty($ticket['Action'])): ?>
-                            <table cellpadding = "0" cellspacing = "0">
-                                <thead class="ui-state-default"
-                                       <tr>
-                                        <th><?php echo __d('phkapa', 'Id'); ?></th>
-                                        <th><?php echo __d('phkapa', 'Action Type'); ?></th>
-                                        <th><?php echo __d('phkapa', 'Description'); ?></th>
-                                        <th><?php echo __d('phkapa', 'Effectiveness'); ?></th>
-                                        <th><?php echo __d('phkapa', 'Verified By'); ?></th>
-                                        <th><?php echo __d('phkapa', 'Created'); ?></th>
-                                        <th><?php echo __d('phkapa', 'Close Date'); ?></th>
-                                        <th><?php echo __d('phkapa', 'After Deadline'); ?></th>
-                                        <th class="actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></th>
-                                    </tr>
-                                </thead>
-                                <?php
-                                $i = 0;
-                                foreach ($ticket['Action'] as $action):
-                                    $dayDescription = ($action['deadline'] == 1) ? 'day' : 'days';
-                                    $expiry = strtotime(date($action['created']) . " +" . $action['deadline'] . $dayDescription);
-                                    $closeDate = strtotime($action['close_date']);
-                                    $afterexpiry = $closeDate - $expiry;
-                                    $afterexpiry = floor($afterexpiry / (24 * 60 * 60));
-                                    if ($afterexpiry > 0) {
-                                        //$afterexpiry = $afterexpiry;
-                                    } else {
-                                        $afterexpiry = 0;
-                                    }
+                <?php if (!empty($ticket['Action'])): ?>
+                    <table cellpadding = "0" cellspacing = "0">
+                        <thead class="ui-state-default"
+                               <tr>
+                                <th><?php echo __d('phkapa', 'Id'); ?></th>
+                                <th><?php echo __d('phkapa', 'Action Type'); ?></th>
+                                <th><?php echo __d('phkapa', 'Description'); ?></th>
+                                <th><?php echo __d('phkapa', 'Effectiveness'); ?></th>
+                                <th><?php echo __d('phkapa', 'Verified By'); ?></th>
+                                <th><?php echo __d('phkapa', 'Created'); ?></th>
+                                <th><?php echo __d('phkapa', 'Close Date'); ?></th>
+                                <th><?php echo __d('phkapa', 'After Deadline'); ?></th>
+                                <th class="actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></th>
+                            </tr>
+                        </thead>
+                        <?php
+                        $i = 0;
+                        foreach ($ticket['Action'] as $action):
+                            $dayDescription = ($action['deadline'] == 1) ? 'day' : 'days';
+                            $expiry = strtotime(date($action['created']) . " +" . $action['deadline'] . $dayDescription);
+                            $closeDate = strtotime($action['close_date']);
+                            $afterexpiry = $closeDate - $expiry;
+                            $afterexpiry = floor($afterexpiry / (24 * 60 * 60));
+                            if ($afterexpiry > 0) {
+                                //$afterexpiry = $afterexpiry;
+                            } else {
+                                $afterexpiry = 0;
+                            }
 
-                                    $class = null;
-                                    if ($i++ % 2 == 0) {
-                                        $class = ' class="altrow"';
+                            $class = null;
+                            if ($i++ % 2 == 0) {
+                                $class = ' class="altrow"';
+                            }
+                            ?>
+                            <tr<?php echo $class; ?>>
+                                <td><?php echo $action['id']; ?></td>
+                                <td><?php echo $action['ActionType']['name']; ?></td>
+                                <td><?php
+                                    echo $this->Text->truncate(
+                                            $this->Text->autoParagraph($action['description']), 60, array(
+                                        'ellipsis' => '...',
+                                        'exact' => false
+                                    ));
+                                    ?></td>
+                                <td><?php
+                                    if (isset($action['ActionEffectiveness']['name']))
+                                        echo $action['ActionEffectiveness']['name'];
+                                    ?></td>
+                                <td><?php
+                                    if (isset($action['VerifyUser']['name']))
+                                        echo $action['VerifyUser']['name'];
+                                    ?></td>
+                                <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
+                                <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']); ?></td>
+                                <td class="nowrap"><?php echo $afterexpiry; ?></td>
+                                <td class="actions">
+                                    <?php
+                                    if ($action['ActionType']['verification'] != 0) {
+                                        echo $this->Html->link(__d('phkapa', 'Verify'), array('action' => 'edit_action', $action['id'], $ticket['Ticket']['id']));
                                     }
                                     ?>
-                                    <tr<?php echo $class; ?>>
-                                        <td><?php echo $action['id']; ?></td>
-                                        <td><?php echo $action['ActionType']['name']; ?></td>
-                                        <td><?php
-                                            echo $this->Text->truncate(
-                                                    $this->Text->autoParagraph($action['description']), 60, array(
-                                                'ellipsis' => '...',
-                                                'exact' => false
-                                            ));
-                                            ?></td>
-                                        <td><?php
-                                            if (isset($action['ActionEffectiveness']['name']))
-                                                echo $action['ActionEffectiveness']['name'];
-                                            ?></td>
-                                        <td><?php
-                                            if (isset($action['VerifyUser']['name']))
-                                                echo $action['VerifyUser']['name'];
-                                            ?></td>
-                                        <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
-                                        <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']); ?></td>
-                                        <td class="nowrap"><?php echo $afterexpiry; ?></td>
-                                        <td class="actions">
-                                            <?php
-                                            if ($action['ActionType']['verification'] != 0) {
-                                                echo $this->Html->link(__d('phkapa', 'Verify'), array('action' => 'edit_action', $action['id'], $ticket['Ticket']['id']));
-                                            }
-                                            ?>
 
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </table>
-                        <?php endif; ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+                <?php endif; ?>
 
 
-                    </div>
-              
+            </div>
+
         </div>
         <div id="tabs-ticket">
 
@@ -355,22 +367,54 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
 
             </div>
         </div>
-       
+
         <div id="tabs-feedback">
             <?php
             if (CakePlugin::loaded('Feedback')) {
                 ?>
-                  <div class="related">
-                            <?php echo $this->Comments->display_for($ticket, array('showForm' => true, 'model' => 'Phkapa.Ticket')); ?>
-                      
-            <?php } else { ?>
                 <div class="related">
+                    <?php echo $this->Comments->display_for($ticket, array('showForm' => true, 'model' => 'Phkapa.Ticket')); ?>
+
+                <?php } else { ?>
+                    <div class="related">
+                        <?php
+                        echo $this->element('pluginNotFound');
+                        ?>
+
+                    
+                </div>
+                    <?php } ?>
+               
+            </div>
+        </div>
+         <div id="tabs-attachment">
+                    <?php
+                    if (CakePlugin::loaded('Attachment')) {
+                        ?>
+
+
+                        <div class="related">
+                            <?php echo $this->Attachments->display_for($ticket, array('showForm' => true, 'model' => 'Phkapa.Ticket')); ?>
+                        </div>
+
+
+
+
+                    <?php } else { ?>
+
+
+                        <div class="related">
                             <?php
                             echo $this->element('pluginNotFound');
                             ?>
-                               
-            <?php } ?>
-        </div>
+                        </div>
+
+
+
+
+                    <?php } ?>
+         </div>
+
     </div>
 </div>
 
