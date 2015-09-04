@@ -71,10 +71,10 @@ class AppController extends Controller {
             Configure::write('Config.language', $this->Session->read('User.language'));
         }
         
-        if (CakePlugin::loaded('DebugKit')) {
+        /*if (CakePlugin::loaded('Feedback')) {
             $this->Comments = $this->Components->load('Feedback.Comments', array('on' => array('admin_view', 'admin_edit', 'view', 'edit', 'add_action', 'edit_action')));
             $this->Ticket->Behaviors->load('Feedback.Commentable');
-        }
+        }*/
              
     }
 
