@@ -29,6 +29,12 @@ class PhkapaAppController extends AppController {
                 $this->Ticket->Behaviors->load('Feedback.Commentable');
             }
         }
+        if (CakePlugin::loaded('Attachment')) {
+            $this->Attachments = $this->Components->load('Attachment.Attachments', array('on' => array('admin_view', 'admin_edit', 'view', 'edit', 'add_action', 'edit_action')));
+            if (get_class($this->Ticket) == 'Ticket') {
+                $this->Ticket->Behaviors->load('Attachment.Attachable');
+            }
+        }
     }
 
     /**
