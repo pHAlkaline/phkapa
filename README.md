@@ -1,7 +1,7 @@
 [![pHKapa](http://phkapa.net/images/logo.png)](http://phkapa.net)
 
 
-**pHKapa** , Nonconformity management software for quality assurance. Allows to generate action (CAPA) requests that routes through register, review, plan ( root cause , action plan) , and verification stages. It provides effective mechanisms to determinate the source and cost of problems, released under [MIT License]
+**pHKapa** , Nonconformity management software for quality assurance. Allows to generate action plan (CAPA) requests that routes through register, review, plan / implement, and verification stages. It provides effective mechanisms to determinate the source and cost of problems, released under [MIT License]
 
 Official website**: [http://phkapa.net](http://phkapa.net)
 
