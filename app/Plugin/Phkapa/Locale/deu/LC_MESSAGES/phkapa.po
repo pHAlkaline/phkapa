@@ -293,7 +293,7 @@ msgid "Password"
 msgstr "Passwort"
 
 msgid "Plan"
-msgstr "Planen"
+msgstr "Planen/Realisieren"
 
 msgid "Previous"
 msgstr "Vorheriger"

@@ -306,7 +306,7 @@ msgid "Password"
 msgstr "Password"
 
 msgid "Plan"
-msgstr "Planificación"
+msgstr "Planificar/Ejecutar"
 
 msgid "Previous"
 msgstr "Anterior"

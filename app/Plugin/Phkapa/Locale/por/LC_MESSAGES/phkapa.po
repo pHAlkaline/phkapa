@@ -294,7 +294,7 @@ msgid "Password"
 msgstr "Palavra passe"
 
 msgid "Plan"
-msgstr "Planificação"
+msgstr "Plano/Implementar"
 
 msgid "Previous"
 msgstr "Anterior"
