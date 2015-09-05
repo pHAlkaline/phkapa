@@ -49,20 +49,21 @@ if ($ticket['Ticket']['approved'] === null) {
 
     </div>
     <div id="tabs">
-        <?php 
-        $countComment=null;
-        if (isset($ticket['Comment'])){
-          $countComment= ' (' . count($ticket['Comment']) . ')';  
+        <?php
+        $countComment = null;
+        if (isset($ticket['Comment'])) {
+            $countComment = ' (' . count($ticket['Comment']) . ')';
         }
-        $countAttachment=null;
-        if (isset($ticket['Attachment'])){
-          $countAttachment= ' (' . count($ticket['Attachment']) . ')';  
+        $countAttachment = null;
+        if (isset($ticket['Attachment'])) {
+            $countAttachment = ' (' . count($ticket['Attachment']) . ')';
         }
         ?>
         <ul>
             <li><a href="#tabs-details"><?php echo __dn('phkapa', 'Detail', 'Details', 2); ?></a></li>
-            <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2). $countComment; ?></a></li>
-            <li><a href="#tabs-attachment"><?php echo __dn('phkapa', 'Attachment', 'Attachments', 2). $countAttachment; ?></a></li>
+            <li><a href="#tabs-attachment"><?php echo __dn('phkapa', 'Attachment', 'Attachments', 2) . $countAttachment; ?></a></li>
+            <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2) . $countComment; ?></a></li>
+
 
         </ul>
         <div id="tabs-details">
