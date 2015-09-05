@@ -309,7 +309,7 @@ msgid "Password"
 msgstr "Parolă"
 
 msgid "Plan"
-msgstr "Planifică"
+msgstr "Planifică/Implementa"
 
 msgid "Previous"
 msgstr "Anterior"

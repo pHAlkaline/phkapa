@@ -687,7 +687,7 @@ INSERT INTO `phkapa_action_types` (`id`, `name`, `verification`, `active`, `crea
 INSERT INTO `phkapa_workflows` (`id`, `name`, `active`, `order`, `created`, `modified`) VALUES
 (1, 'Registo', 1, 1, '2012-08-21 08:12:37', '2012-08-21 08:12:37'),
 (2, 'Revisão', 1, 2, '2012-08-21 08:12:37', '2012-08-21 08:12:37'),
-(3, 'Planificação', 1, 3, '2012-08-21 08:12:37', '2012-08-21 08:12:37'),
+(3, 'Plano/Implementar', 1, 3, '2012-08-21 08:12:37', '2012-08-21 08:12:37'),
 (4, 'Verificação', 1, 4, '2012-08-21 08:12:37', '2012-08-21 08:12:37'),
 (5, 'Fechado', 1, 5, '2012-08-21 08:12:37', '2012-08-21 08:12:37');
 
