@@ -85,6 +85,11 @@ msgstr "Ești sigur(ă) că vrei să replanifici nº %s?"
 msgid "Are you sure you want to send # %s?"
 msgstr "Ești sigur(ă) că vrei să trimiți nº %s?"
 
+msgid "Attachment"
+msgid_plural "Attachments"
+msgstr [0] "Anexa"
+msgstr [1] "Accesorii"
+
 msgid "Boolean"
 msgstr "Boolean"
 

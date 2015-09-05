@@ -82,6 +82,11 @@ msgstr "Soll für # %s wirklich der Plan überarbeitet werden?"
 msgid "Are you sure you want to send # %s?"
 msgstr "Soll # %s wirklich eingetragen werden?"
 
+msgid "Attachment"
+msgid_plural "Attachments"
+msgstr [0] "Anhang"
+msgstr [1] "Anhänge"
+
 msgid "Boolean"
 msgstr "Boolean"
 
