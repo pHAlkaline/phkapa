@@ -85,6 +85,11 @@ msgstr "¿Está seguro de que quiere replanificar el nº %s?"
 msgid "Are you sure you want to send # %s?"
 msgstr "¿Está seguro de que desea enviar el nº %s?"
 
+msgid "Attachment"
+msgid_plural "Attachments"
+msgstr [0] "Anexo"
+msgstr [1] "Anexos"
+
 msgid "Boolean"
 msgstr "Booleano"
 

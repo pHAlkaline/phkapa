@@ -83,6 +83,11 @@ msgstr "Tem a certeza que quer efectuar um novo plano # %s?"
 msgid "Are you sure you want to send # %s?"
 msgstr "Tem a certeza que quer enviar # %s?"
 
+msgid "Attachment"
+msgid_plural "Attachments"
+msgstr[0] "Anexo"
+msgstr[1] "Anexos"
+
 msgid "Boolean"
 msgstr "Boleano"
 

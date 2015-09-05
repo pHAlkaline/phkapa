@@ -86,6 +86,11 @@ msgstr ""
 msgid "Are you sure you want to send # %s?"
 msgstr ""
 
+msgid "Attachment"
+msgid_plural "Attachments"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "Boolean"
 msgstr ""
 
