@@ -271,7 +271,7 @@ class PlanController extends PhkapaAppController {
      * @access public
      */
     public function delete_action($id = null, $ticketId = null) {
-        if (!$id || !ticketId) {
+        if (!$id || !$ticketId) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
