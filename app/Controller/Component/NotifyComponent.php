@@ -108,6 +108,7 @@ class NotifyComponent extends Component {
             $this->_model->create();
             if ($this->_model->save($notification)) {
                 if (!empty($email)) {
+                    $this->_model->recursive=1;
                     $this->_emailNotify($this->_model->read(), $email);
                 }
                 return true;
@@ -166,18 +167,17 @@ class NotifyComponent extends Component {
      * @access protected
      */
     protected function _emailNotify($notification, $email) {
-        App::uses('CakeEmail', 'Network/Email');
         $Email = new CakeEmail('default');
         $Email->template('notification','phkapa')->emailFormat('html');
         $Email->viewVars(array('notification' => $notification,'email'=>$email));
         // uncoment these lines to get more control over sender from and subject!!
-        //$Email->sender('noreply-contacta@phkapa.net', 'pHKapa');
+        //$Email->sender('noreply-meddrop@phkapa.net', 'pHKapa');
         //$Email->from(array('noreply-contacta@phkapa.net' => 'pHKapa'));
         //$Email->subject(__('pHKapa').' '.__n('Notification', 'Notifications', 1));
         
         $Email->to($email);
         $Email->send();
-        
+        return;
     }
 
 }
