@@ -11,7 +11,7 @@
  */
 class EmailConfig {
     public $default = array(
-        'sender' => array('{default_sender_email}' => '{default_sender_name}'),
+        'sender' => array('{default_sender_email}'),
         'from' => array('{default_email}' => '{default_name}'),
         'subject' => '{default_subject}',
         'charset' => 'utf-8',

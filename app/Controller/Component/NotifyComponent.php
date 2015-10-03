@@ -168,7 +168,7 @@ class NotifyComponent extends Component {
      */
     protected function _emailNotify($notification, $email) {
         $Email = new CakeEmail('default');
-        $Email->template('notification','phkapa')->emailFormat('html');
+        $Email->template('Phkapa.notification','phkapa')->emailFormat('html');
         $Email->viewVars(array('notification' => $notification,'email'=>$email));
         // uncoment these lines to get more control over sender from and subject!!
         //$Email->sender('noreply-meddrop@phkapa.net', 'pHKapa');

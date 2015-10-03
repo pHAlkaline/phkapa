@@ -16,7 +16,7 @@
  */
 class AppController extends Controller {
 
-     public $theme = "Phkapa";
+     public $theme = "Phk";
      
     /**
      * Components
