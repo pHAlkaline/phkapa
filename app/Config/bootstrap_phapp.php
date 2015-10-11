@@ -63,7 +63,7 @@ Configure::write('Maintenance.offline_destroy_session', false); // true or false
 * By default deactivated
 * To activate include values in array()
 */
-Configure::write('Revision.tables', array('Ticket','Action')); // Set Ticket or Action or Both => array('Ticket','Action')
+Configure::write('Revision.tables', array()); // Set Ticket or Action or Both => array('Ticket','Action')
 
 /**
  * The settings below can be used to open access to all users or one specified user.
