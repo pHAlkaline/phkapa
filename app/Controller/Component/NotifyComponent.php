@@ -171,8 +171,8 @@ class NotifyComponent extends Component {
         $Email->template('Phkapa.notification','phkapa')->emailFormat('html');
         $Email->viewVars(array('notification' => $notification,'email'=>$email));
         // uncoment these lines to get more control over sender from and subject!!
-        //$Email->sender('noreply-meddrop@phkapa.net', 'pHKapa');
-        //$Email->from(array('noreply-contacta@phkapa.net' => 'pHKapa'));
+        //$Email->sender('noreply@phkapa.net', 'pHKapa');
+        //$Email->from(array('noreply@phkapa.net' => 'pHKapa'));
         //$Email->subject(__('pHKapa').' '.__n('Notification', 'Notifications', 1));
         
         $Email->to($email);
