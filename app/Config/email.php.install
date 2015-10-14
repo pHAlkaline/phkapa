@@ -16,10 +16,10 @@ class EmailConfig {
         'subject' => '{default_subject}',
         'charset' => 'utf-8',
 	'headerCharset' => 'utf-8',
-        'host' => '{host}',
-        'port' => {port},
-        'username' => '{username}',
-        'password' => '{password}',
+        'host' => '{default_host}',
+        'port' => '{default_port}',
+        'username' => '{default_username}',
+        'password' => '{default_password}',
         'transport' => 'Smtp'
         );
     
