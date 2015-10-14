@@ -103,7 +103,9 @@ class NotifyComponent extends Component {
      * 
      */
     public function addNotification($notification, $email = null) {
-        
+        if (!Configure::read('Tickets.notify')) {
+            return true;
+        }
         if (!empty($notification)) {
             $this->_model->create();
             if ($this->_model->save($notification)) {
@@ -167,6 +169,9 @@ class NotifyComponent extends Component {
      * @access protected
      */
     protected function _emailNotify($notification, $email) {
+        if (!Configure::read('Tickets.email_notify')) {
+            return true;
+        }
         $Email = new CakeEmail('default');
         $Email->template('Phkapa.notification','phkapa')->emailFormat('html');
         $Email->viewVars(array('notification' => $notification,'email'=>$email));
