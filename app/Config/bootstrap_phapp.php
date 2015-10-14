@@ -71,3 +71,10 @@ Configure::write('Revision.tables', array()); // Set Ticket or Action or Both =>
  * - '{User NAME field}' -> after login this user has total control 
  */
 Configure::write('Access.open', ''); // Keep this clean , use only on emergency, is case you forgot your access to phKapa
+
+
+/**
+ * Settings for notification component 
+ */
+Configure::write('Tickets.notify', true); // true to use notifications
+Configure::write('Tickets.email_notify', true); // true to send email notification , Tickets.notify will override this one.
