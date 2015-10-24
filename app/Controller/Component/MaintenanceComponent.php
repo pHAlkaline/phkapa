@@ -22,7 +22,7 @@ class MaintenanceComponent extends Component {
      * @var array
      * @access public
      */
-    public $components = array('Session');
+    public $components = array('Session','Flash');
 
     /**
      * The name of the element used for SessionComponent::setFlash
