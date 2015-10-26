@@ -65,6 +65,8 @@ class VerifyController extends PhkapaAppController {
             $this->Paginator->settings['conditions'] = array
                     ("OR" => array(
                         "Ticket.id LIKE" => "%" . $keyword . "%",
+                        "Ticket.description LIKE" => "%" . $keyword . "%",
+                        "Ticket.review_notes LIKE" => "%" . $keyword . "%",
                         "Priority.name LIKE" => "%" . $keyword . "%",
                         "Safety.name LIKE" => "%" . $keyword . "%",
                         "Type.name LIKE" => "%" . $keyword . "%",
@@ -74,6 +76,7 @@ class VerifyController extends PhkapaAppController {
                         "Activity.name LIKE" => "%" . $keyword . "%",
                         "Cause.name LIKE" => "%" . $keyword . "%",
                         "Supplier.name LIKE" => "%" . $keyword . "%"),
+                       
                     "AND" => array('Ticket.workflow_id' => '4', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))
             );
             $this->set('keyword', $keyword);

@@ -73,6 +73,8 @@ class QueryController extends PhkapaAppController {
                     ("OR" => array(
                         "Ticket.id LIKE" => "%" . $keyword . "%",
                         "Ticket.description LIKE" => "%" . $keyword . "%",
+                        "Ticket.review_notes LIKE" => "%" . $keyword . "%",
+                        "Ticket.cause_notes LIKE" => "%" . $keyword . "%",
                         "Priority.name LIKE" => "%" . $keyword . "%",
                         "Safety.name LIKE" => "%" . $keyword . "%",
                         "Type.name LIKE" => "%" . $keyword . "%",

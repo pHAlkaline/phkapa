@@ -1,6 +1,6 @@
 <h2 id="page-heading"><?php echo __d('phkapa', 'Review'); ?>:<?php echo __d('phkapa', 'List %s', __dn('phkapa', 'Ticket', 'Tickets', 2)); ?></h2>
 <div class="grid_16 actionsContainer">
-
+    <?php echo $this->element('searchBox'); ?>
     <?php if (!empty($tickets)) {
         ?>
         <table cellpadding="0" cellspacing="0" >

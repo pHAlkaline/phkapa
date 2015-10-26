@@ -15,8 +15,8 @@
         </div>
 
     </div>
-    <?php if (!empty($tickets)) {
-        ?>
+    <?php echo $this->element('searchBox'); ?>
+    <?php if (!empty($tickets)) { ?>
         <table cellpadding="0" cellspacing="0" >
             <?php
             $tableHeaders = $this->html->tableHeaders(array(
