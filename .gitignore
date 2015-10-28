@@ -70,3 +70,4 @@ Access.log
 /TODO.php
 /composer.lock
 
+/app/Config/Schema/attachment.sql
