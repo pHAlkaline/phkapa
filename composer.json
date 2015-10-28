@@ -20,15 +20,13 @@
     "extra": {
         "installer-paths": {
             "app/Plugin/DebugKit": ["cakephp/debug_kit"]
-        },
-        "installer-name": "pHKapa"
+        }
 
     },
     "require": {
         "php": ">=5.2.8",
         "ext-mcrypt": "*",
-        "cakephp/cakephp": "2.7.5",
-        "composer/installers": "*"
+        "cakephp/cakephp": "2.7.5"
     },
      "require-dev": {
         "php": ">=5.2.8",
