@@ -23,7 +23,7 @@
             </div>
        
     </div>
-    <div class="actions form">
+    <div class="ticket-actions form">
         <?php echo $this->Form->create('Action',array('novalidate' => true)); ?>
         <fieldset class="ui-corner-all ui-widget-content" >
             <legend><?php echo __d('phkapa','Record').' '. __d('phkapa','Action'); ?></legend>
