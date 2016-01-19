@@ -16,7 +16,7 @@
        
     </div>
     <div class="box ui-corner-all ui-widget-content" >
-        <div class="actions view">
+        <div class="ticket-actions view">
 
             <div class="block">
                 <dl><?php $i = 0;
