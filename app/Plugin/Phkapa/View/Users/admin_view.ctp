@@ -15,7 +15,7 @@
             <h5><?php echo __dn('phkapa', 'Process', 'Processes', 2); ?></h5>
             <ul class="menu">
                 <li><?php echo $this->Html->link(__d('phkapa', 'List %s', __dn('phkapa', 'Process', 'Processes', 2)), array('controller' => 'processes', 'action' => 'index')); ?> </li>
-                <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Process')), array('controller' => 'process', 'action' => 'add')); ?> </li>
+                <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Process')), array('controller' => 'processes', 'action' => 'add')); ?> </li>
             </ul>
         </div>
 
