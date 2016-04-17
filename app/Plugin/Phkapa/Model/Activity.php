@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Activity
  *
@@ -65,22 +66,21 @@ class Activity extends PhkapaAppModel {
             ),
         ),
     );
-
-    /* public $hasMany = array(
-      'Ticket' => array(
-      'className' => 'Phkapa.Ticket',
-      'foreignKey' => 'activity_id',
-      'dependent' => false,
-      'conditions' => array('Ticket.workflow_id <>'=>'5'),
-      'fields' => '',
-      'order' => '',
-      'limit' => '',
-      'offset' => '',
-      'exclusive' => '',
-      'finderQuery' => '',
-      'counterQuery' => ''
-      )
-      ); */
+    public $hasMany = array(
+        'Ticket' => array(
+            'className' => 'Phkapa.Ticket',
+            'foreignKey' => 'activity_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        )
+    );
 
     /**
      * Model associations: hasAndBelongsToMany

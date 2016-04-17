@@ -183,7 +183,7 @@ class User extends AppModel {
         // protects administrator to be deleted
         if ($this->id == 1)
             return false;
-        return true;
+        return parent::beforeDelete($cascade);
     }
 
     /**

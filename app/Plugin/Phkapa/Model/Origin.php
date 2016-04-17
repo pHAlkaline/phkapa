@@ -63,12 +63,12 @@ class Origin extends PhkapaAppModel {
         ),
     );
    
-    /*public $hasMany = array(
+    public $hasMany = array(
         'Ticket' => array(
             'className' => 'Phkapa.Ticket',
             'foreignKey' => 'origin_id',
             'dependent' => false,
-            'conditions' => array('Ticket.workflow_id <>' => '5'),
+            'conditions' => '',
             'fields' => '',
             'order' => '',
             'limit' => '',
@@ -77,7 +77,7 @@ class Origin extends PhkapaAppModel {
             'finderQuery' => '',
             'counterQuery' => ''
         )
-    );*/
+    );
 
 }
 

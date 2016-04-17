@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Process
  *
@@ -64,12 +65,12 @@ class Process extends PhkapaAppModel {
             ),
         ),
     );
-   /* public $hasMany = array(
+    public $hasMany = array(
         'Ticket' => array(
             'className' => 'Phkapa.Ticket',
             'foreignKey' => 'process_id',
             'dependent' => false,
-            'conditions' => array('Ticket.workflow_id <>' => '5'),
+            'conditions' => '',
             'fields' => '',
             'order' => '',
             'limit' => '',
@@ -78,8 +79,8 @@ class Process extends PhkapaAppModel {
             'finderQuery' => '',
             'counterQuery' => ''
         )
-    );*/
-    
+    );
+
     /**
      * Model associations: hasAndBelongsToMany
      *
