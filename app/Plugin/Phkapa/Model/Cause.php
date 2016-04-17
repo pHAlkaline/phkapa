@@ -66,21 +66,21 @@ class Cause extends PhkapaAppModel {
             ),
         ),
     );
-    /* public $hasMany = array(
-      'Ticket' => array(
-      'className' => 'Phkapa.Ticket',
-      'foreignKey' => 'supplier_id',
-      'dependent' => false,
-      'conditions' => '',
-      'fields' => '',
-      'order' => '',
-      'limit' => '',
-      'offset' => '',
-      'exclusive' => '',
-      'finderQuery' => '',
-      'counterQuery' => ''
-      )
-      ); */
+    public $hasMany = array(
+        'Ticket' => array(
+            'className' => 'Phkapa.Ticket',
+            'foreignKey' => 'cause_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        )
+    );
 
     /**
      * Model associations: hasAndBelongsToMany
@@ -103,7 +103,7 @@ class Cause extends PhkapaAppModel {
             'finderQuery' => '',
             'deleteQuery' => '',
             'insertQuery' => ''
-            ));
+    ));
 
 }
 

@@ -13,8 +13,7 @@ App::uses('CakeTime', 'Utility');
  * @link     http://phkapa.net
  */
 class Ticket extends PhkapaAppModel {
-    public $actsAs = array(
-        'Revision');
+    public $actsAs = array( 'Revision');
     /**
      * Model name
      *

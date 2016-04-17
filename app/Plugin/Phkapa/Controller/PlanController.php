@@ -515,7 +515,19 @@ class PlanController extends PhkapaAppController {
             'hasMany' => array('Children')
                 ), false);
 
-
+        $this->Ticket->Registar->unbindModel(array(
+            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            'hasAndBelongsToMany' => array('Role', 'Process')
+                ), false);
+        $this->Ticket->CloseUser->unbindModel(array(
+            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            'hasAndBelongsToMany' => array('Role', 'Process')
+                ), false);
+        $this->Ticket->ModifiedUser->unbindModel(array(
+            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            'hasAndBelongsToMany' => array('Role', 'Process')
+                ), false);
+        
         $this->Ticket->Process->unbindModel(array(
             'hasAndBelongsToMany' => array('Activity', 'Category', 'User')
                 ), false);

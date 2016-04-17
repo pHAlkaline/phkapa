@@ -82,6 +82,22 @@ class Priority extends PhkapaAppModel {
             ),
         ),
     );
+    
+    public $hasMany = array(
+        'Ticket' => array(
+            'className' => 'Phkapa.Ticket',
+            'foreignKey' => 'priority_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        )
+    );
 
     /**
      * afterFind callback

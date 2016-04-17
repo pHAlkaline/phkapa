@@ -65,12 +65,13 @@ class Type extends PhkapaAppModel {
             ),
         ),
     );
-    /*var $hasMany = array(
+    
+    var $hasMany = array(
         'Ticket' => array(
             'className' => 'Phkapa.Ticket',
             'foreignKey' => 'type_id',
             'dependent' => false,
-            'conditions' => array('Ticket.workflow_id <>' => '5'),
+            'conditions' => '',
             'fields' => '',
             'order' => '',
             'limit' => '',
@@ -79,7 +80,7 @@ class Type extends PhkapaAppModel {
             'finderQuery' => '',
             'counterQuery' => ''
         )
-    );*/
+    );
 
 }
 

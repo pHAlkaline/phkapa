@@ -128,6 +128,7 @@ class TicketsController extends PhkapaAppController {
 
 
         $this->set('ticket', $this->Ticket->find('first', array('conditions'=>array('Ticket.id'=>$id))));
+        $this->set('ticket_revisions', array());
         if (in_array($this->Ticket->name, Configure::read('Revision.tables'))) {
             $this->Ticket->id=$id;
             $this->set('ticket_revisions', $this->Ticket->revisions());
@@ -404,6 +405,15 @@ class TicketsController extends PhkapaAppController {
             'hasMany' => array('Role', 'Process')
                 ), false);
         $this->Ticket->Registar->unbindModel(array(
+            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            'hasAndBelongsToMany' => array('Role', 'Process')
+                ), false);
+        $this->Ticket->CloseUser->unbindModel(array(
+            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            'hasAndBelongsToMany' => array('Role', 'Process')
+                ), false);
+        $this->Ticket->ModifiedUser->unbindModel(array(
+            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
             'hasAndBelongsToMany' => array('Role', 'Process')
                 ), false);
         $this->Ticket->Activity->unbindModel(array(

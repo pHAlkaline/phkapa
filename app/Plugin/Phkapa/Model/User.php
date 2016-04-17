@@ -69,6 +69,48 @@ class User extends PhkapaAppModel {
             'insertQuery' => ''
         )
     );
+    
+    public $hasMany = array(
+        'RegistredTicket' => array(
+            'className' => 'Phkapa.Ticket',
+            'foreignKey' => 'registar_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        ),
+        'CloseTicket' => array(
+            'className' => 'Phkapa.Ticket',
+            'foreignKey' => 'close_user_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        ),
+        'ModifiedTicket' => array(
+            'className' => 'Phkapa.Ticket',
+            'foreignKey' => 'modified_user_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        )
+    );
 
 }
 

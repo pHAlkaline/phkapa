@@ -65,12 +65,13 @@ class Supplier extends PhkapaAppModel {
             ),
         ),
     );
-    /*public $hasMany = array(
+    
+    public $hasMany = array(
         'Ticket' => array(
             'className' => 'Phkapa.Ticket',
             'foreignKey' => 'supplier_id',
             'dependent' => false,
-            'conditions' => array('Ticket.workflow_id <>' => '5'),
+            'conditions' => '',
             'fields' => '',
             'order' => '',
             'limit' => '',
@@ -79,7 +80,7 @@ class Supplier extends PhkapaAppModel {
             'finderQuery' => '',
             'counterQuery' => ''
         )
-    );*/
+    );
 
 }
 

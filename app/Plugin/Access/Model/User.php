@@ -118,6 +118,72 @@ class User extends AccessAppModel {
 
         ),
     );
+    
+    /**
+     * Model associations: hasAndBelongsToMany
+     *
+     * @var array
+     * @access public
+     */
+    public $hasAndBelongsToMany = array(
+        'Process' => array(
+            'className' => 'Phkapa.Process',
+            'joinTable' => 'phkapa_processes_users',
+            'foreignKey' => 'user_id',
+            'associationForeignKey' => 'process_id',
+            'unique' => true,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'finderQuery' => '',
+            'deleteQuery' => '',
+            'insertQuery' => ''
+        )
+    );
+    
+    public $hasMany = array(
+        'RegistredTicket' => array(
+            'className' => 'Phkapa.Ticket',
+            'foreignKey' => 'registar_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        ),
+        'CloseTicket' => array(
+            'className' => 'Phkapa.Ticket',
+            'foreignKey' => 'close_user_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        ),
+        'ModifiedTicket' => array(
+            'className' => 'Phkapa.Ticket',
+            'foreignKey' => 'modified_user_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        )
+    );
 
     function matchPasswords($data) {
 
@@ -185,7 +251,7 @@ class User extends AccessAppModel {
         // protects administrator to be deleted
         if ($this->id == 1)
             return false;
-        return true;
+        return parent::beforeDelete($cascade);
     }
 
     /**

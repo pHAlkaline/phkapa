@@ -65,7 +65,7 @@ if ($ticket['Workflow']['id'] < 5) {
         <ul>
             <li><a href="#tabs-details"><?php echo __dn('phkapa', 'Detail', 'Details', 2); ?></a></li>
             <li><a href="#tabs-actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2) . ' (' . count($ticket['Action']) . ')'; ?></a></li>
-            <li><a href="#tabs-children"><?php echo __d('phkapa', 'Related') . ' (' . count($ticket['Children']) . ')'; ?></a></li>
+            <li><a href="#tabs-related"><?php echo __d('phkapa', 'Related') . ' (' . count($ticket['Children']) . ')'; ?></a></li>
             <li><a href="#tabs-attachment"><?php echo __dn('phkapa', 'Attachment', 'Attachments', 2). $countAttachment; ?></a></li>
             <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2). $countComment; ?></a></li>
            
@@ -398,10 +398,11 @@ if ($ticket['Workflow']['id'] < 5) {
             <?php endif; ?>    
 
         </div>
-        <div id="tabs-children">
+        <div id="tabs-related">
 
-            <?php if (!empty($ticket['Children'])): ?>
+            
                 <div class="related">
+                    <?php if (!empty($ticket['Children'])): ?>
                     <table cellpadding = "0" cellspacing = "0">
                         <thead  class="ui-state-default">
                             <tr>
@@ -482,10 +483,10 @@ if ($ticket['Workflow']['id'] < 5) {
                         <?php endforeach; ?>
                         <?php //echo '<tfoot class=\'dark\'>'.$tableHeaders.'</tfoot>';      ?>    </table>
 
-
+ <?php endif; ?>
 
                 </div>
-            <?php endif; ?>
+           
 
         </div>
         <div id="tabs-feedback">
