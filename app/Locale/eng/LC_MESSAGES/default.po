@@ -39,7 +39,7 @@ msgid "Are you sure you want to delete # %s?"
 msgstr ""
 
 msgid "Could not be deleted."
-msgstr ""
+msgstr "Could not be deleted. Maybe due to dependent records."
 
 msgid "Could not be saved. Please, try again."
 msgstr ""
