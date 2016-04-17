@@ -36,7 +36,7 @@ msgid "Are you sure you want to delete # %s?"
 msgstr "Tem a certeza que quer apagar # %s?"
 
 msgid "Could not be deleted."
-msgstr "Não foi possível apagar."
+msgstr "Não foi possível apagar. Poderá exitir registos dependentes."
 
 msgid "Could not be saved. Please, try again."
 msgstr "Não foi possível gravar. Por favor tente outra vez."

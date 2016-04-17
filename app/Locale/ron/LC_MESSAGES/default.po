@@ -44,7 +44,7 @@ msgid "Check load data option to insert dafault values to action types, activiti
 msgstr "Elegir la opción de carga de datos para insertar valores por defecto para tipos de acción, actividades, categorías, causas, orígenes, procesos, proveedores y por último algunos usuarios de ejemplo con sus configuraciones de acceso."
 
 msgid "Could not be deleted."
-msgstr "Nu poate fi șters."
+msgstr "Nu poate fi șters. Poate din cauza înregistrărilor dependente."
 
 msgid "Could not be saved. Please, try again."
 msgstr "Nu poate fi salvat. Vă rog încercați din nou"

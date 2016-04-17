@@ -45,7 +45,7 @@ msgid "Cake is able to connect to the database."
 msgstr ""
 
 msgid "Could not be deleted."
-msgstr "Löschen fehlgeschlagen."
+msgstr "Löschen fehlgeschlagen. Vielleicht aufgrund abhängige Sätze."
 
 msgid "Could not be saved. Please, try again."
 msgstr "Speichern fehlgeschlagen. Bitte erneut versuchen."

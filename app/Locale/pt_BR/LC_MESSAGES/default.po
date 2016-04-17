@@ -39,7 +39,7 @@ msgid "Cake is able to connect to the database."
 msgstr "pHKapa está ligado à base de dados"
 
 msgid "Could not be deleted."
-msgstr "Não foi possível apagar."
+msgstr "Não foi possível apagar. Poderá exitir registos dependentes."
 
 msgid "Could not be saved. Please, try again."
 msgstr "Não foi possível gravar. Por favor tente outra vez."
