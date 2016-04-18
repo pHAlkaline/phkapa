@@ -64,8 +64,8 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
 
             <li><a href="#tabs-actions"><?php echo __dn('phkapa', 'Detail', 'Details', 2); ?></a></li>
             <li><a href="#tabs-ticket"><?php echo __dn('phkapa', 'Ticket', 'Ticket', 1); ?></a></li>
-            <li><a href="#tabs-attachment"><?php echo __dn('phkapa', 'Attachment', 'Attachments', 2) . $countAttachment; ?></a></li>
             <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2) . $countComment; ?></a></li>
+            <li><a href="#tabs-attachment"><?php echo __dn('phkapa', 'Attachment', 'Attachments', 2) . $countAttachment; ?></a></li>
             
 
 
