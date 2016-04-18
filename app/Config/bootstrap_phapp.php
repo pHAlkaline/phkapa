@@ -15,7 +15,7 @@
 /**
  * app Plugins
  */
-CakePlugin::load('DebugKit');
+//CakePlugin::load('DebugKit');
 //CakePlugin::load('PrintReport', array('bootstrap' => true, 'routes' => false));
 //CakePlugin::load('CsvView', array('bootstrap' => true, 'routes' => false));
 //CakePlugin::load('Install', array('bootstrap' => false, 'routes' => false));
@@ -77,4 +77,4 @@ Configure::write('Access.open', ''); // Keep this clean , use only on emergency,
  * Settings for notification component 
  */
 Configure::write('Tickets.notify', true); // true to use notifications
-Configure::write('Tickets.email_notify', true); // true to send email notification , Tickets.notify will override this one.
+Configure::write('Tickets.email_notify', false); // true to send email notification , Tickets.notify will override this one.
