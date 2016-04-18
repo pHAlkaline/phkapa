@@ -290,7 +290,7 @@ class PlanController extends PhkapaAppController {
             $this->redirect(array('action' => 'edit', $ticketId,'#'=>'tabs-actions'));
         }
         //$this->loadModel('Phkapa.Action');
-        if ($this->Ticket->Action->deleteAll(array('Action.ticket_id' => $ticketId, 'Action.id' => $id))) {
+        if ($this->Ticket->Action->delete($id)) {
             $this->Ticket->id = $ticketId;
             $this->Ticket->saveField('modified_user_id', $this->Auth->user('id'));
             $this->Flash->info(__d('phkapa', 'Deleted with success.'));
@@ -516,15 +516,15 @@ class PlanController extends PhkapaAppController {
                 ), false);
 
         $this->Ticket->Registar->unbindModel(array(
-            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            //'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
             'hasAndBelongsToMany' => array('Role', 'Process')
                 ), false);
         $this->Ticket->CloseUser->unbindModel(array(
-            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            //'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
             'hasAndBelongsToMany' => array('Role', 'Process')
                 ), false);
         $this->Ticket->ModifiedUser->unbindModel(array(
-            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            //'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
             'hasAndBelongsToMany' => array('Role', 'Process')
                 ), false);
         

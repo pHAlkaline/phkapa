@@ -41,7 +41,7 @@ msgid "Are you sure you want to delete # %s?"
 msgstr "¿Está seguro de que quiere borrar el nº %s?"
 
 msgid "Could not be deleted."
-msgstr "No se puede borrar. Tal vez debido a los registros dependientes."
+msgstr "No se puede borrar."
 
 msgid "Could not be saved. Please, try again."
 msgstr "No se puede guardar. Por favor, inténtelo de nuevo."

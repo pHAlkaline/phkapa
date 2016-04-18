@@ -81,6 +81,7 @@ class ActionType extends PhkapaAppModel {
      * @var array
      * @access public
      */
+    /*
     public $hasMany = array(
         'Action' => array(
             'className' => 'Phkapa.Action',
@@ -94,9 +95,22 @@ class ActionType extends PhkapaAppModel {
             'exclusive' => '',
             'finderQuery' => '',
             'counterQuery' => ''
+        ),
+        'ActionRevision' => array(
+            'className' => 'Phkapa.ActionRevision',
+            'foreignKey' => 'action_type_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
         )
     );
-
+*/
     /**
      * afterFind callback
      * translates model name field
