@@ -65,10 +65,10 @@
         <ul>
             <li><a href="#tabs-details"><?php echo __dn('phkapa', 'Detail', 'Details', 2); ?></a></li>
             <li><a href="#tabs-actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2) . ' (' . count($ticket['Action']) . ')'; ?></a></li>
-            <li><a href="#tabs-related"><?php echo __d('phkapa', 'Related') . ' (' . count($ticket['Children']) . ')'; ?></a></li>
             <li><a href="#tabs-revisions"> <?php echo __dn('phkapa', 'Revision','Revisions',2). ' (' . count($ticket_revisions) . ')'; ?></a></li>
-            <li><a href="#tabs-attachment"><?php echo __dn('phkapa', 'Attachment', 'Attachments', 2). $countAttachment; ?></a></li>
             <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2). $countComment; ?></a></li>
+            <li><a href="#tabs-attachment"><?php echo __dn('phkapa', 'Attachment', 'Attachments', 2). $countAttachment; ?></a></li>
+            <li><a href="#tabs-related"><?php echo __d('phkapa', 'Related') . ' (' . count($ticket['Children']) . ')'; ?></a></li>
             
 
         </ul>

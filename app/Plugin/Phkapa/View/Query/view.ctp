@@ -65,10 +65,10 @@ if ($ticket['Workflow']['id'] < 5) {
         <ul>
             <li><a href="#tabs-details"><?php echo __dn('phkapa', 'Detail', 'Details', 2); ?></a></li>
             <li><a href="#tabs-actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2) . ' (' . count($ticket['Action']) . ')'; ?></a></li>
-            <li><a href="#tabs-related"><?php echo __d('phkapa', 'Related') . ' (' . count($ticket['Children']) . ')'; ?></a></li>
-            <li><a href="#tabs-attachment"><?php echo __dn('phkapa', 'Attachment', 'Attachments', 2). $countAttachment; ?></a></li>
             <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2). $countComment; ?></a></li>
-           
+            <li><a href="#tabs-attachment"><?php echo __dn('phkapa', 'Attachment', 'Attachments', 2). $countAttachment; ?></a></li>
+            <li><a href="#tabs-related"><?php echo __d('phkapa', 'Related') . ' (' . count($ticket['Children']) . ')'; ?></a></li>
+            
 
         </ul>
         <div id="tabs-details">
@@ -349,12 +349,9 @@ if ($ticket['Workflow']['id'] < 5) {
                                 <th><?php echo __d('phkapa', 'Id'); ?></th>
                                 <th><?php echo __d('phkapa', 'Action Type'); ?></th>
                                 <th><?php echo __d('phkapa', 'Closed'); ?></th>
-                                <th><?php echo __d('phkapa', 'Closed By'); ?></th>
                                 <th><?php echo __d('phkapa', 'Close Date'); ?></th>
                                 <th><?php echo __d('phkapa', 'Effectiveness'); ?></th>
-                                <th><?php echo __d('phkapa', 'Verified By'); ?></th>
-                                <th><?php echo __d('phkapa', 'Last Modification By'); ?></th>
-                                <th><?php echo __d('phkapa', 'Modified'); ?></th>
+                                <th><?php echo __d('phkapa', 'Description'); ?></th>
                                 <th><?php echo __d('phkapa', 'Created'); ?></th>
                                 <th class="actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></th>
                             </tr>
@@ -371,7 +368,6 @@ if ($ticket['Workflow']['id'] < 5) {
                                 <td><?php echo $action['id']; ?></td>
                                 <td><?php echo $action['ActionType']['name']; ?></td>
                                 <td><?php echo $this->Utils->yesOrNo($action['closed']); ?></td>
-                                <td><?php if (isset($action['CloseUser']['name'])) echo $action['CloseUser']['name']; ?></td>
                                 <td class="nowrap">
                                     <?php
                                     if ($action['close_date'] != '')
@@ -380,9 +376,13 @@ if ($ticket['Workflow']['id'] < 5) {
                                 </td>
 
                                 <td><?php if (isset($action['ActionEffectiveness']['name'])) echo $action['ActionEffectiveness']['name']; ?></td>
-                                <td><?php if (isset($action['VerifyUser']['name'])) echo $action['VerifyUser']['name']; ?></td>
-                                <td><?php if (isset($action['ModifiedUser']['name'])) echo $action['ModifiedUser']['name']; ?></td>
-                                <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['modified']); ?></td>
+                                <td><?php
+                                echo $this->Text->truncate(
+                                        $this->Text->autoParagraph($action['description'], 60, array(
+                                    'ellipsis' => '...',
+                                    'exact' => false
+                                )));
+                                ?>&nbsp;</td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
                                 <td class="actions">
                                     <?php echo $this->Html->link(__d('phkapa', 'View'), array('controller' => 'query', 'action' => 'view_action', $action['id'])); ?>
