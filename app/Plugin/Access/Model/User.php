@@ -100,7 +100,6 @@ class User extends AccessAppModel {
                 'rule' => array('matchPasswords'),
                 'message' => 'Passwords dont match',
                 'required' => false),
-
         ),
         'email' => array(
             'email' => array(
@@ -108,17 +107,16 @@ class User extends AccessAppModel {
                 'message' => 'Invalid email',
                 'required' => false,
                 'allowEmpty' => true),
-             'unique' => array(
+            'unique' => array(
                 'rule' => array('isUnique'),
                 'message' => 'Must be unique',
-                ),
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-
+            ),
+        //'required' => false,
+        //'last' => false, // Stop validation after this rule
+        //'on' => 'create', // Limit validation to 'create' or 'update' operations
         ),
     );
-    
+
     /**
      * Model associations: hasAndBelongsToMany
      *
@@ -142,7 +140,7 @@ class User extends AccessAppModel {
             'insertQuery' => ''
         )
     );
-    
+    /*
     public $hasMany = array(
         'RegistredTicket' => array(
             'className' => 'Phkapa.Ticket',
@@ -182,9 +180,74 @@ class User extends AccessAppModel {
             'exclusive' => '',
             'finderQuery' => '',
             'counterQuery' => ''
-        )
+        ),
+        'ModifiedTicketRevision' => array(
+            'className' => 'Phkapa.TicketRevision',
+            'foreignKey' => 'modified_user_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        ),
+        'VerifyAction' => array(
+            'className' => 'Phkapa.Action',
+            'foreignKey' => 'verify_user_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        ),
+        'CloseAction' => array(
+            'className' => 'Phkapa.Action',
+            'foreignKey' => 'close_user_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        ),
+        'ModifiedAction' => array(
+            'className' => 'Phkapa.Action',
+            'foreignKey' => 'modified_user_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        ),
+        'ModifiedActionRevision' => array(
+            'className' => 'Phkapa.ActionRevision',
+            'foreignKey' => 'modified_user_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        ),
     );
-
+*/
     function matchPasswords($data) {
 
         if ($data['verify_password'] == $this->data['User']['password']) {
@@ -211,8 +274,8 @@ class User extends AccessAppModel {
         $this->Aro->validate = array(
             'alias' => array(
                 'rule' => 'isUnique',
-                'message' => __d('access','This name is restricted by system.')
-                ));
+                'message' => __d('access', 'This name is restricted by system.')
+        ));
 
         $aro = $this->Aro->findByForeignKey($this->id);
         if ($aro) {
@@ -229,12 +292,12 @@ class User extends AccessAppModel {
 
         // crypt and truncate password
         if (isset($this->data[$this->alias]['password'])) {
-            $this->data[$this->alias]['password'] = AuthComponent::password(substr($this->data[$this->alias]['password'],0,40));
+            $this->data[$this->alias]['password'] = AuthComponent::password(substr($this->data[$this->alias]['password'], 0, 40));
         }
 
         // truncate username
         if (isset($this->data[$this->alias]['username'])) {
-            $this->data[$this->alias]['username'] = substr($this->data[$this->alias]['username'],0,40);
+            $this->data[$this->alias]['username'] = substr($this->data[$this->alias]['username'], 0, 40);
         }
 
         return true;
@@ -263,7 +326,7 @@ class User extends AccessAppModel {
      * @access public
      * @return boolean
      */
-    public function afterSave($created, $options=array()) {
+    public function afterSave($created, $options = array()) {
         App::uses('Aro', 'Model');
         $this->Aro = new Aro();
         $aro = $this->Aro->findByForeignKey($this->id);

@@ -65,7 +65,7 @@ class Type extends PhkapaAppModel {
             ),
         ),
     );
-    
+    /*
     var $hasMany = array(
         'Ticket' => array(
             'className' => 'Phkapa.Ticket',
@@ -79,9 +79,22 @@ class Type extends PhkapaAppModel {
             'exclusive' => '',
             'finderQuery' => '',
             'counterQuery' => ''
+        ),
+        'TicketRevision' => array(
+            'className' => 'Phkapa.TicketRevision',
+            'foreignKey' => 'type_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
         )
     );
-
+    */
 }
 
 ?>

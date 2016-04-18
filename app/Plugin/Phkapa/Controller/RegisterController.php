@@ -296,7 +296,7 @@ class RegisterController extends PhkapaAppController {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
-        if ($this->Ticket->deleteAll(array('Ticket.id' => $id))) {
+        if ($this->Ticket->delete($id)) {
             $this->Flash->info(__d('phkapa', 'Deleted with success.'));
             $this->redirect(array('action' => 'index'));
         }
@@ -459,15 +459,15 @@ class RegisterController extends PhkapaAppController {
                 ), false);
 
         $this->Ticket->Registar->unbindModel(array(
-            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            //'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
             'hasAndBelongsToMany' => array('Role', 'Process')
                 ), false);
         $this->Ticket->CloseUser->unbindModel(array(
-            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            //'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
             'hasAndBelongsToMany' => array('Role', 'Process')
                 ), false);
         $this->Ticket->ModifiedUser->unbindModel(array(
-            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            //'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
             'hasAndBelongsToMany' => array('Role', 'Process')
                 ), false);
         

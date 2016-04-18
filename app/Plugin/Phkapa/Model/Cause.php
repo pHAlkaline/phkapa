@@ -66,6 +66,7 @@ class Cause extends PhkapaAppModel {
             ),
         ),
     );
+    /*
     public $hasMany = array(
         'Ticket' => array(
             'className' => 'Phkapa.Ticket',
@@ -79,9 +80,22 @@ class Cause extends PhkapaAppModel {
             'exclusive' => '',
             'finderQuery' => '',
             'counterQuery' => ''
+        ),
+        'TicketRevision' => array(
+            'className' => 'Phkapa.TicketRevision',
+            'foreignKey' => 'cause_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
         )
     );
-
+    */
     /**
      * Model associations: hasAndBelongsToMany
      *

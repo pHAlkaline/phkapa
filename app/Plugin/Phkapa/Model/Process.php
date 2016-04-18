@@ -65,6 +65,7 @@ class Process extends PhkapaAppModel {
             ),
         ),
     );
+     /*
     public $hasMany = array(
         'Ticket' => array(
             'className' => 'Phkapa.Ticket',
@@ -78,9 +79,22 @@ class Process extends PhkapaAppModel {
             'exclusive' => '',
             'finderQuery' => '',
             'counterQuery' => ''
+        ),
+        'TicketRevision' => array(
+            'className' => 'Phkapa.TicketRevision',
+            'foreignKey' => 'process_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
         )
     );
-
+*/
     /**
      * Model associations: hasAndBelongsToMany
      *

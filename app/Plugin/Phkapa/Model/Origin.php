@@ -62,7 +62,7 @@ class Origin extends PhkapaAppModel {
             ),
         ),
     );
-   
+    /*
     public $hasMany = array(
         'Ticket' => array(
             'className' => 'Phkapa.Ticket',
@@ -76,9 +76,22 @@ class Origin extends PhkapaAppModel {
             'exclusive' => '',
             'finderQuery' => '',
             'counterQuery' => ''
+        ),
+        'TicketRevision' => array(
+            'className' => 'Phkapa.TicketRevision',
+            'foreignKey' => 'origin_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
         )
     );
-
+*/
 }
 
 ?>

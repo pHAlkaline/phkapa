@@ -17,9 +17,8 @@
 App::uses('Model', 'Model');
 
 class AppModel extends Model {
-    
-    public $actsAs = array('Containable');
 
+    public $actsAs = array('Containable');
     public $recursive = -1;
 
     /**
@@ -38,6 +37,7 @@ class AppModel extends Model {
      */
     public $version_request = null;
 
+    /*
     public function beforeDelete($cascade = true) {
         if (!$this->canDelete($this->id)) {
             return false;
@@ -63,7 +63,7 @@ class AppModel extends Model {
                     "conditions" => array($details['foreignKey'] => $this->id)
                 ));
                 if ($count) {
-                    $canDelete = false;
+                    return false;
                 }
             }
         }
@@ -83,10 +83,19 @@ class AppModel extends Model {
                 "conditions" => array($details['foreignKey'] => $this->id)
             ));
             if ($count) {
-                $canDelete = false;
+                return false;
             }
         }
-        return $canDelete;
+        return true;
+    }
+    */
+    public function delete ($id = null, $cascade = true) {
+        try {
+            parent::delete($id,$cascade);
+        } catch (Exception $e) {
+            return false;
+        }
+        return true;
     }
 
 }

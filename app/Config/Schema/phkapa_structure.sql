@@ -541,7 +541,7 @@ ALTER TABLE `phkapa_actions`
   ADD CONSTRAINT `phkapa_actions_ibfk_7` FOREIGN KEY (`modified_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `ActionTypeId` FOREIGN KEY (`action_type_id`) REFERENCES `phkapa_action_types` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_actions_ibfk_3` FOREIGN KEY (`ticket_id`) REFERENCES `phkapa_tickets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `phkapa_actions_ibfk_4` FOREIGN KEY (`action_effectiveness_id`) REFERENCES `phkapa_action_effectivenesses` (`id`),
+  ADD CONSTRAINT `phkapa_actions_ibfk_4` FOREIGN KEY (`action_effectiveness_id`) REFERENCES `phkapa_action_effectivenesses` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_actions_ibfk_5` FOREIGN KEY (`verify_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `phkapa_actions_ibfk_6` FOREIGN KEY (`close_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 

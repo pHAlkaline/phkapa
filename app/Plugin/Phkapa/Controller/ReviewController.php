@@ -254,15 +254,15 @@ class ReviewController extends PhkapaAppController {
                 ), false);
 
         $this->Ticket->Registar->unbindModel(array(
-            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            //'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
             'hasAndBelongsToMany' => array('Role', 'Process')
                 ), false);
         $this->Ticket->CloseUser->unbindModel(array(
-            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            //'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
             'hasAndBelongsToMany' => array('Role', 'Process')
                 ), false);
         $this->Ticket->ModifiedUser->unbindModel(array(
-            'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
+            //'hasMany' => array('RegistredTicket','CloseTicket','ModifiedTicket'),
             'hasAndBelongsToMany' => array('Role', 'Process')
                 ), false);
         

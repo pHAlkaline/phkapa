@@ -82,7 +82,7 @@ class Safety extends PhkapaAppModel {
             ),
         ),
     );
-    
+    /*
     public $hasMany = array(
         'Ticket' => array(
             'className' => 'Phkapa.Ticket',
@@ -96,9 +96,22 @@ class Safety extends PhkapaAppModel {
             'exclusive' => '',
             'finderQuery' => '',
             'counterQuery' => ''
+        ),
+        'TicketRevision' => array(
+            'className' => 'Phkapa.TicketRevision',
+            'foreignKey' => 'safety_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
         )
     );
-
+   */
     /**
      * afterFind callback
      * translates model name field
