@@ -165,7 +165,8 @@ class TicketsController extends PhkapaAppController {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
-
+        $this->_setupModel();
+        $this->Ticket->recursive = 2;
         $ticket = $this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.id' => $id)));
         if (count($ticket) == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
