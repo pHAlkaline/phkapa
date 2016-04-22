@@ -13,7 +13,7 @@
  * @link     http://phkapa.net
  */
 class RegisterController extends PhkapaAppController {
-
+    
     
     /**
      * Controller name
@@ -123,28 +123,6 @@ class RegisterController extends PhkapaAppController {
 
         $this->set('tickets', $this->Paginator->paginate('Ticket'));
     }
-
-    /**
-     * view TBD
-     *
-     * @param integer $id
-     * @return void
-     * @access public
-     */
-    /*public function view($id = null) {
-        if (!$id){
-            $this->Flash->error(__d('phkapa', 'Invalid request.'));
-            $this->redirect(array('action' => 'index'));
-        }
-        $this->Ticket->recursive = 1;
-        $ticket=$this->Ticket->find('first', array('order' => '', 'conditions' => array('Ticket.workflow_id' => '1', 'Ticket.id' => $id, 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
-  
-        if (count($ticket) == 0){
-            $this->Flash->error(__d('phkapa', 'Invalid request.'));
-            $this->redirect(array('action' => 'index'));
-        }
-        $this->set('ticket', $ticket);
-    }*/
 
     /**
      * add
@@ -341,6 +319,26 @@ class RegisterController extends PhkapaAppController {
         $this->redirect(array('action' => 'index'));
     }
 
+    /**
+     * add_supplier
+     *
+     * @return void
+     * @access public
+     */
+    public function add_supplier() {
+        if (!empty($this->request->data)) {
+            $this->Supplier=ClassRegistry::init('Phkapa.Supplier');
+            $this->request->data['Supplier']['active']=1;
+            $this->Supplier->create();
+            if ($this->Supplier->save($this->request->data)) {
+                $this->Flash->info(__d('phkapa', 'Saved with success.'));
+                $this->redirect(array('action' => 'add'));
+            } else {
+                $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
+            }
+        }
+    }
+    
     /**
      * Set filter from models : Process , Activity , Category
      *
