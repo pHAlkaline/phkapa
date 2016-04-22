@@ -99,6 +99,7 @@ class RegisterController extends PhkapaAppController {
             $this->Paginator->settings['conditions'] = array
                     ("OR" => array(
                         "Ticket.id LIKE" => "%" . $keyword . "%",
+                        "Ticket.product LIKE" => "%" . $keyword . "%",
                         "Ticket.description LIKE" => "%" . $keyword . "%",
                         "Priority.name LIKE" => "%" . $keyword . "%",
                         "Safety.name LIKE" => "%" . $keyword . "%",

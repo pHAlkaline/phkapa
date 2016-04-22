@@ -1,4 +1,5 @@
 <?php
+
 $hasCause = true;
 $openActions = FALSE;
 $sendOk = true;
@@ -99,7 +100,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
             <li><a href="#tabs-actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2) . ' (' . count($ticket['Action']) . ')'; ?></a></li>
             <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2) . $countComment; ?></a></li>
             <li><a href="#tabs-attachment"><?php echo __dn('phkapa', 'Attachment', 'Attachments', 2) . $countAttachment; ?></a></li>
-            
+
 
         </ul>
         <div id="tabs-details">
@@ -122,19 +123,19 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                             &nbsp;
                         </dd>
                         <?php if ($ticket['Ticket']['ticket_parent'] != '') { ?>
-                            <dt<?php
+                        <dt<?php
                             if ($i % 2 == 0)
                                 echo $class;
                             ?>><?php echo __d('phkapa', 'Ticket Parent'); ?></dt>
-                            <dd<?php
+                        <dd<?php
                             if ($i++ % 2 == 0)
                                 echo $class;
                             ?>>
                                     <?php
                                     echo $this->Html->link($ticket['Ticket']['ticket_parent'] . ' ' . $this->Html->image("accept.png", array("alt" => __d('phkapa', "See ticket parent data"), "style" => "padding-left:100px;")) . ' ' . __d('phkapa', "See ticket parent data"), array('controller' => 'query', 'action' => 'view', $ticket['Ticket']['ticket_parent']), array('escape' => false));
                                     ?>
-                                &nbsp;
-                            </dd>
+                            &nbsp;
+                        </dd>
                         <?php } ?>
                         <dt<?php
                         if ($i % 2 == 0)
@@ -252,6 +253,18 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                             &nbsp;
                         </dd>
                         <dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Product'); ?></dt>
+                        <dd<?php
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                            <?php echo $ticket['Ticket']['product']; ?>
+                            &nbsp;
+                        </dd>
+
+                        <dt<?php
                         if ($i % 2 == 0)
                             echo $class;
                         ?>><?php echo __d('phkapa', 'Supplier'); ?></dt>
@@ -329,25 +342,25 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
         <div id="tabs-actions">
             <?php if ($showActions) { ?>
 
-                <div class="related">
+            <div class="related">
 
                     <?php if (!empty($ticket['Action'])): ?>
-                        <table cellpadding = "0" cellspacing = "0">
-                            <thead class="ui-state-default"
-                                   <tr>
-                                    <th><?php echo __d('phkapa', 'Id'); ?></th>
-                                    <th><?php echo __d('phkapa', 'Action Type'); ?></th>
-                                    <th><?php echo __d('phkapa', 'Description'); ?></th>
-                                    <th><?php echo __d('phkapa', 'Created'); ?></th>
-                                    <th><?php echo __d('phkapa', 'Deadline'); ?></th>
-                                    <th><?php echo __d('phkapa', 'Expiry'); ?></th>
-                                    <th><?php echo __d('phkapa', 'Closed'); ?></th>
-                                    <th><?php echo __d('phkapa', 'Closed By'); ?></th>
-                                    <th><?php echo __d('phkapa', 'Close Date'); ?></th>
-                                    <th class="actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
+                <table cellpadding = "0" cellspacing = "0">
+                    <thead class="ui-state-default"
+                           <tr>
+                            <th><?php echo __d('phkapa', 'Id'); ?></th>
+                            <th><?php echo __d('phkapa', 'Action Type'); ?></th>
+                            <th><?php echo __d('phkapa', 'Description'); ?></th>
+                            <th><?php echo __d('phkapa', 'Created'); ?></th>
+                            <th><?php echo __d('phkapa', 'Deadline'); ?></th>
+                            <th><?php echo __d('phkapa', 'Expiry'); ?></th>
+                            <th><?php echo __d('phkapa', 'Closed'); ?></th>
+                            <th><?php echo __d('phkapa', 'Closed By'); ?></th>
+                            <th><?php echo __d('phkapa', 'Close Date'); ?></th>
+                            <th class="actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></th>
+                            <th></th>
+                        </tr>
+                    </thead>
                             <?php
                             $i = 0;
                             foreach ($ticket['Action'] as $action):
@@ -374,29 +387,29 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                                     $hasFlag = true;
                                 }
                                 ?>
-                                <tr<?php echo $class; ?>>
-                                    <td><?php echo $action['id']; ?></td>
+                    <tr<?php echo $class; ?>>
+                        <td><?php echo $action['id']; ?></td>
 
-                                    <td><?php echo $action['ActionType']['name']; ?></td>
-                                    <td><?php
+                        <td><?php echo $action['ActionType']['name']; ?></td>
+                        <td><?php
                                         echo $this->Text->truncate(
                                                 $this->Text->autoParagraph($action['description']), 60, array(
                                             'ellipsis' => '...',
                                             'exact' => false
                                         ));
                                         ?></td>
-                                    <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
-                                    <td class="nowrap"><?php echo $action['deadline'] . ' ' . __d('phkapa', 'Days'); ?></td>
-                                    <td class="nowrap <?php echo $red ?>"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $expiry) . ' ' . $deadlineAgo; ?></td>
-                                    <td class="nowrap"><?php echo $this->Utils->yesOrNo($action['closed']); ?></td>
-                                    <td><?php if (isset($action['CloseUser']['name'])) echo $action['CloseUser']['name']; ?>&nbsp;</td>
-                                    <td class="nowrap"><?php
+                        <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
+                        <td class="nowrap"><?php echo $action['deadline'] . ' ' . __d('phkapa', 'Days'); ?></td>
+                        <td class="nowrap <?php echo $red ?>"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $expiry) . ' ' . $deadlineAgo; ?></td>
+                        <td class="nowrap"><?php echo $this->Utils->yesOrNo($action['closed']); ?></td>
+                        <td><?php if (isset($action['CloseUser']['name'])) echo $action['CloseUser']['name']; ?>&nbsp;</td>
+                        <td class="nowrap"><?php
                                         if ($action['close_date'])
                                             echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']);
                                         ?></td>
 
 
-                                    <td class="nowrap actions">
+                        <td class="nowrap actions">
                                         <?php
                                         if ($action['closed'] == 0) {
                                             echo $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close_action', $action['id'], $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to close # %s?', $action['id'])));
@@ -406,29 +419,29 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                                         <?php echo $this->Html->link(__d('phkapa', 'Edit'), array('action' => 'edit_action', $action['id'], $ticket['Ticket']['id'])); ?>
                                         <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Delete'), array('action' => 'delete_action', $action['id'], $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to delete # %s?', $action['id']))); ?>
 
-                                    </td>
-                                    <td>
+                        </td>
+                        <td>
                                         <?php
                                         if ($hasFlag)
                                             echo $this->Html->image($flag, array('alt' => $flagMessage, 'title' => $flagMessage, 'style' => 'vertical-align: middle;cursor:help;'))
                                             ?>
-                                    </td>
-                                </tr>
+                        </td>
+                    </tr>
                             <?php endforeach; ?>
-                        </table>
+                </table>
                     <?php endif; ?>
 
 
-                    <div class="actions">
+                <div class="actions">
 
-                        <ul>
-                            <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Action')), array('action' => 'add_action', $ticket['Ticket']['id'])); ?> </li>
-                        </ul>
+                    <ul>
+                        <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Action')), array('action' => 'add_action', $ticket['Ticket']['id'])); ?> </li>
+                    </ul>
 
-
-                    </div>
 
                 </div>
+
+            </div>
 
             <?php } ?>
         </div>
@@ -436,16 +449,16 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
             <?php
             if (CakePlugin::loaded('Feedback')) {
                 ?>
-                <div class="related">
+            <div class="related">
                     <?php echo $this->Comments->display_for($ticket, array('model' => 'Phkapa.Ticket')); ?>
-                </div>
+            </div>
 
             <?php } else { ?>
-                <div class="related">
+            <div class="related">
                     <?php
                     echo $this->element('pluginNotFound');
                     ?>
-                </div>
+            </div>
 
             <?php } ?>
         </div>
@@ -455,9 +468,9 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                 ?>
 
 
-                <div class="related">
+            <div class="related">
                     <?php echo $this->Attachments->display_for($ticket, array('model' => 'Phkapa.Ticket')); ?>
-                </div>
+            </div>
 
 
 
@@ -465,11 +478,11 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
             <?php } else { ?>
 
 
-                <div class="related">
+            <div class="related">
                     <?php
                     echo $this->element('pluginNotFound');
                     ?>
-                </div>
+            </div>
 
 
 

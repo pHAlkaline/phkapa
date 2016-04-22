@@ -65,6 +65,7 @@ class VerifyController extends PhkapaAppController {
             $this->Paginator->settings['conditions'] = array
                     ("OR" => array(
                         "Ticket.id LIKE" => "%" . $keyword . "%",
+                        "Ticket.product LIKE" => "%" . $keyword . "%",
                         "Ticket.description LIKE" => "%" . $keyword . "%",
                         "Ticket.review_notes LIKE" => "%" . $keyword . "%",
                         "Priority.name LIKE" => "%" . $keyword . "%",
