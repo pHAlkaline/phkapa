@@ -324,6 +324,9 @@ msgid_plural "Processes"
 msgstr[0] "Proces"
 msgstr[1] "Procese"
 
+msgid "Product"
+msgstr "Produs"
+
 msgid "Query"
 msgstr "Interogare"
 
