@@ -308,6 +308,9 @@ msgid_plural "Processes"
 msgstr[0] "Prozess (SOP)"
 msgstr[1] "Prozesse (SOP)"
 
+msgid "Product"
+msgstr "Produkt"
+
 msgid "Query"
 msgstr "Übersicht"
 
