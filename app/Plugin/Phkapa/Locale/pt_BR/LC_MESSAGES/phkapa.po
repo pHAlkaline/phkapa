@@ -310,6 +310,9 @@ msgid_plural "Processes"
 msgstr[0] "Departamento"
 msgstr[1] "Departamentos"
 
+msgid "Product"
+msgstr "Produto"
+
 msgid "Query"
 msgstr "Pesquisa"
 

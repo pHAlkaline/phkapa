@@ -286,7 +286,18 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                             <?php echo $ticket['Category']['name']; ?>
                         &nbsp;
                     </dd>
-
+                    <dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Product'); ?></dt>
+                    <dd<?php
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                            <?php echo $ticket['Ticket']['product']; ?>
+                        &nbsp;
+                    </dd>
+                    
                     <dt<?php
                     if ($i % 2 == 0)
                         echo $class;

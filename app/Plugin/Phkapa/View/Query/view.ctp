@@ -223,6 +223,18 @@ if ($ticket['Workflow']['id'] < 5) {
                     <dt<?php
                     if ($i % 2 == 0)
                         echo $class;
+                    ?>><?php echo __d('phkapa', 'Product'); ?></dt>
+                    <dd<?php
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                            <?php echo $ticket['Ticket']['product']; ?>
+                        &nbsp;
+                    </dd>
+                    
+                    <dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
                     ?>><?php echo __d('phkapa', 'Supplier'); ?></dt>
                     <dd<?php
                     if ($i++ % 2 == 0)

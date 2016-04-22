@@ -42,6 +42,7 @@
                 ?>
             </div>
             <?php
+            echo $this->Form->input('product',array('label' => __d('phkapa','Product')));
             echo $this->Form->input('supplier_id', array('label' => __d('phkapa','Supplier'),'empty' => __d('phkapa','(choose one)')));
             echo $this->Form->input('description',array('label' => __d('phkapa','Description')));
             echo "<br/>";
