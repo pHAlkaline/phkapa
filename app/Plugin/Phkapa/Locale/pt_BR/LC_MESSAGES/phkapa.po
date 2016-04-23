@@ -149,6 +149,11 @@ msgstr "Não foi possível gravar.Por favor tente de novo."
 msgid "Created"
 msgstr "Criado"
 
+msgid "Customer"
+msgid_plural "Customers"
+msgstr[0] "Cliente"
+msgstr[1] "Clientes"
+
 msgid "Days"
 msgstr "Dias"
 
@@ -311,7 +316,7 @@ msgstr[0] "Departamento"
 msgstr[1] "Departamentos"
 
 msgid "Product"
-msgstr "Produto"
+msgstr "Produto/Peça"
 
 msgid "Query"
 msgstr "Pesquisa"
@@ -367,6 +372,9 @@ msgstr "Gravado com sucesso."
 
 msgid "See ticket parent data"
 msgstr "Ver incidência"
+
+msgid "Select Customer"
+msgstr "Selecione Cliente"
 
 msgid "Select Supplier"
 msgstr "Selecione Fornecedor"

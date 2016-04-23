@@ -150,6 +150,11 @@ msgstr "No pudo guardarse. Por favor, intente de nuevo."
 msgid "Created"
 msgstr "Creado"
 
+msgid "Customer"
+msgid_plural "Customers"
+msgstr[0] "Client"
+msgstr[1] "Clients"
+
 msgid "Days"
 msgstr "Días"
 
@@ -322,7 +327,7 @@ msgstr[0] "Proceso"
 msgstr[1] "Procesos"
 
 msgid "Product"
-msgstr "Producto"
+msgstr "Producto/Parte#"
 
 msgid "Query"
 msgstr "Consulta"
@@ -378,6 +383,9 @@ msgstr "Guardado con éxito."
 
 msgid "See ticket parent data"
 msgstr "Ver fecha del ticket padre"
+
+msgid "Select Customer"
+msgstr "Seleccione Cliente"
 
 msgid "Select Supplier"
 msgstr "Seleccione Proveedor"

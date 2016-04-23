@@ -162,7 +162,8 @@ INSERT INTO `phkapa_categories` (`id`, `name`, `active`, `created`, `modified`) 
 (49, 'Provider / Supplier', 1, '2014-08-21 08:11:00', '2014-08-22 04:34:46'),
 (58, 'Material / Equipment', 1, '2014-08-21 08:11:00', '2014-08-22 04:35:52'),
 (62, 'Food Security', 1, '2014-08-22 04:59:57', '2014-09-02 02:30:37'),
-(64, 'Traceability', 1, '2014-08-22 05:00:55', '2014-08-22 05:00:55');
+(64, 'Traceability', 1, '2014-08-22 05:00:55', '2014-08-22 05:00:55'),
+(65, 'Customer', 1, '2016-04-21 08:11:00', '2016-04-22 04:34:46');
 
 --
 -- Dumping data for table `phkapa_categories_causes`
@@ -175,6 +176,7 @@ INSERT INTO `phkapa_categories_causes` (`category_id`, `cause_id`) VALUES
 (21, 5),
 (58, 5),
 (49, 6),
+(65, 6),
 (21, 6),
 (58, 6),
 (21, 3),
@@ -183,6 +185,8 @@ INSERT INTO `phkapa_categories_causes` (`category_id`, `cause_id`) VALUES
 (58, 4),
 (49, 7),
 (49, 8),
+(65, 7),
+(65, 8),
 (64, 3),
 (64, 4),
 (64, 5),
@@ -190,8 +194,10 @@ INSERT INTO `phkapa_categories_causes` (`category_id`, `cause_id`) VALUES
 (64, 7),
 (64, 8),
 (49, 9),
+(65, 9),
 (64, 9),
 (49, 10),
+(65, 10),
 (21, 10),
 (58, 10),
 (64, 10),
@@ -222,6 +228,10 @@ INSERT INTO `phkapa_categories_processes` (`category_id`, `process_id`) VALUES
 (49, 6),
 (49, 10),
 (49, 7),
+(65, 3),
+(65, 6),
+(65, 10),
+(65, 7),
 (21, 1),
 (21, 3),
 (21, 6),
@@ -243,6 +253,7 @@ INSERT INTO `phkapa_categories_processes` (`category_id`, `process_id`) VALUES
 (43, 7),
 (43, 2),
 (49, 2),
+(65, 2),
 (21, 2),
 (58, 2),
 (64, 2),
@@ -263,6 +274,24 @@ INSERT INTO `phkapa_causes` (`id`, `name`, `active`, `created`, `modified`) VALU
 (8, 'Breach of rules', 1, '2014-08-22 04:55:41', '2014-08-22 04:55:41'),
 (9, 'Underperformance', 1, '2014-08-22 05:03:09', '2014-08-22 05:03:09'),
 (10, 'Ignorance', 1, '2014-08-24 06:12:24', '2014-08-24 06:12:24');
+
+--
+-- Dumping data for table `phkapa_custumers`
+--
+
+INSERT INTO `phkapa_customers` (`id`, `name`, `active`, `created`, `modified`) VALUES
+(3, '101 Darwin', 1, '2016-04-21 08:12:10', '2016-04-21 08:12:10'),
+(7, 'Accountant Monte Cristo', 1, '2016-04-21 08:12:10', '2016-04-21 11:56:50'),
+(9, 'Ball Lightning', 1, '2016-04-21 08:12:10', '2016-04-21 08:12:10'),
+(12, 'Canadian Metal Madness', 1, '2016-04-21 08:12:10', '2016-04-21 11:56:24'),
+(14, 'DailyBug', 0, '2016-04-21 08:12:10', '2016-04-21 08:12:10'),
+(18, 'Edgewise Publicity', 1, '2016-04-21 08:12:10', '2016-04-21 11:54:27'),
+(28, 'Fast and Furry Us, LTD', 1, '2016-04-21 08:12:10', '2016-04-21 08:12:10'),
+(32, 'GoldKruger', 1, '2016-04-21 08:12:10', '2016-04-21 11:55:08'),
+(36, 'Help-U-Net', 1, '2016-04-21 08:12:10', '2014-01-17 13:19:06'),
+(38, 'Intelemarket', 1, '2016-04-21 08:12:10', '2016-04-21 11:56:03'),
+(44, 'Measure Maid', 1, '2016-04-21 08:12:10', '2016-04-21 08:12:10'),
+(46, 'RAMS – Remote Access Management Sytems', 1, '2016-04-21 08:12:10', '2016-04-21 11:55:33');
 
 --
 -- Dumping data for table `phkapa_origins`
@@ -334,7 +363,6 @@ INSERT INTO `phkapa_suppliers` (`id`, `name`, `active`, `created`, `modified`) V
 (38, 'CompuWorks', 1, '2014-08-21 08:12:10', '2014-08-21 11:56:03'),
 (44, 'Toyota Caetano Portugal, S.A.', 1, '2014-08-21 08:12:10', '2014-08-21 08:12:10'),
 (46, 'ZeroQuatro, Lda', 1, '2014-08-21 08:12:10', '2014-08-21 11:55:33');
-
 
 --
 -- Dumping data for table `users`

@@ -43,6 +43,7 @@
 
 
                 <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Supplier')), array('controller' => 'suppliers', 'action' => 'add')); ?> </li>
+                <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Customer')), array('controller' => 'customers', 'action' => 'add')); ?> </li>
                 <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Cause')), array('controller' => 'causes', 'action' => 'add')); ?> </li>
             </ul>
         </div>
@@ -244,6 +245,17 @@
                             echo $class;
                             ?>>
                             <?php echo $this->Html->link($ticket['Supplier']['name'], array('controller' => 'suppliers', 'action' => 'view', $ticket['Supplier']['id'])); ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                            if ($i % 2 == 0)
+                                echo $class;
+                            ?>><?php echo __d('phkapa', 'Customer'); ?></dt>
+                    <dd<?php
+                        if ($i++ % 2 == 0)
+                            echo $class;
+                            ?>>
+                            <?php echo $this->Html->link($ticket['Customer']['name'], array('controller' => 'customers', 'action' => 'view', $ticket['Customer']['id'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php

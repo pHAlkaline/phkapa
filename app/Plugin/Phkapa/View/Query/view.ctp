@@ -246,6 +246,17 @@ if ($ticket['Workflow']['id'] < 5) {
                     <dt<?php
                     if ($i % 2 == 0)
                         echo $class;
+                    ?>><?php echo __d('phkapa', 'Customer'); ?></dt>
+                    <dd<?php
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                            <?php echo $ticket['Customer']['name']; ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
                     ?>><?php echo __d('phkapa', 'Approved'); ?></dt>
                     <dd<?php
                     if ($i++ % 2 == 0)

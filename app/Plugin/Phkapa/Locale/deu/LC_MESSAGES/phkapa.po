@@ -144,6 +144,11 @@ msgstr "Löschen fehlgeschlagen."
 msgid "Could not be saved. Please, try again."
 msgstr "Speichern fehlgeschlagen. Bitte erneut versuchen."
 
+msgid "Customer"
+msgid_plural "Customers"
+msgstr[0] "Kunde"
+msgstr[1] "Kundschaft"
+
 msgid "Created"
 msgstr "Erstellt"
 
@@ -309,7 +314,7 @@ msgstr[0] "Prozess (SOP)"
 msgstr[1] "Prozesse (SOP)"
 
 msgid "Product"
-msgstr "Produkt"
+msgstr "Produkt/Artikelnummer"
 
 msgid "Query"
 msgstr "Übersicht"
@@ -366,8 +371,11 @@ msgstr "Gespeichert."
 msgid "See ticket parent data"
 msgstr "Informationen zum Vorgänger betrachten"
 
+msgid "Select Customer"
+msgstr "Wählen Sie Kunden"
+
 msgid "Select Supplier"
-msgstr "Erfasse auswählen"
+msgstr "Wählen Sie Lieferant"
 
 msgid "Send"
 msgstr "Bearbeitung abschließen"
@@ -383,8 +391,8 @@ msgstr "eintragen"
 
 msgid "Supplier"
 msgid_plural "Suppliers"
-msgstr[0] "Melder"
-msgstr[1] "Melder"
+msgstr[0] "Lieferant"
+msgstr[1] "Lieferanten"
 
 msgid "This application is now on maintenance mode, back soon as possible!"
 msgstr "pHKapa ist im Wartungsmodus. Wir sind bald wieder da!"

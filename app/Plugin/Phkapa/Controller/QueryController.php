@@ -85,6 +85,7 @@ class QueryController extends PhkapaAppController {
                         "Activity.name LIKE" => "%" . $keyword . "%",
                         "Cause.name LIKE" => "%" . $keyword . "%",
                         "Supplier.name LIKE" => "%" . $keyword . "%",
+                        "Customer.name LIKE" => "%" . $keyword . "%",
                         "Workflow.name LIKE" => "%" . $keyword . "%"),
                     "AND" => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))));
             $this->set('keyword', $keyword);
@@ -220,6 +221,7 @@ class QueryController extends PhkapaAppController {
             'Ticket.category_id', 'Category.id',
             'Ticket.origin_id', 'Origin.id',
             'Ticket.supplier_id', 'Supplier.id',
+            'Ticket.customer_id', 'Customer.id',
             'Ticket.workflow_id', 'Workflow.id',
             'Ticket.modified_user_id', 'ModifiedUser.id',
             'Ticket.close_user_id', 'CloseUser.id',
@@ -307,7 +309,7 @@ class QueryController extends PhkapaAppController {
      * @access protected
      */
     protected function _setupModel() {
-// belongsTo 'Type','Process','Registar','Activity','Category','Supplier','Origin','Cause','Workflow','Parent'
+// belongsTo 'Type','Process','Registar','Activity','Category','Supplier','Customer','Origin','Cause','Workflow','Parent'
         $this->Ticket->unbindModel(array(
             'belongsTo' => array('Parent')
                 ), false);

@@ -150,6 +150,11 @@ msgstr "Nu a putut fi salvat. Vă rog încercați din nou."
 msgid "Created"
 msgstr "Creat"
 
+msgid "Customer"
+msgid_plural "Customers"
+msgstr[0] "Client"
+msgstr[1] "clientii"
+
 msgid "Days"
 msgstr "Zile"
 
@@ -325,7 +330,7 @@ msgstr[0] "Proces"
 msgstr[1] "Procese"
 
 msgid "Product"
-msgstr "Produs"
+msgstr "Produs/Part#"
 
 msgid "Query"
 msgstr "Interogare"
@@ -381,6 +386,9 @@ msgstr "Salvat cu succes"
 
 msgid "See ticket parent data"
 msgstr "Vizualizează datele tichetului părinte"
+
+msgid "Select Customer"
+msgstr "Selectează Clientul"
 
 msgid "Select Supplier"
 msgstr "Selectează Furnizor"

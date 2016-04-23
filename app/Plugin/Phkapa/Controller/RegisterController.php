@@ -109,7 +109,8 @@ class RegisterController extends PhkapaAppController {
                         "Category.name LIKE" => "%" . $keyword . "%",
                         "Activity.name LIKE" => "%" . $keyword . "%",
                         "Cause.name LIKE" => "%" . $keyword . "%",
-                        "Supplier.name LIKE" => "%" . $keyword . "%"),
+                        "Supplier.name LIKE" => "%" . $keyword . "%",
+                        "Customer.name LIKE" => "%" . $keyword . "%"),
                     "AND" => array('Ticket.workflow_id' => '1', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))
             );
             $this->set('keyword', $keyword);
@@ -169,13 +170,14 @@ class RegisterController extends PhkapaAppController {
         $priorities = $this->Ticket->Priority->find('list', array('conditions' => array('Priority.active' => '1')));
         $safeties = $this->Ticket->Safety->find('list', array('conditions' => array('Safety.active' => '1')));
         $suppliers = $this->Ticket->Supplier->find('list', array('conditions' => array('Supplier.active' => '1')));
+        $customers = $this->Ticket->Customer->find('list', array('conditions' => array('Customer.active' => '1')));
         $processes = $this->Ticket->Process->find('list', array('conditions' => array('Process.active' => '1')));
         $activities = $this->Ticket->Activity->find('list', $this->activityOptions);
 
 
         $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
         $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
-        $this->set(compact('types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
+        $this->set(compact('types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers','customers'));
     }
 
     /**
@@ -248,11 +250,12 @@ class RegisterController extends PhkapaAppController {
         $priorities = $this->Ticket->Priority->find('list', array('conditions' => array('Priority.active' => '1')));
         $safeties = $this->Ticket->Safety->find('list', array('conditions' => array('Safety.active' => '1')));
         $suppliers = $this->Ticket->Supplier->find('list', array('conditions' => array('Supplier.active' => '1')));
+        $customers = $this->Ticket->Customer->find('list', array('conditions' => array('Customer.active' => '1')));
         $processes = $this->Ticket->Process->find('list', array('conditions' => array('Process.active' => '1')));
         $activities = $this->Ticket->Activity->find('list', $this->activityOptions);
         $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
         $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
-        $this->set(compact('ticket','types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
+        $this->set(compact('ticket','types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers','customers'));
     }
 
     /**
@@ -331,6 +334,26 @@ class RegisterController extends PhkapaAppController {
             $this->request->data['Supplier']['active']=1;
             $this->Supplier->create();
             if ($this->Supplier->save($this->request->data)) {
+                $this->Flash->info(__d('phkapa', 'Saved with success.'));
+                $this->redirect(array('action' => 'add'));
+            } else {
+                $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
+            }
+        }
+    }
+    
+    /**
+     * add_customer
+     *
+     * @return void
+     * @access public
+     */
+    public function add_customer() {
+        if (!empty($this->request->data)) {
+            $this->Customer=ClassRegistry::init('Phkapa.Customer');
+            $this->request->data['Customer']['active']=1;
+            $this->Customer->create();
+            if ($this->Customer->save($this->request->data)) {
                 $this->Flash->info(__d('phkapa', 'Saved with success.'));
                 $this->redirect(array('action' => 'add'));
             } else {
@@ -446,7 +469,7 @@ class RegisterController extends PhkapaAppController {
      * @access protected
      */
     protected function _setupModel() {
-        // belongsTo 'Type','Process','Registar','Activity','Category','Supplier','Origin','Cause','Workflow','Parent'
+        // belongsTo 'Type','Process','Registar','Activity','Category','Supplier','Customer','Origin','Cause','Workflow','Parent'
         $this->Ticket->unbindModel(array(
             'belongsTo' => array('Workflow', 'Parent')
                 ), false);

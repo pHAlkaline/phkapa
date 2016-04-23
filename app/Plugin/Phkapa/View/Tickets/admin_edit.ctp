@@ -29,6 +29,7 @@
 
 
                 <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Supplier')), array('controller' => 'suppliers', 'action' => 'add')); ?> </li>
+                <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Customer')), array('controller' => 'customers', 'action' => 'add')); ?> </li>
                 <li><?php echo $this->Html->link(__d('phkapa', 'Add %s', __d('phkapa', 'Cause')), array('controller' => 'causes', 'action' => 'add')); ?> </li>
             </ul>
 
@@ -56,6 +57,7 @@
             echo $this->Form->input('category_id', array('label' => __d('phkapa', 'Category'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('product',array('label' => __d('phkapa','Product')));
             echo $this->Form->input('supplier_id', array('label' => __d('phkapa', 'Supplier'), 'empty' => __d('phkapa', '(choose one)')));
+            echo $this->Form->input('customer_id', array('label' => __d('phkapa', 'Customer'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('approved', array('label' => __d('phkapa', 'Approved')));
             echo $this->Form->input('review_notes', array('label' => __d('phkapa', 'Review Notes')));
             echo $this->Form->input('description', array('label' => __d('phkapa', 'Description')));

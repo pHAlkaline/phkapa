@@ -259,6 +259,13 @@ class Ticket extends PhkapaAppModel {
             'fields' => array('id', 'name'),
             'order' => ''
         ),
+        'Customer' => array(
+            'className' => 'Phkapa.Customer',
+            'foreignKey' => 'customer_id',
+            'conditions' => '',
+            'fields' => array('id', 'name'),
+            'order' => ''
+        ),
         'Origin' => array(
             'className' => 'Phkapa.Origin',
             'foreignKey' => 'origin_id',
