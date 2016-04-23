@@ -49,7 +49,15 @@
                 'after'=>$this->Html->link(
                         __d('phkapa','Add %s', __d('phkapa','Supplier')), 
                         array('action'=>'add_supplier'), 
-                        array('style' => 'padding-left:10px;', 'id' => 'setTodaysDate')))
+                        array('style' => 'padding-left:10px;', 'id' => 'addSupplier')))
+                    );
+            echo $this->Form->input('customer_id', array(
+                'label' => __d('phkapa','Customer'),
+                'empty' => __d('phkapa','(choose one)'),
+                'after'=>$this->Html->link(
+                        __d('phkapa','Add %s', __d('phkapa','Customer')), 
+                        array('action'=>'add_customer'), 
+                        array('style' => 'padding-left:10px;', 'id' => 'addCustomer')))
                     );
             echo $this->Form->input('description',array('label' => __d('phkapa','Description')));
             echo "<br/>";
@@ -69,16 +77,6 @@
 
 </div>
 <div class="clear"></div>
-<div id="dialog-message" title="<?php echo __d('phkapa','Select Supplier'); ?>" >
-
-    <!--p id="feedback">
-        <span>You've selected:</span> <span id="select-result">none</span>.
-    </p-->
-    <ol id="selectable">
-
-    </ol>
-</div>
-
 <?php
 echo $this->Js->writeBuffer();
 ?>

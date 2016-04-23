@@ -148,6 +148,11 @@ msgstr ""
 msgid "Could not be saved. Please, try again."
 msgstr ""
 
+msgid "Customer"
+msgid_plural "Customers"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "Created"
 msgstr ""
 
@@ -313,7 +318,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 msgid "Product"
-msgstr "Produkt"
+msgstr "Product/Part Number"
 
 msgid "Query"
 msgstr ""
@@ -368,6 +373,9 @@ msgid "Saved with success."
 msgstr ""
 
 msgid "See ticket parent data"
+msgstr ""
+
+msgid "Select Customer"
 msgstr ""
 
 msgid "Select Supplier"

@@ -40,8 +40,8 @@ msgstr "Aplicație offline"
 msgid "Are you sure you want to delete # %s?"
 msgstr "Ești sigur că vrei să ștergi nº %s?"
 
-msgid "Check load data option to insert dafault values to action types, activities, categories, causes, origins, processes, suppliers and finaly some example users and their access configuration."
-msgstr "Elegir la opción de carga de datos para insertar valores por defecto para tipos de acción, actividades, categorías, causas, orígenes, procesos, proveedores y por último algunos usuarios de ejemplo con sus configuraciones de acceso."
+msgid "Check load data option to insert dafault values to action types, activities, categories, causes, origins, processes, suppliers, customers and finaly some example users and their access configuration."
+msgstr "Elegir la opción de carga de datos para insertar valores por defecto para tipos de acción, actividades, categorías, causas, orígenes, procesos, proveedores, clientes y por último algunos usuarios de ejemplo con sus configuraciones de acceso."
 
 msgid "Could not be deleted."
 msgstr "Nu poate fi șters."

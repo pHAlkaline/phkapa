@@ -101,7 +101,8 @@ class ReviewController extends PhkapaAppController {
                         "Category.name LIKE" => "%" . $keyword . "%",
                         "Activity.name LIKE" => "%" . $keyword . "%",
                         "Cause.name LIKE" => "%" . $keyword . "%",
-                        "Supplier.name LIKE" => "%" . $keyword . "%"),
+                        "Supplier.name LIKE" => "%" . $keyword . "%",
+                        "Customer.name LIKE" => "%" . $keyword . "%"),
                         
                     "AND" => array('Ticket.workflow_id' => '2', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))
             );
@@ -152,11 +153,12 @@ class ReviewController extends PhkapaAppController {
         $this->request->data['Ticket']['process_change'] = '';
         $types = $this->Ticket->Type->find('list', array('conditions' => array('Type.active' => '1')));
         $suppliers = $this->Ticket->Supplier->find('list', array('conditions' => array('Supplier.active' => '1')));
+        $customers = $this->Ticket->Customer->find('list', array('conditions' => array('Customer.active' => '1')));
         $processes = $this->Ticket->Process->find('list', array('conditions' => array('Process.active' => '1')));
         $activities = $this->Ticket->Activity->find('list', $this->activityOptions);
         $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
         $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
-        $this->set(compact('ticket', 'types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers'));
+        $this->set(compact('ticket', 'types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers','customers'));
     }
 
     /**
@@ -243,7 +245,7 @@ class ReviewController extends PhkapaAppController {
      * @access protected
      */
     protected function _setupModel() {
-        // belongsTo 'Type','Process','Registar','Activity','Category','Supplier','Origin','Cause','Workflow','Parent'
+        // belongsTo 'Type','Process','Registar','Activity','Category','Supplier','Customer','Origin','Cause','Workflow','Parent'
         $this->Ticket->unbindModel(array(
             'belongsTo' => array('Workflow', 'Parent')
                 ), false);

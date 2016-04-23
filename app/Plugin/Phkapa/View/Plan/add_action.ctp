@@ -209,6 +209,17 @@
                     <dt<?php
                     if ($i % 2 == 0)
                         echo $class;
+                    ?>><?php echo __d('phkapa', 'Customer'); ?></dt>
+                    <dd<?php
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                            <?php echo $ticket['Customer']['name']; ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
                     ?>><?php echo __d('phkapa', 'Description'); ?></dt>
                     <dd<?php
                     if ($i++ % 2 == 0)
@@ -236,7 +247,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Ticket']['cause_notes']; ?>
+                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['cause_notes']); ?>
                         &nbsp;
                     </dd>
 

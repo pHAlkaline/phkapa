@@ -93,7 +93,9 @@ class PlanController extends PhkapaAppController {
                         "Category.name LIKE" => "%" . $keyword . "%",
                         "Activity.name LIKE" => "%" . $keyword . "%",
                         "Cause.name LIKE" => "%" . $keyword . "%",
-                        "Supplier.name LIKE" => "%" . $keyword . "%"),
+                        "Supplier.name LIKE" => "%" . $keyword . "%",
+                        "Customer.name LIKE" => "%" . $keyword . "%"),
+                
                         
                 "AND" => array('Ticket.workflow_id' => '3', 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))
             );
@@ -507,7 +509,7 @@ class PlanController extends PhkapaAppController {
      * @access protected
      */
     protected function _setupModel() {
-        // belongsTo 'Type','Process','Registar','Activity','Category','Supplier','Origin','Cause','Workflow','Parent'
+        // belongsTo 'Type','Process','Registar','Activity','Category','Supplier','Customer','Origin','Cause','Workflow','Parent'
         $this->Ticket->unbindModel(array(
             'belongsTo' => array('Workflow', 'Parent')
                 ), false);

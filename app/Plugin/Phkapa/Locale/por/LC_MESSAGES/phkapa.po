@@ -145,6 +145,11 @@ msgstr "Não foi possível apagar."
 msgid "Could not be saved. Please, try again."
 msgstr "Não foi possível gravar.Por favor tente de novo."
 
+msgid "Customer"
+msgid_plural "Customers"
+msgstr[0] "Cliente"
+msgstr[1] "Clientes"
+
 msgid "Created"
 msgstr "Criado"
 
@@ -310,7 +315,7 @@ msgstr[0] "Processo"
 msgstr[1] "Processos"
 
 msgid "Product"
-msgstr "Produto"
+msgstr "Produto/Peça"
 
 msgid "Query"
 msgstr "Pesquisa"
@@ -367,6 +372,9 @@ msgstr "Gravado com sucesso."
 
 msgid "See ticket parent data"
 msgstr "Ver incidência"
+
+msgid "Select Customer"
+msgstr "Seleccione Cliente"
 
 msgid "Select Supplier"
 msgstr "Seleccione Fornecedor"

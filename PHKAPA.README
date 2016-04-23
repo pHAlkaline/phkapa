@@ -6,7 +6,7 @@ Allows to generate action (CAPA) requests that routes through register, review, 
 It provides effective mechanism to determinate the source and cost of problems, released under [MIT License]
 
 Features:
-Actions, Action Effectiveness, Action Type, Activity, Process, Category, Cause, Origin, Priority, Safety, Supplier, Ticket Type, Related Ticket, Simple Workflow, Advanced Access/Restrict to Ticket Stages, History/Revision for Ticket and Action records,  Internal Notification system including Email Notification.
+Actions, Action Effectiveness, Action Type, Activity, Process, Category, Cause, Origin, Priority, Safety, Supplier, Customer, Ticket Type, Related Ticket, Simple Workflow, Advanced Access/Restrict to Ticket Stages, History/Revision for Ticket and Action records,  Internal Notification system including Email Notification.
 Tracks:
 Verify Ticket/Action User, Modify Ticket/Action User, Close Ticket/Action User, Last Modification User, Last Modification Date, Registar User and many more
 
