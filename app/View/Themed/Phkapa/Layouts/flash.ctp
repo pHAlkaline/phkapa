@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * PHP versions 4 and 5
@@ -19,20 +20,21 @@
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<?php echo $this->Html->charset(); ?>
-<title><?php echo $page_title; ?></title>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <?php echo $this->Html->charset(); ?>
+        <title><?php echo $page_title; ?></title>
 
 <?php if (Configure::read('debug') == 0) { ?>
-<meta http-equiv="Refresh" content="<?php echo $pause?>;url=<?php echo $url?>"/>
+        <meta http-equiv="Refresh" content="<?php echo $pause?>;url=<?php echo $url?>"/>
 <?php } ?>
-<style><!--
-P { text-align:center; font:bold 1.1em sans-serif }
-A { color:#444; text-decoration:none }
-A:HOVER { text-decoration: underline; color:#44E }
---></style>
-</head>
-<body>
-<p><a href="<?php echo $url?>"><?php echo $message?></a></p>
-</body>
+        <style><!--
+            P { text-align:center; font:bold 1.1em sans-serif }
+            A { color:#444; text-decoration:none }
+            A:HOVER { text-decoration: underline; color:#44E }
+            --></style>
+    </head>
+    <body>
+        <p><a href="<?php echo $url?>"><?php echo $message?></a></p>
+    </body>
 </html>
