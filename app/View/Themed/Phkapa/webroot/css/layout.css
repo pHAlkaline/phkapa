@@ -249,7 +249,7 @@ ul.section li {
 
 }
 ul.section li a {
-    display:inline;
+    display:inline-block;
     color:#00aeef;
    
 }
