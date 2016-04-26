@@ -236,6 +236,54 @@ class ReviewController extends PhkapaAppController {
         $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
         $this->redirect(array('action' => 'index'));
     }
+    
+    /**
+     * add_supplier
+     *
+     * @return void
+     * @access public
+     */
+    public function add_supplier($id=null) {
+        if (!$id) {
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
+            $this->redirect(array('action' => 'index'));
+        }
+        if (!empty($this->request->data)) {
+            $this->Supplier=ClassRegistry::init('Phkapa.Supplier');
+            $this->request->data['Supplier']['active']=1;
+            $this->Supplier->create();
+            if ($this->Supplier->save($this->request->data)) {
+                $this->Flash->info(__d('phkapa', 'Saved with success.'));
+                $this->redirect(array('action' => 'edit',$id));
+            } else {
+                $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
+            }
+        }
+    }
+    
+    /**
+     * add_customer
+     *
+     * @return void
+     * @access public
+     */
+    public function add_customer($id=null) {
+        if (!$id) {
+            $this->Flash->error(__d('phkapa', 'Invalid request.'));
+            $this->redirect(array('action' => 'index'));
+        }
+        if (!empty($this->request->data)) {
+            $this->Customer=ClassRegistry::init('Phkapa.Customer');
+            $this->request->data['Customer']['active']=1;
+            $this->Customer->create();
+            if ($this->Customer->save($this->request->data)) {
+                $this->Flash->info(__d('phkapa', 'Saved with success.'));
+                $this->redirect(array('action' => 'edit',$id));
+            } else {
+                $this->Flash->error(__d('phkapa', 'Could not be saved. Please, try again.'));
+            }
+        }
+    }
 
     /**
      * Setup Ticket bind model associations 
