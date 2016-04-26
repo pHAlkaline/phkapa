@@ -170,8 +170,22 @@ if ($ticket['Ticket']['approved'] === null) {
                     </div>
                     <?php
                     echo $this->Form->input('product',array('label' => __d('phkapa','Product')));
-                    echo $this->Form->input('supplier_id', array('label' => __d('phkapa', 'Supplier'), 'empty' => __d('phkapa', '(choose one)')));
-                    echo $this->Form->input('customer_id', array('label' => __d('phkapa', 'Customer'), 'empty' => __d('phkapa', '(choose one)')));
+                    echo $this->Form->input('supplier_id', array(
+                'label' => __d('phkapa','Supplier'),
+                'empty' => __d('phkapa','(choose one)'),
+                'after'=>$this->Html->link(
+                        __d('phkapa','Add %s', __d('phkapa','Supplier')), 
+                        array('action'=>'add_supplier',$ticket['Ticket']['id']), 
+                        array('style' => 'padding-left:10px;', 'id' => 'addSupplier')))
+                    );
+                    echo $this->Form->input('customer_id', array(
+                'label' => __d('phkapa','Customer'),
+                'empty' => __d('phkapa','(choose one)'),
+                'after'=>$this->Html->link(
+                        __d('phkapa','Add %s', __d('phkapa','Customer')), 
+                        array('action'=>'add_customer',$ticket['Ticket']['id']), 
+                        array('style' => 'padding-left:10px;', 'id' => 'addCustomer')))
+                    );
                     echo $this->Form->input('description', array('label' => __d('phkapa', 'Description')));
                     echo "<br/>";
                     echo $this->Form->input('priority_id', array('label' => __d('phkapa', 'Priority'), 'empty' => __d('phkapa', '(choose one)')));
