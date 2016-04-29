@@ -3,9 +3,7 @@
 #################################################
 /app/webroot/index.php
 /app/webroot/files
-/app/Config/core.php
 /app/Config/database.php
-/app/Config/bootstrap_phapp.php
 /app/Config/email.php
 /app/files/*
 !/app/files/empty
