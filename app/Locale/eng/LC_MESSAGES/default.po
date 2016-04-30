@@ -201,7 +201,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-msgid "Plugin not found, this Plugin is available to donors, contributors or service clients."
+msgid "This Plugin is available for free to code contributors, service clients, donors."
 msgstr ""
 
 msgid "This plugin will save you some time or spare you a programmer headache."
@@ -211,6 +211,9 @@ msgid "Please make a contribution and get the Plugin code."
 msgstr ""
 
 msgid "This Plugin is also available with the pHKapa FULL PACK."
+msgstr ""
+
+msgid "Buy pHKapa FULL PACK at http://phkapa.net"
 msgstr ""
 
 msgid "Ticket Report"

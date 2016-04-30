@@ -221,8 +221,8 @@ msgstr "Da"
 msgid "Print report not found."
 msgstr "Raportul printat nu a fost găsit"
 
-msgid "Plugin not found, this Plugin is available to donors, contributors or service clients."
-msgstr "Plugin nu a fost găsit , acest plugin este disponibil pentru donatori, colaboratori sau clienți de servicii."
+msgid "This Plugin is available for free to code contributors, service clients, donors."
+msgstr "Acest plug-in este disponibil gratuit pentru contribuabili cod, clienți de servicii , donatori ."
 
 msgid "This plugin will save you some time or spare you a programmer headache."
 msgstr "Acest plugin va salva ceva timp sau o durere de cap de schimb programator."
@@ -231,7 +231,10 @@ msgid "Please make a contribution and get the Plugin code."
 msgstr "Vă rugăm să aducă o contribuție și obține codul Plugin."
 
 msgid "This Plugin is also available with the pHKapa FULL PACK."
-msgstr "Acest plugin este de asemenea disponibil cu pHKapa FULL PACK"
+msgstr "Acest plugin este de asemenea disponibil cu pHKapa FULL PACK."
+
+msgid "Buy pHKapa FULL PACK at http://phkapa.net"
+msgstr "pHKapa FULL PACK cumpara la http://phkapa.net"
 
 msgid "Ticket Report"
 msgstr "Raport despre Tichet"
