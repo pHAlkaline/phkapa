@@ -1,9 +1,9 @@
 <?php
-
 /**
- * Application model
+ * Application model for CakePHP.
  *
- * This file is the base model of all other models
+ * This file is application-wide model file. You can put all
+ * application-wide model-related methods here.
  *
  * PHP version 5
  * 
