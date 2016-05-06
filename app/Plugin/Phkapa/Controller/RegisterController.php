@@ -133,7 +133,8 @@ class RegisterController extends PhkapaAppController {
      * @access public
      */
     public function add($ticket_parent = null) {
-
+        $this->Ticket->validator()->remove('safety_id', 'notBlank');
+        $this->Ticket->validator()->remove('priority_id', 'notBlank');
         if (!empty($this->request->data) && $this->request->data['Ticket']['process_change'] == '') {
             $this->Ticket->create();
             //$this->request->data['Ticket']['uuid'] = date('YmdHis');
@@ -210,6 +211,7 @@ class RegisterController extends PhkapaAppController {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
+        
         $this->Ticket->recursive = 1;
         $this->Ticket->order = null;
         
@@ -521,6 +523,9 @@ class RegisterController extends PhkapaAppController {
         $this->Ticket->recursive = 0;
         $this->_setProcessOptions();
         $this->_setupModel();
+        $this->Ticket->validator()->remove('safety_id', 'notBlank');
+        $this->Ticket->validator()->remove('priority_id', 'notBlank');
+        
     }
 
 }
