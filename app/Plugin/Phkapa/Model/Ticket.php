@@ -43,6 +43,16 @@ class Ticket extends PhkapaAppModel {
      * @access public
      */
     public $validate = array(
+        'description' => array(
+            'notBlank' => array(
+                'rule' => array('notBlank'),
+                'message' => 'Empty',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
         'origin_date' => array(
             'date' => array(
                 'rule' => array('date'),
