@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `phkapa_actions` (
 DROP TABLE IF EXISTS `phkapa_actions_revision`;
 CREATE TABLE IF NOT EXISTS `phkapa_actions_revision` (
   `version_id` int(11) NOT NULL AUTO_INCREMENT,
-  `version_description` varchar(250) NOT NULL,
+  `version_description` varchar(250) DEFAULT NULL,
   `id` int(11) NOT NULL,
   `ticket_id` int(11) NOT NULL DEFAULT '0',
   `action_type_id` int(11) NOT NULL DEFAULT '0',
