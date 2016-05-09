@@ -6,6 +6,13 @@ ALTER TABLE `phkapa_tickets`
 CHANGE COLUMN `priority_id` `priority_id` INT(11) NULL DEFAULT NULL ,
 CHANGE COLUMN `safety_id` `safety_id` INT(11) NULL DEFAULT NULL ;
 
+ALTER TABLE `phkapa_tickets_revision` 
+CHANGE COLUMN `priority_id` `priority_id` INT(11) NULL DEFAULT NULL ,
+CHANGE COLUMN `safety_id` `safety_id` INT(11) NULL DEFAULT NULL ;
+
+ALTER TABLE `phkapa_actions_revision` 
+CHANGE COLUMN `version_description` `version_description` VARCHAR(250) NULL DEFAULT NULL ;
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
