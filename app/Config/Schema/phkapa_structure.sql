@@ -377,8 +377,8 @@ CREATE TABLE IF NOT EXISTS `phkapa_tickets` (
   `ticket_parent` int(11) DEFAULT NULL,
   `type_id` int(11) NOT NULL DEFAULT '0',
   `process_id` int(11) NOT NULL DEFAULT '0',
-  `priority_id` int(11) NOT NULL DEFAULT '0',
-  `safety_id` int(11) NOT NULL DEFAULT '0',
+  `priority_id` int(11) DEFAULT NULL,
+  `safety_id` int(11) DEFAULT NULL,
   `registar_id` int(11) NOT NULL DEFAULT '0',
   `activity_id` int(11) NOT NULL DEFAULT '0',
   `category_id` int(11) NOT NULL DEFAULT '0',
@@ -429,8 +429,8 @@ CREATE TABLE IF NOT EXISTS `phkapa_tickets_revision` (
   `ticket_parent` int(11) DEFAULT NULL,
   `type_id` int(11) NOT NULL DEFAULT '0',
   `process_id` int(11) NOT NULL DEFAULT '0',
-  `priority_id` int(11) NOT NULL DEFAULT '0',
-  `safety_id` int(11) NOT NULL DEFAULT '0',
+  `priority_id` int(11) DEFAULT NULL,
+  `safety_id` int(11) DEFAULT NULL,
   `registar_id` int(11) NOT NULL DEFAULT '0',
   `activity_id` int(11) NOT NULL DEFAULT '0',
   `category_id` int(11) NOT NULL DEFAULT '0',
@@ -570,7 +570,7 @@ ALTER TABLE `phkapa_actions`
   ADD CONSTRAINT `phkapa_actions_ibfk_6` FOREIGN KEY (`close_user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `phkapa_actions_revision`
+-- Constraints for table `phkapa_actions_actionsrevision`
 --
 ALTER TABLE `phkapa_actions_revision`
   ADD CONSTRAINT `phkapa_actions_revision_ibfk_1` FOREIGN KEY (`id`) REFERENCES `phkapa_actions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,

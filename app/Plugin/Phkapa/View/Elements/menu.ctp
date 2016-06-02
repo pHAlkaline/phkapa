@@ -1,4 +1,4 @@
-<?php echo $this->Html->image('yourlogo.png', array('style'=>'float: right; height: 35px;','alt' => 'YourLogoHere')); ?>
+<?php echo $this->Html->image(Configure::read('Application.logo_image'), array('style' => 'float: right; height: 35px;', 'alt' => 'logo')); ?>
 <div class="block" id="admin-left-menu">
 
     <ul class="section menu">
