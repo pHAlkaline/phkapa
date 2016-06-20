@@ -11,15 +11,22 @@
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://phkapa.net
  */
-class UsersController extends PhkapaAppController {
+class PhkapaUsersController extends PhkapaAppController {
 
+    /**
+     * List of Models for this Controller
+     *
+     * @var array
+     * @access public
+     */
+    public $uses = array('User','Phkapa.PhkapaUser');
     /**
      * Controller name
      *
      * @var string
      * @access public
      */
-    public $name = 'Users';
+    public $name = 'PhkapaUsers';
      
      /**
      * Admin index
@@ -30,9 +37,9 @@ class UsersController extends PhkapaAppController {
      public function admin_index() {
         $allowedUsers=$this->_allowedUsers();
         $this->set(compact('allowedUsers'));
-        $this->User->recursive = 0;
-        $this->Paginator->settings['conditions'] = array ('User.id' => $allowedUsers);
-        $this->set('users', $this->Paginator->paginate());
+        $this->PhkapaUser->recursive = 0;
+        $this->Paginator->settings['conditions'] = array ('PhkapaUser.id' => $allowedUsers);
+        $this->set('users', $this->Paginator->paginate('PhkapaUser'));
     }
 
     /**
@@ -51,8 +58,8 @@ class UsersController extends PhkapaAppController {
             $this->Flash->error(__d('phkapa','Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->User->recursive=1;
-        $this->set('user', $this->User->find('first', array('conditions'=>array('User.id'=>$id))));
+        $this->PhkapaUser->recursive=1;
+        $this->set('user', $this->PhkapaUser->find('first', array('conditions'=>array('PhkapaUser.id'=>$id))));
     }
 
     /**
@@ -85,7 +92,7 @@ class UsersController extends PhkapaAppController {
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->request->data)) {
-            if ($this->User->save($this->request->data)) {
+            if ($this->PhkapaUser->save($this->request->data)) {
                 $this->Flash->info(__('Saved with success.'));
                 $this->redirect(array('action' => 'index'));
             } else {
@@ -93,14 +100,14 @@ class UsersController extends PhkapaAppController {
             }
         }
         if (empty($this->request->data)) {
-            $this->User->recursive=1;
-            $this->request->data = $this->User->find('first', array('conditions'=>array('User.id'=>$id)));
+            $this->PhkapaUser->recursive=1;
+            $this->request->data = $this->PhkapaUser->find('first', array('conditions'=>array('PhkapaUser.id'=>$id)));
             if (empty($this->request->data)) {
                 $this->Flash->error(__d('phkapa','Invalid request.'));
                 $this->redirect(array('action' => 'index'));
             }
         }
-        $processes = $this->User->Process->find('list');
+        $processes = $this->PhkapaUser->Process->find('list');
         $this->set(compact('processes'));
     }
 

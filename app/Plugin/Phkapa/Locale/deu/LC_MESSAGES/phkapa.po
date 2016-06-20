@@ -291,6 +291,9 @@ msgstr "Eigentümer"
 msgid "pHKapa"
 msgstr "pHKapa"
 
+msgid "Phkapa User"
+msgstr "Benutzer"
+
 msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
 msgstr "Seite %page% von %pages%, zeige %current% Einträge von insgesamt %count%, beginnend bei %start%, endend bei %end%"
 

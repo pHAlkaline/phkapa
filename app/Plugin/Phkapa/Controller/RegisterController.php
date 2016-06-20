@@ -222,7 +222,7 @@ class RegisterController extends PhkapaAppController {
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->request->data) && $this->request->data['Ticket']['process_change'] == '') {
-            $this->request->data['Ticket']['registar_id'] = $this->Auth->user('id');
+            //$this->request->data['Ticket']['registar_id'] = $this->Auth->user('id');
             $this->request->data['Ticket']['workflow_id'] = 1;
 
             if (isset($this->request->data['Ticket']['ticket_parent']) && $this->request->data['Ticket']['ticket_parent'] != '') {

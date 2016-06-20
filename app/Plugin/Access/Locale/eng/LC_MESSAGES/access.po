@@ -20,6 +20,9 @@ msgstr ""
 msgid "Access Setup"
 msgstr ""
 
+msgid "Access User"
+msgstr "Users"
+
 msgid "Aco"
 msgid_plural "Acos"
 msgstr[0] "Access Control"

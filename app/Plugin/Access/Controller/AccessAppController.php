@@ -35,7 +35,7 @@ class AccessAppController extends AppController {
      * @throws
      */
     protected function _setMenu() {
-        $menuItems = array( 'Aros', 'Users');
+        $menuItems = array( 'Aros', 'AccessUsers');
         $translationDomain='access';
         $this->set(compact('menuItems','translationDomain'));
         $this->set('title_for_layout', __d('access','Access Setup'));

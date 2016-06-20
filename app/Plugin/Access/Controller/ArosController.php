@@ -27,7 +27,7 @@ class ArosController extends AccessAppController {
      * @var array
      * @access public
      */
-    public $uses = array('Access.User');
+    public $uses = array('User');
 
     /**
      * Components

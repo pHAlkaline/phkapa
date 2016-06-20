@@ -8,7 +8,7 @@
         <div class="block" id="admin-actions">
             <h5><?php echo __dn('phkapa', 'User', 'Users', 2); ?></h5>
             <ul class="menu">
-                <li><?php echo $this->Html->link(__d('phkapa', 'Edit %s', __dn('phkapa', 'User', 'Users', 1)), array('action' => 'edit', $user['User']['id'])); ?> </li>
+                <li><?php echo $this->Html->link(__d('phkapa', 'Edit %s', __dn('phkapa', 'User', 'Users', 1)), array('action' => 'edit', $user['PhkapaUser']['id'])); ?> </li>
                 <li><?php echo $this->Html->link(__d('phkapa', 'List %s', __dn('phkapa', 'User', 'Users', 2)), array('action' => 'index')); ?> </li>
 
             </ul>
@@ -40,7 +40,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                        <?php echo $user['User']['id']; ?>
+                        <?php echo $user['PhkapaUser']['id']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -51,7 +51,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                         ?>>
-                        <?php echo $user['User']['name']; ?>
+                        <?php echo $user['PhkapaUser']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -62,7 +62,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                         ?>>
-                        <?php echo $user['User']['username']; ?>
+                        <?php echo $user['PhkapaUser']['username']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -73,7 +73,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                         ?>>
-                        <?php echo $user['User']['email']; ?>
+                        <?php echo $user['PhkapaUser']['email']; ?>
                         &nbsp;
                     </dd>
 
@@ -85,7 +85,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                         ?>>
-                        <?php echo $this->Utils->yesOrNo($user['User']['active']); ?>
+                        <?php echo $this->Utils->yesOrNo($user['PhkapaUser']['active']); ?>
                         &nbsp;
                     </dd>
 

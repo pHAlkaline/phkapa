@@ -110,7 +110,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                        <?php echo $this->Html->link($action['CloseUser']['name'], array('controller' => 'users', 'action' => 'view', $action['CloseUser']['id'])); ?>&nbsp;
+                        <?php echo $this->Html->link($action['CloseUser']['name'], array('controller' => 'phkap_users', 'action' => 'view', $action['CloseUser']['id'])); ?>&nbsp;
                     </dd>
 
                     <dt<?php
@@ -135,7 +135,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                        <?php echo $this->Html->link($action['ActionEffectiveness']['name'], array('controller' => 'users', 'action' => 'view', $action['ActionEffectiveness']['id'])); ?>&nbsp;
+                        <?php echo $this->Html->link($action['ActionEffectiveness']['name'], array('controller' => 'phkapa_users', 'action' => 'view', $action['ActionEffectiveness']['id'])); ?>&nbsp;
                     </dd>
                     <dt<?php
                     if ($i % 2 == 0)
@@ -145,7 +145,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                        <?php echo $this->Html->link($action['VerifyUser']['name'], array('controller' => 'users', 'action' => 'view', $action['VerifyUser']['id'])); ?>&nbsp;
+                        <?php echo $this->Html->link($action['VerifyUser']['name'], array('controller' => 'phkapa_users', 'action' => 'view', $action['VerifyUser']['id'])); ?>&nbsp;
                     </dd>
                     <dt<?php
                     if ($i % 2 == 0)
@@ -166,7 +166,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                        <?php echo $this->Html->link($action['ModifiedUser']['name'], array('controller' => 'users', 'action' => 'view', $action['ModifiedUser']['id'])); ?>&nbsp;
+                        <?php echo $this->Html->link($action['ModifiedUser']['name'], array('controller' => 'phkapa_users', 'action' => 'view', $action['ModifiedUser']['id'])); ?>&nbsp;
                     </dd>
                     <dt<?php
                     if ($i % 2 == 0)
