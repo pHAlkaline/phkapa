@@ -33,7 +33,7 @@
             </ul>
             <h5><?php echo __d('phkapa', 'Users'); ?></h5>
             <ul class="menu">
-                <li><?php echo $this->Html->link(__d('phkapa', 'List %s', __d('phkapa', 'Users')), array('controller' => 'users', 'action' => 'index')); ?> </li>
+                <li><?php echo $this->Html->link(__d('phkapa', 'List %s', __d('phkapa', 'Users')), array('controller' => 'phkap_users', 'action' => 'index')); ?> </li>
             </ul>
         </div>
 
@@ -230,8 +230,8 @@
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $user['modified']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $user['created']); ?></td>
                                 <td class="actions">
-                                    <?php echo $this->Html->link(__d('phkapa', 'View'), array('controller' => 'users', 'action' => 'view', $user['id'])); ?>
-                                    <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Edit'), array('controller' => 'users', 'action' => 'edit', $user['id'])); ?>
+                                    <?php echo $this->Html->link(__d('phkapa', 'View'), array('controller' => 'phkap_users', 'action' => 'view', $user['id'])); ?>
+                                    <?php echo ' | ' . $this->Html->link(__d('phkapa', 'Edit'), array('controller' => 'phkapa_users', 'action' => 'edit', $user['id'])); ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

@@ -292,6 +292,9 @@ msgstr ""
 msgid "pHKapa"
 msgstr ""
 
+msgid "Phkapa User"
+msgstr "Users"
+
 msgid "Page"
 msgstr ""
 

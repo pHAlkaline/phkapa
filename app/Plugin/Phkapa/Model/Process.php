@@ -133,7 +133,7 @@ class Process extends PhkapaAppModel {
             'insertQuery' => ''
         ),
         'User' => array(
-            'className' => 'Phkapa.User',
+            'className' => 'Phkapa.PhkapaUser',
             'joinTable' => 'phkapa_processes_users',
             'foreignKey' => 'process_id',
             'associationForeignKey' => 'user_id',

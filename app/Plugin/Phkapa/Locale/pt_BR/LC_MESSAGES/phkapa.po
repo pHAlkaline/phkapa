@@ -290,6 +290,9 @@ msgstr "Data de origem"
 msgid "pHKapa"
 msgstr ""
 
+msgid "Phkapa User"
+msgstr "Usuarios"
+
 msgid "Page"
 msgstr "Página"
 

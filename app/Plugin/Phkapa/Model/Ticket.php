@@ -242,7 +242,7 @@ class Ticket extends PhkapaAppModel {
             'order' => ''
         ),
         'Registar' => array(
-            'className' => 'Phkapa.User',
+            'className' => 'Phkapa.PhkapaUser',
             'foreignKey' => 'registar_id',
             'conditions' => '',
             'fields' => array('id', 'name'),
@@ -305,14 +305,14 @@ class Ticket extends PhkapaAppModel {
             'order' => ''
         ),
         'CloseUser' => array(
-            'className' => 'Phkapa.User',
+            'className' => 'Phkapa.PhkapaUser',
             'foreignKey' => 'close_user_id',
             'conditions' => '',
             'fields' => array('id', 'name'),
             'order' => ''
         ),
         'ModifiedUser' => array(
-            'className' => 'Phkapa.User',
+            'className' => 'Phkapa.PhkapaUser',
             'foreignKey' => 'modified_user_id',
             'conditions' => '',
             'fields' => array('id', 'name'),

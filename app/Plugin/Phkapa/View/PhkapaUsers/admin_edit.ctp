@@ -37,7 +37,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->request->data['User']['id']; ?>
+                            <?php echo $this->request->data['PhkapaUser']['id']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -48,7 +48,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->request->data['User']['name']; ?>
+                            <?php echo $this->request->data['PhkapaUser']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -59,7 +59,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->request->data['User']['username']; ?>
+                            <?php echo $this->request->data['PhkapaUser']['username']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -70,7 +70,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->request->data['User']['email']; ?>
+                            <?php echo $this->request->data['PhkapaUser']['email']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -81,7 +81,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Utils->yesOrNo($this->request->data['User']['active']); ?>
+                            <?php echo $this->Utils->yesOrNo($this->request->data['PhkapaUser']['active']); ?>
                         &nbsp;
                     </dd>
 
@@ -90,7 +90,7 @@
         </div>
     </div>
     <div class="users form">
-        <?php echo $this->Form->create('User'); ?>
+        <?php echo $this->Form->create('PhkapaUser'); ?>
         <fieldset class="ui-corner-all ui-widget-content" >
             <legend><?php echo __d('phkapa', 'Record') . ' ' . __d('phkapa', 'Process'); ?></legend>
             <?php

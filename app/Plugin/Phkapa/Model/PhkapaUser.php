@@ -12,7 +12,7 @@
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://phkapa.net
  */
-class User extends PhkapaAppModel {
+class PhkapaUser extends PhkapaAppModel {
 
     /**
      * Model name
@@ -44,7 +44,7 @@ class User extends PhkapaAppModel {
      * @var string
      * @access public
      */
-    var $tablePrefix = null;
+    public $tablePrefix = null;
 
     /**
      * Model associations: hasAndBelongsToMany

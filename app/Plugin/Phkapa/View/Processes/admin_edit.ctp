@@ -31,7 +31,7 @@
             </ul>
             <h5><?php echo __d('phkapa','Users'); ?></h5>
             <ul class="menu">
-                <li><?php echo $this->Html->link(__d('phkapa','List %s', __d('phkapa','Users')), array('controller' => 'users', 'action' => 'index')); ?> </li>
+                <li><?php echo $this->Html->link(__d('phkapa','List %s', __d('phkapa','Users')), array('controller' => 'phkap_users', 'action' => 'index')); ?> </li>
             </ul>
         </div>
 

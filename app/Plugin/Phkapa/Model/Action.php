@@ -175,14 +175,14 @@ class Action extends PhkapaAppModel {
             'order' => ''
         ),
         'VerifyUser' => array(
-            'className' => 'Phkapa.User',
+            'className' => 'Phkapa.PhkapaUser',
             'foreignKey' => 'verify_user_id',
             'conditions' => '',
             'fields' => array('id', 'name'),
             'order' => ''
         ),
         'CloseUser' => array(
-            'className' => 'Phkapa.User',
+            'className' => 'Phkapa.PhkapaUser',
             'foreignKey' => 'close_user_id',
             'conditions' => '',
             'fields' => array('id', 'name'),
@@ -190,7 +190,7 @@ class Action extends PhkapaAppModel {
         ),
         
         'ModifiedUser' => array(
-            'className' => 'Phkapa.User',
+            'className' => 'Phkapa.PhkapaUser',
             'foreignKey' => 'modified_user_id',
             'conditions' => '',
             'fields' => array('id', 'name'),

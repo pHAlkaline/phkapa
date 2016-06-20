@@ -41,14 +41,14 @@
                 
                 ?>
                 <tr<?php echo $class; ?>>
-                    <td><?php echo $user['User']['id']; ?>&nbsp;</td>
-                    <td><?php echo $user['User']['name']; ?>&nbsp;</td>
-                    <td><?php echo $user['User']['username']; ?>&nbsp;</td>
-                    <td><?php echo $user['User']['email']; ?>&nbsp;</td>
-                    <td><?php echo $this->Utils->yesOrNo($user['User']['active']); ?>&nbsp;</td>
+                    <td><?php echo $user['PhkapaUser']['id']; ?>&nbsp;</td>
+                    <td><?php echo $user['PhkapaUser']['name']; ?>&nbsp;</td>
+                    <td><?php echo $user['PhkapaUser']['username']; ?>&nbsp;</td>
+                    <td><?php echo $user['PhkapaUser']['email']; ?>&nbsp;</td>
+                    <td><?php echo $this->Utils->yesOrNo($user['PhkapaUser']['active']); ?>&nbsp;</td>
                     <td class="actions">
-                        <?php echo $this->Html->link(__d('phkapa','View'), array('action' => 'view', $user['User']['id'])); ?>
-                        <?php echo ' | ' . $this->Html->link(__d('phkapa','Edit'), array('action' => 'edit', $user['User']['id'])); ?>
+                        <?php echo $this->Html->link(__d('phkapa','View'), array('action' => 'view', $user['PhkapaUser']['id'])); ?>
+                        <?php echo ' | ' . $this->Html->link(__d('phkapa','Edit'), array('action' => 'edit', $user['PhkapaUser']['id'])); ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

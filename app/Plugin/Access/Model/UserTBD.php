@@ -43,6 +43,14 @@ class User extends AccessAppModel {
     public $order = 'name ASC';
 
     /**
+     * Table prefix for model table
+     *
+     * @var string
+     * @access public
+     */
+    public $tablePrefix = null;
+    
+    /**
      * Validation
      *
      * @var array
@@ -117,29 +125,7 @@ class User extends AccessAppModel {
         ),
     );
 
-    /**
-     * Model associations: hasAndBelongsToMany
-     *
-     * @var array
-     * @access public
-     */
-    public $hasAndBelongsToMany = array(
-        'Process' => array(
-            'className' => 'Phkapa.Process',
-            'joinTable' => 'phkapa_processes_users',
-            'foreignKey' => 'user_id',
-            'associationForeignKey' => 'process_id',
-            'unique' => true,
-            'conditions' => '',
-            'fields' => '',
-            'order' => '',
-            'limit' => '',
-            'offset' => '',
-            'finderQuery' => '',
-            'deleteQuery' => '',
-            'insertQuery' => ''
-        )
-    );
+    
     /*
     public $hasMany = array(
         'RegistredTicket' => array(

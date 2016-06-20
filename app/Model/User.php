@@ -41,6 +41,14 @@ class User extends AppModel {
     public $order = 'name ASC';
 
     /**
+     * Table prefix for model table
+     *
+     * @var string
+     * @access public
+     */
+    public $tablePrefix = null;
+    
+    /**
      * Validation
      *
      * @var array
@@ -116,7 +124,7 @@ class User extends AppModel {
 
         ),
     );
-
+    
     function matchPasswords($data) {
 
         if ($data['verify_password'] == $this->data['User']['password']) {
@@ -145,7 +153,6 @@ class User extends AppModel {
                 'rule' => 'isUnique',
                 'message' => __('This name is restricted by system.')
                 ));
-
         $aro = $this->Aro->findByForeignKey($this->id);
         if ($aro) {
             $aro['Aro']['alias'] = $this->data['User']['name'];

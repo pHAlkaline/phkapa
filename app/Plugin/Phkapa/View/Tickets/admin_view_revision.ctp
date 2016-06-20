@@ -109,7 +109,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Html->link($ticket['Registar']['name'], array('controller' => 'users', 'action' => 'view', $ticket['Registar']['id'])); ?>
+                            <?php echo $this->Html->link($ticket['Registar']['name'], array('controller' => 'phkapa_users', 'action' => 'view', $ticket['Registar']['id'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -307,7 +307,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Html->link($ticket['CloseUser']['name'], array('controller' => 'users', 'action' => 'view', $ticket['CloseUser']['id'])); ?>
+                            <?php echo $this->Html->link($ticket['CloseUser']['name'], array('controller' => 'phkapa_users', 'action' => 'view', $ticket['CloseUser']['id'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -318,7 +318,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Html->link($ticket['ModifiedUser']['name'], array('controller' => 'users', 'action' => 'view', $ticket['ModifiedUser']['id'])); ?>
+                            <?php echo $this->Html->link($ticket['ModifiedUser']['name'], array('controller' => 'phkapa_users', 'action' => 'view', $ticket['ModifiedUser']['id'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php

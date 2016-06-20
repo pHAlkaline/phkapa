@@ -12,7 +12,7 @@
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://phkapa.net
  */
-class UsersController extends AccessAppController {
+class AccessUsersController extends AccessAppController {
 
     /**
      * Models
@@ -20,7 +20,7 @@ class UsersController extends AccessAppController {
      * @var array
      * @access public
      */
-    public $uses = array('Access.User');
+    public $uses = array('User');
 
     /**
      * Controller name
@@ -28,7 +28,7 @@ class UsersController extends AccessAppController {
      * @var string
      * @access public
      */
-    public $name = 'Users';
+    public $name = 'AccessUsers';
 
     /**
      * Components
@@ -46,7 +46,7 @@ class UsersController extends AccessAppController {
      */
     public function index() {
         $this->User->recursive = 0;
-        $this->set('users', $this->paginate());
+        $this->set('users', $this->Paginator->paginate('User'));
     }
 
     /**
