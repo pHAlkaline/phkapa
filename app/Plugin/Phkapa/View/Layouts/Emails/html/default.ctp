@@ -12,21 +12,15 @@
  * @copyright     Copyright 2005-2011, Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       cake
- * @subpackage    cake.cake.libs.view.templates.layouts.email.html
+ * @subpackage    cake.cake.libs.view.templates.elements.email.html
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<?php
+$content = explode("\n", $content);
 
-<html>
-<head>
-	<title><?php echo $title_for_layout;?></title>
-</head>
-
-<body>
-	<?php echo $this->fetch('content');?>
-
-	
-</body>
-</html>
+foreach ($content as $line):
+	echo '<p> ' . $line . '</p>';
+endforeach;
+?>
