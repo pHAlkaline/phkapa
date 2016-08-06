@@ -7,7 +7,7 @@
     <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __dn('access', 'Aro', 'Aros', 2) ?>">
         <a href="<?php echo Router::url(array('admin' => null, 'plugin' => 'access', 'controller' => 'aros'), true); ?>" target="_self"><span class="ui-icon ui-icon-key"></span></a>
     </div>
-    <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __d('phkapa', 'pHKapa') . ' ' . __d('phkapa', 'Administration'); ?>">
+    <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __d('phkapa', 'pHKapa') . ' ' . __d('phkapa', 'Setup'); ?>">
         <a href="<?php echo Router::url(array('admin' => true, 'plugin' => 'phkapa', 'controller' => 'tickets'), true); ?>" target="_self"><span class="ui-icon ui-icon-wrench"></span></a>
     </div>
     <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __('Edit Profile'); ?>">
