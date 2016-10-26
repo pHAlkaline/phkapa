@@ -26,12 +26,12 @@
     "require": {
         "php": ">=5.4",
         "ext-mcrypt": "*",
-        "cakephp/cakephp": "2.8.6"
+        "cakephp/cakephp": "2.9.1"
     },
      "require-dev": {
         "php": ">=5.4",
         "ext-mcrypt": "*",
-        "cakephp/cakephp": "2.8.6",
+        "cakephp/cakephp": "2.9.1",
         "cakephp/debug_kit": "2.2.*"
     }
 
