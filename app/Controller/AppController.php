@@ -35,7 +35,7 @@ class AppController extends Controller {
         'Auth' => array(
             'loginAction' => array('admin' => false, 'plugin' => false, 'controller' => 'users', 'action' => 'login')
             ),
-        'DebugKit.Toolbar',
+        'DebugKit.Toolbar' => array('panels' => array('ClearCache.ClearCache')),
         );
     
 
