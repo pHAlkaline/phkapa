@@ -15,6 +15,7 @@
  * app Plugins
  */
 CakePlugin::load('DebugKit');
+CakePlugin::load('ClearCache');
 //CakePlugin::load('PrintReport', array('bootstrap' => true, 'routes' => false));
 //CakePlugin::load('CsvView', array('bootstrap' => true, 'routes' => false));
 //CakePlugin::load('Install', array('bootstrap' => false, 'routes' => false));
