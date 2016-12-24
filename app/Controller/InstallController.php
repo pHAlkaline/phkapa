@@ -75,7 +75,7 @@ class InstallController extends AppController {
 
     private function __setNewSaltSeed() {
         // set new salt and seed value
-        $File = & new File(APP . 'Config' . DS . 'core.php');
+        $File = new File(APP . 'Config' . DS . 'core.php');
         $salt = Security::generateAuthKey();
         $seed = mt_rand() . mt_rand();
         $contents = $File->read();
