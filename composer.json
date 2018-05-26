@@ -25,14 +25,14 @@
 
     },
     "require": {
-        "php": ">=5.4",
+        "php": ">=5.6",
         "ext-mcrypt": "*",
-        "cakephp/cakephp": "2.9.2"
+        "cakephp/cakephp": "2.10.10"
     },
      "require-dev": {
-        "php": ">=5.4",
+        "php": ">=5.6",
         "ext-mcrypt": "*",
-        "cakephp/cakephp": "2.9.2",
+        "cakephp/cakephp": "2.10.10",
         "cakephp/debug_kit": "2.2.*",
         "ceeram/clear_cache": "1.1.*"
     }
