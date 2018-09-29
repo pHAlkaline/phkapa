@@ -1,0 +1,232 @@
+# LANGUAGE translation of pHKapa Application
+# Copyright pHAlkaline <contact@phalkaline.eu>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phkapa.net\n"
+"POT-Creation-Date: 2013-02-12 21:57+0000\n"
+"PO-Revision-Date: 2018-09-26 18:13+0200\n"
+"Language-Team: pHAlkaline <contact@phalkaline.eu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Last-Translator: \n"
+"Language: fr_FR\n"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Active"
+msgstr "Actif"
+
+msgid "Add %s"
+msgstr "Ajouter %s"
+
+msgid "Admin panel: %s"
+msgstr "Panneau d'administration: %s"
+
+msgid "Administration"
+msgstr "Administration"
+
+msgid "Application Offline"
+msgstr "Application hors ligne"
+
+msgid "Are you sure you want to delete # %s?"
+msgstr "Etes vous sûr  de vouloir supprimé # %s?"
+
+msgid "Could not be deleted."
+msgstr "Ne peut pas être effacé."
+
+msgid "Could not be saved. Please, try again."
+msgstr "Ne peut pas être sauvegardé. Merci, de réessayer."
+
+msgid "Created"
+msgstr "Créé"
+
+msgid "Delete"
+msgstr "Supprimé"
+
+msgid "Delete %s"
+msgstr "Supprimé %s"
+
+msgid "Deleted with success."
+msgstr "Supprimé avec succès."
+
+msgid "Diagnostics"
+msgstr "Diagnostics"
+
+msgid "Down"
+msgstr "Bas"
+
+msgid "Edit"
+msgstr "Edité"
+
+msgid "Edit %s"
+msgstr "Edité %s"
+
+msgid "Edit Profile"
+msgstr "Edité le profil"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Empty"
+msgstr "Vide"
+
+msgid "Enable change password"
+msgstr "Activé le changement de mot de passe"
+
+msgid "End Session"
+msgstr "Fin de la session"
+
+msgid "Id"
+msgstr "Id"
+
+msgid "Invalid email"
+msgstr "Email invalide"
+
+msgid "Invalid request."
+msgstr "Requête invalide."
+
+msgid "List %s"
+msgstr "Liste %s"
+
+msgid "Login failed. Invalid username or password."
+msgstr "Echec du login. Compte ou mot de passe invalide"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Modified"
+msgstr "Modifié"
+
+msgid "Must be unique"
+msgstr "Doit être unique"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Next"
+msgstr "Prochain"
+
+msgid "No"
+msgstr "Non"
+
+msgid "No records found!!!"
+msgstr "Aucun résultat trouvé!!!"
+
+msgid "Notification"
+msgid_plural "Notifications"
+msgstr[0] "Notification"
+msgstr[1] "Notifications"
+
+msgid "Notifier"
+msgstr "Notifier"
+
+msgid "pHKapa Admin panel: %s"
+msgstr "pHKapa Panneau d'administration: %s"
+
+msgid "pHKapa: %s"
+msgstr "pHKapa: %s"
+
+msgid ""
+"Page %page% of %pages%, showing %current% records out of %count% total, "
+"starting on record %start%, ending on %end%"
+msgstr ""
+"Page %page% à %pages%, montrant %current% enregistrements pour un total de "
+"%count%, démarrant de l'enregistrement %start%, finissant au%end%"
+
+msgid "Parent node"
+msgstr "Noeud Parent"
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Passwords dont match"
+msgstr "Les mots de passe ne correspondent pas"
+
+msgid "Passwords secured and updated for all users"
+msgstr "Mots de passe sécurisés and mises à jour pour tous les utilisateurs"
+
+msgid "Previous"
+msgstr "Précédent"
+
+msgid "Read"
+msgstr "Lis"
+
+msgid "Record"
+msgstr "Enregistre"
+
+msgid "Saved with success."
+msgstr "Sauvegardé avec succès."
+
+msgid "Search..."
+msgstr "Recherche ..."
+
+msgid "Start Session"
+msgstr "Ouverture de la session"
+
+msgid "Submit"
+msgstr "Soumet"
+
+msgid "This application is now on maintenance mode, back soon as possible!"
+msgstr "L'application est actuellement en maintenance, revenez prochainement!"
+
+msgid "This application will be on maintenance mode at  %s "
+msgstr "L'application sera en maintenance à  %s "
+
+msgid "This will also delete childs!!"
+msgstr "Cela va également supprimer les enfants!!"
+
+msgid "Unable to generate users password."
+msgstr "Impossible de générer des mots de passe"
+
+msgid "Up"
+msgstr "Haut"
+
+msgid "User"
+msgid_plural "Users"
+msgstr[0] "Utilisateur"
+msgstr[1] "Utilisateurs"
+
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+msgid "View"
+msgstr "Vue"
+
+msgid "View %s"
+msgstr "Vue %s"
+
+msgid "Yes"
+msgstr "Oui"
+
+msgid ""
+"This Plugin is available for free to code contributors, service clients, "
+"donors."
+msgstr ""
+"Le plugin est disponible gratuitement pour les contributeurs de code, "
+"service clients et donateurs."
+
+msgid "This plugin will save you some time or spare you a programmer headache."
+msgstr ""
+"Ce plugin vous fera gagner du temps ou vous épargnera un mal de tête de "
+"programmeur."
+
+msgid "Please make a contribution and get the Plugin code."
+msgstr "Merci de faire une contribution afin d'obtenir le code du plugin"
+
+msgid "This Plugin is also available with the pHKapa FULL PACK."
+msgstr "Ce plugin est également disponible avec le pHKapa FULL PACK."
+
+msgid "Buy pHKapa FULL PACK at http://phkapa.net"
+msgstr "Achetez pHKapa FULL PACK à http://phkapa.net"
+
+msgid "Ticket Report"
+msgstr "Reporting du ticket"
+
+msgid "Ticket Details"
+msgstr "Détails du ticket"

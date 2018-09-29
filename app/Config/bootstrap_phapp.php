@@ -28,6 +28,7 @@ Configure::write('Config.language', 'eng');
 Configure::write('Language.list',array(
     'deu'=>'Deutsch',
     'eng'=>'English',
+    'fra'=>'French',
     'por'=>'Português',
     'pt_BR'=>'Portugues ( Brasil )',
     'ron' =>'Român',
