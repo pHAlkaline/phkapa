@@ -13,7 +13,7 @@
  * @link     http://phkapa.net
  */
 class SapManager extends AppModel {
-
+    public $useTable = false;
     /**
      * Used for runtime configuration of model
      *
