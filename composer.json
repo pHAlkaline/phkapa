@@ -21,18 +21,20 @@
         "installer-paths": {
             "app/Plugin/DebugKit": ["cakephp/debug_kit"],
             "app/Plugin/ClearCache": ["ceeram/clear_cache"]
+            
         }
 
     },
     "require": {
         "php": ">=5.6",
         "ext-mcrypt": "*",
-        "cakephp/cakephp": "2.10.10"
+        "cakephp/cakephp": "2.10.12"
+        
     },
      "require-dev": {
         "php": ">=5.6",
         "ext-mcrypt": "*",
-        "cakephp/cakephp": "2.10.10",
+        "cakephp/cakephp": "2.10.12",
         "cakephp/debug_kit": "2.2.*",
         "ceeram/clear_cache": "1.1.*"
     }
