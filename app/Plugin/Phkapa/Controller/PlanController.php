@@ -132,7 +132,6 @@ class PlanController extends PhkapaAppController {
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->request->data)) {
-            $this->request->data['Ticket']['registar_id'] = $this->Auth->user('id');
             $this->request->data['Ticket']['workflow_id'] = 3;
             if ($this->Ticket->save($this->request->data)) {
                 $this->Flash->info(__d('phkapa', 'Saved with success.'));
