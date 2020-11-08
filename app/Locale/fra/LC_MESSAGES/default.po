@@ -82,6 +82,9 @@ msgstr "Activé le changement de mot de passe"
 msgid "End Session"
 msgstr "Fin de la session"
 
+msgid "Hide Closed"
+msgstr "Cacher Fermé"
+
 msgid "Id"
 msgstr "Id"
 

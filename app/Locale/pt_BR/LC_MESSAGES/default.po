@@ -83,6 +83,9 @@ msgstr "Permitir alteração de senha"
 msgid "End Session"
 msgstr "Terminar Sessão"
 
+msgid "Hide Closed"
+msgstr "Esconder Fechados"
+
 msgid "Id"
 msgstr ""
 

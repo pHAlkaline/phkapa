@@ -83,6 +83,9 @@ msgstr ""
 msgid "End Session"
 msgstr ""
 
+msgid "Hide Closed"
+msgstr ""
+
 msgid "Id"
 msgstr ""
 

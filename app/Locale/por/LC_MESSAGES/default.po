@@ -83,6 +83,9 @@ msgstr "Terminar Sessão"
 msgid "Group / User"
 msgstr "Grupo / Utilizador"
 
+msgid "Hide Closed"
+msgstr "Esconder Fechados"
+
 msgid "Id"
 msgstr ""
 

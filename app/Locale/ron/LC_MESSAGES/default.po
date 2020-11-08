@@ -94,6 +94,9 @@ msgstr "Închide sesiunea"
 msgid "Help"
 msgstr "Ajutor"
 
+msgid "Hide Closed"
+msgstr "Ascunde-te Închis"
+
 msgid "Id"
 msgstr "Id"
 
