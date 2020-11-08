@@ -1,3 +1,6 @@
+<?php
+$this->Number->defaultCurrency(Configure::read('currency'));
+?>
 <h2 class="grid_16" id="page-heading"><?php echo __d('phkapa', 'Plan'); ?>:<?php echo __d('phkapa', 'Add %s', __d('phkapa', 'Action')); ?></h2>
 <div class="grid_16 actionsContainer">
     <div class="grid_4" id="actions">		
@@ -35,7 +38,7 @@
             <li><a href="#tabs-details"><?php echo __dn('phkapa', 'Detail', 'Details', 2); ?></a></li>
             <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2) . $countComment; ?></a></li>
             <li><a href="#tabs-attachment"><?php echo __dn('phkapa', 'Attachment', 'Attachments', 2) . $countAttachment; ?></a></li>
-            
+
         </ul>
         <div id="tabs-details">
             <div class="tickets view">
@@ -91,6 +94,7 @@
                             <?php echo $ticket['Priority']['name']; ?>
                         &nbsp;
                     </dd>
+                   
                     <dt<?php
                     if ($i % 2 == 0)
                         echo $class;
@@ -187,12 +191,24 @@
                     <dt<?php
                     if ($i % 2 == 0)
                         echo $class;
+                    ?>><?php echo __d('phkapa', 'Cost'); ?></dt>
+                    <dd<?php
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                            <?php echo $this->Number->currency($ticket['Ticket']['cost']);
+                            ; ?>
+                        &nbsp;
+                    </dd>
+                    <dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
                     ?>><?php echo __d('phkapa', 'Supplier'); ?></dt>
                     <dd<?php
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Supplier']['name']; ?>
+<?php echo $ticket['Supplier']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -203,7 +219,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Customer']['name']; ?>
+<?php echo $ticket['Customer']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -214,7 +230,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
+<?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -225,7 +241,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Cause']['name']; ?>
+<?php echo $ticket['Cause']['name']; ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -236,7 +252,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['cause_notes']); ?>
+<?php echo $this->Text->autoParagraph($ticket['Ticket']['cause_notes']); ?>
                         &nbsp;
                     </dd>
 
@@ -248,7 +264,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['modified']); ?>
+<?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['modified']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -259,7 +275,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['created']); ?>
+<?php echo $this->Time->format(Configure::read('dateFormat'), $ticket['Ticket']['created']); ?>
                         &nbsp;
                     </dd>
                 </dl>
@@ -267,7 +283,7 @@
 
             <div class="actions form">
                 <?php //echo $this->Form->create('Action', array('url' => array('controller' => 'plan', 'action' => 'add_action')));  ?>
-                <?php echo $this->Form->create('Action'); ?>
+<?php echo $this->Form->create('Action'); ?>
 
                 <fieldset class="ui-corner-all ui-widget-content" >
                     <legend><?php echo __d('phkapa', 'Record') . ' ' . __d('phkapa', 'Action'); ?></legend>
@@ -280,7 +296,7 @@
                     echo $this->Form->submit(__d('phkapa', 'Submit'));
                     ?>
                 </fieldset>
-                <?php echo $this->Form->end(); ?>
+<?php echo $this->Form->end(); ?>
             </div>
         </div>
 
@@ -289,10 +305,10 @@
             if (CakePlugin::loaded('Feedback')) {
                 ?>
                 <div class="related">
-                    <?php echo $this->Comments->display_for($ticket, array('showForm' => false, 'model' => 'Phkapa.Ticket')); ?>
+    <?php echo $this->Comments->display_for($ticket, array('showForm' => false, 'model' => 'Phkapa.Ticket')); ?>
                 </div>
 
-            <?php } else { ?>
+                <?php } else { ?>
                 <div class="related">
                     <?php
                     echo $this->element('pluginNotFound');
@@ -300,7 +316,7 @@
 
 
                 </div>           
-            <?php } ?>
+<?php } ?>
         </div>
 
         <div id="tabs-attachment">
@@ -310,13 +326,13 @@
 
 
                 <div class="related">
-                    <?php echo $this->Attachments->display_for($ticket, array('showForm' => false, 'model' => 'Phkapa.Ticket')); ?>
+    <?php echo $this->Attachments->display_for($ticket, array('showForm' => false, 'model' => 'Phkapa.Ticket')); ?>
                 </div>
 
 
 
 
-            <?php } else { ?>
+<?php } else { ?>
 
 
                 <div class="related">
@@ -328,7 +344,7 @@
 
 
 
-            <?php } ?> </div>
+<?php } ?> </div>
     </div>
 
 

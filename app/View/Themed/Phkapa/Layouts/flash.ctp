@@ -1,4 +1,7 @@
 <?php
+$this->Number->defaultCurrency(Configure::read('currency'));
+?>
+<?php
 
 /**
  *

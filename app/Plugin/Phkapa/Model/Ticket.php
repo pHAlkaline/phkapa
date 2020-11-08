@@ -123,6 +123,12 @@ class Ticket extends PhkapaAppModel {
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
+        'cost' => array(
+            'allowEmpty' => false,
+            'required' => true,
+            'rule' => array('decimal', 2),
+            'message' => 'Invalid Value ( 2 decimal digits required )'
+        ),
         'category_id' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),

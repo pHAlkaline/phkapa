@@ -18,7 +18,7 @@
 
     </div>
 
-    <?php echo $this->element('searchBox'); ?>
+    <?php echo $this->element('searchBoxQuery'); ?>
     <?php
     if (!empty($tickets)) {
         ?>
@@ -34,6 +34,7 @@
                 $this->Paginator->sort('Process.name', __d('phkapa', 'Process')),
                 //$this->Paginator->sort('Category.name', __d('phkapa', 'Category')),
                 $this->Paginator->sort('Activity.name', __d('phkapa', 'Activity')),
+                $this->Paginator->sort('product',__d('phkapa','Product')),
                 __d('phkapa', 'Description'),
                 //$this->Paginator->sort('created', __d('phkapa', 'Created')),
                 $this->Paginator->sort('Workflow.name', __d('phkapa', 'Workflow')),
@@ -60,7 +61,7 @@
                     <td><?php echo $this->Html->link($ticket['Process']['name'], array('controller' => 'processes', 'action' => 'view', $ticket['Process']['id'])); ?></td>
                     <!--td><?php //echo $this->Html->link($ticket['Category']['name'], array('controller' => 'categories', 'action' => 'view', $ticket['Category']['id']));  ?></td-->
                     <td><?php echo $this->Html->link($ticket['Activity']['name'], array('controller' => 'activities', 'action' => 'view', $ticket['Activity']['id'])); ?></td>
-
+                    <td><?php echo $ticket['Ticket']['product'];  ?></td>
                     <td><?php
                         echo $this->Text->truncate(
                                 $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(

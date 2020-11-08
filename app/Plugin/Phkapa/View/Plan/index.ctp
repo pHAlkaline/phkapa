@@ -16,6 +16,7 @@
                 $this->Paginator->sort('Process.name', __d('phkapa', 'Process')),
                 //$this->Paginator->sort('Category.name', __d('phkapa', 'Category')),
                 $this->Paginator->sort('Activity.name', __d('phkapa', 'Activity')),
+                $this->Paginator->sort('product',__d('phkapa','Product')),
                 __d('phkapa', 'Description'),
                 //$this->Paginator->sort('created', __d('phkapa', 'Created')),
                 //$this->Paginator->sort('modified'),
@@ -140,6 +141,7 @@
                     <td class="nowrap"><?php echo $ticket['Process']['name']; ?></td>
                     <!--td><?php //echo $ticket['Category']['name'];  ?></td-->
                     <td><?php echo $ticket['Activity']['name']; ?></td>
+                    <td><?php echo $ticket['Ticket']['product'];  ?></td>
                     <td><?php
                         echo $this->Text->truncate(
                                 $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(

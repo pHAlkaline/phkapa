@@ -28,7 +28,7 @@ class AppController extends Controller {
         'Paginator',
         'RequestHandler',
         'Flash',
-        'Session', 
+        'Session','Cookie', 
         'Acl', 
         'Maintenance', 
         'Notify', 

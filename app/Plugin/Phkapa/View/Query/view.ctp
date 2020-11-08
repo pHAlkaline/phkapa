@@ -1,3 +1,6 @@
+<?php
+$this->Number->defaultCurrency(Configure::read('currency'));
+?>
 
 <?php
 $editable = false;
@@ -231,7 +234,18 @@ if ($ticket['Workflow']['id'] < 5) {
                             <?php echo $ticket['Ticket']['product']; ?>
                         &nbsp;
                     </dd>
-                    
+                    <dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Cost'); ?></dt>
+                    <dd<?php
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                            <?php echo $this->Number->currency($ticket['Ticket']['cost']);
+                            ; ?>
+                        &nbsp;
+                    </dd>
                     <dt<?php
                     if ($i % 2 == 0)
                         echo $class;

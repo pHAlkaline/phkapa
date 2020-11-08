@@ -1,4 +1,8 @@
 <?php
+$this->Number->defaultCurrency(Configure::read('currency'));
+?>
+
+<?php
 
 $hasCause = true;
 $openActions = FALSE;
@@ -252,7 +256,18 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                             <?php echo $ticket['Ticket']['product']; ?>
                             &nbsp;
                         </dd>
-
+                        <dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Cost'); ?></dt>
+                    <dd<?php
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                            <?php echo $this->Number->currency($ticket['Ticket']['cost']);
+                            ; ?>
+                        &nbsp;
+                    </dd>
                         <dt<?php
                         if ($i % 2 == 0)
                             echo $class;
@@ -331,8 +346,10 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                     <legend><?php echo __d('phkapa', 'Record %s', __d('phkapa', 'Cause')); ?></legend>
                     <?php
                     echo $this->Form->input('id');
+                    echo $this->Form->hidden('category_id');
                     echo $this->Form->input('cause_id', array('label' => __d('phkapa', 'Cause'), 'empty' => __d('phkapa', '(choose one)')));
                     echo $this->Form->input('cause_notes', array('placeholder' => '5 Whys', 'label' => __d('phkapa', 'Cause Notes')));
+                   echo $this->Form->input('cost',array('type'=>'number', 'step'=>'0.01','min'=>0,'label' => __d('phkapa','Cost')));
                     echo $this->Form->submit(__d('phkapa', 'Submit'));
                     ?>
                 </fieldset>

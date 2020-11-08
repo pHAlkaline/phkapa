@@ -55,6 +55,7 @@
             echo $this->Form->input('activity_id', array('label' => __d('phkapa', 'Activity'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('category_id', array('label' => __d('phkapa', 'Category'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('product',array('label' => __d('phkapa','Product')));
+            echo $this->Form->input('cost',array('type'=>'number', 'step'=>'0.01','min'=>0,'label' => __d('phkapa','Cost')));
             echo $this->Form->input('supplier_id', array('label' => __d('phkapa', 'Supplier'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('customer_id', array('label' => __d('phkapa', 'Customer'), 'empty' => __d('phkapa', '(choose one)')));
             echo $this->Form->input('approved', array('label' => __d('phkapa', 'Approved')));
