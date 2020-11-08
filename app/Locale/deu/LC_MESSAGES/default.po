@@ -89,6 +89,9 @@ msgstr "Passwort ändern"
 msgid "End Session"
 msgstr "Abmelden"
 
+msgid "Hide Closed"
+msgstr "Versteckt Verstecken"
+
 msgid "Id"
 msgstr "ID"
 

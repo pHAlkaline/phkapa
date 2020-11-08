@@ -92,7 +92,11 @@ msgid "End Session"
 msgstr "Finalizar Sesión"
 
 msgid "Help"
-msgstr "Ayuda"
+msgstr "Ayuda
+
+msgid "Hide Closed"
+msgstr "Ocultar Cerrados"
+
 
 msgid "Id"
 msgstr "Id"
