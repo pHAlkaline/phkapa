@@ -223,15 +223,16 @@ Configure::write('Session', array(
     'cookie' => 'phkapa'
 ));
 
+Configure::write('Security.useOpenSsl', true);
 /**
  * A random string used in security hashing methods.
  */
-Configure::write('Security.salt', '6788579f353750af08a0799a45bfb808c16f913f'); 
+Configure::write('Security.salt', '8b4404230772ce786a39d06d4e9f5c1529fd72f4'); 
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-Configure::write('Security.cipherSeed', '2064680337236562406'); 
+Configure::write('Security.cipherSeed', '8250043411315566537'); 
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).

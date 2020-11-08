@@ -53,50 +53,68 @@ class QueryController extends PhkapaAppController {
      * @access public
      */
     public function index() {
+        //debug($this->request->params);
+        //debug($this->request->query);
         $this->Ticket->recursive = 0;
-        if (isset($this->request->params['named']['keyword'])) {
-            $keyword = $this->request->params['named']['keyword'];
-        }
 
-        if (isset($this->request->query['keyword'])) {
-            $keyword = $this->request->query['keyword'];
+        $keyword = $hide_closed = '';
+        //debug($this->Session->read('search_frm'));
+        if ($this->Session->check('search_frm.keyword') && $this->Session->read('search_frm.keyword') != '') {
+            //$keyword = $this->Session->consume('search_frm.keyword');
+        } 
+        
+        if ($this->Session->check('search_frm.hide_closed') && $this->Session->read('search_frm.hide_closed') == 'on') {
+            //$hide_closed = $this->Session->consume('search_frm.hide_closed');
+        } 
+        
+        if ($this->request->query('keyword')!='') {
+            $keyword = $this->request->query('keyword');
+        $this->set('keyword', $keyword);
+       
         }
-
-        if (isset($keyword) && $keyword == '') {
-            unset($keyword);
-            //unset($this->request->params['named']['keyword']);
-            //unset($this->request->query['keyword']);
+        if ($this->request->query('hide_closed')=='on') {
+            $hide_closed = $this->request->query('hide_closed');
+                   $this->set('hide_closed', $hide_closed);
+      
         }
-
-        if (isset($keyword)) {
-            $this->Paginator->settings['conditions']= array
-                    ("OR" => array(
-                        "Ticket.id LIKE" => "%" . $keyword . "%",
-                        "Ticket.product LIKE" => "%" . $keyword . "%",
-                        "Ticket.description LIKE" => "%" . $keyword . "%",
-                        "Ticket.review_notes LIKE" => "%" . $keyword . "%",
-                        "Ticket.cause_notes LIKE" => "%" . $keyword . "%",
-                        "Priority.name LIKE" => "%" . $keyword . "%",
-                        "Safety.name LIKE" => "%" . $keyword . "%",
-                        "Type.name LIKE" => "%" . $keyword . "%",
-                        "Process.name LIKE" => "%" . $keyword . "%",
-                        "Origin.name LIKE" => "%" . $keyword . "%",
-                        "Category.name LIKE" => "%" . $keyword . "%",
-                        "Activity.name LIKE" => "%" . $keyword . "%",
-                        "Cause.name LIKE" => "%" . $keyword . "%",
-                        "Supplier.name LIKE" => "%" . $keyword . "%",
-                        "Customer.name LIKE" => "%" . $keyword . "%",
-                        "Workflow.name LIKE" => "%" . $keyword . "%"),
-                    "AND" => array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id'))));
-            $this->set('keyword', $keyword);
-        } else {
-            $this->Paginator->settings['conditions'] = array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')));
-        }
-        $this->Paginator->settings['order']=array('Ticket.origin_date'=>'DESC');
+        
+        $user_conditions = array('OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')));
+        $keyword_conditions = array();
+        $closed_conditions = array();
+        if ($keyword != '') {
+            $keyword_conditions = array(
+                "Ticket.id LIKE" => "%" . $keyword . "%",
+                "Ticket.product LIKE" => "%" . $keyword . "%",
+                "Ticket.description LIKE" => "%" . $keyword . "%",
+                "Ticket.review_notes LIKE" => "%" . $keyword . "%",
+                "Ticket.cause_notes LIKE" => "%" . $keyword . "%",
+                "Priority.name LIKE" => "%" . $keyword . "%",
+                "Safety.name LIKE" => "%" . $keyword . "%",
+                "Type.name LIKE" => "%" . $keyword . "%",
+                "Process.name LIKE" => "%" . $keyword . "%",
+                "Origin.name LIKE" => "%" . $keyword . "%",
+                "Category.name LIKE" => "%" . $keyword . "%",
+                "Activity.name LIKE" => "%" . $keyword . "%",
+                "Cause.name LIKE" => "%" . $keyword . "%",
+                "Supplier.name LIKE" => "%" . $keyword . "%",
+                "Customer.name LIKE" => "%" . $keyword . "%",
+                "Workflow.name LIKE" => "%" . $keyword . "%");
+            //$this->Session->write('search_frm.keyword', $keyword);
+        } 
+        if ($hide_closed == 'on') {
+            $closed_conditions = array(
+                "Ticket.workflow_id <>" => 5);
+            //$this->Session->write('search_frm.hide_closed', $hide_closed);
+        } 
+        $this->Paginator->settings['conditions'] = array
+            ("OR" => $keyword_conditions,
+            "AND" => array($closed_conditions, $user_conditions));
+        $this->Paginator->settings['order'] = array('Ticket.origin_date' => 'DESC');
         $this->Ticket->unbindModel(array(
             'hasMany' => array('Children')
                 ), false);
 
+        //debug($this->Paginator->settings['conditions']);
         $this->set('tickets', $this->Paginator->paginate('Ticket'));
     }
 
@@ -134,8 +152,8 @@ class QueryController extends PhkapaAppController {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Ticket->Action->recursive=1;
-        $action=$this->Ticket->Action->find('first', array('conditions'=>array('Action.id'=>$id)));
+        $this->Ticket->Action->recursive = 1;
+        $action = $this->Ticket->Action->find('first', array('conditions' => array('Action.id' => $id)));
         if (count($action) == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
@@ -156,7 +174,7 @@ class QueryController extends PhkapaAppController {
      * @return void
      */
     public function print_report($id) {
-       if (!$id) {
+        if (!$id) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
             $this->redirect(array('action' => 'index'));
         }
@@ -174,8 +192,6 @@ class QueryController extends PhkapaAppController {
             'data' => $ticket,
         ));
         $this->getEventManager()->dispatch($event);
-        
-        
     }
 
     /**
@@ -207,7 +223,7 @@ class QueryController extends PhkapaAppController {
         $range['end'] = $this->request->data['Ticket']['enddate'];
         $data = $this->Ticket->find('all', array('order' => 'Ticket.created', 'conditions' => array('Ticket.origin_date BETWEEN ? AND ?' => array($range['start']['year'] . '-' . $range['start']['month'] . '-' . $range['start']['day'], $range['end']['year'] . '-' . $range['end']['month'] . '-' . $range['end']['day']), 'OR' => array('Ticket.process_id' => $this->processFilter, 'Ticket.registar_id' => $this->Auth->user('id')))));
         if ($this->request->data['Ticket']['data_to_export'] == 'a') {
-            $this->export_csv_actions(Set::extract('/Ticket/id',$data));
+            $this->export_csv_actions(Set::extract('/Ticket/id', $data));
             return;
         }
         $excludePaths = array(
@@ -226,13 +242,13 @@ class QueryController extends PhkapaAppController {
             'Ticket.modified_user_id', 'ModifiedUser.id',
             'Ticket.close_user_id', 'CloseUser.id',
         );
-        
+
         App::uses('CakeEvent', 'Event');
         App::uses('CakeEventManager', 'Event');
         $event = new CakeEvent('Phkapa.Ticket.Export', $this, array(
             'data' => $data,
             'excludePaths' => $excludePaths,
-            'fileName'=>'phkapa_tickets_export.csv'
+            'fileName' => 'phkapa_tickets_export.csv'
         ));
         $this->getEventManager()->dispatch($event);
     }
@@ -246,16 +262,16 @@ class QueryController extends PhkapaAppController {
      */
     public function export_csv_actions($tickets) {
         $this->Ticket->Action->recursive = 2;
-        $data = $this->Ticket->Action->find('all', array('conditions' => array('ticket_id'=>$tickets)));
+        $data = $this->Ticket->Action->find('all', array('conditions' => array('ticket_id' => $tickets)));
 
-         $excludePaths = array(
+        $excludePaths = array(
             'Action.action_type_id', 'ActionType.id',
             'Action.action_effectiveness_id', 'ActionEffectiveness.id',
             'Action.verify_user_id', 'VerifyUser.id',
             'Action.close_user_id', 'CloseUser.id',
             'Action.modified_user_id', 'ModifiedUser.id',
         );
-        
+
         App::uses('CakeEvent', 'Event');
         App::uses('CakeEventManager', 'Event');
         $event = new CakeEvent('Phkapa.TicketAction.Export', $this, array(
@@ -344,7 +360,7 @@ class QueryController extends PhkapaAppController {
         $this->Ticket->Category->unbindModel(array(
             'hasAndBelongsToMany' => array('Process', 'Cause')), false);
     }
-    
+
     /**
      * beforeFilter callback
      *

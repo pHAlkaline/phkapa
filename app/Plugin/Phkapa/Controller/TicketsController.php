@@ -74,41 +74,57 @@ class TicketsController extends PhkapaAppController {
         $this->paginate = array('order' => array(
                 'Priority.order' => 'asc'
         ));
-        if (isset($this->request->params['named']['keyword'])) {
-            $keyword = $this->request->params['named']['keyword'];
+        $keyword = $hide_closed = '';
+        //debug($this->Session->read('search_frm'));
+        if ($this->Session->check('search_frm.keyword') && $this->Session->read('search_frm.keyword') != '') {
+            //$keyword = $this->Session->consume('search_frm.keyword');
+        } 
+        
+        if ($this->Session->check('search_frm.hide_closed') && $this->Session->read('search_frm.hide_closed') == 'on') {
+            //$hide_closed = $this->Session->consume('search_frm.hide_closed');
+        } 
+        
+        if ($this->request->query('keyword')!='') {
+            $keyword = $this->request->query('keyword');
+        $this->set('keyword', $keyword);
+       
         }
-        if (isset($this->request->query['keyword'])) {
-            $keyword = $this->request->query['keyword'];
+        if ($this->request->query('hide_closed')=='on') {
+            $hide_closed = $this->request->query('hide_closed');
+                   $this->set('hide_closed', $hide_closed);
+      
         }
-
-        if (isset($keyword) && $keyword == '') {
-            unset($keyword);
-            //unset($this->request->params['named']['keyword']);
-            //unset($this->request->query['keyword']);
-        }
-
-        if (isset($keyword)) {
-            $this->Paginator->settings['conditions'] = array
-                    ("OR" => array(
-                        "Ticket.id LIKE" => "%" . $keyword . "%",
-                        "Ticket.product LIKE" => "%" . $keyword . "%",
-                        "Ticket.description LIKE" => "%" . $keyword . "%",
-                        "Ticket.review_notes LIKE" => "%" . $keyword . "%",
-                        "Priority.name LIKE" => "%" . $keyword . "%",
-                        "Safety.name LIKE" => "%" . $keyword . "%",
-                        "Type.name LIKE" => "%" . $keyword . "%",
-                        "Process.name LIKE" => "%" . $keyword . "%",
-                        "Origin.name LIKE" => "%" . $keyword . "%",
-                        "Category.name LIKE" => "%" . $keyword . "%",
-                        "Activity.name LIKE" => "%" . $keyword . "%",
-                        "Cause.name LIKE" => "%" . $keyword . "%",
-                        "Supplier.name LIKE" => "%" . $keyword . "%",
-                        "Customer.name LIKE" => "%" . $keyword . "%",
-                        "Workflow.name LIKE" => "%" . $keyword . "%"),
-                
-            );
-            $this->set('keyword', $keyword);
-        }
+        $keyword_conditions = array();
+        $closed_conditions = array();
+        if ($keyword != '') {
+            $keyword_conditions = array(
+                "Ticket.id LIKE" => "%" . $keyword . "%",
+                "Ticket.product LIKE" => "%" . $keyword . "%",
+                "Ticket.description LIKE" => "%" . $keyword . "%",
+                "Ticket.review_notes LIKE" => "%" . $keyword . "%",
+                "Ticket.cause_notes LIKE" => "%" . $keyword . "%",
+                "Priority.name LIKE" => "%" . $keyword . "%",
+                "Safety.name LIKE" => "%" . $keyword . "%",
+                "Type.name LIKE" => "%" . $keyword . "%",
+                "Process.name LIKE" => "%" . $keyword . "%",
+                "Origin.name LIKE" => "%" . $keyword . "%",
+                "Category.name LIKE" => "%" . $keyword . "%",
+                "Activity.name LIKE" => "%" . $keyword . "%",
+                "Cause.name LIKE" => "%" . $keyword . "%",
+                "Supplier.name LIKE" => "%" . $keyword . "%",
+                "Customer.name LIKE" => "%" . $keyword . "%",
+                "Workflow.name LIKE" => "%" . $keyword . "%");
+            //$this->Session->write('search_frm.keyword', $keyword);
+        } 
+        if ($hide_closed == 'on') {
+            $closed_conditions = array(
+                "Ticket.workflow_id <>" => 5);
+            //$this->Session->write('search_frm.hide_closed', $hide_closed);
+        } 
+        $this->Paginator->settings['conditions'] = array
+            ("OR" => $keyword_conditions,
+            "AND" => array($closed_conditions));
+        
 
         $this->set('tickets', $this->Paginator->paginate());
     }

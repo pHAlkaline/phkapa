@@ -1,3 +1,6 @@
+<?php
+$this->Number->defaultCurrency(Configure::read('currency'));
+?>
 <h2 id="page-heading"><?php echo __d('phkapa', 'View %s', __d('phkapa', 'Ticket')); ?></h2>
 <div class="grid_16 actionsContainer">
     <div class="grid_4" id="actions">
@@ -235,7 +238,18 @@
                             <?php echo $ticket['Ticket']['product']; ?>
                         &nbsp;
                     </dd>
-                    
+                    <dt<?php
+                    if ($i % 2 == 0)
+                        echo $class;
+                    ?>><?php echo __d('phkapa', 'Cost'); ?></dt>
+                    <dd<?php
+                    if ($i++ % 2 == 0)
+                        echo $class;
+                    ?>>
+                            <?php echo $this->Number->currency($ticket['Ticket']['cost']);
+                            ; ?>
+                        &nbsp;
+                    </dd>
                     <dt<?php
                             if ($i % 2 == 0)
                                 echo $class;

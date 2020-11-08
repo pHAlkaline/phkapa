@@ -25,13 +25,13 @@ class PhkapaAppController extends AppController {
         parent::beforeFilter();
         if (CakePlugin::loaded('Feedback')) {
             $this->Comments = $this->Components->load('Feedback.Comments', array('on' => array('admin_view', 'admin_edit', 'view', 'edit', 'add_action', 'edit_action')));
-            if (get_class($this->Ticket) == 'Ticket') {
+            if (isset($this->Ticket) && get_class($this->Ticket) == 'Ticket') {
                 $this->Ticket->Behaviors->load('Feedback.Commentable');
             }
         }
         if (CakePlugin::loaded('Attachment')) {
             $this->Attachments = $this->Components->load('Attachment.Attachments', array('on' => array('admin_view', 'admin_edit', 'view', 'edit', 'add_action', 'edit_action')));
-            if (get_class($this->Ticket) == 'Ticket') {
+            if (isset($this->Ticket) && get_class($this->Ticket) == 'Ticket') {
                 $this->Ticket->Behaviors->load('Attachment.Attachable');
             }
         }

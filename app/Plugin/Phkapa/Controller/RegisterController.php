@@ -178,7 +178,7 @@ class RegisterController extends PhkapaAppController {
 
         $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
         $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
-        $this->set(compact('types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers','customers'));
+        $this->set(compact('types', 'priorities', 'safeties', 'processes',  'activities', 'categories', 'origins',  'suppliers','customers'));
     }
 
     /**
@@ -257,7 +257,7 @@ class RegisterController extends PhkapaAppController {
         $activities = $this->Ticket->Activity->find('list', $this->activityOptions);
         $categories = $this->Ticket->Category->find('list', $this->categoryOptions);
         $origins = $this->Ticket->Origin->find('list', array('conditions' => array('Origin.active' => '1')));
-        $this->set(compact('ticket','types', 'priorities', 'safeties', 'processes', 'registars', 'activities', 'categories', 'origins', 'workflows', 'suppliers','customers'));
+        $this->set(compact('ticket','types', 'priorities', 'safeties', 'processes',  'activities', 'categories', 'origins', 'suppliers','customers'));
     }
 
     /**

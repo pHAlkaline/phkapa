@@ -16,11 +16,11 @@
  */
 CakePlugin::load('DebugKit');
 CakePlugin::load('ClearCache');
-//CakePlugin::load('PrintReport', array('bootstrap' => true, 'routes' => false));
-//CakePlugin::load('CsvView', array('bootstrap' => true, 'routes' => false));
-//CakePlugin::load('Install', array('bootstrap' => false, 'routes' => false));
-//CakePlugin::load('Attachment',array('bootstrap'=>true));
-//CakePlugin::load('Feedback',array('bootstrap'=>true));
+CakePlugin::load('PrintReport', array('bootstrap' => true, 'routes' => false));
+CakePlugin::load('CsvView', array('bootstrap' => true, 'routes' => false));
+CakePlugin::load('Install', array('bootstrap' => false, 'routes' => false));
+CakePlugin::load('Attachment',array('bootstrap'=>true));
+CakePlugin::load('Feedback',array('bootstrap'=>true));
 /**
  * Languages available
  */
@@ -40,6 +40,7 @@ Configure::write('Language.list',array(
 Configure::write('Config.timezone', 'Europe/London'); // Europe/Lisbon
 Configure::write('dateFormat', 'd-m-Y H:i:s'); // Date Format with time
 Configure::write('dateFormatSimple', 'd-m-Y'); // Date Format without time
+Configure::write('currency', 'EUR'); // Date Format without time
 /**
  * Other Settings
  */
