@@ -40,7 +40,7 @@ Configure::write('Language.list',array(
 Configure::write('Config.timezone', 'Europe/London'); // Europe/Lisbon
 Configure::write('dateFormat', 'd-m-Y H:i:s'); // Date Format with time
 Configure::write('dateFormatSimple', 'd-m-Y'); // Date Format without time
-Configure::write('currency', 'EUR'); // Date Format without time
+Configure::write('currency', 'EUR'); // EUR , GBP, USD
 /**
  * Other Settings
  */
