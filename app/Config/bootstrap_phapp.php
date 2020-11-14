@@ -16,6 +16,7 @@
  */
 CakePlugin::load('DebugKit');
 CakePlugin::load('ClearCache');
+CakePlugin::load('Migrations');
 CakePlugin::load('Install', array('bootstrap' => false, 'routes' => false));
 //CakePlugin::load('PrintReport', array('bootstrap' => true, 'routes' => false));
 //CakePlugin::load('CsvView', array('bootstrap' => true, 'routes' => false));
