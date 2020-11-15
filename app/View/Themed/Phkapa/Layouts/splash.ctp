@@ -16,56 +16,22 @@ $this->Number->defaultCurrency(Configure::read('currency'));
         echo '<!--[if IE 7]>' . $this->Html->css('ie') . '<![endif]-->';
         ?>
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,700,600,800,900' rel='stylesheet' type='text/css'>
+            <style>
+               .centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+            </style>
     </head>
     <body>
 
-        <div id="phkapa" ><!--img src="/img/pHKapa_small.png" alt="pHKapa"  --></div>
-        <div id="header">
-            <h1><?php echo $this->Html->link($this->Html->image('pHKapalogo2.png', array('alt' => 'pHKapa')), ['plugin'=>'phkapa','controller'=>'query','action'=>'index'], array('class' => 'zoom', 'target' => '_self', 'escape' => false)); ?></h1>
-        </div>
-
-        <div id="header_separator" >
-            <div style=" float:right; margin: 3px;" class="ui-state-default ui-corner-all" title="<?php echo __('Help'); ?>">
-                <a href="http://wiki.phkapa.net" target="_blank">
-                    <span class="ui-icon ui-icon-help"></span>
-                </a>
-            </div>
-            <?php echo $this->element('topMenu'); ?>
-        </div>
-
-        <div class="clear" style="height: 35px;"></div>
         <div class="container_16" id="mainContainer">
-            <!--div class="grid_16">
-            <h1 id="branding">
-            <a href="/"></a>
-            </h1>
-            </div-->
-            <div class="clear"></div>
-            <div class="grid_16">
-                <?php // Possible menu here    ?>
-                <?php
-                if (isset($pluginImage)) {
-                    echo '<div style="float: right; padding-right: 7px">' . $this->Html->image($pluginImage) . '</div>';
-                }
-                if (isset($menuItems)) {
-                    if (!empty($this->request->params['plugin'])) {
-                        $plugin = Inflector::humanize($this->request->params['plugin']);
-                        echo $this->element($plugin . '.menu');
-                    } else {
-                        echo $this->element('menu');
-                    }
-                }
-                ?>
-            </div>
-            <?php //echo $this->Html->image('load.gif', array('id' => 'loading-indicator'));     ?>
-            <div id="loading-indicator"></div>
-            <div class="clear" style="height: 10px; width: 100%;"></div>
-            <?php echo $this->Flash->render(); ?>
-            <?php echo $this->Flash->render('Auth'); ?>
+         <div class="clear"></div>
             <?php echo $this->fetch('content'); ?>
-            <div class="clear"></div>
         </div>
-        <div style="text-align: center;">Copyright (c) pHAlkaline (<a href="http://phalkaline.eu" target="_blank">http://phalkaline.eu</a>)<div/>
             <?php // echo $this->element('sql_dump'); ?>
     </body>
         <?php
@@ -75,7 +41,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
     <script type="text/javascript">
         $(document).ready(function () {
 
-            $('#mainContainer').fadeIn(1000);
+            $('#mainContainer').fadeIn(2000);
             if (!$.cookie('appMaintenance')) {
                 $('#maintenanceMessage').fadeIn(2000);
             }

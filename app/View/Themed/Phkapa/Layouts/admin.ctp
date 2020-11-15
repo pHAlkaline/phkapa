@@ -15,7 +15,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
         echo '<!--[if IE 6]>' . $this->Html->css('ie6') . '<![endif]-->';
         echo '<!--[if IE 7]>' . $this->Html->css('ie') . '<![endif]-->';
         ?>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,700,600,800,900' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,700,600,800,900' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <div id="phkapa" ><!--img src="/img/pHKapa_small.png" alt="pHKapa"  /--></div>
