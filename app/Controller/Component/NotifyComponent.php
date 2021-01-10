@@ -12,7 +12,7 @@ App::uses('Notification', 'Model');
  * @category Component
  * @package  pHKapa.app.Controller.Component
  * @version  V1
- * @author   Paulo Homem <contact@phalkaline.eu>
+ * @author   Paulo Homem <contact@phalkaline.net>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://phkapa.net
  */
