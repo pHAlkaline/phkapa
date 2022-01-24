@@ -41,7 +41,7 @@ msgstr[1] "Benutzergruppen"
 msgid "Deny"
 msgstr "Verweigern"
 
-msgid "Denyed"
+msgid "Denied"
 msgstr "Verweigert"
 
 msgid "Group / User"
