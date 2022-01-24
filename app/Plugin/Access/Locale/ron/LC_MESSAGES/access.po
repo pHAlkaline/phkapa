@@ -41,7 +41,7 @@ msgstr[1] "Accese"
 msgid "Deny"
 msgstr "Interzice"
 
-msgid "Denyed"
+msgid "Denied"
 msgstr "Interzis"
 
 msgid "Group / User"

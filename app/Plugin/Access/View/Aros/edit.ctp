@@ -59,7 +59,7 @@ if ($this->Form->value('Aro.foreign_key')) {
                 $status = "";
                 $color = "";
                 $permission = $acoAccessList[$key];
-                $permission == '1' ? $status = __d('access', "Allowed") : $status = __d('access', "Denyed");
+                $permission == '1' ? $status = __d('access', "Allowed") : $status = __d('access', "Denied");
                 $permission == '1' ? $color = "green" : $color = "red";
                 echo "<li>[ $allow | $deny ] <span class='$color'> " . $value . " [ $status ]</span></li>";
             }

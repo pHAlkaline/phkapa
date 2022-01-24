@@ -42,7 +42,7 @@ msgstr[1] "Gestão de Acessos"
 msgid "Deny"
 msgstr "Nega"
 
-msgid "Denyed"
+msgid "Denied"
 msgstr "Negado"
 
 msgid "Group / User"

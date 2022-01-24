@@ -13,6 +13,7 @@ class EmailConfig {
     public $default = array(
         'sender' => array('{default_sender_email}'),
         'from' => array('{default_email}' => '{default_name}'),
+        //'replyTo' => array('no-reply@yourhost.net' => 'Your Site pHKapa Notification'),
         'subject' => '{default_subject}',
         'charset' => 'utf-8',
 	'headerCharset' => 'utf-8',
