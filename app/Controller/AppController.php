@@ -109,7 +109,7 @@ class AppController extends Controller {
             $menuItems = array();
             $this->set(compact('menuItems'));
             
-        };
+        }
         
         
     }
