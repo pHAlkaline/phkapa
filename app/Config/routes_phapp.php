@@ -19,6 +19,7 @@
     //echo "install";
     Router::connect('/:controler/:action', array('controller' => 'install'));
 }*/
+Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'welcome'));
 Router::parseExtensions('pdf');
 Router::parseExtensions('csv');
  
