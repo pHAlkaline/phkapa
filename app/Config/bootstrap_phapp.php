@@ -66,7 +66,7 @@ Configure::write('Revision.tables', array('Ticket','Action')); // Set Ticket or 
  * - 'All' -> after login , all users have TOTAL access
  * - '{User NAME field}' -> after login this user has total control 
  */
-Configure::write('Access.open', 'All'); // Keep this clean , use only on emergency, is case you forgot your access to phKapa
+Configure::write('Access.open', ''); // Keep this clean , use only on emergency, is case you forgot your access to phKapa
 /**
  * Settings for notification component 
  */
