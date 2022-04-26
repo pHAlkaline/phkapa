@@ -32,5 +32,10 @@
         "cakephp/debug_kit": "2.2.*",
         "ceeram/clear_cache": "1.*",
         "cakedc/migrations": "2.*"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
     }
 }
