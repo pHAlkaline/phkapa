@@ -1,4 +1,5 @@
 <?php
+
 $this->Number->defaultCurrency(Configure::read('currency'));
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -21,7 +22,12 @@ $this->Number->defaultCurrency(Configure::read('currency'));
 
         <div id="phkapa" ><!--img src="/img/pHKapa_small.png" alt="pHKapa"  --></div>
         <div id="header">
-            <h1><?php echo $this->Html->link($this->Html->image('pHKapalogo2.png', array('alt' => 'pHKapa')), ['plugin'=>'phkapa','controller'=>'query','action'=>'index'], array('class' => 'zoom', 'target' => '_self', 'escape' => false)); ?></h1>
+
+            <h1>
+                <?php echo $this->Html->link($this->Html->image('pHKapalogo2.png', array('alt' => 'pHKapa')), Router::url('/', true), array('class' => 'zoom', 'target' => '_self', 'escape' => false)); ?>
+
+            </h1>
+
         </div>
 
         <div id="header_separator" >
@@ -100,7 +106,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
 
 
             <?php if (isset($unread_notifications) && $unread_notifications) { ?>
-                blinkNotification();
+            blinkNotification();
             <?php } ?>
 
         });
