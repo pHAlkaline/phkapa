@@ -234,11 +234,11 @@ msgstr "Este plugin le ahorrará algo de tiempo o te ahorrará un dolor de cabez
 msgid "Please make a contribution and get the Plugin code."
 msgstr "Por favor, haga una contribución y obtener el código Plugin."
 
-msgid "This Plugin is also available with the pHKapa FULL PACK."
-msgstr "Este plugin también está disponible con la pHKapa FULL PACK."
+msgid "This Plugin is also available with the pHKapa Full Pacl."
+msgstr "Este plugin también está disponible con la pHKapa Full Pacl."
 
-msgid "Buy pHKapa FULL PACK at http://phkapa.net"
-msgstr "Comprar pHKapa FULL PACK en http://phkapa.net"
+msgid "Buy pHKapa Full Pacl at http://phkapa.net"
+msgstr "Comprar pHKapa Full Pacl en http://phkapa.net"
 
 msgid "Ticket Report"
 msgstr "Informe"
