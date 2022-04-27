@@ -1,7 +1,7 @@
 <?php
 $this->layout = 'welcome';
 $this->Html->script('jquery-zoom', false);
-$url= AuthComponent::user('id') ? array('admin' => null, 'plugin' => 'phkapa', 'controller' => 'phkapa') : array('admin' => null, 'plugin' => null, 'controller' => 'users', 'action'=>'login');
+$url= AuthComponent::user('id') ? array('admin' => null, 'plugin' => 'phkapa', 'controller' => 'phkapa','action'=>'query') : array('admin' => null, 'plugin' => null, 'controller' => 'users', 'action'=>'login');
 ?>
 <div class="grid_16 actionsContainer">
        <div class="grid_16 centered" style="text-align:center" id="pHKapaHome">
