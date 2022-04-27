@@ -233,11 +233,11 @@ msgstr "Acest plugin va salva ceva timp sau o durere de cap de schimb programato
 msgid "Please make a contribution and get the Plugin code."
 msgstr "Vă rugăm să aducă o contribuție și obține codul Plugin."
 
-msgid "This Plugin is also available with the pHKapa FULL PACK."
-msgstr "Acest plugin este de asemenea disponibil cu pHKapa FULL PACK."
+msgid "This Plugin is also available with the pHKapa Full Pacl."
+msgstr "Acest plugin este de asemenea disponibil cu pHKapa Full Pacl."
 
-msgid "Buy pHKapa FULL PACK at http://phkapa.net"
-msgstr "pHKapa FULL PACK cumpara la http://phkapa.net"
+msgid "Buy pHKapa Full Pacl at http://phkapa.net"
+msgstr "pHKapa Full Pacl cumpara la http://phkapa.net"
 
 msgid "Ticket Report"
 msgstr "Raport despre Tichet"
