@@ -229,12 +229,12 @@ Configure::write('Security.useOpenSsl', true);
 /**
  * A random string used in security hashing methods.
  */
-Configure::write('Security.salt', '7e7e6cd1c9a17a67acbb02870a23c87b8fd1829a');
+Configure::write('Security.salt', '1b9db5be4b868be34371e782e14ba219c682ea66');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-Configure::write('Security.cipherSeed', '19135413161694743485');
+Configure::write('Security.cipherSeed', '1060745774376864617');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
