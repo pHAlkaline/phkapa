@@ -1,4 +1,5 @@
 <?php
+
 $this->Number->defaultCurrency(Configure::read('currency'));
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -17,59 +18,71 @@ $this->Number->defaultCurrency(Configure::read('currency'));
         ?>
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,700,600,800,900' rel='stylesheet' type='text/css'>
             <style>
-               .centered {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-}
+                .centered {
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    /* bring your own prefixes */
+                    transform: translate(-50%, -50%);
+                }
             </style>
     </head>
     <body>
-
-        <div class="container_16" id="mainContainer">
-         <div class="clear"></div>
+        <body>
+            <div class="container_16" id="mainContainer">
+                <div class="clear"></div>
             <?php echo $this->fetch('content'); ?>
-        </div>
-            <?php // echo $this->element('sql_dump'); ?>
-    </body>
+            </div>
+            <div style="position:fixed;bottom:0;left:50%;transform: translate(-50%, -50%);">
+             <?php echo $this->Flash->render(); ?>
+            </div>
+        </body>
+
         <?php
             echo $this->Html->script(array('jquery-1.8.0.min.js', 'jquery-ui-1.8.23.custom.min.js', 'jquery-cookie.js', 'spin.js'));
             echo $this->fetch('script');
             ?>
-    <script type="text/javascript">
-        $(document).ready(function () {
+        <script type="text/javascript">
+            $(document).ready(function () {
 
-            $('#mainContainer').fadeIn(2000);
-            if (!$.cookie('appMaintenance')) {
-                $('#maintenanceMessage').fadeIn(2000);
-            }
-            $('#maintenanceMessage').click(function () {
-                $.cookie('appMaintenance', 'foo');
-                $('#maintenanceMessage').fadeOut(2000);
-            })
-            $('.flash-message').click(function () {
-                $(this).fadeOut(500);
-            })
+                $('#mainContainer').fadeIn(2000);
+                if (!$.cookie('appMaintenance')) {
+                    $('#maintenanceMessage').fadeIn(2000);
+                }
+                $('#maintenanceMessage').click(function () {
+                    $.cookie('appMaintenance', 'foo');
+                    $('#maintenanceMessage').fadeOut(2000);
+                })
+                $('.flash-message').click(function () {
+                    $(this).fadeOut(500);
+                })
 
-            $("input:submit").button();
-            $("#actions").accordion({
-                collapsible: true,
-                active: false
-            });
-            $("#tabs").tabs();
+                $("input:submit").button();
+                $("#actions").accordion({
+                    collapsible: true,
+                    active: false
+                });
+                $("#tabs").tabs();
 
-            function blinkNotification() {
-                $('.notification').delay(200).fadeTo(200, 0.5).delay(100).fadeTo(100, 1, blinkNotification);
-            }
+                function blinkNotification() {
+                    $('.notification').delay(200).fadeTo(200, 0.5).delay(100).fadeTo(100, 1, blinkNotification);
+                }
 
 
-            <?php if (isset($unread_notifications) && $unread_notifications) { ?>
+                <?php if (isset($unread_notifications) && $unread_notifications) { ?>
                 blinkNotification();
-            <?php } ?>
+                <?php } ?>
 
-        });
+            });
 
-    </script>
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                const myClickAnchor = setTimeout(clickAnchor, 3000);
+
+                function clickAnchor() {
+                    $('#go-pHKapa')[0].click();
+                }
+            });
+        </script>
 </html>

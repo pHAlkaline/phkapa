@@ -17,6 +17,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
         echo '<!--[if IE 7]>' . $this->Html->css('ie') . '<![endif]-->';
         ?>
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,700,600,800,900' rel='stylesheet' type='text/css'>
+
     </head>
     <body>
 
@@ -76,8 +77,29 @@ $this->Number->defaultCurrency(Configure::read('currency'));
     </body>
         <?php
             echo $this->Html->script(array('jquery-1.8.0.min.js', 'jquery-ui-1.8.23.custom.min.js', 'jquery-cookie.js', 'spin.js'));
+            echo $this->Html->script('loadingoverlay');
             echo $this->fetch('script');
             ?>
+    <script>
+        $(window).on('beforeunload', function ()
+        {
+            overlay();
+        });
+        $(window).on('beforeload', function () {
+            overlay();
+        });
+        function overlay() {
+            $.LoadingOverlaySetup({
+                imageColor: "#00aeef"
+            });
+            $.LoadingOverlay("show");
+            // Hide it after 3 seconds
+            setTimeout(function () {
+                $.LoadingOverlay("hide");
+                $(".body").fadeIn(1500).trigger('bodyVisible');
+            }, 500);
+        }
+    </script>
     <script type="text/javascript">
         $(document).ready(function () {
 

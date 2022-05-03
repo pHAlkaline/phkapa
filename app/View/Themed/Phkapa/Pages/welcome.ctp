@@ -6,7 +6,7 @@ $url= AuthComponent::user('id') ? array('admin' => null, 'plugin' => 'phkapa', '
 <div class="grid_16 actionsContainer">
        <div class="grid_16 centered" style="text-align:center" id="pHKapaHome">
             <div>
-                <?php echo $this->Html->link($this->Html->image('pHKapalogo2.png', array('alt' => 'pHKapa')), Router::url($url, true), array('style' => '', 'class' => 'zoom logo2', 'target' => '_self', 'escape' => false)); ?>
+                <?php echo $this->Html->link($this->Html->image('pHKapalogo2.png', array('alt' => 'pHKapa')), Router::url($url, true), array('id'=>'go-pHKapa','style' => '', 'class' => 'zoom logo2', 'target' => '_self', 'escape' => false)); ?>
             </div>
         </div>
     <div class="clear"></div>
