@@ -213,10 +213,10 @@ msgstr ""
 msgid "Please make a contribution and get the Plugin code."
 msgstr ""
 
-msgid "This Plugin is also available with the pHKapa Full Pacl."
+msgid "This Plugin is also available with the pHKapa Full Pack."
 msgstr ""
 
-msgid "Buy pHKapa Full Pacl at http://phkapa.net"
+msgid "Buy pHKapa Full Pack at http://phkapa.net"
 msgstr ""
 
 msgid "Ticket Report"

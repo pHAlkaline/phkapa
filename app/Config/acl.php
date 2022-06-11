@@ -55,7 +55,7 @@
  * );
  * ```
  *
- * then PhpAcl will lookup if we defined a role like User/jeff. If that role is not found, PhpAcl will try to
+ * then PhPack will lookup if we defined a role like User/jeff. If that role is not found, PhPack will try to
  * find a definition for Role/4. If the definition isn't found then a default role (Role/default) will be used to
  * check rules for the given ACO. The search can be expanded by defining aliases in the alias configuration.
  * E.g. if you want to use a more readable name than Role/4 in your definitions you can define an alias like
