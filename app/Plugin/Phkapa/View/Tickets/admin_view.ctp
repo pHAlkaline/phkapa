@@ -117,7 +117,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                         if ($i++ % 2 == 0)
                             echo $class;
                     ?>>
-                            <?php echo $ticket['Workflow']['name']; ?>
+                            <?php echo h($ticket['Workflow']['name']); ?>
                         &nbsp;
                     </dd>
 
@@ -235,7 +235,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Ticket']['product']; ?>
+                            <?php echo h($ticket['Ticket']['product']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -291,7 +291,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
+                            <?php echo $this->Text->autoParagraph(h($ticket['Ticket']['description'])) . $this->Text->autoParagraph(h($ticket['Ticket']['review_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -313,7 +313,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['cause_notes']); ?>
+                            <?php echo $this->Text->autoParagraph(h($ticket['Ticket']['cause_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -449,9 +449,9 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                             ?>
                             <tr<?php echo $class; ?>>
                                 <td><?php echo $action['id']; ?></td>
-                                <td><?php echo $action['ActionType']['name']; ?></td>
+                                <td><?php echo h($action['ActionType']['name']); ?></td>
                                 <td><?php echo $this->Utils->yesOrNo($action['closed']); ?></td>
-                                <td><?php if (isset($action['CloseUser']['name'])) echo $action['CloseUser']['name']; ?></td>
+                                <td><?php if (isset($action['CloseUser']['name'])) echo h($action['CloseUser']['name']); ?></td>
                                 <td class="nowrap">
                                     <?php
                                     if ($action['close_date'] != '')
@@ -461,9 +461,9 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                                 
                                 <td><?php
                             if (isset($action['ActionEffectiveness']['name']))
-                                echo $action['ActionEffectiveness']['name'];
+                                echo h($action['ActionEffectiveness']['name']);
                                     ?></td>
-                                <td><?php if (isset($action['VerifyUser']['name'])) echo $action['VerifyUser']['name']; ?></td>
+                                <td><?php if (isset($action['VerifyUser']['name'])) echo h($action['VerifyUser']['name']) ?></td>
                                 <td><?php echo $action['ModifiedUser']['name']; ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['modified']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
@@ -514,13 +514,13 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                             <tr<?php echo $class; ?>>
                                 <td><?php echo $children['id']; ?>&nbsp;</td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $children['origin_date']); ?>&nbsp;</td>
-                                <td class="nowrap"><?php echo $children['Type']['name']; ?></td>
-                                <td><?php echo $children['Origin']['name']; ?></td>
-                                <td class="nowrap"><?php echo $children['Process']['name']; ?></td>
-                                <td><?php echo $children['Category']['name']; ?></td>
+                                <td class="nowrap"><?php echo h($children['Type']['name']); ?></td>
+                                <td><?php echo h($children['Origin']['name']); ?></td>
+                                <td class="nowrap"><?php echo h($children['Process']['name']); ?></td>
+                                <td><?php echo h($children['Category']['name']); ?></td>
                                 <td><?php
                         echo $this->Text->truncate(
-                                $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
+                                $this->Text->autoParagraph(h($ticket['Ticket']['description'])) . $this->Text->autoParagraph(h($ticket['Ticket']['review_notes'])), 60, array(
                             'ellipsis' => '...',
                             'exact' => false
                         ));
@@ -583,11 +583,11 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                                 <td><?php echo $revision['Ticket']['version_request']; ?>&nbsp;</td>
                                 
                                 <td>
-                                    <?php echo $revision['Workflow']['name']; ?>
+                                    <?php echo h($revision['Workflow']['name']); ?>
                                 </td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormat'), $revision['Ticket']['modified']); ?>&nbsp;</td>
                                 <td>
-                                    <?php echo $revision['ModifiedUser']['name']; ?>
+                                    <?php echo h($revision['ModifiedUser']['name']); ?>
                                 </td>
                                 <td class="actions">
                                     <?php echo $this->Html->link(__d('phkapa', 'View'), array('action' => 'view_revision', $revision['Ticket']['version_id'], $revision['Ticket']['id'])); ?>
@@ -603,3 +603,5 @@ $this->Number->defaultCurrency(Configure::read('currency'));
    
 </div>
 <div class="clear"></div>
+
+                        <?php //echo '<tfoot class=\'

@@ -44,7 +44,7 @@ $class = ' class="altrow"';
                     <dd<?php if ($i++ % 2 == 0)
                                 echo $class;
                         ?>>
-                        <?php echo $origin['Origin']['name']; ?>
+                        <?php echo h($origin['Origin']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)

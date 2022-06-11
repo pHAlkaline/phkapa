@@ -25,7 +25,7 @@
         <div class="clear"></div>
         <?php if (Configure::read('Application.mode') == 'demo') { ?>
 
-            <h2 id="page-heading">Choose User</h2>
+            <h2 id="page-heading"><?= __('Start Session User Options'); ?></h2>
             <div class="grid_16 actionsContainer">
 
 

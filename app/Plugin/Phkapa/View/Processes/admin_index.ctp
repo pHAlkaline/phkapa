@@ -61,7 +61,7 @@
                 ?>
                 <tr<?php echo $class; ?>>
                     <td><?php echo $process['Process']['id']; ?>&nbsp;</td>
-                    <td><?php echo $process['Process']['name']; ?>&nbsp;</td>
+                    <td><?php echo h($process['Process']['name']); ?>&nbsp;</td>
                     <td><?php echo $this->Utils->yesOrNo($process['Process']['active']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $process['Process']['created']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $process['Process']['modified']); ?>&nbsp;</td>

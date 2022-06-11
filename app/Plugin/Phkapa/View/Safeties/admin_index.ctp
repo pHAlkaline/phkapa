@@ -50,8 +50,8 @@
                 ?>
                 <tr<?php echo $class; ?>>
                     <td><?php echo $type['Safety']['id']; ?>&nbsp;</td>
-                    <td><?php echo $type['Safety']['order']; ?>&nbsp;</td>
-                    <td><?php echo $type['Safety']['name']; ?>&nbsp;</td>
+                    <td><?php echo h($type['Safety']['order']); ?>&nbsp;</td>
+                    <td><?php echo h($type['Safety']['name']); ?>&nbsp;</td>
                     <td><?php echo $this->Utils->yesOrNo($type['Safety']['active']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $type['Safety']['created']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $type['Safety']['modified']); ?>&nbsp;</td>

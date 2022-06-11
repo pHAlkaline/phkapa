@@ -132,19 +132,19 @@
                 ?>
                 <tr<?php echo $class; ?>>
                     <td><?php echo $ticket['Ticket']['id']; ?>&nbsp;</td>
-                    <td class="nowrap"><?php echo $ticket['Priority']['name']; ?></td>
-                    <td class="nowrap"><?php echo $ticket['Safety']['name']; ?></td>
+                    <td class="nowrap"><?php echo h($ticket['Priority']['name']); ?></td>
+                    <td class="nowrap"><?php echo h($ticket['Safety']['name']); ?></td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $ticket['Ticket']['origin_date']); ?>&nbsp;</td>
 
-                    <td class="nowrap"><?php echo $ticket['Type']['name']; ?></td>
-                    <td ><?php echo $ticket['Origin']['name']; ?></td>
-                    <td class="nowrap"><?php echo $ticket['Process']['name']; ?></td>
-                    <!--td><?php //echo $ticket['Category']['name'];  ?></td-->
-                    <td><?php echo $ticket['Activity']['name']; ?></td>
-                    <td><?php echo $ticket['Ticket']['product'];  ?></td>
+                    <td class="nowrap"><?php echo h($ticket['Type']['name']); ?></td>
+                    <td ><?php echo h($ticket['Origin']['name']); ?></td>
+                    <td class="nowrap"><?php echo h($ticket['Process']['name']); ?></td>
+                    <!--td><?php //echo $ticket['Category']['name']);  ?></td-->
+                    <td><?php echo h($ticket['Activity']['name']); ?></td>
+                    <td><?php echo h($ticket['Ticket']['product']);  ?></td>
                     <td><?php
                         echo $this->Text->truncate(
-                                $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
+                                h($this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes'])), 60, array(
                             'ellipsis' => '...',
                             'exact' => false
                         ));

@@ -40,13 +40,13 @@ $class = ' class="altrow"'; ?>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
                         
-                        <?php echo $action['ActionType']['name']; ?>&nbsp;
+                        <?php echo h($action['ActionType']['name']); ?>&nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)
                                 echo $class; ?>><?php echo __d('phkapa','Description'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
-                            <?php echo $this->Text->autoParagraph($action['Action']['description']); ?>
+                            <?php echo h($this->Text->autoParagraph($action['Action']['description'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)
@@ -67,7 +67,7 @@ $class = ' class="altrow"'; ?>
                                 echo $class; ?>><?php echo __d('phkapa','Closed By'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
-                        <?php echo $action['CloseUser']['name']; ?>&nbsp;
+                        <?php echo h($action['CloseUser']['name']); ?>&nbsp;
                     </dd>
                     
                     <dt<?php if ($i % 2 == 0)
@@ -82,26 +82,26 @@ $class = ' class="altrow"'; ?>
                                 echo $class; ?>><?php echo __d('phkapa','Effectiveness'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
-                           <?php echo $action['ActionEffectiveness']['name']; ?>&nbsp;
+                           <?php echo h($action['ActionEffectiveness']['name']); ?>&nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)
                                 echo $class; ?>><?php echo __d('phkapa','Verified By'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
-                            <?php echo $action['VerifyUser']['name']; ?>&nbsp;
+                            <?php echo h($action['VerifyUser']['name']); ?>&nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)
                                 echo $class; ?>><?php echo __d('phkapa','Effectiveness Notes'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
-                            <?php echo $this->Text->autoParagraph($action['Action']['effectiveness_notes']); ?>
+                            <?php echo h($this->Text->autoParagraph($action['Action']['effectiveness_notes'])); ?>
                         &nbsp;
                     </dd>
                      <dt<?php if ($i % 2 == 0)
                                 echo $class; ?>><?php echo __d('phkapa','Last Modification By'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
-                            <?php echo $action['ModifiedUser']['name']; ?>&nbsp;
+                            <?php echo h($action['ModifiedUser']['name']); ?>&nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)
                                 echo $class; ?>><?php echo __d('phkapa','Modified'); ?></dt>

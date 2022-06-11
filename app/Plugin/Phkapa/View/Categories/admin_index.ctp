@@ -51,7 +51,7 @@
             ?>
             <tr<?php echo $class; ?>>
                 <td><?php echo $category['Category']['id']; ?>&nbsp;</td>
-                <td><?php echo $category['Category']['name']; ?>&nbsp;</td>
+                <td><?php echo h($category['Category']['name']); ?>&nbsp;</td>
                 <td><?php echo $this->Utils->yesOrNo($category['Category']['active']); ?>&nbsp;</td>
                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $category['Category']['created']); ?>&nbsp;</td>
                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $category['Category']['modified']); ?>&nbsp;</td>

@@ -40,7 +40,7 @@ $class = ' class="altrow"';
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class;
 ?>>
-                        <?php echo $action_type['ActionType']['id']; ?>
+                        <?php echo h($action_type['ActionType']['id']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)
@@ -49,7 +49,7 @@ $class = ' class="altrow"';
                     <dd<?php if ($i++ % 2 == 0)
                                 echo $class;
                         ?>>
-                        <?php echo $action_type['ActionType']['name']; ?>
+                        <?php echo h($action_type['ActionType']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)

@@ -49,7 +49,7 @@ $class = ' class="altrow"';
                     <dd<?php if ($i++ % 2 == 0)
                                 echo $class;
                         ?>>
-                        <?php echo $customer['Customer']['name']; ?>
+                        <?php echo h($customer['Customer']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)

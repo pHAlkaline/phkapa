@@ -149,7 +149,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                                <?php echo $ticket['Registar']['name']; ?>
+                                <?php echo h($ticket['Registar']['name']); ?>
                             &nbsp;
                         </dd>
                         <dt<?php
@@ -160,7 +160,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                                <?php echo $ticket['Priority']['name']; ?>
+                                <?php echo h($ticket['Priority']['name']); ?>
                             &nbsp;
                         </dd>
                         <dt<?php
@@ -171,7 +171,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                                <?php echo $ticket['Safety']['name']; ?>
+                                <?php echo h($ticket['Safety']['name']); ?>
                             &nbsp;
                         </dd>
                         <dt<?php
@@ -197,7 +197,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                                <?php echo $ticket['Type']['name']; ?>
+                                <?php echo h($ticket['Type']['name']); ?>
                             &nbsp;
                         </dd>
                         <dt<?php
@@ -208,7 +208,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                                <?php echo $ticket['Origin']['name']; ?>
+                                <?php echo h($ticket['Origin']['name']); ?>
                             &nbsp;
                         </dd>
                         <dt<?php
@@ -219,7 +219,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                                <?php echo $ticket['Process']['name']; ?>
+                                <?php echo h($ticket['Process']['name']); ?>
                             &nbsp;
                         </dd>
 
@@ -231,7 +231,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                                <?php echo $ticket['Activity']['name']; ?>
+                                <?php echo h($ticket['Activity']['name']); ?>
                             &nbsp;
                         </dd>
                         <dt<?php
@@ -242,7 +242,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                                <?php echo $ticket['Category']['name']; ?>
+                                <?php echo h($ticket['Category']['name']); ?>
                             &nbsp;
                         </dd>
                         <dt<?php
@@ -253,7 +253,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Ticket']['product']; ?>
+                            <?php echo h($ticket['Ticket']['product']); ?>
                             &nbsp;
                         </dd>
                         <dt<?php
@@ -276,7 +276,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                                <?php echo $ticket['Supplier']['name']; ?>
+                                <?php echo h($ticket['Supplier']['name']); ?>
                             &nbsp;
                         </dd>
                         <dt<?php
@@ -287,7 +287,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                                <?php echo $ticket['Customer']['name']; ?>
+                                <?php echo h($ticket['Customer']['name']); ?>
                             &nbsp;
                         </dd>
                         <dt<?php
@@ -298,7 +298,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                                <?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
+                                <?php echo h($this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes'])); ?>
                             &nbsp;
                         </dd>
                         <dt<?php
@@ -309,7 +309,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                                <?php echo $ticket['ModifiedUser']['name']; ?>
+                                <?php echo h($ticket['ModifiedUser']['name']); ?>
                             &nbsp;
                         </dd>
                         <dt<?php
@@ -407,10 +407,10 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                     <tr<?php echo $class; ?>>
                         <td><?php echo $action['id']; ?></td>
 
-                        <td><?php echo $action['ActionType']['name']; ?></td>
+                        <td><?php echo h($action['ActionType']['name']); ?></td>
                         <td><?php
                                         echo $this->Text->truncate(
-                                                $this->Text->autoParagraph($action['description']), 60, array(
+                                                h($this->Text->autoParagraph($action['description'])), 60, array(
                                             'ellipsis' => '...',
                                             'exact' => false
                                         ));
@@ -419,7 +419,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         <td class="nowrap"><?php echo $action['deadline'] . ' ' . __d('phkapa', 'Days'); ?></td>
                         <td class="nowrap <?php echo $red ?>"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $expiry) . ' ' . $deadlineAgo; ?></td>
                         <td class="nowrap"><?php echo $this->Utils->yesOrNo($action['closed']); ?></td>
-                        <td><?php if (isset($action['CloseUser']['name'])) echo $action['CloseUser']['name']; ?>&nbsp;</td>
+                        <td><?php if (isset($action['CloseUser']['name'])) echo h($action['CloseUser']['name']); ?>&nbsp;</td>
                         <td class="nowrap"><?php
                                         if ($action['close_date'])
                                             echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']);

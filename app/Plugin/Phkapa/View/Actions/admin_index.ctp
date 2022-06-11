@@ -65,7 +65,7 @@
                 if ($action['Action']['close_date'] != '')
                     echo $this->Time->format(Configure::read('dateFormatSimple'), $action['Action']['close_date']);
                     ?>&nbsp;</td>
-                <td><?php echo $action['ActionEffectiveness']['name']; ?>&nbsp;</td>
+                <td><?php echo h($action['ActionEffectiveness']['name']); ?>&nbsp;</td>
                 <td><?php echo $this->Html->link($action['VerifyUser']['name'], array('controller' => 'phkapa_users', 'action' => 'view', $action['VerifyUser']['id'])); ?>&nbsp;</td>
                 
                 <td><?php echo $this->Html->link($action['ModifiedUser']['name'], array('controller' => 'phkapa_users', 'action' => 'view', $action['ModifiedUser']['id'])); ?>&nbsp;</td>

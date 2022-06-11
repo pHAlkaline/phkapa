@@ -49,8 +49,8 @@
         }
         ?>
         <tr<?php echo $class; ?>>
-            <td><?php echo $action_type['ActionType']['id']; ?>&nbsp;</td>
-            <td><?php echo $action_type['ActionType']['name']; ?>&nbsp;</td>
+            <td><?php echo h($action_type['ActionType']['id']); ?>&nbsp;</td>
+            <td><?php echo h($action_type['ActionType']['name']); ?>&nbsp;</td>
             <td><?php echo $this->Utils->yesOrNo($action_type['ActionType']['verification']); ?>&nbsp;</td>
             <td><?php echo $this->Utils->yesOrNo($action_type['ActionType']['active']); ?>&nbsp;</td>
             <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action_type['ActionType']['created']); ?>&nbsp;</td>

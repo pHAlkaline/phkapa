@@ -97,7 +97,7 @@
                         echo $class;
                     ?>>
 
-                        <?php echo $ticket['Workflow']['name']; ?>
+                        <?php echo h($ticket['Workflow']['name']); ?>
                         &nbsp;
                     </dd>
 
@@ -215,7 +215,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Ticket']['product']; ?>
+                            <?php echo h($ticket['Ticket']['product']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -271,7 +271,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
+                            <?php echo $this->Text->autoParagraph(h($ticket['Ticket']['description'])) . $this->Text->autoParagraph(h($ticket['Ticket']['review_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -293,7 +293,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['cause_notes']); ?>
+                            <?php echo $this->Text->autoParagraph(h($ticket['Ticket']['cause_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php

@@ -50,8 +50,8 @@
                 }
                 ?>
                 <tr<?php echo $class; ?>>
-                    <td><?php echo $activity['Activity']['id']; ?>&nbsp;</td>
-                    <td><?php echo $activity['Activity']['name']; ?>&nbsp;</td>
+                    <td><?php echo h($activity['Activity']['id']); ?>&nbsp;</td>
+                    <td><?php echo h($activity['Activity']['name']); ?>&nbsp;</td>
                     <td><?php echo $this->Utils->yesOrNo($activity['Activity']['active']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $activity['Activity']['created']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $activity['Activity']['modified']); ?>&nbsp;</td>

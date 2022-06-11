@@ -114,7 +114,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Workflow']['name']; ?>
+                            <?php echo h($ticket['Workflow']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -125,7 +125,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Registar']['name']; ?>
+                            <?php echo h($ticket['Registar']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -136,7 +136,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Priority']['name']; ?>
+                            <?php echo h($ticket['Priority']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -147,7 +147,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Safety']['name']; ?>
+                            <?php echo h($ticket['Safety']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -173,7 +173,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Type']['name']; ?>
+                            <?php echo h($ticket['Type']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -184,7 +184,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Origin']['name']; ?>
+                            <?php echo h($ticket['Origin']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -195,7 +195,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Process']['name']; ?>
+                            <?php echo h($ticket['Process']['name']); ?>
                         &nbsp;
                     </dd>
 
@@ -207,7 +207,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Activity']['name']; ?>
+                            <?php echo h($ticket['Activity']['name']); ?>
                         &nbsp;
                     </dd>
 
@@ -220,7 +220,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Category']['name']; ?>
+                            <?php echo h($ticket['Category']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -231,7 +231,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Ticket']['product']; ?>
+                            <?php echo h($ticket['Ticket']['product']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -254,7 +254,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Supplier']['name']; ?>
+                            <?php echo h($ticket['Supplier']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -265,7 +265,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Customer']['name']; ?>
+                            <?php echo h($ticket['Customer']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -287,7 +287,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
+                            <?php echo h($this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -298,7 +298,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Cause']['name']; ?>
+                            <?php echo h($ticket['Cause']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -309,7 +309,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Text->autoParagraph($ticket['Ticket']['cause_notes']); ?>
+                            <?php echo h($this->Text->autoParagraph($ticket['Ticket']['cause_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -335,7 +335,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['CloseUser']['name']; ?>
+                            <?php echo h($ticket['CloseUser']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -346,7 +346,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['ModifiedUser']['name']; ?>
+                            <?php echo h($ticket['ModifiedUser']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -403,7 +403,7 @@ if ($ticket['Workflow']['id'] < 5) {
                             ?>
                             <tr<?php echo $class; ?>>
                                 <td><?php echo $action['id']; ?></td>
-                                <td><?php echo $action['ActionType']['name']; ?></td>
+                                <td><?php echo h($action['ActionType']['name']); ?></td>
                                 <td><?php echo $this->Utils->yesOrNo($action['closed']); ?></td>
                                 <td class="nowrap">
                                     <?php
@@ -415,7 +415,7 @@ if ($ticket['Workflow']['id'] < 5) {
                                 <td><?php if (isset($action['ActionEffectiveness']['name'])) echo $action['ActionEffectiveness']['name']; ?></td>
                                 <td><?php
                                 echo $this->Text->truncate(
-                                        $this->Text->autoParagraph($action['description'], 60, array(
+                                        $this->Text->autoParagraph(h($action['description']), 60, array(
                                     'ellipsis' => '...',
                                     'exact' => false
                                 )));
@@ -493,22 +493,22 @@ if ($ticket['Workflow']['id'] < 5) {
                             ?>
                             <tr<?php echo $class; ?>>
                                 <td><?php echo $children['id']; ?>&nbsp;</td>
-                                <td><?php echo $children['Priority']['name']; ?></td>
-                                <td><?php echo $children['Safety']['name']; ?></td>
+                                <td><?php echo h($children['Priority']['name']); ?></td>
+                                <td><?php echo h($children['Safety']['name']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $children['origin_date']); ?>&nbsp;</td>
-                                <td class="nowrap"><?php echo $children['Type']['name']; ?></td>
-                                <td><?php echo $children['Origin']['name']; ?></td>
-                                <td class="nowrap"><?php echo $children['Process']['name']; ?></td>
-                                <td><?php echo $children['Category']['name']; ?></td>
+                                <td class="nowrap"><?php echo h($children['Type']['name']); ?></td>
+                                <td><?php echo h($children['Origin']['name']); ?></td>
+                                <td class="nowrap"><?php echo h($children['Process']['name']); ?></td>
+                                <td><?php echo h($children['Category']['name']); ?></td>
                                 <td><?php
                                     echo $this->Text->truncate(
-                                            $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
+                                            h($this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes'])), 60, array(
                                         'ellipsis' => '...',
                                         'exact' => false
                                     ));
                                     ?>&nbsp;</td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $children['created']); ?>&nbsp;</td>
-                                <td><?php echo $children['Workflow']['name']; ?></td>
+                                <td><?php echo h($children['Workflow']['name']); ?></td>
                                 <td class="actions">
                                     <?php echo $this->Html->link(__d('phkapa', 'View'), array('action' => 'view', $children['id'])); ?>
                                     <?php if ($editable): ?>

@@ -61,10 +61,10 @@
                     <td><?php echo $this->Html->link($ticket['Process']['name'], array('controller' => 'processes', 'action' => 'view', $ticket['Process']['id'])); ?></td>
                     <!--td><?php //echo $this->Html->link($ticket['Category']['name'], array('controller' => 'categories', 'action' => 'view', $ticket['Category']['id']));  ?></td-->
                     <td><?php echo $this->Html->link($ticket['Activity']['name'], array('controller' => 'activities', 'action' => 'view', $ticket['Activity']['id'])); ?></td>
-                    <td><?php echo $ticket['Ticket']['product'];  ?></td>
+                    <td><?php echo h($ticket['Ticket']['product']);  ?></td>
                     <td><?php
                         echo $this->Text->truncate(
-                                $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']), 60, array(
+                                $this->Text->autoParagraph(h($ticket['Ticket']['description'])) . $this->Text->autoParagraph(h($ticket['Ticket']['review_notes'])), 60, array(
                             'ellipsis' => '...',
                             'exact' => false
                         ));
