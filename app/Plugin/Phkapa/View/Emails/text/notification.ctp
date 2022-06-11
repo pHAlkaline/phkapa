@@ -7,7 +7,7 @@
         ?>
         <h2 id="page-heading"><?php echo __n('Notification', 'Notifications', 1) . ' : ' . $notification['Notification']['notification']; ?>&nbsp;&nbsp;</h2>
         <p><?php echo __('Created') . ' : ' . $this->Time->format(Configure::read('dateFormatSimple'), $notification['Notification']['created']); ?>&nbsp;&nbsp;</p>
-        <p><?php echo __('Notifier') . ' : ' . $notification['Notifier']['name']; ?>&nbsp;&nbsp;</p>
+        <p><?php echo __('Notifier') . ' : ' . h($notification['Notifier']['name']); ?>&nbsp;&nbsp;</p>
         <p></p>
         <p><?php echo __('Actions') . ' : '; ?>
             <?php

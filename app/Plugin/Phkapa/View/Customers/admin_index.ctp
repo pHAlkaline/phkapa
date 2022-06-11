@@ -46,7 +46,7 @@
             ?>
             <tr<?php echo $class; ?>>
                 <td><?php echo $customer['Customer']['id']; ?>&nbsp;</td>
-                <td><?php echo $customer['Customer']['name']; ?>&nbsp;</td>
+                <td><?php echo h($customer['Customer']['name']); ?>&nbsp;</td>
                 <td><?php echo $this->Utils->yesOrNo($customer['Customer']['active']); ?>&nbsp;</td>
                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $customer['Customer']['created']); ?>&nbsp;</td>
                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $customer['Customer']['modified']); ?>&nbsp;</td>

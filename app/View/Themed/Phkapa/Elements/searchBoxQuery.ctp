@@ -1,4 +1,5 @@
 <?php
+
 $this->Paginator->options(array(
   'convertKeys' => array('keyword', 'hide_closed')
 ));

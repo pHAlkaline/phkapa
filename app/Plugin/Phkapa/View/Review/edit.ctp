@@ -107,7 +107,7 @@ if ($ticket['Ticket']['approved'] === null) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Registar']['name']; ?>
+                            <?php echo h($ticket['Registar']['name']); ?>
                         &nbsp;
                     </dd>
 
@@ -119,7 +119,7 @@ if ($ticket['Ticket']['approved'] === null) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['ModifiedUser']['name']; ?>
+                            <?php echo h($ticket['ModifiedUser']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php

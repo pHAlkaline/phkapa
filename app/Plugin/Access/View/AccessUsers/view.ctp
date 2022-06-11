@@ -32,28 +32,28 @@ $class = ' class="altrow"'; ?>
                         echo $class; ?>><?php echo __('Id'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
-                            <?php echo $user['User']['id']; ?>
+                            <?php echo h($user['User']['id']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)
                                 echo $class; ?>><?php echo __('Name'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
-                            <?php echo $user['User']['name']; ?>
+                            <?php echo h($user['User']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)
                                 echo $class; ?>><?php echo __('Username'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
-                            <?php echo $user['User']['username']; ?>
+                            <?php echo h($user['User']['username']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)
                                 echo $class; ?>><?php echo __('Email'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                             echo $class; ?>>
-                            <?php echo $user['User']['email']; ?>
+                            <?php echo h($user['User']['email']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)

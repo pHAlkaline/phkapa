@@ -1,4 +1,5 @@
-<h2 id="page-heading"><?php echo __n('Notification', 'Notifications', 1); ?>:<?php echo __d('phkapa', 'List %s', __n('Notification', 'Notifications', 2)); ?></h2>
+<h2 id="page-heading">
+    <?php echo __n('Notification', 'Notifications', 1).' : '.__d('phkapa', 'List %s', __n('Notification', 'Notifications', 2)); ?></h2>
 <div class="grid_16 actionsContainer">
 
     <?php
@@ -29,8 +30,8 @@
                 <tr<?php echo $class; ?>>
                     <td><?php echo $notification['Notification']['id']; ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $notification['Notification']['created']); ?>&nbsp;</td>
-                    <td class="nowrap"><?php echo $notification['Notifier']['name']; ?></td>
-                    <td class="nowrap"><?php echo $notification['Notification']['notification']; ?></td>
+                    <td class="nowrap"><?php echo h($notification['Notifier']['name']); ?></td>
+                    <td class="nowrap"><?php echo h($notification['Notification']['notification']); ?></td>
                     <td class="nowrap"><?php echo $this->Utils->yesOrNo($notification['Notification']['read']); ?></td>
                     <td class="actions">
 

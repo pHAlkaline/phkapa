@@ -45,7 +45,7 @@
                 ?>
                 <tr<?php echo $class; ?>>
                     <td><?php echo $origin['Origin']['id']; ?>&nbsp;</td>
-                    <td><?php echo $origin['Origin']['name']; ?>&nbsp;</td>
+                    <td><?php echo h($origin['Origin']['name']); ?>&nbsp;</td>
                     <td><?php echo $this->Utils->yesOrNo($origin['Origin']['active']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $origin['Origin']['created']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $origin['Origin']['modified']); ?>&nbsp;</td>

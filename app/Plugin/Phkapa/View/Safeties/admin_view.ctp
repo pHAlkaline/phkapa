@@ -43,13 +43,22 @@ $class = ' class="altrow"';
                         <?php echo $safety['Safety']['id']; ?>
                         &nbsp;
                     </dd>
+                     <dt<?php if ($i % 2 == 0)
+                        echo $class;
+?>><?php echo __d('phkapa','Order'); ?></dt>
+                    <dd<?php if ($i++ % 2 == 0)
+                            echo $class;
+?>>
+                        <?php echo h($safety['Safety']['order']); ?>
+                        &nbsp;
+                    </dd>
                     <dt<?php if ($i % 2 == 0)
                             echo $class;
                         ?>><?php echo __d('phkapa','Name'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                                 echo $class;
                         ?>>
-                        <?php echo $safety['Safety']['name']; ?>
+                        <?php echo h($safety['Safety']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)

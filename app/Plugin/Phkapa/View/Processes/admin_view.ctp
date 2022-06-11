@@ -73,7 +73,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $process['Process']['name']; ?>
+                            <?php echo h($process['Process']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -137,7 +137,7 @@
                             ?>
                             <tr<?php echo $class; ?>>
                                 <td><?php echo $activity['id']; ?></td>
-                                <td><?php echo $activity['name']; ?></td>
+                                <td><?php echo h($activity['name']); ?></td>
                                 <td><?php echo $this->Utils->yesOrNo($activity['active']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $activity['created']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $activity['modified']); ?></td>
@@ -181,7 +181,7 @@
                             ?>
                             <tr<?php echo $class; ?>>
                                 <td><?php echo $category['id']; ?></td>
-                                <td><?php echo $category['name']; ?></td>
+                                <td><?php echo h($category['name']); ?></td>
                                 <td><?php echo $this->Utils->yesOrNo($category['active']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $category['created']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $category['modified']); ?></td>
@@ -225,7 +225,7 @@
                             ?>
                             <tr<?php echo $class; ?>>
                                 <td><?php echo $user['id']; ?></td>
-                                <td><?php echo $user['name']; ?></td>
+                                <td><?php echo h($user['name']); ?></td>
                                 <td><?php echo $this->Utils->yesOrNo($user['active']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $user['modified']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $user['created']); ?></td>

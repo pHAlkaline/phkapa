@@ -46,7 +46,7 @@
             ?>
             <tr<?php echo $class; ?>>
                 <td><?php echo $supplier['Supplier']['id']; ?>&nbsp;</td>
-                <td><?php echo $supplier['Supplier']['name']; ?>&nbsp;</td>
+                <td><?php echo h($supplier['Supplier']['name']); ?>&nbsp;</td>
                 <td><?php echo $this->Utils->yesOrNo($supplier['Supplier']['active']); ?>&nbsp;</td>
                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $supplier['Supplier']['created']); ?>&nbsp;</td>
                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $supplier['Supplier']['modified']); ?>&nbsp;</td>

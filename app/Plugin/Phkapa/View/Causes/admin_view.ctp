@@ -57,7 +57,7 @@ $class = ' class="altrow"';
                         if ($i++ % 2 == 0)
                             echo $class;
                             ?>>
-                            <?php echo $cause['Cause']['name']; ?>
+                            <?php echo h($cause['Cause']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -117,7 +117,7 @@ $class = ' class="altrow"';
                             ?>
                             <tr<?php echo $class; ?>>
                                 <td><?php echo $category['id']; ?></td>
-                                <td><?php echo $category['name']; ?></td>
+                                <td><?php echo h($category['name']); ?></td>
                                 <td><?php echo $this->Utils->yesOrNo($category['active']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $category['created']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $category['modified']); ?></td>

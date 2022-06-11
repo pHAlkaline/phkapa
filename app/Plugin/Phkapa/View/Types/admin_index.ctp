@@ -49,7 +49,7 @@
                 ?>
                 <tr<?php echo $class; ?>>
                     <td><?php echo $type['Type']['id']; ?>&nbsp;</td>
-                    <td><?php echo $type['Type']['name']; ?>&nbsp;</td>
+                    <td><?php echo h($type['Type']['name']); ?>&nbsp;</td>
                     <td><?php echo $this->Utils->yesOrNo($type['Type']['active']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $type['Type']['created']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $type['Type']['modified']); ?>&nbsp;</td>

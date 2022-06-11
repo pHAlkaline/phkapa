@@ -44,12 +44,22 @@ $class = ' class="altrow"';
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)
+                        echo $class;
+?>><?php echo __d('phkapa','Order'); ?></dt>
+                    <dd<?php if ($i++ % 2 == 0)
+                            echo $class;
+?>>
+                        <?php echo $priority['Priority']['order']; ?>
+                        &nbsp;
+                    </dd>
+
+                    <dt<?php if ($i % 2 == 0)
                             echo $class;
                         ?>><?php echo __d('phkapa','Name'); ?></dt>
                     <dd<?php if ($i++ % 2 == 0)
                                 echo $class;
                         ?>>
-                        <?php echo $priority['Priority']['name']; ?>
+                        <?php echo h($priority['Priority']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php if ($i % 2 == 0)

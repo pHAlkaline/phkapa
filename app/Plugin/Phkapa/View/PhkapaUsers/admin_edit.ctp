@@ -48,7 +48,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->request->data['PhkapaUser']['name']; ?>
+                            <?php echo h($this->request->data['PhkapaUser']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -59,7 +59,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->request->data['PhkapaUser']['username']; ?>
+                            <?php echo h($this->request->data['PhkapaUser']['username']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -70,7 +70,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->request->data['PhkapaUser']['email']; ?>
+                            <?php echo h($this->request->data['PhkapaUser']['email']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php

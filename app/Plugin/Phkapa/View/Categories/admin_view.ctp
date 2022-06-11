@@ -60,7 +60,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $category['Category']['name']; ?>
+                            <?php echo h($category['Category']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -122,7 +122,7 @@
                         ?>
                         <tr<?php echo $class; ?>>
                             <td><?php echo $process['id']; ?></td>
-                            <td><?php echo $process['name']; ?></td>
+                            <td><?php echo h($process['name']); ?></td>
                             <td><?php echo $this->Utils->yesOrNo($process['active']); ?></td>
                             <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $process['created']); ?></td>
                             <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $process['modified']); ?></td>
@@ -164,7 +164,7 @@
                         ?>
                         <tr<?php echo $class; ?>>
                             <td><?php echo $cause['id']; ?></td>
-                            <td><?php echo $cause['name']; ?></td>
+                            <td><?php echo h($cause['name']); ?></td>
                             <td><?php echo $this->Utils->yesOrNo($cause['active']); ?></td>
                             <td><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $cause['created']); ?></td>
                             <td><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $cause['modified']); ?></td>

@@ -42,9 +42,9 @@
                 ?>
                 <tr<?php echo $class; ?>>
                     <td><?php echo $user['PhkapaUser']['id']; ?>&nbsp;</td>
-                    <td><?php echo $user['PhkapaUser']['name']; ?>&nbsp;</td>
-                    <td><?php echo $user['PhkapaUser']['username']; ?>&nbsp;</td>
-                    <td><?php echo $user['PhkapaUser']['email']; ?>&nbsp;</td>
+                    <td><?php echo h($user['PhkapaUser']['name']); ?>&nbsp;</td>
+                    <td><?php echo h($user['PhkapaUser']['username']); ?>&nbsp;</td>
+                    <td><?php echo h($user['PhkapaUser']['email']); ?>&nbsp;</td>
                     <td><?php echo $this->Utils->yesOrNo($user['PhkapaUser']['active']); ?>&nbsp;</td>
                     <td class="actions">
                         <?php echo $this->Html->link(__d('phkapa','View'), array('action' => 'view', $user['PhkapaUser']['id'])); ?>

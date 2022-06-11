@@ -59,7 +59,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $activity['Activity']['name']; ?>
+                            <?php echo h($activity['Activity']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -124,7 +124,7 @@
                             ?>
                             <tr<?php echo $class; ?>>
                                 <td><?php echo $process['id']; ?></td>
-                                <td><?php echo $process['name']; ?></td>
+                                <td><?php echo h($process['name']); ?></td>
                                 <td><?php echo $this->Utils->yesOrNo($process['active']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $process['created']); ?></td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $process['modified']); ?></td>

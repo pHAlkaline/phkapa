@@ -77,7 +77,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Text->autoParagraph($action['Action']['description']); ?>
+                            <?php echo $this->Text->autoParagraph(h($action['Action']['description'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -155,7 +155,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $this->Text->autoParagraph($action['Action']['effectiveness_notes']); ?>
+                            <?php echo $this->Text->autoParagraph(h($action['Action']['effectiveness_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -225,7 +225,7 @@
                                 <td><?php echo $revision['Action']['version_request']; ?>&nbsp;</td>
                                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormat'), $revision['Action']['modified']); ?>&nbsp;</td>
                                 <td>
-                                    <?php echo $revision['ModifiedUser']['name']; ?>
+                                    <?php echo h($revision['ModifiedUser']['name']); ?>
                                 </td>
                                 <td class="actions">
                                     <?php echo $this->Html->link(__d('phkapa', 'View'), array('action' => 'view_revision', $revision['Action']['version_id'], $revision['Action']['id'])); ?>

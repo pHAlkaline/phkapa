@@ -37,10 +37,10 @@
                 }
                 ?>
                 <tr<?php echo $class; ?>>
-                    <td><?php echo $user['User']['id']; ?>&nbsp;</td>
-                    <td><?php echo $user['User']['name']; ?>&nbsp;</td>
-                    <td><?php echo $user['User']['username']; ?>&nbsp;</td>
-                    <td><?php echo $user['User']['email']; ?>&nbsp;</td>
+                    <td><?php echo h($user['User']['id']); ?>&nbsp;</td>
+                    <td><?php echo h($user['User']['name']); ?>&nbsp;</td>
+                    <td><?php echo h($user['User']['username']); ?>&nbsp;</td>
+                    <td><?php echo h($user['User']['email']); ?>&nbsp;</td>
                     <td><?php echo $this->Utils->yesOrNo($user['User']['active']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $user['User']['modified']); ?>&nbsp;</td>
                     <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $user['User']['created']); ?>&nbsp;</td>

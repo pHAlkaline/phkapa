@@ -80,7 +80,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Registar']['name']; ?>
+                            <?php echo h($ticket['Registar']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -91,7 +91,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Priority']['name']; ?>
+                            <?php echo h($ticket['Priority']['name']); ?>
                         &nbsp;
                     </dd>
                    
@@ -103,7 +103,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Safety']['name']; ?>
+                            <?php echo h($ticket['Safety']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -129,7 +129,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Type']['name']; ?>
+                            <?php echo h($ticket['Type']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -140,7 +140,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Origin']['name']; ?>
+                            <?php echo h($ticket['Origin']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -151,7 +151,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Process']['name']; ?>
+                            <?php echo h($ticket['Process']['name']); ?>
                         &nbsp;
                     </dd>
 
@@ -163,7 +163,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Activity']['name']; ?>
+                            <?php echo h($ticket['Activity']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -174,7 +174,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Category']['name']; ?>
+                            <?php echo h($ticket['Category']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -185,7 +185,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo $ticket['Ticket']['product']; ?>
+                            <?php echo h($ticket['Ticket']['product']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -208,7 +208,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-<?php echo $ticket['Supplier']['name']; ?>
+<?php echo h($ticket['Supplier']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -219,7 +219,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-<?php echo $ticket['Customer']['name']; ?>
+<?php echo h($ticket['Customer']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -230,7 +230,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-<?php echo $this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes']); ?>
+<?php echo h($this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -241,7 +241,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-<?php echo $ticket['Cause']['name']; ?>
+<?php echo h($ticket['Cause']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -252,7 +252,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-<?php echo $this->Text->autoParagraph($ticket['Ticket']['cause_notes']); ?>
+<?php echo h($this->Text->autoParagraph($ticket['Ticket']['cause_notes'])); ?>
                         &nbsp;
                     </dd>
 

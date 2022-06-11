@@ -96,7 +96,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-<?php echo $action['ActionType']['name']; ?>
+<?php echo h($action['ActionType']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -107,7 +107,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-<?php echo $this->Text->autoParagraph($action['Action']['description']); ?>
+<?php echo $this->Text->autoParagraph(h($action['Action']['description'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -166,7 +166,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-<?php echo $action['ActionEffectiveness']['name']; ?>
+<?php echo h($action['ActionEffectiveness']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -177,7 +177,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-<?php echo $action['VerifyUser']['name']; ?>
+<?php echo h($action['VerifyUser']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -188,7 +188,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-<?php echo $this->Text->autoParagraph($action['Action']['effectiveness_notes']); ?>
+<?php echo $this->Text->autoParagraph(h($action['Action']['effectiveness_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -199,7 +199,7 @@
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-<?php echo $action['ModifiedUser']['name']; ?>
+<?php echo h($action['ModifiedUser']['name']); ?>
                         &nbsp;
                     </dd>
                     <dt<?php

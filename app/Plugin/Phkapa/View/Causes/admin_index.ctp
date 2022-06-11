@@ -50,7 +50,7 @@
             ?>
             <tr<?php echo $class; ?>>
                 <td><?php echo $cause['Cause']['id']; ?>&nbsp;</td>
-                <td><?php echo $cause['Cause']['name']; ?>&nbsp;</td>
+                <td><?php echo h($cause['Cause']['name']); ?>&nbsp;</td>
                 <td><?php echo $this->Utils->yesOrNo($cause['Cause']['active']); ?>&nbsp;</td>
                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $cause['Cause']['created']); ?>&nbsp;</td>
                 <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $cause['Cause']['modified']); ?>&nbsp;</td>
