@@ -5,7 +5,6 @@
 /app/Config/database.php
 /app/Config/email.php
 /app/Config/bootstrap_phapp.php
-/app/Config/email.php
 /app/files/*
 !/app/files/empty
 /app/tmp
