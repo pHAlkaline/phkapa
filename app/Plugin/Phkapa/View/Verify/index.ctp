@@ -58,7 +58,7 @@
                     <td><?php echo h($ticket['Ticket']['product']);  ?></td>
                     <td><?php
         echo $this->Text->truncate(
-                h($this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes'])), 60, array(
+                $this->Text->autoParagraph(h($ticket['Ticket']['description'])) . $this->Text->autoParagraph(h($ticket['Ticket']['review_notes'])), 60, array(
             'ellipsis' => '...',
             'exact' => false
         ));
