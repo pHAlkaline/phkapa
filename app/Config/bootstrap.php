@@ -111,6 +111,10 @@ CakeLog::config('error', array(
 ));
 App::uses('AppExceptionHandler', 'Lib');
 
+if (!file_exists(APP . 'Config' . DS . 'bootstrap_phapp.php')) {
+    copy(APP . 'Config' . DS . 'bootstrap_phapp.php.default', APP . 'Config' . DS . 'bootstrap_phapp.php');
+}
+
 /**
  * app Plugin
  */
