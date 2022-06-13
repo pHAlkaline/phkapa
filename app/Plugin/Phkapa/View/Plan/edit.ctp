@@ -298,7 +298,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
-                                <?php echo h($this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes'])); ?>
+                                <?php echo $this->Text->autoParagraph(h($ticket['Ticket']['description'])) . $this->Text->autoParagraph(h($ticket['Ticket']['review_notes'])); ?>
                             &nbsp;
                         </dd>
                         <dt<?php
@@ -410,7 +410,7 @@ if ($hasCause && isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         <td><?php echo h($action['ActionType']['name']); ?></td>
                         <td><?php
                                         echo $this->Text->truncate(
-                                                h($this->Text->autoParagraph($action['description'])), 60, array(
+                                                $this->Text->autoParagraph(h($action['description'])), 60, array(
                                             'ellipsis' => '...',
                                             'exact' => false
                                         ));

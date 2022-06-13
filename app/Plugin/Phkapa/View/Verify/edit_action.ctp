@@ -80,7 +80,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                 if ($i++ % 2 == 0)
                     echo $class;
                 ?>>
-                        <?php echo h($this->Text->autoParagraph($action['Action']['description'])); ?>
+                        <?php echo $this->Text->autoParagraph(h($action['Action']['description'])); ?>
                     &nbsp;
                 </dd>
                 <dt<?php
@@ -350,7 +350,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo h($this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes'])); ?>
+                            <?php echo $this->Text->autoParagraph(h($ticket['Ticket']['description'])) . $this->Text->autoParagraph(h($ticket['Ticket']['review_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -372,7 +372,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo h($this->Text->autoParagraph($ticket['Ticket']['cause_notes'])); ?>
+                            <?php echo $this->Text->autoParagraph(h($ticket['Ticket']['cause_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php

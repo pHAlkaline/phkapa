@@ -287,7 +287,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo h($this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes'])); ?>
+                            <?php echo $this->Text->autoParagraph(h($ticket['Ticket']['description'])) . $this->Text->autoParagraph(h($ticket['Ticket']['review_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -309,7 +309,7 @@ if ($ticket['Workflow']['id'] < 5) {
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-                            <?php echo h($this->Text->autoParagraph($ticket['Ticket']['cause_notes'])); ?>
+                            <?php echo $this->Text->autoParagraph(h($ticket['Ticket']['cause_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -502,7 +502,7 @@ if ($ticket['Workflow']['id'] < 5) {
                                 <td><?php echo h($children['Category']['name']); ?></td>
                                 <td><?php
                                     echo $this->Text->truncate(
-                                            h($this->Text->autoParagraph($ticket['Ticket']['description']) . $this->Text->autoParagraph($ticket['Ticket']['review_notes'])), 60, array(
+                                            $this->Text->autoParagraph(h($ticket['Ticket']['description'])) . $this->Text->autoParagraph(h($ticket['Ticket']['review_notes'])), 60, array(
                                         'ellipsis' => '...',
                                         'exact' => false
                                     ));
