@@ -57,7 +57,7 @@ class AppController extends Controller {
     public function beforeFilter() {
         $this->Auth->logoutRedirect = array('admin' => false, 'plugin' => false, 'controller' => 'users', 'action' => 'login');
         $this->Auth->loginRedirect = array('plugin' => 'phkapa', 'controller' => 'query', 'action' => 'index');
-        $this->Auth->allow('display', 'login', 'logout', 'edit_profile', 'secure', 'notifications');
+        $this->Auth->allow('display', 'login', 'logout', 'edit_profile', 'notifications');
         $this->Auth->authorize = array('Controller');
         $this->Auth->flash = array('key'=>'Auth','element' => 'error','params'=>array());
         $this->Auth->authenticate = array(  AuthComponent::ALL => array('userModel' => 'User', 'scope' => array("User.active" => 1)),'Form');
