@@ -6,6 +6,7 @@
 /app/webroot/files
 /app/Config/database.php
 /app/Config/email.php
+
 app/tmp/*
 !app/tmp/.gitkeep
 !app/tmp/cache
@@ -31,7 +32,7 @@ app/tmp/tests/*
 !app/tmp/tests/.gitkeep
 /app/files/*
 !/app/files/.gitkeep
-/app/tmp
+
 /app/Test
 /lib
 /plugins
