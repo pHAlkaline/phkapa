@@ -94,10 +94,10 @@ $this->Number->defaultCurrency(Configure::read('currency'));
             });
             $.LoadingOverlay("show");
             // Hide it after 3 seconds
-            setTimeout(function () {
+            /*setTimeout(function () {
                 $.LoadingOverlay("hide");
                 $(".body").fadeIn(1500).trigger('bodyVisible');
-            }, 500);
+            }, 500);*/
         }
     </script>
     <script type="text/javascript">
