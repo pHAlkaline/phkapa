@@ -3,16 +3,16 @@
 /**
  * Install controller
  *
- * PHP version 5
+ * PHP version 7
  *
  * @category Controller
  * @package  pHKapa
- * @version  V1
+ * @version  V1.7.2
  * @author   Paulo Homem <contact@phalkaline.net>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://phkapa.net
  */
-class InstallController extends AppController {
+class SecureController extends AppController {
 
     /**
      * Controller name
@@ -20,7 +20,7 @@ class InstallController extends AppController {
      * @var string
      * @access public
      */
-    public $name = 'Install';
+    public $name = 'Secure';
 
     /**
      * No models required
@@ -47,7 +47,7 @@ class InstallController extends AppController {
      * @access public
      */
     public function index() {
-        $this->render('notFound');
+        $this->secure();
     }
 
     /**
@@ -75,14 +75,14 @@ class InstallController extends AppController {
 
     private function __setNewSaltSeed() {
         // set new salt and seed value
-        $File = new File(APP . 'Config' . DS . 'core.php');
+        $File = new File(APP . 'Config' . DS . 'core_phapp.php');
         $salt = Security::generateAuthKey();
         $seed = mt_rand() . mt_rand();
         $contents = $File->read();
         $contents = preg_replace('/(?<=Configure::write\(\'Security.salt\', \')([^\' ]+)(?=\'\))/', $salt, $contents);
         $contents = preg_replace('/(?<=Configure::write\(\'Security.cipherSeed\', \')(\d+)(?=\'\))/', $seed, $contents);
         if (!$File->write($contents)) {
-            $this->Flash->info(__('Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions.', DS));
+            $this->Flash->info(__('Unable to secure your application, your Config %s core_phapp.php file is not writable. Please check the permissions.', DS));
             $this->log('Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions.', DS);
             return false;
         }
@@ -129,7 +129,7 @@ class InstallController extends AppController {
      */
     public function isAuthorized($user = null) {
         //echo "auth";
-        $result = true;
+        $result = ($user['id'] == 1);
         return $result;
     }
 
@@ -140,10 +140,9 @@ class InstallController extends AppController {
      * @access public
      */
     public function beforeFilter() {
-        $this->Components->unload('Notify');
+        //$this->Components->unload('Notify');
         parent::beforeFilter();
-        $this->Auth->allow();
-
+        //$this->Auth->allow();
         //$this->layout = 'install';
     }
 

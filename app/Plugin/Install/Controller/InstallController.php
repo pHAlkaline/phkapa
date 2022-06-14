@@ -287,7 +287,7 @@ class InstallController extends InstallAppController {
 
     private function __setNewSaltSeed() {
         // set new salt and seed value
-        $File = new File(APP . 'Config' . DS . 'core.php');
+        $File = new File(APP . 'Config' . DS . 'core_phapp.php');
         $salt = Security::generateAuthKey();
         $seed = mt_rand() . mt_rand();
         $contents = $File->read();
@@ -295,7 +295,7 @@ class InstallController extends InstallAppController {
         $contents = preg_replace('/(?<=Configure::write\(\'Security.cipherSeed\', \')(\d+)(?=\'\))/', $seed, $contents);
         if (!$File->write($contents)) {
             $this->Flash->error(__d('install', 'Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions.', DS));
-            $this->log('Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions.', DS);
+            $this->log('Unable to secure your application, your Config %s core_phapp.php file is not writable. Please check the permissions.', DS);
             return false;
         }
         Configure::write('Security.salt', $salt);
