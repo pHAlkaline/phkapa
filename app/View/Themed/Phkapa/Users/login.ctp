@@ -1,6 +1,80 @@
 <?php $this->Html->script('jquery-zoom', false); ?>
 
 <div class="grid_16 actionsContainer">
+     <div class="clear"></div>
+        <?php if (Configure::read('Application.mode') == 'demo') { ?>
+            <h2 id="page-heading"><?= __('Demonstration Users'); ?></h2>
+            <div class="grid_16 actionsContainer">
+
+                <table cellpadding="0" cellspacing="0">
+                    <thead class="ui-state-default">
+                        <tr>
+                            <th>Type</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tr>
+
+                        <tr class="altrow">
+                            <td>TOP USER&nbsp;</td>
+                            <td>Quality Dep Manager&nbsp;</td>
+                            <td>quality</td>
+                            <td>quality00</td>
+
+                        </tr>
+                        <tr>
+                            <td>MINOR USER&nbsp;</td>
+                            <td>Administrative and Finance&nbsp;</td>
+                            <td>aaf</td>
+                            <td>aaf000000</td>
+
+                        </tr>
+                        <tr class="altrow">
+                            <td>MINOR USER&nbsp;</td>
+                            <td>Comercial Department&nbsp;</td>
+                            <td>cd</td>
+                            <td>cd0000000</td>
+
+                        </tr>
+                        <tr>
+                            <td>MINOR USER&nbsp;</td>
+                            <td>Human Recources&nbsp;</td>
+                            <td>hr</td>
+                            <td>hr0000000</td>
+
+                        </tr>
+                        <tr class="altrow">
+                            <td>MINOR USER&nbsp;</td>
+                            <td>Managment and Client Support&nbsp;</td>
+                            <td>macs</td>
+                            <td>macs00000</td>
+
+                        </tr>
+                        <tr>
+                            <td>MINOR USER&nbsp;</td>
+                            <td>Management Control and Businees&nbsp;</td>
+                            <td>mcb</td>
+                            <td>mcb000000</td>
+
+
+                        <tr>
+                            <td>MINOR USER&nbsp;</td>
+                            <td>Reception&nbsp;</td>
+                            <td>rec</td>
+                            <td>rec000000</td>
+
+                        </tr>
+                    </tbody></table>
+
+
+                <div class="clear"></div>
+
+                <div class="clear"></div>
+            </div>
+        <?php } ?>
         <div class="grid_16">
             <h2 id="page-heading"><?php echo __('Start Session'); ?></h2>
             <div class="form ui-widget">
@@ -22,83 +96,7 @@
             </div>
 
         </div>
-        <div class="clear"></div>
-        <?php if (Configure::read('Application.mode') == 'demo') { ?>
-
-            <h2 id="page-heading"><?= __('Start Session User Options'); ?></h2>
-            <div class="grid_16 actionsContainer">
-
-
-
-                <table cellpadding="0" cellspacing="0">
-                    <thead class="ui-state-default"> 
-                        <tr>
-                            <th>Type</th>
-                            <th>Name</th>
-                            <th>Username</th>
-                            <th>Password</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        </tr>
-
-                        <tr class="altrow">
-                            <td>TOP USER&nbsp;</td>
-                            <td>Quality Dep Manager&nbsp;</td>
-                            <td>quality&nbsp;</td>
-                            <td>quality&nbsp;</td>
-
-                        </tr>
-                        <tr>
-                            <td>MINOR USER&nbsp;</td>
-                            <td>Administrative and Finance&nbsp;</td>
-                            <td>aaf&nbsp;</td>
-                            <td>aaf&nbsp;</td>
-
-                        </tr>
-                        <tr class="altrow">
-                            <td>MINOR USER&nbsp;</td>
-                            <td>Comercial Department&nbsp;</td>
-                            <td>cd&nbsp;</td>
-                            <td>cd&nbsp;</td>
-
-                        </tr>
-                        <tr>
-                            <td>MINOR USER&nbsp;</td>
-                            <td>Human Recources&nbsp;</td>
-                            <td>hr&nbsp;</td>
-                            <td>hr&nbsp;</td>
-
-                        </tr>
-                        <tr class="altrow">
-                            <td>MINOR USER&nbsp;</td>
-                            <td>Managment and Client Support&nbsp;</td>
-                            <td>macs&nbsp;</td>
-                            <td>macs&nbsp;</td>
-
-                        </tr>
-                        <tr>
-                            <td>MINOR USER&nbsp;</td>
-                            <td>Management Control and Businees&nbsp;</td>
-                            <td>mcb&nbsp;</td>
-                            <td>mcb&nbsp;</td>
-
-
-                        <tr>
-                            <td>MINOR USER&nbsp;</td>
-                            <td>Reception&nbsp;</td>
-                            <td>rec&nbsp;</td>
-                            <td>rec&nbsp;</td>
-
-                        </tr>
-                    </tbody></table>
-
-
-                <div class="clear"></div>
-
-                <div class="clear"></div>
-            </div>
-        <?php } ?>
+       
     <div class="clear"></div>
 
 </div>

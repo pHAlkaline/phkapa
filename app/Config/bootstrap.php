@@ -114,11 +114,11 @@ App::uses('AppExceptionHandler', 'Lib');
 if (!file_exists(APP . 'Config' . DS . 'bootstrap_phapp.php')) {
     copy(APP . 'Config' . DS . 'bootstrap_phapp.php.default', APP . 'Config' . DS . 'bootstrap_phapp.php');
 }
-
-/**
- * app Plugin
- */
-CakePlugin::load('Phkapa', array('bootstrap' => false, 'routes' => false));
-CakePlugin::load('Access', array('bootstrap' => false, 'routes' => false));
+if (!file_exists(APP . 'Config' . DS . 'database.php')) {
+    copy(APP . 'Config' . DS . 'database.php.default', APP . 'Config' . DS . 'database.php');
+}
+if (!file_exists(APP . 'Config' . DS . 'email.php')) {
+    copy(APP . 'Config' . DS . 'email.php.default', APP . 'Config' . DS . 'email.php');
+}
 
 require 'bootstrap_phapp.php';

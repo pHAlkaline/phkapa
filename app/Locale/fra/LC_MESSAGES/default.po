@@ -172,6 +172,9 @@ msgstr "Recherche ..."
 msgid "Start Session"
 msgstr "Ouverture de la session"
 
+msgid "Demonstration Users"
+msgstr "Utilisateurs de démonstration"
+
 msgid "Submit"
 msgstr "Soumet"
 

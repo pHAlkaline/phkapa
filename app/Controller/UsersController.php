@@ -3,7 +3,7 @@
 /**
  * Users controller
  *
- * PHP version 5
+ * PHP version 7
  *
  * @category Controller
  * @package  pHKapa
@@ -14,8 +14,6 @@
  */
 class UsersController extends AppController {
 
-    
-
     /**
      * Controller name
      *
@@ -23,7 +21,7 @@ class UsersController extends AppController {
      * @access public
      */
     public $name = 'Users';
- 
+
     /**
      * Edit User Profile
      *
@@ -64,7 +62,7 @@ class UsersController extends AppController {
             $this->User->validationErrors['name'][] = $this->Acl->Aro->validationErrors['alias'][0];
         }
     }
-    
+
     /**
      *  The AuthComponent provides the needed functionality
      *  for login, so you can leave this function blank.
@@ -73,16 +71,23 @@ class UsersController extends AppController {
      * @access public
      */
     public function login() {
-        if ($this->request->is('post')) {
-            if ($this->Auth->login()) {
-                if ($this->data['User']['language'] != '') {
-                    $this->Session->write('User.language', $this->data['User']['language']);
-                }
-                return $this->redirect($this->Auth->redirect());
-            } else {
-                $this->Flash->error(__('Login failed. Invalid username or password.'));
-            }
+        if (isset($this->request->data['User']['language']) && $this->request->data['User']['language'] != '') {
+            $this->Cookie->write('Config.language', $this->request->data['User']['language'], false, "12 months");
+            Configure::write('Config.language', $this->request->data['User']['language']);
         }
+        
+        if ($this->request->is('post')) {
+
+            if ($this->Auth->login()) {
+                $this->rememberMe();
+                return $this->redirect($this->Auth->redirectUrl()); //$this->Auth->redirectUrl()
+            }
+            $this->Flash->error(__('Login failed. Invalid username or password.'));
+        }
+        if (!isset($this->request->data['User']['language'])) {
+            $this->request->data['User']['language'] = $this->Cookie->check('Config.language') ? $this->Cookie->read('Config.language') : Configure::read('Config.language');
+        }
+        
     }
 
     /**
@@ -93,11 +98,24 @@ class UsersController extends AppController {
      * @access public
      */
     public function logout() {
-        $this->Session->delete('User.language');
-        $this->redirect($this->Auth->logout());
+        $this->Cookie->delete('rememberMe');
+        return $this->redirect($this->Auth->logout());
     }
 
-   
+    public function rememberMe() {
+        if (isset($this->request->data['User']['rememberMe']) && $this->request->data['User']['rememberMe']) {
+            // After what time frame should the cookie expire
+            $cookieTime = "12 months"; // You can do e.g: 1 week, 17 weeks, 14 days
+            // remove "remember me checkbox"
+            unset($this->request->data['User']['rememberMe']);
+
+            // hash the user's password
+            $this->request->data['User']['password'] = $this->Auth->password($this->request->data['User']['password']);
+
+            // write the cookie
+            $this->Cookie->write('rememberMe', $this->request->data['User'], true, $cookieTime);
+        }
+    }
 
 }
 

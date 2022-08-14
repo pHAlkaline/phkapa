@@ -183,6 +183,9 @@ msgstr "Caută..."
 msgid "Start Session"
 msgstr "Inițiază sesiunea"
 
+msgid "Demonstration Users"
+msgstr "Utilizatori demonstrativi"
+
 msgid "Submit"
 msgstr "Transmite"
 

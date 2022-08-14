@@ -81,7 +81,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                 const myClickAnchor = setTimeout(clickAnchor, 3000);
 
                 function clickAnchor() {
-                    $('#go-pHKapa')[0].click();
+                    $('#go-phkapa')[0].click();
                 }
             });
         </script>

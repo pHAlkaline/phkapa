@@ -2,7 +2,7 @@
 /**
  * Action Effectiveness
  *
- * PHP version 5
+ * PHP version 7
  * 
  * @category Model
  * @package  pHKapa
