@@ -175,6 +175,9 @@ msgstr "Suche..."
 msgid "Start Session"
 msgstr "Anmelden"
 
+msgid "Demonstration Users"
+msgstr "Demonstrationsbenutzer"
+
 msgid "Submit"
 msgstr "Eintragen"
 

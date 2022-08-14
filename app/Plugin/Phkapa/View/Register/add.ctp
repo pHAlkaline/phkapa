@@ -43,7 +43,7 @@
             </div>
             <?php
             echo $this->Form->input('product',array('label' => __d('phkapa','Product')));
-            echo $this->Form->input('cost',array('type'=>'number', 'step'=>'0.01','min'=>0,'label' => __d('phkapa','Cost')));
+            echo $this->Form->input('cost',array('value'=>'0.00','type'=>'number', 'step'=>'0.01','min'=>0,'label' => __d('phkapa','Cost')));
             echo $this->Form->input('supplier_id', array(
                 'label' => __d('phkapa','Supplier'),
                 'empty' => __d('phkapa','(choose one)'),

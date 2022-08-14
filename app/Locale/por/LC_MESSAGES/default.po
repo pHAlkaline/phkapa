@@ -166,6 +166,9 @@ msgstr "Pesquisa..."
 msgid "Start Session"
 msgstr "Iniciar Sessão"
 
+msgid "Demonstration Users"
+msgstr "Utilizadores De Demonstração"
+
 msgid "Submit"
 msgstr "Registar"
 

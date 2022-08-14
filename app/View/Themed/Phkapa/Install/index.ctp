@@ -5,7 +5,14 @@
     <fieldset class="ui-corner-all ui-widget-content" >
         <legend><?php echo __d('install','Language'); ?></legend>
        <?php
-       echo $this->Form->input('language', array('options' => Configure::read('Language.list'), 'empty' => '(choose one)','onchange'=>'this.form.submit();'));
+       echo $this->Form->input('language', array('value'=>Configure::read('Language.default'), 'options' => Configure::read('Language.list'),'onchange'=>'this.form.submit();'));
+        ?>
+
+    </fieldset>
+    <fieldset class="ui-corner-all ui-widget-content" >
+        <legend><?php echo __d('install','Mode'); ?></legend>
+       <?php
+       echo $this->Form->input('mode', array('options' => $packList,'onchange'=>'this.form.submit();'));
         ?>
     </fieldset>
     <?php echo $this->Form->end(); ?>
@@ -79,36 +86,36 @@
 
 function echoBeginMessage($message) {
     ?>
-    <div class = "ui-widget">
-        <div class = "ui-state-highlight ui-corner-all message" style="border-color:green" >
-            <span class = "" style = "float: left; margin: 3px;"></span>
+<div class = "ui-widget">
+    <div class = "ui-state-highlight ui-corner-all message" style="border-color:green" >
+        <span class = "" style = "float: left; margin: 3px;"></span>
             <?php echo $message;
             ?>
-        </div>
     </div>
+</div>
     <?php
 }
 
 function echoMessage($message) {
     ?>
-    <div class = "ui-widget">
-        <div class = "ui-state-highlight ui-corner-all message"  >
-            <span class = "ui-icon ui-icon-info" style = "float: left; margin: 3px;"></span>
+<div class = "ui-widget">
+    <div class = "ui-state-highlight ui-corner-all message"  >
+        <span class = "ui-icon ui-icon-info" style = "float: left; margin: 3px;"></span>
             <?php echo $message;
             ?>
-        </div>
     </div>
+</div>
     <?php
 }
 
 function echoError($message) {
     ?>
-    <div class="ui-widget">
-        <div class="ui-state-error ui-corner-all message" > 
-            <span class="ui-icon ui-icon-alert" style="float: left; margin: 3px;"></span> 
+<div class="ui-widget">
+    <div class="ui-state-error ui-corner-all message" >
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 3px;"></span>
             <?php echo $message; ?>
-        </div>
     </div>
+</div>
     <?php
 }
 ?>

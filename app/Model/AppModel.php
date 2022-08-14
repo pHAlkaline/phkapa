@@ -5,7 +5,7 @@
  * This file is application-wide model file. You can put all
  * application-wide model-related methods here.
  *
- * PHP version 5
+ * PHP version 7
  * 
  * @category Models
  * @package  pHKapa

@@ -184,6 +184,9 @@ msgstr "Búsqueda..."
 msgid "Start Session"
 msgstr "Inicio de sesión"
 
+msgid "Demonstration Users"
+msgstr "Usuarios de demostración"
+
 msgid "Submit"
 msgstr "Enviar"
 

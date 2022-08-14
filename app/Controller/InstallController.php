@@ -1,20 +1,22 @@
 <?php
 
-App::uses('File', 'Utility');
-
 /**
  * Install controller
  *
- * PHP version 5
+ * PHP version 7
  *
  * @category Controller
  * @package  pHKapa
- * @version  V1
+ * @version  V1.7
  * @author   Paulo Homem <contact@phalkaline.net>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://phkapa.net
  */
-class InstallController extends InstallAppController {
+App::uses('File', 'Utility');
+App::uses('CakeSchema', 'Model');
+App::uses('ConnectionManager', 'Model');
+
+class InstallController extends AppController {
 
     /**
      * Controller name
@@ -56,7 +58,7 @@ class InstallController extends InstallAppController {
         'database' => 'phkapa',
         'schema' => null,
         'prefix' => null,
-        'encoding' => 'UTF8',
+        'encoding' => 'utf8',
         'port' => null,
     );
 
@@ -67,13 +69,13 @@ class InstallController extends InstallAppController {
      * @access public
      */
     public $defaultEmail = array(
+        'sender_email' => 'noreply@yourdomain.com',
         'email' => 'noreply@yourdomain.com',
         'name' => 'reply to',
         'subject' => 'pHKapa Notification',
-        'sender_email' => 'Your Site name',
-        'host' => '',
-        'port' => '',
-        'username' => '',
+        'host' => 'localhost',
+        'port' => '25',
+        'username' => 'username',
         'password' => '',
     );
 
@@ -84,11 +86,10 @@ class InstallController extends InstallAppController {
      * @access public
      */
     public function beforeFilter() {
-        $this->Components->unload('Notify');
         parent::beforeFilter();
         $this->Auth->allow();
-
-        //$this->layout = 'install';
+        $this->Auth->deny('reinstall');
+        //$this->layout = 'clean';
     }
 
     /**
@@ -100,8 +101,8 @@ class InstallController extends InstallAppController {
      * @throws 
      */
     public function beforeRender() {
+        parent::beforeRender();
         $this->set('user_at_string', __d('install', 'Installation: Welcome'));
-    
     }
 
     /**
@@ -109,8 +110,13 @@ class InstallController extends InstallAppController {
      *
      * @return void
      */
-    protected function _check() {
+    protected function __check() {
         if (file_exists(TMP . 'installed.txt')) {
+            $this->Flash->info(__d('install', 'Already Installed'));
+            $this->redirect('/');
+        }
+
+        if (Configure::read('installed_key') != 'xyz') {
             $this->Flash->info(__d('install', 'Already Installed'));
             $this->redirect('/');
         }
@@ -125,13 +131,35 @@ class InstallController extends InstallAppController {
      * @access public
      */
     public function index() {
-        $this->_check();
-        if (isset($this->data['Install']['language']) && $this->data['Install']['language'] != '') {
-            $this->Session->write('User.language', $this->data['Install']['language']);
-            $this->redirect(array('action' => 'index'));
+        $this->__check();
+        $this->__files();
+
+        if (isset($this->request->data['Install']['language']) && $this->request->data['Install']['language'] != '') {
+            $this->Cookie->write('Config.language', $this->request->data['Install']['language'], false, "12 months");
+            Configure::write('Config.language', $this->request->data['Install']['language']);
         }
-        $this->set('title_for_layout', __d('install', 'Installation: Welcome'));
+        if (isset($this->request->data['Install']['mode']) && $this->request->data['Install']['mode'] != '') {
+            $this->Cookie->write('Application.mode', $this->request->data['Install']['mode'], false, "12 months");
+            Configure::write('Application.mode', $this->request->data['Install']['mode']);
+        }
+        $this->set('title_foApplication.isFullPackr_layout', __d('install', 'Installation: Welcome'));
         $this->set('title_for_step', __d('install', 'Installation: Welcome'));
+
+        $packList = array('free' => 'Community');
+        if (Configure::read('Application.isFullPack')) {
+            $packList = array(
+                'free' => 'Community',
+                'full' => 'Full Pack',
+                'demo' => 'Demonstration'
+            );
+        }
+        $this->set('packList', $packList);
+      
+    }
+
+    private function __files() {
+        copy(APP . 'Config' . DS . 'core_phapp.php.default', APP . 'Config' . DS . 'core_phapp.php');
+        copy(APP . 'Config' . DS . 'bootstrap_phapp.php.default', APP . 'Config' . DS . 'bootstrap_phapp.php');
     }
 
     /**
@@ -145,27 +173,35 @@ class InstallController extends InstallAppController {
      * @access public
      */
     public function database() {
-        $this->_check();
+        $this->__check();
         $this->set('title_for_layout', __d('install', 'Step 1 : Database connection'));
         $this->set('title_for_step', __d('install', 'Step 1 : Database connection'));
 
-        if (file_exists(APP . 'Config' . DS . 'database.php')) {
-            $this->Flash->info(__d('install', 'Database connection file already exists'));
-            $this->redirect(array('action' => 'data'));
+        if (isset($this->request->data['Install']['language']) && $this->request->data['Install']['language'] != '') {
+            $this->Cookie->write('Config.language', $this->request->data['Install']['language'], false, "12 months");
+            Configure::write('Config.language', $this->request->data['Install']['language']);
         }
+        if (isset($this->request->data['Install']['mode']) && $this->request->data['Install']['mode'] != '') {
+            $this->Cookie->write('Application.mode', $this->request->data['Install']['mode'], false, "12 months");
+            Configure::write('Application.mode', $this->request->data['Install']['mode']);
+        }
+
+        if (file_exists(APP . 'Config' . DS . 'database.php')) {
+            unlink(APP . 'Config' . DS . 'database.php');
+            copy(APP . 'Config' . DS . 'database.php.default', APP . 'Config' . DS . 'database.php');
+        }
+
 
         if (empty($this->request->data)) {
             return;
         }
 
-        App::uses('ConnectionManager', 'Model');
         $config = $this->defaultConfig;
         foreach ($this->request->data as $key => $value) {
             if (isset($config[$key])) {
                 $config[$key] = $value;
             }
         }
-
         try {
             ConnectionManager::create('default', $config);
             $db = ConnectionManager::getDataSource('default');
@@ -179,7 +215,7 @@ class InstallController extends InstallAppController {
             return;
         }
 
-        copy(APP . 'Config' . DS . 'database.php.install', APP . 'Config' . DS . 'database.php');
+
         $file = new File(APP . 'Config' . DS . 'database.php', true);
         $content = $file->read();
 
@@ -201,23 +237,19 @@ class InstallController extends InstallAppController {
      * @access public
      */
     public function data() {
-        $this->_check();
+        $this->__check();
         $this->set('title_for_layout', __d('install', 'Step 2 : Build database , load table values'));
         $this->set('title_for_step', __d('install', 'Step 2 : Build database , load table values'));
         if (empty($this->request->data)) {
             return;
         }
 
-        App::uses('File', 'Utility');
-        App::uses('CakeSchema', 'Model');
-        App::uses('ConnectionManager', 'Model');
-
         $db = ConnectionManager::getDataSource('default');
         $brokenSequence = $db instanceof Postgres;
         if (!$db->isConnected()) {
             $this->Flash->error(__d('install', 'Could not connect to database.'));
         } else {
-            
+
             //phkapa structure
             $structure_file = APP . 'Config' . DS . 'Schema' . DS . 'phkapa_structure_' . Configure::read('Config.language') . '.sql';
             if (!file_exists($structure_file)) {
@@ -231,12 +263,38 @@ class InstallController extends InstallAppController {
                 return;
             }
 
-            // phkapa demo data
-            $demo_data_file = APP . 'Config' . DS . 'Schema' . DS . 'phkapa_demo_data_' . Configure::read('Config.language') . '.sql';
-            if (!file_exists($demo_data_file)) {
-                $demo_data_file = APP . 'Config' . DS . 'Schema' . DS . 'phkapa_demo_data.sql';
+            // attachement plugin
+            $attachment_file = APP . 'Plugin' . DS . 'Attachment' . DS . 'Config' . DS . 'Schema' . DS . 'attachment.sql';
+            if (file_exists($attachment_file)) {
+                try {
+                    $this->__executeSQLScript($db, $attachment_file);
+                } catch (MissingConnectionException $e) {
+
+                    $this->Flash->error(__d('install', 'Could not load database: %s', $e->getMessage()));
+                    return;
+                }
             }
+
+            // feedback plugin
+            $feedback_file = APP . 'Plugin' . DS . 'Feedback' . DS . 'Config' . DS . 'Schema' . DS . 'feedback.sql';
+            if (file_exists($feedback_file)) {
+
+                try {
+                    $this->__executeSQLScript($db, $feedback_file);
+                } catch (MissingConnectionException $e) {
+
+                    $this->Flash->error(__d('install', 'Could not load database: %s', $e->getMessage()));
+                    return;
+                }
+            }
+
             if ($this->request->data['demo_data'] == '1') {
+
+                // phkapa demo data
+                $demo_data_file = APP . 'Config' . DS . 'Schema' . DS . 'phkapa_demo_data_' . Configure::read('Config.language') . '.sql';
+                if (!file_exists($demo_data_file)) {
+                    $demo_data_file = APP . 'Config' . DS . 'Schema' . DS . 'phkapa_demo_data.sql';
+                }
 
                 try {
                     $this->__executeSQLScript($db, $demo_data_file);
@@ -246,42 +304,25 @@ class InstallController extends InstallAppController {
                     return;
                 }
             }
-
-            // attachement plugin
-            $attachment_file = APP . 'Plugin' . DS . 'Attachment' . DS . 'Config' . DS . 'Schema' . DS . 'attachment.sql';
-            try {
-
-                $this->__executeSQLScript($db, $attachment_file);
-            } catch (MissingConnectionException $e) {
-
-                $this->Flash->error(__d('install', 'Could not load database: %s', $e->getMessage()));
-                return;
-            }
-
-            // feedback plugin
-            $feedback_file = APP . 'Plugin' . DS . 'Feedback' . DS . 'Config' . DS . 'Schema' . DS . 'feedback.sql';
-            try {
-                $this->__executeSQLScript($db, $feedback_file);
-            } catch (MissingConnectionException $e) {
-
-                $this->Flash->error(__d('install', 'Could not load database: %s', $e->getMessage()));
-                return;
-            }
         }
-
 
         $this->redirect(array('action' => 'email'));
     }
 
-    function __executeSQLScript($db, $fileName) {
-        $statements = file_get_contents($fileName);
-        $statements = explode(';', $statements);
+    private function __executeSQLScript($db, $fileName, $separator = ';') {
 
-        foreach ($statements as $statement) {
-            if (trim($statement) != '') {
+        $file_contents = file_get_contents($fileName);
+        $statements = $separator ? explode($separator, $file_contents) : $file_contents;
+        if (is_array($statements)) {
+            foreach ($statements as $statement) {
+                if (trim($statement) != '') {
 
-                $db->query($statement);
+                    $db->query($statement);
+                }
             }
+        } else {
+
+            $db->query($statements);
         }
     }
 
@@ -294,7 +335,7 @@ class InstallController extends InstallAppController {
         $contents = preg_replace('/(?<=Configure::write\(\'Security.salt\', \')([^\' ]+)(?=\'\))/', $salt, $contents);
         $contents = preg_replace('/(?<=Configure::write\(\'Security.cipherSeed\', \')(\d+)(?=\'\))/', $seed, $contents);
         if (!$File->write($contents)) {
-            $this->Flash->error(__d('install', 'Unable to secure your application, your Config %s core.php file is not writable. Please check the permissions.', DS));
+            $this->Flash->error(__d('install', 'Unable to secure your application, your Config %s core_phapp.php file is not writable. Please check the permissions.', DS));
             $this->log('Unable to secure your application, your Config %s core_phapp.php file is not writable. Please check the permissions.', DS);
             return false;
         }
@@ -313,25 +354,21 @@ class InstallController extends InstallAppController {
      * @access public
      */
     public function email() {
-        $this->_check();
+        $this->__check();
         $this->set('title_for_layout', __d('install', 'Step 3 : Email notification'));
         $this->set('title_for_step', __d('install', 'Step 3 : Email notification'));
 
         if (file_exists(APP . 'Config' . DS . 'email.php')) {
-            $this->Flash->info(__d('install', 'Email settings file already exists'));
-            $this->redirect(array('action' => 'adminuser'));
+            unlink(APP . 'Config' . DS . 'email.php');
+            copy(APP . 'Config' . DS . 'email.php.default', APP . 'Config' . DS . 'email.php');
         }
 
-        if (empty($this->request->data)) {
-            return;
-        }
         $config = $this->defaultEmail;
         foreach ($this->request->data as $key => $value) {
             if (isset($config[$key])) {
                 $config[$key] = $value;
             }
         }
-        copy(APP . 'Config' . DS . 'email.php.install', APP . 'Config' . DS . 'email.php');
         $file = new File(APP . 'Config' . DS . 'email.php', true);
         $content = $file->read();
 
@@ -343,42 +380,39 @@ class InstallController extends InstallAppController {
             $this->Flash->error(__d('install', 'Could not write email.php file.'));
             return;
         }
-        return $this->redirect(array('action' => 'adminuser'));
+
+        $this->redirect(array('action' => 'adminuser'));
     }
 
     /**
      * Step : secure app and set new password for administrative user
      */
     public function adminuser() {
-        $this->_check();
-        $this->set('title_for_layout', __d('install', 'Step 4 : Secure app and set new administrator password'));
-        $this->set('title_for_step', __d('install', 'Step 4 : Secure app and set new administrator password'));
+        $this->__check();
+        $this->set('title_for_layout', __d('install', 'Step 4 : Admin Account'));
+        $this->set('title_for_step', __d('install', 'Step 4 : Admin Account'));
         if (empty($this->request->data)) {
             return;
         }
 
         if ($this->request->is('post')) {
-            // password and verify password must match
             // secure app
-            if (!$this->__setNewSaltSeed())
+            if (!$this->__secure()) {
+                $this->Flash->error(__d('install', 'Unable to create administrative user.'));
+                $this->log(__d('install', 'Unable to create administrative user.'));
                 return;
-            // update all user passwords with new salt/seed 
-            if (!$this->__updatePasswords())
-                return;
-
-            // save new admin password
+            }
+            // add admin password
             $this->loadModel('User');
             $this->User->read(null, 1);
             $this->User->set($this->request->data);
             if ($this->User->save()) {
                 $this->Flash->info(__d('install', 'Saved with success.'));
-                $token = uniqid();
-                $this->Session->write('Install', array(
-                    'token' => $token
-                ));
-                $this->redirect(array('action' => 'finish', $token));
+                $key = uniqid();
+                $this->Cookie->write('Install.key', $key, false, 3600);
+                $this->redirect(array('action' => 'finish', $key));
             } else {
-                $this->Flash->error(__d('install', 'Could not be saved. Please, try again.'));
+                $this->Flash->error(__d('install', 'Unable to create administrative user.'));
                 $this->log(__d('install', 'Unable to create administrative user.'));
                 $this->log($this->User->validationErrors);
             }
@@ -393,29 +427,54 @@ class InstallController extends InstallAppController {
      * @return void
      * @access public
      */
-    public function finish($token = null) {
-
-        $this->_check();
+    public function finish($key = null) {
+        //$this->__check();
         $this->set('title_for_layout', __d('install', 'Installation completed successfully'));
         $this->set('title_for_step', __d('install', 'Installation completed successfully'));
-        $install = $this->Session->read('Install');
-        if ($install['token'] == $token) {
-            unset($install['token']);
+        $install = $this->Cookie->read('Install');
+        if (isset($install['key']) && $install['key'] == $key) {
+            /// alter configuration
+            $File = new File(APP . 'Config' . DS . 'core_phapp.php');
+            $contents = $File->read();
+            $contents = preg_replace('/(?<=Configure::write\(\'installed_key\', \')([^\' ]+)(?=\'\))/', $key, $contents);
+            if (!$File->write($contents)) {
+                $this->Flash->error(__d('install', 'Unable to secure your application, your Config %s core_phapp.php file is not writable. Please check the permissions.', DS));
+                $this->log(__d('install', 'Unable to secure your application, your Config %s core_phapp.php file is not writable. Please check the permissions.', DS));
+                $this->redirect('/');
+            }
+
+            $File = new File(APP . 'Config' . DS . 'bootstrap_phapp.php');
+            $contents = $File->read();
+            $application_language = Configure::read('Config.language');
+            $contents = preg_replace('/(?<=Configure::write\(\'Language.default\', \')([^\' ]+)(?=\'\))/', $application_language, $contents);
+
+            $application_mode = Configure::read('Application.mode');
+            if ($this->Cookie->check('Application.mode')) {
+                $application_mode = $this->Cookie->read('Application.mode');
+            }
+            
+            $contents = preg_replace('/(?<=Configure::write\(\'Application.mode\', \')([^\' ]+)(?=\'\))/', $application_mode, $contents);
+            if (!$File->write($contents)) {
+                $this->Flash->error(__d('install', 'Unable to config your application, your Config %s bootstrap_phapp.php file is not writable. Please check the permissions.', DS));
+                $this->log(__d('install', 'Unable to config your application, your Config %s bootstrap_phapp.php file is not writable. Please check the permissions.', DS));
+                $this->redirect('/');
+            }
+
             // Create a new file with 0644 permissions
             $file = new File(TMP . 'installed.txt', true, 0644);
             if ($file) {
                 $file->append(__d('install', 'Installation completed successfully'));
+                $file->append(' - ' . $key);
                 $file->close();
                 $this->Flash->info(__d('install', 'Installation completed successfully'));
             } else {
                 $this->set('title_for_layout', __d('install', 'Installation not completed successfully'));
                 $this->set('title_for_step', __d('install', 'Installation not completed successfully'));
                 $this->Flash->error(__d('install', 'Something went wrong during installation. Please check your server logs.'));
-                //$this->redirect(array('action' => 'adminuser'));
             }
-            $this->Session->delete('Install');
-        } else {
-            //$this->redirect('/');
+            $this->Cookie->delete('Install');
+            $this->Cookie->delete('Config.language');
+            $this->Cookie->delete('Application.mode');
         }
     }
 
@@ -428,22 +487,17 @@ class InstallController extends InstallAppController {
      * @return void
      * @access public
      */
-    public function secure() {
+    private function __secure() {
 
-        $this->_check();
-        // password and verify password must match
         // secure app
-        if (!$this->__setNewSaltSeed())
-            return;
+        if (!$this->__setNewSaltSeed()) {
+            return false;
+        }
         // update all user passwords with new salt/seed 
-        if (!$this->__updatePasswords())
-            return;
-
-        $token = uniqid();
-        $this->Session->write('Install', array(
-            'token' => $token
-        ));
-        $this->redirect(array('action' => 'finish', $token));
+        if (!$this->__updatePasswords()) {
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -459,18 +513,27 @@ class InstallController extends InstallAppController {
         $this->loadModel('User');
         $users = $this->User->find('all');
         foreach ($users as $key => $user) {
-            $users[$key]['User']['password'] = $users[$key]['User']['username'];
-            //var_dump($users[$key]);
+            $newPass = $users[$key]['User']['username'];
+            $users[$key]['User']['password'] = str_pad($newPass, 8, "0", STR_PAD_RIGHT) . '0';
         }
         // update all users
         if (!$this->User->saveAll($users)) {
 
             $this->Flash->error(__d('install', 'Unable to generate users password.'));
             $this->log(__d('install', 'install', 'Unable to generate users password.'));
-            $this->log($User->validationErrors);
+            //$this->log($users->validationErrors);
             return false;
         }
         return true;
+    }
+
+    public function reinstall() {
+        unlink(APP . 'Config' . DS . 'core_phapp.php');
+        unlink(APP . 'Config' . DS . 'bootstrap_phapp.php');
+        unlink(APP . 'Config' . DS . 'database.php');
+        unlink(APP . 'Config' . DS . 'email.php');
+        unlink(TMP . 'installed.txt');
+        $this->redirect(array('action' => 'index'));
     }
 
     /**
@@ -482,9 +545,11 @@ class InstallController extends InstallAppController {
      * @throws 
      */
     public function isAuthorized($user = null) {
-        //echo "auth";
-        $result = true;
-        return $result;
+        if ($user['id'] != 1 || $user['username'] != 'admin') {
+            $this->Flash->info(__d('install', 'Already Installed'));
+            return false;
+        }
+        return parent::isAuthorized($user);
     }
 
 }

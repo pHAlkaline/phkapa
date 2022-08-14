@@ -5,7 +5,7 @@ App::uses('Component', 'Controller');
 /**
  * pHKapa Component
  *
- * PHP version 5
+ * PHP version 7
  *
  * @category Component
  * @package  pHKapa.app.Controller.Component

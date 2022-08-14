@@ -36,9 +36,11 @@
  * In development mode, you need to click the flash message to continue.
  */
 Configure::write('debug',0);
-Configure::write('Exception.handler', 'AppExceptionHandler::handleException');
-Configure::write('Session', array('defaults' => 'php','cookie' => 'pHKapaSession'));
-Configure::write('Cookie', array('name' => 'pHKondoCookie'));
+
+/**
+ *
+ */
+Configure::write('installed_key', 'xyz');
 
 /**
  * A random string used in security hashing methods.
@@ -48,7 +50,14 @@ Configure::write('Security.salt', 'salt');
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-Configure::write('Security.cipherSeed', '0123456');
+Configure::write('Security.cipherSeed', '13456');
+
+/**
+ * Uncomment this line and correct your server timezone to fix
+ * any date & time related errors.
+ */
+date_default_timezone_set('Europe/Lisbon');
+
 
 // Prefix each application on the same server with a different string, to avoid Memcache and APC conflicts.
 $prefix = 'phkapa_';
@@ -77,5 +86,6 @@ Cache::config('_cake_model_', array(
 	'duration' => $duration
 ));
 
-//setLocale(LC_ALL, 'deu');
-//Configure::write('Config.language', 'deu');
+Configure::write('Exception.handler', 'AppExceptionHandler::handleException');
+Configure::write('Session', array('defaults' => 'php','cookie' => $prefix .'Session'));
+Configure::write('Cookie', array('name' => $prefix .'Cookie'));

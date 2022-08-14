@@ -2,7 +2,7 @@
 /**
  * Aros controller
  *
- * PHP version 5
+ * PHP version 7
  *
  * @category Controller
  * @package  pHKapa
