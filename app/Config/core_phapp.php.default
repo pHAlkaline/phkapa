@@ -60,7 +60,7 @@ date_default_timezone_set('Europe/Lisbon');
 
 
 // Prefix each application on the same server with a different string, to avoid Memcache and APC conflicts.
-$prefix = 'phkapa_';
+$prefix = $_SERVER['HTTP_HOST'].'_phkapa_';
 
 /**
  * Configure the cache used for general framework caching. Path information,
