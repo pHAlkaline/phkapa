@@ -428,7 +428,7 @@ class InstallController extends AppController {
      * @access public
      */
     public function finish($key = null) {
-        //$this->__check();
+        $this->__check();
         $this->set('title_for_layout', __d('install', 'Installation completed successfully'));
         $this->set('title_for_step', __d('install', 'Installation completed successfully'));
         $install = $this->Cookie->read('Install');
