@@ -1,9 +1,9 @@
-# LANGUAGE translation of pHkondo Application
+# LANGUAGE translation of pHKapa Application
 # Copyright pHAlkaline <contact@phalkaline.net>
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: phkondo.net\n"
+"Project-Id-Version: pHKapa.net\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2022-02-13 14:03+0000\n"
 "Last-Translator: Dragos Pascale <dragos.pascale@gmail.com>\n"
@@ -117,146 +117,146 @@ msgid "Database connection missing"
 msgstr "Conexiunea la baza de date lipsește"
 
 #: Controller/UsersController.php:294
-msgid "Install or manually config pHKondo"
-msgstr "Instalați sau configurați manual pHKondo"
+msgid "Install or manually config pHKapa"
+msgstr "Instalați sau configurați manual pHKapa"
 
-#: View/Themed/Phkondo/Elements/menu/top_menu.ctp:108
+#: View/Themed/pHKapa/Elements/menu/top_menu.ctp:108
 msgid "Reinstall"
 msgstr "instalarea"
 
-#: View/Themed/Phkondo/Elements/menu/top_menu.ctp:108
+#: View/Themed/pHKapa/Elements/menu/top_menu.ctp:108
 msgid "Are you sure you want to reinstall # %s?"
 msgstr ""
 
-#: View/Themed/Phkondo/Install/adminuser.ctp:8
+#: View/Themed/pHKapa/Install/adminuser.ctp:8
 msgid "Administrator Account"
 msgstr "Account amministratore
 "
 
-#: View/Themed/Phkondo/Install/adminuser.ctp:11
+#: View/Themed/pHKapa/Install/adminuser.ctp:11
 msgid "New Password"
 msgstr "Parolă nouă"
 
-#: View/Themed/Phkondo/Install/adminuser.ctp:16
+#: View/Themed/pHKapa/Install/adminuser.ctp:16
 msgid "Verify Password"
 msgstr "Verifică parola"
 
-#: View/Themed/Phkondo/Install/data.ctp:8
+#: View/Themed/pHKapa/Install/data.ctp:8
 msgid "Database and data"
 msgstr "Baza de date și date"
 
-#: View/Themed/Phkondo/Install/data.ctp:15
+#: View/Themed/pHKapa/Install/data.ctp:15
 msgid "Check option to load default values to auxiliary tables."
 msgstr ""
 
-#: View/Themed/Phkondo/Install/data.ctp:21
+#: View/Themed/pHKapa/Install/data.ctp:21
 msgid "Load data"
 msgstr "Încarcă date"
 
-#: View/Themed/Phkondo/Install/data.ctp:26
+#: View/Themed/pHKapa/Install/data.ctp:26
 msgid "Check option to add demonstration condo."
 msgstr ""
 
-#: View/Themed/Phkondo/Install/data.ctp:32
+#: View/Themed/pHKapa/Install/data.ctp:32
 msgid "Load demonstration condo"
 msgstr ""
 
-#: View/Themed/Phkondo/Install/database.ctp:8
+#: View/Themed/pHKapa/Install/database.ctp:8
 msgid "Setup database connection"
 msgstr "Configurarea conexiunii la baza de date"
 
-#: View/Themed/Phkondo/Install/database.ctp:43
+#: View/Themed/pHKapa/Install/database.ctp:43
 msgid "Database"
 msgstr ""
 
-#: View/Themed/Phkondo/Install/email.ctp:8
+#: View/Themed/pHKapa/Install/email.ctp:8
 msgid "Setup notification email"
 msgstr "Configurare notificării prin email"
 
-#: View/Themed/Phkondo/Install/email.ctp:12
+#: View/Themed/pHKapa/Install/email.ctp:12
 msgid "From Email"
 msgstr "De la Email"
 
-#: View/Themed/Phkondo/Install/email.ctp:17
+#: View/Themed/pHKapa/Install/email.ctp:17
 msgid "From Name"
 msgstr "De la Nume"
 
-#: View/Themed/Phkondo/Install/email.ctp:22
+#: View/Themed/pHKapa/Install/email.ctp:22
 msgid "Subject"
 msgstr "Subiect"
 
-#: View/Themed/Phkondo/Install/finish.ctp:9
+#: View/Themed/pHKapa/Install/finish.ctp:9
 msgid ""
 "Dont forget to restore default access values to Config and tmp directory."
 msgstr ""
 
-#: View/Themed/Phkondo/Install/finish.ctp:14
+#: View/Themed/pHKapa/Install/finish.ctp:14
 msgid "Passwords secured and updated for all users"
 msgstr "Parolele securizate și actualizate pentru toți utilizatorii"
 
-#: View/Themed/Phkondo/Install/finish.ctp:19
-msgid "pHKondo: %s"
+#: View/Themed/pHKapa/Install/finish.ctp:19
+msgid "pHKapa: %s"
 msgstr ""
 
-#: View/Themed/Phkondo/Install/finish.ctp:24
+#: View/Themed/pHKapa/Install/finish.ctp:24
 msgid "Resources"
 msgstr "Resurse"
 
-#: View/Themed/Phkondo/Install/index.ctp:8
+#: View/Themed/pHKapa/Install/index.ctp:8
 msgid "Language"
 msgstr "Idioma"
 
-#: View/Themed/Phkondo/Install/index.ctp:26
+#: View/Themed/pHKapa/Install/index.ctp:26
 msgid "Your tmp directory is writable."
 msgstr ""
 
-#: View/Themed/Phkondo/Install/index.ctp:30
+#: View/Themed/pHKapa/Install/index.ctp:30
 msgid "Your tmp directory is NOT writable."
 msgstr "Directorul tmp nu poate fi scris."
 
-#: View/Themed/Phkondo/Install/index.ctp:36
+#: View/Themed/pHKapa/Install/index.ctp:36
 msgid "Your Config directory is writable."
 msgstr "Directorul de configurare ARE permisiunea de scriere."
 
-#: View/Themed/Phkondo/Install/index.ctp:40
+#: View/Themed/pHKapa/Install/index.ctp:40
 msgid "Your Config directory is NOT writable."
 msgstr "Directorul de configurare NU are permisiunea de scriere."
 
-#: View/Themed/Phkondo/Install/index.ctp:46
+#: View/Themed/pHKapa/Install/index.ctp:46
 msgid "Your Config/core_phapp.php file is writable."
 msgstr "Config/core_phapp.php ARE permisiunea de scriere."
 
-#: View/Themed/Phkondo/Install/index.ctp:50
+#: View/Themed/pHKapa/Install/index.ctp:50
 msgid "Your Config/core_phapp.php file is NOT writable."
 msgstr "Config/core_phapp.php NU are permisiunea de scriere."
 
-#: View/Themed/Phkondo/Install/index.ctp:56
+#: View/Themed/pHKapa/Install/index.ctp:56
 msgid "PHP version %s >= 5.6 and <8.0.0"
 msgstr ""
 
-#: View/Themed/Phkondo/Install/index.ctp:60
+#: View/Themed/pHKapa/Install/index.ctp:60
 msgid "PHP version %s < 5.6 or =>8.0.0"
 msgstr ""
 
-#: View/Themed/Phkondo/Install/index.ctp:68
+#: View/Themed/pHKapa/Install/index.ctp:68
 msgid "CakePhp version %s >= %s"
 msgstr "Versiunea CakePHP %s >= %s"
 
-#: View/Themed/Phkondo/Install/index.ctp:72
+#: View/Themed/pHKapa/Install/index.ctp:72
 msgid "CakePHP version %s < %s"
 msgstr "Versiunea CakePHP %s < %s"
 
-#: View/Themed/Phkondo/Install/index.ctp:77
+#: View/Themed/pHKapa/Install/index.ctp:77
 msgid "Click here to begin installation"
 msgstr "Click aici pentru a începe instalarea"
 
-#: View/Themed/Phkondo/Install/index.ctp:80
+#: View/Themed/pHKapa/Install/index.ctp:80
 msgid "Installation cannot continue as minimum requirements are not found."
 msgstr ""
 "Instalarea nu poate continua deoarece cerințele minime nu sunt îndeplinite."
 
-#: View/Themed/Phkondo/Install/secure.ctp:4
-msgid "pHKondo is now Secure."
+#: View/Themed/pHKapa/Install/secure.ctp:4
+msgid "pHKapa is now Secure."
 msgstr ""
 
 msgid "Email settings file already exists"
