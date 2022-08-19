@@ -1,4 +1,5 @@
 <?php
+
 $this->Number->defaultCurrency(Configure::read('currency'));
 ?>
 <h2 class="grid_16" id="page-heading"><?php echo __d('phkapa', 'Plan'); ?>:<?php echo __d('phkapa', 'Add %s', __d('phkapa', 'Action')); ?></h2>
@@ -58,19 +59,19 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                         &nbsp;
                     </dd>
                     <?php if ($ticket['Ticket']['ticket_parent'] != '') { ?>
-                        <dt<?php
+                    <dt<?php
                         if ($i % 2 == 0)
                             echo $class;
                         ?>><?php echo __d('phkapa', 'Ticket Parent'); ?></dt>
-                        <dd<?php
+                    <dd<?php
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
                                 <?php
                                 echo $this->Html->link($ticket['Ticket']['ticket_parent'] . ' ' . $this->Html->image("accept.png", array("alt" => __d('phkapa', "See ticket parent data"), "style" => "padding-left:100px;")) . ' ' . __d('phkapa', "See ticket parent data"), array('controller' => 'query', 'action' => 'view', $ticket['Ticket']['ticket_parent']), array('escape' => false));
                                 ?>
-                            &nbsp;
-                        </dd>
+                        &nbsp;
+                    </dd>
                     <?php } ?>
                     <dt<?php
                     if ($i % 2 == 0)
@@ -94,7 +95,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                             <?php echo h($ticket['Priority']['name']); ?>
                         &nbsp;
                     </dd>
-                   
+
                     <dt<?php
                     if ($i % 2 == 0)
                         echo $class;
@@ -230,7 +231,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                     if ($i++ % 2 == 0)
                         echo $class;
                     ?>>
-<?php echo $this->Text->autoParagraph(h($ticket['Ticket']['description'])) . $this->Text->autoParagraph(h($ticket['Ticket']['review_notes'])); ?>
+                    <?php echo $this->Text->autoParagraph(h($ticket['Ticket']['description'])) . $this->Text->autoParagraph(h($ticket['Ticket']['review_notes'])); ?>
                         &nbsp;
                     </dd>
                     <dt<?php
@@ -304,18 +305,18 @@ $this->Number->defaultCurrency(Configure::read('currency'));
             <?php
             if (CakePlugin::loaded('Feedback')) {
                 ?>
-                <div class="related">
+            <div class="related">
     <?php echo $this->Comments->display_for($ticket, array('showForm' => false, 'model' => 'Phkapa.Ticket')); ?>
-                </div>
+            </div>
 
                 <?php } else { ?>
-                <div class="related">
+            <div class="related">
                     <?php
                     echo $this->element('pluginNotFound');
                     ?>
 
 
-                </div>           
+            </div>
 <?php } ?>
         </div>
 
@@ -325,9 +326,9 @@ $this->Number->defaultCurrency(Configure::read('currency'));
                 ?>
 
 
-                <div class="related">
+            <div class="related">
     <?php echo $this->Attachments->display_for($ticket, array('showForm' => false, 'model' => 'Phkapa.Ticket')); ?>
-                </div>
+            </div>
 
 
 
@@ -335,11 +336,11 @@ $this->Number->defaultCurrency(Configure::read('currency'));
 <?php } else { ?>
 
 
-                <div class="related">
+            <div class="related">
                     <?php
                     echo $this->element('pluginNotFound');
                     ?>
-                </div>
+            </div>
 
 
 

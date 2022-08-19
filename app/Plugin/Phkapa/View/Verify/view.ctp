@@ -1,5 +1,4 @@
 <?php
-
 $this->Number->defaultCurrency(Configure::read('currency'));
 ?>
 
@@ -32,10 +31,10 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
             <h5><?php echo __dn('phkapa', 'Ticket', 'Tickets', 2); ?></h5>
             <ul class="menu">
                 <?php if ($closeOk) : ?>
-                <li>
+                    <li>
                         <?php echo $this->Html->link(__d('phkapa', 'Close'), array('action' => 'close', $ticket['Ticket']['id']), array('confirm' => __d('phkapa', 'Are you sure you want to close # %s?', $ticket['Ticket']['id']) . ' ' . $closeMessage));
                         ?>
-                </li>
+                    </li>
                 <?php endif; ?>
                 <?php //if ($closeMessage!='') : ?>
                 <li>
@@ -71,7 +70,7 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
             <li><a href="#tabs-ticket"><?php echo __dn('phkapa', 'Ticket', 'Ticket', 1); ?></a></li>
             <li><a href="#tabs-feedback"><?php echo __dn('phkapa', 'Comment', 'Comments', 2) . $countComment; ?></a></li>
             <li><a href="#tabs-attachment"><?php echo __dn('phkapa', 'Attachment', 'Attachments', 2) . $countAttachment; ?></a></li>
-
+            
 
 
         </ul>
@@ -79,20 +78,20 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
             <div class="related">
 
                 <?php if (!empty($ticket['Action'])): ?>
-                <table cellpadding = "0" cellspacing = "0">
-                    <thead class="ui-state-default"
-                           <tr>
-                    <th><?php echo __d('phkapa', 'Id'); ?></th>
-                    <th><?php echo __d('phkapa', 'Action Type'); ?></th>
-                    <th><?php echo __d('phkapa', 'Description'); ?></th>
-                    <th><?php echo __d('phkapa', 'Effectiveness'); ?></th>
-                    <th><?php echo __d('phkapa', 'Verified By'); ?></th>
-                    <th><?php echo __d('phkapa', 'Created'); ?></th>
-                    <th><?php echo __d('phkapa', 'Close Date'); ?></th>
-                    <th><?php echo __d('phkapa', 'After Deadline'); ?></th>
-                    <th class="actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></th>
-                    </tr>
-                    </thead>
+                    <table cellpadding = "0" cellspacing = "0">
+                        <thead class="ui-state-default"
+                               <tr>
+                                <th><?php echo __d('phkapa', 'Id'); ?></th>
+                                <th><?php echo __d('phkapa', 'Action Type'); ?></th>
+                                <th><?php echo __d('phkapa', 'Description'); ?></th>
+                                <th><?php echo __d('phkapa', 'Effectiveness'); ?></th>
+                                <th><?php echo __d('phkapa', 'Verified By'); ?></th>
+                                <th><?php echo __d('phkapa', 'Created'); ?></th>
+                                <th><?php echo __d('phkapa', 'Close Date'); ?></th>
+                                <th><?php echo __d('phkapa', 'After Deadline'); ?></th>
+                                <th class="actions"><?php echo __dn('phkapa', 'Action', 'Actions', 2); ?></th>
+                            </tr>
+                        </thead>
                         <?php
                         $i = 0;
                         foreach ($ticket['Action'] as $action):
@@ -112,38 +111,38 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                                 $class = ' class="altrow"';
                             }
                             ?>
-                    <tr<?php echo $class; ?>>
-                        <td><?php echo $action['id']; ?></td>
-                        <td><?php echo $action['ActionType']['name']; ?></td>
-                        <td><?php
+                            <tr<?php echo $class; ?>>
+                                <td><?php echo $action['id']; ?></td>
+                                <td><?php echo $action['ActionType']['name']; ?></td>
+                                <td><?php
                                     echo $this->Text->truncate(
                                             $this->Text->autoParagraph(h($action['description'])), 60, array(
                                         'ellipsis' => '...',
                                         'exact' => false
                                     ));
                                     ?></td>
-                        <td><?php
+                                <td><?php
                                     if (isset($action['ActionEffectiveness']['name']))
                                         echo h($action['ActionEffectiveness']['name']);
                                     ?></td>
-                        <td><?php
+                                <td><?php
                                     if (isset($action['VerifyUser']['name']))
                                         echo h($action['VerifyUser']['name']);
                                     ?></td>
-                        <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
-                        <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']); ?></td>
-                        <td class="nowrap"><?php echo $afterexpiry; ?></td>
-                        <td class="actions">
+                                <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['created']); ?></td>
+                                <td class="nowrap"><?php echo $this->Time->format(Configure::read('dateFormatSimple'), $action['close_date']); ?></td>
+                                <td class="nowrap"><?php echo $afterexpiry; ?></td>
+                                <td class="actions">
                                     <?php
                                     if ($action['ActionType']['verification'] != 0) {
                                         echo $this->Html->link(__d('phkapa', 'Verify'), array('action' => 'edit_action', $action['id'], $ticket['Ticket']['id']));
                                     }
                                     ?>
 
-                        </td>
-                    </tr>
+                                </td>
+                            </tr>
                         <?php endforeach; ?>
-                </table>
+                    </table>
                 <?php endif; ?>
 
 
@@ -172,19 +171,19 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                         &nbsp;
                     </dd>
                     <?php if ($ticket['Ticket']['ticket_parent'] != '') { ?>
-                    <dt<?php
+                        <dt<?php
                         if ($i % 2 == 0)
                             echo $class;
                         ?>><?php echo __d('phkapa', 'Ticket Parent'); ?></dt>
-                    <dd<?php
+                        <dd<?php
                         if ($i++ % 2 == 0)
                             echo $class;
                         ?>>
                                 <?php
                                 echo $this->Html->link($ticket['Ticket']['ticket_parent'] . ' ' . $this->Html->image("accept.png", array("alt" => __d('phkapa', "See ticket parent data"), "style" => "padding-left:100px;")) . ' ' . __d('phkapa', "See ticket parent data"), array('controller' => 'query', 'action' => 'view', $ticket['Ticket']['ticket_parent']), array('escape' => false));
                                 ?>
-                        &nbsp;
-                    </dd>
+                            &nbsp;
+                        </dd>
                     <?php } ?>
                     <dt<?php
                     if ($i % 2 == 0)
@@ -411,30 +410,30 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
             <?php
             if (CakePlugin::loaded('Feedback')) {
                 ?>
-            <div class="related">
+                <div class="related">
                     <?php echo $this->Comments->display_for($ticket, array('showForm' => true, 'model' => 'Phkapa.Ticket')); ?>
-            </div>
+
                 <?php } else { ?>
-            <div class="related">
+                    <div class="related">
                         <?php
                         echo $this->element('pluginNotFound');
                         ?>
 
-
-            </div>
+                    
+                </div>
                     <?php } ?>
-
+               
+            </div>
         </div>
-
-        <div id="tabs-attachment">
+         <div id="tabs-attachment">
                     <?php
                     if (CakePlugin::loaded('Attachment')) {
                         ?>
 
 
-            <div class="related">
+                        <div class="related">
                             <?php echo $this->Attachments->display_for($ticket, array('showForm' => true, 'model' => 'Phkapa.Ticket')); ?>
-            </div>
+                        </div>
 
 
 
@@ -442,17 +441,17 @@ if (isset($ticket['Action']) && count($ticket['Action']) > 0) {
                     <?php } else { ?>
 
 
-            <div class="related">
+                        <div class="related">
                             <?php
                             echo $this->element('pluginNotFound');
                             ?>
-            </div>
+                        </div>
 
 
 
 
                     <?php } ?>
-        </div>
+         </div>
 
     </div>
 </div>
