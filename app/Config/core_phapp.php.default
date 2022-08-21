@@ -87,5 +87,5 @@ Cache::config('_cake_model_', array(
 ));
 
 Configure::write('Exception.handler', 'AppExceptionHandler::handleException');
-Configure::write('Session', array('defaults' => 'php','cookie' => $prefix .'Session'));
+Configure::write('Session', array('timeout' => '1440', 'defaults' => 'php','cookie' => $prefix .'Session'));
 Configure::write('Cookie', array('name' => $prefix .'Cookie'));
