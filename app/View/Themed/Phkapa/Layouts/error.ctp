@@ -6,15 +6,10 @@ $this->Number->defaultCurrency(Configure::read('currency'));
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
-	</title>
+	<title><?php echo $title_for_layout; ?></title>
 	<?php
 		echo $this->Html->meta('icon');
-
 		echo $this->Html->css('cake.generic');
-
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');

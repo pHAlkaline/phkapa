@@ -26,7 +26,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <?php echo $this->Html->charset(); ?>
-        <title><?php echo $page_title; ?></title>
+        <title><?php echo $title_for_layout; ?></title>
 
 <?php if (Configure::read('debug') == 0) { ?>
         <meta http-equiv="Refresh" content="<?php echo $pause?>;url=<?php echo $url?>"/>
