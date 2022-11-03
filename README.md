@@ -11,10 +11,10 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
 
 
 ## Requirements
-  * HTTP Server. For example: Apache. mod_rewrite is preferred, but by no means required
-  * PHP 5.6 or greater.
-  * MariaDB , MySQL 5.5 or higher
+  * HTTP Server or similar ( NGINX, IIS ).
+  * Apache. mod_rewrite is preferred, but by no means required
+  * PHP =>5.6 && <8.0.0.
+  * MySQL or similar ( MariaDB , SqlServer )
   * All built-in drivers require PDO. You should make sure you have the correct PDO extensions installed.
-
 
 Goto [http://wiki.phkapa.net](http://wiki.phkapa.net)
