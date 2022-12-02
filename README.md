@@ -3,9 +3,9 @@
 
 **pHKapa** , Nonconformity management software for quality assurance. Allows to generate action plan (CAPA) requests that routes through register, review, plan / implement, and verification stages. It provides effective mechanisms to determinate the source and cost of problems, released under [MIT License]
 
-Official website**: [http://phkapa.net](http://phkapa.net)
+Official website**: [https://www.phkapa.net](https://www.phkapa.net)
 
-WIKI website**: [http://wiki.phkapa.net](http://wiki.phkapa.net)
+WIKI website**: [https://wiki.phkapa.net](https://wiki.phkapa.net)
 
 It is powered by [CakePHP](http://cakephp.org) MVC framework.
 
@@ -17,4 +17,4 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
   * MySQL or similar ( MariaDB , SqlServer )
   * All built-in drivers require PDO. You should make sure you have the correct PDO extensions installed.
 
-Goto [http://wiki.phkapa.net](http://wiki.phkapa.net)
+Goto [https://wiki.phkapa.net](https://wiki.phkapa.net)
