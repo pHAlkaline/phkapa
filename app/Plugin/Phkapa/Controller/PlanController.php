@@ -10,7 +10,7 @@
  * @version  V1
  * @author   Paulo Homem <contact@phalkaline.net>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://phkapa.net
+ * @link     https://phalkaline.net
  */
 class PlanController extends PhkapaAppController {
 
@@ -234,7 +234,7 @@ class PlanController extends PhkapaAppController {
 
         if (count($ticket) == 0) {
             $this->Flash->error(__d('phkapa', 'Invalid request.'));
-            $this->redirect(array('action' => 'edit', $this->request->data['Action']['ticket_id'],'#'=>'tabs-actions'));
+            $this->redirect(array('action' => 'edit', $ticketId,'#'=>'tabs-actions'));
         }
         //$this->loadModel('Phkapa.Action');
         if (!empty($this->request->data)) {

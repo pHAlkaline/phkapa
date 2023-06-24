@@ -219,7 +219,7 @@ msgstr ""
 msgid "This Plugin is also available with the pHKapa Full Pack."
 msgstr ""
 
-msgid "Buy pHKapa Full Pack at http://phkapa.net"
+msgid "Buy pHKapa Full Pack at https://phalkaline.net"
 msgstr ""
 
 msgid "Ticket Report"

@@ -3,12 +3,12 @@
     "description": "Nonconformity Management Software for Quality Assurance.",
     "type": "project",
     "keywords": ["application", "php", "corrective action", "preventive action", "nonconformity", "quality assurance"],
-    "homepage": "http://phkapa.net",
+    "homepage": "https://phalkaline.net",
     "license": "MIT",
     "authors": [
         {
             "name": "pHAlkaline",
-            "homepage": "http://phalkaline.net"
+            "homepage": "https://phalkaline.net"
         }
     ],
     "support": {

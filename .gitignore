@@ -97,3 +97,11 @@ Access.log
 /TODO.php
 /composer.lock
 
+
+# Docker
+#Dockerfile
+docker-compose.yml
+docker/*
+!docker/.gitkeep
+!docker/images
+

@@ -38,7 +38,7 @@
 
                 <h3><?php echo __d('install','Resources'); ?></h3>
                 <ul >
-                    <li><?php echo $this->Html->link('Official', 'http://phkapa.net',array( 'target' => '_blank')); ?></li>
+                    <li><?php echo $this->Html->link('Official', 'https://phalkaline.net',array( 'target' => '_blank')); ?></li>
                     <li><?php echo $this->Html->link('Wiki', 'http://wiki.phkapa.net',array('target' => '_blank')); ?></li>
                     <li><?php echo $this->Html->link('pHKapa Google Group', 'http://groups.google.com/group/phkapa',array('target' => '_blank')); ?></li>
                     <li><?php echo $this->Html->link('Code repository', 'http://github.com/phalkaline/phkapa',array('target' => '_blank')); ?></li>

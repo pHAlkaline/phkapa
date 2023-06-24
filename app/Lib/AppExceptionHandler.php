@@ -2,8 +2,8 @@
 
 /**
  *
- * pHKapa : pHKapa software for condominium property managers (http://phalkaline.net)
- * Copyright (c) pHAlkaline . (http://phalkaline.net)
+ * pHKapa : pHKapa software for condominium property managers (https://phalkaline.net)
+ * Copyright (c) pHAlkaline . (https://phalkaline.net)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * @copyright     Copyright (c) pHAlkaline . (http://phalkaline.net)
+ * @copyright     Copyright (c) pHAlkaline . (https://phalkaline.net)
  * @link          https://pHKapa.net pHKapa Project
  * @package       app.Lib
  * @since         pHKapa v 1.7

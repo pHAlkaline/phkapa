@@ -228,8 +228,8 @@ msgstr "Merci de faire une contribution afin d'obtenir le code du plugin"
 msgid "This Plugin is also available with the pHKapa Full Pack."
 msgstr "Ce plugin est également disponible avec le pHKapa Full Pack."
 
-msgid "Buy pHKapa Full Pack at http://phkapa.net"
-msgstr "Achetez pHKapa Full Pack à http://phkapa.net"
+msgid "Buy pHKapa Full Pack at https://phalkaline.net"
+msgstr "Achetez pHKapa Full Pack à https://phalkaline.net"
 
 msgid "Ticket Report"
 msgstr "Reporting du ticket"

@@ -72,7 +72,7 @@ $this->Number->defaultCurrency(Configure::read('currency'));
             <?php echo $this->fetch('content'); ?>
             <div class="clear"></div>
         </div>
-        <div style="text-align: center;">Copyright (c) pHAlkaline (<a href="http://phalkaline.net" target="_blank">http://phalkaline.net</a>)<div/>
+        <div style="text-align: center;">Copyright (c) pHAlkaline (<a href="https://phalkaline.net" target="_blank">https://phalkaline.net</a>)<div/>
             <?php // echo $this->element('sql_dump'); ?>
     </body>
         <?php

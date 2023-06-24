@@ -239,8 +239,8 @@ msgstr "Vă rugăm să aducă o contribuție și obține codul Plugin."
 msgid "This Plugin is also available with the pHKapa Full Pack."
 msgstr "Acest plugin este de asemenea disponibil cu pHKapa Full Pack."
 
-msgid "Buy pHKapa Full Pack at http://phkapa.net"
-msgstr "pHKapa Full Pack cumpara la http://phkapa.net"
+msgid "Buy pHKapa Full Pack at https://phalkaline.net"
+msgstr "pHKapa Full Pack cumpara la https://phalkaline.net"
 
 msgid "Ticket Report"
 msgstr "Raport despre Tichet"
