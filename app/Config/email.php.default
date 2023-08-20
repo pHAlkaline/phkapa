@@ -47,7 +47,8 @@ class EmailConfig {
             'port' => '{default_port}',
             'username' => '{default_username}',
             'password' => '{default_password}',
-            'transport' => 'Smtp'
+            'transport' => 'Smtp',
+            'ssl_cafile' => APP. 'Config' . DS . 'cacert.pem'
         );
 
 	public $smtp = array(
@@ -60,6 +61,7 @@ class EmailConfig {
             'password' => 'secret',
             'client' => null,
             'log' => false,
+            'ssl_cafile' => APP. 'Config' . DS . 'cacert.pem',
             //'charset' => 'utf-8',
             //'headerCharset' => 'utf-8',
 	);
@@ -91,6 +93,7 @@ class EmailConfig {
             'password' => 'secret',
             'client' => null,
             'log' => true,
+            'ssl_cafile' => APP. 'Config' . DS . 'cacert.pem',
             //'charset' => 'utf-8',
             //'headerCharset' => 'utf-8',
     );
